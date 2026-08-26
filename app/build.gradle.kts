@@ -19,8 +19,10 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = true
-            isShrinkResources = true
+            // AGP 8.8 is the newest plugin supported by the target Android Studio,
+            // but its bundled R8 predates Kotlin 2.3 metadata support.
+            isMinifyEnabled = false
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",

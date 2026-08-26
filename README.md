@@ -99,7 +99,7 @@ Requirements: Android SDK 36, JDK 17, and the included Gradle wrapper.
 .\gradlew.bat check :app:assembleDebug :app:bundleRelease
 ```
 
-Release builds run R8 and resource shrinking. The repository intentionally contains no signing key; `bundleRelease` therefore produces an unsigned AAB that must be signed through the owner's private Play upload-key workflow.
+The project stays on Android Studio's AGP 8.8 compatibility lane. Release shrinking is deliberately disabled because AGP 8.8's bundled R8 predates Kotlin 2.3 metadata support; re-enable it only alongside R8 8.13.19 or a newer compatible Android Studio/AGP lane. The repository intentionally contains no signing key, so `bundleRelease` produces an unsigned AAB that must be signed through the owner's private Play upload-key workflow.
 
 The suite covers conservation/probability invariants, all winning lines, player/symbol separation, invalid/stale/terminal commands, exact state enumeration and opening values, every-state legality for fast agents, seeded MCTS, policy serialization, paired tournaments, ViewModel reveal/rematch/recreation behavior, Compose product flows, and the merged-manifest offline assertion.
 
