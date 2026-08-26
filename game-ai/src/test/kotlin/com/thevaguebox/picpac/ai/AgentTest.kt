@@ -11,6 +11,8 @@ import com.thevaguebox.picpac.core.ai.PublicPicPacSearchModel
 import com.thevaguebox.picpac.core.ai.SearchLimits
 import com.thevaguebox.picpac.core.ai.SearchTransition
 import kotlinx.coroutines.runBlocking
+import java.io.ByteArrayInputStream
+import java.io.ByteArrayOutputStream
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
@@ -59,13 +61,43 @@ class AgentTest {
     }
 
     @Test fun `agent constructors cannot receive production session capabilities`() {
-        listOf(RandomAgent::class.java, HeuristicAgent::class.java, ExpectiminimaxAgent::class.java)
+        listOf(
+            RandomAgent::class.java,
+            HeuristicAgent::class.java,
+            ExpectiminimaxAgent::class.java,
+            StochasticMctsAgent::class.java,
+            RlPolicyAgent::class.java,
+        )
             .flatMap { it.declaredConstructors.toList() }
             .flatMap { it.parameterTypes.toList() }
             .forEach { type ->
                 assertFalse(type.name.contains("GameSession"))
                 assertFalse(type.name.contains("EnvironmentRandomSource"))
             }
+    }
+
+    @Test fun `stochastic MCTS is seeded bounded and legal`() = runBlocking {
+        val observation = observation(Board.EMPTY, Symbol.X)
+        val first = StochasticMctsAgent(defaultSimulations = 400, random = Random(77))
+            .chooseMove(observation, SearchLimits())
+        val second = StochasticMctsAgent(defaultSimulations = 400, random = Random(77))
+            .chooseMove(observation, SearchLimits())
+        assertEquals(first.cell, second.cell)
+        assertTrue(first.cell in observation.legalCells)
+        val diagnostics = first.diagnostics as com.thevaguebox.picpac.core.ai.AiDiagnostics.Search
+        assertEquals(400, diagnostics.simulations)
+        assertTrue(diagnostics.nodes > 1)
+    }
+
+    @Test fun `tabular policy artifact is versioned and round trips`() {
+        val state = PicPacDecisionState(Board.EMPTY, Symbol.X, 4, 5)
+        val policy = TabularPolicy.empty()
+        policy.update(state, Cell.of(4), alpha = 1.0, target = 0.75)
+        val bytes = ByteArrayOutputStream().also(policy::write).toByteArray()
+        val restored = TabularPolicy.read(ByteArrayInputStream(bytes))
+        assertEquals(1, restored.stateCount)
+        assertEquals(0.75, restored.value(state, Cell.of(4)).toDouble(), 1e-6)
+        assertEquals(Cell.of(4), restored.bestCell(state))
     }
 
     private fun observation(board: Board, held: Symbol): AiObservation = AiObservation(

@@ -1,10 +1,14 @@
 package com.thevaguebox.probabilistictictactoe.ui
 
+import android.app.Application
 import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.thevaguebox.picpac.ai.ExpectiminimaxAgent
 import com.thevaguebox.picpac.ai.HeuristicAgent
+import com.thevaguebox.picpac.ai.RlPolicyAgent
+import com.thevaguebox.picpac.ai.StochasticMctsAgent
+import com.thevaguebox.picpac.ai.TabularPolicy
 import com.thevaguebox.picpac.core.Board
 import com.thevaguebox.picpac.core.Cell
 import com.thevaguebox.picpac.core.ClassicGameSession
@@ -22,6 +26,7 @@ import com.thevaguebox.picpac.core.WinningLine
 import com.thevaguebox.picpac.core.ai.AiAgent
 import com.thevaguebox.picpac.core.ai.AiObservation
 import com.thevaguebox.picpac.core.ai.SearchLimits
+import com.thevaguebox.probabilistictictactoe.R
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -34,10 +39,12 @@ import kotlin.random.Random
 
 enum class AppScreen { HOME, GAME, HOW_TO, SETTINGS, AI_LAB }
 enum class GameMode { CLASSIC_LOCAL, PIC_PAC_LOCAL, PIC_PAC_AI }
-enum class Difficulty(val title: String, val description: String) {
+enum class Difficulty(val title: String, val description: String, val production: Boolean = true) {
     EASY("Easy", "Quick thinker. Makes human mistakes."),
     MEDIUM("Medium", "Looks ahead and weighs the odds."),
     HARD("Hard", "Solves the probabilities. Good luck."),
+    MCTS("MCTS Lab", "Learns by sampling thousands of possible futures.", false),
+    RL("RL Lab", "A compact policy trained through offline self-play.", false),
 }
 enum class TurnStage { HANDOFF, REVEALING, PLAYING, AI_THINKING, TERMINAL }
 enum class UiEffect { REVEAL, PLACE, WIN, DRAW }
@@ -60,7 +67,10 @@ data class GameUiState(
     val isPicPac: Boolean get() = mode != GameMode.CLASSIC_LOCAL
 }
 
-class GameViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel() {
+class GameViewModel(
+    application: Application,
+    private val savedStateHandle: SavedStateHandle,
+) : AndroidViewModel(application) {
     private var revision = savedStateHandle[KEY_REVISION] ?: 0L
     private var nextStarter = savedStateHandle.get<String>(KEY_NEXT_STARTER)?.let(Player::valueOf) ?: Player.ONE
     private var classicSession: ClassicGameSession? = null
@@ -72,6 +82,13 @@ class GameViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
     private val easyAgent: AiAgent = HeuristicAgent(Random(System.nanoTime()))
     private val mediumAgent: AiAgent = ExpectiminimaxAgent(configuredDepth = 4)
     private val hardAgent: AiAgent = ExpectiminimaxAgent()
+    private val mctsAgent: AiAgent = StochasticMctsAgent(defaultSimulations = 2_000, random = Random(System.nanoTime() xor 0x4D435453L))
+    private val rlAgent: AiAgent by lazy {
+        val policy = runCatching {
+            getApplication<Application>().resources.openRawResource(R.raw.picpac_rl_policy_v1).use(TabularPolicy::read)
+        }.getOrElse { TabularPolicy.empty() }
+        RlPolicyAgent(policy)
+    }
 
     private val _uiState = MutableStateFlow(restoreState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
@@ -79,11 +96,17 @@ class GameViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
     init {
         restoreSessions()
         val state = _uiState.value
-        if (state.screen == AppScreen.GAME && state.mode == GameMode.PIC_PAC_AI &&
-            state.picPac?.activePlayer == Player.TWO && state.stage != TurnStage.TERMINAL
-        ) {
-            revealAcknowledged = state.stage == TurnStage.AI_THINKING
-            resumeAiTurnIfNeeded()
+        if (state.screen == AppScreen.GAME && state.mode == GameMode.PIC_PAC_AI && state.stage != TurnStage.TERMINAL) {
+            when (state.picPac?.phase) {
+                PicPacPhase.AwaitingDraw -> revealCurrentPiece()
+                is PicPacPhase.AwaitingPlacement -> if (state.activePlayer == Player.TWO) {
+                    revealAcknowledged = state.stage == TurnStage.AI_THINKING
+                    resumeAiTurnIfNeeded()
+                } else if (state.stage == TurnStage.AI_THINKING) {
+                    update(state.copy(stage = TurnStage.REVEALING))
+                }
+                else -> Unit
+            }
         }
     }
 
@@ -245,6 +268,8 @@ class GameViewModel(private val savedStateHandle: SavedStateHandle) : ViewModel(
             Difficulty.EASY -> easyAgent
             Difficulty.MEDIUM -> mediumAgent
             Difficulty.HARD -> hardAgent
+            Difficulty.MCTS -> mctsAgent
+            Difficulty.RL -> rlAgent
         }
         aiJob?.cancel()
         aiJob = viewModelScope.launch {

@@ -19,8 +19,8 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            isShrinkResources = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
@@ -38,6 +38,12 @@ android {
     packaging {
         resources.excludes += setOf("/META-INF/{AL2.0,LGPL2.1}")
     }
+
+    testOptions { unitTests.isIncludeAndroidResources = true }
+
+    lint {
+        disable += setOf("AndroidGradlePluginVersion", "GradleDependency", "NewerVersionAvailable")
+    }
 }
 
 kotlin {
@@ -54,7 +60,6 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.kotlinx.coroutines.core)
     implementation(platform(libs.androidx.compose.bom))
@@ -64,10 +69,35 @@ dependencies {
     implementation(libs.androidx.material3)
 
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.arch.core.testing)
+    testImplementation(libs.androidx.test.core.ktx)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.robolectric)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+}
+
+val verifyNoInternetPermission by tasks.registering {
+    group = "verification"
+    description = "Fails when the merged release manifest requests Internet access."
+    dependsOn("processReleaseMainManifest")
+    doLast {
+        val manifests = fileTree(layout.buildDirectory.dir("intermediates/merged_manifests/release")) {
+            include("**/AndroidManifest.xml")
+        }.files
+        check(manifests.isNotEmpty()) { "Merged release manifest was not produced" }
+        manifests.forEach { manifest ->
+            check("android.permission.INTERNET" !in manifest.readText()) {
+                "Offline guarantee violated by ${manifest.absolutePath}"
+            }
+        }
+    }
+}
+
+tasks.matching { it.name == "check" }.configureEach {
+    dependsOn(verifyNoInternetPermission)
 }

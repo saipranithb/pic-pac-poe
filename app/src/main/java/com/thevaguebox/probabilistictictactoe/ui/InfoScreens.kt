@@ -20,6 +20,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.FilterChip
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
@@ -141,7 +142,7 @@ private fun SettingToggle(title: String, description: String, checked: Boolean, 
 }
 
 @Composable
-fun AiLabScreen(onBack: () -> Unit) {
+fun AiLabScreen(onBack: () -> Unit, onMcts: () -> Unit, onRl: () -> Unit) {
     InfoPage("AI Lab", "Algorithms, not magic", onBack) {
         Text(
             "Every agent sees the same public board, held piece, and bag counts. None can access the live bag or future draws.",
@@ -154,6 +155,13 @@ fun AiLabScreen(onBack: () -> Unit) {
         AlgorithmCard("EXPECTIMINIMAX", "Depth-limited Medium and exact memoized Hard.", SolarO)
         AlgorithmCard("STOCHASTIC MCTS", "Budgeted decision/chance search for comparison.", Violet)
         AlgorithmCard("TABULAR Q-LEARNING", "Offline self-play policy measured against the exact oracle.", Color(0xFF64E6C3))
+        Spacer(Modifier.height(14.dp))
+        Button(onClick = onMcts, modifier = Modifier.fillMaxWidth()) {
+            Text("Play against MCTS • 2,000 simulations")
+        }
+        Button(onClick = onRl, modifier = Modifier.fillMaxWidth()) {
+            Text("Play against RL • 92.3% oracle agreement")
+        }
         Spacer(Modifier.height(12.dp))
         Text(
             "The production opponent uses conventional exact search on Hard because this game is small enough to solve. The Lab keeps approximate methods honest.",

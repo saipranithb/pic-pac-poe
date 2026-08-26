@@ -4,13 +4,15 @@ kotlin = "2.3.21"
 coreKtx = "1.16.0"
 activityCompose = "1.10.1"
 lifecycle = "2.9.1"
-navigation = "2.9.0"
 datastore = "1.1.7"
 coroutines = "1.10.2"
 composeBom = "2025.05.01"
 junit = "4.13.2"
 androidxJunit = "1.2.1"
 espresso = "3.6.1"
+archCore = "2.2.0"
+androidxTestCore = "1.6.1"
+robolectric = "4.14.1"
 
 [libraries]
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
@@ -18,7 +20,6 @@ androidx-activity-compose = { module = "androidx.activity:activity-compose", ver
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-runtime-compose = { module = "androidx.lifecycle:lifecycle-runtime-compose", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
-androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigation" }
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastore" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "composeBom" }
@@ -32,6 +33,10 @@ androidx-material3 = { module = "androidx.compose.material3:material3" }
 junit = { module = "junit:junit", version.ref = "junit" }
 androidx-junit = { module = "androidx.test.ext:junit", version.ref = "androidxJunit" }
 androidx-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+androidx-arch-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "archCore" }
+androidx-test-core-ktx = { module = "androidx.test:core-ktx", version.ref = "androidxTestCore" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

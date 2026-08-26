@@ -78,7 +78,11 @@ fun PicPacApp(viewModel: GameViewModel = viewModel()) {
                         onReducedMotion = { scope.launch { settingsStore.setReducedMotion(it) } },
                         onTheme = { scope.launch { settingsStore.setTheme(it) } },
                     )
-                    AppScreen.AI_LAB -> AiLabScreen(onBack = viewModel::goHome)
+                    AppScreen.AI_LAB -> AiLabScreen(
+                        onBack = viewModel::goHome,
+                        onMcts = { viewModel.startPicPacAi(Difficulty.MCTS) },
+                        onRl = { viewModel.startPicPacAi(Difficulty.RL) },
+                    )
                 }
             }
         }

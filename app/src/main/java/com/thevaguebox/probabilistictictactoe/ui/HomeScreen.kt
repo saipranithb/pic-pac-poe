@@ -142,7 +142,7 @@ fun HomeScreen(
                         modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp),
                         horizontalArrangement = Arrangement.spacedBy(7.dp),
                     ) {
-                        Difficulty.entries.forEach { option ->
+                        Difficulty.entries.filter(Difficulty::production).forEach { option ->
                             FilterChip(
                                 selected = difficulty == option,
                                 onClick = { difficulty = option },
