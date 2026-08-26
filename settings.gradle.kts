@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "ProbabilisticTicTacToe"
-include(":app")
+include(":app", ":game-core", ":game-ai", ":game-tools")

@@ -1,9 +1,3 @@
 <resources>
-    <string name="app_name">PicPacPoe</string>
-    <string name="player_1_s_turn_assigned_x">Player 1\'s Turn - Assigned: X</string>
-    <string name="x_5_o_5">X: 5, O: 5</string>
-    <string name="restart_game">Restart Game</string>
-    <string name="o_5">O: 5</string>
-    <string name="x_5">X: 5</string>
-    <string name="player_1_s_turn">Player 1\'s Turn</string>
+    <string name="app_name">Pic-Pac-Poe</string>
 </resources>
