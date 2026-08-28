@@ -8,7 +8,7 @@ The Android remaster pairs a custom Compose interface with an exact stochastic-g
 
 | Home | Pic-Pac turn |
 |---|---|
-| ![Pic-Pac-Poe home](docs/screenshots/home.png) | ![A revealed Pic-Pac turn with live bag probabilities](docs/screenshots/picpac-game.png) |
+| ![Pic-Pac-Poe home](docs/screenshots/humanized/home-dark.png) | ![A revealed Pic-Pac turn with live bag probabilities](docs/screenshots/humanized/local-after-dark.png) |
 
 ## Game modes
 

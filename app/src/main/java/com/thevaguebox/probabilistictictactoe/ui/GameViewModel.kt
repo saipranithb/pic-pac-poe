@@ -40,11 +40,11 @@ import kotlin.random.Random
 enum class AppScreen { HOME, GAME, HOW_TO, SETTINGS, AI_LAB }
 enum class GameMode { CLASSIC_LOCAL, PIC_PAC_LOCAL, PIC_PAC_AI }
 enum class Difficulty(val title: String, val description: String, val production: Boolean = true) {
-    EASY("Easy", "Quick thinker. Makes human mistakes."),
-    MEDIUM("Medium", "Looks ahead and weighs the odds."),
-    HARD("Hard", "Solves the probabilities. Good luck."),
-    MCTS("MCTS Lab", "Learns by sampling thousands of possible futures.", false),
-    RL("RL Lab", "A compact policy trained through offline self-play.", false),
+    EASY("Easy", "Makes quick, imperfect moves."),
+    MEDIUM("Medium", "Looks a few turns ahead."),
+    HARD("Hard", "Plays the solved game."),
+    MCTS("MCTS", "Samples 2,000 games per move.", false),
+    RL("Q-learning", "Uses a table learned from self-play.", false),
 }
 enum class TurnStage { HANDOFF, REVEALING, PLAYING, AI_THINKING, TERMINAL }
 enum class UiEffect { REVEAL, PLACE, WIN, DRAW }

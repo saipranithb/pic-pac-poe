@@ -15,13 +15,13 @@ class ProductFlowTest {
 
     @Test fun localModeRequiresReadyBeforeReveal() {
         compose.onNodeWithText("Pic-Pac Local").performClick()
-        compose.onNodeWithText("PASS THE DEVICE").assertIsDisplayed()
-        compose.onNodeWithText("Ready • reveal my piece").performClick()
-        compose.onNodeWithText("YOU DREW").assertIsDisplayed()
+        compose.onNodeWithText("Player 1, you're up.").assertIsDisplayed()
+        compose.onNodeWithText("Ready").performClick()
+        compose.onNodeWithText("You drew").assertIsDisplayed()
     }
 
     @Test fun tutorialExplainsPlayerSymbolSeparation() {
         compose.onNodeWithText("How to play").performClick()
-        compose.onNodeWithText("PLAYERS ARE NOT X AND O").assertIsDisplayed()
+        compose.onNodeWithText("You're not X. You're not O.").assertIsDisplayed()
     }
 }

@@ -4,7 +4,6 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -23,12 +22,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Surface
@@ -132,50 +132,46 @@ fun GameScreen(
 @Composable
 private fun GameHeader(state: GameUiState, onHome: () -> Unit) {
     Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-        Surface(
-            modifier = Modifier.clip(CircleShape).clickable(role = Role.Button, onClick = onHome),
-            color = MaterialTheme.colorScheme.surfaceVariant,
-            shape = CircleShape,
-        ) { Text("←", modifier = Modifier.padding(horizontal = 14.dp, vertical = 9.dp), style = MaterialTheme.typography.titleLarge) }
-        Column(Modifier.weight(1f).padding(horizontal = 13.dp)) {
-            Text(
-                when (state.mode) {
-                    GameMode.CLASSIC_LOCAL -> "CLASSIC"
-                    GameMode.PIC_PAC_LOCAL -> "PIC-PAC LOCAL"
-                    GameMode.PIC_PAC_AI -> "PIC-PAC • ${state.difficulty.title.uppercase()}"
-                    null -> "PIC-PAC-POE"
-                },
-                style = MaterialTheme.typography.labelMedium,
-                color = MaterialTheme.colorScheme.primary,
-            )
-            Text("Match ${state.classic?.revision ?: state.picPac?.revision ?: 1}", style = MaterialTheme.typography.bodyMedium)
+        Box(
+            modifier = Modifier
+                .size(44.dp)
+                .clip(RoundedCornerShape(9.dp))
+                .clickable(role = Role.Button, onClick = onHome),
+            contentAlignment = Alignment.Center,
+        ) {
+            Text("←", style = MaterialTheme.typography.titleLarge)
         }
-        Surface(color = MaterialTheme.colorScheme.primary.copy(alpha = .12f), shape = CircleShape) {
-            Text("OFFLINE", Modifier.padding(horizontal = 11.dp, vertical = 7.dp), style = MaterialTheme.typography.labelMedium)
-        }
+        Text(
+            when (state.mode) {
+                GameMode.CLASSIC_LOCAL -> "Classic"
+                GameMode.PIC_PAC_LOCAL -> "Pic-Pac Local"
+                GameMode.PIC_PAC_AI -> "Vs Computer · ${state.difficulty.title}"
+                null -> "Pic-Pac-Poe"
+            },
+            modifier = Modifier.weight(1f).padding(horizontal = 8.dp),
+            style = MaterialTheme.typography.titleLarge,
+        )
     }
 }
 
 @Composable
 private fun PlayerStrip(active: Player) {
-    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(9.dp)) {
-        PlayerPill(Player.ONE, active == Player.ONE, PlayerOne, Modifier.weight(1f))
-        PlayerPill(Player.TWO, active == Player.TWO, PlayerTwo, Modifier.weight(1f))
+    Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(18.dp)) {
+        PlayerStatus(Player.ONE, active == Player.ONE, PlayerOne, Modifier.weight(1f))
+        PlayerStatus(Player.TWO, active == Player.TWO, PlayerTwo, Modifier.weight(1f))
     }
 }
 
 @Composable
-private fun PlayerPill(player: Player, active: Boolean, color: Color, modifier: Modifier = Modifier) {
-    Surface(
-        modifier = modifier.border(if (active) 1.5.dp else 1.dp, color.copy(alpha = if (active) .8f else .18f), RoundedCornerShape(17.dp)),
-        color = color.copy(alpha = if (active) .15f else .05f),
-        shape = RoundedCornerShape(17.dp),
-    ) {
-        Row(Modifier.padding(horizontal = 12.dp, vertical = 10.dp), verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.size(8.dp).background(if (active) color else color.copy(alpha = .25f), CircleShape))
+private fun PlayerStatus(player: Player, active: Boolean, color: Color, modifier: Modifier = Modifier) {
+    Column(modifier.alpha(if (active) 1f else .46f).padding(horizontal = 4.dp, vertical = 3.dp)) {
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Box(Modifier.size(7.dp).background(color, CircleShape))
             Text(player.label, Modifier.padding(start = 8.dp), style = MaterialTheme.typography.titleMedium)
-            if (active) Text("  TURN", style = MaterialTheme.typography.labelMedium, color = color)
         }
+        Text(if (active) "turn" else " ", style = MaterialTheme.typography.labelMedium, color = color)
+        Spacer(Modifier.height(6.dp))
+        Box(Modifier.fillMaxWidth().height(3.dp).background(if (active) color else Color.Transparent))
     }
 }
 
@@ -184,26 +180,29 @@ private fun BagHud(state: GameUiState) {
     val pic = state.picPac ?: return
     val held = state.heldSymbol
     Surface(
-        color = MaterialTheme.colorScheme.surface,
-        shape = RoundedCornerShape(22.dp),
-        tonalElevation = 2.dp,
+        color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = .42f),
+        shape = RoundedCornerShape(12.dp),
         modifier = Modifier.fillMaxWidth(),
     ) {
-        Column(Modifier.padding(horizontal = 17.dp, vertical = 14.dp)) {
+        Column(Modifier.padding(horizontal = 16.dp, vertical = 13.dp)) {
             Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 Column(Modifier.weight(1f)) {
-                    Text("HIDDEN BAG", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text("Bag", style = MaterialTheme.typography.titleMedium)
                     Text(
-                        if (held == null) "Next draw" else "Held ${held.name} • next draw odds",
+                        if (held == null) "Next draw" else "Drew ${held.name} · next draw",
                         style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
                 if (held != null) MiniMark(held)
             }
-            Spacer(Modifier.height(10.dp))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangemen
-                .spacedBy(10.dp)) {
+            HorizontalDivider(
+                modifier = Modifier.padding(vertical = 9.dp),
+                color = MaterialTheme.colorScheme.outline.copy(alpha = .22f),
+            )
+            Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
                 BagItem(Symbol.X, pic.remainingX, pic.nextXProbability, Modifier.weight(1f))
+                Box(Modifier.width(1.dp).height(30.dp).background(MaterialTheme.colorScheme.outline.copy(alpha = .25f)))
                 BagItem(Symbol.O, pic.remainingO, pic.nextOProbability, Modifier.weight(1f))
             }
         }
@@ -214,7 +213,7 @@ private fun BagHud(state: GameUiState) {
 private fun BagItem(symbol: Symbol, count: Int, probability: Double, modifier: Modifier) {
     val color = if (symbol == Symbol.X) ElectricX else SolarO
     Row(
-        modifier.background(color.copy(alpha = .1f), RoundedCornerShape(14.dp)).padding(11.dp),
+        modifier.padding(horizontal = 7.dp, vertical = 4.dp),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(symbol.name, style = MaterialTheme.typography.titleLarge, color = color)
@@ -229,18 +228,18 @@ private fun TurnBanner(state: GameUiState) {
     val color = if (state.activePlayer == Player.ONE) PlayerOne else PlayerTwo
     val text = when (state.stage) {
         TurnStage.HANDOFF -> "Pass to ${state.activePlayer.label}"
-        TurnStage.REVEALING -> "Drawing from the hidden bag…"
-        TurnStage.AI_THINKING -> "Opponent is weighing the odds…"
-        TurnStage.TERMINAL -> "Match complete"
-        TurnStage.PLAYING -> state.heldSymbol?.let { "Place your ${it.name}" }
-            ?: "${state.activePlayer.label}: choose a cell"
+        TurnStage.REVEALING -> "Drawing…"
+        TurnStage.AI_THINKING -> "Computer is thinking…"
+        TurnStage.TERMINAL -> "Game over"
+        TurnStage.PLAYING -> state.heldSymbol?.let { "Place ${it.name}" }
+            ?: "${state.activePlayer.label}, pick a square"
     }
-    Surface(
-        modifier = Modifier.fillMaxWidth().border(1.dp, color.copy(alpha = .35f), RoundedCornerShape(18.dp)),
-        color = color.copy(alpha = .09f),
-        shape = RoundedCornerShape(18.dp),
+    Row(
+        modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp, vertical = 5.dp),
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Text(text, Modifier.padding(14.dp), style = MaterialTheme.typography.titleMedium, textAlign = TextAlign.Center)
+        Box(Modifier.width(4.dp).height(25.dp).background(color, RoundedCornerShape(2.dp)))
+        Text(text, Modifier.padding(start = 11.dp), style = MaterialTheme.typography.titleLarge)
     }
 }
 
@@ -273,15 +272,20 @@ private fun BoardGrid(
         label = "winning line",
     )
     Box(
-        modifier = modifier
-            .aspectRatio(1f)
-            .clip(RoundedCornerShape(30.dp))
-            .background(MaterialTheme.colorScheme.surfaceVariant.copy(alpha = .62f))
-            .padding(8.dp),
+        modifier = modifier.aspectRatio(1f).padding(4.dp),
     ) {
-        Column(Modifier.fillMaxSize(), verticalArrangement = Arrangement.spacedBy(7.dp)) {
+        val gridColor = MaterialTheme.colorScheme.outline.copy(alpha = .48f)
+        Canvas(Modifier.fillMaxSize()) {
+            for (index in 1..2) {
+                val x = size.width * index / 3f
+                val y = size.height * index / 3f
+                drawLine(gridColor, Offset(x, 8.dp.toPx()), Offset(x, size.height - 8.dp.toPx()), 3.dp.toPx(), StrokeCap.Round)
+                drawLine(gridColor, Offset(8.dp.toPx(), y), Offset(size.width - 8.dp.toPx(), y), 3.dp.toPx(), StrokeCap.Round)
+            }
+        }
+        Column(Modifier.fillMaxSize()) {
             repeat(3) { row ->
-                Row(Modifier.weight(1f), horizontalArrangement = Arrangement.spacedBy(7.dp)) {
+                Row(Modifier.weight(1f)) {
                     repeat(3) { column ->
                         val index = row * 3 + column
                         val symbol = board[Cell.of(index)]
@@ -335,15 +339,16 @@ private fun BoardCell(
         contentDescription = "Cell ${index + 1}, ${symbol?.name ?: "empty"}"
         if (!enabled) disabled()
     }
-    Surface(
-        modifier = modifier.then(semantics).clickable(enabled = enabled, role = Role.Button, onClick = onClick),
-        color = if (winning) MaterialTheme.colorScheme.primary.copy(alpha = .16f) else MaterialTheme.colorScheme.surface,
-        shape = RoundedCornerShape(20.dp),
-        tonalElevation = if (symbol == null) 1.dp else 4.dp,
+    Box(
+        modifier = modifier
+            .then(semantics)
+            .padding(7.dp)
+            .clip(RoundedCornerShape(10.dp))
+            .background(if (winning) MaterialTheme.colorScheme.primary.copy(alpha = .13f) else Color.Transparent)
+            .clickable(enabled = enabled, role = Role.Button, onClick = onClick),
+        contentAlignment = Alignment.Center,
     ) {
-        Box(Modifier.fillMaxSize().padding(17.dp), contentAlignment = Alignment.Center) {
-            if (symbol != null) Mark(symbol, progress, Modifier.fillMaxSize())
-        }
+        if (symbol != null) Mark(symbol, progress, Modifier.fillMaxSize().padding(10.dp))
     }
 }
 
@@ -374,23 +379,20 @@ private fun Mark(symbol: Symbol, progress: Float, modifier: Modifier = Modifier)
 
 @Composable
 private fun MiniMark(symbol: Symbol) {
-    Box(
-        Modifier.size(42.dp).background((if (symbol == Symbol.X) ElectricX else SolarO).copy(alpha = .12f), CircleShape).padding(9.dp),
-    ) { Mark(symbol, 1f, Modifier.fillMaxSize()) }
+    Box(Modifier.size(42.dp).padding(7.dp)) { Mark(symbol, 1f, Modifier.fillMaxSize()) }
 }
 
 @Composable
 private fun HandoffOverlay(player: Player, onReady: () -> Unit) {
     OverlayScrim {
-        Text("PASS THE DEVICE", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.tertiary)
-        Text("${player.label}'s turn", style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center)
+        Text("${player.label}, you're up.", style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center)
         Text(
-            "Only reveal when the next player is ready. The draw is sampled before the animation.",
+            "Pass the phone, then tap when they're ready.",
             style = MaterialTheme.typography.bodyMedium,
             color = MaterialTheme.colorScheme.onSurfaceVariant,
             textAlign = TextAlign.Center,
         )
-        Button(onClick = onReady, modifier = Modifier.fillMaxWidth()) { Text("Ready • reveal my piece") }
+        Button(onClick = onReady, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(10.dp)) { Text("Ready") }
     }
 }
 
@@ -402,9 +404,8 @@ private fun RevealOverlay(state: GameUiState, reducedMotion: Boolean, onFinished
         onFinished()
     }
     OverlayScrim {
-        Text("YOU DREW", style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Text("You drew", style = MaterialTheme.typography.titleLarge)
         Box(Modifier.size(112.dp).padding(10.dp)) { Mark(held, 1f, Modifier.fillMaxSize()) }
-        Text("Plan the placement. The hidden counts already changed.", style = MaterialTheme.typography.bodyMedium, textAlign = TextAlign.Center)
     }
 }
 
@@ -414,12 +415,10 @@ private fun ResultOverlay(state: GameUiState, onRematch: () -> Unit, onHome: () 
     OverlayScrim {
         when (outcome) {
             GameOutcome.Draw -> {
-                Text("BALANCED TO THE END", style = MaterialTheme.typography.labelMedium, color = SolarO)
-                Text("Draw game", style = MaterialTheme.typography.headlineLarge)
-                Text("Nine placements. One hidden piece left.", style = MaterialTheme.typography.bodyLarge)
+                Text("Draw", style = MaterialTheme.typography.headlineLarge)
+                Text("No line this time.", style = MaterialTheme.typography.bodyLarge)
             }
             is GameOutcome.Win -> {
-                Text("LINE COMPLETE", style = MaterialTheme.typography.labelMedium, color = if (outcome.symbol == Symbol.X) ElectricX else SolarO)
                 Text("${outcome.player.label} wins", style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center)
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text("with ", style = MaterialTheme.typography.bodyLarge)
@@ -427,8 +426,8 @@ private fun ResultOverlay(state: GameUiState, onRematch: () -> Unit, onHome: () 
                 }
             }
         }
-        Button(onClick = onRematch, modifier = Modifier.fillMaxWidth()) { Text("Rematch • starter alternates") }
-        OutlinedButton(onClick = onHome, modifier = Modifier.fillMaxWidth()) { Text("Home") }
+        Button(onClick = onRematch, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(10.dp)) { Text("Rematch") }
+        OutlinedButton(onClick = onHome, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(10.dp)) { Text("Home") }
     }
 }
 
@@ -438,7 +437,7 @@ private fun OverlayScrim(content: @Composable ColumnScope.() -> Unit) {
         Modifier.fillMaxSize().background(Color.Black.copy(alpha = .64f)).padding(24.dp),
         contentAlignment = Alignment.Center,
     ) {
-        Surface(shape = RoundedCornerShape(30.dp), tonalElevation = 12.dp, modifier = Modifier.fillMaxWidth()) {
+        Surface(shape = RoundedCornerShape(18.dp), tonalElevation = 8.dp, modifier = Modifier.fillMaxWidth().widthIn(max = 440.dp)) {
             Column(
                 Modifier.padding(25.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
