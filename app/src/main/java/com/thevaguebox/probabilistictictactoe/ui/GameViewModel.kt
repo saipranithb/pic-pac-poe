@@ -28,6 +28,7 @@ import com.thevaguebox.picpac.core.ai.AiObservation
 import com.thevaguebox.picpac.core.ai.SearchLimits
 import com.thevaguebox.probabilistictictactoe.R
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -46,7 +47,17 @@ enum class Difficulty(val title: String, val description: String, val production
     MCTS("MCTS", "Samples 2,000 games per move.", false),
     RL("Q-learning", "Uses a table learned from self-play.", false),
 }
-enum class TurnStage { HANDOFF, REVEALING, PLAYING, AI_THINKING, TERMINAL }
+enum class TurnStage {
+    HANDOFF,
+    TURN_START,
+    REVEALING,
+    PLAYING,
+    AI_THINKING,
+    AI_TARGETING,
+    AI_PLACING,
+    AI_SETTLING,
+    TERMINAL,
+}
 enum class UiEffect { REVEAL, PLACE, WIN, DRAW }
 
 data class GameUiState(
@@ -56,6 +67,9 @@ data class GameUiState(
     val classic: ClassicState? = null,
     val picPac: PicPacState? = null,
     val stage: TurnStage = TurnStage.PLAYING,
+    val presentationId: Long = 0,
+    val aiTargetCell: Int? = null,
+    val aiMoveSymbol: Symbol? = null,
     val effectId: Long = 0,
     val effect: UiEffect? = null,
 ) {
@@ -65,11 +79,48 @@ data class GameUiState(
     val heldSymbol: Symbol? get() = (picPac?.phase as? PicPacPhase.AwaitingPlacement)?.held
     val winningLine: WinningLine? get() = (outcome as? GameOutcome.Win)?.lines?.firstOrNull()
     val isPicPac: Boolean get() = mode != GameMode.CLASSIC_LOCAL
+    val displayedPlayer: Player
+        get() = if (
+            mode == GameMode.PIC_PAC_AI && stage in setOf(
+                TurnStage.AI_THINKING,
+                TurnStage.AI_TARGETING,
+                TurnStage.AI_PLACING,
+                TurnStage.AI_SETTLING,
+            )
+        ) Player.TWO else activePlayer
+
+    fun actorLabel(player: Player): String = when {
+        mode != GameMode.PIC_PAC_AI -> player.label
+        player == Player.ONE -> "You"
+        else -> "Computer"
+    }
+
+    fun turnLabel(player: Player = displayedPlayer): String = when {
+        mode != GameMode.PIC_PAC_AI -> "${player.label}'s turn"
+        player == Player.ONE -> "Your turn"
+        else -> "Computer's turn"
+    }
+
+    fun drawLabel(): String? = heldSymbol?.let {
+        if (mode == GameMode.PIC_PAC_AI) "${actorLabel(activePlayer)} drew ${it.name}" else "You drew ${it.name}"
+    }
+
+    fun resultLabel(): String? = when (val result = outcome) {
+        null -> null
+        GameOutcome.Draw -> "Draw"
+        is GameOutcome.Win -> if (mode == GameMode.PIC_PAC_AI && result.player == Player.ONE) {
+            "You win"
+        } else {
+            "${actorLabel(result.player)} wins"
+        }
+    }
 }
 
-class GameViewModel(
+class GameViewModel @JvmOverloads constructor(
     application: Application,
     private val savedStateHandle: SavedStateHandle,
+    private val agentOverride: AiAgent? = null,
+    private val aiDispatcher: CoroutineDispatcher = Dispatchers.Default,
 ) : AndroidViewModel(application) {
     private var revision = savedStateHandle[KEY_REVISION] ?: 0L
     private var nextStarter = savedStateHandle.get<String>(KEY_NEXT_STARTER)?.let(Player::valueOf) ?: Player.ONE
@@ -78,6 +129,7 @@ class GameViewModel(
     private var aiJob: Job? = null
     private var pendingAi: PendingAi? = null
     private var revealAcknowledged = false
+    private var nextPresentationId = savedStateHandle[KEY_PRESENTATION_ID] ?: 0L
 
     private val easyAgent: AiAgent = HeuristicAgent(Random(System.nanoTime()))
     private val mediumAgent: AiAgent = ExpectiminimaxAgent(configuredDepth = 4)
@@ -97,13 +149,28 @@ class GameViewModel(
         restoreSessions()
         val state = _uiState.value
         if (state.screen == AppScreen.GAME && state.mode == GameMode.PIC_PAC_AI && state.stage != TurnStage.TERMINAL) {
-            when (state.picPac?.phase) {
-                PicPacPhase.AwaitingDraw -> revealCurrentPiece()
+            val restoredPicPac = state.picPac
+            when (val restoredPhase = restoredPicPac?.phase) {
+                PicPacPhase.AwaitingDraw -> Unit
                 is PicPacPhase.AwaitingPlacement -> if (state.activePlayer == Player.TWO) {
-                    revealAcknowledged = state.stage == TurnStage.AI_THINKING
-                    resumeAiTurnIfNeeded()
+                    when (state.stage) {
+                        TurnStage.AI_TARGETING -> {
+                            val cell = state.aiTargetCell?.let(Cell::of)
+                            if (cell != null) {
+                                pendingAi = PendingAi(AiRequest(restoredPicPac.revision, restoredPhase.token), cell)
+                            } else {
+                                launchAi(restoredPicPac)
+                            }
+                        }
+                        TurnStage.REVEALING -> launchAi(restoredPicPac)
+                        TurnStage.AI_THINKING -> {
+                            revealAcknowledged = true
+                            launchAi(restoredPicPac)
+                        }
+                        else -> Unit
+                    }
                 } else if (state.stage == TurnStage.AI_THINKING) {
-                    update(state.copy(stage = TurnStage.REVEALING))
+                    update(advanceStage(state, TurnStage.REVEALING))
                 }
                 else -> Unit
             }
@@ -141,15 +208,16 @@ class GameViewModel(
         revealCurrentPiece()
     }
 
-    fun revealAnimationFinished() {
+    fun presentationStepFinished(presentationId: Long) {
         val current = _uiState.value
-        if (current.stage != TurnStage.REVEALING) return
-        revealAcknowledged = true
-        if (current.mode == GameMode.PIC_PAC_AI && current.activePlayer == Player.TWO) {
-            val pending = pendingAi
-            if (pending != null) applyAiDecision(pending) else update(current.copy(stage = TurnStage.AI_THINKING))
-        } else {
-            update(current.copy(stage = TurnStage.PLAYING))
+        if (current.screen != AppScreen.GAME || current.presentationId != presentationId) return
+        when (current.stage) {
+            TurnStage.TURN_START -> revealCurrentPiece()
+            TurnStage.REVEALING -> finishReveal(current)
+            TurnStage.AI_TARGETING -> pendingAi?.let(::applyAiDecision)
+            TurnStage.AI_PLACING -> update(advanceStage(current, TurnStage.AI_SETTLING))
+            TurnStage.AI_SETTLING -> finishAiSettlement(current)
+            else -> Unit
         }
     }
 
@@ -198,17 +266,16 @@ class GameViewModel(
             val session = PicPacGameSession.create(starter, revision)
             picPacSession = session
             classicSession = null
-            val stage = if (mode == GameMode.PIC_PAC_LOCAL) TurnStage.HANDOFF else TurnStage.REVEALING
-            update(
-                GameUiState(
+            val initial = GameUiState(
                     screen = AppScreen.GAME,
                     mode = mode,
                     difficulty = difficulty,
                     picPac = session.state,
-                    stage = stage,
-                ),
+                )
+            update(
+                if (mode == GameMode.PIC_PAC_LOCAL) advanceStage(initial, TurnStage.HANDOFF)
+                else advanceStage(initial, TurnStage.TURN_START),
             )
-            if (mode == GameMode.PIC_PAC_AI) revealCurrentPiece()
         }
     }
 
@@ -218,9 +285,9 @@ class GameViewModel(
         if (result !is TransitionResult.Accepted) return
         revealAcknowledged = false
         pendingAi = null
-        val next = _uiState.value.copy(
-            picPac = result.state,
-            stage = TurnStage.REVEALING,
+        val next = advanceStage(
+            _uiState.value.copy(picPac = result.state, aiTargetCell = null, aiMoveSymbol = null),
+            TurnStage.REVEALING,
         ).withEffect(UiEffect.REVEAL)
         update(next)
         if (next.mode == GameMode.PIC_PAC_AI && result.state.activePlayer == Player.TWO) launchAi(result.state)
@@ -254,8 +321,8 @@ class GameViewModel(
         val base = _uiState.value.copy(picPac = result.state).withEffect(UiEffect.PLACE)
         update(base)
         when (base.mode) {
-            GameMode.PIC_PAC_LOCAL -> update(base.copy(stage = TurnStage.HANDOFF))
-            GameMode.PIC_PAC_AI -> revealCurrentPiece()
+            GameMode.PIC_PAC_LOCAL -> update(advanceStage(base, TurnStage.HANDOFF))
+            GameMode.PIC_PAC_AI -> update(advanceStage(base, TurnStage.TURN_START))
             else -> Unit
         }
     }
@@ -264,7 +331,7 @@ class GameViewModel(
         val phase = state.phase as? PicPacPhase.AwaitingPlacement ?: return
         val request = AiRequest(state.revision, phase.token)
         val observation = AiObservation.from(state, Player.TWO)
-        val agent = when (_uiState.value.difficulty) {
+        val agent = agentOverride ?: when (_uiState.value.difficulty) {
             Difficulty.EASY -> easyAgent
             Difficulty.MEDIUM -> mediumAgent
             Difficulty.HARD -> hardAgent
@@ -274,19 +341,19 @@ class GameViewModel(
         aiJob?.cancel()
         aiJob = viewModelScope.launch {
             try {
-                val decision = withContext(Dispatchers.Default) {
+                val decision = withContext(aiDispatcher) {
                     agent.chooseMove(observation, SearchLimits())
                 }
                 val pending = PendingAi(request, decision.cell)
                 pendingAi = pending
-                if (revealAcknowledged) applyAiDecision(pending)
+                if (revealAcknowledged) beginAiTargeting(pending)
             } catch (_: CancellationException) {
                 throw CancellationException()
             } catch (_: Throwable) {
                 val fallback = observation.legalCells.first()
                 val pending = PendingAi(request, fallback)
                 pendingAi = pending
-                if (revealAcknowledged) applyAiDecision(pending)
+                if (revealAcknowledged) beginAiTargeting(pending)
             }
         }
     }
@@ -298,25 +365,53 @@ class GameViewModel(
         if (state.revision != pending.request.revision || phase.token != pending.request.token) return
         if (state.activePlayer != Player.TWO || state.board[pending.cell] != null) return
         pendingAi = null
+        val placedSymbol = phase.held
         val result = session.place(pending.cell, pending.request.token)
         if (result !is TransitionResult.Accepted) return
-        if (result.state.isTerminal) {
-            update(
-                _uiState.value.copy(picPac = result.state, stage = TurnStage.TERMINAL)
-                    .withEffect(effectFor(result.event)),
-            )
+        val next = advanceStage(
+            _uiState.value.copy(
+                picPac = result.state,
+                aiTargetCell = pending.cell.index,
+                aiMoveSymbol = placedSymbol,
+            ),
+            TurnStage.AI_PLACING,
+        ).withEffect(effectFor(result.event))
+        update(next)
+    }
+
+    private fun finishReveal(current: GameUiState) {
+        revealAcknowledged = true
+        if (current.mode == GameMode.PIC_PAC_AI && current.activePlayer == Player.TWO) {
+            val pending = pendingAi
+            if (pending != null) beginAiTargeting(pending)
+            else update(advanceStage(current, TurnStage.AI_THINKING))
         } else {
-            update(_uiState.value.copy(picPac = result.state).withEffect(UiEffect.PLACE))
-            revealCurrentPiece()
+            update(advanceStage(current, TurnStage.PLAYING))
         }
     }
 
-    private fun resumeAiTurnIfNeeded() {
-        val state = picPacSession?.state ?: return
-        when (state.phase) {
-            PicPacPhase.AwaitingDraw -> revealCurrentPiece()
-            is PicPacPhase.AwaitingPlacement -> launchAi(state)
-            is PicPacPhase.Terminal -> Unit
+    private fun beginAiTargeting(pending: PendingAi) {
+        val current = _uiState.value
+        val phase = current.picPac?.phase as? PicPacPhase.AwaitingPlacement ?: return
+        if (current.activePlayer != Player.TWO || phase.token != pending.request.token) return
+        update(
+            advanceStage(
+                current.copy(aiTargetCell = pending.cell.index, aiMoveSymbol = phase.held),
+                TurnStage.AI_TARGETING,
+            ),
+        )
+    }
+
+    private fun finishAiSettlement(current: GameUiState) {
+        if (current.picPac?.isTerminal == true) {
+            update(advanceStage(current, TurnStage.TERMINAL))
+        } else {
+            update(
+                advanceStage(
+                    current.copy(aiTargetCell = null, aiMoveSymbol = null),
+                    TurnStage.TURN_START,
+                ),
+            )
         }
     }
 
@@ -325,6 +420,11 @@ class GameViewModel(
         aiJob = null
         pendingAi = null
         revealAcknowledged = false
+    }
+
+    private fun advanceStage(state: GameUiState, stage: TurnStage): GameUiState {
+        nextPresentationId++
+        return state.copy(stage = stage, presentationId = nextPresentationId)
     }
 
     private fun update(state: GameUiState) {
@@ -346,6 +446,9 @@ class GameViewModel(
         savedStateHandle[KEY_MODE] = state.mode?.name
         savedStateHandle[KEY_DIFFICULTY] = state.difficulty.name
         savedStateHandle[KEY_STAGE] = state.stage.name
+        savedStateHandle[KEY_PRESENTATION_ID] = state.presentationId
+        savedStateHandle[KEY_AI_TARGET] = state.aiTargetCell
+        savedStateHandle[KEY_AI_SYMBOL] = state.aiMoveSymbol?.name
         savedStateHandle[KEY_NEXT_STARTER] = nextStarter.name
         state.classic?.let(::saveClassic)
         state.picPac?.let(::savePicPac)
@@ -398,12 +501,31 @@ class GameViewModel(
         val mode = savedStateHandle.get<String>(KEY_MODE)?.let(GameMode::valueOf)
         val difficulty = savedStateHandle.get<String>(KEY_DIFFICULTY)?.let(Difficulty::valueOf) ?: Difficulty.MEDIUM
         val stage = savedStateHandle.get<String>(KEY_STAGE)?.let(TurnStage::valueOf) ?: TurnStage.PLAYING
+        val presentationId = savedStateHandle[KEY_PRESENTATION_ID] ?: 0L
+        val aiTargetCell = savedStateHandle.get<Int>(KEY_AI_TARGET)
+        val aiMoveSymbol = savedStateHandle.get<String>(KEY_AI_SYMBOL)?.let(Symbol::valueOf)
         if (screen != AppScreen.GAME || mode == null) return GameUiState(screen = screen, difficulty = difficulty)
         return try {
             if (savedStateHandle.get<String>(KEY_KIND) == "classic") {
-                GameUiState(screen, mode, difficulty, classic = restoreClassic(), stage = stage)
+                GameUiState(
+                    screen = screen,
+                    mode = mode,
+                    difficulty = difficulty,
+                    classic = restoreClassic(),
+                    stage = stage,
+                    presentationId = presentationId,
+                )
             } else {
-                GameUiState(screen, mode, difficulty, picPac = restorePicPac(), stage = stage)
+                GameUiState(
+                    screen = screen,
+                    mode = mode,
+                    difficulty = difficulty,
+                    picPac = restorePicPac(),
+                    stage = stage,
+                    presentationId = presentationId,
+                    aiTargetCell = aiTargetCell,
+                    aiMoveSymbol = aiMoveSymbol,
+                )
             }
         } catch (_: Throwable) {
             clearSavedGame()
@@ -467,6 +589,7 @@ class GameViewModel(
         listOf(
             KEY_KIND, KEY_BOARD, KEY_ACTIVE, KEY_STARTER, KEY_TOKEN, KEY_PHASE, KEY_HELD,
             KEY_REMAINING_X, KEY_REMAINING_O, KEY_OUTCOME, KEY_WINNER, KEY_WIN_SYMBOL, KEY_MODE,
+            KEY_AI_TARGET, KEY_AI_SYMBOL,
         ).forEach { savedStateHandle.remove<Any?>(it) }
     }
 
@@ -478,6 +601,9 @@ class GameViewModel(
         const val KEY_MODE = "mode"
         const val KEY_DIFFICULTY = "difficulty"
         const val KEY_STAGE = "stage"
+        const val KEY_PRESENTATION_ID = "presentation_id"
+        const val KEY_AI_TARGET = "ai_target"
+        const val KEY_AI_SYMBOL = "ai_symbol"
         const val KEY_REVISION = "revision"
         const val KEY_NEXT_STARTER = "next_starter"
         const val KEY_KIND = "kind"

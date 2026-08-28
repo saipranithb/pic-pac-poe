@@ -65,7 +65,7 @@ fun PicPacApp(viewModel: GameViewModel = viewModel()) {
                         reducedMotion = settings.reducedMotion,
                         onHome = viewModel::goHome,
                         onReady = viewModel::readyForReveal,
-                        onRevealFinished = viewModel::revealAnimationFinished,
+                        onPresentationFinished = viewModel::presentationStepFinished,
                         onCell = viewModel::place,
                         onRematch = viewModel::rematch,
                     )

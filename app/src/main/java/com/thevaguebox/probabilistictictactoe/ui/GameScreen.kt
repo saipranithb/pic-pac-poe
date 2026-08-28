@@ -40,13 +40,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.LiveRegionMode
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.disabled
+import androidx.compose.ui.semantics.liveRegion
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -71,7 +74,7 @@ fun GameScreen(
     reducedMotion: Boolean,
     onHome: () -> Unit,
     onReady: () -> Unit,
-    onRevealFinished: () -> Unit,
+    onPresentationFinished: (Long) -> Unit,
     onCell: (Int) -> Unit,
     onRematch: () -> Unit,
 ) {
@@ -82,6 +85,7 @@ fun GameScreen(
             .statusBarsPadding()
             .navigationBarsPadding(),
     ) {
+        PresentationClock(state, reducedMotion, onPresentationFinished)
         BoxWithConstraints(Modifier.fillMaxSize()) {
             val wide = maxWidth >= 760.dp
             val scroll = rememberScrollState()
@@ -93,7 +97,7 @@ fun GameScreen(
             ) {
                 GameHeader(state, onHome)
                 Spacer(Modifier.height(12.dp))
-                PlayerStrip(state.activePlayer)
+                PlayerStrip(state)
                 Spacer(Modifier.height(12.dp))
                 if (wide) {
                     Row(
@@ -122,7 +126,7 @@ fun GameScreen(
 
         when (state.stage) {
             TurnStage.HANDOFF -> HandoffOverlay(state.activePlayer, onReady)
-            TurnStage.REVEALING -> RevealOverlay(state, reducedMotion, onRevealFinished)
+            TurnStage.REVEALING -> RevealOverlay(state)
             TurnStage.TERMINAL -> ResultOverlay(state, onRematch, onHome)
             else -> Unit
         }
@@ -155,21 +159,22 @@ private fun GameHeader(state: GameUiState, onHome: () -> Unit) {
 }
 
 @Composable
-private fun PlayerStrip(active: Player) {
+private fun PlayerStrip(state: GameUiState) {
+    val active = state.displayedPlayer
     Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(18.dp)) {
-        PlayerStatus(Player.ONE, active == Player.ONE, PlayerOne, Modifier.weight(1f))
-        PlayerStatus(Player.TWO, active == Player.TWO, PlayerTwo, Modifier.weight(1f))
+        PlayerStatus(state, Player.ONE, active == Player.ONE, PlayerOne, Modifier.weight(1f))
+        PlayerStatus(state, Player.TWO, active == Player.TWO, PlayerTwo, Modifier.weight(1f))
     }
 }
 
 @Composable
-private fun PlayerStatus(player: Player, active: Boolean, color: Color, modifier: Modifier = Modifier) {
+private fun PlayerStatus(state: GameUiState, player: Player, active: Boolean, color: Color, modifier: Modifier = Modifier) {
     Column(modifier.alpha(if (active) 1f else .46f).padding(horizontal = 4.dp, vertical = 3.dp)) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Box(Modifier.size(7.dp).background(color, CircleShape))
-            Text(player.label, Modifier.padding(start = 8.dp), style = MaterialTheme.typography.titleMedium)
+            Text(state.actorLabel(player), Modifier.padding(start = 8.dp), style = MaterialTheme.typography.titleMedium)
         }
-        Text(if (active) "turn" else " ", style = MaterialTheme.typography.labelMedium, color = color)
+        Text(if (active) state.turnLabel(player) else " ", style = MaterialTheme.typography.labelMedium, color = color)
         Spacer(Modifier.height(6.dp))
         Box(Modifier.fillMaxWidth().height(3.dp).background(if (active) color else Color.Transparent))
     }
@@ -189,7 +194,13 @@ private fun BagHud(state: GameUiState) {
                 Column(Modifier.weight(1f)) {
                     Text("Bag", style = MaterialTheme.typography.titleMedium)
                     Text(
-                        if (held == null) "Next draw" else "Drew ${held.name} · next draw",
+                        if (held == null) {
+                            "Next draw"
+                        } else if (state.mode == GameMode.PIC_PAC_AI) {
+                            "${state.actorLabel(state.activePlayer)} drew ${held.name} · next draw"
+                        } else {
+                            "Drew ${held.name} · next draw"
+                        },
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -225,17 +236,28 @@ private fun BagItem(symbol: Symbol, count: Int, probability: Double, modifier: M
 
 @Composable
 private fun TurnBanner(state: GameUiState) {
-    val color = if (state.activePlayer == Player.ONE) PlayerOne else PlayerTwo
-    val text = when (state.stage) {
-        TurnStage.HANDOFF -> "Pass to ${state.activePlayer.label}"
-        TurnStage.REVEALING -> "Drawing…"
-        TurnStage.AI_THINKING -> "Computer is thinking…"
-        TurnStage.TERMINAL -> "Game over"
-        TurnStage.PLAYING -> state.heldSymbol?.let { "Place ${it.name}" }
-            ?: "${state.activePlayer.label}, pick a square"
+    val color = if (state.displayedPlayer == Player.ONE) PlayerOne else PlayerTwo
+    val text = if (state.mode == GameMode.PIC_PAC_AI) {
+        when (state.stage) {
+            TurnStage.TERMINAL -> "Game over"
+            TurnStage.PLAYING -> state.heldSymbol?.let { "Place ${it.name}" } ?: "Your turn"
+            else -> state.turnLabel()
+        }
+    } else {
+        when (state.stage) {
+            TurnStage.HANDOFF -> "Pass to ${state.activePlayer.label}"
+            TurnStage.REVEALING -> "Drawing…"
+            TurnStage.TERMINAL -> "Game over"
+            TurnStage.PLAYING -> state.heldSymbol?.let { "Place ${it.name}" }
+                ?: "${state.activePlayer.label}, pick a square"
+            else -> state.turnLabel()
+        }
     }
     Row(
-        modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp, vertical = 5.dp),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 4.dp, vertical = 5.dp)
+            .semantics { liveRegion = LiveRegionMode.Polite },
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Box(Modifier.width(4.dp).height(25.dp).background(color, RoundedCornerShape(2.dp)))
@@ -252,6 +274,9 @@ private fun BoardArea(state: GameUiState, reducedMotion: Boolean, onCell: (Int) 
         enabled = humanEnabled,
         winningLine = state.winningLine,
         reducedMotion = reducedMotion,
+        aiTargetCell = state.aiTargetCell,
+        aiMoveSymbol = state.aiMoveSymbol,
+        stage = state.stage,
         onCell = onCell,
         modifier = modifier,
     )
@@ -263,6 +288,9 @@ private fun BoardGrid(
     enabled: Boolean,
     winningLine: WinningLine?,
     reducedMotion: Boolean,
+    aiTargetCell: Int?,
+    aiMoveSymbol: Symbol?,
+    stage: TurnStage,
     onCell: (Int) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -290,6 +318,14 @@ private fun BoardGrid(
                         val index = row * 3 + column
                         val symbol = board[Cell.of(index)]
                         val winning = winningLine?.cells?.any { it.index == index } == true
+                        val computerFocus = aiTargetCell == index && stage in setOf(
+                            TurnStage.AI_TARGETING,
+                            TurnStage.AI_PLACING,
+                            TurnStage.AI_SETTLING,
+                        )
+                        val computerMoveDescription = if (computerFocus) {
+                            computerMoveDescription(index, aiMoveSymbol ?: symbol, stage)
+                        } else null
                         BoardCell(
                             symbol = symbol,
                             enabled = enabled && symbol == null,
@@ -298,6 +334,8 @@ private fun BoardGrid(
                             onClick = { onCell(index) },
                             modifier = Modifier.weight(1f).fillMaxHeight(),
                             index = index,
+                            computerFocus = computerFocus,
+                            computerMoveDescription = computerMoveDescription,
                         )
                     }
                 }
@@ -328,6 +366,8 @@ private fun BoardCell(
     onClick: () -> Unit,
     modifier: Modifier,
     index: Int,
+    computerFocus: Boolean,
+    computerMoveDescription: String?,
 ) {
     val progress by animateFloatAsState(
         targetValue = if (symbol == null) 0f else 1f,
@@ -336,15 +376,32 @@ private fun BoardCell(
     )
     val semantics = Modifier.semantics {
         role = Role.Button
-        contentDescription = "Cell ${index + 1}, ${symbol?.name ?: "empty"}"
+        contentDescription = computerMoveDescription ?: run {
+            val row = index / 3 + 1
+            val column = index % 3 + 1
+            "Row $row, column $column, ${symbol?.name ?: "empty"}"
+        }
+        if (computerMoveDescription != null) liveRegion = LiveRegionMode.Polite
         if (!enabled) disabled()
     }
+    val focusScale by animateFloatAsState(
+        targetValue = if (computerFocus && symbol == null) .92f else 1f,
+        animationSpec = if (reducedMotion) tween(0) else tween(220),
+        label = "computer cell focus",
+    )
     Box(
         modifier = modifier
             .then(semantics)
             .padding(7.dp)
+            .graphicsLayer { scaleX = focusScale; scaleY = focusScale }
             .clip(RoundedCornerShape(10.dp))
-            .background(if (winning) MaterialTheme.colorScheme.primary.copy(alpha = .13f) else Color.Transparent)
+            .background(
+                when {
+                    winning -> MaterialTheme.colorScheme.primary.copy(alpha = .13f)
+                    computerFocus -> PlayerTwo.copy(alpha = if (symbol == null) .16f else .09f)
+                    else -> Color.Transparent
+                },
+            )
             .clickable(enabled = enabled, role = Role.Button, onClick = onClick),
         contentAlignment = Alignment.Center,
     ) {
@@ -397,14 +454,15 @@ private fun HandoffOverlay(player: Player, onReady: () -> Unit) {
 }
 
 @Composable
-private fun RevealOverlay(state: GameUiState, reducedMotion: Boolean, onFinished: () -> Unit) {
+private fun RevealOverlay(state: GameUiState) {
     val held = state.heldSymbol ?: return
-    LaunchedEffect(state.picPac?.revision, state.picPac?.board?.occupiedCount, held) {
-        delay(if (reducedMotion) 80 else 520)
-        onFinished()
-    }
+    val announcement = state.drawLabel() ?: return
     OverlayScrim {
-        Text("You drew", style = MaterialTheme.typography.titleLarge)
+        Text(
+            announcement,
+            modifier = Modifier.semantics { liveRegion = LiveRegionMode.Assertive },
+            style = MaterialTheme.typography.titleLarge,
+        )
         Box(Modifier.size(112.dp).padding(10.dp)) { Mark(held, 1f, Modifier.fillMaxSize()) }
     }
 }
@@ -419,7 +477,12 @@ private fun ResultOverlay(state: GameUiState, onRematch: () -> Unit, onHome: () 
                 Text("No line this time.", style = MaterialTheme.typography.bodyLarge)
             }
             is GameOutcome.Win -> {
-                Text("${outcome.player.label} wins", style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center)
+                Text(
+                    state.resultLabel() ?: return@OverlayScrim,
+                    modifier = Modifier.semantics { liveRegion = LiveRegionMode.Assertive },
+                    style = MaterialTheme.typography.headlineLarge,
+                    textAlign = TextAlign.Center,
+                )
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Text("with ", style = MaterialTheme.typography.bodyLarge)
                     MiniMark(outcome.symbol)
@@ -428,6 +491,39 @@ private fun ResultOverlay(state: GameUiState, onRematch: () -> Unit, onHome: () 
         }
         Button(onClick = onRematch, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(10.dp)) { Text("Rematch") }
         OutlinedButton(onClick = onHome, modifier = Modifier.fillMaxWidth(), shape = RoundedCornerShape(10.dp)) { Text("Home") }
+    }
+}
+
+@Composable
+private fun PresentationClock(
+    state: GameUiState,
+    reducedMotion: Boolean,
+    onFinished: (Long) -> Unit,
+) {
+    val duration = presentationDelayMillis(state.stage, reducedMotion) ?: return
+    LaunchedEffect(state.presentationId, state.stage, reducedMotion) {
+        delay(duration)
+        onFinished(state.presentationId)
+    }
+}
+
+internal fun presentationDelayMillis(stage: TurnStage, reducedMotion: Boolean): Long? = when (stage) {
+    TurnStage.TURN_START -> if (reducedMotion) 160L else 300L
+    TurnStage.REVEALING -> if (reducedMotion) 500L else 650L
+    TurnStage.AI_TARGETING -> if (reducedMotion) 160L else 280L
+    TurnStage.AI_PLACING -> if (reducedMotion) 180L else 340L
+    TurnStage.AI_SETTLING -> if (reducedMotion) 320L else 480L
+    else -> null
+}
+
+internal fun computerMoveDescription(index: Int, symbol: Symbol?, stage: TurnStage): String? {
+    if (stage !in setOf(TurnStage.AI_TARGETING, TurnStage.AI_PLACING, TurnStage.AI_SETTLING)) return null
+    val row = index / 3 + 1
+    val column = index % 3 + 1
+    return if (stage == TurnStage.AI_TARGETING) {
+        "Computer selected row $row, column $column"
+    } else {
+        symbol?.let { "Computer placed ${it.name} in row $row, column $column" }
     }
 }
 

@@ -17,7 +17,7 @@ class ProductFlowTest {
         compose.onNodeWithText("Pic-Pac Local").performClick()
         compose.onNodeWithText("Player 1, you're up.").assertIsDisplayed()
         compose.onNodeWithText("Ready").performClick()
-        compose.onNodeWithText("You drew").assertIsDisplayed()
+        compose.onNodeWithText("You drew", substring = true).assertIsDisplayed()
     }
 
     @Test fun tutorialExplainsPlayerSymbolSeparation() {
