@@ -201,7 +201,8 @@ private fun BagHud(state: GameUiState) {
                 if (held != null) MiniMark(held)
             }
             Spacer(Modifier.height(10.dp))
-            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangemen
+                .spacedBy(10.dp)) {
                 BagItem(Symbol.X, pic.remainingX, pic.nextXProbability, Modifier.weight(1f))
                 BagItem(Symbol.O, pic.remainingO, pic.nextOProbability, Modifier.weight(1f))
             }
