@@ -96,10 +96,20 @@ The `verifyNoInternetPermission` Gradle task inspects the merged release manifes
 Requirements: Android SDK 36, JDK 17, and the included Gradle wrapper.
 
 ```powershell
-.\gradlew.bat check :app:assembleDebug :app:bundleRelease
+.\gradlew.bat clean check :app:assembleDebug :app:bundleRelease
 ```
 
-The project stays on Android Studio's AGP 8.8 compatibility lane. Release shrinking is deliberately disabled because AGP 8.8's bundled R8 predates Kotlin 2.3 metadata support; re-enable it only alongside R8 8.13.19 or a newer compatible Android Studio/AGP lane. The repository intentionally contains no signing key, so `bundleRelease` produces an unsigned AAB that must be signed through the owner's private Play upload-key workflow.
+The project stays on Android Studio's AGP 8.8 compatibility lane. Release shrinking is deliberately disabled because AGP 8.8's bundled R8 predates Kotlin 2.3 metadata support; re-enable it only alongside R8 8.13.19 or a newer compatible Android Studio/AGP lane. This trades a larger 2.0.0 artifact for a build configuration that is verified on the supported IDE lane.
+
+The repository contains no signing key or signing secret. With no `ANDROID_UPLOAD_*` environment variables, `bundleRelease` intentionally produces an unsigned local AAB. The approval-gated GitHub release workflow materializes the upload key only at runtime and produces the signed artifact; it does not publish to Google Play.
+
+## CI and release operations
+
+- `.github/workflows/ci.yml` runs the authoritative clean verification on pushes and pull requests targeting `development` or `main`.
+- `.github/workflows/release.yml` accepts an explicit full commit SHA, runs under the protected `production` environment, verifies the same gates, signs with environment secrets, verifies the AAB signature, and uploads the signed bundle.
+- Third-party workflow code is pinned to immutable commit SHAs, and the Gradle 8.10.2 distribution is protected by its published SHA-256 checksum.
+
+Owner setup, Play Console checks, signing secret names, and the exact handoff sequence are documented in [the Play release checklist](docs/play-release-checklist.md). The 2.0.0 Play notes are in [docs/play/release-notes-2.0.0.txt](docs/play/release-notes-2.0.0.txt).
 
 The suite covers conservation/probability invariants, all winning lines, player/symbol separation, invalid/stale/terminal commands, exact state enumeration and opening values, every-state legality for fast agents, seeded MCTS, policy serialization, paired tournaments, ViewModel reveal/rematch/recreation behavior, Compose product flows, and the merged-manifest offline assertion.
 
@@ -109,4 +119,4 @@ The pre-remaster dirty prototype is preserved on `codex/prototype-wip-20260826` 
 
 ## License and privacy
 
-Source code is licensed under [Apache-2.0](LICENSE). The app's data behavior is described in [docs/privacy-policy.md](docs/privacy-policy.md).
+Source code is licensed under [Apache-2.0](LICENSE). The app's data behavior is described in [docs/privacy-policy.md](docs/privacy-policy.md); the owner must host that policy at a stable public URL before Play submission.

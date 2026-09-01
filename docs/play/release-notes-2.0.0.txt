@@ -1,0 +1,7 @@
+Pic-Pac-Poe has been rebuilt for a clearer, faster offline game experience.
+
+- Refreshed phone, tablet, light, and dark layouts
+- Clear You/Computer turn, draw, and placement feedback
+- Easy, Medium, and solved Hard computer opponents
+- Improved local handoff, accessibility, reduced motion, and saved-state reliability
+- New AI Lab with MCTS and locally trained Q-learning opponents

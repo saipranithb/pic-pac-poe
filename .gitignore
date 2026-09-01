@@ -15,5 +15,11 @@ local.properties
 *.dm
 *.jks
 *.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+keystore.properties
+signing.properties
 .env
 .env.*

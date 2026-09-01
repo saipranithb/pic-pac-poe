@@ -4,17 +4,50 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+val releaseApplicationId = "com.thevaguebox.probabilistictictactoe"
+val releaseCompileSdk = 36
+val releaseTargetSdk = 36
+val releaseVersionCode = 5
+val releaseVersionName = "2.0.0"
+
+val uploadKeystorePath = providers.environmentVariable("ANDROID_UPLOAD_KEYSTORE_PATH").orNull
+val uploadKeyAlias = providers.environmentVariable("ANDROID_UPLOAD_KEY_ALIAS").orNull
+val uploadKeyPassword = providers.environmentVariable("ANDROID_UPLOAD_KEY_PASSWORD").orNull
+val uploadStorePassword = providers.environmentVariable("ANDROID_UPLOAD_STORE_PASSWORD").orNull
+val uploadSigningValues = listOf(
+    uploadKeystorePath,
+    uploadKeyAlias,
+    uploadKeyPassword,
+    uploadStorePassword,
+)
+val suppliedUploadSigningValues = uploadSigningValues.count { !it.isNullOrBlank() }
+check(suppliedUploadSigningValues == 0 || suppliedUploadSigningValues == uploadSigningValues.size) {
+    "Release signing is only partially configured. Supply all ANDROID_UPLOAD_* values or none of them."
+}
+val uploadSigningConfigured = suppliedUploadSigningValues == uploadSigningValues.size
+
 android {
-    namespace = "com.thevaguebox.probabilistictictactoe"
-    compileSdk = 36
+    namespace = releaseApplicationId
+    compileSdk = releaseCompileSdk
 
     defaultConfig {
-        applicationId = "com.thevaguebox.probabilistictictactoe"
+        applicationId = releaseApplicationId
         minSdk = 24
-        targetSdk = 36
-        versionCode = 5
-        versionName = "2.0.0"
+        targetSdk = releaseTargetSdk
+        versionCode = releaseVersionCode
+        versionName = releaseVersionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        if (uploadSigningConfigured) {
+            create("upload") {
+                storeFile = file(requireNotNull(uploadKeystorePath))
+                keyAlias = requireNotNull(uploadKeyAlias)
+                keyPassword = requireNotNull(uploadKeyPassword)
+                storePassword = requireNotNull(uploadStorePassword)
+            }
+        }
     }
 
     buildTypes {
@@ -23,6 +56,9 @@ android {
             // but its bundled R8 predates Kotlin 2.3 metadata support.
             isMinifyEnabled = false
             isShrinkResources = false
+            if (uploadSigningConfigured) {
+                signingConfig = signingConfigs.getByName("upload")
+            }
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
@@ -45,6 +81,22 @@ android {
 
     lint {
         disable += setOf("AndroidGradlePluginVersion", "GradleDependency", "NewerVersionAvailable")
+    }
+}
+
+val verifyReleaseConfiguration by tasks.registering {
+    group = "verification"
+    description = "Verifies the immutable Play identity and 2.0.0 release coordinates."
+    doLast {
+        check(android.namespace == releaseApplicationId)
+        check(android.compileSdk == releaseCompileSdk)
+        check(android.defaultConfig.applicationId == releaseApplicationId)
+        check(android.defaultConfig.targetSdk == releaseTargetSdk)
+        check(android.defaultConfig.versionCode == releaseVersionCode)
+        check(android.defaultConfig.versionName == releaseVersionName)
+        check(!android.buildTypes.getByName("release").isMinifyEnabled) {
+            "R8 must stay disabled on the AGP 8.8 / Kotlin 2.3 compatibility lane."
+        }
     }
 }
 
@@ -102,4 +154,5 @@ val verifyNoInternetPermission by tasks.registering {
 
 tasks.matching { it.name == "check" }.configureEach {
     dependsOn(verifyNoInternetPermission)
+    dependsOn(verifyReleaseConfiguration)
 }
