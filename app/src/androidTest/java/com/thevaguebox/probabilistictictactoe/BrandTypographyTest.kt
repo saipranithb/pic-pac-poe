@@ -62,6 +62,7 @@ import com.thevaguebox.probabilistictictactoe.ui.TurnStage
 import com.thevaguebox.probabilistictictactoe.ui.components.HomeWordmark
 import com.thevaguebox.probabilistictictactoe.ui.components.WordmarkProgressKey
 import com.thevaguebox.probabilistictictactoe.ui.theme.FormBrandTypography
+import com.thevaguebox.probabilistictictactoe.ui.theme.FormTheme
 import com.thevaguebox.probabilistictictactoe.ui.theme.PicPacTheme
 import kotlin.math.abs
 import org.junit.Assert.assertEquals
@@ -74,6 +75,32 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class BrandTypographyTest {
     @get:Rule val compose = createComposeRule()
+
+    @Test fun wordmarkUsesCoralNeutralPistachioGroupsAndSubordinateNeutralHyphens() {
+        val theme = mutableStateOf(ThemePreference.DARK)
+        var expectedColors = emptyList<androidx.compose.ui.graphics.Color>()
+        compose.setContent {
+            PicPacTheme(theme.value, reducedMotion = true) {
+                val colors = FormTheme.colors
+                SideEffect { expectedColors = listOf(colors.x, colors.textSecondary, colors.text, colors.textSecondary, colors.o) }
+                Surface(Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
+                    HomeWordmark(Modifier.padding(20.dp))
+                }
+            }
+        }
+        listOf(ThemePreference.DARK, ThemePreference.LIGHT).forEach { value ->
+            compose.runOnIdle { theme.value = value }
+            compose.waitForIdle()
+            compose.onNodeWithText("Pic-Pac-Poe").assertIsDisplayed()
+            listOf("Pic", "-", "Pac", "-", "Poe").forEachIndexed { index, word ->
+                val layouts = mutableListOf<TextLayoutResult>()
+                compose.onNodeWithTag("wordmark-part-$index", useUnmergedTree = true)
+                    .performSemanticsAction(SemanticsActions.GetTextLayoutResult) { it(layouts) }
+                assertEquals(word, layouts.single().layoutInput.text.text)
+                assertEquals("Semantic group colour $index in $value", expectedColors[index], layouts.single().layoutInput.style.color)
+            }
+        }
+    }
 
     @Test fun candidateWeightsAreRenderedTogetherInBothThemes() {
         val theme = mutableStateOf(ThemePreference.DARK)
@@ -336,6 +363,11 @@ class BrandTypographyTest {
                 assertTrue("Part $index crossed title height: $bounds / $parent", bounds.top >= parent.top - 1f && bounds.bottom <= parent.bottom + 1f)
             }
         }
+        val contentCenterX = (parts.first().left + parts.last().right) / 2f
+        assertTrue(
+            "Wordmark content is not centered: contentCenterX=$contentCenterX parentCenterX=${parent.center.x} parts=$parts parent=$parent",
+            abs(contentCenterX - parent.center.x) <= 1f,
+        )
         parts.zipWithNext().forEachIndexed { index, (left, right) ->
             assertTrue("English word groups reordered or overlap at $index: $parts", left.right <= right.left + 1f)
             assertTrue("Wordmark parts do not share one line: $parts", abs(left.top - right.top) < 1f)

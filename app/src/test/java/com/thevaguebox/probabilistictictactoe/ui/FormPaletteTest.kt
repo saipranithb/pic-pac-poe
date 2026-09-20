@@ -8,6 +8,13 @@ import org.junit.Assert.assertTrue
 import org.junit.Test
 
 class FormPaletteTest {
+    @Test fun `every wordmark group meets normal text contrast on the Home canvas`() {
+        listOf(FormDarkColors, FormLightColors).forEach { colors ->
+            listOf(colors.x, colors.textSecondary, colors.text, colors.textSecondary, colors.o)
+                .forEachIndexed { index, color -> assertContrast(color, colors.canvas, 4.5, "wordmark part $index") }
+        }
+    }
+
     @Test fun `semantic text meets normal text contrast on every content surface`() {
         listOf(FormDarkColors, FormLightColors).forEach { colors ->
             val surfaces = listOf(colors.canvas, colors.surface, colors.surfaceRaised, colors.recess)

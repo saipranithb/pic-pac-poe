@@ -17,6 +17,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.platform.LocalDensity
@@ -54,6 +55,7 @@ fun HomeWordmark(
     onEntranceStarted: () -> Unit = {},
     style: TextStyle = FormBrandTypography.wordmark,
 ) {
+    val colors = FormTheme.colors
     val reducedMotion = FormTheme.reducedMotion
     // The app shell consumes the entrance as soon as it starts. Latch the entry decision so
     // that parent recomposition does not cancel this visit's one animation.
@@ -98,6 +100,7 @@ fun HomeWordmark(
             heading()
             this[WordmarkProgressKey] = progress.map { it.value }
         },
+        contentAlignment = Alignment.TopCenter,
     ) {
         val available = (constraints.maxWidth - 2 * with(density) { 1.dp.roundToPx() }).coerceAtLeast(0)
         val fittedStyle = remember(available, density, style, measurer) {
@@ -136,7 +139,12 @@ fun HomeWordmark(
                             rotationZ = if (part == "-") 0f else GroupRotations[group] * (1f - value)
                         },
                         style = fittedStyle,
-                        color = FormTheme.colors.text,
+                        color = when (index) {
+                            0 -> colors.x
+                            2 -> colors.text
+                            4 -> colors.o
+                            else -> colors.textSecondary
+                        },
                         maxLines = 1,
                         softWrap = false,
                     )
