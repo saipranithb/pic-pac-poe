@@ -8,7 +8,9 @@ The Android remaster pairs a custom Compose interface with an exact stochastic-g
 
 | Home | Pic-Pac turn |
 |---|---|
-| ![Pic-Pac-Poe home](docs/screenshots/humanized/home-dark.png) | ![A revealed Pic-Pac turn with live bag probabilities](docs/screenshots/humanized/local-after-dark.png) |
+| ![Form Playground Home](docs/screenshots/form-playground-2/home-dark.png) | ![A real computer-game human turn with live bag probabilities](docs/screenshots/form-playground-2/human-turn-dark.png) |
+
+The implemented **Form Playground 2.0** system uses cocoa surfaces, coral/pistachio pieces, a single recessed board and independent actor colors. See [the design-system and verification handoff](docs/form-playground-2.md) for portable tokens, presentation timing, accessibility contracts and screenshot provenance.
 
 ## Game modes
 
@@ -77,7 +79,7 @@ The shipped v1 RL artifact was trained for 250,000 self-play episodes. On its fi
 - one edge-to-edge Compose activity;
 - API 36 target, Java/JVM 17;
 - phone/tablet/split-window adaptive game layout;
-- custom-drawn X/O pieces and winning-line animation;
+- native path-drawn resin X/O pieces, restrained contact motion and a static final winning line;
 - deliberate local handoff/reveal experience;
 - state-derived probability HUD;
 - light/dark/system themes and reduced-motion option;
