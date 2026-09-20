@@ -9,6 +9,7 @@ import androidx.compose.animation.ExitTransition
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.togetherWith
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -28,6 +29,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.thevaguebox.probabilistictictactoe.settings.AppSettings
 import com.thevaguebox.probabilistictictactoe.settings.SettingsStore
 import com.thevaguebox.probabilistictictactoe.ui.theme.PicPacTheme
+import com.thevaguebox.probabilistictictactoe.ui.theme.FormMotion
 import kotlinx.coroutines.launch
 
 @Composable
@@ -40,14 +42,14 @@ fun PicPacApp(viewModel: GameViewModel = viewModel()) {
 
     BackHandler(enabled = game.screen != AppScreen.HOME) { viewModel.goHome() }
 
-    PicPacTheme(settings.theme) {
+    PicPacTheme(settings.theme, reducedMotion = settings.reducedMotion) {
         FeedbackEffects(game, settings)
         Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
             AnimatedContent(
                 targetState = game.screen,
                 transitionSpec = {
                     if (settings.reducedMotion) EnterTransition.None togetherWith ExitTransition.None
-                    else fadeIn() togetherWith fadeOut()
+                    else fadeIn(tween(FormMotion.stateMillis)) togetherWith fadeOut(tween(FormMotion.stateMillis))
                 },
                 label = "screen",
             ) { screen ->
