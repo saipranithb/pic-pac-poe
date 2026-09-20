@@ -69,8 +69,20 @@ class ProductFlowTest {
     }
 
     @Test fun computerCompletesOneTurnAndReturnsControlOnlyAfterSettlement() {
-        compose.onNodeWithText("Easy").performScrollTo().performClick()
-        compose.onNodeWithText("Easy").assertIsSelected()
+        verifyComputerTurn("Easy")
+    }
+
+    @Test fun mediumComputerCompletesOneTurnAndReturnsControlOnlyAfterSettlement() {
+        verifyComputerTurn("Medium")
+    }
+
+    @Test fun hardComputerCompletesOneTurnAndReturnsControlOnlyAfterSettlement() {
+        verifyComputerTurn("Hard")
+    }
+
+    private fun verifyComputerTurn(difficulty: String) {
+        compose.onNodeWithText(difficulty).performScrollTo().performClick()
+        compose.onNodeWithText(difficulty).assertIsSelected()
         // Presentation delays use Compose's clock. Polling real time alone cannot advance them.
         // The activity's existing ViewModel is observed only; every game command remains a UI tap.
         compose.mainClock.autoAdvance = false
