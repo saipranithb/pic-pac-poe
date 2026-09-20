@@ -100,9 +100,11 @@ Add native tests for the chosen scene inactive/active policy: interrupted reveal
 | Same: emotional headline fixtures | Native modal snapshot/UI tests | Computer win/local win/Draw/computer reveal/handoff readable in both themes and large text; actions reachable; handoff privacy preserved |
 | [BrandLifecycleTest.kt](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/BrandLifecycleTest.kt): navigation and recreation | `BrandSceneLifecycleUITests` | Settled title never replays on Settings→Home or scene reconstruction; recreation during entrance returns final immediately |
 | [ProductFlowTest.kt](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/ProductFlowTest.kt): six integrated tests for Local/tutorial/Classic and Easy/Medium/Hard AI | `ProductFlowUITests` | Ready gates Local; tutorial accurate; scripted Classic win/rematch/restoration; each production difficulty's actual coordinator turn targets before mutation and returns human control only after settlement |
+| [HomeSceneMotionTest.kt](../../app/src/test/java/com/thevaguebox/probabilistictictactoe/ui/HomeSceneMotionTest.kt): production animation-spec samples | `HomeIllustrationMotionTests` | 1400ms halves / 2800ms cycle; complementary bounded alpha; 280/400ms fades; one bounded pulse per normal symbol; unit scale throughout Reduce Motion; seamless repeat boundaries |
+| [HomeSceneAnimationTest.kt](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/HomeSceneAnimationTest.kt): four clock-controlled UI tests | `HomeIllustrationUITests` | X→O→X, dark/light, 412/320dp, normal/reduced; scene and controls fixed; outer artwork unchanged; stable single description; readiness/lifecycle/removal/offscreen cancellation and restart; animations-off instant alternation |
 | [VisualCapture.kt](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/VisualCapture.kt) | XCUITest attachments/snapshot harness | Capture actual app render; wait for draw; record scenario metadata. Never use Android screenshot as SwiftUI background |
 
-The current instrumentation inventory is 22 test methods: seven `BrandTypographyTest`, two `BrandLifecycleTest`, seven `FormPresentationTest`, and six `ProductFlowTest`. This is a source inventory, **not a pass claim**; consult final execution evidence. Automated contrast/layout checks supplement—not replace—the human acceptance tasks below.
+The current instrumentation inventory is 26 test methods: seven `BrandTypographyTest`, two `BrandLifecycleTest`, seven `FormPresentationTest`, six `ProductFlowTest`, and four `HomeSceneAnimationTest`. This is a source inventory, **not a pass claim**; consult final execution evidence. The Home illustration also has production-spec JVM coverage in `HomeSceneMotionTest`. Automated contrast/layout checks supplement—not replace—the human acceptance tasks below.
 
 ## 3. Screenshot parity matrix
 
@@ -115,8 +117,9 @@ Create stable iOS fixture references corresponding to the committed [Android ref
 - [ ] Targeting frame empty at target; placement frame contains same symbol at same target; actor remains Computer through settlement.
 - [ ] How to play, Settings and AI Lab in dark/light; selected/pressed/focused/disabled controls and off/on settings.
 - [ ] Wide layout and accessibility-text single-column fallback; result modal with long heading and scroll-reachable actions.
-- [ ] Reduced Motion counterparts preserve each readable stage with static decorative artwork.
+- [ ] Reduced Motion counterparts preserve each readable game stage with static decorative artwork; Home's central explanatory X/O retains its slow opacity-only alternation, with no scale pulse.
 - [ ] Title animation sampled at start, stagger, settle and final; navigation/recreation return final still image.
+- [ ] Home X/O sequence at normal and 320 dp width, dark/light and normal/reduced motion: both symbols sampled; same scene/control bounds; bag/arrows/board unchanged. System animations-off still alternates instantaneously.
 
 Strict visual failures: clipped wordmark, actor/symbol ambiguity, colored functional text below contrast threshold, invisible selected state, moving hitboxes, a board behind the private handoff, missing bag exclusion information, disappearing/overlapping modal actions, or result displayed before AI settlement. Renderer differences in antialiasing alone are not product failures.
 
@@ -159,6 +162,7 @@ Do not begin a later milestone to conceal an unfinished earlier behavioral gate.
 
 - [ ] Centered grouped wordmark, compact scene, exact modes/computer setup/help/Lab/settings hierarchy.
 - [ ] Save once-per-session entrance consumption at start; wait for settings; preserve RTL identity and narrow fit.
+- [ ] Implement only the approved visibility-scoped central X/O illustration:1400 ms per symbol, production piece paths/colors, fixed 44 dp allocation, one normal pulse, reduced-motion opacity-only alternation and stable grouped speech. Cancel inactive/offscreen/disposed and restart from X; never call game RNG/state or emit feedback.
 - [ ] Acceptance: normal/dark/light/large-text snapshots approved; return Home/reconstruction never replays consumed entrance; subtitle/controls retain hierarchy.
 
 ### 7. Classic mode
@@ -185,7 +189,7 @@ Do not begin a later milestone to conceal an unfinished earlier behavioral gate.
 ### 11. Motion, haptics and sound
 
 - [ ] Reproduce bounded title/press/piece/screen motion and essential presentation clock; native feedback service responds once per event.
-- [ ] Acceptance: normal/reduced contract tests pass, no idle looping, no feedback replay on scene restore; physical feedback remains pending until human checked.
+- [ ] Acceptance: normal/reduced contract tests pass, only the approved visible Home X/O illustration repeats, no feedback replay on scene restore; physical feedback remains pending until human checked.
 
 ### 12. Accessibility
 

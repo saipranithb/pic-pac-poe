@@ -34,6 +34,7 @@ Native baseline is Android API35 x86_64 emulator,1080×2400 physical pixels,420d
 
 Canonical quick reviews:
 
+- [Home X/O sequence](reference/home-scene-contact-sheet.png): current illustration, X then O in both themes, normal/reduced motion and 412dp/320dp layouts. Full `home-scene-*` screenshots are individually listed in the manifest; these supersede the old static-X illustration only. The rest of the original reference set retains its separately recorded source.
 - [Final contact sheet](reference/contact-sheet.png):24 labelled states across Home, game, computer sequence, support screens and adaptive examples.
 - [Home title comparison](reference/home-title-before-after.png): centered neutral before and final semantic color after, both themes.
 - [Home dark](reference/home-dark.png) and [Home light](reference/home-light.png): primary identity references.
@@ -49,7 +50,9 @@ python3 docs/ios-handoff/verify-handoff.py
 (cd docs/ios-handoff/reference && shasum -a 256 -c checksums.sha256)
 ```
 
-For capture reproduction use the committed [BrandTypographyTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/BrandTypographyTest.kt), [BrandLifecycleTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/BrandLifecycleTest.kt), [FormPresentationTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/FormPresentationTest.kt), [ProductFlowTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/ProductFlowTest.kt) and [VisualCapture](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/VisualCapture.kt). Set instrumentation argument `captureFormScreenshots=true`; outputs go to the app's external-files `form-verification` directory on the **selected test emulator**. Always identify the intended device explicitly; do not run against a connected owner's phone accidentally. Full commands/results are in [release verification](RELEASE_VERIFICATION.md).
+For capture reproduction use the committed [HomeSceneAnimationTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/HomeSceneAnimationTest.kt), [BrandTypographyTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/BrandTypographyTest.kt), [BrandLifecycleTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/BrandLifecycleTest.kt), [FormPresentationTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/FormPresentationTest.kt), [ProductFlowTest](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/ProductFlowTest.kt) and [VisualCapture](../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/VisualCapture.kt). Set instrumentation argument `captureFormScreenshots=true`; outputs go to the app's external-files `form-verification` directory on the **selected test emulator**. Always identify the intended device explicitly; do not run against a connected owner's phone accidentally. Full commands/results are in [release verification](RELEASE_VERIFICATION.md).
+
+The Home sequence test freezes the Compose clock before composition, captures a settled X, advances 1400ms and captures O. It verifies actual production-piece colors, stable scene/control bounds and pixel-identical surroundings outside the center slot. Its synthetic 320dp case is the narrow phone fixture, not a claim of separate hardware. Unit tests sample the real pulse/fade specifications; the stills prove both symbols/layout, not subjective smoothness or TalkBack speech on a physical phone.
 
 Render the diagram with the official pinned Mermaid CLI11.17.0:
 

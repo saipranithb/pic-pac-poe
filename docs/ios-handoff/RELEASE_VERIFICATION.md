@@ -2,7 +2,31 @@
 
 Status is finalized in [release-identity.json](release-identity.json). This report distinguishes executed automated checks, emulator evidence, unavailable signing/Play gates and **unchecked human work**. It does not authorize public rollout.
 
-## Scope and source
+## Home illustration follow-up (current pre-release polish)
+
+The later Home-only change replaces the fixed central X with production X/O pieces alternating every 1400ms. One bounded 3.5% pulse and 280ms crossfade/scale transition are used normally; Reduced Motion retains a 400ms crossfade with unit scale. System animations-off retains instantaneous swaps. The scene waits for preferences, stops offscreen/backgrounded/removed and restarts at X. A single stable accessibility description replaces the formerly silent illustration. Bag, arrows, board, layout, game rules, navigation, AI, saved state and turn presentation are unchanged. The exact contract is in [motion-spec.json](motion-spec.json).
+
+New evidence: six production-spec JVM tests (debug/release), four focused rendering/lifecycle tests, and [16 sequential Home screenshots plus a labelled contact sheet](reference/home-scene-contact-sheet.png) spanning dark/light, normal/reduced motion and 412dp/320dp logical widths. Screenshot provenance is separate from the previous baseline in [the manifest](reference/screenshot-manifest.json). The replacement artifact identity is finalized after the isolated polish commit; the older bundle below is superseded and must not be uploaded.
+
+| Current polish check | Result |
+| --- | --- |
+| Production-spec unit tests | PASS: all six in both debug and release; timing, complementary opacity, one bounded pulse, reduced-motion scale, fade lengths and repeat boundaries |
+| Build/check/lint | PASS: debug APK, test APK and unsigned release AAB; lint `No issues found.` |
+| Full emulator regression suite | PASS: `OK (26 tests)`,258.258 seconds; includes all four new Home tests and all22 existing brand/layout/game-flow tests |
+| Home visual matrix | PASS: both themes, normal/reduced motion, 412dp/320dp; real piece colors, equal bounds, unchanged neighboring controls and pixel-identical surroundings outside the center slot |
+| Native narrow-phone smoke | PASS: real MainActivity at840x1870/420dpi (320dp), both X/O observed in sequential screenshots; original1080x2400 restored. An8-second raw emulator recording is also retained externally; cold-start/transitional frames are not curated parity references or a smoothness benchmark |
+| Visibility/settings/system motion | PASS: readiness, STARTED/RESUMED lifecycle, removal, fully offscreen scrolling; zero-scale swaps and mounted0→1→0 system-scale changes |
+| Portable handoff | PASS:6 JSON documents,203 relative links,131 hashes at this checkpoint; release certification intentionally remains gated |
+
+An initial focused test run was intentionally stopped after its offscreen-scroll test stalled: Compose's animated `performScrollTo` semantics cannot finish with the test clock frozen. The harness now launches an instantaneous `ScrollState.scrollTo` asynchronously and advances the clock. No production fix was needed. The corrected scroll and mounted system-scale switching tests passed together (`OK (2 tests)`,19.298 seconds). The interrupted run is not counted as a successful suite. Physical TalkBack speech and frame pacing remain owner checks; semantic assertions/stills do not replace them.
+
+Publishing remains explicitly on hold. All four local upload-signing variables were rechecked and are absent; Play's highest uploaded version code remains unverified. No key substitution, version bump, tag, push, CI dispatch or upload is authorized by a successful local build.
+
+## Previous wordmark-candidate baseline (historical)
+
+The following original results and artifact hash describe the earlier candidate, not the new Home illustration source. Preserve this history; use the current [release identity](release-identity.json) for the replacement candidate/artifact record.
+
+### Scope and source
 
 Only production change in this final pass: center Home's existing wordmark and map Pic/Pac/Poe to existing x/text/o semantic colors, with subordinate textSecondary hyphens. Typography, optical footprint, palette values, all gameplay/AI/state-machine code and timings remain unchanged. The focused UI commit is `feefdfd37932a061d0be5775cb294b2b38e8dcb2`. Supporting tests add exact run-color/contrast/center assertions and live Medium/Hard computer-turn coverage.
 

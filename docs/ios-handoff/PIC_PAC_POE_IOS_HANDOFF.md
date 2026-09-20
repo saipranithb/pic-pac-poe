@@ -60,7 +60,7 @@ Form Playground 2.0 feels like a small, well-made tabletop object: cocoa/cream s
 
 “Playful but mature” typography means **Fredoka SemiBold for the centered identity and result titles; Fredoka Medium selectively for reveal/handoff moments; system sans for every functional label, instruction, setting and probability**. No all-rounded display-font interface. Brand-defining elements are the exact identity, warm semantic palette, player/symbol separation, stable board, readable sequential computer turn and finite responsive motion.
 
-Explicit anti-goals: generic AI gradients, glass-card soup, decorative blobs, promotional badges, excessive pills, gratuitous 3D, neon, shimmer, glow, rainbow letters, title extrusion, looping idle motion, online accounts/ads/analytics/cloud AI. Existing tiny directional piece/surface gradients are material shading, not a gradient branding system.
+Explicit anti-goals: generic AI gradients, glass-card soup, decorative blobs, promotional badges, excessive pills, gratuitous 3D, neon, shimmer, glow, rainbow letters, title extrusion, unrelated looping idle motion, online accounts/ads/analytics/cloud AI. The Home bag→symbol→board illustration has one approved, visibility-scoped X/O alternation described below; it is not permission to animate other idle surfaces. Existing tiny directional piece/surface gradients are material shading, not a gradient branding system.
 
 ## 3. Complete game rules
 
@@ -145,13 +145,15 @@ Three animation groups are `[Pic]`, `[-Pac]`, `[-Poe]`; delays are 0/70/140 ms, 
 
 ## 10. Motion, haptics and sound
 
-The [motion JSON](motion-spec.json) inventories all finite animations, owners, triggers, easings, durations and reduced variants: screen transitions, presses/choices, piece placement, held reveal and title. It also distinguishes essential presentation clocks from decoration and records feedback events. Board geometry does not animate. No continuous idle loop is added.
+The [motion JSON](motion-spec.json) inventories finite animations and the sole approved repeating Home illustration, with owners, triggers, durations and reduced variants. It distinguishes essential presentation clocks from decoration and records feedback events. Board geometry does not animate.
+
+Home's central illustration alternates the production X/coral and O/pistachio pieces every 1400 ms in a fixed 44 dp box (2800 ms cycle). One restrained1→1.035→1 pulse occurs at 200/340/520 ms of each half; the last 280 ms crossfade outgoing1→0/incoming0→1 with scale 1→.97/.97→1. Reduced Motion removes all scaling and uses a 400 ms opacity-only transition at the same cadence; system animations-off uses instant1400 ms swaps. Bag, arrows, miniature board and surrounding layout remain stationary. Start from X on restart, only after settings load and while visible/RESUMED; cancel offscreen/inactive/disposed. This visual loop uses no RNG and changes no navigation, saved state, AI or turn presentation. It emits no sound/haptics. See [full motion contract](DESIGN_AND_MOTION.md).
 
 Android haptic constants/ToneGenerator tones are implementation details, not files to extract or literal iOS waveforms. Preserve event meaning/settings, use restrained native haptics/audio, and tune on real devices. WIN/DRAW feedback for a computer move currently occurs at domain commit into AI_PLACING, not when its result dialog appears. Do not silently shift the game sequencing to sync sound. Human haptic quality and sound balance remain unchecked.
 
 ## 11. Accessibility
 
-Full semantics/reading order/announcements are in [Screens and accessibility](SCREENS_AND_ACCESSIBILITY.md). One Home heading; explicit row/column/mark board descriptions; distinct “Computer selected…” and “Computer placed…” states; selected controls expose state; settings rows expose one switch each; hidden handoff removes private content. Actor text/shape/checks/focus borders supplement color. Functional target sizes are at least 48 dp in the Android contract; preserve generous native targets, not merely minimum visible artwork.
+Full semantics/reading order/announcements are in [Screens and accessibility](SCREENS_AND_ACCESSIBILITY.md). One Home heading; one stable illustration description, “A random X or O is drawn from the bag, then placed on the board.”, with no repeated symbol announcements; explicit row/column/mark board descriptions; distinct “Computer selected…” and “Computer placed…” states; selected controls expose state; settings rows expose one switch each; hidden handoff removes private content. Actor text/shape/checks/focus borders supplement color. Functional target sizes are at least 48 dp in the Android contract; preserve generous native targets, not merely minimum visible artwork.
 
 Automation covers semantics, disabled gates, grouped identity, token contrast, no-clipping and large-text reachability. It is **not human TalkBack or VoiceOver certification**. Require physical reading/focus order, announcement timing, modal focus/return, touch exploration and switch state checks. iOS must honor system Reduce Motion in addition to the app preference; Android currently uses its stored preference for custom motion. Match Dynamic Type intent and scrollability, not Android font-scale numbers mechanically.
 

@@ -27,7 +27,7 @@ All game rows use [GameScreen.kt](../../app/src/main/java/com/thevaguebox/probab
 
 | Screen / state and reference ID | User intent and required information | Hierarchy, interaction and iOS acceptance |
 |---|---|---|
-| Home dark/light: `home-dark.png`, `home-light.png` | Understand the twist; start a game or find help/settings | Centered exact `Pic-Pac-Poe`; subtitle; decorative pieces; “Draw a piece. Choose a square.”; Pick a game; Classic; Pic-Pac Local; Vs Computer selection/Play; How to play/AI Lab/Settings. No extra badges. Wordmark is one heading; illustration is silent. [HomeScreen.kt](../../app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/HomeScreen.kt) |
+| Home dark/light: `home-dark.png`, `home-light.png` | Understand the twist; start a game or find help/settings | Centered exact `Pic-Pac-Poe`; subtitle; explanatory bag→X/O→board scene; “Draw a piece. Choose a square.”; Pick a game; Classic; Pic-Pac Local; Vs Computer selection/Play; How to play/AI Lab/Settings. No extra badges. Wordmark is one heading; illustration is one stable described group with no symbol-change announcements. [HomeScreen.kt](../../app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/HomeScreen.kt) |
 | Vs Computer setup: Home reference, optional `computer-setup-dark.png` | Select Easy/Medium/Hard, understand selected opponent | **This is a section of Home, not a separate Android screen.** Medium initial selection, choice check/fill/selected semantics; description updates; Play starts chosen difficulty. Selection survives view recreation via saveable state. Easy/Medium/Hard are production choices; MCTS/RL belong in Lab |
 | Classic empty/start: `classic-dark.png`, `classic-light.png` | Know current actor/fixed piece and choose an empty square | Back; Classic heading; Player1/2 indicators; Place X or O; square board; no bag. Nine empty targets enabled; Player1 always X and Player2 always O even when rematch starter alternates |
 | Classic midgame: `classic-game-dark.png` if provided | Continue without overwriting a square | Same board geometry; occupied squares readable but disabled; active actor and held fixed symbol update after each valid move. No reveal/handoff stages |
@@ -75,7 +75,7 @@ All game rows use [GameScreen.kt](../../app/src/main/java/com/thevaguebox/probab
 ### Spoken labels and grouping
 
 - Wordmark is exactly **Pic-Pac-Poe**, one heading. Five drawn text parts are not five accessibility nodes. Its group colors and animation progress must not be spoken. Internal English ordering stays left-to-right even under RTL layout.
-- Home decorative tabletop shapes, row prefixes/chevrons, and piece paths are silent unless their parent supplies game meaning.
+- Home illustration is one stable group: “A random X or O is drawn from the bag, then placed on the board.” Its child bag/arrows/board/pieces are silent, with no changing state description or live region. X/O alternate every 1400 ms only while visible and lifecycle RESUMED after preferences load; Reduced Motion retains a 400 ms opacity-only crossfade, and system animations-off retains instant swaps. Row prefixes/chevrons and other decorative piece paths remain silent unless their parent supplies game meaning.
 - Actor indicators group actor name, turn/waiting label and underline into one comprehensible item. Player colors do not imply X/O ownership; copy supplies ownership explicitly in Classic and disclaims it in Pic-Pac.
 - Stage instruction is a polite live region. Handoff, reveal and result headlines are assertive live regions on Android. VoiceOver equivalents must be tested for intelligibility; avoid emitting two overlapping identical announcements when an actor label and modal appear together.
 - Human piece tray: `Piece in hand: X` or O. Computer placing/settling: `Placed X` or O. These are independent of piece color.
@@ -107,6 +107,7 @@ The following remain **unchecked human tasks** until a named tester records a de
 
 - [ ] TalkBack complete navigation, reveal/result announcement timing, focus restoration and nonduplicated settings switches.
 - [ ] Physical title entrance quality in dark/light and with Reduced Motion, including a fresh launch and return Home.
+- [ ] Home X/O illustration: both semantic-colored production pieces, one gentle pulse per normal hold, reduced-motion alternation without scale, no layout movement at 320 dp, one stable spoken description, and no animation work while fully offscreen/backgrounded. Physical visual pacing and spoken behavior require human checking.
 - [ ] Physical haptic quality and event intensity; no duplicate vibration after rotation or settings changes.
 - [ ] Speaker/headphone sound balance, interruption/silent-mode expectations, and feedback opt-out.
 - [ ] Large text and display zoom on a real phone, including native reveal/result windows.

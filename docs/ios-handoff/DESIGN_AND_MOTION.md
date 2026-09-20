@@ -29,7 +29,7 @@ Form Playground 2.0 is a warm, restrained tabletop game: cocoa/cream environment
 
 The displayed actor, held symbol, legal input, selected computer square and bag odds must be understood before decorative depth. Players are **not** assigned X/O in Pic-Pac. Player 1 uses teal and Player 2/Computer lavender; piece color never substitutes for actor identity. Explicit words, numbers, checks, borders and shapes carry every meaningful state.
 
-Brand-defining: exact `Pic-Pac-Poe` spelling; centered Fredoka wordmark; restrained coral/neutral/pistachio word groups; system sans functional text; tactile front-facing pieces; nine equal fixed wells; real bag counts; calm finite motion. Anti-goals: generic AI gradients, glass-card soup, decorative blobs, promotional badges, excessive pills, neon, shimmer, glow, rainbow letters, fake title extrusion, gratuitous 3D or continuous idle motion. Existing small material-face gradients are intentional directional shading, not permission to introduce gradient branding.
+Brand-defining: exact `Pic-Pac-Poe` spelling; centered Fredoka wordmark; restrained coral/neutral/pistachio word groups; system sans functional text; tactile front-facing pieces; nine equal fixed wells; real bag counts; calm motion. The Home bag→symbol→board illustration has one approved visibility-scoped repeating X/O explanation; all other decorative motion remains finite. Anti-goals: generic AI gradients, glass-card soup, decorative blobs, promotional badges, excessive pills, neon, shimmer, glow, rainbow letters, fake title extrusion, gratuitous 3D or unrelated continuous idle motion. Existing small material-face gradients are intentional directional shading, not permission to introduce gradient branding.
 
 ## 1. Color system
 
@@ -190,7 +190,7 @@ The mark is decorative; its owning cell/label provides speech. Common boxes: Hom
 
 ## 6. Home explanatory scene
 
-This is code-native art, not a PNG. It is noninteractive and accessibility-hidden. Scene height118dp normally or90dp compact; drawing container capped400dp wide and centered. For drawing width W and height H: `S=.82H`, `T=(H-S)/2`, `bagLeft=max(.2W-S/2,0)`, `boardLeft=.8W-S/2`. A standalone44dp X is centered in the container.
+This is code-native art, not a PNG. It is noninteractive and has one stable accessible description; its drawing children are hidden from speech. Scene height118dp normally or90dp compact; drawing container capped400dp wide and centered. For drawing width W and height H: `S=.82H`, `T=(H-S)/2`, `bagLeft=max(.2W-S/2,0)`, `boardLeft=.8W-S/2`. Two production pieces occupy the same centered44dp allocation, alternating X/O with the scoped timing below; the bag, arrows and board remain static.
 
 Bag path in normalized local `(u,v)` units of S, translated by `(bagLeft,T)`: move(.22,.20); cubic controls(.14,.39),(0,.63), end(.10,.84); cubic controls(.19,1.02),(.81,1.02), end(.90,.84); cubic controls(1,.63),(.86,.39), end(.78,.20); close. Shadow is full `shadow` translated down2dp; face vertical `surfaceRaised -> surface` over T..T+S;1dp border. Opening oval at(.19,.08), size(.62,.22), recess fill then1dp border. Seams run(.31,.51)->(.26,.79) and(.69,.51)->(.74,.79),1dp `borderSubtle`, round caps.
 
@@ -262,6 +262,7 @@ Minimum control heights are48dp back/choice/text action,52dp primary/secondary,6
 | Effect | Trigger/owner | Normal | Reduced Motion |
 | --- | --- | --- | --- |
 | Home wordmark | First eligible Home entry; shell consumed state + local progress | Three groups,620ms total as above | Immediate final, no replay |
+| Home illustrative symbol | Local visible/RESUMED scene after settings load | X/O alternate every 1400 ms; one 3.5% pulse per symbol; 280 ms crossfade/3% scale transition | 1400 ms per symbol, 400 ms opacity-only crossfade; scale 1 throughout; instant swaps if system animations disabled |
 | Screen transition | AppScreen changes; app shell | Concurrent140ms fade-in/out; Compose tween default FastOutSlowIn `(0.4,0,0.2,1)` | No enter/exit transition |
 | Button contact | Local press/release |90ms cubic `(.2,.8,.2,1)`,2dp travel | Immediate shade;0 travel |
 | Piece placement | Existing well empty->occupied |180ms cubic `(.2,.8,.2,1)`,3dp contact/4% scale | Immediate final |
@@ -270,6 +271,12 @@ Minimum control heights are48dp back/choice/text action,52dp primary/secondary,6
 | Reveal/result overlay | Coordinator stage | No Android window animation | Same static overlay |
 
 There is no looping title, bobbing board, animated probability counter, particle system, reveal flip, moving winning line or idle glow. `FormMotion.revealMillis=160` exists but is unused; it must not be mistaken for the actual reveal hold. `AnimatedContent` also has platform size-transform behavior not parametrized by this app; the current full-screen children have no intentional resize choreography.
+
+The **Home illustration is the sole approved repeating exception**, not a second gameplay reveal. Overlay the actual production X and O `FormPiece` renderers in the same centered 44 dp box with their ordinary semantic face/highlight/edge colors. Keep each piece's placement `progress=1`; add visual alpha/scale layers without translating either piece or changing allocation. Bag, arrows, miniature board, overall illustration and adjacent controls never move. This is deterministic alternation, not a bag draw: do not call RNG, mutate counts, invoke AI, advance a game stage, save the illustration phase, or produce sound/haptics.
+
+Each symbol occupies a 1400 ms half of a 2800 ms cycle. Normal motion holds unit scale through 200 ms, rises once to 1.035 at 340 ms, then returns to 1 at 520 ms. In the last 280 ms of each half (1120–1400 ms), outgoing opacity fades1→0 and scale 1→.97 while incoming opacity fades0→1 and scale.97→1. All changing segments use the existing `FormMotion.easing` cubic `(.2,.8,.2, 1)`. The second half applies the same timing with symbols reversed. There is no bounce, rotation, translation, glow or elastic overshoot. Reduced Motion keeps the same 1400 ms cadence and uses only a slower400 ms crossfade at 1000–1400 ms; all scales remain1 and there is no pulse. These are nominal timings at system animator scale 1; nonzero platform duration scaling is honored. With Android system animator scale zero, use an instantaneous swap every 1400 ms instead of losing the explanatory alternation.
+
+Start at X whenever the illustration restarts. Run only after stored preferences load, while the illustration is visible and its lifecycle is RESUMED; stop when fully scrolled out, inactive/backgrounded or removed from composition. The scope belongs to this illustration, not game navigation/state. Native iOS should likewise gate on active scene and actual view visibility. Give the whole illustration the single stable description “A random X or O is drawn from the bag, then placed on the board.” Hide child symbols, omit live-region semantics and never announce the repeated alternation.
 
 Essential readable holds are separate from those decorative motions:
 
@@ -304,7 +311,7 @@ Known lifecycle limit: the retained Android ViewModel keeps its last effect and 
 
 ## 11. Accessibility and native adaptation
 
-The wordmark is one exact heading. Decorative Home scene, piece drawings and mode badges are hidden from the accessibility tree. Info titles and section headings are headings. Choices have selected RadioButton semantics and a visual check. Settings exposes one Switch-role row per preference, not both row and thumb. Buttons keep actual disabled state.
+The wordmark is one exact heading. The Home illustration exposes one stable explanatory description; its changing piece drawings, bag, arrows and board are not separate accessible nodes and do not announce animation changes. Other decorative piece drawings and mode badges remain hidden from the accessibility tree. Info titles and section headings are headings. Choices have selected RadioButton semantics and a visual check. Settings exposes one Switch-role row per preference, not both row and thumb. Buttons keep actual disabled state.
 
 Board cells read “Row r, column c, empty/X/O”, one-based coordinates. AI-target descriptions are “Computer selected row r, column c”; placement/settlement reads “Computer placed X/O in row r, column c”. These cell messages and turn instructions are polite live regions. Reveal, handoff and result titles are assertive. Final board is one ordered textual summary, not nine disabled miniature cells to traverse. Modal backgrounds are absent from reading order; local handoff removes all private board content entirely.
 
@@ -322,12 +329,13 @@ Dynamic Type: retain scaling for functional labels and allow multiline/scrolling
 - Nine equal square board targets remain stationary and sufficiently large during every computer stage; selected coordinate is visible and spoken.
 - Local handoff contains no private board semantics; reveal/result contain no interactive background; final board has one useful summary.
 - Shortened Reduced Motion holds still show actor, reveal, target, committed piece and settled result; no extra movement, no repeated title on return/recreation.
+- Home central X/O alternates at the prescribed cadence with one pulse per normal hold, opacity only under Reduced Motion, and instant swaps with animations disabled; both pieces share fixed geometry and the illustration has one stable spoken description.
 - Color is never sole actor/selection/ownership signal; contrast measured against actual backgrounds; focus/disabled states verified.
-- No continuous animations/timers; geometry/path/text measurement is cached where practical; no AI or heavy raster creation on the UI thread.
+- The approved Home X/O illustration is the only repeating visual timeline; cancel it offscreen/inactive. All other decorative motion is finite; geometry/path/text measurement is cached where practical; no AI or heavy raster creation on the UI thread.
 - Actual physical-device checks for haptics, sound, title motion and screen-reader focus/announcements remain required. Record tester/device/date; do not mark them complete based on screenshots or automated semantics alone.
 
 ## 12. Portability boundaries
 
-Must match: rules, stage ordering and guards, bag semantics, actor identity, exact title spelling/colors/font weights, board/piece proportions, finite motion durations and grouping, disabled input, modal privacy and target evidence. May adapt carefully: native system sans metrics, safe areas, back affordance/navigation conventions, native switch behavior, speech APIs, iOS audio/haptic implementation and the platform-defined2dp-equivalent surface shadow. Changes need visual comparison and must not alter product identity.
+Must match: rules, stage ordering and guards, bag semantics, actor identity, exact title spelling/colors/font weights, board/piece proportions, finite motion durations and grouping, scoped Home X/O cadence/reduced-motion/visibility contract, disabled input, modal privacy and target evidence. May adapt carefully: native system sans metrics, safe areas, back affordance/navigation conventions, native switch behavior, speech APIs, iOS audio/haptic implementation and the platform-defined2dp-equivalent surface shadow. Changes need visual comparison and must not alter product identity.
 
 Keep native SwiftUI shapes/paths and tokens, not Android rendering binaries. The font files are the only reusable binary visual assets in this system; reference screenshots are evidence. Do not port Compose semantics property keys, Android resource IDs, dp-to-pixel integer rounding quirks or ToneGenerator enums literally. Preserve their user-facing intent. Avoid claiming physically exact light/shadow reproduction where Android itself delegates the parameters to a platform renderer. No KMP or iOS app code is introduced by this handoff.

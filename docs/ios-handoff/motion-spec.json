@@ -10,6 +10,9 @@
   "principle": "GameViewModel/coordinator owns state; a single presentation clock acknowledges presentationId; decorative animation completions never choose moves, draw pieces, advance turns, or unlock input.",
   "sources": [
     "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/HomeWordmark.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/FormHomeScene.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/HomeSceneMotion.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/HomeScreen.kt",
     "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/FormControls.kt",
     "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/PhysicalBoard.kt",
     "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/theme/PicPacTheme.kt",
@@ -239,11 +242,59 @@
       "essential": true
     },
     {
-      "id": "static-home-scene",
-      "purpose": "decorative explanation of bag-to-piece-to-square",
-      "owner": "FormHomeScene Canvas",
-      "animation": false,
-      "accessibility": "hidden as a single decorative group"
+      "id": "home-symbol-alternation",
+      "purpose": "illustrate that the bag can supply either X or O; the sole approved repeating Home illustration",
+      "owner": "FormHomeScene local visual state; independent of game/session/presentation state",
+      "renderer": "Two production FormPiece composables, progress=1, overlaid in the same fixed 44dp centered box; existing x/o face, highlight and edge semantic colors",
+      "sequence": ["X", "O"],
+      "startsWith": "X on each animation restart",
+      "symbolDurationMs": 1400,
+      "cycleDurationMs": 2800,
+      "timingBasis": "Nominal animation milliseconds at Android system animator scale1; nonzero platform duration scales are honored. Scale0 uses the explicit1400ms instant-swap fallback.",
+      "repeat": "while Home illustration is composed, visible, lifecycle RESUMED and stored settings are loaded",
+      "normal": {
+        "easing": "form",
+        "crossfadeDurationMs": 280,
+        "crossfadeWindowWithinHalfMs": [1120, 1400],
+        "outgoingAlpha": [1, 0],
+        "incomingAlpha": [0, 1],
+        "outgoingScale": [1, 0.97],
+        "incomingScale": [0.97, 1],
+        "pulseCountPerSymbol": 1,
+        "pulseKeyframesWithinHalf": [
+          { "atMs": 200, "scale": 1 },
+          { "atMs": 340, "scale": 1.035 },
+          { "atMs": 520, "scale": 1 }
+        ]
+      },
+      "reducedMotion": {
+        "easing": "form",
+        "symbolDurationMs": 1400,
+        "crossfadeDurationMs": 400,
+        "crossfadeWindowWithinHalfMs": [1000, 1400],
+        "pulse": false,
+        "scale": 1,
+        "translation": 0,
+        "note": "Keep X/O alternation for comprehension; opacity is the only animated property."
+      },
+      "systemAnimatorScaleZero": {
+        "symbolDurationMs": 1400,
+        "transitionDurationMs": 0,
+        "pulse": false,
+        "scale": 1,
+        "behavior": "Instant X/O swaps on a gated delay; do not lose alternation when platform animations are disabled."
+      },
+      "layoutImpact": "none; bag, arrows, board, scene dimensions, piece allocation and surrounding controls remain stationary; no translation or rotation",
+      "lifecycle": "Stop when inactive, not RESUMED, fully scrolled offscreen or removed from composition; restart locally from X when eligible again; do not persist illustration progress.",
+      "accessibility": {
+        "contentDescription": "A random X or O is drawn from the bag, then placed on the board.",
+        "singleStableGroup": true,
+        "childSymbolsSpoken": false,
+        "liveRegion": false,
+        "announcesChanges": false
+      },
+      "feedback": "No sound or haptic events; tactile describes the visual pulse only.",
+      "stateIndependence": "Deterministic X/O alternation, not a random draw; no RNG calls, bag mutation, AI work, navigation change, saved-state change or game-stage acknowledgement."
     },
     {
       "id": "static-probability-tray",
@@ -411,7 +462,8 @@
     "geometry": "Render fixed layout, draw pieces/board as native paths, animate layer-like visual properties only.",
     "identity": "Keep full heading accessibility label while visual pieces are separate; preserve internal English order in RTL.",
     "wordmark": "Drive a shared elapsed-time value or finite keyframe sequence; use the exact cubic timing curves. Native opacity/offset/scale/rotation are sufficient. Do not use a repeating timer or spring with unknown completion.",
-    "reduceMotion": "Use in-app setting and native accessibility Reduce Motion to select static decorative states; keep shortened essential stage holds readable.",
+    "reduceMotion": "Use in-app setting and native accessibility Reduce Motion to remove decorative transforms; the approved Home symbol illustration retains a slow opacity-only alternation (or instant swaps with animations disabled). Keep shortened essential stage holds readable.",
+    "homeIllustration": "Use a visibility/active-scene-scoped timeline or cancelable task for the prescribed X/O alternation. Render both native production pieces in one fixed box; retain the single stable description, no repeated VoiceOver announcements, no RNG or game-state connection. Cancel when offscreen/inactive and restart from X.",
     "state": "Main-actor presentation coordinator accepts guarded transitions; worker actor/task searches immutable observation; cancels safely.",
     "testing": "Inject presentation clock and AI completion, assert stage order/timers independent of animation; compare intermediate/final visual snapshots."
   }

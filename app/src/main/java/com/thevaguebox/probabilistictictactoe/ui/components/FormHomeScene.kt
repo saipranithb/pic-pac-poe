@@ -1,13 +1,24 @@
 package com.thevaguebox.probabilistictictactoe.ui.components
 
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.widthIn
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.MotionDurationScale
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
@@ -16,16 +27,34 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.translate
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.boundsInWindow
+import androidx.compose.ui.layout.onGloballyPositioned
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.compose.LocalLifecycleOwner
+import androidx.lifecycle.compose.currentStateAsState
 import com.thevaguebox.picpac.core.Symbol
 import com.thevaguebox.probabilistictictactoe.ui.theme.FormTheme
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.isActive
 
 /** A noninteractive explanation: a shared bag, one drawn piece, then a square. */
 @Composable
-fun FormHomeScene(modifier: Modifier = Modifier) {
+fun FormHomeScene(modifier: Modifier = Modifier, motionReady: Boolean = true) {
     val colors = FormTheme.colors
-    Box(modifier.clearAndSetSemantics {}, contentAlignment = Alignment.Center) {
+    val reducedMotion = FormTheme.reducedMotion
+    val lifecycleState by LocalLifecycleOwner.current.lifecycle.currentStateAsState()
+    var visible by remember { mutableStateOf(false) }
+    val active = motionReady && visible && lifecycleState.isAtLeast(Lifecycle.State.RESUMED)
+    Box(modifier.onGloballyPositioned { visible = !it.boundsInWindow().isEmpty }
+        .testTag("home-draw-illustration")
+        .clearAndSetSemantics {
+            contentDescription = "A random X or O is drawn from the bag, then placed on the board."
+        }, contentAlignment = Alignment.Center) {
         Box(Modifier.widthIn(max = 400.dp).fillMaxSize(), contentAlignment = Alignment.Center) {
             Canvas(Modifier.fillMaxSize()) {
                 val side = size.height * .82f
@@ -70,7 +99,48 @@ fun FormHomeScene(modifier: Modifier = Modifier) {
                 arrow(bagLeft + side + 5.dp.toPx(), size.width * .5f - 26.dp.toPx())
                 arrow(size.width * .5f + 26.dp.toPx(), boardLeft - 6.dp.toPx())
             }
-            FormPiece(Symbol.X, Modifier.size(44.dp))
+            // Only these equal-sized layers move. The scene's Canvas and layout never animate.
+            if (active) {
+                key(reducedMotion) { AlternatingHomePiece(reducedMotion) }
+            } else {
+                FormPiece(Symbol.X, Modifier.size(44.dp))
+            }
         }
+    }
+}
+
+@Composable
+private fun AlternatingHomePiece(reducedMotion: Boolean) {
+    val systemMotionScale = rememberCoroutineScope().coroutineContext[MotionDurationScale]?.scaleFactor ?: 1f
+    if (systemMotionScale == 0f) {
+        // InfiniteTransition suspends at Android's animations-off setting. Retain the
+        // explanation with infrequent, instantaneous swaps instead (no frame loop).
+        var showO by remember { mutableStateOf(false) }
+        LaunchedEffect(Unit) {
+            while (isActive) {
+                delay(HomeSceneMotion.symbolMillis.toLong())
+                showO = !showO
+            }
+        }
+        FormPiece(Symbol.X, Modifier.size(44.dp).graphicsLayer { alpha = if (showO) 0f else 1f })
+        FormPiece(Symbol.O, Modifier.size(44.dp).graphicsLayer { alpha = if (showO) 1f else 0f })
+    } else {
+        val transition = rememberInfiniteTransition(label = "Home drawn piece")
+        val xAlpha = transition.animateFloat(1f, 1f, infiniteRepeatable(HomeSceneMotion.alpha(Symbol.X, reducedMotion)), label = "X opacity")
+        val oAlpha = transition.animateFloat(0f, 0f, infiniteRepeatable(HomeSceneMotion.alpha(Symbol.O, reducedMotion)), label = "O opacity")
+        val xScale = transition.animateFloat(1f, 1f, infiniteRepeatable(HomeSceneMotion.scale(Symbol.X, reducedMotion)), label = "X pressure")
+        val oScale = transition.animateFloat(if (reducedMotion) 1f else .97f, if (reducedMotion) 1f else .97f,
+            infiniteRepeatable(HomeSceneMotion.scale(Symbol.O, reducedMotion)), label = "O pressure")
+        // Read animation values in the layers, not composition or accessibility semantics.
+        FormPiece(Symbol.X, Modifier.size(44.dp).graphicsLayer {
+            alpha = xAlpha.value
+            scaleX = xScale.value
+            scaleY = scaleX
+        })
+        FormPiece(Symbol.O, Modifier.size(44.dp).graphicsLayer {
+            alpha = oAlpha.value
+            scaleX = oScale.value
+            scaleY = scaleX
+        })
     }
 }

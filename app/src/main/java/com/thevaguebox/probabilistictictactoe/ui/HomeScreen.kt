@@ -82,7 +82,10 @@ fun HomeScreen(
                     style = MaterialTheme.typography.bodyLarge,
                     color = colors.textSecondary,
                 )
-                FormHomeScene(Modifier.fillMaxWidth().padding(top = 12.dp).height(if (compact) 90.dp else 118.dp))
+                FormHomeScene(
+                    Modifier.fillMaxWidth().padding(top = 12.dp).height(if (compact) 90.dp else 118.dp),
+                    motionReady = titleMotionReady,
+                )
                 Text(
                     "Draw a piece. Choose a square.",
                     Modifier.align(Alignment.CenterHorizontally).padding(top = 4.dp, bottom = 20.dp),

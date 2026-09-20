@@ -1134,7 +1134,14 @@
   },
   "homeScene": {
     "interactive": false,
-    "accessibilityHidden": true,
+    "accessibilityHidden": false,
+    "accessibility": {
+      "contentDescription": "A random X or O is drawn from the bag, then placed on the board.",
+      "singleStableGroup": true,
+      "childrenHidden": true,
+      "liveRegion": false,
+      "announcesSymbolChanges": false
+    },
     "maxDrawingWidthDp": 400,
     "heightDp": { "normal": 118, "compact": 90 },
     "formulas": {
@@ -1183,7 +1190,16 @@
       "color": "textSecondary",
       "headOffsetDp": [4,4]
     },
-    "centerPiece": { "symbol": "X", "sizeDp": 44, "alignment": "center" }
+    "centerPiece": {
+      "symbols": ["X", "O"],
+      "initialSymbol": "X",
+      "sizeDp": 44,
+      "alignment": "center",
+      "renderer": "production FormPiece with progress=1; two overlaid identical allocations",
+      "colorRoles": { "X": ["x", "xHighlight", "xEdge"], "O": ["o", "oHighlight", "oEdge"] },
+      "motionSpecId": "home-symbol-alternation",
+      "stationarySurroundings": ["bag", "arrows", "miniBoard", "scene layout", "Home controls"]
+    }
   },
   "controls": {
     "button": {
