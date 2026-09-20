@@ -1,5 +1,7 @@
 # Pic-Pac-Poe Remaster: Architecture, AI, and Implementation Plan
 
+> **ARCHIVAL DESIGN/AUDIT SNAPSHOT — NOT THE CURRENT IMPLEMENTATION CONTRACT.** This document describes the pre-remaster repository at `63b6749` and contains historical proposals, including superseded visual directions. The implemented production system is Form Playground 2.0. For current Android behavior and any iOS parity work, start at [`docs/ios-handoff/PIC_PAC_POE_IOS_HANDOFF.md`](docs/ios-handoff/PIC_PAC_POE_IOS_HANDOFF.md) and follow its source precedence.
+
 Audit date: 2026-08-26  
 Repository: `com.thevaguebox.probabilistictictactoe`  
 Audited branch/commit: `refinement` / `63b6749`  

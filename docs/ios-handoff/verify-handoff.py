@@ -14,6 +14,7 @@ import argparse
 import hashlib
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
@@ -34,12 +35,48 @@ DELAYS = {
     "AI_TARGETING": (280, 160), "AI_PLACING": (340, 180),
     "AI_SETTLING": (480, 320),
 }
+WIN_LINES = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6],
+    [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6],
+]
+GOLDEN_IDS = {
+    "scriptedGames": {
+        "picpac-player-one-wins-with-o", "picpac-player-two-wins-with-x",
+        "picpac-full-board-draw", "classic-player-one-top-row",
+    },
+    "ruleTransitions": {
+        "draw-removes-piece-before-placement", "legal-placement-switches-actor",
+        "stale-turn-rejected-without-mutation", "occupied-cell-rejected-without-mutation",
+        "wrong-phase-rejected-without-mutation", "exhausted-symbol-rejected-without-mutation",
+        "terminal-command-rejected-without-mutation",
+    },
+    "bagProbabilities": {"initial-five-five", "held-x-is-excluded", "held-o-is-excluded", "single-o-remains"},
+    "deterministicDraws": {
+        "initial-roll-zero-is-x", "initial-roll-four-is-x", "initial-roll-five-is-o",
+        "initial-roll-nine-is-o", "two-one-boundary-x", "two-one-boundary-o",
+    },
+    "aiChoices": {
+        "easy-immediate-win-with-x", "easy-immediate-win-with-o", "medium-opening-held-x",
+        "hard-opening-held-x", "hard-opening-held-o", "random-scripted-legal-index",
+    },
+    "presentationScenarios": {
+        "local-handoff-ready-reveal-place", "computer-winning-move-settles-before-result",
+        "computer-draw-move-settles-before-result",
+    },
+    "restorationScenarios": {
+        "held-piece-restores-without-redraw", "computer-target-restores-and-commits-once",
+        "stale-presentation-callback-after-rematch-is-ignored",
+        "cancelled-ai-result-after-mode-replacement-is-ignored",
+    },
+}
 REQUIRED = (
     "PIC_PAC_POE_IOS_HANDOFF.md", "ANDROID_TO_SWIFTUI_MAP.md",
+    "BEHAVIOR_AND_STATE.md", "DESIGN_AND_MOTION.md",
     "SCREENS_AND_ACCESSIBILITY.md", "IOS_PARITY_CHECKLIST.md",
     "ASSET_MANIFEST.md", "MAC_CODEX_BOOTSTRAP_PROMPT.md",
+    "PRIVACY_AND_STORE.md", "REPOSITORY_AND_DELIVERY.md",
     "release-identity.json", "design-tokens.json", "motion-spec.json",
-    "state-machine.json", "assets-manifest.json",
+    "state-machine.json", "golden-fixtures.json", "assets-manifest.json",
     "reference/screenshot-manifest.json", "reference/checksums.sha256",
 )
 
@@ -104,6 +141,8 @@ class Verifier:
                 continue
             if WINDOWS_ABSOLUTE.search(content) or LOCAL_ABSOLUTE.search(content):
                 self.fail(f"Absolute machine-local path leaked into {self.label(path)}")
+            if re.search(r"-----BEGIN (?:ENCRYPTED )?PRIVATE KEY-----", content):
+                self.fail(f"Private-key material appears in {self.label(path)}")
             if path.suffix == ".json":
                 try:
                     def reject_constant(value):
@@ -360,8 +399,212 @@ class Verifier:
                 if transition.get("from") not in {"OUTSIDE_GAME", "ANY", "TERMINAL"} and not transition.get("guard"):
                     self.fail(f"state-machine.json: transition[{index}] needs a guard")
 
+    @staticmethod
+    def winning_lines(board, symbol):
+        return [line for line in WIN_LINES if all(board[cell] == symbol for cell in line)]
+
+    def golden(self):
+        name = "golden-fixtures.json"
+        document = self.document(name)
+        if document.get("schemaVersion") != 1:
+            self.fail(f"{name}: schemaVersion must be 1")
+        if document.get("pathBase") != "repository root":
+            self.fail(f"{name}: pathBase must be 'repository root'")
+        sources = document.get("sources")
+        if not isinstance(sources, list) or not sources:
+            self.fail(f"{name}: sources must be a nonempty list")
+        else:
+            for source in sources:
+                self.local_target(source, REPOSITORY, REPOSITORY, f"{name}:sources")
+
+        encoding = document.get("encoding", {})
+        if encoding.get("cellOrder") != "row-major" or encoding.get("cellIndices") != list(range(9)):
+            self.fail(f"{name}: cells must be row-major indices 0 through 8")
+        if encoding.get("boardValues") != [None, "X", "O"]:
+            self.fail(f"{name}: boardValues must be [null, 'X', 'O']")
+        if encoding.get("winningLines") != WIN_LINES:
+            self.fail(f"{name}: winning-line order differs from the core contract")
+        if encoding.get("initialBag") != {"X": 5, "O": 5}:
+            self.fail(f"{name}: initial bag must contain five X and five O pieces")
+
+        def board(value, context):
+            valid = isinstance(value, list) and len(value) == 9 and all(cell in (None, "X", "O") for cell in value)
+            if not valid:
+                self.fail(f"{context}: board must contain exactly nine null/X/O cells")
+                return None
+            return value
+
+        # All named fixture groups are append-only compatibility surfaces. IDs
+        # protect downstream XCTest/Kotlin parameterized-test routing.
+        for section, required_ids in GOLDEN_IDS.items():
+            rows = document.get(section)
+            if not isinstance(rows, list):
+                self.fail(f"{name}: {section} must be a list")
+                continue
+            ids = [row.get("id") for row in rows if isinstance(row, dict)]
+            if len(ids) != len(set(ids)):
+                self.fail(f"{name}: duplicate ID in {section}")
+            missing = required_ids - set(ids)
+            if missing:
+                self.fail(f"{name}: {section} is missing IDs {sorted(missing)}")
+
+        # Recursively catch malformed boards, including presentation/restoration
+        # snapshots, without dictating how either platform serializes state.
+        def visit(value, context="root"):
+            if isinstance(value, dict):
+                for key, child in value.items():
+                    child_context = f"{context}.{key}"
+                    if key in {"board", "expectedBoard"}:
+                        board(child, child_context)
+                    else:
+                        visit(child, child_context)
+            elif isinstance(value, list):
+                for index, child in enumerate(value):
+                    visit(child, f"{context}[{index}]")
+        visit(document)
+
+        for index, game in enumerate(document.get("scriptedGames", [])):
+            context = f"{name}:scriptedGames[{index}]"
+            if not isinstance(game, dict):
+                self.fail(f"{context}: expected an object")
+                continue
+            mode, actor = game.get("mode"), game.get("starter")
+            if mode not in {"PIC_PAC", "CLASSIC"} or actor not in {"ONE", "TWO"}:
+                self.fail(f"{context}: invalid mode/starter")
+                continue
+            cells, remaining = [None] * 9, {"X": 5, "O": 5}
+            outcome = None
+            for move_index, move in enumerate(game.get("moves", [])):
+                move_context = f"{context}:moves[{move_index}]"
+                if outcome is not None:
+                    self.fail(f"{move_context}: move follows a terminal position")
+                    break
+                if not isinstance(move, dict) or move.get("actor") != actor:
+                    self.fail(f"{move_context}: actors must alternate from starter")
+                    break
+                symbol = move.get("draw") if mode == "PIC_PAC" else ("X" if actor == "ONE" else "O")
+                cell = move.get("cell")
+                if symbol not in {"X", "O"} or type(cell) is not int or cell not in range(9):
+                    self.fail(f"{move_context}: invalid symbol/cell")
+                    break
+                if cells[cell] is not None:
+                    self.fail(f"{move_context}: occupied cell")
+                    break
+                if mode == "PIC_PAC":
+                    if remaining[symbol] <= 0:
+                        self.fail(f"{move_context}: drawn symbol is exhausted")
+                        break
+                    remaining[symbol] -= 1
+                cells[cell] = symbol
+                lines = self.winning_lines(cells, symbol)
+                if lines:
+                    outcome = {"kind": "WIN", "actor": actor, "symbol": symbol, "lines": lines}
+                elif all(value is not None for value in cells):
+                    outcome = {"kind": "DRAW"}
+                actor = "TWO" if actor == "ONE" else "ONE"
+            expected = game.get("expected", {})
+            if cells != expected.get("board"):
+                self.fail(f"{context}: simulated board differs from expected board")
+            if outcome != expected.get("outcome"):
+                self.fail(f"{context}: simulated outcome differs from expected outcome")
+            if mode == "PIC_PAC" and (remaining["X"], remaining["O"]) != (expected.get("remainingX"), expected.get("remainingO")):
+                self.fail(f"{context}: simulated bag counts differ from expected counts")
+
+        for index, row in enumerate(document.get("bagProbabilities", [])):
+            context = f"{name}:bagProbabilities[{index}]"
+            if not isinstance(row, dict):
+                self.fail(f"{context}: expected an object")
+                continue
+            x, o, expected = row.get("remainingX"), row.get("remainingO"), row.get("expected", {})
+            if type(x) is not int or type(o) is not int or x < 0 or o < 0 or x + o <= 0:
+                self.fail(f"{context}: remaining counts must be nonnegative with a positive total")
+                continue
+            total = x + o
+            if expected.get("hiddenTotal") != total:
+                self.fail(f"{context}: hiddenTotal must equal remainingX + remainingO")
+            if expected.get("x") != {"numerator": x, "denominator": total} or expected.get("o") != {"numerator": o, "denominator": total}:
+                self.fail(f"{context}: probability fractions do not match bag counts")
+
+        for index, row in enumerate(document.get("deterministicDraws", [])):
+            context = f"{name}:deterministicDraws[{index}]"
+            if not isinstance(row, dict):
+                self.fail(f"{context}: expected an object")
+                continue
+            x, o, bound, result = (row.get(key) for key in ("remainingX", "remainingO", "nextIntBound", "scriptedResult"))
+            if not all(type(value) is int for value in (x, o, bound, result)) or bound != x + o or result not in range(bound):
+                self.fail(f"{context}: invalid random bound/result")
+                continue
+            expected_symbol = "X" if result < x else "O"
+            if row.get("expectedSymbol") != expected_symbol:
+                self.fail(f"{context}: expectedSymbol does not match weighted-draw boundary")
+
+        for index, row in enumerate(document.get("aiChoices", [])):
+            context = f"{name}:aiChoices[{index}]"
+            if not isinstance(row, dict):
+                self.fail(f"{context}: expected an object")
+                continue
+            cells = board(row.get("board"), context)
+            expected_cell = row.get("expectedCell")
+            if cells is None or type(expected_cell) is not int or expected_cell not in range(9) or cells[expected_cell] is not None:
+                self.fail(f"{context}: expectedCell must be an empty board cell")
+                continue
+            if row.get("agent") == "HEURISTIC":
+                trial = cells.copy()
+                trial[expected_cell] = row.get("heldSymbol")
+                if not self.winning_lines(trial, row.get("heldSymbol")):
+                    self.fail(f"{context}: heuristic fixture's expected cell is not an immediate win")
+            if row.get("agent") == "RANDOM_BASELINE":
+                legal = row.get("legalCells")
+                result = row.get("scriptedNextIntResult")
+                if not isinstance(legal, list) or type(result) is not int or result not in range(len(legal)) or legal[result] != expected_cell:
+                    self.fail(f"{context}: scripted random index does not select expectedCell")
+
+        if document.get("graphOracle") != {
+            "chanceStates": 11065,
+            "decisionStates": 21314,
+            "terminalStates": 6648,
+            "totalStates": 39027,
+        }:
+            self.fail(f"{name}: graph oracle counts differ from the Kotlin reachability oracle")
+
+    def repository_security(self):
+        """Reject tracked signing containers/properties without reading secrets."""
+        try:
+            result = subprocess.run(
+                ["git", "ls-files", "-z"], cwd=REPOSITORY,
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False,
+            )
+        except OSError as error:
+            self.warnings.append(f"Could not inventory tracked files for signing material: {error}")
+            return
+        if result.returncode != 0:
+            self.warnings.append("Could not inventory tracked files for signing material")
+            return
+        for raw in result.stdout.split(b"\0"):
+            if not raw:
+                continue
+            path = raw.decode("utf-8", errors="replace")
+            lower, basename = path.lower(), Path(path).name.lower()
+            if lower.endswith((".jks", ".keystore", ".p12", ".pfx")) or basename == "keystore.properties":
+                self.fail(f"Tracked signing-sensitive file is forbidden: {path}")
+
     def release(self, strict):
         document = self.document("release-identity.json")
+        android = document.get("android", {})
+        play = document.get("play", {})
+        if not isinstance(android, dict) or not isinstance(play, dict):
+            self.fail("release-identity.json: android and play must be objects")
+        else:
+            candidate_code = android.get("versionCode")
+            highest_code = play.get("highestUploadedVersionCodeConfirmed")
+            if type(candidate_code) is not int or type(highest_code) is not int or candidate_code <= highest_code:
+                self.fail("release-identity.json: Android versionCode must exceed the confirmed Play maximum")
+            if play.get("candidateVersionCodeValid") is not True:
+                self.fail("release-identity.json: candidateVersionCodeValid must be true")
+            if play.get("appSigningKeyChangeRequested") is not False:
+                self.fail("release-identity.json: app-signing key change must remain false")
+            if play.get("canonicalReleasePath") != "local-manual-signing-and-owner-manual-upload":
+                self.fail("release-identity.json: local manual signing/upload must remain canonical")
         git = document.get("git", {})
         if not isinstance(git, dict):
             self.fail("release-identity.json: git must be an object")
@@ -383,6 +626,8 @@ class Verifier:
         self.records("assets-manifest.json", ("assets",), PACKAGE, REPOSITORY)
         self.checksums()
         self.contracts()
+        self.golden()
+        self.repository_security()
         self.release(strict)
         for warning in self.warnings:
             print(f"WARNING: {warning}")

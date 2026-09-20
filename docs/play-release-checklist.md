@@ -1,11 +1,11 @@
 # Pic-Pac-Poe 2.0.0 Play release checklist
 
-This checklist separates facts verified in the repository from actions that require the Play Console, GitHub repository administration, or the owner's private upload key. A checked repository item is not evidence that its corresponding Play Console task is complete.
+This checklist separates facts verified in the repository from actions that require the Play Console or the owner's private upload key. Existing releases used local Windows signing and manual Play upload. GitHub signing automation is optional future work and does not block 2.0.0. A checked repository item is not evidence that its corresponding Play Console task is complete.
 
 ## Repository-verified release facts
 
 - [x] Production identity is unchanged: `com.thevaguebox.probabilistictictactoe` is both the application ID and namespace.
-- [x] The remaster is `versionCode 5` / `versionName 2.0.0`. The owner confirmed the current Production release is code 4 / name 1.2.1. Code 5 remains provisional until every testing track, draft release and uploaded bundle is confirmed below 5.
+- [x] The remaster is `versionCode 5` / `versionName 2.0.0`. The owner confirmed through “Latest releases and bundles” that code 4 / name 1.2.1 is current Production and code 4 is the global maximum uploaded version. Keep code 5 unchanged.
 - [x] `compileSdk` and `targetSdk` are 36; `minSdk` remains 24.
 - [x] Java and Kotlin target JVM 17. The Gradle wrapper is 8.10.2 and its binary distribution is pinned to Gradle's published SHA-256 checksum.
 - [x] Dependencies use fixed versions or the fixed Compose BOM. There are no dynamic versions or snapshots.
@@ -27,28 +27,31 @@ R8/resource shrinking remains disabled for 2.0.0. The supported Android Studio l
 
 Revisit shrinking only as a separate toolchain change with a compatible Android Studio/AGP/R8 combination and a complete release regression run. References: [Kotlin compatibility](https://developer.android.com/build/kotlin-support) and [AGP 8.8 compatibility](https://developer.android.com/build/releases/agp-8-8-0-release-notes).
 
-## GitHub owner setup
+## Optional future GitHub signing automation
 
-- [ ] Protect `main` and `dev`; require the Android CI job before merge.
-- [x] Confirm current environment topology: this repository has no GitHub Environments. The manually dispatched workflow therefore reads repository-level Actions secrets and still requires an exact 40-character commit SHA; it is not environment-approval-gated.
-- [ ] After the original upload key is positively identified, add or verify these repository-level Actions secrets, never repository files:
+- [ ] Independently decide whether to adopt GitHub signing after the local 2.0.0 release; do not configure it merely to unblock this release.
+- [ ] If adopted, protect `main` and `dev` and require the Android CI job before merge.
+- [x] Current topology has no GitHub Environments and no signing secrets; this is expected, not a failure.
+- [ ] If the owner later adopts this path, add or verify these repository-level Actions secrets, never repository files:
   - `ANDROID_UPLOAD_KEYSTORE_BASE64`: base64 encoding of the existing Play upload-keystore file.
   - `ANDROID_UPLOAD_KEY_ALIAS`: upload-key alias.
   - `ANDROID_UPLOAD_KEY_PASSWORD`: upload-key password.
   - `ANDROID_UPLOAD_STORE_PASSWORD`: keystore password.
 - [ ] Confirm Actions retention and access settings are appropriate for a signed release artifact.
-- [ ] Run **Build signed Play release** with the full 40-character SHA of the reviewed release commit.
-- [ ] Review the workflow's clean test/build result, signature verification, and SHA-256 output. Download the manually dispatched `pic-pac-poe-2.0.0-signed-<sha>` artifact.
+- [ ] Run **Build signed Play release** only after separate owner authorization, with the full 40-character SHA of the reviewed release commit.
+- [ ] Review clean test/build result, signature verification, signer certificate and SHA-256 output before treating any workflow artifact as a candidate.
 
-The release workflow decodes the keystore into the runner's temporary directory, passes only the temporary path and secret values to Gradle, verifies the resulting AAB with `jarsigner`, and uploads it as a private Actions artifact. It deliberately does not publish to Play. Do not dispatch it until the upload-key fingerprint and version code are confirmed, and do not upload the local unsigned `app-release.aab`.
+The release workflow decodes the keystore into the runner's temporary directory, passes only the temporary path and secret values to Gradle, verifies the resulting AAB with `jarsigner`, and uploads it as a private Actions artifact. It deliberately does not publish to Play. It is not the canonical path for this release. Do not dispatch it during the upload-key reset, and never upload the local unsigned `app-release.aab`.
 
-If GitHub Actions is unavailable, the owner may use Android Studio's **Build > Generate Signed Bundle / APK > Android App Bundle** flow with the existing Play upload keystore and the `release` variant. Do not save passwords in project files, do not use the debug key, and do not generate a replacement upload key. Run the repository's clean verification command first, then verify the generated AAB signature and package/version before upload.
+The canonical path is local signing with the new upload key after Play activates its public certificate. The owner may use Android Studio's **Build > Generate Signed Bundle / APK > Android App Bundle** flow or the repository's Gradle signing environment interactively. Do not save passwords in project files and do not use the debug key. Run clean verification first, then verify the generated AAB's package, version, signature, signer certificate and hash before asking for upload approval.
 
 ## Play Console owner tasks
 
-- [ ] Confirm the highest version code already uploaded to every Play track is lower than 5. If it is 5 or higher, increment the repository version code before building.
+- [x] Confirm the highest version code already uploaded anywhere in Play is lower than 5. The owner verified the global maximum is 4.
 - [ ] Confirm this is the existing app with package name `com.thevaguebox.probabilistictictactoe`; never create a replacement listing for the remaster.
-- [x] Confirm Play App Signing enrollment and Play Console access. The existing upload key is still being identified; do not request a reset or create replacement credentials yet.
+- [x] Confirm Play App Signing enrollment and Play Console access.
+- [ ] Complete the supported **upload-key-only reset** with the newly created public PEM. Do not upgrade or replace the Google-held app-signing key.
+- [ ] After activation, require Play's **Upload key certificate** SHA-256 to equal the new local certificate fingerprint before signing a release bundle.
 - [ ] Host `docs/privacy-policy.md` at a stable, public, non-editing URL and enter that URL in Play Console. Confirm the public page identifies the app and provides an owner-approved contact route.
 - [ ] Complete Data safety from the shipped app, not from assumptions: no data collected, no data shared, no security practices involving transmitted data, and no account deletion mechanism because the app has no accounts.
 - [ ] If Play asks about AI-generated content, classify the shipped heuristic, Expectiminimax, MCTS, and tabular Q-learning systems as game-action decision algorithms, not generative AI. They do not generate user-prompted text, images, audio, video, or conversation.
@@ -56,7 +59,7 @@ If GitHub Actions is unavailable, the owner may use Android Studio's **Build > G
 - [ ] Mark app access unrestricted; the app has no login or gated content.
 - [ ] Review store title, short/full descriptions, category, contact details, icon, feature graphic, phone/tablet screenshots, and localized assets. Repository screenshots are reference evidence, not automatically uploaded assets.
 - [ ] Paste the reviewed 2.0.0 notes from `docs/play/release-notes-2.0.0.txt`.
-- [ ] Upload the signed workflow artifact to an internal test track first. Confirm Play accepts package identity, version code, target API, signing certificate, and manifest declarations.
+- [ ] After explicit owner approval, upload the verified locally signed artifact to the chosen test track first. Confirm Play accepts package identity, version code, target API, signing certificate, and manifest declarations.
 - [ ] Review the App Bundle Explorer, automated pre-launch report, device catalog, policy status, and Android vitals signals available from the test release.
 - [ ] Smoke-test install/update behavior from the Play-delivered internal build on at least one supported phone and one larger or resizable device. Cover Classic, local reveal/handoff, all three computer difficulties, rotation/recreation, rematch, settings, sound/haptics, reduced motion, and offline launch.
 - [ ] Confirm countries/regions, pricing/free status, release availability, and managed-publishing choice.
@@ -66,8 +69,8 @@ If GitHub Actions is unavailable, the owner may use Android Studio's **Build > G
 
 - Local debug APK: `app/build/outputs/apk/debug/app-debug.apk` (debug signed; install/smoke testing only).
 - Local release bundle: `app/build/outputs/bundle/release/app-release.aab` (unsigned unless all `ANDROID_UPLOAD_*` path/password variables are deliberately supplied).
-- Production candidate: signed AAB downloaded from the manually dispatched release workflow for the exact reviewed commit, after signing/version gates are resolved.
+- Production candidate: locally signed AAB built from the exact owner-approved clean commit after Play activates and confirms the new upload certificate.
 
 ## Go/no-go rule
 
-Repository readiness requires a clean `clean check :app:assembleDebug :app:bundleRelease` run and a reviewed clean Git state. Play readiness additionally requires every unchecked owner item relevant to the release to be completed. Missing Play Console state, upload-key access, public policy hosting, production secrets, or store declarations blocks upload/promotion even when the repository is ready.
+Repository readiness requires a clean `clean check :app:assembleDebug :app:bundleRelease` run and a reviewed clean Git state. Play readiness additionally requires upload-key reset activation/fingerprint match, an exact approved release commit, a verified locally signed artifact, public policy hosting and completed store declarations. Missing GitHub signing secrets does not block the canonical local path.

@@ -1,6 +1,6 @@
 # iOS parity matrix and milestone acceptance gates
 
-This is a forward implementation checklist, not a claim that iOS tests have run. Every checkbox starts unchecked. Android source tests are executable specifications; the final Android verification report records which ran on the release candidate. See [architecture](ANDROID_TO_SWIFTUI_MAP.md), [screen/accessibility inventory](SCREENS_AND_ACCESSIBILITY.md), [state machine](state-machine.json), and [main handoff](PIC_PAC_POE_IOS_HANDOFF.md).
+This is a forward implementation checklist, not a claim that iOS tests have run. Every checkbox starts unchecked. Android source tests are executable specifications; the final Android verification report records which ran on the release candidate. Both platforms should execute the shared [`golden-fixtures.json`](golden-fixtures.json) independently. See [architecture](ANDROID_TO_SWIFTUI_MAP.md), [repository decision record](REPOSITORY_AND_DELIVERY.md), [screen/accessibility inventory](SCREENS_AND_ACCESSIBILITY.md), [state machine](state-machine.json), and [main handoff](PIC_PAC_POE_IOS_HANDOFF.md).
 
 ## 1. Test harness policy
 
@@ -11,6 +11,7 @@ This is a forward implementation checklist, not a claim that iOS tests have run.
 - Record test environment, source revision, build configuration, runtime OS/device, appearance, Dynamic Type and Reduce Motion setting with screenshot results.
 - Geometry/contrast/behavior are strict assertions. Pixel comparisons need a documented tolerance for system text rasterization, native safe areas and differing renderers; do not hide a meaningful state mismatch inside a generous threshold.
 - Search comparison uses exact rational/Double expectations where applicable, with explicit numerical tolerance. Identical integer seeds in Kotlin and Swift do not alone guarantee identical pseudorandom streams.
+- Parse `golden-fixtures.json` as versioned test data. Reject unknown schema versions and name the fixture ID on failure; do not fork/edit expected values only on one platform.
 
 ## 2. Android test → XCTest/XCUITest parity matrix
 
@@ -129,16 +130,17 @@ Do not begin a later milestone to conceal an unfinished earlier behavioral gate.
 
 ### 1. Repository/project bootstrap
 
-- [ ] Resolve [release identity](release-identity.json), clone/fetch exact tagged Android reference, verify checksums and licenses.
-- [ ] Create a **separate** native Swift/SwiftUI repository/project on Mac; keep Android source read-only.
+- [ ] Resolve [release identity](release-identity.json), clone/fetch the exact approved Android reference, verify checksums and licenses; if tag/commit is still unresolved, stop and ask the owner rather than guessing.
+- [ ] Evaluate and record one-monorepo, separate-repository, KMP-core and duplicated-native-core options using [the decision record](REPOSITORY_AND_DELIVERY.md); keep the identified Android reference read-only under any option.
+- [ ] Create the native SwiftUI project in the owner-approved topology only after that decision.
 - [ ] Record minimum iOS version, current Xcode/Swift toolchain, bundle ID/signing ownership and simulator targets; do not invent signing credentials.
 - [ ] Acceptance: empty native app builds/tests/launches, source-control tree clean, no Android dependencies or copied screenshots in app assets.
 
 ### 2. Pure Swift game engine and tests
 
-- [ ] Port validated board, actors, phases, rules and session capability boundary.
-- [ ] Add scripted draws, full rule/ownership/conservation and reachability tests.
-- [ ] Acceptance: canonical graph counts and golden examples match; no UI import in engine; all rejection paths nonmutating.
+- [ ] Implement or expose the chosen board, actor, phase, rule and session-capability boundary to Swift without UI dependencies.
+- [ ] Execute the shared golden fixtures, scripted draws, full rule/ownership/conservation and reachability tests.
+- [ ] Acceptance: every fixture ID passes, canonical graph counts match, no SwiftUI import reaches the engine, and all rejection paths are nonmutating.
 
 ### 3. State/presentation coordinator
 
@@ -177,7 +179,7 @@ Do not begin a later milestone to conceal an unfinished earlier behavioral gate.
 
 ### 9. Vs Computer and AI
 
-- [ ] Native heuristic, depth4/full exact search and public observation boundary; worker cancellation.
+- [ ] Implement or bridge heuristic, depth4/full exact search and the public-observation boundary; preserve worker cancellation and off-main execution.
 - [ ] Build computer sequence with selected target before mutation, persistent symbol/target through settlement and delayed terminal modal.
 - [ ] Acceptance: oracle/legality tests and complete Easy/Medium/Hard games pass; canceled search cannot mutate replacement; Instruments shows search outside main actor.
 
@@ -219,6 +221,6 @@ Do not begin a later milestone to conceal an unfinished earlier behavioral gate.
 
 ## 6. Current Android automation boundary
 
-[Android CI](../../.github/workflows/ci.yml) runs `clean check :app:assembleDebug :app:bundleRelease` for pushes and pull requests targeting `dev`/`main`, with JDK17 and the configured SDK. It does **not** contain a connected-emulator job. Local connected/emulator results therefore need their own evidence; do not infer them from a green CI badge. The [signed release workflow](../../.github/workflows/release.yml) is manually dispatched for a full40-character commit and uses protected signing secrets; it builds/verifies an AAB, not an automatic public Play rollout.
+[Android CI](../../.github/workflows/ci.yml) runs `clean check :app:assembleDebug :app:bundleRelease` for pushes and pull requests targeting `dev`/`main`, with JDK17 and the configured SDK. It does **not** contain a connected-emulator job. Local connected/emulator results therefore need their own evidence; do not infer them from a green CI badge. The [signed release workflow](../../.github/workflows/release.yml) is an optional, manually dispatched exact-commit artifact workflow requiring repository secrets; it performs no Play upload. Historical releases and the canonical 2.0.0 plan use local manual signing, so unconfigured GitHub signing is not a release blocker.
 
 Keep release tests distinct from future iOS milestones. An Android release can be automated-test green while physical-device/TalkBack checks remain legitimately open. An iOS release cannot inherit Android's human accessibility sign-off.

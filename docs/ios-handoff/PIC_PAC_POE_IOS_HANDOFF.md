@@ -1,8 +1,8 @@
 # Pic-Pac-Poe: authoritative Android-to-iOS handoff
 
-This package specifies the approved **Form Playground 2.0** Android release candidate for a later native Swift/SwiftUI implementation. It is a product contract, not a redesign brief. Read this document and every companion listed below completely before implementation. Keep the Android clone read-only; create iOS in a separate repository on the Mac.
+This package specifies the approved **Form Playground 2.0** Android release candidate for a later native Swift/SwiftUI implementation. It is a product contract, not a redesign brief. Read this document and every companion listed below completely before implementation. Keep the identified Android reference read-only. The Mac architecture pass must decide monorepo versus separate repositories, KMP versus independently verified native cores, before scaffolding production iOS code.
 
-**Current delivery status:** local implementation, commits, automated tests, clean build and portable-package validation are complete. GitHub publishing/main integration was blocked by the execution approval gate; existing signing configuration and Play version history are unresolved. No merged release SHA, tag, signed upload artifact or Internal testing release is claimed. [Release identity](release-identity.json) records the exact verified candidate separately from those deliberately null release fields.
+**Current delivery status:** Android runtime implementation and its recorded automated/emulator verification are complete. Version code 5 / name 2.0.0 is valid because the owner confirmed 4 is the highest uploaded Play code. Historical releases used local Windows signing and manual Play upload; GitHub signing automation is optional and does not block 2.0.0. A Play **upload-key-only** reset is pending, so no final signed AAB, upload, merged release SHA or tag is claimed. [Release identity](release-identity.json) separates the verified runtime candidate from deliberately unresolved release fields.
 
 ## 1. Release identity and authority
 
@@ -41,16 +41,23 @@ The resolved tag commit must equal `git.releaseCommit`. Strict release validatio
 | --- | --- |
 | [BEHAVIOR_AND_STATE.md](BEHAVIOR_AND_STATE.md) | Full rules, worked examples, formulas, all AI algorithms, transition table, saved-state keys, stale-work guards, edge cases |
 | [DESIGN_AND_MOTION.md](DESIGN_AND_MOTION.md) | Exact palette/type/geometry/layer order, control states, wordmark, every animation and feedback event, responsive/accessibility rules |
-| [ANDROID_TO_SWIFTUI_MAP.md](ANDROID_TO_SWIFTUI_MAP.md) | File/type responsibilities, data flow, concurrency, native counterparts and KMP decision |
+| [ANDROID_TO_SWIFTUI_MAP.md](ANDROID_TO_SWIFTUI_MAP.md) | File/type responsibilities, data flow, concurrency, native counterparts and core-sharing decision inputs |
 | [SCREENS_AND_ACCESSIBILITY.md](SCREENS_AND_ACCESSIBILITY.md) | Complete screen/state inventory, hierarchy, behavior, semantics, responsive and parity criteria |
 | [IOS_PARITY_CHECKLIST.md](IOS_PARITY_CHECKLIST.md) | Android-to-XCTest evidence matrix, 14 ordered milestones and acceptance gates |
+| [golden-fixtures.json](golden-fixtures.json) | Portable rule, probability, deterministic draw, AI-choice, terminal-move, handoff and restoration fixtures |
 | [design-tokens.json](design-tokens.json) | Exact platform-neutral colors/RGBA/type/space/shapes/geometry |
 | [motion-spec.json](motion-spec.json) | Triggers, owners, timing/easing, normal/reduced variants and feedback |
 | [state-machine.json](state-machine.json) | Machine-readable states, events, guards, timing and restoration |
 | [ASSET_MANIFEST.md](ASSET_MANIFEST.md) | Portable asset locations, licenses, screenshot provenance, checksums and regeneration |
+| [PRIVACY_AND_STORE.md](PRIVACY_AND_STORE.md) | Manifest/dependency/data-flow audit, store posture, account-deletion conclusion and planned legal URLs |
+| [REPOSITORY_AND_DELIVERY.md](REPOSITORY_AND_DELIVERY.md) | Modules/toolchain/tests/workflows/manual signing gate and four-way Mac architecture decision input |
 | [Release verification](RELEASE_VERIFICATION.md) | Actual executed results, limitations, artifact provenance, signing/Play gate, owner checklist |
 
 JSON source paths are relative to repository root unless their schema explicitly states otherwise. Markdown paths are relative to the document. Asset manifest paths are relative to this directory; screenshot manifest paths are relative to `reference/`. Do not use workstation paths or chat attachments as prerequisites.
+
+### Canonical and archival boundary
+
+This directory is the single portable Android-to-iOS handoff. [`docs/form-playground-2.md`](../form-playground-2.md) and [`docs/BRAND_TYPOGRAPHY_HANDOFF.md`](../BRAND_TYPOGRAPHY_HANDOFF.md) are implementation-era evidence for the same production system, not competing iOS specifications. [`PIC_PAC_POE_REMASTER_PLAN.md`](../../PIC_PAC_POE_REMASTER_PLAN.md), `docs/screenshots/humanized/`, `docs/screenshots/turn-flow/` and `reference/home-before-*` describe earlier audits, designs or before-states and are **archival**, not parity targets. When any archival material conflicts with current Kotlin source, executable tests or this package, the current source/contracts win and the discrepancy must be reported.
 
 ## 2. Product intent and personality
 
@@ -97,7 +104,7 @@ Restoration snapshot ↔ coordinator (never reconstruct by replaying a draw)
 
 `GameViewModel` owns domain session, revision/token/presentation identities, pending AI result and UI projection. Composables own layout and decorative transforms; `PresentationClock` owns only stage delay acknowledgements. AI calculation begins during computer REVEALING. Settings are local DataStore; navigation is screen state, not a server/router. Dependencies do not allow an agent to access the private environment RNG.
 
-Recommend pure Swift value types/rules, a main-actor observable coordinator, separately isolated cancellable AI tasks, injected clock/RNG, Codable restoration and native preferences. Do not assume `Task {}` moves expensive work off the main actor. KMP is **not presently worthwhile as a prerequisite**: the logic is small and exhaustively testable, while Java RNG/I/O and Android lifecycle still require deliberate boundaries. Keep KMP a future evidence-based maintenance choice, not a port startup cost.
+The portable implementation shape is pure value rules, a main-actor observable coordinator, separately isolated cancellable AI tasks, injected clock/RNG, validated Codable restoration and native preferences. Do not assume `Task {}` moves expensive work off the main actor. Repository/core sharing is not decided here: [Repository and delivery](REPOSITORY_AND_DELIVERY.md) compares one monorepo, separate repositories, KMP and duplicated native cores governed by fixtures. KMP is **not presently required as a prerequisite** because Java RNG/I/O and Android lifecycle remain platform-bound, but the Mac architecture pass owns the final decision.
 
 ## 6. Full state machine and clock ownership
 
@@ -165,11 +172,17 @@ SavedStateHandle is instance/process restoration support, **not a durable match-
 
 ## 13. Tests and parity matrix
 
-[IOS_PARITY_CHECKLIST.md](IOS_PARITY_CHECKLIST.md) maps every Android suite to XCTest/XCUITest invariants, including probability conservation, all wins/illegal moves, exact oracle/complete graph, AI fairness/ties/randomness, state-machine early/late/stale/cancelled results, targeting/terminal restoration, UI flows, accessible controls, reduced motion, both themes, narrow/wide and large text. Named source tests are evidence of intent; only [RELEASE_VERIFICATION.md](RELEASE_VERIFICATION.md) states which were actually executed and their results.
+[IOS_PARITY_CHECKLIST.md](IOS_PARITY_CHECKLIST.md) maps every Android suite to XCTest/XCUITest invariants, including probability conservation, all wins/illegal moves, exact oracle/complete graph, AI fairness/ties/randomness, state-machine early/late/stale/cancelled results, targeting/terminal restoration, UI flows, accessible controls, reduced motion, both themes, narrow/wide and large text. [`golden-fixtures.json`](golden-fixtures.json) supplies common, platform-neutral inputs/expected results so both implementations can execute the same cases independently. Named source tests are evidence of intent; only [RELEASE_VERIFICATION.md](RELEASE_VERIFICATION.md) states which were actually executed and their results.
 
 Keep deterministic unit/coordinator tests independent of visual tests; use injected clocks and scripted randomness. Live Easy/Medium/Hard flows test the actual worker/coordinator and input release after settlement. Fixture capture is not a substitute. Cross-language randomness equality needs a shared specified RNG or scripted draws; a numeric Kotlin seed alone is not a Swift specification.
 
-## 14. Known limitations and deliberate compromises
+## 14. Privacy, local data and store posture
+
+The source-backed conclusion is local-only: no Internet or advertising-ID permission; no accounts, ads, analytics, crash SDK, tracker, external storage, background service, networking client or personal-data transmission. Settings and restoration remain local, and Android backup/device transfer are disabled. The merged manifest's AndroidX startup provider and profile receiver are framework mechanics, not product data collection. See the complete evidence and intended Android Data Safety/iOS App Privacy posture in [Privacy and store](PRIVACY_AND_STORE.md).
+
+No account-deletion function is necessary while account creation and server-side account data do not exist. The proposed privacy and terms URLs are **planned and not verified live**; the owner must validate them before store submission. These are engineering conclusions, not legal guarantees, and must be rechecked against the final artifacts/dependencies.
+
+## 15. Known limitations and deliberate compromises
 
 - Physical-device frame pacing, haptic feel, sound balance, TalkBack and install/update remain owner gates; emulator results cannot certify them.
 - Hard has no explicit app search deadline; MCTS simulation count is not a latency SLA. Keep expensive work off main actor and retain THINKING.
@@ -179,14 +192,14 @@ Keep deterministic unit/coordinator tests independent of visual tests; use injec
 - A retained ViewModel's last transient feedback may replay on a new composition after recreation; process-restored snapshots omit effects. Native iOS should model consumable ephemeral feedback explicitly.
 - Android does not independently bind its custom motion preference to system Reduce Motion. Native platform adaptation should honor iOS accessibility conventions without skipping essential explanation.
 - No iOS code, online play, cloud services, new monetization, KMP conversion, analytics, extra experimental algorithms or visual redesign is part of this handoff.
-- Play signing/version-history/track status and any unresolved upload requirement are release gates, not reasons to substitute a debug key or guess a tag.
+- Play App Signing is enabled and code 4 is the confirmed global maximum. The pending upload-key reset/activation and exact release-commit approval are release gates, not reasons to substitute a debug key, alter the Google-held app-signing key, guess a tag, or use GitHub automation as a workaround.
 
-## 15. Recommended native implementation plan
+## 16. Recommended native implementation plan
 
 Use the detailed acceptance criteria and test mapping in [IOS_PARITY_CHECKLIST.md](IOS_PARITY_CHECKLIST.md), in this order:
 
-1. Bootstrap a separate native repository/project; verify exact Android reference/assets/toolchain and agree minimum iOS.
-2. Implement pure Swift rules, injected RNG and exhaustive invariant/oracle fixtures.
+1. Verify the exact Android reference/assets/toolchain, decide repository/core-sharing architecture on the Mac, and agree minimum iOS before scaffolding.
+2. Implement the chosen native/shared core boundary and execute the platform-neutral golden fixtures plus exhaustive invariant/oracle tests.
 3. Implement main-actor coordinator, identity guards, fake presentation clock and restoration tests.
 4. Build semantic tokens and exact licensed Fredoka policy; validate contrast and Dynamic Type.
 5. Draw board/wells/pieces natively with fixed hit geometry and accessible cell descriptions.

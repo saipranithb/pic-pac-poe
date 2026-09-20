@@ -2,6 +2,16 @@
 
 Status is finalized in [release-identity.json](release-identity.json). This report distinguishes executed automated checks, emulator evidence, unavailable signing/Play gates and **unchecked human work**. It does not authorize public rollout.
 
+## Current canonical release boundary
+
+- Historical Play releases were signed locally on the owner's Windows machine and uploaded manually. GitHub served as source control; its empty signing configuration is expected. The optional signed-artifact workflow is not the canonical 2.0.0 path and is not a blocker.
+- Play App Signing is enabled. Production is version code 4 / name 1.2.1, and the owner confirmed through “Latest releases and bundles” that **4 is the global maximum uploaded code**. Keep code 5 / name 2.0.0.
+- The owner no longer has the historical upload-keystore passwords and has initiated the supported **upload-key reset** process. A new private upload key and public PEM were created outside the repository. No private path, password, key bytes or fingerprint is part of the iOS product contract.
+- Play activation and a certificate-fingerprint match are still pending. Do not build the final signed AAB until Play's **Upload key certificate** matches the new local public certificate.
+- After that match, the canonical path is a clean local build signed interactively from an explicitly approved release commit, followed by package/version/signature/fingerprint/hash verification. Upload still requires separate owner approval.
+- No app-signing-key upgrade is requested. The Google-held app-signing key must remain unchanged. Existing historical keystores remain untouched.
+- This handoff task changes documentation/fixtures only and does not rerun or modify Android runtime behavior. The latest Android runtime execution evidence remains the clean `f936faf...` candidate described below.
+
 ## Home illustration follow-up (current pre-release polish)
 
 The later Home-only change replaces the fixed central X with production X/O pieces alternating every 1400ms. One bounded 3.5% pulse and 280ms crossfade/scale transition are used normally; Reduced Motion retains a 400ms crossfade with unit scale. System animations-off retains instantaneous swaps. The scene waits for preferences, stops offscreen/backgrounded/removed and restarts at X. A single stable accessibility description replaces the formerly silent illustration. Bag, arrows, board, layout, game rules, navigation, AI, saved state and turn presentation are unchanged. The exact contract is in [motion-spec.json](motion-spec.json).
@@ -32,7 +42,7 @@ A same-hash copy was preserved outside the repository with an explicit `UNSIGNED
 
 An initial focused test run was intentionally stopped after its offscreen-scroll test stalled: Compose's animated `performScrollTo` semantics cannot finish with the test clock frozen. The harness now launches an instantaneous `ScrollState.scrollTo` asynchronously and advances the clock. No production fix was needed. The corrected scroll and mounted system-scale switching tests passed together (`OK (2 tests)`,19.298 seconds). The interrupted run is not counted as a successful suite. Physical TalkBack speech and frame pacing remain owner checks; semantic assertions/stills do not replace them.
 
-Publishing remains explicitly on hold. All four local upload-signing variables were rechecked and are absent; Play's highest uploaded version code remains unverified. No key substitution, version bump, tag, push, CI dispatch or upload is authorized by a successful local build.
+Publishing remains explicitly on hold pending Play activation/fingerprint confirmation and approval of an exact release commit. The global version maximum is confirmed as 4, so code 5 remains unchanged. No key substitution, app-signing-key change, tag, push, CI dispatch, final signed build or upload is authorized by the successful diagnostic build.
 
 ## Previous wordmark-candidate baseline (historical)
 
@@ -95,7 +105,7 @@ After the complete package commit, the exact clean candidate `3a5514eea7108d2744
 
 The file is a local build diagnostic, not the signed artifact the release brief ultimately requires. A separately preserved local copy has the same hash; the handoff itself needs neither copy. A future signed bundle must be rebuilt from the authorized clean merged/tagged release source and gets its own signature, size and checksum record. The final documentation-only status update changes no Android runtime/test source.
 
-## Git integration checkpoint
+## Historical Git integration checkpoint
 
 Local branch remains `codex/pic-pac-poe-remaster`. New implementation/test/package commits are `feefdfd37932a061d0be5775cb294b2b38e8dcb2`, `728142335e3fc94a3467366b3357cd07e871039b`, and `3a5514eea7108d274416d1b30fc1bfe53c6a4c45`; the final metadata-only commit is discoverable with `git log -- docs/ios-handoff/release-identity.json`. That avoids pretending a commit can embed its own SHA.
 
@@ -104,32 +114,31 @@ Read-only GitHub inspection found no open/historical PRs, no repository rulesets
 - `main`: `63b6749fd26c5777d0cd0d2fec565deac77c246a`
 - `codex/pic-pac-poe-remaster`: `4f76dcf1c16d3eb977409e7344a1482a1358b74f`
 
-No push, merge, PR, tag, CI run or Play upload occurred in this pass. Publishing requires direct owner confirmation to push the feature branch and perform a normal merge/push to main. After confirmation, inspect state/fetch again; preserve all commits, require clean tree, integrate without force/history rewriting, then verify main's push CI. Do not repeat completed implementation or discard the package. Git release tags remain deferred until Play version history is verified. `verify-handoff.py --strict-release` intentionally fails while release SHA/tag are null; ordinary portability validation passes.
+No push, merge, PR, tag, CI run or Play upload occurred at that historical checkpoint. Any later integration still requires direct owner confirmation, a fresh state/fetch inspection, a clean tree and non-rewriting integration. Do not repeat completed implementation or discard the package. A Git release tag remains deferred until Play activates the upload-key reset and the owner approves the exact release commit/tag policy. `verify-handoff.py --strict-release` intentionally fails while release SHA/tag are null; ordinary portability validation passes.
 
 ## Signing, version and Play boundary
 
-Application ID is `com.thevaguebox.probabilistictictactoe`, candidate2.0.0/code5/target36. Repository tags were empty when inspected. The owner confirms Play App Signing is enabled and the current Production release is code4 / name1.2.1, so candidate code5 clears Production. **Testing tracks, draft releases and other uploaded bundles remain unchecked**, so the globally highest uploaded version code is not yet verified. A release tag is therefore not assumed available/appropriate solely because no Git tag exists.
+Application ID is `com.thevaguebox.probabilistictictactoe`; the candidate is 2.0.0 / code 5 / target 36. The owner-confirmed global maximum uploaded Play code is 4. Repository tags were empty when inspected, and no tag/release SHA is inferred merely from the application version.
 
-Local `ANDROID_UPLOAD_KEYSTORE_PATH`, `ANDROID_UPLOAD_KEY_ALIAS`, `ANDROID_UPLOAD_KEY_PASSWORD`, `ANDROID_UPLOAD_STORE_PASSWORD` are not configured. A metadata-only machine search found the standard debug key plus three non-debug keystore candidates; existing configuration associates the non-debug files with other projects, and Pic-Pac-Poe Git history contains no tracked key/path/signing configuration. None is treated as the original until its SHA-256 certificate fingerprint matches Play's **upload** certificate. No key was opened, copied or used; no password/property value was printed; no debug key was substituted; no new signing identity or reset was requested.
+The new upload key was created specifically for the Play-supported upload-key reset and remains outside source control. It does not replace or upgrade the Google-held app-signing key. Historical candidate keystores remain untouched because they may belong to other applications. Private signing paths, passwords and key bytes are intentionally absent from this package.
 
-The repository has no GitHub Environments. The release workflow was therefore aligned to repository-level Actions secrets while retaining manual dispatch, exact-commit checkout, read-only contents permission, clean verification and signature checks. Its required secret names remain `ANDROID_UPLOAD_KEYSTORE_BASE64`, `ANDROID_UPLOAD_KEY_ALIAS`, `ANDROID_UPLOAD_KEY_PASSWORD`, and `ANDROID_UPLOAD_STORE_PASSWORD`. GitHub CLI and a GH token/config are absent on this machine, so `gh secret list` could not run and repository-secret provisioning remains unverified; no secret was created or changed. Do not dispatch the workflow or treat the unsigned bundle's successful build task as proof of signing.
+GitHub has no Environment and no configured signing secrets; that is expected because it was never the historical signing/publishing chain. [`release.yml`](../../.github/workflows/release.yml) remains optional future automation. Do not configure or dispatch it as part of this release unless the owner later chooses that path.
 
-When the owner makes the existing signing configuration available and confirms a valid version code:
+After Play confirms the upload-key reset:
 
-1. Verify the exact clean merged release SHA/tag and successful CI; ensure code5 is greater than every already uploaded code, including drafts/testing tracks. If not, make a focused version/gate/docs adjustment and rerun verification before tagging/building.
-2. Configure the four existing upload variables securely outside source control, or use the manually dispatched repository-secret workflow. Never paste passwords into chat/logs or commit a keystore. No key reset/replacement is part of this task.
-3. Build `:app:bundleRelease` from that exact clean source (or dispatch the pinned-commit release workflow). Record SHA, version, file size and SHA-256. Verify JAR signature is actually present and valid, not merely that `jarsigner` returned a zero exit code for an unsigned archive. Compare the public certificate fingerprint with the registered **upload** certificate; it may differ from Play's app-signing certificate.
-4. In this app's Play Console, open **Test and release → Testing → Internal testing → Create new release**. Upload that exact verified signed AAB, wait for processing, confirm package/version/code, paste [release notes](../play/release-notes-2.0.0.txt), review legitimate errors and warnings, and publish **only to Internal testing** for the existing authorized tester group. Do not create new account access or change security settings.
-5. If login/passkey/OTP/account approval or a legal agreement appears, pause for the owner. If Create release is disabled, inspect outstanding legitimate setup requirements; do not bypass them. Record resulting release ID/track/status and tester install link after success.
-6. Leave Production untouched. Internal app sharing is a different mechanism and is not a substitute for the requested Internal testing track.
+1. Compare the SHA-256 shown specifically under **Upload key certificate** with the new local public certificate. Stop on any mismatch. Do not compare keystore-file hashes or the app-signing certificate.
+2. Obtain explicit owner approval for the exact clean release commit/tag. Do not assume the current branch tip, `main`, or a version-shaped tag.
+3. Supply the keystore path/alias/passwords only through the local interactive signing flow or ephemeral environment. Never paste passwords into chat/logs or commit/copy the keystore into the repository. Run clean verification and build `:app:bundleRelease` locally from that exact source. Record commit, application ID, version, size and SHA-256. Verify the JAR signature is present and valid and its signer certificate matches Play's upload certificate.
+4. Present the verified identity/signature/hash report to the owner and ask for explicit upload approval. Do not create a Play release merely because the artifact verifies.
+5. After approval, the owner may manually upload to the chosen Play track, handle login/passkey/OTP/legal steps, and review processing results. This handoff does not preselect or mutate a track.
 
-Current task has not uploaded an AAB or started a public rollout. Signed artifact path/hash remain unavailable until the authorized signing requirement is resolved. An unsigned diagnostic artifact is never the manual upload artifact.
+Current task has not produced a final signed AAB, uploaded an artifact or started a rollout. Signed artifact path/hash remain unavailable until the reset and exact-commit gates are resolved. An unsigned diagnostic artifact is never the manual upload artifact.
 
 Official references: [prepare/review a release](https://support.google.com/googleplay/android-developer/answer/9859348), [Internal testing](https://support.google.com/googleplay/android-developer/answer/9845334), [Play App Signing/upload key](https://support.google.com/googleplay/android-developer/answer/9842756).
 
 ## Privacy and listing review
 
-The final wordmark does not introduce permissions, SDKs or data flows. Current app has no INTERNET permission, accounts, ads or analytics, uses bundled fonts/policy and local settings/game state, and has Android backup disabled. The existing privacy documents/checklist remain relevant. Actual Play Data safety answers, public policy URL/contact and current screenshots must be checked by the owner because the Console details were not successfully read in this pass. Do not assert the declarations are verified merely because source is offline. Old listing screenshots should be compared against the committed Form Playground references and refreshed if they show the previous UI; the exact listing set has not been inspected.
+The current source/merged-manifest/dependency audit finds no INTERNET or advertising-ID permission, accounts, ads, analytics/crash SDK, tracker, network client, external storage, background service or intentional personal-data collection/transmission. Android backup/device transfer are disabled. See [the complete privacy/store audit](PRIVACY_AND_STORE.md). Intended Data Safety/App Privacy answers still require owner review against the final artifact and actual store forms. The proposed privacy/terms URLs are planned and were not verified live from this environment. Old listing screenshots should be compared against the committed Form Playground references and refreshed if they show the previous UI; the exact listing set has not been inspected.
 
 ## Manual owner release checklist — all still open
 

@@ -1,6 +1,6 @@
 # Android → native SwiftUI architecture and lifecycle map
 
-This document describes the shipped Android implementation, then proposes an iOS architecture. **Proposals are not claims that an iOS implementation exists.** Read the [authoritative handoff](PIC_PAC_POE_IOS_HANDOFF.md), [state contract](state-machine.json), [motion contract](motion-spec.json), and [parity checklist](IOS_PARITY_CHECKLIST.md) together. All source links resolve from a clean checkout.
+This document describes the shipped Android implementation, then proposes native iOS counterparts. **Proposals are not claims that an iOS implementation exists or that repository/core-sharing architecture has been selected.** Read the [authoritative handoff](PIC_PAC_POE_IOS_HANDOFF.md), [state contract](state-machine.json), [motion contract](motion-spec.json), [golden fixtures](golden-fixtures.json), [repository decision record](REPOSITORY_AND_DELIVERY.md), and [parity checklist](IOS_PARITY_CHECKLIST.md) together. All source links resolve from a clean checkout.
 
 ## 1. Dependency boundaries
 
@@ -167,9 +167,11 @@ Store a small versioned Codable restoration payload separately from settings. A 
 
 Do not port Android `ToneGenerator`, `SavedStateHandle`, DataStore file formats, Compose test tags as user speech, or a fake Android status bar. Screenshots are references, not UI assets. Gradients in the current board/piece material are bounded lighting within physical forms, not permission for page-level AI gradients or glass cards.
 
-### Why not KMP now?
+### Core-sharing decision input
 
-The core is already cleanly separated, but it is JVM-oriented: session randomness uses Java security, policy I/O uses Java streams, the Gradle modules are JVM modules, and no multiplatform target or Swift interop layer is established. Sharing it would require build/interop/serialization/RNG work before the native product exists. For this small finite game, a tested native Swift engine with common golden fixtures is a proportionate first step. Keep algorithms and observations portable; reconsider KMP only if maintaining two verified engines produces meaningful ongoing cost. Do not restructure Android or introduce cross-platform UI during the initial iOS port.
+The core is cleanly separated from Compose, but it is JVM-oriented: session randomness uses Java security, policy I/O uses Java streams, the Gradle modules are JVM modules, and no multiplatform target or Swift interop layer is established. KMP would require build/interop/serialization/RNG work before sharing is real. Conversely, a native Swift engine duplicates algorithm maintenance even though the game is small and the common golden/exhaustive fixtures make independent verification practical.
+
+Do not silently treat this mapping as a decision. The Mac architecture pass must compare the four options in [Repository and delivery](REPOSITORY_AND_DELIVERY.md), record repository ownership/toolchain/release tradeoffs, and then choose. Cross-platform UI is not proposed under any option; the iOS presentation remains native SwiftUI.
 
 ### Known limitations to carry honestly
 

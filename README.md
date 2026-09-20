@@ -10,7 +10,7 @@ The Android remaster pairs a custom Compose interface with an exact stochastic-g
 |---|---|
 | ![Form Playground Home](docs/screenshots/form-playground-2/home-dark.png) | ![A real computer-game human turn with live bag probabilities](docs/screenshots/form-playground-2/human-turn-dark.png) |
 
-The implemented **Form Playground 2.0** system uses cocoa surfaces, coral/pistachio pieces, a single recessed board and independent actor colors. See [the design-system and verification handoff](docs/form-playground-2.md) for portable tokens, presentation timing, accessibility contracts and screenshot provenance.
+The implemented **Form Playground 2.0** system uses cocoa surfaces, coral/pistachio pieces, a single recessed board and independent actor colors. See [the design-system and verification handoff](docs/form-playground-2.md) for its implementation-era record. The single canonical Android-to-iOS entry point is [docs/ios-handoff/PIC_PAC_POE_IOS_HANDOFF.md](docs/ios-handoff/PIC_PAC_POE_IOS_HANDOFF.md).
 
 ## Game modes
 
@@ -103,15 +103,15 @@ Requirements: Android SDK 36, JDK 17, and the included Gradle wrapper.
 
 The project stays on Android Studio's AGP 8.8 compatibility lane. Release shrinking is deliberately disabled because AGP 8.8's bundled R8 predates Kotlin 2.3 metadata support; re-enable it only alongside R8 8.13.19 or a newer compatible Android Studio/AGP lane. This trades a larger 2.0.0 artifact for a build configuration that is verified on the supported IDE lane.
 
-The repository contains no signing key or signing secret. With no `ANDROID_UPLOAD_*` environment variables, `bundleRelease` intentionally produces an unsigned local AAB. The manually dispatched GitHub release workflow reads repository-level Actions secrets, materializes the upload key only at runtime and produces a private signed artifact; it does not publish to Google Play. Do not dispatch it until the original upload key and version code are confirmed.
+The repository contains no signing key or signing secret. With no `ANDROID_UPLOAD_*` environment variables, `bundleRelease` intentionally produces an unsigned local AAB. Historical releases used local Windows signing and manual Play upload; that remains the canonical 2.0.0 path after the pending upload-key reset is activated and its certificate fingerprint matches. The GitHub signed-artifact workflow is optional future automation and is not configured or required for this release.
 
 ## CI and release operations
 
 - `.github/workflows/ci.yml` runs the authoritative clean verification on pushes and pull requests targeting `dev` or `main`.
-- `.github/workflows/release.yml` accepts an explicit full commit SHA, reads repository-level Actions secrets, verifies the same gates, signs, verifies the AAB signature, and uploads the signed bundle as a private workflow artifact. No GitHub Environment currently exists, so there is no environment-review gate.
+- `.github/workflows/release.yml` is an optional future exact-commit signed-artifact workflow. It expects repository-level Actions secrets, which are intentionally not configured for the canonical local release path, and it never uploads to Google Play.
 - Third-party workflow code is pinned to immutable commit SHAs, and the Gradle 8.10.2 distribution is protected by its published SHA-256 checksum.
 
-Owner setup, Play Console checks, signing secret names, and the exact handoff sequence are documented in [the Play release checklist](docs/play-release-checklist.md). The 2.0.0 Play notes are in [docs/play/release-notes-2.0.0.txt](docs/play/release-notes-2.0.0.txt).
+The pending upload-key reset, local signing checks and owner-controlled upload sequence are documented in [the Play release checklist](docs/play-release-checklist.md). The 2.0.0 Play notes are in [docs/play/release-notes-2.0.0.txt](docs/play/release-notes-2.0.0.txt).
 
 The suite covers conservation/probability invariants, all winning lines, player/symbol separation, invalid/stale/terminal commands, exact state enumeration and opening values, every-state legality for fast agents, seeded MCTS, policy serialization, paired tournaments, ViewModel reveal/rematch/recreation behavior, Compose product flows, and the merged-manifest offline assertion.
 

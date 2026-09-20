@@ -43,6 +43,10 @@ Canonical quick reviews:
 
 The Home screen includes the Vs Computer setup (difficulty selection and Play); it is not a separate modal. Settled live computer captures occur during AI_SETTLING with Computer still displayed, not after input has already returned to the human. Terminal result and next-turn semantics come from separate explicit states. Still images cannot certify haptic quality, spoken announcements, animation pacing or physical-device frame times.
 
+## Portable nonvisual contracts
+
+[`golden-fixtures.json`](golden-fixtures.json), [`design-tokens.json`](design-tokens.json), [`motion-spec.json`](motion-spec.json) and [`state-machine.json`](state-machine.json) are source contracts, not assets to ship in the user-facing app unless the chosen test architecture deliberately embeds test resources. They remain text so Android and iOS can parse the same fixtures independently. The verifier checks their schema/source paths and cross-document invariants; native platform test runners still need to execute the behavioral expectations.
+
 ## Reproduction and integrity
 
 ```sh

@@ -16,6 +16,7 @@
     "releaseCommit": null,
     "releaseTag": null,
     "handoffCommit": "3a5514eea7108d274416d1b30fc1bfe53c6a4c45",
+    "handoffAuditBaseCommit": "7f5dba571db203365f387eb6124713f739022acc",
     "uiPolishCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
     "homeIllustrationPolishCommit": "f936faf7d21e85ed71e859d94d65e125fe61b436",
     "verificationTestsCommit": "728142335e3fc94a3467366b3357cd07e871039b",
@@ -24,8 +25,21 @@
     "remoteMainAtLastCheck": "63b6749fd26c5777d0cd0d2fec565deac77c246a",
     "remoteFeatureAtLastCheck": "4f76dcf1c16d3eb977409e7344a1482a1358b74f"
   },
-  "status": "local-verification-complete-publishing-and-signing-blocked",
+  "status": "android-candidate-verified-upload-key-reset-activation-pending",
   "verifiedAt": "2026-09-20",
+  "play": {
+    "appSigningEnabled": true,
+    "appSigningKeyChangeRequested": false,
+    "currentProduction": {
+      "versionCode": 4,
+      "versionName": "1.2.1"
+    },
+    "highestUploadedVersionCodeConfirmed": 4,
+    "candidateVersionCodeValid": true,
+    "uploadKeyStatus": "new-public-certificate-created-outside-repository-reset-submission-or-activation-pending",
+    "canonicalReleasePath": "local-manual-signing-and-owner-manual-upload",
+    "githubActionsSigning": "optional-future-automation-not-a-release-blocker"
+  },
   "verificationArtifact": {
     "kind": "unsigned-local-diagnostic-aab-not-for-upload",
     "repositoryRelativePath": "app/build/outputs/bundle/release/app-release.aab",
@@ -41,18 +55,19 @@
     "signatureVerification": "jarsigner explicitly reported: jar is unsigned."
   },
   "blockers": [
-    "Owner explicitly holds publishing/upload until signing and Play version-code checks are resolved; the new Home polish has not been pushed or uploaded.",
-    "Execution approval gate rejected feature push and main merge/push; no remote mutation occurred. Direct owner confirmation is required to publish/integrate.",
-    "The original upload key is not yet positively identified. Local non-debug keystore candidates exist but are referenced by other projects; do not reset or replace credentials yet.",
-    "Production is confirmed at version code 4 / version name 1.2.1, but testing tracks, drafts and other uploaded bundles still require an owner check before code 5 is final.",
-    "Repository-level Actions secret names could not be enumerated because GitHub CLI and GH_TOKEN authentication are unavailable on this machine. No GitHub Environments exist."
+    "Google Play must activate the upload-key reset and the Upload key certificate SHA-256 shown by Play must match the new local public certificate before a signed AAB is built.",
+    "The owner must explicitly approve the exact clean release commit/tag before final signing; releaseCommit and releaseTag therefore remain null.",
+    "A locally signed 2.0.0 AAB has not been built or verified. Upload remains a separate explicit owner-approval step.",
+    "Physical-device TalkBack, haptic/audio, frame-profile and store-delivered install/update checks remain open."
   ],
   "notes": [
-    "Release identity is finalized only after safe integration and version-history verification; null is not a guessed revision.",
-    "handoffCommit identifies the initial complete package; homeIllustrationPolishCommit identifies the later isolated Home X/O change and its new tests. This metadata-only follow-up changes no Android source; resolve its revision with git log rather than a self-referential hash.",
-    "The new clean diagnostic bundle supersedes the earlier 3a5514e bundle. All72 JVM executions and lint passed; all26 instrumentation tests passed against identical production/test source before this clean build. Its embedded VCS metadata names f936faf7d21e85ed71e859d94d65e125fe61b436.",
-    "candidateCommit is not a merged or tagged release. releaseCommit/releaseTag deliberately remain null until safe integration and Play version verification.",
-    "Signing and Play upload require the existing authorized upload key; unsigned verification bundles are not upload-ready.",
-    "Play App Signing is owner-confirmed enabled. Candidate version code 5 is strictly greater than confirmed Production code 4, but remains provisional pending all-track/draft/upload history."
+    "The owner confirmed through Play Console Latest releases and bundles that version code 4 is the global maximum; keep candidate code 5 / version name 2.0.0.",
+    "Historical releases used local Windows signing and manual Play upload. GitHub signing secrets and Environments are intentionally not required for this release.",
+    "A new upload key/public certificate was created outside the repository for Google's upload-key-only reset. This does not change the Google-held app-signing key; private paths, passwords and certificate material are not part of the portable handoff.",
+    "Release identity is finalized only after Play reset activation, certificate fingerprint comparison, exact-commit approval and local signed-artifact verification; null is not a guessed revision.",
+    "handoffCommit identifies the initial complete package; handoffAuditBaseCommit is the repository HEAD reconciled before the canonical audit; homeIllustrationPolishCommit identifies the isolated Home X/O runtime change. Resolve the final documentation-only handoff revision with git log rather than a self-referential hash.",
+    "The new clean diagnostic bundle supersedes the earlier 3a5514e bundle. All 72 JVM executions and lint passed; all 26 instrumentation tests passed against identical production/test source before this clean build. Its embedded VCS metadata names f936faf7d21e85ed71e859d94d65e125fe61b436.",
+    "candidateCommit is not a merged or tagged release. releaseCommit/releaseTag deliberately remain null until the owner approves an exact release commit and tag policy after Play activates the new upload certificate.",
+    "Unsigned verification bundles are not upload-ready. Final signing must use the newly registered upload key only after Play activation and fingerprint match."
   ]
 }

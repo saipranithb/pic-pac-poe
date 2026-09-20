@@ -1,6 +1,6 @@
 # Mac Codex bootstrap prompt
 
-Copy the prompt below into the Mac implementation task. It is self-contained once this tagged repository has been cloned. Do not replace unresolved release metadata with a guessed SHA or version tag.
+Copy the prompt below into the Mac architecture/implementation task. It is self-contained once the repository has been cloned. Do not replace unresolved release metadata with a guessed SHA or version tag, and do not scaffold production iOS code until repository/core-sharing architecture is explicitly decided.
 
 ---
 
@@ -14,7 +14,7 @@ You are implementing **Pic-Pac-Poe for iOS** as a native Swift/SwiftUI applicati
 2. Read `docs/ios-handoff/release-identity.json`. Use its `git.repositoryUrl`, `git.releaseCommit`, and `git.releaseTag` fields. Read the identity status/notes and any separate handoff-documentation revision rather than assuming the latest branch tip is the release.
 3. The Android app identifies as `com.thevaguebox.probabilistictictactoe`; the candidate version is 2.0.0, code 5. Verify final values from the release identity and `app/build.gradle.kts` because a store-version conflict may require a later documented adjustment.
 4. If `git.releaseTag` is populated, fetch that exact tag and resolve it to its commit using `git rev-parse '<tag>^{commit}'`. Require equality with the recorded full `git.releaseCommit`. Inspect the annotated tag and remote reference. Do not assume `v2.0.0`, a tag matching the app version, or the current `main` is necessarily the reference.
-5. If the release tag/commit is null or the identity says integration/release is blocked, **stop the exact-release bootstrap and report the unresolved field**. You may read and validate the package, but do not silently select a different revision or claim the source is tagged. Ask the owner for the final identity or explicit authorization to use an identified candidate revision.
+5. If the release tag/commit is null or the identity says release is blocked, **stop the exact-release bootstrap and report the unresolved field**. You may read and validate the package and perform the architecture assessment, but do not silently select a different revision or claim the source is tagged. Ask the owner for the final identity or explicit authorization to use the recorded runtime candidate.
 6. Open the exact commit in a separate clean reference clone/worktree if necessary; never disturb local changes in an existing checkout. Verify the reference is clean. Keep it read-only during native implementation. A tag commit and a later documentation-only identity commit may differ: follow the relationship explicitly recorded in the manifest rather than expecting a self-referential commit hash inside itself.
 
 ## Read and verify the complete handoff before implementation
@@ -29,11 +29,14 @@ Read these repository-relative files completely, not just summaries:
 6. `docs/ios-handoff/motion-spec.json`
 7. `docs/ios-handoff/state-machine.json`
 8. `docs/ios-handoff/ASSET_MANIFEST.md`
-9. `docs/ios-handoff/reference/screenshot-manifest.json`
-10. `docs/fonts/fredoka.md` and `app/src/main/assets/licenses/fredoka-OFL.txt`
-11. `docs/ios-handoff/BEHAVIOR_AND_STATE.md`
-12. `docs/ios-handoff/DESIGN_AND_MOTION.md`
-13. `docs/ios-handoff/state-machine.mmd` and the rendered state diagram referenced by the main handoff
+9. `docs/ios-handoff/golden-fixtures.json`
+10. `docs/ios-handoff/PRIVACY_AND_STORE.md`
+11. `docs/ios-handoff/REPOSITORY_AND_DELIVERY.md`
+12. `docs/ios-handoff/reference/screenshot-manifest.json`
+13. `docs/fonts/fredoka.md` and `app/src/main/assets/licenses/fredoka-OFL.txt`
+14. `docs/ios-handoff/BEHAVIOR_AND_STATE.md`
+15. `docs/ios-handoff/DESIGN_AND_MOTION.md`
+16. `docs/ios-handoff/state-machine.mmd` and the rendered state diagram referenced by the main handoff
 
 Also read the source files and tests linked from those documents. If the primary handoff identifies additional authoritative AI/rules/release artifacts, read them too. Run `python3 docs/ios-handoff/verify-handoff.py --strict-release`; the script is read-only and network-free. Verify all relative links resolve from this checkout; parse the JSON documents; check every manifest-declared asset/reference SHA-256 with macOS `shasum -a 256` (or the equivalent checks in that script). A mismatch is a blocker to treating that artifact as authoritative. Do not regenerate expected hashes to hide mismatches. The verifier checks on-disk metadata; separately verify the actual Git tag/commit and do not treat it as a CI, signing or human-accessibility certification.
 
@@ -41,11 +44,13 @@ The existing fonts live at `app/src/main/res/font/fredoka_medium.ttf` and `app/s
 
 Review all curated screenshots and the final contact sheet. Consult provenance in the manifest: a held state fixture is evidence of the real composable rendering, not a live-turn timing capture. Screenshots are **comparison references only**. Do not import entire screenshots, Android status/navigation bars, pre-rendered boards, or text rasterizations as app UI assets.
 
-## Create a separate native implementation
+## Decide architecture before creating the native implementation
 
-Create a separate native iOS repository/project in an owner-approved Mac workspace. Do not restructure the Android repository, add iOS source under its Gradle modules, introduce cross-platform UI, or adopt Kotlin Multiplatform prematurely. Keep the exact Android checkout available for read-only source, test and visual reference.
+First compare all four documented options: one monorepo with native apps, separate repositories, a KMP shared core, and independently implemented native cores governed by shared specs/golden fixtures. Inspect the actual Mac/Xcode/Swift/Kotlin toolchains, repository ownership, CI access, expected rule churn and release permissions. Record the decision and tradeoffs; do not infer that this handoff has already chosen for you.
 
-Before choosing deployment-specific APIs, inspect the available Xcode/Swift/SDK versions and confirm the intended minimum iOS version. Use native Swift/SwiftUI, a pure Swift rules module, immutable Sendable snapshots, a main-actor observable presentation coordinator, an off-main-actor search worker, injectable clock/RNG/AI interfaces and local typed settings/restoration. Preserve native safe areas, navigation, scene behavior, VoiceOver and Dynamic Type where these do not alter the product contract. Do not invent a signing identity or create external services/accounts.
+Then create the native Swift/SwiftUI project in the owner-approved topology. Keep the identified Android reference immutable/read-only. Do not introduce cross-platform UI. If choosing KMP, prove the Java RNG/I/O and Swift interop boundaries before migrating production behavior; if choosing duplicated cores, make `golden-fixtures.json` executable in both implementations and define fixture ownership/versioning.
+
+Before choosing deployment-specific APIs, inspect the available Xcode/Swift/SDK versions and confirm the intended minimum iOS version. Use native SwiftUI presentation, immutable Sendable snapshots, a main-actor observable presentation coordinator, an off-main-actor search worker, injectable clock/RNG/AI interfaces and local typed settings/restoration. The engine may be pure Swift or an explicitly justified shared core, but it must remain UI-independent and pass the same fixtures. Preserve native safe areas, navigation, scene behavior, VoiceOver and Dynamic Type where these do not alter the product contract. Do not invent a signing identity or create external services/accounts.
 
 ## Non-negotiable behavior
 
@@ -61,7 +66,7 @@ Before choosing deployment-specific APIs, inspect the available Xcode/Swift/SDK 
 
 ## Work through the fourteen milestones
 
-Follow `IOS_PARITY_CHECKLIST.md` in order: bootstrap; pure engine; presentation coordinator; tokens/type; board/pieces; Home/navigation; Classic; Local; Vs Computer/AI; supporting screens; motion/feedback; accessibility; visual parity; release readiness.
+Follow `IOS_PARITY_CHECKLIST.md` in order: architecture/bootstrap; engine/fixture conformance; presentation coordinator; tokens/type; board/pieces; Home/navigation; Classic; Local; Vs Computer/AI; supporting screens; motion/feedback; accessibility; visual parity; release readiness.
 
 For each milestone:
 
@@ -72,7 +77,7 @@ For each milestone:
 5. Record source revision, tests/results, screenshot paths and justified native differences in the iOS repository.
 6. Commit a coherent verified change. Do not label unrun tests or physical checks as passed.
 
-Use original Android test invariants as the parity oracle, not Kotlin syntax as a translation template. Exact search values and canonical state graph counts must match. For stochastic agents, use explicit common scripted randomness or specify a portable RNG before asserting cross-language seed equivalence. Profile actual iPhone/Simulator search isolation and frame pacing; Android emulator metrics are not iOS performance certification.
+Use original Android test invariants and `golden-fixtures.json` as parity oracles, not Kotlin syntax as a translation template. Exact search values and canonical state graph counts must match. For stochastic agents, use explicit common scripted randomness or specify a portable RNG before asserting cross-language seed equivalence. Profile actual iPhone/Simulator search isolation and frame pacing; Android emulator metrics are not iOS performance certification.
 
 ## Product boundaries and stop point
 
@@ -90,10 +95,11 @@ Android release tag:
 Android release commit:
 Handoff documentation commit (if different):
 Manifest/hash verification result:
-Native repository and initial commit:
+Chosen repository/core architecture and rationale:
+Native repository/project and initial commit:
 Xcode / Swift / SDK / deployment target:
 Simulator and physical-device targets:
 Outstanding owner/signing decisions:
 ```
 
-Do not edit the tagged Android reference to fill this record. Preserve it in the new native repository with a relative or durable source link.
+Do not edit the approved Android reference to fill this record. Preserve the record in the chosen iOS/project workspace with a durable source link.

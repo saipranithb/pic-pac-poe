@@ -1,6 +1,6 @@
 # Portable behavior, AI, and state-machine contract
 
-This is the normative behavioral supplement to [the iOS handoff](PIC_PAC_POE_IOS_HANDOFF.md). It describes the implemented Android release candidate, not a redesigned game. The source of truth for rules is the pure domain code; presentation timing and input gates are additional product contracts, not domain rules. Proposed Swift names below are implementation guidance, not an iOS application already present in this repository.
+This is the normative behavioral supplement to [the iOS handoff](PIC_PAC_POE_IOS_HANDOFF.md). It describes the implemented Android release candidate, not a redesigned game. The source of truth for rules is the pure domain code; presentation timing and input gates are additional product contracts, not domain rules. Proposed Swift names below are implementation guidance, not an iOS application already present in this repository. [`golden-fixtures.json`](golden-fixtures.json) encodes representative rule, draw, probability, AI, terminal-presentation, handoff and restoration cases for independent execution on both platforms.
 
 Read this document with [the machine-readable contract](state-machine.json), [the diagram source](state-machine.mmd), and [the Android-to-SwiftUI map](ANDROID_TO_SWIFTUI_MAP.md). All links are repository-relative and work from a clean clone.
 
@@ -340,6 +340,8 @@ The bag→symbol→board Home illustration is a separate local visual loop: fixe
 Feedback effects are emitted at reveal or accepted placement. A computer's WIN/DRAW effect is emitted at domain commit into AI_PLACING, **not** at result-dialog appearance. The current effect machinery is transient, not an exactly-once durable event log. Human physical sound/haptic quality and full TalkBack/VoiceOver announcements require device testing; semantics assertions cannot certify either.
 
 ## 5. Test evidence and Swift acceptance matrix
+
+Load [`golden-fixtures.json`](golden-fixtures.json) as test data rather than rewriting its examples into platform-specific literals. Android and iOS runners should reject unknown schema versions, validate nine-cell row-major boards, and report fixture IDs on failure. Scripted randomness is an explicit bounded integer result, not a promise that Kotlin and Swift seeded generators share streams. The JSON covers representative cases; the exhaustive 39,027-state traversal and every-reachable-state legality checks remain generated tests rather than a 39,027-row checked-in file.
 
 Named tests below are source evidence, not a claim that they were all rerun at the time this supplement was written. The release verification report records the actual run results. Preserve both pure tests and end-to-end tests; deterministic stage fixtures do not prove live game flow.
 
