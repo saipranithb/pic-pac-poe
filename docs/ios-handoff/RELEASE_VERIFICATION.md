@@ -6,7 +6,7 @@ Status is finalized in [release-identity.json](release-identity.json). This repo
 
 The later Home-only change replaces the fixed central X with production X/O pieces alternating every 1400ms. One bounded 3.5% pulse and 280ms crossfade/scale transition are used normally; Reduced Motion retains a 400ms crossfade with unit scale. System animations-off retains instantaneous swaps. The scene waits for preferences, stops offscreen/backgrounded/removed and restarts at X. A single stable accessibility description replaces the formerly silent illustration. Bag, arrows, board, layout, game rules, navigation, AI, saved state and turn presentation are unchanged. The exact contract is in [motion-spec.json](motion-spec.json).
 
-New evidence: six production-spec JVM tests (debug/release), four focused rendering/lifecycle tests, and [16 sequential Home screenshots plus a labelled contact sheet](reference/home-scene-contact-sheet.png) spanning dark/light, normal/reduced motion and 412dp/320dp logical widths. Screenshot provenance is separate from the previous baseline in [the manifest](reference/screenshot-manifest.json). The replacement artifact identity is finalized after the isolated polish commit; the older bundle below is superseded and must not be uploaded.
+The isolated polish commit is `f936faf7d21e85ed71e859d94d65e125fe61b436`; its app-main source tree is `9e49470f81d1bf23afc083e3f26308b353d24dac`. New evidence: six production-spec JVM tests (debug/release), four focused rendering/lifecycle tests, and [16 sequential Home screenshots plus a labelled contact sheet](reference/home-scene-contact-sheet.png) spanning dark/light, normal/reduced motion and 412dp/320dp logical widths. Screenshot provenance is separate from the previous baseline in [the manifest](reference/screenshot-manifest.json). The older bundle below is superseded and must not be uploaded.
 
 | Current polish check | Result |
 | --- | --- |
@@ -17,6 +17,18 @@ New evidence: six production-spec JVM tests (debug/release), four focused render
 | Native narrow-phone smoke | PASS: real MainActivity at840x1870/420dpi (320dp), both X/O observed in sequential screenshots; original1080x2400 restored. An8-second raw emulator recording is also retained externally; cold-start/transitional frames are not curated parity references or a smoothness benchmark |
 | Visibility/settings/system motion | PASS: readiness, STARTED/RESUMED lifecycle, removal, fully offscreen scrolling; zero-scale swaps and mounted0→1→0 system-scale changes |
 | Portable handoff | PASS:6 JSON documents,203 relative links,131 hashes at this checkpoint; release certification intentionally remains gated |
+
+After committing, the exact clean source ran `--no-daemon clean check :app:assembleDebug :app:assembleDebugAndroidTest :app:bundleRelease`: **BUILD SUCCESSFUL in3m54s**,149 actionable tasks (147 executed,2 up-to-date). All72 JVM executions (45 unique tests; app27 debug +27 release, core9, AI6, tools3) passed with zero errors/failures and lint reported `No issues found.` The26-test emulator suite above exercised identical production/test source before the clean build. The same pre-existing native-library strip warning appeared; libraries were packaged unchanged.
+
+| Replacement unsigned diagnostic AAB | Value |
+| --- | --- |
+| Output | `app/build/outputs/bundle/release/app-release.aab`; generated, ignored, not a shipping asset |
+| Source / embedded VCS revision | Clean `f936faf7d21e85ed71e859d94d65e125fe61b436` |
+| Version / size | 2.0.0 /5 /7,719,406 bytes |
+| SHA-256 | `207445ae86b515fb9769313c4223427c51f027a8f6544e29f22cc3df4d8dab7b` |
+| Signature / readiness | `jarsigner` explicitly reported `jar is unsigned.` No certificate; **not upload-ready** |
+
+A same-hash copy was preserved outside the repository with an explicit `UNSIGNED` filename. This subsequent verification/identity commit changes documentation only; Android runtime/test source remains the isolated polish commit. No release tag or merged production SHA is invented.
 
 An initial focused test run was intentionally stopped after its offscreen-scroll test stalled: Compose's animated `performScrollTo` semantics cannot finish with the test clock frozen. The harness now launches an instantaneous `ScrollState.scrollTo` asynchronously and advances the clock. No production fix was needed. The corrected scroll and mounted system-scale switching tests passed together (`OK (2 tests)`,19.298 seconds). The interrupted run is not counted as a successful suite. Physical TalkBack speech and frame pacing remain owner checks; semantic assertions/stills do not replace them.
 

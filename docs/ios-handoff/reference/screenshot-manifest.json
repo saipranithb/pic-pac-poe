@@ -811,7 +811,8 @@
   ],
   "homeSceneCapture": {
     "date": "2026-09-20",
-    "productionCommit": null,
+    "productionCommit": "f936faf7d21e85ed71e859d94d65e125fe61b436",
+    "appMainSourceTree": "9e49470f81d1bf23afc083e3f26308b353d24dac",
     "source": "HomeSceneAnimationTest, production HomeScreen/FormHomeScene/FormPiece; manual clock X hold followed 1400ms later by O hold. Both themes, normal/reduced motion, logical412dp/320dp; no game state mutated.",
     "note": "Home-scene images supersede the earlier static X-only illustration contract, not the rest of the baseline references."
   }

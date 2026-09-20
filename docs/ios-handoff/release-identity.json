@@ -17,9 +17,10 @@
     "releaseTag": null,
     "handoffCommit": "3a5514eea7108d274416d1b30fc1bfe53c6a4c45",
     "uiPolishCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+    "homeIllustrationPolishCommit": "f936faf7d21e85ed71e859d94d65e125fe61b436",
     "verificationTestsCommit": "728142335e3fc94a3467366b3357cd07e871039b",
-    "candidateCommit": "3a5514eea7108d274416d1b30fc1bfe53c6a4c45",
-    "candidateAppMainSourceTree": "1cebb51124ddb4038ee0b20af906851893ecaca2",
+    "candidateCommit": "f936faf7d21e85ed71e859d94d65e125fe61b436",
+    "candidateAppMainSourceTree": "9e49470f81d1bf23afc083e3f26308b353d24dac",
     "remoteMainAtLastCheck": "63b6749fd26c5777d0cd0d2fec565deac77c246a",
     "remoteFeatureAtLastCheck": "4f76dcf1c16d3eb977409e7344a1482a1358b74f"
   },
@@ -28,25 +29,27 @@
   "verificationArtifact": {
     "kind": "unsigned-local-diagnostic-aab-not-for-upload",
     "repositoryRelativePath": "app/build/outputs/bundle/release/app-release.aab",
-    "gitCommit": "3a5514eea7108d274416d1b30fc1bfe53c6a4c45",
+    "gitCommit": "f936faf7d21e85ed71e859d94d65e125fe61b436",
     "builtFromCleanTree": true,
     "versionName": "2.0.0",
     "versionCode": 5,
-    "sizeBytes": 7716132,
-    "sha256": "4b054aa5605a76e4529f14e816ee635eadde802714f01e4cf0b5ea57b9f795d1",
+    "sizeBytes": 7719406,
+    "sha256": "207445ae86b515fb9769313c4223427c51f027a8f6544e29f22cc3df4d8dab7b",
     "signed": false,
     "uploadReady": false,
     "certificateFingerprint": null,
     "signatureVerification": "jarsigner explicitly reported: jar is unsigned."
   },
   "blockers": [
+    "Owner explicitly holds publishing/upload until signing and Play version-code checks are resolved; the new Home polish has not been pushed or uploaded.",
     "Execution approval gate rejected feature push and main merge/push; no remote mutation occurred. Direct owner confirmation is required to publish/integrate.",
     "Existing upload-key signing configuration is unavailable locally; remote production signing-secret provisioning is unverified.",
     "Play Console browser connection timed out before version history was read; highest uploaded version code is unverified."
   ],
   "notes": [
     "Release identity is finalized only after safe integration and version-history verification; null is not a guessed revision.",
-    "handoffCommit identifies the initial complete package/candidate commit. This later metadata-only follow-up does not change Android source; resolve its revision with git log rather than a self-referential hash.",
+    "handoffCommit identifies the initial complete package; homeIllustrationPolishCommit identifies the later isolated Home X/O change and its new tests. This metadata-only follow-up changes no Android source; resolve its revision with git log rather than a self-referential hash.",
+    "The new clean diagnostic bundle supersedes the earlier 3a5514e bundle. All72 JVM executions and lint passed; all26 instrumentation tests passed against identical production/test source before this clean build. Its embedded VCS metadata names f936faf7d21e85ed71e859d94d65e125fe61b436.",
     "candidateCommit is not a merged or tagged release. releaseCommit/releaseTag deliberately remain null until safe integration and Play version verification.",
     "Signing and Play upload require the existing authorized upload key; unsigned verification bundles are not upload-ready."
   ]
