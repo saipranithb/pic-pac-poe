@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "pathBase": "repository root",
+  "units": {
+    "time": "milliseconds",
+    "translation": "logical dp (port as logical points)",
+    "rotation": "degrees",
+    "scale": "unitless"
+  },
+  "principle": "GameViewModel/coordinator owns state; a single presentation clock acknowledges presentationId; decorative animation completions never choose moves, draw pieces, advance turns, or unlock input.",
+  "sources": [
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/HomeWordmark.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/FormControls.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/PhysicalBoard.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/theme/PicPacTheme.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/GameScreen.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/GameViewModel.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/PicPacApp.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/settings/SettingsStore.kt"
+  ],
+  "easings": {
+    "form": [
+      0.2,
+      0.8,
+      0.2,
+      1
+    ],
+    "fastOutSlowIn": [
+      0.4,
+      0,
+      0.2,
+      1
+    ],
+    "linearOutSlowIn": [
+      0,
+      0,
+      0.2,
+      1
+    ]
+  },
+  "tokenConstants": {
+    "pressMillis": 90,
+    "stateMillis": 140,
+    "revealMillis": 160,
+    "placementMillis": 180,
+    "revealMillisUsage": "Declared but unused by current production animation; it is not the 650ms reveal presentation hold."
+  },
+  "animations": [
+    {
+      "id": "home-wordmark-entrance",
+      "purpose": "decorative identity entrance",
+      "owner": "HomeWordmark local Animatable values; app-shell saveable consumed flag",
+      "trigger": "first Home composition in a fresh saved session after persisted settings load",
+      "parts": [
+        "Pic",
+        "-",
+        "Pac",
+        "-",
+        "Poe"
+      ],
+      "motionGroupIndices": [
+        0,
+        1,
+        1,
+        2,
+        2
+      ],
+      "groups": [
+        {
+          "index": 0,
+          "delayMs": 0,
+          "initialRotation": -0.8
+        },
+        {
+          "index": 1,
+          "delayMs": 70,
+          "initialRotation": 0.6
+        },
+        {
+          "index": 2,
+          "delayMs": 140,
+          "initialRotation": -0.6
+        }
+      ],
+      "durationPerGroupMs": 480,
+      "totalDurationMs": 620,
+      "keyframes": [
+        {
+          "atMs": 0,
+          "value": 0,
+          "easingToNext": "fastOutSlowIn"
+        },
+        {
+          "atMs": 360,
+          "value": 1.015,
+          "easingToNext": "linearOutSlowIn"
+        },
+        {
+          "atMs": 480,
+          "value": 1
+        }
+      ],
+      "formula": {
+        "alpha": "clamp(p,0,1)",
+        "translationY": "8*(1-p)",
+        "scaleX": ".95+.05*p",
+        "scaleY": ".95+.05*p",
+        "rotationZ": "groupInitialRotation*(1-p); hyphens always 0"
+      },
+      "overshoot": {
+        "translationYDp": -0.12,
+        "scale": 1.00075
+      },
+      "spring": {
+        "used": false,
+        "stiffness": null,
+        "damping": null,
+        "note": "Deterministic bounded keyframes, not an unbounded physics spring."
+      },
+      "repeat": false,
+      "layoutImpact": "none; transforms are graphics layers on fixed measured text",
+      "consumption": "recorded as soon as entrance starts, not when it finishes; child latches entry request so parent recomposition does not abort current animation",
+      "settingsWait": "No animation begins before stored settings are known. App functional settings keep existing defaults during IO.",
+      "navigation": "return Home static after consumed; theme changes and recomposition static after settled",
+      "recreation": "restore consumed flag; even an interrupted entrance returns in final state",
+      "reducedMotion": "p=1 immediately; consumes any requested entrance once preferences are known; toggling on in flight cancels/snap-to-final; toggling off does not restart",
+      "accessibility": "one static full heading label, no spoken progress"
+    },
+    {
+      "id": "screen-crossfade",
+      "purpose": "decorative navigation continuity",
+      "owner": "PicPacApp AnimatedContent target AppScreen",
+      "trigger": "screen changes Home/Game/HowTo/Settings/AILab",
+      "enter": {
+        "property": "alpha",
+        "from": 0,
+        "to": 1,
+        "durationMs": 140,
+        "easing": "fastOutSlowIn"
+      },
+      "exit": {
+        "property": "alpha",
+        "from": 1,
+        "to": 0,
+        "durationMs": 140,
+        "easing": "fastOutSlowIn"
+      },
+      "simultaneous": true,
+      "reducedMotion": "no enter or exit transition",
+      "caveat": "AnimatedContent's default size-transform machinery is not app-parametrized. Current screen children fill viewport, so no intentional navigation resize effect is specified.",
+      "essential": false
+    },
+    {
+      "id": "button-contact",
+      "purpose": "decorative pressed affordance",
+      "owner": "FormButton local interaction state",
+      "trigger": "enabled button pressed/released",
+      "progress": {
+        "rest": 0,
+        "pressed": 1,
+        "durationMs": 90,
+        "easing": "form"
+      },
+      "transform": {
+        "translationY": "2*p dp",
+        "scale": 1
+      },
+      "appearance": {
+        "gradientBottom": "lerp(face,shadow,p*0.08)",
+        "baseDp": 3
+      },
+      "hitGeometry": "outer fixed button box",
+      "reducedMotion": "duration0, translation0; immediate contact shade remains",
+      "essential": false
+    },
+    {
+      "id": "piece-contact",
+      "purpose": "decorative placement reveal",
+      "owner": "RecessedWell animateFloatAsState",
+      "trigger": "existing well changes symbol from null to placed; initially composed occupied well starts at final target",
+      "progress": {
+        "empty": 0,
+        "placed": 1,
+        "durationMs": 180,
+        "easing": "form"
+      },
+      "transform": {
+        "alpha": "p",
+        "scaleX": ".96+.04*p",
+        "scaleY": ".96+.04*p",
+        "translationY": "-3*(1-p) dp"
+      },
+      "hitGeometry": "fixed well, never transformed",
+      "reducedMotion": "duration0, final piece immediate",
+      "essential": false
+    },
+    {
+      "id": "instant-interaction-feedback",
+      "purpose": "required readable state; no decorative transition",
+      "owner": "component interactions/state",
+      "targets": [
+        "choice fill/check",
+        "back pressed fill",
+        "text-action pressed fill",
+        "mode-row pressed fill",
+        "settings-row pressed fill",
+        "well pressed edge/wash",
+        "keyboard focus borders",
+        "AI target double outline",
+        "active-player rule and label",
+        "winning line"
+      ],
+      "durationMs": 0,
+      "reducedMotion": "identical final state",
+      "essential": true
+    },
+    {
+      "id": "native-switch-feedback",
+      "purpose": "native control state transition",
+      "owner": "Material3 Switch",
+      "trigger": "toggle",
+      "durationMs": null,
+      "easing": null,
+      "appParameters": "none beyond semantic colors and checked state",
+      "reducedMotion": "No application-specific Switch animation override exists; rely on platform behavior and verify.",
+      "ios": "Use native Toggle; preserve single accessible row/target and explicit user setting; do not invent app-controlled Android timing.",
+      "essential": false
+    },
+    {
+      "id": "reveal-result-dialog",
+      "purpose": "stage-owned overlay",
+      "owner": "GameScreen presentation stage",
+      "trigger": "REVEALING or TERMINAL",
+      "windowAnimationMs": 0,
+      "scaleAnimation": false,
+      "opacityAnimation": false,
+      "outsideDismiss": false,
+      "reducedMotion": "identical static material presentation with different reveal hold",
+      "essential": true
+    },
+    {
+      "id": "static-home-scene",
+      "purpose": "decorative explanation of bag-to-piece-to-square",
+      "owner": "FormHomeScene Canvas",
+      "animation": false,
+      "accessibility": "hidden as a single decorative group"
+    },
+    {
+      "id": "static-probability-tray",
+      "purpose": "functional counts",
+      "owner": "domain state",
+      "animation": false,
+      "essential": true
+    },
+    {
+      "id": "static-winning-line",
+      "purpose": "functional result evidence",
+      "owner": "board outcome",
+      "animation": false,
+      "essential": true
+    }
+  ],
+  "presentationClock": {
+    "owner": "GameScreen.PresentationClock; coordinator is GameViewModel",
+    "effectKey": [
+      "presentationId",
+      "stage",
+      "reducedMotion"
+    ],
+    "callback": "presentationStepFinished(presentationId)",
+    "clockType": "coroutine delay, not rendering-frame count",
+    "stageDelays": [
+      {
+        "stage": "TURN_START",
+        "normalMs": 300,
+        "reducedMs": 160,
+        "semanticPurpose": "show actor before drawing"
+      },
+      {
+        "stage": "REVEALING",
+        "normalMs": 650,
+        "reducedMs": 500,
+        "semanticPurpose": "read held symbol/actor before placement or AI targeting"
+      },
+      {
+        "stage": "AI_TARGETING",
+        "normalMs": 280,
+        "reducedMs": 160,
+        "semanticPurpose": "identify selected coordinate while input locked"
+      },
+      {
+        "stage": "AI_PLACING",
+        "normalMs": 340,
+        "reducedMs": 180,
+        "semanticPurpose": "committed move appears, actor remains Computer"
+      },
+      {
+        "stage": "AI_SETTLING",
+        "normalMs": 480,
+        "reducedMs": 320,
+        "semanticPurpose": "stable computer-move evidence before next turn or result"
+      }
+    ],
+    "untimedStages": [
+      "HANDOFF",
+      "PLAYING",
+      "AI_THINKING",
+      "TERMINAL"
+    ],
+    "untimedExplanations": {
+      "HANDOFF": "explicit Ready action",
+      "PLAYING": "legal human action",
+      "AI_THINKING": "AI result arrival, no invented minimum think time",
+      "TERMINAL": "Rematch/Home"
+    },
+    "computerPostRevealMs": {
+      "normal": 1100,
+      "reduced": 660
+    },
+    "computerTurnStartThroughSettlementMs": {
+      "normal": 2050,
+      "reduced": 1320,
+      "note": "assuming AI completes before reveal hold ends; excludes subsequent human TURN_START/reveal"
+    },
+    "aiComputation": "starts immediately at successful computer reveal in background; early result waits reveal acknowledgement; late result enters AI_THINKING until completion; no animation-completion trigger",
+    "recreation": "recreated composition starts full hold for current stage; elapsed milliseconds are not persisted; never re-draw or re-commit a placed move",
+    "reducedPreferenceChange": "effect restarts with full duration for same current stage; IDs/guards still apply",
+    "staleCallbackGuard": "screen==GAME and current presentationId must match; see state-machine.json for further revision/turn-token/target guards",
+    "terminalComputerMove": "must pass AI_PLACING and AI_SETTLING with board/target/symbol evidence intact before TERMINAL opens",
+    "platformPort": "Use one cancelable task keyed to stable presentation identity and stage; hold it independently of view animation. On iOS backgrounding, explicitly suspend/restart presentation acknowledgements so unread stages are not silently consumed."
+  },
+  "feedback": {
+    "owner": "GameViewModel emits UiEffect by incrementing effectId; PicPacApp FeedbackEffects observes effectId",
+    "settings": {
+      "sound": {
+        "default": true,
+        "key": "sound"
+      },
+      "haptics": {
+        "default": true,
+        "key": "haptics"
+      },
+      "reducedMotion": {
+        "default": false,
+        "key": "reduced_motion"
+      },
+      "theme": {
+        "default": "SYSTEM",
+        "key": "theme"
+      }
+    },
+    "independence": "Sound and haptics each respect their own persisted toggle. Reduced Motion does not mute feedback.",
+    "events": [
+      {
+        "event": "REVEAL",
+        "trigger": "successful domain draw",
+        "androidHaptic": "TextHandleMove",
+        "androidTone": "TONE_PROP_BEEP",
+        "durationMs": 70,
+        "iosIntent": "light selection-like contact and one quiet short reveal cue"
+      },
+      {
+        "event": "PLACE",
+        "trigger": "successful nonterminal placement",
+        "androidHaptic": "TextHandleMove",
+        "androidTone": "TONE_PROP_ACK",
+        "durationMs": 70,
+        "iosIntent": "light physical contact and one short placement cue"
+      },
+      {
+        "event": "WIN",
+        "trigger": "placement completes winning line",
+        "androidHaptic": "LongPress",
+        "androidTone": "TONE_PROP_BEEP2",
+        "durationMs": 180,
+        "iosIntent": "slightly more emphatic success event, never repeated/confetti-like"
+      },
+      {
+        "event": "DRAW",
+        "trigger": "placement fills board without line",
+        "androidHaptic": "TextHandleMove",
+        "androidTone": "TONE_PROP_NACK",
+        "durationMs": 70,
+        "iosIntent": "neutral end-of-game acknowledgement; do not present a game draw as an error"
+      }
+    ],
+    "sound": {
+      "implementation": "ToneGenerator",
+      "stream": "STREAM_MUSIC",
+      "volumePercent": 35,
+      "fileAssets": false,
+      "synthesized": true,
+      "release": "ToneGenerator released when composition leaves",
+      "exactWaveform": "platform generated; no app-specified waveform, frequency envelope, or portable audio file"
+    },
+    "haptics": {
+      "appAmplitude": null,
+      "appWaveform": null,
+      "note": "Semantic Android feedback types, not app-authored intensity values; physical tuning is not verified by emulator."
+    },
+    "terminalTiming": "WIN/DRAW emits when board move is committed; for computer it may precede result dialog during AI_PLACING. Do not replay when result opens.",
+    "lifecycleCaveat": "A retained ViewModel still holds last effect/effectId; a new FeedbackEffects composition may replay it after Activity recreation. Effects are not included in process-restored GameUiState. No exactly-once across UI recreation guarantee is implemented; iOS should use consumable ephemeral effects, not reproduce accidental replay.",
+    "iosGuidance": [
+      "Use platform haptic generators/native sensory feedback available at the chosen deployment target; do not copy Android enum names.",
+      "Honor silent mode, system sound expectations and separate app sound/haptic settings.",
+      "Choose one short native/synthesized cue per effect; no audio assets are promised by Android.",
+      "Do not generate title, AI-target, focus or bag-count feedback; those have no Android event."
+    ]
+  },
+  "iosImplementation": {
+    "geometry": "Render fixed layout, draw pieces/board as native paths, animate layer-like visual properties only.",
+    "identity": "Keep full heading accessibility label while visual pieces are separate; preserve internal English order in RTL.",
+    "wordmark": "Drive a shared elapsed-time value or finite keyframe sequence; use the exact cubic timing curves. Native opacity/offset/scale/rotation are sufficient. Do not use a repeating timer or spring with unknown completion.",
+    "reduceMotion": "Use in-app setting and native accessibility Reduce Motion to select static decorative states; keep shortened essential stage holds readable.",
+    "state": "Main-actor presentation coordinator accepts guarded transitions; worker actor/task searches immutable observation; cancels safely.",
+    "testing": "Inject presentation clock and AI completion, assert stage order/timers independent of animation; compare intermediate/final visual snapshots."
+  }
+}

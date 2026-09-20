@@ -1,0 +1,1710 @@
+{
+  "schemaVersion": 1,
+  "sourceOfTruth": "Current committed Kotlin implementations; see DESIGN_AND_MOTION.md for formulas, exceptions and iOS acceptance criteria.",
+  "pathBase": "repository root",
+  "coordinateSystem": {
+    "geometry": "Android dp; use equivalent logical points as an iOS starting point, never raw Android screenshot pixels",
+    "type": "Android sp before user font scaling; retain Dynamic Type for functional text",
+    "rgba": "sRGB; rgba8 integers 0..255 including alpha, rgba floats 0..1 rounded to six decimals",
+    "drawOrigin": "top-left, +x right, +y down"
+  },
+  "sources": [
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/theme/PicPacTheme.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/theme/FormBrandTypography.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/HomeWordmark.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/PhysicalBoard.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/FormControls.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/FormHomeScene.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/GamePanels.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/HomeScreen.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/GameScreen.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/InfoScreens.kt"
+  ],
+  "themes": {
+    "dark": {
+      "canvas": {
+        "hex": "#251F1C",
+        "rgba8": [
+          37,
+          31,
+          28,
+          255
+        ],
+        "rgba": [
+          0.145098,
+          0.121569,
+          0.109804,
+          1
+        ]
+      },
+      "surface": {
+        "hex": "#47382F",
+        "rgba8": [
+          71,
+          56,
+          47,
+          255
+        ],
+        "rgba": [
+          0.278431,
+          0.219608,
+          0.184314,
+          1
+        ]
+      },
+      "surfaceRaised": {
+        "hex": "#503E33",
+        "rgba8": [
+          80,
+          62,
+          51,
+          255
+        ],
+        "rgba": [
+          0.313725,
+          0.243137,
+          0.2,
+          1
+        ]
+      },
+      "recess": {
+        "hex": "#342923",
+        "rgba8": [
+          52,
+          41,
+          35,
+          255
+        ],
+        "rgba": [
+          0.203922,
+          0.160784,
+          0.137255,
+          1
+        ]
+      },
+      "text": {
+        "hex": "#FFF2DB",
+        "rgba8": [
+          255,
+          242,
+          219,
+          255
+        ],
+        "rgba": [
+          1,
+          0.94902,
+          0.858824,
+          1
+        ]
+      },
+      "textSecondary": {
+        "hex": "#DDC5B5",
+        "rgba8": [
+          221,
+          197,
+          181,
+          255
+        ],
+        "rgba": [
+          0.866667,
+          0.772549,
+          0.709804,
+          1
+        ]
+      },
+      "border": {
+        "hex": "#B59B88",
+        "rgba8": [
+          181,
+          155,
+          136,
+          255
+        ],
+        "rgba": [
+          0.709804,
+          0.607843,
+          0.533333,
+          1
+        ]
+      },
+      "borderSubtle": {
+        "hex": "#796455",
+        "rgba8": [
+          121,
+          100,
+          85,
+          255
+        ],
+        "rgba": [
+          0.47451,
+          0.392157,
+          0.333333,
+          1
+        ]
+      },
+      "highlight": {
+        "hex": "#FFE5C6",
+        "rgba8": [
+          255,
+          229,
+          198,
+          255
+        ],
+        "rgba": [
+          1,
+          0.898039,
+          0.776471,
+          1
+        ]
+      },
+      "shadow": {
+        "hex": "#17120F",
+        "rgba8": [
+          23,
+          18,
+          15,
+          255
+        ],
+        "rgba": [
+          0.090196,
+          0.070588,
+          0.058824,
+          1
+        ]
+      },
+      "x": {
+        "hex": "#FFAC8F",
+        "rgba8": [
+          255,
+          172,
+          143,
+          255
+        ],
+        "rgba": [
+          1,
+          0.67451,
+          0.560784,
+          1
+        ]
+      },
+      "xHighlight": {
+        "hex": "#FFD5BC",
+        "rgba8": [
+          255,
+          213,
+          188,
+          255
+        ],
+        "rgba": [
+          1,
+          0.835294,
+          0.737255,
+          1
+        ]
+      },
+      "xEdge": {
+        "hex": "#BB775F",
+        "rgba8": [
+          187,
+          119,
+          95,
+          255
+        ],
+        "rgba": [
+          0.733333,
+          0.466667,
+          0.372549,
+          1
+        ]
+      },
+      "o": {
+        "hex": "#BFD680",
+        "rgba8": [
+          191,
+          214,
+          128,
+          255
+        ],
+        "rgba": [
+          0.74902,
+          0.839216,
+          0.501961,
+          1
+        ]
+      },
+      "oHighlight": {
+        "hex": "#DDEBB1",
+        "rgba8": [
+          221,
+          235,
+          177,
+          255
+        ],
+        "rgba": [
+          0.866667,
+          0.921569,
+          0.694118,
+          1
+        ]
+      },
+      "oEdge": {
+        "hex": "#819748",
+        "rgba8": [
+          129,
+          151,
+          72,
+          255
+        ],
+        "rgba": [
+          0.505882,
+          0.592157,
+          0.282353,
+          1
+        ]
+      },
+      "playerOne": {
+        "hex": "#7ADBD1",
+        "rgba8": [
+          122,
+          219,
+          209,
+          255
+        ],
+        "rgba": [
+          0.478431,
+          0.858824,
+          0.819608,
+          1
+        ]
+      },
+      "playerTwo": {
+        "hex": "#BEB9EF",
+        "rgba8": [
+          190,
+          185,
+          239,
+          255
+        ],
+        "rgba": [
+          0.745098,
+          0.72549,
+          0.937255,
+          1
+        ]
+      },
+      "focus": {
+        "hex": "#FFF2DB",
+        "rgba8": [
+          255,
+          242,
+          219,
+          255
+        ],
+        "rgba": [
+          1,
+          0.94902,
+          0.858824,
+          1
+        ]
+      },
+      "action": {
+        "hex": "#FFAC8F",
+        "rgba8": [
+          255,
+          172,
+          143,
+          255
+        ],
+        "rgba": [
+          1,
+          0.67451,
+          0.560784,
+          1
+        ]
+      },
+      "onAction": {
+        "hex": "#382218",
+        "rgba8": [
+          56,
+          34,
+          24,
+          255
+        ],
+        "rgba": [
+          0.219608,
+          0.133333,
+          0.094118,
+          1
+        ]
+      }
+    },
+    "light": {
+      "canvas": {
+        "hex": "#FBF1DE",
+        "rgba8": [
+          251,
+          241,
+          222,
+          255
+        ],
+        "rgba": [
+          0.984314,
+          0.945098,
+          0.870588,
+          1
+        ]
+      },
+      "surface": {
+        "hex": "#FFF9EC",
+        "rgba8": [
+          255,
+          249,
+          236,
+          255
+        ],
+        "rgba": [
+          1,
+          0.976471,
+          0.92549,
+          1
+        ]
+      },
+      "surfaceRaised": {
+        "hex": "#FFFCF5",
+        "rgba8": [
+          255,
+          252,
+          245,
+          255
+        ],
+        "rgba": [
+          1,
+          0.988235,
+          0.960784,
+          1
+        ]
+      },
+      "recess": {
+        "hex": "#EADDC7",
+        "rgba8": [
+          234,
+          221,
+          199,
+          255
+        ],
+        "rgba": [
+          0.917647,
+          0.866667,
+          0.780392,
+          1
+        ]
+      },
+      "text": {
+        "hex": "#34291F",
+        "rgba8": [
+          52,
+          41,
+          31,
+          255
+        ],
+        "rgba": [
+          0.203922,
+          0.160784,
+          0.121569,
+          1
+        ]
+      },
+      "textSecondary": {
+        "hex": "#695543",
+        "rgba8": [
+          105,
+          85,
+          67,
+          255
+        ],
+        "rgba": [
+          0.411765,
+          0.333333,
+          0.262745,
+          1
+        ]
+      },
+      "border": {
+        "hex": "#8D755F",
+        "rgba8": [
+          141,
+          117,
+          95,
+          255
+        ],
+        "rgba": [
+          0.552941,
+          0.458824,
+          0.372549,
+          1
+        ]
+      },
+      "borderSubtle": {
+        "hex": "#C2AF95",
+        "rgba8": [
+          194,
+          175,
+          149,
+          255
+        ],
+        "rgba": [
+          0.760784,
+          0.686275,
+          0.584314,
+          1
+        ]
+      },
+      "highlight": {
+        "hex": "#FFFDF7",
+        "rgba8": [
+          255,
+          253,
+          247,
+          255
+        ],
+        "rgba": [
+          1,
+          0.992157,
+          0.968627,
+          1
+        ]
+      },
+      "shadow": {
+        "hex": "#9B8872",
+        "rgba8": [
+          155,
+          136,
+          114,
+          255
+        ],
+        "rgba": [
+          0.607843,
+          0.533333,
+          0.447059,
+          1
+        ]
+      },
+      "x": {
+        "hex": "#983A24",
+        "rgba8": [
+          152,
+          58,
+          36,
+          255
+        ],
+        "rgba": [
+          0.596078,
+          0.227451,
+          0.141176,
+          1
+        ]
+      },
+      "xHighlight": {
+        "hex": "#B44C32",
+        "rgba8": [
+          180,
+          76,
+          50,
+          255
+        ],
+        "rgba": [
+          0.705882,
+          0.298039,
+          0.196078,
+          1
+        ]
+      },
+      "xEdge": {
+        "hex": "#6F2B1C",
+        "rgba8": [
+          111,
+          43,
+          28,
+          255
+        ],
+        "rgba": [
+          0.435294,
+          0.168627,
+          0.109804,
+          1
+        ]
+      },
+      "o": {
+        "hex": "#4C6819",
+        "rgba8": [
+          76,
+          104,
+          25,
+          255
+        ],
+        "rgba": [
+          0.298039,
+          0.407843,
+          0.098039,
+          1
+        ]
+      },
+      "oHighlight": {
+        "hex": "#638033",
+        "rgba8": [
+          99,
+          128,
+          51,
+          255
+        ],
+        "rgba": [
+          0.388235,
+          0.501961,
+          0.2,
+          1
+        ]
+      },
+      "oEdge": {
+        "hex": "#344C0C",
+        "rgba8": [
+          52,
+          76,
+          12,
+          255
+        ],
+        "rgba": [
+          0.203922,
+          0.298039,
+          0.047059,
+          1
+        ]
+      },
+      "playerOne": {
+        "hex": "#00645D",
+        "rgba8": [
+          0,
+          100,
+          93,
+          255
+        ],
+        "rgba": [
+          0,
+          0.392157,
+          0.364706,
+          1
+        ]
+      },
+      "playerTwo": {
+        "hex": "#5B4B97",
+        "rgba8": [
+          91,
+          75,
+          151,
+          255
+        ],
+        "rgba": [
+          0.356863,
+          0.294118,
+          0.592157,
+          1
+        ]
+      },
+      "focus": {
+        "hex": "#34291F",
+        "rgba8": [
+          52,
+          41,
+          31,
+          255
+        ],
+        "rgba": [
+          0.203922,
+          0.160784,
+          0.121569,
+          1
+        ]
+      },
+      "action": {
+        "hex": "#983A24",
+        "rgba8": [
+          152,
+          58,
+          36,
+          255
+        ],
+        "rgba": [
+          0.596078,
+          0.227451,
+          0.141176,
+          1
+        ]
+      },
+      "onAction": {
+        "hex": "#FFF9EC",
+        "rgba8": [
+          255,
+          249,
+          236,
+          255
+        ],
+        "rgba": [
+          1,
+          0.976471,
+          0.92549,
+          1
+        ]
+      }
+    }
+  },
+  "aliases": {
+    "symbolX": "x",
+    "symbolO": "o",
+    "brandPic": "x",
+    "brandPac": "text",
+    "brandPoe": "o",
+    "brandHyphens": "textSecondary",
+    "disabledControlFace": "recess",
+    "disabledControlText": "textSecondary",
+    "disabledControlBorder": "borderSubtle",
+    "selectedChoiceFace": "text",
+    "selectedChoiceText": "canvas"
+  },
+  "materialMapping": {
+    "primary": "action",
+    "onPrimary": "onAction",
+    "primaryContainer": "surfaceRaised",
+    "onPrimaryContainer": "text",
+    "secondary": "o",
+    "onSecondary": "canvas",
+    "secondaryContainer": "recess",
+    "onSecondaryContainer": "text",
+    "tertiary": "playerOne",
+    "onTertiary": "canvas",
+    "tertiaryContainer": "recess",
+    "onTertiaryContainer": "text",
+    "background": "canvas",
+    "onBackground": "text",
+    "surface": "surface",
+    "onSurface": "text",
+    "surfaceVariant": "recess",
+    "onSurfaceVariant": "textSecondary",
+    "surfaceTint": "#00000000",
+    "surfaceDim": {
+      "dark": "canvas",
+      "light": "recess"
+    },
+    "surfaceBright": "surfaceRaised",
+    "surfaceContainerLowest": "canvas",
+    "surfaceContainerLow": {
+      "dark": "recess",
+      "light": "surface"
+    },
+    "surfaceContainer": "surface",
+    "surfaceContainerHigh": "surfaceRaised",
+    "surfaceContainerHighest": "surfaceRaised",
+    "outline": "border",
+    "outlineVariant": "borderSubtle",
+    "inverseSurface": "text",
+    "inverseOnSurface": "canvas",
+    "inversePrimary": "opposite-theme action",
+    "unspecified": "Retain Material3 baseline defaults; do not treat unspecified error roles as app brand tokens."
+  },
+  "spacingDp": {
+    "xxs": 4,
+    "xs": 8,
+    "sm": 12,
+    "md": 16,
+    "lg": 24,
+    "xl": 32,
+    "screen": 20
+  },
+  "cornerRadiusDp": {
+    "choice": 10,
+    "control": 14,
+    "surface": 18,
+    "board": 24,
+    "well": 18,
+    "materialExtraLarge": 28
+  },
+  "depthDp": {
+    "surface": 2,
+    "controlBase": 3,
+    "pressTravel": 2,
+    "rim": 1
+  },
+  "bordersDp": {
+    "surface": 0.75,
+    "button": 0.75,
+    "buttonFocused": 2,
+    "choice": 1,
+    "choiceFocused": 2,
+    "back": 0.75,
+    "backFocused": 2,
+    "textActionFocused": 2,
+    "modeRowFocused": 2,
+    "settingRowFocused": 2,
+    "board": 1,
+    "well": 1,
+    "wellActiveInner": 2,
+    "wellAiSecondInner": 1,
+    "wellFocused": 3
+  },
+  "typography": {
+    "functional": {
+      "family": "platform sans serif (Android FontFamily.SansSerif; native iOS system sans)",
+      "roles": {
+        "displayLarge": {
+          "fontSizeSp": 42,
+          "lineHeightSp": 46,
+          "weight": 800,
+          "letterSpacingSp": -0.8
+        },
+        "displayMedium": {
+          "fontSizeSp": 36,
+          "lineHeightSp": 41,
+          "weight": 800,
+          "letterSpacingSp": -0.6
+        },
+        "displaySmall": {
+          "fontSizeSp": 32,
+          "lineHeightSp": 37,
+          "weight": 700,
+          "letterSpacingSp": -0.4
+        },
+        "headlineLarge": {
+          "fontSizeSp": 30,
+          "lineHeightSp": 35,
+          "weight": 800,
+          "letterSpacingSp": -0.4
+        },
+        "headlineMedium": {
+          "fontSizeSp": 24,
+          "lineHeightSp": 29,
+          "weight": 700,
+          "letterSpacingSp": -0.2
+        },
+        "headlineSmall": {
+          "fontSizeSp": 22,
+          "lineHeightSp": 27,
+          "weight": 700,
+          "letterSpacingSp": 0
+        },
+        "titleLarge": {
+          "fontSizeSp": 20,
+          "lineHeightSp": 25,
+          "weight": 700,
+          "letterSpacingSp": 0
+        },
+        "titleMedium": {
+          "fontSizeSp": 16,
+          "lineHeightSp": 22,
+          "weight": 600,
+          "letterSpacingSp": 0
+        },
+        "titleSmall": {
+          "fontSizeSp": 14,
+          "lineHeightSp": 20,
+          "weight": 600,
+          "letterSpacingSp": 0
+        },
+        "bodyLarge": {
+          "fontSizeSp": 16,
+          "lineHeightSp": 24,
+          "weight": 400,
+          "letterSpacingSp": 0
+        },
+        "bodyMedium": {
+          "fontSizeSp": 14,
+          "lineHeightSp": 21,
+          "weight": 400,
+          "letterSpacingSp": 0
+        },
+        "bodySmall": {
+          "fontSizeSp": 12,
+          "lineHeightSp": 18,
+          "weight": 400,
+          "letterSpacingSp": 0
+        },
+        "labelLarge": {
+          "fontSizeSp": 14,
+          "lineHeightSp": 19,
+          "weight": 700,
+          "letterSpacingSp": 0.15
+        },
+        "labelMedium": {
+          "fontSizeSp": 12,
+          "lineHeightSp": 17,
+          "weight": 700,
+          "letterSpacingSp": 0.4
+        },
+        "labelSmall": {
+          "fontSizeSp": 11,
+          "lineHeightSp": 16,
+          "weight": 600,
+          "letterSpacingSp": 0.4
+        }
+      }
+    },
+    "brand": {
+      "family": "Fredoka",
+      "version": "2.001",
+      "license": "SIL Open Font License 1.1",
+      "fontFiles": {
+        "medium": {
+          "path": "app/src/main/res/font/fredoka_medium.ttf",
+          "weight": 500,
+          "bytes": 45364,
+          "sha256": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916"
+        },
+        "semibold": {
+          "path": "app/src/main/res/font/fredoka_semibold.ttf",
+          "weight": 600,
+          "bytes": 47108,
+          "sha256": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9"
+        }
+      },
+      "licensePath": "app/src/main/assets/licenses/fredoka-OFL.txt",
+      "wordmark": {
+        "fontSizeSp": 40,
+        "lineHeightSp": 46,
+        "weight": 600,
+        "letterSpacingSp": -0.35,
+        "includeFontPadding": false,
+        "lineHeightAlignment": "center",
+        "lineHeightTrim": "none"
+      },
+      "emotionalHeadline": {
+        "fontSizeSp": 30,
+        "lineHeightSp": 35,
+        "weight": 500,
+        "letterSpacingSp": 0,
+        "includeFontPadding": false,
+        "lineHeightAlignment": "center",
+        "lineHeightTrim": "none"
+      },
+      "resultHeadline": {
+        "fontSizeSp": 30,
+        "lineHeightSp": 35,
+        "weight": 600,
+        "letterSpacingSp": 0,
+        "includeFontPadding": false,
+        "lineHeightAlignment": "center",
+        "lineHeightTrim": "none"
+      }
+    },
+    "probabilityNumeralFeature": "tnum (ProbabilityTray only)"
+  },
+  "wordmark": {
+    "text": "Pic-Pac-Poe",
+    "parts": [
+      "Pic",
+      "-",
+      "Pac",
+      "-",
+      "Poe"
+    ],
+    "colors": [
+      "x",
+      "textSecondary",
+      "text",
+      "textSecondary",
+      "o"
+    ],
+    "motionGroupIndices": [
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "layoutDirection": "LTR even within RTL locale",
+    "alignment": "top-center of full available content width; internal wrap-content row",
+    "horizontalPaddingDp": 1,
+    "partSpacingDp": 0,
+    "maxLines": 1,
+    "softWrap": false,
+    "fit": {
+      "measure": "sum of separately measured five part widths in explicit LTR, current font scale",
+      "available": "container width minus 2 * roundToPixel(1dp)",
+      "algorithm": "use 40sp if it fits; otherwise 12 binary-search iterations in [1sp,40sp]",
+      "lineHeight": "fitted font size * 46/40",
+      "functionalTextUnaffected": true
+    },
+    "accessibility": {
+      "label": "Pic-Pac-Poe",
+      "heading": true,
+      "childPartsHidden": true
+    }
+  },
+  "board": {
+    "aspectRatio": 1,
+    "outerRadiusDp": 24,
+    "contentInsetDp": 12,
+    "gridSize": 3,
+    "gapDp": 6,
+    "cellSideFormula": "(boardSide - 2*12dp - 2*6dp)/3",
+    "indexFormula": "row*3+column, zero-based; accessibility announces one-based",
+    "cellCenterFormula": "12dp + column*(cellSide+6dp)+cellSide/2; same for row",
+    "drawOrder": [
+      {
+        "layer": "board shadow",
+        "color": "shadow",
+        "alpha": 0.24,
+        "offsetDp": [
+          0,
+          3
+        ],
+        "blurDp": 0,
+        "radiusDp": 24
+      },
+      {
+        "layer": "body",
+        "gradient": [
+          "surfaceRaised",
+          "surface"
+        ],
+        "gradientDirection": "vertical"
+      },
+      {
+        "layer": "border",
+        "color": "border",
+        "strokeDp": 1,
+        "insetDp": 0.5,
+        "sizeReductionDp": 1,
+        "radiusDp": 24
+      },
+      {
+        "layer": "top highlight",
+        "color": "highlight",
+        "alpha": 0.35,
+        "fromDp": [
+          24,
+          1
+        ],
+        "to": "(width-24dp,1dp)",
+        "strokeDp": 1,
+        "cap": "round"
+      },
+      {
+        "layer": "nine wells",
+        "description": "fixed geometry below"
+      },
+      {
+        "layer": "winning line",
+        "description": "inside board content inset; recess 5dp stroke then text 2dp stroke, round caps, through centers of first/third winning cells"
+      }
+    ],
+    "well": {
+      "radiusFormula": "min(18dp, cellSide*0.19)",
+      "drawOrder": [
+        {
+          "layer": "face",
+          "gradient": [
+            "recess",
+            "surface"
+          ],
+          "gradientDirection": "vertical"
+        },
+        {
+          "layer": "rim",
+          "color": "border",
+          "strokeDp": 1,
+          "insetDp": 0.5,
+          "sizeReductionDp": 1
+        },
+        {
+          "layer": "top inset edge",
+          "color": "shadow",
+          "alpha": 0.32,
+          "pressedAlpha": 0.65,
+          "from": "(radius,2dp)",
+          "to": "(width-radius,2dp)",
+          "strokeDp": 2,
+          "cap": "round"
+        },
+        {
+          "layer": "pressed wash",
+          "condition": "pressed and enabled",
+          "color": "border",
+          "alpha": 0.16
+        },
+        {
+          "layer": "AI target or winning outline",
+          "color": "focus",
+          "insetDp": 3,
+          "strokeDp": 2
+        },
+        {
+          "layer": "additional AI target outline",
+          "color": "focus",
+          "insetDp": 7,
+          "strokeDp": 1,
+          "radiusFormula": "max(1px, wellRadius-7dp)"
+        },
+        {
+          "layer": "keyboard focus",
+          "color": "focus",
+          "insetDp": 0,
+          "strokeDp": 3
+        },
+        {
+          "layer": "piece",
+          "insetDp": 4
+        }
+      ],
+      "hitGeometry": "whole fixed square; no transform ever moves cell hit target",
+      "aiOutlineStages": [
+        "AI_TARGETING",
+        "AI_PLACING",
+        "AI_SETTLING"
+      ]
+    }
+  },
+  "piece": {
+    "boundingSide": "minimum dimension after caller padding",
+    "center": "width/2,height/2",
+    "pathRadiusFraction": 0.25,
+    "pathStrokeFraction": 0.19,
+    "strokeCap": "round",
+    "x": "two diagonals from center +/- radius",
+    "o": "circle centered at center with radius",
+    "thickness": "min(2dp, side*0.035)",
+    "gradient": "vertical linear from (cx,cy-radius) highlight to (cx,cy+radius) face",
+    "drawOrder": [
+      {
+        "layer": "shadow",
+        "color": "shadow",
+        "alpha": 0.12,
+        "offsetY": "thickness+2dp",
+        "stroke": "side*0.19+3dp",
+        "blurDp": 0
+      },
+      {
+        "layer": "sidewall",
+        "color": "xEdge or oEdge",
+        "offsetY": "thickness",
+        "stroke": "side*0.19"
+      },
+      {
+        "layer": "face",
+        "colors": "xHighlight to x, or oHighlight to o",
+        "stroke": "side*0.19"
+      }
+    ],
+    "semantics": "decorative; cell or owning label speaks identity",
+    "usualBoxDp": {
+      "home": 44,
+      "probability": 28,
+      "held": 62,
+      "reveal": 132
+    },
+    "heldPaddingDp": 4
+  },
+  "surface": {
+    "radiusDp": 18,
+    "gradient": {
+      "normal": [
+        "surfaceRaised",
+        "surface"
+      ],
+      "recessed": [
+        "lerp(recess,shadow,0.12)",
+        "recess"
+      ]
+    },
+    "borderWidthDp": 0.75,
+    "border": {
+      "normal": "borderSubtle",
+      "recessed": "border"
+    },
+    "elevationDp": {
+      "normal": 2,
+      "recessed": 0,
+      "explicitNotElevated": 0
+    },
+    "shadow": {
+      "kind": "Compose platform elevation",
+      "appSpecifiedColor": null,
+      "appSpecifiedOffset": null,
+      "appSpecifiedBlur": null,
+      "appSpecifiedOpacity": null,
+      "note": "Not numerically specified by app; renderer/platform dependent. Do not invent exact native shadow parameters."
+    },
+    "clipContent": true
+  },
+  "homeScene": {
+    "interactive": false,
+    "accessibilityHidden": true,
+    "maxDrawingWidthDp": 400,
+    "heightDp": { "normal": 118, "compact": 90 },
+    "formulas": {
+      "side": "S=0.82*height",
+      "top": "T=(height-S)/2",
+      "bagLeft": "max(0.2*width-S/2,0)",
+      "boardLeft": "0.8*width-S/2"
+    },
+    "bag": {
+      "coordinateUnits": "normalized fractions of S, translated by (bagLeft,T)",
+      "path": [
+        { "moveTo": [0.22,0.2] },
+        { "cubicTo": [0.14,0.39,0,0.63,0.1,0.84] },
+        { "cubicTo": [0.19,1.02,0.81,1.02,0.9,0.84] },
+        { "cubicTo": [1,0.63,0.86,0.39,0.78,0.2] },
+        { "close": true }
+      ],
+      "shadow": { "color": "shadow", "alpha": 1, "offsetDp": [0,2], "blurDp": 0 },
+      "face": { "gradient": ["surfaceRaised","surface"], "startY": "T", "endY": "T+S" },
+      "border": { "color": "border", "strokeDp": 1 },
+      "opening": { "origin": [0.19,0.08], "size": [0.62,0.22], "fill": "recess", "border": "border", "strokeDp": 1 },
+      "seams": { "segments": [[0.31,0.51,0.26,0.79],[0.69,0.51,0.74,0.79]], "color": "borderSubtle", "strokeDp": 1, "cap": "round" }
+    },
+    "miniBoard": {
+      "side": "S",
+      "radius": "S*0.12",
+      "shadow": { "color": "shadow", "alpha": 1, "offsetDp": [0,2], "blurDp": 0 },
+      "face": "surfaceRaised",
+      "border": "border",
+      "borderDp": 1,
+      "frame": "S*0.075",
+      "gap": "S*0.035",
+      "cellSide": "(S-2*frame-2*gap)/3",
+      "wellRadius": "cellSide*0.19",
+      "wellFace": "recess",
+      "centerWellBorder": { "color": "text", "strokeDp": 1.5 },
+      "otherWellBorder": { "color": "borderSubtle", "strokeDp": 1 }
+    },
+    "arrows": {
+      "y": "T+S*0.52",
+      "first": ["bagLeft+S+5dp", "width*0.5-26dp"],
+      "second": ["width*0.5+26dp", "boardLeft-6dp"],
+      "omitIfSpanLessThanDp": 4,
+      "strokeDp": 1.5,
+      "cap": "round",
+      "color": "textSecondary",
+      "headOffsetDp": [4,4]
+    },
+    "centerPiece": { "symbol": "X", "sizeDp": 44, "alignment": "center" }
+  },
+  "controls": {
+    "button": {
+      "minHeightDp": 52,
+      "radiusDp": 14,
+      "contentPaddingDp": {
+        "horizontal": 20,
+        "vertical": 14
+      },
+      "labelRole": "titleMedium",
+      "baseHeightDp": 3,
+      "pressTravelDp": 2,
+      "elevationDp": {
+        "enabled": 2,
+        "disabled": 0
+      },
+      "face": {
+        "primary": "action",
+        "secondary": "surface",
+        "disabled": "recess"
+      },
+      "content": {
+        "primary": "onAction",
+        "secondary": "text",
+        "disabled": "textSecondary"
+      },
+      "base": {
+        "enabledPrimary": "xEdge",
+        "enabledSecondary": "shadow",
+        "disabled": "recess"
+      },
+      "gradientTop": "lerp(face,highlight,0.035) if enabled, else face",
+      "gradientBottom": "lerp(face,shadow,press*0.08)",
+      "rim": {
+        "primary": "lerp(face,highlight,0.14)",
+        "secondary": "border",
+        "disabled": "borderSubtle",
+        "focusedPrimary": "onAction",
+        "focusedSecondary": "focus"
+      },
+      "reducedMotion": "press shading updates immediately; translation disabled"
+    },
+    "choice": {
+      "minHeightDp": 48,
+      "radiusDp": 10,
+      "paddingDp": {
+        "horizontal": 8,
+        "vertical": 12
+      },
+      "labelRole": "labelLarge",
+      "selectedFace": "text",
+      "selectedText": "canvas",
+      "normalFace": "recess",
+      "pressedEnabledFace": "surfaceRaised",
+      "unselectedText": "text",
+      "disabledUnselectedText": "textSecondary",
+      "check": {
+        "sizeDp": 13,
+        "endPaddingDp": 5,
+        "strokeDp": 2,
+        "cap": "round",
+        "points": [
+          [
+            0.13,
+            0.53
+          ],
+          [
+            0.4,
+            0.78
+          ],
+          [
+            0.9,
+            0.2
+          ]
+        ]
+      }
+    },
+    "back": {
+      "sizeDp": 48,
+      "radiusDp": 14,
+      "iconSizeDp": 22,
+      "strokeDp": 2,
+      "cap": "round",
+      "pointsLtr": [
+        [
+          0.65,
+          0.18
+        ],
+        [
+          0.32,
+          0.5
+        ],
+        [
+          0.65,
+          0.82
+        ]
+      ],
+      "pointsRtl": [
+        [
+          0.35,
+          0.18
+        ],
+        [
+          0.68,
+          0.5
+        ],
+        [
+          0.35,
+          0.82
+        ]
+      ],
+      "pressedFace": "recess",
+      "normalFace": "surface",
+      "semantics": "Back"
+    },
+    "textAction": {
+      "minHeightDp": 48,
+      "radiusDp": 10,
+      "paddingDp": {
+        "horizontal": 10,
+        "vertical": 12
+      },
+      "labelRole": "labelLarge",
+      "content": "textSecondary",
+      "pressedEnabledFace": "surface",
+      "restFace": "transparent"
+    },
+    "modeRow": {
+      "minHeightDp": 72,
+      "radiusDp": 14,
+      "paddingDp": {
+        "vertical": 12,
+        "horizontal": 4
+      },
+      "leadingMarkWidthDp": 46,
+      "trailingArrowStartPaddingDp": 12,
+      "pressedFace": "recess",
+      "titleRole": "headlineMedium",
+      "subtitleRole": "bodyMedium"
+    },
+    "setting": {
+      "minHeightDp": 64,
+      "radiusDp": 14,
+      "paddingVerticalDp": 16,
+      "summaryTrailingPaddingDp": 12,
+      "largeTextDescriptionTopDp": 8,
+      "normalDescriptionTopDp": 4,
+      "semantics": "one toggleable Switch-role row; decorative child Switch semantics cleared",
+      "nativeSwitchColors": {
+        "checkedThumb": "onAction",
+        "checkedTrack": "action",
+        "checkedBorder": "action",
+        "uncheckedThumb": "textSecondary",
+        "uncheckedTrack": "recess",
+        "uncheckedBorder": "border"
+      }
+    }
+  },
+  "playerIndicator": {
+    "dotDp": 7,
+    "dotShape": "circle",
+    "labelStartDp": 8,
+    "labelRole": "titleMedium",
+    "activeLabel": "text",
+    "inactiveLabel": "textSecondary",
+    "statusRole": "labelMedium",
+    "statusPaddingDp": {
+      "top": 3,
+      "bottom": 8
+    },
+    "activeRuleDp": 3,
+    "inactiveRuleDp": 1,
+    "activeColor": "playerOne or playerTwo",
+    "inactiveRule": "borderSubtle",
+    "rowGapDp": 20,
+    "stackGapDp": 12,
+    "stackWhen": "fontScale > 1.5 OR (availableWidth < 320dp AND fontScale > 1.2)",
+    "semantics": "merge actor name and status; color never denotes symbol ownership"
+  },
+  "probabilityTray": {
+    "surfaceElevationDp": 0,
+    "paddingDp": 16,
+    "headerRoles": [
+      "titleMedium",
+      "labelMedium"
+    ],
+    "dividerPaddingVerticalDp": 10,
+    "dividerColor": "borderSubtle",
+    "columns": 2,
+    "columnGapDp": 16,
+    "pieceDp": 28,
+    "countStartDp": 5,
+    "countRole": "titleMedium",
+    "percentageTopDp": 2,
+    "percentageRole": "headlineMedium weight700, tnum",
+    "footerTopDp": 10,
+    "footerRole": "bodySmall",
+    "percent": "round(probability*100), not truncated",
+    "semantics": "X/O, N remaining, P percent next draw"
+  },
+  "layouts": {
+    "home": {
+      "safeArea": true,
+      "scroll": true,
+      "maxContentWidthDp": 620,
+      "paddingDp": {
+        "horizontal": 20,
+        "vertical": 16
+      },
+      "subtitleTopDp": 8,
+      "sceneTopDp": 12,
+      "sceneHeightDp": {
+        "normal": 118,
+        "compact": 90
+      },
+      "compactWhen": "availableHeight < 680dp OR fontScale > 1.35",
+      "sceneCaptionPaddingDp": {
+        "top": 4,
+        "bottom": 20
+      },
+      "vsComputerTopDp": 18,
+      "vsComputerDescriptionTopDp": 3,
+      "difficultyTopDp": 14,
+      "difficultyGapDp": 8,
+      "difficultyDescriptionPaddingDp": {
+        "top": 8,
+        "bottom": 12
+      },
+      "footerTopDp": 16,
+      "largeTextWhen": "fontScale > 1.35",
+      "largeTextChanges": [
+        "difficulty options stack",
+        "footer actions stack left-aligned",
+        "scene uses compact height"
+      ]
+    },
+    "game": {
+      "safeArea": true,
+      "scroll": true,
+      "wideWhen": "availableWidth >= 760dp AND fontScale < 1.6",
+      "maxContentWidthDp": {
+        "normal": 500,
+        "wide": 1000
+      },
+      "paddingDp": {
+        "normalHorizontal": 20,
+        "wideHorizontal": 32,
+        "vertical": 12
+      },
+      "headerToPlayersDp": 16,
+      "playersToContentDp": 20,
+      "instructionsToBoardDp": 20,
+      "boardToBagDp": 24,
+      "bottomDp": 24,
+      "wideColumns": "equal weight board and information; 28dp gap",
+      "wideInformationGapDp": 20,
+      "headerLabelStartDp": 8,
+      "heldPieceBoxDp": 62,
+      "heldPieceStartDp": 12,
+      "instructionDetailTopDp": 4
+    },
+    "handoff": {
+      "outerPaddingDp": 20,
+      "maxWidthDp": 400,
+      "scroll": true,
+      "alignment": "center",
+      "gapDp": 20,
+      "actorTileDp": 56,
+      "actorTileRadiusDp": 14
+    },
+    "dialog": {
+      "outerPaddingDp": 24,
+      "maxWidthDp": 400,
+      "contentPaddingDp": 24,
+      "contentGapDp": 16,
+      "scroll": true,
+      "dismissOnOutside": false,
+      "backAction": "Home",
+      "platformWindowAnimations": false,
+      "revealPieceDp": 132,
+      "resultBoardDp": 188,
+      "backgroundSemanticsHidden": true,
+      "dim": "platform Dialog default; not numerically specified in app"
+    },
+    "info": {
+      "safeArea": true,
+      "scroll": true,
+      "maxWidthDp": 660,
+      "paddingDp": {
+        "horizontal": 20,
+        "vertical": 16
+      },
+      "headerLabelPaddingDp": {
+        "start": 12,
+        "top": 4
+      },
+      "subtitleTopDp": 6,
+      "afterHeaderDp": 28,
+      "bottomDp": 24,
+      "largeTextWhen": "fontScale > 1.35",
+      "largeTextChanges": [
+        "settings description moves below title and switch",
+        "theme choices stack",
+        "How-to odds stack"
+      ]
+    },
+    "minimumTargetsDp": {
+      "back": 48,
+      "choice": 48,
+      "textAction": 48,
+      "button": 52,
+      "settingRow": 64,
+      "modeRow": 72,
+      "board": "derived from width; tested >=48dp at supported narrow/wide fixtures"
+    }
+  },
+  "contrast": {
+    "method": "WCAG sRGB linearization; ratio (Llighter+0.05)/(Ldarker+0.05); opaque token pairs; not antialiased pixel sampling",
+    "measurements": [
+      {
+        "theme": "dark",
+        "foreground": "text",
+        "background": "canvas",
+        "ratio": 14.694
+      },
+      {
+        "theme": "dark",
+        "foreground": "textSecondary",
+        "background": "canvas",
+        "ratio": 9.856
+      },
+      {
+        "theme": "dark",
+        "foreground": "x",
+        "background": "canvas",
+        "ratio": 8.943
+      },
+      {
+        "theme": "dark",
+        "foreground": "o",
+        "background": "canvas",
+        "ratio": 10.179
+      },
+      {
+        "theme": "dark",
+        "foreground": "text",
+        "background": "surface",
+        "ratio": 10.122
+      },
+      {
+        "theme": "dark",
+        "foreground": "textSecondary",
+        "background": "surface",
+        "ratio": 6.79
+      },
+      {
+        "theme": "dark",
+        "foreground": "textSecondary",
+        "background": "recess",
+        "ratio": 8.557
+      },
+      {
+        "theme": "dark",
+        "foreground": "x",
+        "background": "surface",
+        "ratio": 6.161
+      },
+      {
+        "theme": "dark",
+        "foreground": "o",
+        "background": "surface",
+        "ratio": 7.012
+      },
+      {
+        "theme": "dark",
+        "foreground": "playerOne",
+        "background": "surface",
+        "ratio": 6.871
+      },
+      {
+        "theme": "dark",
+        "foreground": "playerTwo",
+        "background": "surface",
+        "ratio": 6.068
+      },
+      {
+        "theme": "dark",
+        "foreground": "border",
+        "background": "recess",
+        "ratio": 5.384
+      },
+      {
+        "theme": "dark",
+        "foreground": "borderSubtle",
+        "background": "canvas",
+        "ratio": 2.917
+      },
+      {
+        "theme": "dark",
+        "foreground": "focus",
+        "background": "recess",
+        "ratio": 12.757
+      },
+      {
+        "theme": "dark",
+        "foreground": "onAction",
+        "background": "action",
+        "ratio": 8.19
+      },
+      {
+        "theme": "dark",
+        "foreground": "canvas",
+        "background": "text",
+        "ratio": 14.694
+      },
+      {
+        "theme": "light",
+        "foreground": "text",
+        "background": "canvas",
+        "ratio": 12.636
+      },
+      {
+        "theme": "light",
+        "foreground": "textSecondary",
+        "background": "canvas",
+        "ratio": 6.286
+      },
+      {
+        "theme": "light",
+        "foreground": "x",
+        "background": "canvas",
+        "ratio": 6.318
+      },
+      {
+        "theme": "light",
+        "foreground": "o",
+        "background": "canvas",
+        "ratio": 5.676
+      },
+      {
+        "theme": "light",
+        "foreground": "text",
+        "background": "surface",
+        "ratio": 13.496
+      },
+      {
+        "theme": "light",
+        "foreground": "textSecondary",
+        "background": "surface",
+        "ratio": 6.713
+      },
+      {
+        "theme": "light",
+        "foreground": "textSecondary",
+        "background": "recess",
+        "ratio": 5.255
+      },
+      {
+        "theme": "light",
+        "foreground": "x",
+        "background": "surface",
+        "ratio": 6.748
+      },
+      {
+        "theme": "light",
+        "foreground": "o",
+        "background": "surface",
+        "ratio": 6.062
+      },
+      {
+        "theme": "light",
+        "foreground": "playerOne",
+        "background": "surface",
+        "ratio": 6.714
+      },
+      {
+        "theme": "light",
+        "foreground": "playerTwo",
+        "background": "surface",
+        "ratio": 6.906
+      },
+      {
+        "theme": "light",
+        "foreground": "border",
+        "background": "recess",
+        "ratio": 3.235
+      },
+      {
+        "theme": "light",
+        "foreground": "borderSubtle",
+        "background": "canvas",
+        "ratio": 1.901
+      },
+      {
+        "theme": "light",
+        "foreground": "focus",
+        "background": "recess",
+        "ratio": 10.564
+      },
+      {
+        "theme": "light",
+        "foreground": "onAction",
+        "background": "action",
+        "ratio": 6.748
+      },
+      {
+        "theme": "light",
+        "foreground": "canvas",
+        "background": "text",
+        "ratio": 12.636
+      }
+    ],
+    "thresholds": {
+      "normalText": 4.5,
+      "largeText": 3,
+      "meaningfulNonText": 3
+    },
+    "caveats": [
+      "borderSubtle is decorative and does not meet 3:1 in all themes",
+      "piece bevel/shadow layers are decorative; letterform/shape and semantic descriptions carry identity",
+      "platform switch, ripple-free focus and disabled behavior require actual VoiceOver/physical review"
+    ]
+  }
+}

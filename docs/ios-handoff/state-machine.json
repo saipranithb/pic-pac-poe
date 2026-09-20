@@ -1,0 +1,282 @@
+{
+  "schemaVersion": 1,
+  "pathBase": "docs/ios-handoff (document-relative)",
+  "product": "Pic-Pac-Poe",
+  "contractKind": "implemented-Android-behavior-with-explicit-port-recommendations",
+  "readWith": ["BEHAVIOR_AND_STATE.md", "PIC_PAC_POE_IOS_HANDOFF.md", "state-machine.mmd"],
+  "sources": {
+    "rules": "../../game-core/src/main/kotlin/com/thevaguebox/picpac/core/Rules.kt",
+    "model": "../../game-core/src/main/kotlin/com/thevaguebox/picpac/core/Model.kt",
+    "state": "../../game-core/src/main/kotlin/com/thevaguebox/picpac/core/State.kt",
+    "session": "../../game-core/src/main/kotlin/com/thevaguebox/picpac/core/Session.kt",
+    "viewModel": "../../app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/GameViewModel.kt",
+    "presentationClock": "../../app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/GameScreen.kt",
+    "instructions": "../../app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/GamePanels.kt",
+    "board": "../../app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/components/PhysicalBoard.kt",
+    "stateTests": "../../app/src/test/java/com/thevaguebox/probabilistictictactoe/ui/GameViewModelTest.kt",
+    "flowTests": "../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/ProductFlowTest.kt",
+    "fixtureTests": "../../app/src/androidTest/java/com/thevaguebox/probabilistictictactoe/FormPresentationTest.kt"
+  },
+  "actors": {
+    "ONE": {"localLabel": "Player 1", "computerModeLabel": "You", "classicSymbol": "X"},
+    "TWO": {"localLabel": "Player 2", "computerModeLabel": "Computer", "classicSymbol": "O"},
+    "picPacSymbolOwnership": "none: either actor may place either symbol; completing actor wins"
+  },
+  "modes": {
+    "CLASSIC_LOCAL": {"initialStage": "PLAYING", "domain": "ClassicState", "bag": false},
+    "PIC_PAC_LOCAL": {"initialStage": "HANDOFF", "domain": "PicPacState", "bag": true},
+    "PIC_PAC_AI": {"initialStage": "TURN_START", "domain": "PicPacState", "bag": true}
+  },
+  "rules": {
+    "boardSize": [3, 3],
+    "indexing": "zero-based row-major; index = row * 3 + column",
+    "spokenCoordinates": "one-based row and column",
+    "boardEncoding": {"radix": 3, "empty": 0, "X": 1, "O": 2, "stateCount": 19683},
+    "winningLines": [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]],
+    "initialBag": {"X": 5, "O": 5},
+    "drawWithoutReplacement": true,
+    "drawBeforeCellSelection": true,
+    "removeHeldPieceAtDraw": true,
+    "maximumPlacements": 9,
+    "terminalEvaluationOrder": ["placed symbol completes any line: active actor wins", "full board: draw", "otherwise switch actor"],
+    "multipleWinningLines": "domain stores every line; UI draws first in source order",
+    "conservation": ["board.X + remainingX + heldX = 5", "board.O + remainingO + heldO = 5"],
+    "probability": {
+      "X": "remainingX / (remainingX + remainingO)",
+      "O": "remainingO / (remainingX + remainingO)",
+      "zeroTotalFallback": 0,
+      "display": "roundToInt(probability * 100)",
+      "heldPieceExcluded": true
+    },
+    "productionDraw": "private SecureRandom.nextInt(hiddenTotal) < remainingX means X, otherwise O",
+    "forbiddenCommands": ["redraw", "undo", "pass", "place occupied cell", "place before reveal completes", "play after terminal"],
+    "starter": {
+      "initialDefault": "ONE",
+      "newGame": "use persisted nextStarter without toggling",
+      "rematch": "set nextStarter to opposite of previous game's starter; preserve mode/difficulty",
+      "home": "clear current game but retain nextStarter/revision",
+      "classicOwnershipNeverSwaps": true
+    }
+  },
+  "domainPhases": {
+    "AwaitingDraw": {"held": null, "requires": ["positive hidden total", "nonwinning board", "symbol conservation"]},
+    "AwaitingPlacement": {"payload": ["heldSymbol", "turnToken"], "requires": ["nonwinning board", "held included in conservation"]},
+    "Terminal": {"payload": ["outcome"], "outcomes": ["Win(player,symbol,lines)", "Draw"], "commandsAccepted": false}
+  },
+  "identifiers": {
+    "revision": {"owner": "GameViewModel", "advance": "each beginNewGame including rematch", "persisted": true},
+    "turnToken": {"formula": "revision * 16 + occupiedCount + 1", "creation": "Pic-Pac draw; Classic new game and after nonterminal placement", "persisted": true},
+    "presentationId": {"owner": "GameViewModel.advanceStage", "advance": "increments living coordinator counter on stage advancement", "persisted": true, "note": "Not a wall-clock timestamp. Home/default Classic state may have zero; old callbacks still require GAME screen and current exact identity."}
+  },
+  "guards": {
+    "humanInput": "screen == GAME && stage == PLAYING && (mode != PIC_PAC_AI || activePlayer == ONE) && target cell is empty",
+    "presentationCallback": "screen == GAME && supplied presentationId == current presentationId; stage must be one of the timed stages",
+    "beginAiTargeting": "Pic-Pac AwaitingPlacement && activePlayer == TWO && request.turnToken == current turnToken",
+    "commitAi": "session exists && AwaitingPlacement && request.revision == session.revision && request.turnToken == current token && activePlayer == TWO && target empty",
+    "domainRejectedEffects": "none: state is unchanged"
+  },
+  "states": {
+    "HANDOFF": {
+      "domain": "Pic-Pac AwaitingDraw",
+      "actor": "activePlayer",
+      "durationMs": {"normal": null, "reduced": null},
+      "completion": "explicit Ready",
+      "boardPresent": false,
+      "bagPresent": false,
+      "cellInput": false,
+      "actions": ["Ready", "Home"],
+      "accessibility": "assertive actor handoff headline; no board or bag subtree"
+    },
+    "TURN_START": {
+      "domain": "Pic-Pac AwaitingDraw",
+      "actor": "activePlayer",
+      "durationMs": {"normal": 300, "reduced": 160},
+      "completion": "matching presentation callback",
+      "cellInput": false,
+      "headline": "Your turn or Computer's turn",
+      "heldSymbol": null
+    },
+    "REVEALING": {
+      "domain": "Pic-Pac AwaitingPlacement",
+      "actor": "activePlayer",
+      "durationMs": {"normal": 650, "reduced": 500},
+      "completion": "matching presentation callback",
+      "cellInput": false,
+      "modal": true,
+      "backgroundSemanticsSuppressed": true,
+      "content": "actual actor and held symbol",
+      "computerComputation": "starts on entry after draw is persisted; result waits for full reveal"
+    },
+    "PLAYING": {
+      "domain": "Classic nonterminal or human/local Pic-Pac AwaitingPlacement",
+      "actor": "activePlayer",
+      "durationMs": {"normal": null, "reduced": null},
+      "completion": "accepted placement",
+      "cellInput": "only empty human/local cells under humanInput guard",
+      "headline": "Place X or Place O"
+    },
+    "AI_THINKING": {
+      "domain": "computer Pic-Pac AwaitingPlacement",
+      "actor": "TWO",
+      "durationMs": {"normal": null, "reduced": null},
+      "completion": "valid worker result arrives",
+      "cellInput": false,
+      "headline": "Computer is thinking",
+      "fixedThinkingMinimum": false,
+      "productionDeadline": null
+    },
+    "AI_TARGETING": {
+      "domain": "computer Pic-Pac AwaitingPlacement; board not yet committed",
+      "actor": "TWO",
+      "durationMs": {"normal": 280, "reduced": 160},
+      "completion": "matching presentation callback and valid pending decision",
+      "cellInput": false,
+      "headline": "Square selected",
+      "persistentFields": ["aiTargetCell", "aiMoveSymbol"],
+      "accessibility": "Computer selected row R, column C; disabled button; polite live region"
+    },
+    "AI_PLACING": {
+      "domain": "board already committed; next human AwaitingDraw or Terminal",
+      "actor": "TWO even if domain activePlayer is ONE",
+      "durationMs": {"normal": 340, "reduced": 180},
+      "completion": "matching presentation callback",
+      "cellInput": false,
+      "headline": "Placing X or Placing O",
+      "persistentFields": ["aiTargetCell", "aiMoveSymbol"],
+      "accessibility": "Computer placed S in row R, column C; disabled button; polite live region",
+      "effectTiming": "PLACE/WIN/DRAW emitted on entry when domain commits"
+    },
+    "AI_SETTLING": {
+      "domain": "same committed state as AI_PLACING",
+      "actor": "TWO even if domain activePlayer is ONE",
+      "durationMs": {"normal": 480, "reduced": 320},
+      "completion": "matching presentation callback",
+      "cellInput": false,
+      "headline": "Move placed",
+      "persistentFields": ["aiTargetCell", "aiMoveSymbol"],
+      "newDrawForbidden": true
+    },
+    "TERMINAL": {
+      "domain": "Terminal outcome",
+      "actor": "terminal active actor; result names winner independently",
+      "durationMs": {"normal": null, "reduced": null},
+      "completion": "Rematch or Home",
+      "cellInput": false,
+      "modal": true,
+      "backgroundSemanticsSuppressed": true,
+      "actions": ["Rematch", "Home"],
+      "finalBoard": "noninteractive single accessible board description, all 9 coordinates"
+    }
+  },
+  "transitions": [
+    {"from": "OUTSIDE_GAME", "to": "PLAYING", "cause": "startClassic", "effects": ["cancel old AI", "increment revision", "new Classic session using nextStarter"]},
+    {"from": "OUTSIDE_GAME", "to": "HANDOFF", "cause": "startPicPacLocal", "effects": ["cancel old AI", "increment revision", "new 5+5 session using nextStarter", "advance presentationId"]},
+    {"from": "OUTSIDE_GAME", "to": "TURN_START", "cause": "startPicPacAi", "effects": ["cancel old AI", "increment revision", "preserve chosen difficulty", "new 5+5 session using nextStarter", "advance presentationId"]},
+    {"from": "HANDOFF", "to": "REVEALING", "cause": "Ready", "guard": "stage == HANDOFF; domain accepts reveal", "effects": ["draw and remove once", "persist held/token", "clear pending target and symbol", "revealAcknowledged = false", "advance presentationId", "REVEAL effect"]},
+    {"from": "TURN_START", "to": "REVEALING", "cause": "presentation callback", "guard": "presentationCallback and domain accepts reveal", "effects": ["draw and remove once", "persist held/token", "clear pending target and symbol", "revealAcknowledged = false", "advance presentationId", "REVEAL effect", "launch AI if actor TWO in PIC_PAC_AI"]},
+    {"from": "REVEALING", "to": "PLAYING", "cause": "presentation callback", "guard": "presentationCallback and local/human actor", "effects": ["revealAcknowledged = true", "advance presentationId"]},
+    {"from": "REVEALING", "to": "AI_TARGETING", "cause": "presentation callback", "guard": "presentationCallback and computer and pending valid decision", "effects": ["revealAcknowledged = true", "persist target/held symbol", "advance presentationId"]},
+    {"from": "REVEALING", "to": "AI_THINKING", "cause": "presentation callback", "guard": "presentationCallback and computer and no pending decision", "effects": ["revealAcknowledged = true", "advance presentationId"]},
+    {"from": "REVEALING", "to": "REVEALING", "cause": "worker result arrives early", "guard": "revealAcknowledged == false", "effects": ["retain pending decision only; do not shorten reveal"]},
+    {"from": "AI_THINKING", "to": "AI_TARGETING", "cause": "worker result arrives", "guard": "revealAcknowledged and beginAiTargeting", "effects": ["persist target/held symbol", "advance presentationId"]},
+    {"from": "AI_TARGETING", "to": "AI_PLACING", "cause": "presentation callback", "guard": "presentationCallback and commitAi", "effects": ["consume pending result", "commit exactly one domain move", "persist target and precommit held symbol", "advance presentationId", "PLACE/WIN/DRAW effect"]},
+    {"from": "AI_PLACING", "to": "AI_SETTLING", "cause": "presentation callback", "guard": "presentationCallback", "effects": ["advance presentationId; board unchanged"]},
+    {"from": "AI_SETTLING", "to": "TURN_START", "cause": "presentation callback", "guard": "presentationCallback and domain nonterminal", "effects": ["clear target/symbol", "advance presentationId", "display next human actor"]},
+    {"from": "AI_SETTLING", "to": "TERMINAL", "cause": "presentation callback", "guard": "presentationCallback and domain terminal", "effects": ["advance presentationId", "show result without another draw"]},
+    {"from": "PLAYING", "to": "PLAYING", "cause": "Classic placement", "guard": "humanInput and accepted nonterminal Classic command", "effects": ["commit fixed symbol", "switch actor/token", "PLACE effect"]},
+    {"from": "PLAYING", "to": "HANDOFF", "cause": "Local placement", "guard": "humanInput and accepted nonterminal Pic-Pac command", "effects": ["commit held symbol", "switch actor", "AwaitingDraw", "PLACE effect", "advance presentationId"]},
+    {"from": "PLAYING", "to": "TURN_START", "cause": "human AI-mode placement", "guard": "humanInput and accepted nonterminal Pic-Pac command", "effects": ["commit held symbol", "switch actor to computer", "AwaitingDraw", "PLACE effect", "advance presentationId"]},
+    {"from": "PLAYING", "to": "TERMINAL", "cause": "winning or drawing human/Classic placement", "guard": "humanInput and accepted terminal command", "effects": ["commit outcome", "WIN/DRAW effect", "immediate result presentation without AI settlement"]},
+    {"from": "TERMINAL", "to": "mode.initialStage", "cause": "Rematch", "effects": ["toggle nextStarter", "preserve mode/difficulty", "cancel work", "increment revision", "fresh board/session"]},
+    {"from": "ANY", "to": "OUTSIDE_GAME", "cause": "Home or app Back", "effects": ["cancel AI", "clear pending result and reveal acknowledgement", "clear sessions/saved game", "retain nextStarter/revision", "default Home UI"]},
+    {"from": "ANY", "to": "newMode.initialStage", "cause": "explicit new-game command", "effects": ["cancel AI", "increment revision", "new session", "old callbacks rejected"]}
+  ],
+  "clock": {
+    "owner": "GameScreen.PresentationClock composition",
+    "keys": ["presentationId", "stage", "reducedMotion"],
+    "source": "delay(duration) then callback(current presentationId)",
+    "recreation": "restart full current-stage duration, not remaining elapsed duration",
+    "reducedMotionChanged": "cancel old keyed timer and start current stage with new delay",
+    "dialogWindowAnimations": 0,
+    "earliestComputerSequenceDelayMs": {"normal": 2050, "reduced": 1320},
+    "nextHumanTurnStartAndRevealAdditionalMs": {"normal": 950, "reduced": 660},
+    "delaySumsAreNotMeasuredLatency": true,
+    "background": "no explicit foreground gate or pause protocol; do not assume Android stage time freezes"
+  },
+  "aiLifecycle": {
+    "begin": "on computer entry to REVEALING, after lawful draw/removal",
+    "worker": "viewModelScope + withContext(Dispatchers.Default)",
+    "requestIdentity": ["revision", "turnToken"],
+    "earlyCompletion": "store pending; target only after reveal acknowledgement",
+    "lateCompletion": "REVEALING -> AI_THINKING; target when valid result arrives",
+    "unexpectedFailure": "first row-major legal observation cell",
+    "cancellation": "rethrow cancellation; no fallback move on cancellation",
+    "cancelTriggers": ["new game", "rematch", "Home", "show(non-GAME)", "ViewModel scope cleared"],
+    "targetPersistence": ["ai_target", "ai_symbol"],
+    "terminalCommit": "domain becomes Terminal on AI_PLACING entry; result UI waits until after AI_SETTLING"
+  },
+  "savedState": {
+    "mechanism": "Android SavedStateHandle, not match-history disk database",
+    "keys": ["screen", "mode", "difficulty", "stage", "presentation_id", "ai_target", "ai_symbol", "revision", "next_starter", "kind", "board", "active", "starter", "token", "remaining_x", "remaining_o", "phase", "held", "outcome", "winner", "win_symbol"],
+    "notSaved": ["AI Job", "solver cache", "pre-target pending result", "revealAcknowledged", "elapsed stage time", "animation progress", "effect/effectId"],
+    "restoration": [
+      {"stage": "HANDOFF or AwaitingDraw", "action": "rebuild session, no draw until explicit Ready/current timer"},
+      {"stage": "human/local REVEALING", "action": "same held symbol/counts/token, current reveal restarts"},
+      {"stage": "computer REVEALING", "action": "same held symbol; relaunch AI with reveal unacknowledged"},
+      {"stage": "AI_THINKING", "action": "same held symbol; acknowledgement true; relaunch AI"},
+      {"stage": "AI_TARGETING with target", "action": "rebuild PendingAi from persisted target and current revision/token; no new draw/search"},
+      {"stage": "AI_PLACING or AI_SETTLING", "action": "resume committed board and target/symbol; no second move"},
+      {"stage": "TERMINAL", "action": "retain outcome/board; no AI launch"},
+      {"stage": "Classic PLAYING", "action": "retain board/actor/token/starter"}
+    ],
+    "limitations": [
+      "session reconstruction errors return Home, but enum parsing before try is not protected",
+      "missing-target AI_TARGETING corrupted snapshot is not a proven recovery path",
+      "force-stop/relaunch match durability is not guaranteed by SavedStateHandle",
+      "background phase pause and durable exactly-once feedback are not implemented"
+    ],
+    "swiftRecommendation": "versioned validated Codable snapshot, main-actor coordinator, explicit scene-phase behavior; restore state without reroll"
+  },
+  "aiConfiguration": {
+    "source": "../../game-ai/src/main/kotlin/com/thevaguebox/picpac/ai/",
+    "randomBaseline": {"selection": "uniform legal", "productDifficulty": false},
+    "EASY": {"algorithm": "HeuristicAgent", "immediateWinFirst": true, "nearBestBand": 8.0, "seed": "System.nanoTime() in production"},
+    "MEDIUM": {"algorithm": "ExpectiminimaxAgent", "configuredDepth": 4},
+    "HARD": {"algorithm": "ExpectiminimaxAgent", "configuredDepth": "full terminal", "exact": true},
+    "MCTS": {"algorithm": "StochasticMctsAgent", "appSimulations": 2000, "classDefaultSimulations": 1000, "exploration": "sqrt(2)", "opponentExploitationSign": -1, "seed": "System.nanoTime() xor 0x4D435453"},
+    "RL": {"algorithm": "RlPolicyAgent", "policy": "../../app/src/main/res/raw/picpac_rl_policy_v1.bin", "rulesId": "picpac-5x5-draw-before-place-v1", "bytes": 891749, "sha256": "9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1", "trainingEpisodes": 250000, "trainingSeed": 7331, "trainingInApp": false, "emptyTableFallback": "HeuristicAgent", "missingRowInNonemptyTable": "zero values and stable legal-cell tie break"},
+    "productionSearchLimits": {"maxDepth": null, "nodeBudget": null, "deadlineNanos": null},
+    "stableCellOrder": [4, 0, 2, 6, 8, 1, 3, 5, 7],
+    "expectiminimaxTieTolerance": 1e-12,
+    "expectiminimaxCancellationNodeInterval": 256,
+    "mctsCancellationInterval": "every simulation",
+    "mctsFinalChoice": ["maximum visits", "maximum mean root reward", "stable move rank"],
+    "heuristic": {
+      "winScore": 100000,
+      "drawScore": 0,
+      "geometryMultiplier": 22,
+      "positionBonus": {"center": 22, "corner": 10, "edge": 4},
+      "lineWeights": {"twoFocusOneEmpty": 12, "oneFocusTwoEmpty": 3, "twoOtherOneEmpty": 4, "oneOtherTwoEmpty": 1},
+      "opponentThreatCost": {"zeroWins": 0, "oneWin": 520, "twoOrMore": "760 + (winningMoves - 2) * 80"},
+      "leaf": "clamp(tanh(bestActionScore / 260), -0.95, +0.95)"
+    },
+    "qLearning": {"discount": 1, "epsilon": "max(0.02, 1 - episode/(episodes*0.85))", "alpha": "1/sqrt(stateActionVisits)", "target": "+1 win, 0 draw, -maxQ(next) otherwise", "explorationSeed": "seed xor 0x51F15EED"},
+    "oracle": {"chanceStates": 11065, "decisionStates": 21314, "terminalStates": 6648, "totalPhaseAwareStates": 39027, "openingCenterValue": "5/21", "openingOtherValue": "11/126", "bothHeldSymbols": true},
+    "performance": "off-main computation; no fixed app latency guarantee; solver cache mutable and must be serialized in Swift",
+    "crossPlatformRandomness": "script test draws or specify portable RNG; Swift built-in and Kotlin Random streams need not match"
+  },
+  "nonNegotiables": [
+    "actor identity independent of symbol in Pic-Pac",
+    "fair public-information AI",
+    "reveal actual held piece after removal",
+    "no human input during any locked stage",
+    "local handoff excludes private board/bag from rendering and accessibility",
+    "target before commit; same target/symbol through settlement",
+    "Computer remains displayed until settlement completes",
+    "terminal computer move settles before result; no next draw",
+    "stale presentation and AI work cannot mutate current game",
+    "recreation never redraws or places twice",
+    "Reduced Motion preserves stage order and readable nonzero essential delays",
+    "offline operation; no network, telemetry or runtime training introduced"
+  ]
+}

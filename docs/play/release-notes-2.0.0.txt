@@ -1,7 +1,9 @@
-Pic-Pac-Poe has been rebuilt for a clearer, faster offline game experience.
+Pic-Pac-Poe 2.0.0
 
-- Refreshed phone, tablet, light, and dark layouts
-- Clear You/Computer turn, draw, and placement feedback
-- Easy, Medium, and solved Hard computer opponents
-- Improved local handoff, accessibility, reduced motion, and saved-state reliability
-- New AI Lab with MCTS and locally trained Q-learning opponents
+- A tactile board, warm light and dark themes, and refined typography
+- Clearer computer turns, symbol reveals, selected cells, and settled moves
+- Restrained motion with a Reduced Motion option
+- Improved accessible controls, large-text layouts, local handoff, and game restoration
+- Easy, Medium, and Hard opponents, plus experimental AI Lab choices
+
+Still an offline game with no ads or accounts.

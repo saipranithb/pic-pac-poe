@@ -1,0 +1,4 @@
+# Keep checksummed portable handoff text byte-stable across Windows/macOS clones.
+/docs/ios-handoff/** text eol=lf
+/docs/ios-handoff/reference/*.png binary
+/app/src/main/assets/licenses/fredoka-OFL.txt text eol=lf
