@@ -47,6 +47,7 @@ import com.thevaguebox.probabilistictictactoe.ui.components.FormHomeScene
 import com.thevaguebox.probabilistictictactoe.ui.components.FormPrimaryButton
 import com.thevaguebox.probabilistictictactoe.ui.components.FormSectionHeading
 import com.thevaguebox.probabilistictictactoe.ui.components.FormTextAction
+import com.thevaguebox.probabilistictictactoe.ui.components.HomeWordmark
 import com.thevaguebox.probabilistictictactoe.ui.theme.FormTheme
 
 @Composable
@@ -57,6 +58,9 @@ fun HomeScreen(
     onHowTo: () -> Unit,
     onSettings: () -> Unit,
     onAiLab: () -> Unit,
+    titleEntrance: Boolean = false,
+    titleMotionReady: Boolean = true,
+    onTitleEntranceStarted: () -> Unit = {},
 ) {
     var difficulty by rememberSaveable { mutableStateOf(Difficulty.MEDIUM) }
     val colors = FormTheme.colors
@@ -71,7 +75,7 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Column(Modifier.widthIn(max = 620.dp).fillMaxWidth()) {
-                Text("Pic-Pac-Poe", Modifier.semantics { heading() }, style = MaterialTheme.typography.displayLarge)
+                HomeWordmark(animateEntrance = titleEntrance, motionReady = titleMotionReady, onEntranceStarted = onTitleEntranceStarted)
                 Text(
                     "Tic-tac-toe, except you don't choose your symbol.",
                     Modifier.padding(top = 8.dp),

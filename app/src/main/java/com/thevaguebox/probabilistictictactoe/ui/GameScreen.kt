@@ -51,6 +51,7 @@ import com.thevaguebox.probabilistictictactoe.ui.components.PlayerTurnHeader
 import com.thevaguebox.probabilistictictactoe.ui.components.ProbabilityTray
 import com.thevaguebox.probabilistictictactoe.ui.components.TurnInstructions
 import com.thevaguebox.probabilistictictactoe.ui.theme.FormTheme
+import com.thevaguebox.probabilistictictactoe.ui.theme.FormBrandTypography
 import kotlinx.coroutines.delay
 
 @Composable
@@ -140,7 +141,7 @@ private fun HandoffPresentation(player: Player, onReady: () -> Unit, onHome: () 
             Box(Modifier.size(56.dp).background(if (player == Player.ONE) FormTheme.colors.playerOne else FormTheme.colors.playerTwo, FormTheme.shapes.control), contentAlignment = Alignment.Center) {
                 Text(if (player == Player.ONE) "1" else "2", color = FormTheme.colors.canvas, style = MaterialTheme.typography.headlineMedium)
             }
-            Text("${player.label}, you're up.", style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Assertive })
+            Text("${player.label}, you're up.", style = FormBrandTypography.emotionalHeadline, textAlign = TextAlign.Center, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Assertive })
             Text("Pass the phone, then tap when they're ready.", style = MaterialTheme.typography.bodyLarge, color = FormTheme.colors.textSecondary, textAlign = TextAlign.Center)
             FormPrimaryButton("Ready", onReady, Modifier.fillMaxWidth())
             FormSecondaryButton("Home", onHome, Modifier.fillMaxWidth())
@@ -154,7 +155,7 @@ private fun RevealPresentation(state: GameUiState, onHome: () -> Unit) {
     val announcement = state.drawLabel() ?: return
     PresentationDialog(onHome) {
         Text(state.actorLabel(state.activePlayer), style = MaterialTheme.typography.labelLarge, color = if (state.activePlayer == Player.ONE) FormTheme.colors.playerOne else FormTheme.colors.playerTwo)
-        Text(announcement, style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Assertive })
+        Text(announcement, style = FormBrandTypography.emotionalHeadline, textAlign = TextAlign.Center, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Assertive })
         FormSurface(Modifier.size(132.dp), recessed = true, elevated = false) { FormPiece(held, Modifier.fillMaxSize()) }
         Text(if (state.mode == GameMode.PIC_PAC_AI && state.activePlayer == Player.TWO) "Computer will choose a square." else "One piece. Your choice of square.", style = MaterialTheme.typography.bodyMedium, color = FormTheme.colors.textSecondary, textAlign = TextAlign.Center)
     }
@@ -164,7 +165,7 @@ private fun RevealPresentation(state: GameUiState, onHome: () -> Unit) {
 private fun ResultPresentation(state: GameUiState, onRematch: () -> Unit, onHome: () -> Unit) {
     val outcome = state.outcome ?: return
     PresentationDialog(onHome) {
-        Text(state.resultLabel() ?: "Draw", style = MaterialTheme.typography.headlineLarge, textAlign = TextAlign.Center, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Assertive })
+        Text(state.resultLabel() ?: "Draw", style = FormBrandTypography.resultHeadline, textAlign = TextAlign.Center, modifier = Modifier.semantics { liveRegion = LiveRegionMode.Assertive })
         Text(if (outcome is GameOutcome.Win) "Three ${outcome.symbol.name}s. One completed line." else "No line this time.", style = MaterialTheme.typography.bodyLarge, color = FormTheme.colors.textSecondary, textAlign = TextAlign.Center)
         // Static evidence of the final position, not another set of controls.
         Box(Modifier.size(188.dp).clearAndSetSemantics {

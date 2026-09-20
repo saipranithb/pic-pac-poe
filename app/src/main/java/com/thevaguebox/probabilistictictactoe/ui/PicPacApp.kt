@@ -20,6 +20,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
@@ -37,7 +40,10 @@ fun PicPacApp(viewModel: GameViewModel = viewModel()) {
     val game by viewModel.uiState.collectAsStateWithLifecycle()
     val context = LocalContext.current
     val settingsStore = remember(context) { SettingsStore(context) }
-    val settings by settingsStore.settings.collectAsState(initial = AppSettings())
+    val storedSettings by settingsStore.settings.collectAsState(initial = null)
+    // Keep the existing functional defaults; only the decorative title waits for preference IO.
+    val settings = storedSettings ?: AppSettings()
+    var titleEntranceConsumed by rememberSaveable { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
 
     BackHandler(enabled = game.screen != AppScreen.HOME) { viewModel.goHome() }
@@ -61,6 +67,9 @@ fun PicPacApp(viewModel: GameViewModel = viewModel()) {
                         onHowTo = { viewModel.show(AppScreen.HOW_TO) },
                         onSettings = { viewModel.show(AppScreen.SETTINGS) },
                         onAiLab = { viewModel.show(AppScreen.AI_LAB) },
+                        titleEntrance = !titleEntranceConsumed,
+                        titleMotionReady = storedSettings != null,
+                        onTitleEntranceStarted = { titleEntranceConsumed = true },
                     )
                     AppScreen.GAME -> GameScreen(
                         state = game,
