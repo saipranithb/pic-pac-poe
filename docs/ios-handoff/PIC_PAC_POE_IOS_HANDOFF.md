@@ -2,6 +2,8 @@
 
 This package specifies the approved **Form Playground 2.0** Android release candidate for a later native Swift/SwiftUI implementation. It is a product contract, not a redesign brief. Read this document and every companion listed below completely before implementation. Keep the Android clone read-only; create iOS in a separate repository on the Mac.
 
+**Current delivery status:** local implementation, commits, automated tests, clean build and portable-package validation are complete. GitHub publishing/main integration was blocked by the execution approval gate; existing signing configuration and Play version history are unresolved. No merged release SHA, tag, signed upload artifact or Internal testing release is claimed. [Release identity](release-identity.json) records the exact verified candidate separately from those deliberately null release fields.
+
 ## 1. Release identity and authority
 
 | Field | Value / authority |

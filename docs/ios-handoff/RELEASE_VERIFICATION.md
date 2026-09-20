@@ -19,8 +19,8 @@ Local checks ran with Android Studio's bundled OpenJDK21.0.4, the project's Java
 | Full22-test emulator suite | PASS: `OK (22 tests)`,366.858 seconds; zero failures |
 | Native320dp / font1.3 and2.0 | PASS:3 tests at each scale (6 additional executions),34.128s and40.979s; original display/font settings restored |
 | Emulator frame-time sample | WARNING:17 rendered frames,17 janky (100%); p50=250ms,p90=900ms,p95/p99=1000ms; not a physical-device benchmark |
-| Handoff links/JSON/hashes, clean-checkout perspective | Working-tree validator PASS; clean Git archive validation follows final package commit |
-| Main CI | Pending safe integration and push |
+| Handoff links/JSON/hashes, clean-checkout perspective | PASS:6 JSON documents,191 relative links,97 hash checks,zero errors in working tree and an independently extracted Git archive of3a5514e |
+| Main CI | NOT RUN:remote push/merge blocked by execution approval gate; no main integration occurred |
 
 Instrumentation suite composition:7 BrandTypography,2 BrandLifecycle,7 FormPresentation,6 ProductFlow. It includes exact grouped heading/colors/center/line fit;320dp1.0/1.3/2.0 in both themes; RTL identity; settings-gated stagger/finite completion/reduced-motion interruption; Home return/activity recreation including mid-entrance; all computer-stage locked semantics; local handoff privacy; equal stable board cells;900dp layout; support screens; Classic win/rematch/recreation; Local Ready/reveal/placement; Easy/Medium/Hard live computer turns and input only after settlement; How-to explanation.
 
@@ -44,6 +44,31 @@ adb -s <test-emulator> shell am instrument -w -r \
 ```
 
 Check the actual runner summary for `OK (22 tests)`; adb process exit status alone is insufficient. Connected Gradle tasks may otherwise target every attached compatible device. Capture fixtures use controllable clocks and are not suitable latency benchmarks. Final dark/light screenshots and their provenance are in [the manifest](reference/screenshot-manifest.json).
+
+### Final clean build and diagnostic artifact
+
+After the complete package commit, the exact clean candidate `3a5514eea7108d274416d1b30fc1bfe53c6a4c45` ran `--no-daemon clean check :app:assembleDebug :app:assembleDebugAndroidTest :app:bundleRelease`: **BUILD SUCCESSFUL in4m7s**,149 actionable tasks (147 executed,2 up-to-date). All60 JVM executions passed again and lint reported `No issues found.` The earlier22-test full emulator suite and6 native-scale reruns exercised identical production/test source; no app source changed afterward. The verification build emitted the existing nonfatal warning that two prebuilt AndroidX native libraries could not be stripped; they were packaged unchanged.
+
+| Unsigned diagnostic AAB field | Value |
+| --- | --- |
+| Repository-relative output | `app/build/outputs/bundle/release/app-release.aab` (ignored generated output, not a Git asset) |
+| Source | Clean candidate3a5514eea7108d274416d1b30fc1bfe53c6a4c45, before this metadata-only follow-up |
+| Version / size | 2.0.0 /5 /7,716,132 bytes |
+| SHA-256 | `4b054aa5605a76e4529f14e816ee635eadde802714f01e4cf0b5ea57b9f795d1` |
+| Signature / certificate | `jarsigner` explicitly reports `jar is unsigned.` No signing certificate. **Do not upload this file.** |
+
+The file is a local build diagnostic, not the signed artifact the release brief ultimately requires. A separately preserved local copy has the same hash; the handoff itself needs neither copy. A future signed bundle must be rebuilt from the authorized clean merged/tagged release source and gets its own signature, size and checksum record. The final documentation-only status update changes no Android runtime/test source.
+
+## Git integration checkpoint
+
+Local branch remains `codex/pic-pac-poe-remaster`. New implementation/test/package commits are `feefdfd37932a061d0be5775cb294b2b38e8dcb2`, `728142335e3fc94a3467366b3357cd07e871039b`, and `3a5514eea7108d274416d1b30fc1bfe53c6a4c45`; the final metadata-only commit is discoverable with `git log -- docs/ios-handoff/release-identity.json`. That avoids pretending a commit can embed its own SHA.
+
+Read-only GitHub inspection found no open/historical PRs, no repository rulesets, and main metadata marked unprotected (the detailed administration-only protection endpoint was unavailable). Therefore a normal non-rewriting merge was the selected user-requested integration path, not a PR bypass. Immediately before integration, local main and remote main agreed and the candidate had no behind commits. The combined feature-push/main-merge/main-push command was rejected **before execution** by the safety approval gate. A subsequent read confirmed both remote refs unchanged:
+
+- `main`: `63b6749fd26c5777d0cd0d2fec565deac77c246a`
+- `codex/pic-pac-poe-remaster`: `4f76dcf1c16d3eb977409e7344a1482a1358b74f`
+
+No push, merge, PR, tag, CI run or Play upload occurred in this pass. Publishing requires direct owner confirmation to push the feature branch and perform a normal merge/push to main. After confirmation, inspect state/fetch again; preserve all commits, require clean tree, integrate without force/history rewriting, then verify main's push CI. Do not repeat completed implementation or discard the package. Git release tags remain deferred until Play version history is verified. `verify-handoff.py --strict-release` intentionally fails while release SHA/tag are null; ordinary portability validation passes.
 
 ## Signing, version and Play boundary
 

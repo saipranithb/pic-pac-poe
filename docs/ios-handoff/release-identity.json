@@ -15,13 +15,39 @@
     "productionBranch": "main",
     "releaseCommit": null,
     "releaseTag": null,
-    "handoffCommit": null,
-    "uiPolishCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2"
+    "handoffCommit": "3a5514eea7108d274416d1b30fc1bfe53c6a4c45",
+    "uiPolishCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+    "verificationTestsCommit": "728142335e3fc94a3467366b3357cd07e871039b",
+    "candidateCommit": "3a5514eea7108d274416d1b30fc1bfe53c6a4c45",
+    "candidateAppMainSourceTree": "1cebb51124ddb4038ee0b20af906851893ecaca2",
+    "remoteMainAtLastCheck": "63b6749fd26c5777d0cd0d2fec565deac77c246a",
+    "remoteFeatureAtLastCheck": "4f76dcf1c16d3eb977409e7344a1482a1358b74f"
   },
-  "status": "verification-in-progress",
+  "status": "local-verification-complete-publishing-and-signing-blocked",
+  "verifiedAt": "2026-09-20",
+  "verificationArtifact": {
+    "kind": "unsigned-local-diagnostic-aab-not-for-upload",
+    "repositoryRelativePath": "app/build/outputs/bundle/release/app-release.aab",
+    "gitCommit": "3a5514eea7108d274416d1b30fc1bfe53c6a4c45",
+    "builtFromCleanTree": true,
+    "versionName": "2.0.0",
+    "versionCode": 5,
+    "sizeBytes": 7716132,
+    "sha256": "4b054aa5605a76e4529f14e816ee635eadde802714f01e4cf0b5ea57b9f795d1",
+    "signed": false,
+    "uploadReady": false,
+    "certificateFingerprint": null,
+    "signatureVerification": "jarsigner explicitly reported: jar is unsigned."
+  },
+  "blockers": [
+    "Execution approval gate rejected feature push and main merge/push; no remote mutation occurred. Direct owner confirmation is required to publish/integrate.",
+    "Existing upload-key signing configuration is unavailable locally; remote production signing-secret provisioning is unverified.",
+    "Play Console browser connection timed out before version history was read; highest uploaded version code is unverified."
+  ],
   "notes": [
     "Release identity is finalized only after safe integration and version-history verification; null is not a guessed revision.",
-    "A documentation-only follow-up may record the immutable Android release SHA/tag; use git log for the handoff document commit rather than a self-referential hash.",
+    "handoffCommit identifies the initial complete package/candidate commit. This later metadata-only follow-up does not change Android source; resolve its revision with git log rather than a self-referential hash.",
+    "candidateCommit is not a merged or tagged release. releaseCommit/releaseTag deliberately remain null until safe integration and Play version verification.",
     "Signing and Play upload require the existing authorized upload key; unsigned verification bundles are not upload-ready."
   ]
 }
