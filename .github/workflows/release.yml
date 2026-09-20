@@ -20,7 +20,6 @@ jobs:
     name: Verify and sign 2.0.0 bundle
     runs-on: ubuntu-latest
     timeout-minutes: 35
-    environment: production
 
     steps:
       - name: Validate requested commit
@@ -76,7 +75,7 @@ jobs:
           )
           for name in "${required[@]}"; do
             if [[ -z "${!name}" ]]; then
-              echo "::error::Missing required production environment secret: $name"
+              echo "::error::Missing required repository Actions secret: $name"
               exit 1
             fi
           done
@@ -104,7 +103,7 @@ jobs:
           jarsigner -verify -verbose -certs app/build/outputs/bundle/release/app-release.aab
           sha256sum app/build/outputs/bundle/release/app-release.aab
 
-      - name: Upload approval-gated signed bundle
+      - name: Upload signed bundle artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: pic-pac-poe-2.0.0-signed-${{ inputs.release_commit }}

@@ -5,7 +5,7 @@ This checklist separates facts verified in the repository from actions that requ
 ## Repository-verified release facts
 
 - [x] Production identity is unchanged: `com.thevaguebox.probabilistictictactoe` is both the application ID and namespace.
-- [x] The remaster is `versionCode 5` / `versionName 2.0.0`; `main` was `versionCode 4` / `versionName 1.2.1` at the time of this audit.
+- [x] The remaster is `versionCode 5` / `versionName 2.0.0`. The owner confirmed the current Production release is code 4 / name 1.2.1. Code 5 remains provisional until every testing track, draft release and uploaded bundle is confirmed below 5.
 - [x] `compileSdk` and `targetSdk` are 36; `minSdk` remains 24.
 - [x] Java and Kotlin target JVM 17. The Gradle wrapper is 8.10.2 and its binary distribution is pinned to Gradle's published SHA-256 checksum.
 - [x] Dependencies use fixed versions or the fixed Compose BOM. There are no dynamic versions or snapshots.
@@ -30,17 +30,17 @@ Revisit shrinking only as a separate toolchain change with a compatible Android 
 ## GitHub owner setup
 
 - [ ] Protect `main` and `dev`; require the Android CI job before merge.
-- [ ] Create or review the GitHub `production` environment. Require the intended reviewers and restrict which branch/tag may deploy through it.
-- [ ] Add these secrets to the `production` environment, not to repository files:
+- [x] Confirm current environment topology: this repository has no GitHub Environments. The manually dispatched workflow therefore reads repository-level Actions secrets and still requires an exact 40-character commit SHA; it is not environment-approval-gated.
+- [ ] After the original upload key is positively identified, add or verify these repository-level Actions secrets, never repository files:
   - `ANDROID_UPLOAD_KEYSTORE_BASE64`: base64 encoding of the existing Play upload-keystore file.
   - `ANDROID_UPLOAD_KEY_ALIAS`: upload-key alias.
   - `ANDROID_UPLOAD_KEY_PASSWORD`: upload-key password.
   - `ANDROID_UPLOAD_STORE_PASSWORD`: keystore password.
 - [ ] Confirm Actions retention and access settings are appropriate for a signed release artifact.
 - [ ] Run **Build signed Play release** with the full 40-character SHA of the reviewed release commit.
-- [ ] Review the workflow's clean test/build result, signature verification, and SHA-256 output. Download the approval-gated `pic-pac-poe-2.0.0-signed-<sha>` artifact.
+- [ ] Review the workflow's clean test/build result, signature verification, and SHA-256 output. Download the manually dispatched `pic-pac-poe-2.0.0-signed-<sha>` artifact.
 
-The release workflow decodes the keystore into the runner's temporary directory, passes only the temporary path and secret values to Gradle, verifies the resulting AAB with `jarsigner`, and uploads it. It deliberately does not publish to Play. Do not upload the local unsigned `app-release.aab`.
+The release workflow decodes the keystore into the runner's temporary directory, passes only the temporary path and secret values to Gradle, verifies the resulting AAB with `jarsigner`, and uploads it as a private Actions artifact. It deliberately does not publish to Play. Do not dispatch it until the upload-key fingerprint and version code are confirmed, and do not upload the local unsigned `app-release.aab`.
 
 If GitHub Actions is unavailable, the owner may use Android Studio's **Build > Generate Signed Bundle / APK > Android App Bundle** flow with the existing Play upload keystore and the `release` variant. Do not save passwords in project files, do not use the debug key, and do not generate a replacement upload key. Run the repository's clean verification command first, then verify the generated AAB signature and package/version before upload.
 
@@ -48,7 +48,7 @@ If GitHub Actions is unavailable, the owner may use Android Studio's **Build > G
 
 - [ ] Confirm the highest version code already uploaded to every Play track is lower than 5. If it is 5 or higher, increment the repository version code before building.
 - [ ] Confirm this is the existing app with package name `com.thevaguebox.probabilistictictactoe`; never create a replacement listing for the remaster.
-- [ ] Confirm Play App Signing enrollment, Play Console access, and the existing upload key. Resolve any upload-key reset before release day.
+- [x] Confirm Play App Signing enrollment and Play Console access. The existing upload key is still being identified; do not request a reset or create replacement credentials yet.
 - [ ] Host `docs/privacy-policy.md` at a stable, public, non-editing URL and enter that URL in Play Console. Confirm the public page identifies the app and provides an owner-approved contact route.
 - [ ] Complete Data safety from the shipped app, not from assumptions: no data collected, no data shared, no security practices involving transmitted data, and no account deletion mechanism because the app has no accounts.
 - [ ] If Play asks about AI-generated content, classify the shipped heuristic, Expectiminimax, MCTS, and tabular Q-learning systems as game-action decision algorithms, not generative AI. They do not generate user-prompted text, images, audio, video, or conversation.
@@ -66,7 +66,7 @@ If GitHub Actions is unavailable, the owner may use Android Studio's **Build > G
 
 - Local debug APK: `app/build/outputs/apk/debug/app-debug.apk` (debug signed; install/smoke testing only).
 - Local release bundle: `app/build/outputs/bundle/release/app-release.aab` (unsigned unless all `ANDROID_UPLOAD_*` path/password variables are deliberately supplied).
-- Production candidate: signed AAB downloaded from the approval-gated release workflow for the exact reviewed commit.
+- Production candidate: signed AAB downloaded from the manually dispatched release workflow for the exact reviewed commit, after signing/version gates are resolved.
 
 ## Go/no-go rule
 

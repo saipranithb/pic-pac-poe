@@ -43,14 +43,16 @@
   "blockers": [
     "Owner explicitly holds publishing/upload until signing and Play version-code checks are resolved; the new Home polish has not been pushed or uploaded.",
     "Execution approval gate rejected feature push and main merge/push; no remote mutation occurred. Direct owner confirmation is required to publish/integrate.",
-    "Existing upload-key signing configuration is unavailable locally; remote production signing-secret provisioning is unverified.",
-    "Play Console browser connection timed out before version history was read; highest uploaded version code is unverified."
+    "The original upload key is not yet positively identified. Local non-debug keystore candidates exist but are referenced by other projects; do not reset or replace credentials yet.",
+    "Production is confirmed at version code 4 / version name 1.2.1, but testing tracks, drafts and other uploaded bundles still require an owner check before code 5 is final.",
+    "Repository-level Actions secret names could not be enumerated because GitHub CLI and GH_TOKEN authentication are unavailable on this machine. No GitHub Environments exist."
   ],
   "notes": [
     "Release identity is finalized only after safe integration and version-history verification; null is not a guessed revision.",
     "handoffCommit identifies the initial complete package; homeIllustrationPolishCommit identifies the later isolated Home X/O change and its new tests. This metadata-only follow-up changes no Android source; resolve its revision with git log rather than a self-referential hash.",
     "The new clean diagnostic bundle supersedes the earlier 3a5514e bundle. All72 JVM executions and lint passed; all26 instrumentation tests passed against identical production/test source before this clean build. Its embedded VCS metadata names f936faf7d21e85ed71e859d94d65e125fe61b436.",
     "candidateCommit is not a merged or tagged release. releaseCommit/releaseTag deliberately remain null until safe integration and Play version verification.",
-    "Signing and Play upload require the existing authorized upload key; unsigned verification bundles are not upload-ready."
+    "Signing and Play upload require the existing authorized upload key; unsigned verification bundles are not upload-ready.",
+    "Play App Signing is owner-confirmed enabled. Candidate version code 5 is strictly greater than confirmed Production code 4, but remains provisional pending all-track/draft/upload history."
   ]
 }

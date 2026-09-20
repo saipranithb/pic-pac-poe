@@ -103,12 +103,12 @@ Requirements: Android SDK 36, JDK 17, and the included Gradle wrapper.
 
 The project stays on Android Studio's AGP 8.8 compatibility lane. Release shrinking is deliberately disabled because AGP 8.8's bundled R8 predates Kotlin 2.3 metadata support; re-enable it only alongside R8 8.13.19 or a newer compatible Android Studio/AGP lane. This trades a larger 2.0.0 artifact for a build configuration that is verified on the supported IDE lane.
 
-The repository contains no signing key or signing secret. With no `ANDROID_UPLOAD_*` environment variables, `bundleRelease` intentionally produces an unsigned local AAB. The approval-gated GitHub release workflow materializes the upload key only at runtime and produces the signed artifact; it does not publish to Google Play.
+The repository contains no signing key or signing secret. With no `ANDROID_UPLOAD_*` environment variables, `bundleRelease` intentionally produces an unsigned local AAB. The manually dispatched GitHub release workflow reads repository-level Actions secrets, materializes the upload key only at runtime and produces a private signed artifact; it does not publish to Google Play. Do not dispatch it until the original upload key and version code are confirmed.
 
 ## CI and release operations
 
-- `.github/workflows/ci.yml` runs the authoritative clean verification on pushes and pull requests targeting `development` or `main`.
-- `.github/workflows/release.yml` accepts an explicit full commit SHA, runs under the protected `production` environment, verifies the same gates, signs with environment secrets, verifies the AAB signature, and uploads the signed bundle.
+- `.github/workflows/ci.yml` runs the authoritative clean verification on pushes and pull requests targeting `dev` or `main`.
+- `.github/workflows/release.yml` accepts an explicit full commit SHA, reads repository-level Actions secrets, verifies the same gates, signs, verifies the AAB signature, and uploads the signed bundle as a private workflow artifact. No GitHub Environment currently exists, so there is no environment-review gate.
 - Third-party workflow code is pinned to immutable commit SHAs, and the Gradle 8.10.2 distribution is protected by its published SHA-256 checksum.
 
 Owner setup, Play Console checks, signing secret names, and the exact handoff sequence are documented in [the Play release checklist](docs/play-release-checklist.md). The 2.0.0 Play notes are in [docs/play/release-notes-2.0.0.txt](docs/play/release-notes-2.0.0.txt).
