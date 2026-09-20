@@ -13,6 +13,7 @@ import com.thevaguebox.picpac.core.Symbol
 import com.thevaguebox.picpac.core.ai.AiAgent
 import com.thevaguebox.picpac.core.ai.AiDecision
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.resetMain
@@ -282,6 +283,138 @@ class GameViewModelTest {
         assertEquals(GameMode.PIC_PAC_AI, viewModel.uiState.value.mode)
         assertEquals(TurnStage.TURN_START, viewModel.uiState.value.stage)
         assertEquals(0, viewModel.uiState.value.board.occupiedCount)
+    }
+
+    @Test fun `presentation clocks retain the committed normal and reduced timing contracts`() {
+        val timedStages = mapOf(
+            TurnStage.TURN_START to (300L to 160L),
+            TurnStage.REVEALING to (650L to 500L),
+            TurnStage.AI_TARGETING to (280L to 160L),
+            TurnStage.AI_PLACING to (340L to 180L),
+            TurnStage.AI_SETTLING to (480L to 320L),
+        )
+        TurnStage.entries.forEach { stage ->
+            assertEquals("normal $stage", timedStages[stage]?.first, presentationDelayMillis(stage, false))
+            assertEquals("reduced $stage", timedStages[stage]?.second, presentationDelayMillis(stage, true))
+        }
+    }
+
+    @Test fun `all locked presentation stages reject human placement without any state change`() {
+        val local = GameViewModel(application, SavedStateHandle())
+        local.startPicPacLocal()
+        assertPlacementLocked(local, TurnStage.HANDOFF)
+        local.readyForReveal()
+        assertPlacementLocked(local, TurnStage.REVEALING)
+
+        val decisionGate = CompletableDeferred<Unit>()
+        val delayedAgent = AiAgent { observation, _ ->
+            decisionGate.await()
+            AiDecision(observation.legalCells.first())
+        }
+        val computer = GameViewModel(application, SavedStateHandle(), delayedAgent, dispatcher)
+        computer.startPicPacAi(Difficulty.EASY)
+        assertPlacementLocked(computer, TurnStage.TURN_START)
+        finishPresentation(computer)
+        assertPlacementLocked(computer, TurnStage.REVEALING)
+        finishPresentation(computer)
+        computer.place(0)
+        assertPlacementLocked(computer, TurnStage.TURN_START)
+        finishPresentation(computer)
+        assertPlacementLocked(computer, TurnStage.REVEALING)
+        finishPresentation(computer)
+        assertPlacementLocked(computer, TurnStage.AI_THINKING)
+        decisionGate.complete(Unit)
+        dispatcher.scheduler.advanceUntilIdle()
+        assertPlacementLocked(computer, TurnStage.AI_TARGETING)
+        finishPresentation(computer)
+        assertPlacementLocked(computer, TurnStage.AI_PLACING)
+        finishPresentation(computer)
+        assertPlacementLocked(computer, TurnStage.AI_SETTLING)
+
+        val classic = GameViewModel(application, SavedStateHandle())
+        classic.startClassic()
+        listOf(0, 3, 1, 4, 2).forEach(classic::place)
+        assertPlacementLocked(classic, TurnStage.TERMINAL)
+    }
+
+    @Test fun `target and symbol survive every committed computer placement beat and recreation`() {
+        listOf(TurnStage.AI_TARGETING, TurnStage.AI_PLACING, TurnStage.AI_SETTLING).forEach { stage ->
+            val handle = SavedStateHandle()
+            val original = testAiViewModel(handle)
+            advanceToComputerTargeting(original)
+            while (original.uiState.value.stage != stage) finishPresentation(original)
+            val before = original.uiState.value
+            val restored = testAiViewModel(handle)
+            val after = restored.uiState.value
+            assertEquals(stage, after.stage)
+            assertEquals(before.presentationId, after.presentationId)
+            assertEquals(before.picPac, after.picPac)
+            assertEquals(before.aiTargetCell, after.aiTargetCell)
+            assertEquals(before.aiMoveSymbol, after.aiMoveSymbol)
+            assertNotNull(after.aiTargetCell)
+            assertNotNull(after.aiMoveSymbol)
+            assertEquals(Player.TWO, after.displayedPlayer)
+            if (stage != TurnStage.AI_TARGETING) {
+                assertEquals(after.aiMoveSymbol, after.board[Cell.of(after.aiTargetCell!!)])
+            }
+            assertPlacementLocked(restored, stage)
+            while (restored.uiState.value.stage != TurnStage.TURN_START) finishPresentation(restored)
+            assertEquals(null, restored.uiState.value.aiTargetCell)
+            assertEquals(null, restored.uiState.value.aiMoveSymbol)
+            assertEquals(2, restored.uiState.value.board.occupiedCount)
+            assertEquals(Player.ONE, restored.uiState.value.displayedPlayer)
+        }
+    }
+
+    @Test fun `completed presentation callbacks cannot be replayed in later stages or after going home`() {
+        val viewModel = testAiViewModel()
+        advanceToComputerTargeting(viewModel)
+        val oldTargetId = viewModel.uiState.value.presentationId
+        finishPresentation(viewModel)
+        val placing = viewModel.uiState.value
+        viewModel.presentationStepFinished(oldTargetId)
+        assertEquals(placing, viewModel.uiState.value)
+        finishPresentation(viewModel)
+        val settling = viewModel.uiState.value
+        viewModel.presentationStepFinished(placing.presentationId)
+        assertEquals(settling, viewModel.uiState.value)
+        viewModel.goHome()
+        val home = viewModel.uiState.value
+        viewModel.presentationStepFinished(settling.presentationId)
+        assertEquals(home, viewModel.uiState.value)
+        viewModel.startPicPacAi(Difficulty.EASY)
+        val restarted = viewModel.uiState.value
+        viewModel.presentationStepFinished(oldTargetId)
+        assertEquals(restarted, viewModel.uiState.value)
+        assertTrue(restarted.presentationId > settling.presentationId)
+    }
+
+    @Test fun `cancelled late AI decision cannot mutate a replacement game`() {
+        val decisionGate = CompletableDeferred<Unit>()
+        val delayedAgent = AiAgent { observation, _ ->
+            decisionGate.await()
+            AiDecision(observation.legalCells.first())
+        }
+        val viewModel = GameViewModel(application, SavedStateHandle(), delayedAgent, dispatcher)
+        viewModel.startPicPacAi(Difficulty.EASY)
+        finishPresentation(viewModel)
+        finishPresentation(viewModel)
+        viewModel.place(0)
+        finishPresentation(viewModel)
+        finishPresentation(viewModel)
+        assertEquals(TurnStage.AI_THINKING, viewModel.uiState.value.stage)
+        viewModel.startClassic()
+        val replacement = viewModel.uiState.value
+        decisionGate.complete(Unit)
+        dispatcher.scheduler.advanceUntilIdle()
+        assertEquals(replacement, viewModel.uiState.value)
+    }
+
+    private fun assertPlacementLocked(viewModel: GameViewModel, stage: TurnStage) {
+        val before = viewModel.uiState.value
+        assertEquals(stage, before.stage)
+        repeat(9) { viewModel.place(it) }
+        assertEquals("placement mutated $stage", before, viewModel.uiState.value)
     }
 
     private fun testAiViewModel(handle: SavedStateHandle = SavedStateHandle()): GameViewModel {
