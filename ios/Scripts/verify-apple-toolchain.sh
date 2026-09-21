@@ -10,5 +10,5 @@ version="$(xcodebuild -version)" || fail 'configured Xcode is unavailable; no to
 [[ "$(printf '%s\n' "$version" | sed -n '2p')" == 'Build version 17F113' ]] || fail 'Xcode build 17F113 is required'
 swift --version | grep -F 'Apple Swift version 6.3.3' || fail 'Swift 6.3.3 is required'
 [[ "$(xcrun --sdk iphonesimulator --show-sdk-version)" == 26.5 ]] || fail 'iOS Simulator SDK 26.5 is required'
-xcrun simctl list runtimes -j | python3 -c 'import json,sys; rs=json.load(sys.stdin)["runtimes"]; assert any(r["identifier"] == "com.apple.CoreSimulator.SimRuntime.iOS-26-5" and r.get("isAvailable") for r in rs), "Required installed iOS 26.5 runtime unavailable; do not silently substitute"'
+xcrun simctl list runtimes -j | python3 -c 'import json,sys; rs=json.load(sys.stdin)["runtimes"]; assert any(r["identifier"] == "com.apple.CoreSimulator.SimRuntime.iOS-26-5" and r.get("isAvailable") and r.get("buildversion")=="23F77" for r in rs), "Required installed iOS 26.5 runtime unavailable; do not silently substitute"'
 printf '%s\n' 'PASS: Xcode 26.6 (17F113), Swift 6.3.3, arm64, installed iOS 26.5 runtime'

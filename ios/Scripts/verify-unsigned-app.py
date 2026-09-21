@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the unsigned Release simulator artifact; never changes the artifact."""
+"""Verify an unsigned Release simulator or device-SDK artifact; never changes the artifact."""
 import argparse
 import hashlib
 import os
@@ -11,6 +11,7 @@ import sys
 
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('app', type=pathlib.Path)
+parser.add_argument('--platform', choices=['iphonesimulator', 'iphoneos'], default='iphonesimulator')
 args = parser.parse_args()
 app = args.app
 errors = []
@@ -25,8 +26,9 @@ for key, expected in {
 }.items():
     if info.get(key) != expected:
         errors.append(f'{key}: expected {expected!r}, got {info.get(key)!r}')
-if info.get('CFBundleSupportedPlatforms') != ['iPhoneSimulator']:
-    errors.append('expected an iPhoneSimulator artifact')
+expected_platform = {'iphonesimulator': 'iPhoneSimulator', 'iphoneos': 'iPhoneOS'}[args.platform]
+if info.get('CFBundleSupportedPlatforms') != [expected_platform]:
+    errors.append(f'expected a {expected_platform} artifact')
 for key in ('CFBundleIcons', 'CFBundleIcons~ipad'):
     primary = info.get(key, {}).get('CFBundlePrimaryIcon', {})
     if primary.get('CFBundleIconName') != 'AppIcon' or not primary.get('CFBundleIconFiles'):
@@ -64,7 +66,8 @@ build_info = subprocess.run(
 ).stdout
 platforms = re.findall(r'^\s*platform\s+(\S+)', build_info, re.MULTILINE)
 minimums = re.findall(r'^\s*minos\s+(\S+)', build_info, re.MULTILINE)
-if not platforms or any(value != 'IOSSIMULATOR' for value in platforms):
+expected_macho = {'iphonesimulator': 'IOSSIMULATOR', 'iphoneos': 'IOS'}[args.platform]
+if not platforms or any(value != expected_macho for value in platforms):
     errors.append(f'Mach-O platform mismatch: {platforms}')
 if len(minimums) != len(platforms) or any(value != '17.0' for value in minimums):
     errors.append(f'Mach-O deployment target mismatch: {minimums}')
@@ -78,4 +81,4 @@ for marker in (
 if errors:
     print('\n'.join('ERROR: ' + message for message in errors), file=sys.stderr)
     raise SystemExit(1)
-print('PASS: unsigned Release simulator artifact; iOS 17 minimum; iPhone+iPad; native icon/launch assets and canonical resources; no development launch hooks')
+print(f'PASS: unsigned Release {args.platform} artifact; Mach-O iOS 17 minimum; iPhone+iPad; native icon/launch assets and canonical resources; no development launch hooks; compile-time coverage only')

@@ -84,13 +84,19 @@ jobs:
         run: echo '${{ matrix.label }} — ${{ job.status }}; unsigned iOS 26.5 simulator evidence only' >> "$GITHUB_STEP_SUMMARY"
 
   unsigned-build:
-    name: Unsigned ${{ matrix.configuration }}
+    name: Unsigned ${{ matrix.configuration }} (${{ matrix.sdk }})
     runs-on: macos-26
     timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
         configuration: [Debug, Release]
+        sdk: [iphonesimulator, iphoneos]
+        include:
+          - sdk: iphonesimulator
+            destination: generic/platform=iOS Simulator
+          - sdk: iphoneos
+            destination: generic/platform=iOS
     steps:
       - name: Check out source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
@@ -98,30 +104,30 @@ jobs:
           persist-credentials: false
       - name: Assert existing pinned Apple environment
         run: bash ios/Scripts/verify-apple-toolchain.sh
-      - name: Build unsigned simulator app
+      - name: Build unsigned app
         run: >-
           xcodebuild
           -project ios/PicPacPoe.xcodeproj
           -scheme PicPacPoe
           -configuration '${{ matrix.configuration }}'
-          -destination 'generic/platform=iOS Simulator'
+          -destination '${{ matrix.destination }}'
           -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-build"
           CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
           build
       - name: Check Release identity and development-hook exclusion
         if: matrix.configuration == 'Release'
-        run: python3 ios/Scripts/verify-unsigned-app.py "$RUNNER_TEMP/pic-pac-poe-build/Build/Products/Release-iphonesimulator/PicPacPoe.app"
+        run: python3 ios/Scripts/verify-unsigned-app.py --platform '${{ matrix.sdk }}' "$RUNNER_TEMP/pic-pac-poe-build/Build/Products/Release-${{ matrix.sdk }}/PicPacPoe.app"
       - name: Preserve failure logs
         if: failure()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: ios-${{ matrix.configuration }}-build-${{ github.run_id }}
+          name: ios-${{ matrix.configuration }}-${{ matrix.sdk }}-build-${{ github.run_id }}
           path: ${{ runner.temp }}/pic-pac-poe-build/Logs/**
           if-no-files-found: warn
           retention-days: 14
       - name: Record gate outcome
         if: always()
-        run: echo 'Unsigned ${{ matrix.configuration }} build — ${{ job.status }}; deployment target iOS 17.0 is compile-time coverage' >> "$GITHUB_STEP_SUMMARY"
+        run: echo 'Unsigned ${{ matrix.configuration }} (${{ matrix.sdk }}) build — ${{ job.status }}; iOS 17.0 is compile-time coverage; device SDK build is not physical-device validation' >> "$GITHUB_STEP_SUMMARY"
 
   snapshots:
     name: Governed simulator snapshots

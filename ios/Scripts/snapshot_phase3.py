@@ -56,7 +56,11 @@ def capture(args):
  with tempfile.TemporaryDirectory(prefix='picpac-snapshots-') as temp:
   tmp=pathlib.Path(temp)
   version=run('xcodebuild','-version'); assert version=='Xcode 26.6\nBuild version 17F113', version
-  runtimes=json.loads(sim('list','runtimes','-j'));assert any(x['identifier']==RUNTIME and x['isAvailable'] for x in runtimes['runtimes'])
+  runtimes=json.loads(sim('list','runtimes','-j'))
+  runtime=next(x for x in runtimes['runtimes'] if x['identifier']==RUNTIME and x['isAvailable'])
+  assert runtime['buildversion']=='23F77','Uncalibrated simulator runtime build'
+  environment={'architecture':run('uname','-m'),'macOS':run('sw_vers','-productVersion'),'swift':run('swift','--version'),'simulatorSDK':run('xcrun','--sdk','iphonesimulator','--show-sdk-version'),'runtimeBuild':runtime['buildversion']}
+  assert environment['architecture']=='arm64','Uncalibrated simulator architecture'
   command=['xcodebuild','-project',str(ROOT/'ios/PicPacPoe.xcodeproj'),'-scheme','PicPacPoe','-configuration','Debug','-destination','generic/platform=iOS Simulator','-derivedDataPath',str(tmp/'build'),'CODE_SIGNING_ALLOWED=NO','CODE_SIGNING_REQUIRED=NO','build']
   with (output/'build.log').open('w') as log: subprocess.run(command,cwd=ROOT,env=ENV,stdout=log,stderr=subprocess.STDOUT,check=True)
   app=tmp/'build/Build/Products/Debug-iphonesimulator/PicPacPoe.app'
@@ -101,7 +105,7 @@ def capture(args):
   end=source()
   if start['buildInputSHA256']!=end['buildInputSHA256']:raise RuntimeError('Build inputs changed during capture')
   if any(sha(ROOT/ref['path'])!=ref['sha256'] for ref in references.values()):raise RuntimeError('Canonical Android reference changed during capture')
-  manifest={'schemaVersion':1,'kind':'actual unsigned Debug simulator fixtures','source':start,'appExecutableSHA256':executableHash,'stableSource':True,'toolchain':version,'runtime':'26.5','profiles':{name:PROFILES[name] for name in profiles},'capturePlan':{'profiles':profiles,'scenarios':scenarios,'themes':['dark','light']},'canonicalReferenceManifestSHA256':sha(ROOT/'docs/ios-handoff/reference/screenshot-manifest.json'),'captures':records,'noCrop':True,'baselinePolicy':'Review images before promotion. Comparison cannot update baselines.'}
+  manifest={'schemaVersion':1,'kind':'actual unsigned Debug simulator fixtures','source':start,'appExecutableSHA256':executableHash,'stableSource':True,'toolchain':version,'environment':environment,'runtime':'26.5','profiles':{name:PROFILES[name] for name in profiles},'capturePlan':{'profiles':profiles,'scenarios':scenarios,'themes':['dark','light']},'canonicalReferenceManifestSHA256':sha(ROOT/'docs/ios-handoff/reference/screenshot-manifest.json'),'captures':records,'noCrop':True,'baselinePolicy':'Review images before promotion. Comparison cannot update baselines.'}
   (output/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
   def sheet(subset,destination):
    entries=[{'path':str(output/r['path']),'label':r['path'].replace('--',' / ')} for r in subset]
@@ -124,6 +128,7 @@ def package(root):
   raise ValueError('Missing executable provenance')
  if not re.fullmatch('[0-9a-f]{64}',manifest.get('source',{}).get('buildInputSHA256','')):
   raise ValueError('Missing complete build-input provenance')
+ if manifest.get('environment',{}).get('runtimeBuild')!='23F77' or manifest['environment'].get('architecture')!='arm64':raise ValueError('Uncalibrated runtime build or architecture')
  captures=manifest['captures']
  names=[r['path'] for r in captures]
  if not names or len(names)!=len(set(names)):raise ValueError('Empty or duplicate capture inventory')
@@ -178,6 +183,7 @@ def compare(args):
   reviewed=True
  if base['toolchain']!=candidate['toolchain'] or base['runtime']!=candidate['runtime']:
   raise ValueError('Uncalibrated toolchain/runtime requires separate intentional review')
+ if any(base['environment'][key]!=candidate['environment'][key] for key in ['architecture','swift','simulatorSDK','runtimeBuild']):raise ValueError('Uncalibrated capture environment')
  if base['capturePlan']!=candidate['capturePlan']:raise ValueError('Capture plans differ')
  left={r['path']:r for r in base['captures']};right={r['path']:r for r in candidate['captures']}
  if left.keys()!=right.keys():raise ValueError('Capture inventory differs')
