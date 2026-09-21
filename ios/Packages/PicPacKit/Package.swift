@@ -14,7 +14,11 @@ let package = Package(
     ],
     targets: [
         .target(name: "PicPacCore"),
-        .target(name: "PicPacAI", dependencies: ["PicPacCore"]),
+        .target(
+            name: "PicPacAI",
+            dependencies: ["PicPacCore"],
+            resources: [.copy("Resources/picpac_rl_policy_v1.bin")]
+        ),
         .target(
             name: "PicPacPresentation",
             dependencies: ["PicPacCore"]

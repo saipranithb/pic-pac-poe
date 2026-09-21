@@ -31,7 +31,10 @@ public struct SystemPresentationClock: PresentationClock {
 }
 
 public protocol AIWorker: Sendable {
-    func chooseMove(for observation: AiObservation) async throws -> Int
+    func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int
 }
 
 public enum AIWorkerError: Error, Equatable, Sendable {
@@ -42,7 +45,10 @@ public enum AIWorkerError: Error, Equatable, Sendable {
 public struct UnavailableAIWorker: AIWorker {
     public init() {}
 
-    public func chooseMove(for observation: AiObservation) async throws -> Int {
+    public func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int {
         throw AIWorkerError.unavailable
     }
 }
@@ -50,17 +56,22 @@ public struct UnavailableAIWorker: AIWorker {
 /// Runs a synchronous search closure in a detached task. Later production agents
 /// can use this boundary without inheriting the main actor from the coordinator.
 public struct DetachedAIWorker: AIWorker {
-    private let operation: @Sendable (AiObservation) throws -> Int
+    private let operation: @Sendable (AiObservation, Difficulty) throws -> Int
 
-    public init(operation: @escaping @Sendable (AiObservation) throws -> Int) {
+    public init(
+        operation: @escaping @Sendable (AiObservation, Difficulty) throws -> Int
+    ) {
         self.operation = operation
     }
 
-    public func chooseMove(for observation: AiObservation) async throws -> Int {
+    public func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int {
         let operation = self.operation
         let search = Task.detached(priority: .userInitiated) {
             try Task.checkCancellation()
-            let cell = try operation(observation)
+            let cell = try operation(observation, difficulty)
             try Task.checkCancellation()
             return cell
         }

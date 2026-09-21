@@ -34,6 +34,7 @@ public final class GameCoordinator {
 
     public private(set) var titleEntranceConsumed: Bool
     public private(set) var isSceneActive: Bool
+    public private(set) var systemReducedMotion: Bool
 
     private let drawRandom: any DrawRandomSource
     private let clock: any PresentationClock
@@ -72,6 +73,7 @@ public final class GameCoordinator {
         isRestorationComplete = !requiresRestorationBeforeCommands
         titleEntranceConsumed = false
         isSceneActive = initialSceneIsActive
+        systemReducedMotion = false
         revision = 0
         nextStarter = .one
         presentationCounter = 0
@@ -229,7 +231,7 @@ public final class GameCoordinator {
 
     public func updateSettings(_ newSettings: AppSettings) async {
         guard isRestorationComplete else { return }
-        let motionChanged = settings.reducedMotion != newSettings.reducedMotion
+        let previousEffectiveMotion = effectiveReducedMotion
         settings = newSettings
         do {
             try await store.saveSettingsData(PersistenceCodec.encode(newSettings))
@@ -237,9 +239,24 @@ public final class GameCoordinator {
         } catch {
             persistenceStatus = .saveFailed
         }
-        if motionChanged {
+        if previousEffectiveMotion != effectiveReducedMotion {
             restartPresentationClock()
         }
+    }
+
+    /// Supplies the current accessibility environment without persisting it as
+    /// an in-app preference. Either source shortens presentation timing.
+    public func setSystemReducedMotion(_ enabled: Bool) {
+        guard systemReducedMotion != enabled else { return }
+        let previousEffectiveMotion = effectiveReducedMotion
+        systemReducedMotion = enabled
+        if previousEffectiveMotion != effectiveReducedMotion {
+            restartPresentationClock()
+        }
+    }
+
+    public var effectiveReducedMotion: Bool {
+        settings.reducedMotion || systemReducedMotion
     }
 
     public func markTitleEntranceConsumed() async {
@@ -393,11 +410,15 @@ public final class GameCoordinator {
         let request = AIRequest(revision: game.revision, token: token)
         let worker = aiWorker
         let legalCells = observation.legalCells
+        let difficulty = state.difficulty
 
-        aiTask = Task { [weak self, worker, observation, legalCells] in
+        aiTask = Task { [weak self, worker, observation, legalCells, difficulty] in
             let cellIndex: Int
             do {
-                let proposed = try await worker.chooseMove(for: observation)
+                let proposed = try await worker.chooseMove(
+                    for: observation,
+                    difficulty: difficulty
+                )
                 guard legalCells.contains(where: { $0.index == proposed }) else {
                     throw AIWorkerError.illegalCell(proposed)
                 }
@@ -539,7 +560,7 @@ public final class GameCoordinator {
         guard isSceneActive,
               state.screen == .game,
               let milliseconds = state.stage.delayMilliseconds(
-                  reducedMotion: settings.reducedMotion
+                  reducedMotion: effectiveReducedMotion
               ) else { return }
         presentationGeneration += 1
         let generation = presentationGeneration

@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   verify:
-    name: Verify unsigned native iOS foundations
+    name: Verify unsigned native iOS product
     runs-on: macos-26
     timeout-minutes: 30
     env:
@@ -66,13 +66,25 @@ jobs:
           CODE_SIGNING_ALLOWED=NO
           build
 
+      - name: Build unsigned app (Release)
+        run: >-
+          xcodebuild
+          -project ios/PicPacPoe.xcodeproj
+          -scheme PicPacPoe
+          -configuration Release
+          -destination 'generic/platform=iOS Simulator'
+          -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-release"
+          CODE_SIGNING_ALLOWED=NO
+          build
+
       - name: Upload failure evidence
         if: failure()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: ios-foundation-failure-${{ github.run_id }}
+          name: ios-product-failure-${{ github.run_id }}
           path: |
             ${{ runner.temp }}/pic-pac-poe-debug/Logs/**
+            ${{ runner.temp }}/pic-pac-poe-release/Logs/**
             ${{ runner.temp }}/pic-pac-poe-test/Logs/**
           if-no-files-found: ignore
           retention-days: 7

@@ -9,8 +9,20 @@
 /* Begin PBXBuildFile section */
 		A10000000000000000000001 /* PicPacPoeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20000000000000000000001 /* PicPacPoeApp.swift */; };
 		A10000000000000000000002 /* PicPacPresentation in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000001 /* PicPacPresentation */; };
+		A10000000000000000000003 /* PicPacAI in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000002 /* PicPacAI */; };
 		C10000000000000000000001 /* PicPacPoeIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30000000000000000000001 /* PicPacPoeIntegrationTests.swift */; };
 		C10000000000000000000002 /* PicPacPresentation in Frameworks */ = {isa = PBXBuildFile; productRef = B10000000000000000000001 /* PicPacPresentation */; };
+		D10000000000000000000001 /* FormTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20000000000000000000001 /* FormTheme.swift */; };
+		D10000000000000000000002 /* PhysicalBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20000000000000000000002 /* PhysicalBoard.swift */; };
+		D10000000000000000000003 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20000000000000000000003 /* HomeView.swift */; };
+		D10000000000000000000004 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20000000000000000000004 /* GameView.swift */; };
+		D10000000000000000000005 /* InfoViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20000000000000000000005 /* InfoViews.swift */; };
+		D10000000000000000000006 /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20000000000000000000006 /* FeedbackService.swift */; };
+		D10000000000000000000007 /* DebugLaunchConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20000000000000000000007 /* DebugLaunchConfiguration.swift */; };
+		D10000000000000000000008 /* ProductionAIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20000000000000000000008 /* ProductionAIWorker.swift */; };
+		D30000000000000000000001 /* fredoka_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D40000000000000000000001 /* fredoka_medium.ttf */; };
+		D30000000000000000000002 /* fredoka_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D40000000000000000000002 /* fredoka_semibold.ttf */; };
+		D30000000000000000000003 /* fredoka-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D40000000000000000000003 /* fredoka-OFL.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,8 +42,20 @@
 		A20000000000000000000004 /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
 		A20000000000000000000005 /* Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Shared.xcconfig; sourceTree = "<group>"; };
 		A20000000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A20000000000000000000007 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		C30000000000000000000001 /* PicPacPoeIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPacPoeIntegrationTests.swift; sourceTree = "<group>"; };
 		C30000000000000000000002 /* PicPacPoeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicPacPoeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20000000000000000000001 /* FormTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTheme.swift; sourceTree = "<group>"; };
+		D20000000000000000000002 /* PhysicalBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicalBoard.swift; sourceTree = "<group>"; };
+		D20000000000000000000003 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D20000000000000000000004 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		D20000000000000000000005 /* InfoViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViews.swift; sourceTree = "<group>"; };
+		D20000000000000000000006 /* FeedbackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
+		D20000000000000000000007 /* DebugLaunchConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugLaunchConfiguration.swift; sourceTree = "<group>"; };
+		D20000000000000000000008 /* ProductionAIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductionAIWorker.swift; sourceTree = "<group>"; };
+		D40000000000000000000001 /* fredoka_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fredoka_medium.ttf"; path = "../app/src/main/res/font/fredoka_medium.ttf"; sourceTree = SOURCE_ROOT; };
+		D40000000000000000000002 /* fredoka_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fredoka_semibold.ttf"; path = "../app/src/main/res/font/fredoka_semibold.ttf"; sourceTree = SOURCE_ROOT; };
+		D40000000000000000000003 /* fredoka-OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fredoka-OFL.txt"; path = "../app/src/main/assets/licenses/fredoka-OFL.txt"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10000000000000000000002 /* PicPacPresentation in Frameworks */,
+				A10000000000000000000003 /* PicPacAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +94,17 @@
 			children = (
 				A20000000000000000000001 /* PicPacPoeApp.swift */,
 				A20000000000000000000006 /* Info.plist */,
+				D20000000000000000000001 /* FormTheme.swift */,
+				D20000000000000000000002 /* PhysicalBoard.swift */,
+				D20000000000000000000003 /* HomeView.swift */,
+				D20000000000000000000004 /* GameView.swift */,
+				D20000000000000000000005 /* InfoViews.swift */,
+				D20000000000000000000006 /* FeedbackService.swift */,
+				D20000000000000000000007 /* DebugLaunchConfiguration.swift */,
+				D20000000000000000000008 /* ProductionAIWorker.swift */,
+				D40000000000000000000001 /* fredoka_medium.ttf */,
+				D40000000000000000000002 /* fredoka_semibold.ttf */,
+				D40000000000000000000003 /* fredoka-OFL.txt */,
 			);
 			path = PicPacPoe;
 			sourceTree = "<group>";
@@ -79,6 +115,7 @@
 				A20000000000000000000005 /* Shared.xcconfig */,
 				A20000000000000000000003 /* Debug.xcconfig */,
 				A20000000000000000000004 /* Test.xcconfig */,
+				A20000000000000000000007 /* Release.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -118,6 +155,7 @@
 			name = PicPacPoe;
 			packageProductDependencies = (
 				B10000000000000000000001 /* PicPacPresentation */,
+				B10000000000000000000002 /* PicPacAI */,
 			);
 			productName = PicPacPoe;
 			productReference = A20000000000000000000002 /* PicPacPoe.app */;
@@ -191,6 +229,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D30000000000000000000001 /* fredoka_medium.ttf in Resources */,
+				D30000000000000000000002 /* fredoka_semibold.ttf in Resources */,
+				D30000000000000000000003 /* fredoka-OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +250,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A10000000000000000000001 /* PicPacPoeApp.swift in Sources */,
+				D10000000000000000000001 /* FormTheme.swift in Sources */,
+				D10000000000000000000002 /* PhysicalBoard.swift in Sources */,
+				D10000000000000000000003 /* HomeView.swift in Sources */,
+				D10000000000000000000004 /* GameView.swift in Sources */,
+				D10000000000000000000005 /* InfoViews.swift in Sources */,
+				D10000000000000000000006 /* FeedbackService.swift in Sources */,
+				D10000000000000000000007 /* DebugLaunchConfiguration.swift in Sources */,
+				D10000000000000000000008 /* ProductionAIWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,10 +376,60 @@
 			};
 			name = Test;
 		};
+		AA0000000000000000000005 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 		AA0000000000000000000003 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A20000000000000000000003 /* Debug.xcconfig */;
 			buildSettings = {
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 			};
 			name = Debug;
 		};
@@ -338,13 +437,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A20000000000000000000004 /* Test.xcconfig */;
 			buildSettings = {
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 			};
 			name = Test;
+		};
+		AA0000000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A20000000000000000000007 /* Release.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
 		};
 		CB0000000000000000000001 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A20000000000000000000003 /* Debug.xcconfig */;
 			buildSettings = {
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -358,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A20000000000000000000004 /* Test.xcconfig */;
 			buildSettings = {
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "";
@@ -367,6 +476,19 @@
 			};
 			name = Test;
 		};
+		CB0000000000000000000003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A20000000000000000000007 /* Release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				PRODUCT_BUNDLE_IDENTIFIER = dev.saipranith.picpacpoe.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PicPacPoe.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PicPacPoe";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -375,6 +497,7 @@
 			buildConfigurations = (
 				AA0000000000000000000001 /* Debug */,
 				AA0000000000000000000002 /* Test */,
+				AA0000000000000000000005 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -384,6 +507,7 @@
 			buildConfigurations = (
 				AA0000000000000000000003 /* Debug */,
 				AA0000000000000000000004 /* Test */,
+				AA0000000000000000000006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -393,6 +517,7 @@
 			buildConfigurations = (
 				CB0000000000000000000001 /* Debug */,
 				CB0000000000000000000002 /* Test */,
+				CB0000000000000000000003 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -411,6 +536,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B20000000000000000000001 /* XCLocalSwiftPackageReference "Packages/PicPacKit" */;
 			productName = PicPacPresentation;
+		};
+		B10000000000000000000002 /* PicPacAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B20000000000000000000001 /* XCLocalSwiftPackageReference "Packages/PicPacKit" */;
+			productName = PicPacAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

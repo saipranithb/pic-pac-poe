@@ -295,6 +295,63 @@ final class PresentationCoordinatorTests: XCTestCase {
         await coordinator.setSceneActive(false)
     }
 
+    func testSystemReducedMotionCombinesWithSavedPreferenceWithoutPersistingIt() async {
+        let clock = RecordingClock()
+        let store = InMemoryLocalStateStore()
+        let coordinator = makeCoordinator(clock: clock, store: store)
+
+        await coordinator.startPicPacAI(difficulty: .medium)
+        await drainTasks()
+        var recorded = await clock.recordedMilliseconds()
+        XCTAssertEqual(recorded, [300])
+
+        coordinator.setSystemReducedMotion(true)
+        await drainTasks()
+        XCTAssertTrue(coordinator.effectiveReducedMotion)
+        recorded = await clock.recordedMilliseconds()
+        let initialSettingsData = await store.settingsData
+        XCTAssertEqual(recorded, [300, 160])
+        XCTAssertNil(initialSettingsData)
+
+        coordinator.setSystemReducedMotion(false)
+        await drainTasks()
+        XCTAssertFalse(coordinator.effectiveReducedMotion)
+        recorded = await clock.recordedMilliseconds()
+        XCTAssertEqual(recorded, [300, 160, 300])
+
+        var settings = coordinator.settings
+        settings.reducedMotion = true
+        await coordinator.updateSettings(settings)
+        await drainTasks()
+        coordinator.setSystemReducedMotion(true)
+        coordinator.setSystemReducedMotion(false)
+        await drainTasks()
+        XCTAssertTrue(coordinator.effectiveReducedMotion)
+        recorded = await clock.recordedMilliseconds()
+        let savedSettingsData = await store.settingsData
+        XCTAssertEqual(recorded, [300, 160, 300, 160])
+        XCTAssertNotNil(savedSettingsData)
+        await coordinator.setSceneActive(false)
+    }
+
+    func testCoordinatorForwardsSelectedDifficultyToWorker() async {
+        let worker = DifficultyRecordingAIWorker()
+        let coordinator = makeCoordinator(
+            random: ScriptedDrawRandom([0, 8]),
+            worker: worker
+        )
+
+        await advanceToComputerReveal(coordinator, difficulty: .hard)
+        for _ in 0..<100 {
+            if !(await worker.recordedDifficulties()).isEmpty { break }
+            await Task.yield()
+        }
+
+        let difficulties = await worker.recordedDifficulties()
+        XCTAssertEqual(difficulties, [.hard])
+        await coordinator.setSceneActive(false)
+    }
+
     func testRestorationReadinessPreventsCommandsAndTracksLatestScenePhase() async throws {
         let snapshot = try localRevealSnapshot()
         let store = GatedSnapshotStore(
@@ -565,19 +622,19 @@ final class PresentationCoordinatorTests: XCTestCase {
     }
 
     func testDetachedWorkerBoundaryDoesNotRunSynchronousSearchOnMainThread() async throws {
-        let worker = DetachedAIWorker { observation in
+        let worker = DetachedAIWorker { observation, _ in
             Thread.isMainThread ? -1 : observation.legalCells[0].index
         }
         let game = try accepted(PicPacRules.draw(PicPacRules.newGame(), symbol: .x))
         let observation = try AiObservation.from(state: game, agentPlayer: .two)
 
-        let chosenCell = try await worker.chooseMove(for: observation)
+        let chosenCell = try await worker.chooseMove(for: observation, difficulty: .medium)
         XCTAssertEqual(chosenCell, 0)
     }
 
     func testDetachedWorkerPropagatesCancellationToCooperativeSearch() async throws {
         let probe = CancellationProbe()
-        let worker = DetachedAIWorker { observation in
+        let worker = DetachedAIWorker { observation, _ in
             probe.markStarted()
             while !Task.isCancelled {
                 Thread.sleep(forTimeInterval: 0.001)
@@ -587,7 +644,9 @@ final class PresentationCoordinatorTests: XCTestCase {
         }
         let game = try accepted(PicPacRules.draw(PicPacRules.newGame(), symbol: .x))
         let observation = try AiObservation.from(state: game, agentPlayer: .two)
-        let search = Task { try await worker.chooseMove(for: observation) }
+        let search = Task {
+            try await worker.chooseMove(for: observation, difficulty: .medium)
+        }
 
         for _ in 0..<1_000 where !probe.didStart {
             await Task.yield()
@@ -639,8 +698,11 @@ final class PresentationCoordinatorTests: XCTestCase {
         )
     }
 
-    private func advanceToComputerReveal(_ coordinator: GameCoordinator) async {
-        await coordinator.startPicPacAI(difficulty: .easy)
+    private func advanceToComputerReveal(
+        _ coordinator: GameCoordinator,
+        difficulty: Difficulty = .easy
+    ) async {
+        await coordinator.startPicPacAI(difficulty: difficulty)
         await coordinator.presentationStepFinished(coordinator.state.presentationID)
         XCTAssertEqual(coordinator.state.stage, .revealing)
         await coordinator.presentationStepFinished(coordinator.state.presentationID)
@@ -1558,24 +1620,35 @@ private actor RecordingClock: PresentationClock {
 
 private struct FixedAIWorker: AIWorker {
     let cell: Int
-    func chooseMove(for observation: AiObservation) async throws -> Int { cell }
+    func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int { cell }
 }
 
 private struct ThrowingAIWorker: AIWorker {
-    func chooseMove(for observation: AiObservation) async throws -> Int {
+    func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int {
         throw TestFailure.workerFailed
     }
 }
 
 private struct AnyAIWorker: AIWorker {
-    private let choose: @Sendable (AiObservation) async throws -> Int
+    private let choose: @Sendable (AiObservation, Difficulty) async throws -> Int
 
     init<Worker: AIWorker>(_ worker: Worker) {
-        choose = { observation in try await worker.chooseMove(for: observation) }
+        choose = { observation, difficulty in
+            try await worker.chooseMove(for: observation, difficulty: difficulty)
+        }
     }
 
-    func chooseMove(for observation: AiObservation) async throws -> Int {
-        try await choose(observation)
+    func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int {
+        try await choose(observation, difficulty)
     }
 }
 
@@ -1583,7 +1656,10 @@ private actor GateAIWorker: AIWorker {
     private var callCount = 0
     private var waiters: [CheckedContinuation<Int, any Error>] = []
 
-    func chooseMove(for observation: AiObservation) async throws -> Int {
+    func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int {
         callCount += 1
         return try await withCheckedThrowingContinuation { continuation in
             waiters.append(continuation)
@@ -1602,7 +1678,10 @@ private actor CancellableCountingAIWorker: AIWorker {
     private var callCount = 0
     private var cancellationCount = 0
 
-    func chooseMove(for observation: AiObservation) async throws -> Int {
+    func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int {
         callCount += 1
         do {
             try await Task.sleep(for: .seconds(600))
@@ -1615,6 +1694,20 @@ private actor CancellableCountingAIWorker: AIWorker {
 
     func numberOfCalls() -> Int { callCount }
     func numberOfCancellations() -> Int { cancellationCount }
+}
+
+private actor DifficultyRecordingAIWorker: AIWorker {
+    private var difficulties: [Difficulty] = []
+
+    func chooseMove(
+        for observation: AiObservation,
+        difficulty: Difficulty
+    ) async throws -> Int {
+        difficulties.append(difficulty)
+        return observation.legalCells[0].index
+    }
+
+    func recordedDifficulties() -> [Difficulty] { difficulties }
 }
 
 private actor CancellableCountingClock: PresentationClock {
