@@ -7,14 +7,10 @@ import PicPacPresentation
 @MainActor
 enum DebugLaunchConfiguration {
     static func makeCoordinator(arguments: [String] = ProcessInfo.processInfo.arguments) -> GameCoordinator? {
-        func value(_ flag: String) -> String? {
-            guard let index = arguments.firstIndex(of: flag), arguments.indices.contains(index + 1) else { return nil }
-            return arguments[index + 1]
-        }
-        let scenario = value("-screenshot-scenario")
+        let scenario = value(after: "-screenshot-scenario", in: arguments)
         guard scenario != nil || arguments.contains("-ui-test-reset") else { return nil }
         do {
-            let theme = ThemePreference(rawValue: value("-screenshot-theme") ?? "system") ?? .system
+            let theme = ThemePreference(rawValue: value(after: "-screenshot-theme", in: arguments) ?? "system") ?? .system
             let canonicalSettingsDark = scenario == "settings" && theme == .dark
             let canonicalSettingsLight = scenario == "settings" && theme == .light
             let settings = AppSettings(
@@ -34,6 +30,27 @@ enum DebugLaunchConfiguration {
             return nil
         }
     }
+
+    /// Signals the host capture tool only after restoration has produced a
+    /// renderable screen. The marker lives in the app's temporary container
+    /// and is never created in production builds.
+    static func signalScreenshotReady(arguments: [String] = ProcessInfo.processInfo.arguments) {
+        guard value(after: "-screenshot-scenario", in: arguments) != nil,
+              let token = value(after: "-screenshot-ready-token", in: arguments),
+              !token.isEmpty,
+              token.allSatisfy({ $0.isASCII && ($0.isLetter || $0.isNumber || "._-".contains($0)) })
+        else { return }
+
+        let marker = FileManager.default.temporaryDirectory
+            .appendingPathComponent("picpac-screenshot-ready-\(token)", isDirectory: false)
+        try? Data("ready\n".utf8).write(to: marker, options: .atomic)
+    }
+
+    private static func value(after flag: String, in arguments: [String]) -> String? {
+        guard let index = arguments.firstIndex(of: flag), arguments.indices.contains(index + 1) else { return nil }
+        return arguments[index + 1]
+    }
+
     static func snapshot(for scenario: String) throws -> RestorationSnapshot {
         var state = GamePresentationState()
         switch scenario {

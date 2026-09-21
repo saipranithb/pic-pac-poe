@@ -29,6 +29,7 @@ esac
 RUN_IDENTIFIER="${EVIDENCE_RUN_ID:-$(/bin/date -u +%Y%m%dT%H%M%SZ)}"
 SETTLE_SECONDS="${CAPTURE_SETTLE_SECONDS:-0.90}"
 HOME_SETTLE_SECONDS="${HOME_CAPTURE_SETTLE_SECONDS:-0.65}"
+APPEARANCE_SETTLE_SECONDS="${APPEARANCE_SETTLE_SECONDS:-0.25}"
 
 SCENARIOS=(
   home
@@ -113,10 +114,60 @@ print(f"{width}\t{height}")
 PY
 }
 
+wait_for_ready() {
+  local marker="$1"
+  local attempt=0
+  while [[ "$attempt" -lt 200 ]]; do
+    [[ ! -f "$marker" ]] || return 0
+    /bin/sleep 0.05
+    attempt=$((attempt + 1))
+  done
+  fail "app did not signal screenshot readiness within 10 seconds: $marker"
+}
+
+assert_visual_content() {
+  local png="$1"
+  local bmp="$TEMPORARY_DIRECTORY/visual-content.bmp"
+  /usr/bin/sips -s format bmp "$png" --out "$bmp" >/dev/null
+  /usr/bin/python3 - "$bmp" "$png" <<'PY'
+import pathlib
+import struct
+import sys
+
+bmp_path, png_path = map(pathlib.Path, sys.argv[1:])
+data = bmp_path.read_bytes()
+if data[:2] != b"BM" or len(data) < 54:
+    raise SystemExit(f"could not inspect screenshot content: {png_path}")
+offset = struct.unpack_from("<I", data, 10)[0]
+width = struct.unpack_from("<i", data, 18)[0]
+signed_height = struct.unpack_from("<i", data, 22)[0]
+bits = struct.unpack_from("<H", data, 28)[0]
+height = abs(signed_height)
+if width <= 0 or height <= 0 or bits not in (24, 32):
+    raise SystemExit(f"unsupported screenshot conversion for content check: {png_path}")
+bytes_per_pixel = bits // 8
+stride = ((width * bits + 31) // 32) * 4
+colors = set()
+step_x = max(1, width // 80)
+step_y = max(1, height // 120)
+for y in range(height // 10, height * 9 // 10, step_y):
+    stored_y = y if signed_height < 0 else height - 1 - y
+    row = offset + stored_y * stride
+    for x in range(width // 12, width * 11 // 12, step_x):
+        pixel = row + x * bytes_per_pixel
+        blue, green, red = data[pixel:pixel + 3]
+        colors.add((red, green, blue))
+        if len(colors) >= 24:
+            raise SystemExit(0)
+raise SystemExit(f"screenshot appears visually blank ({len(colors)} sampled colors): {png_path}")
+PY
+}
+
 [[ "$(/usr/bin/uname -s)" == "Darwin" ]] || fail "this capture tool requires macOS"
 [[ "$RUN_IDENTIFIER" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]] || fail "EVIDENCE_RUN_ID must contain only letters, numbers, dot, underscore, or hyphen"
 [[ "$SETTLE_SECONDS" =~ ^[0-9]+([.][0-9]+)?$ ]] || fail "CAPTURE_SETTLE_SECONDS must be a nonnegative number"
 [[ "$HOME_SETTLE_SECONDS" =~ ^[0-9]+([.][0-9]+)?$ ]] || fail "HOME_CAPTURE_SETTLE_SECONDS must be a nonnegative number"
+[[ "$APPEARANCE_SETTLE_SECONDS" =~ ^[0-9]+([.][0-9]+)?$ ]] || fail "APPEARANCE_SETTLE_SECONDS must be a nonnegative number"
 [[ -x "$XCODEBUILD" ]] || fail "Xcode was not found at $DEVELOPER_DIRECTORY; set XCODE_DEVELOPER_DIR without changing global xcode-select"
 [[ -x /usr/bin/xcrun ]] || fail "/usr/bin/xcrun is unavailable"
 [[ -x /usr/bin/python3 ]] || fail "/usr/bin/python3 is unavailable"
@@ -271,22 +322,29 @@ BUILT_BUNDLE_IDENTIFIER="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier
 [[ "$BUILT_BUNDLE_IDENTIFIER" == "$BUNDLE_IDENTIFIER" ]] \
   || fail "built bundle identifier '$BUILT_BUNDLE_IDENTIFIER' does not match expected '$BUNDLE_IDENTIFIER'"
 run_xcrun simctl install "$SIMULATOR_UDID" "$APP_PATH"
+APP_DATA_CONTAINER="$(run_xcrun simctl get_app_container "$SIMULATOR_UDID" "$BUNDLE_IDENTIFIER" data)"
+[[ -d "$APP_DATA_CONTAINER/tmp" ]] || fail "installed app temporary container is unavailable"
 
 # The first process launch on a newly created simulator can spend longer in
 # system-service startup than the visual settle window. Warm the installed app
 # once so every recorded frame uses the same in-app timing contract.
 run_xcrun simctl ui "$SIMULATOR_UDID" appearance dark
+PREWARM_TOKEN="${RUN_IDENTIFIER}-prewarm"
+PREWARM_MARKER="$APP_DATA_CONTAINER/tmp/picpac-screenshot-ready-$PREWARM_TOKEN"
 run_xcrun simctl launch --terminate-running-process \
   "$SIMULATOR_UDID" "$BUNDLE_IDENTIFIER" \
   -screenshot-scenario home \
   -screenshot-theme dark \
+  -screenshot-ready-token "$PREWARM_TOKEN" \
   -AppleLanguages '(en)' \
   -AppleLocale 'en_US' >/dev/null
-/bin/sleep "$SETTLE_SECONDS"
+wait_for_ready "$PREWARM_MARKER"
+/bin/sleep "$APPEARANCE_SETTLE_SECONDS"
 run_xcrun simctl terminate "$SIMULATOR_UDID" "$BUNDLE_IDENTIFIER" >/dev/null
 
 for theme in "${THEMES[@]}"; do
   run_xcrun simctl ui "$SIMULATOR_UDID" appearance "$theme"
+  /bin/sleep "$APPEARANCE_SETTLE_SECONDS"
   for scenario in "${SCENARIOS[@]}"; do
     plan_record="$(/usr/bin/awk -F '\t' -v wanted_scenario="$scenario" -v wanted_theme="$theme" \
       '$1 == wanted_scenario && $2 == wanted_theme { print $3 "\t" $4 }' "$PLAN_FILE")"
@@ -297,25 +355,31 @@ for theme in "${THEMES[@]}"; do
     capture_path="$CAPTURE_DIRECTORY/$capture_name"
     settle="$SETTLE_SECONDS"
     [[ "$scenario" != "home" ]] || settle="$HOME_SETTLE_SECONDS"
+    ready_token="${RUN_IDENTIFIER}-${scenario}-${theme}"
+    ready_marker="$APP_DATA_CONTAINER/tmp/picpac-screenshot-ready-$ready_token"
+    [[ ! -e "$ready_marker" ]] || fail "unexpected stale screenshot readiness marker: $ready_marker"
 
     run_xcrun simctl launch --terminate-running-process \
       "$SIMULATOR_UDID" "$BUNDLE_IDENTIFIER" \
       -screenshot-scenario "$scenario" \
       -screenshot-theme "$theme" \
+      -screenshot-ready-token "$ready_token" \
       -AppleLanguages '(en)' \
       -AppleLocale 'en_US' >/dev/null
+    wait_for_ready "$ready_marker"
     /bin/sleep "$settle"
     run_xcrun simctl io "$SIMULATOR_UDID" screenshot --type=png "$capture_path" >/dev/null
+    assert_visual_content "$capture_path"
     run_xcrun simctl terminate "$SIMULATOR_UDID" "$BUNDLE_IDENTIFIER" >/dev/null
 
     dimensions="$(png_dimensions "$capture_path")"
     IFS=$'\t' read -r pixel_width pixel_height <<< "$dimensions"
     sha256="$(/usr/bin/shasum -a 256 "$capture_path" | /usr/bin/awk '{ print $1 }')"
     captured_at="$(/bin/date -u +%Y-%m-%dT%H:%M:%SZ)"
-    printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
+    printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' \
       "$scenario" "$theme" "captures/$capture_name" \
       "docs/ios-handoff/reference/$canonical_file" "$comparison" \
-      "$captured_at" "$pixel_width" "$pixel_height" "$sha256" "$settle" \
+      "$captured_at" "$pixel_width" "$pixel_height" "$sha256" "$settle" "$ready_token" \
       >> "$CAPTURE_ROWS_FILE"
   done
 done
@@ -357,7 +421,7 @@ status = status_path.read_text(encoding="utf-8").splitlines()
 captures = []
 with rows_path.open(newline="", encoding="utf-8") as handle:
     for row in csv.reader(handle, delimiter="\t"):
-        scenario, theme, relative_path, canonical_path, comparison, captured_at, width, height, sha256, settle = row
+        scenario, theme, relative_path, canonical_path, comparison, captured_at, width, height, sha256, settle, ready_token = row
         canonical_name = pathlib.Path(canonical_path).name
         reference = reference_by_path[canonical_name]
         source_block = references["homeSceneCapture"] if canonical_name.startswith("home-scene-") else references["capture"]
@@ -373,6 +437,7 @@ with rows_path.open(newline="", encoding="utf-8") as handle:
             "launchArguments": [
                 "-screenshot-scenario", scenario,
                 "-screenshot-theme", theme,
+                "-screenshot-ready-token", ready_token,
                 "-AppleLanguages", "(en)",
                 "-AppleLocale", "en_US",
             ],

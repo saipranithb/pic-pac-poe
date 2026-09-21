@@ -1,6 +1,6 @@
 # Native iOS architecture
 
-Status: approved Build Phase 1 decision record  
+Status: approved architecture and Build Phase 2 implementation record
 Reference commit: `dc7cb397ad335783c13c7976d4cef816d2fc0909`  
 Android runtime candidate: `f936faf7d21e85ed71e859d94d65e125fe61b436`
 
@@ -38,8 +38,7 @@ ios/
   PicPacPoe/                 SwiftUI application/platform integration
   Packages/PicPacKit/        local pure Swift package
   PicPacPoeTests/            hosted application integration tests
-  PicPacPoeUITests/          planned UI and accessibility tests
-  TestSupport/               planned shared snapshot/UI test support
+  Scripts/                   repeatable simulator evidence tooling
 .github/workflows/           independent Android and unsigned iOS lanes
 ```
 
@@ -54,27 +53,25 @@ PicPacPoe  ->  PicPacPresentation  ->  PicPacCore  <-  PicPacAI
 ```
 
 - `PicPacCore` owns immutable domain values, validated board/state types, pure rules, AI observations and bounded-random contracts. It does not import SwiftUI.
-- `PicPacAI` owns public chance/decision search state and the Phase 1 reference expectiminimax solver. Build Phase 2 adds the production evaluator, Easy/Medium/Hard agents, MCTS and versioned policy reader. It receives lawful public observations only; offline training remains in `game-tools`.
+- `PicPacAI` owns public chance/decision search state, the independent reference oracle, the production evaluator, Easy/Medium/Hard agents, the 2,000-simulation MCTS agent and the versioned tabular-policy reader. It receives lawful public observations only; offline training remains in `game-tools`.
 - `PicPacPresentation` owns the main-actor coordinator, immutable view snapshots, presentation stages, injectable clock, AI and storage boundaries, settings/restoration models, the versioned persistence codec, the Foundation Application Support adapter and guarded ephemeral effects. It does not own SwiftUI views or visual, audio or haptic output.
 - `PicPacPoe` owns SwiftUI views, scene-lifecycle wiring, dependency composition, design tokens, bundled assets, accessibility, sound and haptics.
 
-Dependency direction is enforced by package targets and tests. Build Phase 2 will compose production `PicPacAI` agents into `PicPacPresentation`'s worker boundary at the application root. Views render snapshots and send typed intentions. They do not mutate rules, consume the game random source or authorize stage completion. CPU-bound AI work runs outside the main actor and delivers a result through revision, turn-token, presentation-ID and task-generation guards.
+Dependency direction is enforced by package targets and tests. The application root composes the production `PicPacAI` engine into `PicPacPresentation`'s worker boundary. Views render snapshots and send typed intentions. They do not mutate rules, consume the game random source or authorize stage completion. CPU-bound AI work runs outside the main actor and delivers a result through revision, turn-token, presentation-ID and task-generation guards.
 
-## Build Phase 1 boundary
+## Build Phase 2 implementation boundary
 
-Build Phase 1 establishes the unsigned project, fixture governance, rules/search foundations, coordinator, presentation state and restoration. It may add test-only Kotlin fixture consumption so both implementations execute the same contracts. It does not implement production screens, board rendering, typography, assets, feedback consumers or store integration.
+Build Phase 1 established the unsigned project, fixture governance, rules/search foundations, coordinator, presentation state and restoration. Build Phase 2 completes the visible and playable product on top of those boundaries:
 
-Phase 1 is accepted only when:
+- Home, Classic, Pic-Pac Local, Easy/Medium/Hard computer play, Settings, How to Play and the complete AI Lab are implemented in native SwiftUI;
+- the Form Playground 2.0 identity is reconstructed with native shapes and paths, bundled Fredoka resources, exact semantic colors, tactile pieces, inset board wells, governed spacing, finite motion and responsive light/dark layouts;
+- Home's decorative bag-to-board explanation alternates X and O without touching domain state, persistence or game randomness, pauses while the scene is inactive and retains a non-spatial explanation with Reduce Motion;
+- the application consumes production Easy, Medium and Hard agents plus AI Lab's Random, Heuristic, MCTS and Q-learning choices through the guarded worker boundary;
+- local sound and haptic consumers honor their independent settings, while accessibility labels, traits, modal isolation, order and announcements derive from the presentation snapshot;
+- Debug-only deterministic fixtures can render every required review state without replacing live production flows; and
+- both Debug and Release simulator products build unsigned, with no signing, capability or store configuration.
 
-- the app and local package build with the pinned toolchain without signing;
-- all shared fixture groups are recognized and executed independently on Kotlin and Swift;
-- rules, ownership, conservation, rejection behavior and canonical state counts pass;
-- the coordinator passes early, late, canceled and stale worker scenarios with virtual time;
-- restoration validates invariants, does not redraw or replay moves, and resumes the exact presentation stage;
-- no source, dependency or capability introduces networking, accounts, analytics, ads, cloud synchronization or background execution; and
-- CI runs with read-only repository permissions and no signing or store secrets.
-
-The product shell in this phase exists only to prove project buildability and lifecycle composition. It does not implement production screens, board rendering, typography, assets, or visual/audio/haptic feedback consumers. Visible product implementation belongs to Build Phase 2.
+The production app remains fully local. Debug fixture launches and screenshot controls are compiled only for development evidence; they do not consume live randomness, emit feedback or enter restoration. Build Phase 3 adds automated snapshot and full UI-flow coverage, calibrated parity checks, accessibility and lifecycle integration passes, and performance/device hardening. Signing and store work remain outside the unsigned build phases.
 
 ## Shared fixture governance
 
@@ -110,7 +107,13 @@ The current restorable presentation, including a match when one exists, is store
 | Sound and haptics | Native effect consumers honoring independent settings |
 | Golden behavior | Shared JSON plus independent Kotlin and Swift consumers |
 
-AI Lab remains in the first complete iOS product. It includes the production explanations, MCTS configured for 2,000 simulations and the existing policy binary unchanged. Training, telemetry, cloud inference and new algorithms remain out of scope.
+AI Lab is part of the complete iOS product. It includes the production explanations, Random and Heuristic opponents, MCTS configured for 2,000 simulations, Q-learning backed by the unchanged 891,749-byte policy artifact, and the governed fallback behavior. Training, telemetry, cloud inference and new algorithms remain out of scope.
+
+## Visual implementation and review
+
+The SwiftUI layer uses the handoff's semantic tokens instead of platform-default Form, List or Button styling. Coral X, pistachio O, cream typography, chocolate surfaces, restrained bevels, borders and shadows remain semantic across both themes. Pieces keep stable board hitboxes and explicit placement, target, computer-turn, reveal and result states. The title uses five semantically colored Fredoka runs and a finite entrance. Decorative Home motion is scene-gated and independent from the coordinator.
+
+The repeatable evidence tool builds the real Debug app unsigned and launches deterministic, in-memory presentation fixtures on an ephemeral simulator. It captures Home, human placement, Local handoff and reveal, computer targeting and settlement, result, Settings, How to Play and AI Lab in both themes, verifies the canonical Android reference hashes, and generates an uncropped comparison sheet. Fixture screenshots establish rendered state and visual intent; they do not substitute for Build Phase 3's live-flow, assistive-technology or performance checks.
 
 ## Six delivery phases
 

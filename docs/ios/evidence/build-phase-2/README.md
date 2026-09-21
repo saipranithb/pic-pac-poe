@@ -27,7 +27,7 @@ EVIDENCE_RUN_ID=phase2-rc1 \
 ios/Scripts/capture-phase2-screenshots.sh
 ```
 
-Optional controls are `EVIDENCE_OUTPUT_ROOT`, `PIC_PAC_BUNDLE_ID`, `CAPTURE_SETTLE_SECONDS`, and `HOME_CAPTURE_SETTLE_SECONDS`. The Home default is intentionally 0.65 seconds so the capture lands in the stable X hold before the governed X/O transition. Change timing only when a measured simulator launch requires it, and retain the recorded value in `manifest.json`.
+Optional controls are `EVIDENCE_OUTPUT_ROOT`, `PIC_PAC_BUNDLE_ID`, `CAPTURE_SETTLE_SECONDS`, `HOME_CAPTURE_SETTLE_SECONDS`, and `APPEARANCE_SETTLE_SECONDS`. The Home default is intentionally 0.65 seconds after the app's ready signal so the capture lands in the stable X hold before the governed X/O transition. Change timing only when a measured simulator launch requires it, and retain the recorded value in `manifest.json`.
 
 ## Captures
 
@@ -59,7 +59,7 @@ Each app launch receives:
 
 The simulator uses Large content size, a deterministic 9:41 status bar, and normal motion. Most Debug fixtures disable sound, haptics and reduced motion and hold timed presentation stages through the screenshot clock. The Settings fixtures reproduce the canonical control states: dark has Sound and Haptics on with Reduced motion off; light has Sound and Haptics off with Reduced motion on. Each capture's exact settings are recorded in `manifest.json`. Static launches do not emit feedback. These fixtures prove rendered state and semantics, not live AI duration or end-to-end player progression.
 
-After installation, the tool launches and terminates one unrecorded Home fixture. This absorbs the one-time system-service startup cost of a newly created simulator before any visual settle interval begins; `manifest.json` records the prewarm. Every recorded Home launch still starts its own governed animation clock and uses the stated 0.65-second X hold.
+After installation, the tool launches and terminates one unrecorded Home fixture. This absorbs the one-time system-service startup cost of a newly created simulator before any visual settle interval begins; `manifest.json` records the prewarm. Every recorded launch writes a unique Debug-only ready marker after restoration and a main-actor yield. The capture interval starts from that marker rather than process launch, and the tool rejects screenshots whose sampled content is visually blank. Every recorded Home launch still starts its own governed animation clock and uses the stated 0.65-second X hold.
 
 ## Output and provenance
 

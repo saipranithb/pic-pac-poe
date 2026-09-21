@@ -46,6 +46,15 @@ struct PicPacPoeRoot: View {
             if coordinator.isSceneActive { feedback.play(event.kind, settings: coordinator.settings) }
         }
         .onChange(of: coordinator.settings.soundEnabled) { _, enabled in if !enabled { feedback.stop() } }
+        #if DEBUG
+        .onChange(of: coordinator.isRestorationComplete, initial: true) { _, complete in
+            guard complete else { return }
+            Task { @MainActor in
+                await Task.yield()
+                DebugLaunchConfiguration.signalScreenshotReady()
+            }
+        }
+        #endif
     }
     @ViewBuilder private var content: some View {
         switch coordinator.state.screen {
