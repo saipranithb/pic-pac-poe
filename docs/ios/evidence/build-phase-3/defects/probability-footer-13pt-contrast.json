@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "image": "probability-footer-13pt-before.png",
+  "sha256": "6722d34af58ac75074fc7fd11719d7715a5140bc71e0c4a066448946878c7d9a",
+  "dimensions": [
+    1206,
+    2622
+  ],
+  "pngColorSpace": "sRGB chunk,8-bit RGB",
+  "inputRectPoints": [
+    36,
+    797.7,
+    227.7,
+    15.7
+  ],
+  "sampleRectPixels": [
+    108,
+    2393,
+    792,
+    2441
+  ],
+  "foregroundInteriorRGB": [
+    105,
+    85,
+    67
+  ],
+  "foregroundInteriorPixelCount": 3065,
+  "backgroundSampleRectPixels": [
+    804,
+    2393,
+    876,
+    2441
+  ],
+  "backgroundGradientRGBandCounts": [
+    [
+      [
+        254,
+        249,
+        236
+      ],
+      28
+    ],
+    [
+      [
+        254,
+        249,
+        237
+      ],
+      147
+    ],
+    [
+      [
+        254,
+        249,
+        238
+      ],
+      94
+    ],
+    [
+      [
+        254,
+        249,
+        239
+      ],
+      2
+    ],
+    [
+      [
+        254,
+        250,
+        236
+      ],
+      11
+    ],
+    [
+      [
+        254,
+        250,
+        237
+      ],
+      138
+    ],
+    [
+      [
+        254,
+        250,
+        238
+      ],
+      135
+    ],
+    [
+      [
+        254,
+        250,
+        239
+      ],
+      6
+    ],
+    [
+      [
+        254,
+        251,
+        237
+      ],
+      5
+    ],
+    [
+      [
+        254,
+        251,
+        238
+      ],
+      10
+    ],
+    [
+      [
+        255,
+        248,
+        237
+      ],
+      10
+    ],
+    [
+      [
+        255,
+        248,
+        238
+      ],
+      8
+    ],
+    [
+      [
+        255,
+        249,
+        236
+      ],
+      68
+    ],
+    [
+      [
+        255,
+        249,
+        237
+      ],
+      879
+    ],
+    [
+      [
+        255,
+        249,
+        238
+      ],
+      595
+    ],
+    [
+      [
+        255,
+        249,
+        239
+      ],
+      7
+    ],
+    [
+      [
+        255,
+        250,
+        236
+      ],
+      62
+    ],
+    [
+      [
+        255,
+        250,
+        237
+      ],
+      662
+    ],
+    [
+      [
+        255,
+        250,
+        238
+      ],
+      566
+    ],
+    [
+      [
+        255,
+        250,
+        239
+      ],
+      18
+    ],
+    [
+      [
+        255,
+        251,
+        237
+      ],
+      2
+    ],
+    [
+      [
+        255,
+        251,
+        238
+      ],
+      3
+    ]
+  ],
+  "backgroundPixelCount": 3456,
+  "minimumMeasuredContrast": 6.676005388054927,
+  "minimumContrastBackgroundRGB": [
+    255,
+    248,
+    237
+  ],
+  "maximumMeasuredContrast": 6.804694695785738,
+  "normalTextMinimum": 4.5,
+  "pass": true,
+  "mostFrequentColors": [
+    {
+      "rgb": [
+        255,
+        249,
+        237
+      ],
+      "count": 6260
+    },
+    {
+      "rgb": [
+        255,
+        250,
+        237
+      ],
+      "count": 4952
+    },
+    {
+      "rgb": [
+        255,
+        249,
+        238
+      ],
+      "count": 4568
+    },
+    {
+      "rgb": [
+        255,
+        250,
+        238
+      ],
+      "count": 4328
+    },
+    {
+      "rgb": [
+        105,
+        85,
+        67
+      ],
+      "count": 3065
+    },
+    {
+      "rgb": [
+        254,
+        249,
+        237
+      ],
+      "count": 1161
+    },
+    {
+      "rgb": [
+        254,
+        250,
+        238
+      ],
+      "count": 1130
+    },
+    {
+      "rgb": [
+        254,
+        250,
+        237
+      ],
+      "count": 1009
+    },
+    {
+      "rgb": [
+        254,
+        249,
+        238
+      ],
+      "count": 748
+    },
+    {
+      "rgb": [
+        255,
+        249,
+        236
+      ],
+      "count": 526
+    },
+    {
+      "rgb": [
+        255,
+        250,
+        236
+      ],
+      "count": 516
+    },
+    {
+      "rgb": [
+        254,
+        249,
+        236
+      ],
+      "count": 277
+    }
+  ],
+  "method": "Decode original PNG bytes without resizing; unfilter native RGB scanlines; count opaque foreground interiors within reported bounds and every adjacent unobscured gradient background pixel on the same scanlines. The source card gradient is vertical; this adjacent sample represents the text backdrop without antialiasing blends. WCAG contrast range over those background colors. Antialiased edge blends do not define authored text color.",
+  "capture": {
+    "testIdentifier": "PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes()",
+    "configurationName": "Test Scheme Action",
+    "deviceId": "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+    "deviceName": "PicPac Phase3 UI",
+    "exportedFileName": "7B88B5F6-9047-468F-9DB7-7EA041756091.png",
+    "isAssociatedWithFailure": true,
+    "suggestedHumanReadableName": "App Screenshot_0_66C43A30-E5F3-4EA2-9E49-71D78CA9CFCD.png",
+    "timestamp": 1789998178.759,
+    "noCrop": true,
+    "noResize": true
+  },
+  "sourceContext": {
+    "checkpoint": "1004223b1a39fcb2d0f965b1a530bbc9dfc43424",
+    "cleanSourceAtCapture": false,
+    "knownProductDelta": [
+      "Probability footer caption 12-point to footnote 13-point with regular weight",
+      "Home/Info/Game scroll clipping"
+    ],
+    "knownTestDelta": [
+      "Original full-screen attachments",
+      "AX5 reachability swipes",
+      "Fresh-launch/stationary-content audits",
+      "Specific offscreen AI Lab contrast-artifact handling"
+    ],
+    "interpretation": "Exploratory dirty working-tree diagnostic. This is not an exact clean-source accepted baseline. Image precedes proposed medium-weight footnote adjustment."
+  },
+  "visualInspection": "Original 1206 × 2622 image viewed at full resolution. Entire footer is visible with room inside the bag card, without clipping or overlay. The native auditor supplies no numerical ratio. Measured color contrast above 4.5 does not waive this visible-content finding; any intentional glyph-weight change requires a fresh native audit and inspected after capture.",
+  "backgroundInterpretation": "The PNG contains actual gradient dithering. Every pixel in an unobscured 72 × 48 region immediately right of the label and on the same scanlines was measured; all 22 distinct backdrop colors are retained. Card source uses a vertical gradient, so this adjacent sample is representative of the backdrop under the text. No screenshot cropping, replacement, smoothing or pixel transformation is performed.",
+  "reproduce": "python3 docs/ios/evidence/build-phase-3/defects/measure-footer-13pt-contrast.py",
+  "measurementScriptSHA256": "ead5626011bbb6272c2a37e612632ce5a62fe34858d8fe6bc87400100eaa45e3"
+}

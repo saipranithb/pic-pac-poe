@@ -19,6 +19,7 @@ struct InfoPage<Content: View>: View {
         #if DEBUG
         .defaultScrollAnchor(DebugLaunchConfiguration.scrollAnchor)
         #endif
+        .clipped()
     }
 }
 

@@ -71,12 +71,22 @@ jobs:
           -resultBundlePath "$RUNNER_TEMP/${{ matrix.target }}.xcresult"
           CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
           test
+      - name: Require the complete XCTest inventory and governed skips
+        if: always()
+        run: >-
+          python3 ios/Scripts/verify-xcresult.py
+          --result "$RUNNER_TEMP/${{ matrix.target }}.xcresult"
+          --target '${{ matrix.target }}'
+          --configuration '${{ matrix.configuration }}'
+          --output "$RUNNER_TEMP/${{ matrix.target }}-inventory.json"
       - name: Preserve test results
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: ios-${{ matrix.target }}-${{ github.run_id }}
-          path: ${{ runner.temp }}/${{ matrix.target }}.xcresult
+          path: |
+            ${{ runner.temp }}/${{ matrix.target }}.xcresult
+            ${{ runner.temp }}/${{ matrix.target }}-inventory.json
           if-no-files-found: warn
           retention-days: 14
       - name: Record gate outcome

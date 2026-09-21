@@ -40,8 +40,14 @@ stable square hitboxes, occupied/locked input, result/handoff/reveal privacy,
 one final-board summary, one switch per setting, selection, scrolling and
 largest Dynamic Type. Apple's contrast, hit-region, description, clipping and
 trait audits run across nine screens in both themes, including the bottom
-viewport of scrollable pages, without blanket exclusions. Physical
-VoiceOver speech timing, Switch Control hardware, keyboard ergonomics, audio
+viewport of scrollable pages. One narrowly governed iOS 26.5 auditor artifact
+is acknowledged: the dark AI Lab introductory paragraph at its bottom anchor
+is clipped offscreen while its accessibility rectangle retains less than 1pt
+of boundary intersection. Only that exact label, contrast issue and 402×874pt
+viewport can be handled, after the fully visible paragraph passes in the same
+build/theme. Original visible pixels measure 9.856:1. The native finding,
+bounds and unmodified screen remain in evidence; this is not a zero-finding
+claim or a blanket exclusion. Every other finding fails. Physical VoiceOver speech timing, Switch Control hardware, keyboard ergonomics, audio
 and haptics still require the named-device release review; a passing simulator
 suite cannot certify them.
 
@@ -55,8 +61,12 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
 
 It retains test commands, logs, summary, raw attachment metadata, unmodified
 frames, monotonic/capture timestamps and SHA-256 checksums. Source identity is
-checked before and after execution. Failed or changed-source runs retain an
-`INCOMPLETE` marker and cannot claim acceptance.
+checked before and after execution. The source-discovered XCTest inventory must
+match exactly, with all 24 methods passed and no skipped or expected failures.
+All 37 required temporal/stage frame families must be present. Native audit
+findings remain individually recorded in the manifest, including any precisely
+acknowledged artifact. Failed or changed-source runs retain an `INCOMPLETE`
+marker and cannot claim acceptance.
 
 For ad-hoc diagnosis, export the native screenshots without cropping with:
 

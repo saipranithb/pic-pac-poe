@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Governed before/after diagnostic for scroll safe-area correction and a specific offscreen native audit finding",
+  "before": {
+    "path": "scroll-safe-area-before.png",
+    "sha256": "4e1584a075273e756f05949d63c43ea6285cd354d7efb658c210b147058ecb21",
+    "detail": "ai-lab-intro-contrast.json"
+  },
+  "after": {
+    "path": "scroll-safe-area-after.png",
+    "sha256": "abbdbadcec4cb9bd3ec8c367d52b962bba57b4c18dc9068d55f7b2599a183744",
+    "originalAttachment": "B2CD56A1-39AF-4207-9DB4-6011E4BFD2F6.png",
+    "capturedAtUnix": 1789997748.789,
+    "capturedAtUTC": "2026-09-21T13:35:48.789000+00:00",
+    "dimensions": [
+      1206,
+      2622
+    ],
+    "noCrop": true,
+    "noResize": true,
+    "test": "PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes()",
+    "deviceUDID": "F36B6568-2C34-4D22-A88D-0AB8C240E6CA"
+  },
+  "sourceContext": {
+    "checkpoint": "1004223b1a39fcb2d0f965b1a530bbc9dfc43424",
+    "cleanSourceAtCapture": false,
+    "confirmedBy": "UI test executor",
+    "productDelta": [
+      "Probability footer caption 12-point to footnote 13-point",
+      "Scroll .clipped() in Home/Info/Game"
+    ],
+    "testDelta": [
+      "Original screen capture helper",
+      "Extra AX5 reachability swipes",
+      "Fresh-launch/stationary-content audit procedure"
+    ],
+    "evidenceToolingDelta": [
+      "UI exporter repair, not compiled into app"
+    ],
+    "before": "Specific offscreen-finding audit guard"
+  },
+  "finding": {
+    "path": "ai-lab-offscreen-native-finding.txt",
+    "sha256": "9f5f93033632a67da8145ff0b438cf00eb6ef371cf075063e039c05cae779d91",
+    "type": "Contrast",
+    "label": "Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.",
+    "boundsPoints": {
+      "x": 20.0,
+      "y": -1.7,
+      "width": 340.3,
+      "height": 64.3
+    },
+    "screenPoints": [
+      402,
+      874
+    ],
+    "clippedContentTopPoints": 62,
+    "intersectionHeightPoints": 0.6,
+    "intersectionProportion": 0.00933125972006221
+  },
+  "independentInspection": "Original full-resolution after frame has a clear status area. Intro text is scrolled out above the clipped content; the lower AI Lab explanation is visible. This is not a low-contrast visible paragraph and not a fresh reading of the before image. Before paragraph pixel measurement remains in ai-lab-intro-contrast.json.",
+  "governance": "Any native-audit exception is restricted to this exact dark AI Lab bottom-view paragraph and contrast category, after its fully visible top view has passed, on the exact 402 × 874 test viewport with at most 1 pt/2% intersection. All visible content and every other finding remain subject to the ordinary audit. Final full-suite outcome and final accepted screenshots are separate evidence; this diagnostic is not their replacement."
+}

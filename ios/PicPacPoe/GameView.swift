@@ -88,6 +88,7 @@ struct GameView: View {
                     #if DEBUG
                     .defaultScrollAnchor(DebugLaunchConfiguration.scrollAnchor)
                     #endif
+                    .clipped()
                     .accessibilityHidden(modal).allowsHitTesting(!modal)
                     if modal {
                         Color.black.opacity(0.6).ignoresSafeArea().accessibilityHidden(true)
@@ -216,7 +217,7 @@ struct ProbabilityTray: View {
             let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 16)) : AnyLayout(HStackLayout(spacing: 16))
             layout { item(.x, count: remainingX); item(.o, count: remainingO) }
             Text(held ? "\(remainingX + remainingO) pieces remain · held piece excluded" : "\(remainingX + remainingO) pieces remain in the shared bag")
-                .font(.caption).foregroundStyle(colors.secondary).padding(.top, 10)
+                .font(.system(.footnote, weight: .medium)).foregroundStyle(colors.secondary).padding(.top, 10)
         }.padding(16).modifier(FormSurface()).accessibilityElement(children: .contain)
             .accessibilitySortPriority(60).accessibilityIdentifier("bag")
     }

@@ -109,6 +109,7 @@ struct HomeView: View {
             #if DEBUG
             .defaultScrollAnchor(DebugLaunchConfiguration.scrollAnchor)
             #endif
+            .clipped()
             .accessibilityIdentifier("home-screen")
         }
     }

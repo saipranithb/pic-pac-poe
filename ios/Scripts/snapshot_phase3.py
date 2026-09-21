@@ -65,6 +65,8 @@ def capture(args):
   with (output/'build.log').open('w') as log: subprocess.run(command,cwd=ROOT,env=ENV,stdout=log,stderr=subprocess.STDOUT,check=True)
   app=tmp/'build/Build/Products/Debug-iphonesimulator/PicPacPoe.app'
   executableHash=sha(app/'PicPacPoe');tool=compile_pixels(tmp)
+  appFiles={str(p.relative_to(app)):sha(p) for p in sorted(app.rglob('*')) if p.is_file()}
+  appBundleHash=hashlib.sha256(json.dumps(appFiles,sort_keys=True,separators=(',',':')).encode()).hexdigest()
   for profile in profiles:
    device,size,reduced=PROFILES[profile]
    udid=sim('create',f'PicPac Phase3 snapshots {uuid.uuid4().hex[:8]}','com.apple.CoreSimulator.SimDeviceType.'+device,RUNTIME)
@@ -106,6 +108,8 @@ def capture(args):
   if start['buildInputSHA256']!=end['buildInputSHA256']:raise RuntimeError('Build inputs changed during capture')
   if any(sha(ROOT/ref['path'])!=ref['sha256'] for ref in references.values()):raise RuntimeError('Canonical Android reference changed during capture')
   manifest={'schemaVersion':1,'kind':'actual unsigned Debug simulator fixtures','source':start,'appExecutableSHA256':executableHash,'stableSource':True,'toolchain':version,'environment':environment,'runtime':'26.5','profiles':{name:PROFILES[name] for name in profiles},'capturePlan':{'profiles':profiles,'scenarios':scenarios,'themes':['dark','light']},'canonicalReferenceManifestSHA256':sha(ROOT/'docs/ios-handoff/reference/screenshot-manifest.json'),'captures':records,'noCrop':True,'baselinePolicy':'Review images before promotion. Comparison cannot update baselines.'}
+  manifest['appBundleSHA256']=appBundleHash
+  manifest['appFileSHA256']=appFiles
   (output/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
   def sheet(subset,destination):
    entries=[{'path':str(output/r['path']),'label':r['path'].replace('--',' / ')} for r in subset]
@@ -126,6 +130,11 @@ def package(root):
   raise ValueError('Unsupported, unstable or cropped capture package: '+str(root))
  if not re.fullmatch('[0-9a-f]{64}',manifest.get('appExecutableSHA256','')):
   raise ValueError('Missing executable provenance')
+ appFiles=manifest.get('appFileSHA256',{})
+ if appFiles.get('PicPacPoe')!=manifest['appExecutableSHA256'] or not appFiles.get('PicPacPoe.debug.dylib'):
+  raise ValueError('Missing actual Debug application-code provenance')
+ if hashlib.sha256(json.dumps(appFiles,sort_keys=True,separators=(',',':')).encode()).hexdigest()!=manifest.get('appBundleSHA256'):
+  raise ValueError('App bundle provenance hash mismatch')
  if not re.fullmatch('[0-9a-f]{64}',manifest.get('source',{}).get('buildInputSHA256','')):
   raise ValueError('Missing complete build-input provenance')
  if manifest.get('environment',{}).get('runtimeBuild')!='23F77' or manifest['environment'].get('architecture')!='arm64':raise ValueError('Uncalibrated runtime build or architecture')
