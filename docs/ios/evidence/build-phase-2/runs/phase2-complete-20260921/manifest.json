@@ -1,0 +1,804 @@
+{
+  "application": {
+    "bundleIdentifier": "dev.saipranith.picpacpoe",
+    "codeSigningAllowed": false,
+    "configuration": "Debug",
+    "defaultFixtureSettings": {
+      "hapticsEnabled": false,
+      "reducedMotion": false,
+      "soundEnabled": false
+    },
+    "scheme": "PicPacPoe"
+  },
+  "canonicalReferenceManifest": "docs/ios-handoff/reference/screenshot-manifest.json",
+  "captures": [
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "HomeSceneAnimationTest sequential X hold; normal motion; 412dp logical width; current Home-scene polish. Other UI unchanged.",
+        "productionCommit": "f936faf7d21e85ed71e859d94d65e125fe61b436",
+        "relativePath": "docs/ios-handoff/reference/home-scene-dark-normal-412dp-x.png",
+        "sha256": "dd23cc69f604120d2c46f71efac6f954079861398783ed5889701cefd2806d13",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:30Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "home",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-home-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-home-dark.png",
+      "scenario": "home",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.65,
+      "sha256": "5c785d1c3c54768f2dbaa66598a2c874c831af399cecd2c2f828850600c26142",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "live-ui-test",
+        "note": "UI-only commands through MainActivity and production ViewModel; presentation clock controlled for capture. Latest whole-suite algorithm capture wins by test order.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/human-placement-dark.png",
+        "sha256": "e43d090d87246f5eb579f78055d3b87cda06ef9b6a613916e30f76f473a3aa85",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:35Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "human-placement",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-human-placement-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-human-placement-dark.png",
+      "scenario": "human-placement",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "ed98589c72c5f83c7bb17daae51682964546a9f6d362fbe9d570a9bf5f1b4bca",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "live-app",
+        "note": "Settled native replacement for a blank transitional frame.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/local-handoff-dark.png",
+        "sha256": "7e8326795189f98e02eb8afdc66c7072cb6e0dd8cd075607c6eefdf2a58dee1a",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:37Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "local-handoff",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-local-handoff-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-local-handoff-dark.png",
+      "scenario": "local-handoff",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "ff72633d7461c69c5c2ec49a885a61fdd87f8bdd809afb3a54f6ebdcde020652",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "live-ui-test",
+        "note": "UI-only commands through MainActivity and production ViewModel; presentation clock controlled for capture. Latest whole-suite algorithm capture wins by test order.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/local-reveal-dark.png",
+        "sha256": "3cee784c0a6f20528dfcb53005e68bd44a5459f07c8afc49fdc74f4f576bbcb5",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:39Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "local-reveal",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-local-reveal-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-local-reveal-dark.png",
+      "scenario": "local-reveal",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "1d324994baa23fc9e779251775ff970b0a987d2b92ee2b37749cc1b2250203ec",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "Controlled state; proves appearance/input semantics, not live search duration.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/computer-targeting-dark.png",
+        "sha256": "ed04bd3ae2397d2f64a607f8ddffd1882ec4183b66230c8aff4ab34af85776bf",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:41Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "computer-targeting",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-computer-targeting-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-computer-targeting-dark.png",
+      "scenario": "computer-targeting",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "4874d564c0a3634334f258ae806abdb3d58c440a7e54a6bdc7c1cbc4552edb25",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "Controlled state; proves appearance/input semantics, not live search duration.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/computer-settled-dark.png",
+        "sha256": "8b573606f5712aa85055c498dacfccec4ea32b7eb626cf1d46db328c2969e737",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:43Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "computer-settled",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-computer-settled-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-computer-settled-dark.png",
+      "scenario": "computer-settled",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "8c2ec03da172136282af841fd0e2ca110845f5007c6cebe757a41a26fedf7488",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "Controlled state; proves appearance/input semantics, not live search duration.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/result-dark.png",
+        "sha256": "1c85a690df2ad179a454e3ee6a42d77fc1f0ca2032b07cb51ee1cd108f173e97",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:46Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "result",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-result-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-result-dark.png",
+      "scenario": "result",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "ed7a6b74d50c633625b7e540c6d8e560882873ee3a8baf9d66b99b3a0b1ead2d",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/settings-dark.png",
+        "sha256": "602a0e8d2ce628c74ce10b88c2b5e2bfd895a60f9b77837bdc21c60d5bfb748a",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:48Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "settings",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-settings-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-settings-dark.png",
+      "scenario": "settings",
+      "settings": {
+        "hapticsEnabled": true,
+        "reducedMotion": false,
+        "soundEnabled": true,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "517c44d1511b328fad039d5ac5a66712239b4a120ed1c450c6c21907bb6f466b",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "live-app",
+        "note": "Settled native replacement for a transitional fixture frame.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/how-to-dark.png",
+        "sha256": "fbe97e92a1ce60f156aad262048f91431811d869d5481088405298b9cdb3f513",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:50Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "how-to",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-how-to-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-how-to-dark.png",
+      "scenario": "how-to",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "f3f65bac61e7b02893363665c6ac84206c18fc59ae6d193b35e714f68b348088",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/ai-lab-dark.png",
+        "sha256": "3344a5f567ba59bb693fa50dc83759fbf212fc008dd40201b58da94b421d3686",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:52Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "ai-lab",
+        "-screenshot-theme",
+        "dark",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-ai-lab-dark",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-ai-lab-dark.png",
+      "scenario": "ai-lab",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "dark"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "2f32ea2de689225e1201ea006206bdb114e8324ec8e636435fe9cc8f14be0b40",
+      "theme": "dark",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "HomeSceneAnimationTest sequential X hold; normal motion; 412dp logical width; current Home-scene polish. Other UI unchanged.",
+        "productionCommit": "f936faf7d21e85ed71e859d94d65e125fe61b436",
+        "relativePath": "docs/ios-handoff/reference/home-scene-light-normal-412dp-x.png",
+        "sha256": "13990275fd4d0dfc5d260f7e9a64478895f393717605b6ba49c6bb56196104f5",
+        "theme": "light"
+      },
+      "capturedAt": "2026-09-21T08:08:55Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "home",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-home-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-home-light.png",
+      "scenario": "home",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.65,
+      "sha256": "534c4dab40cd1b61c491f193f8e96c0e9806c4bf047f75a5ffbdec3e7071ea10",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "dark-only-layout-reference",
+        "kind": "live-ui-test",
+        "note": "UI-only commands through MainActivity and production ViewModel; presentation clock controlled for capture. Latest whole-suite algorithm capture wins by test order.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/human-placement-dark.png",
+        "sha256": "e43d090d87246f5eb579f78055d3b87cda06ef9b6a613916e30f76f473a3aa85",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:57Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "human-placement",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-human-placement-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-human-placement-light.png",
+      "scenario": "human-placement",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "a8ee0db11e1c59243019757fe5ad2d40e8a38545a39cf8fcf94f3c441b60e6e6",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "dark-only-layout-reference",
+        "kind": "live-app",
+        "note": "Settled native replacement for a blank transitional frame.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/local-handoff-dark.png",
+        "sha256": "7e8326795189f98e02eb8afdc66c7072cb6e0dd8cd075607c6eefdf2a58dee1a",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:08:59Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "local-handoff",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-local-handoff-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-local-handoff-light.png",
+      "scenario": "local-handoff",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "41647af77e25647f423f5aaa6651bb5f180ee7015f1770ce65e2206bf7988d3a",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "dark-only-layout-reference",
+        "kind": "live-ui-test",
+        "note": "UI-only commands through MainActivity and production ViewModel; presentation clock controlled for capture. Latest whole-suite algorithm capture wins by test order.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/local-reveal-dark.png",
+        "sha256": "3cee784c0a6f20528dfcb53005e68bd44a5459f07c8afc49fdc74f4f576bbcb5",
+        "theme": "dark"
+      },
+      "capturedAt": "2026-09-21T08:09:01Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "local-reveal",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-local-reveal-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-local-reveal-light.png",
+      "scenario": "local-reveal",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "f0d7cfd950e830ad80423d9488962b44950505d8d9641965f503dd7b5db31afb",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "Controlled state; proves appearance/input semantics, not live search duration.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/computer-targeting-light.png",
+        "sha256": "fd7685ea55870a86f7adff9a00f688f526410bd2fb45cde485b354314942cd2e",
+        "theme": "light"
+      },
+      "capturedAt": "2026-09-21T08:09:03Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "computer-targeting",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-computer-targeting-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-computer-targeting-light.png",
+      "scenario": "computer-targeting",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "e674cacd2cb31dd23f17dae467e38a9d6427323b16bf2799b23058baf0a613df",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "Controlled state; proves appearance/input semantics, not live search duration.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/computer-settled-light.png",
+        "sha256": "afc65a10fcddcff552f6493671cd9a80065e53d01f5b5f99ae72ed6c9498ec8a",
+        "theme": "light"
+      },
+      "capturedAt": "2026-09-21T08:09:05Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "computer-settled",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-computer-settled-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-computer-settled-light.png",
+      "scenario": "computer-settled",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "e506e2fc1f2b9a8f5f55e8ea5497c3108a1a52eaa857affe047455d4872d4fe0",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "Controlled state; proves appearance/input semantics, not live search duration.",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/result-light.png",
+        "sha256": "b60274a9734d63f63bcabbfe592688e42f4273c27b094b06d87378d86a276451",
+        "theme": "light"
+      },
+      "capturedAt": "2026-09-21T08:09:07Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "result",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-result-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-result-light.png",
+      "scenario": "result",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "595c1c4b935e1ba9416b6c0409eddf51b33d0f15f1c7b7430ef2358419d9cf0f",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/settings-light.png",
+        "sha256": "c73385438eb48f6b302e78356a260c3647716df5e7c0cef6959585cc1e5f6f6a",
+        "theme": "light"
+      },
+      "capturedAt": "2026-09-21T08:09:09Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "settings",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-settings-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-settings-light.png",
+      "scenario": "settings",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": true,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "917e91c29679b4e5e1e3ee7c0050ee3196c80d7cc5849acd90f3d792cbae4f6a",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/how-to-light.png",
+        "sha256": "0e5ac024e97a08f008916f105a4a787b62914cedd93b027b90f70af2f44d9779",
+        "theme": "light"
+      },
+      "capturedAt": "2026-09-21T08:09:10Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "how-to",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-how-to-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-how-to-light.png",
+      "scenario": "how-to",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "961817e1c185150b0a818fb2ac467cc7e7eccb0d7a1c390b09f31d84122c33a6",
+      "theme": "light",
+      "width": 1206
+    },
+    {
+      "canonical": {
+        "comparison": "exact-theme",
+        "kind": "production-composable-fixture",
+        "note": "",
+        "productionCommit": "feefdfd37932a061d0be5775cb294b2b38e8dcb2",
+        "relativePath": "docs/ios-handoff/reference/ai-lab-light.png",
+        "sha256": "63fd4de045a8ae68cb36837d33542069f415ac01967a163125bb2929646b86a9",
+        "theme": "light"
+      },
+      "capturedAt": "2026-09-21T08:09:12Z",
+      "height": 2622,
+      "launchArguments": [
+        "-screenshot-scenario",
+        "ai-lab",
+        "-screenshot-theme",
+        "light",
+        "-screenshot-ready-token",
+        "phase2-complete-20260921-ai-lab-light",
+        "-AppleLanguages",
+        "(en)",
+        "-AppleLocale",
+        "en_US"
+      ],
+      "relativePath": "captures/ios-ai-lab-light.png",
+      "scenario": "ai-lab",
+      "settings": {
+        "hapticsEnabled": false,
+        "reducedMotion": false,
+        "soundEnabled": false,
+        "theme": "light"
+      },
+      "settleSeconds": 0.9,
+      "sha256": "b348d6e85bc0f15ea0be25643fdeeb15c63fc65169de43aae5649e1af179d54f",
+      "theme": "light",
+      "width": 1206
+    }
+  ],
+  "derived": {
+    "cropping": false,
+    "generator": "ios/Scripts/GeneratePhase2ContactSheet.swift",
+    "height": 7766,
+    "kind": "canonical-versus-ios-review-sheet",
+    "relativePath": "review-contact-sheet.png",
+    "sha256": "203b7dd33cbdb3b154cc781eab86f174e0a7cfb85bcdba215cc7ee64e4f1a6f5",
+    "width": 1394
+  },
+  "generatedAt": "2026-09-21T08:09:12Z",
+  "provenance": "actual-debug-simulator-fixture",
+  "runID": "phase2-complete-20260921",
+  "schemaVersion": 1,
+  "simulator": {
+    "appearance": [
+      "dark",
+      "light"
+    ],
+    "applicationPrewarmed": true,
+    "contentSize": "large",
+    "deviceType": "iPhone 17 Pro",
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
+    "ephemeral": true,
+    "locale": "en_US",
+    "name": "PicPacPoe Phase 2 Evidence phase2-complete-20260921",
+    "osVersion": "26.5",
+    "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+    "statusBar": {
+      "batteryLevel": 100,
+      "batteryState": "charged",
+      "time": "9:41"
+    },
+    "udid": "E58B8EB8-8658-48C8-841A-FAC92C8FC161"
+  },
+  "source": {
+    "branch": "codex/ios-native-parity",
+    "commit": "0f499f230e8dd5e5999eb1a4e702e0b111c789c3",
+    "dirty": false,
+    "stableDuringCapture": true,
+    "statusAtCaptureStart": []
+  },
+  "toolchain": {
+    "developerDirectory": "/Applications/Xcode.app/Contents/Developer",
+    "globalXcodeSelectChanged": false,
+    "macOS": "26.5.2",
+    "simulatorSDK": "26.5",
+    "xcode": "Xcode 26.6 Build version 17F113"
+  }
+}
