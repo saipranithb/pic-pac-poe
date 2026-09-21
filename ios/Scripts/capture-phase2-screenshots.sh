@@ -272,6 +272,19 @@ BUILT_BUNDLE_IDENTIFIER="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleIdentifier
   || fail "built bundle identifier '$BUILT_BUNDLE_IDENTIFIER' does not match expected '$BUNDLE_IDENTIFIER'"
 run_xcrun simctl install "$SIMULATOR_UDID" "$APP_PATH"
 
+# The first process launch on a newly created simulator can spend longer in
+# system-service startup than the visual settle window. Warm the installed app
+# once so every recorded frame uses the same in-app timing contract.
+run_xcrun simctl ui "$SIMULATOR_UDID" appearance dark
+run_xcrun simctl launch --terminate-running-process \
+  "$SIMULATOR_UDID" "$BUNDLE_IDENTIFIER" \
+  -screenshot-scenario home \
+  -screenshot-theme dark \
+  -AppleLanguages '(en)' \
+  -AppleLocale 'en_US' >/dev/null
+/bin/sleep "$SETTLE_SECONDS"
+run_xcrun simctl terminate "$SIMULATOR_UDID" "$BUNDLE_IDENTIFIER" >/dev/null
+
 for theme in "${THEMES[@]}"; do
   run_xcrun simctl ui "$SIMULATOR_UDID" appearance "$theme"
   for scenario in "${SCENARIOS[@]}"; do
@@ -405,6 +418,7 @@ manifest = {
         "contentSize": "large",
         "locale": "en_US",
         "statusBar": {"time": "9:41", "batteryLevel": 100, "batteryState": "charged"},
+        "applicationPrewarmed": True,
     },
     "application": {
         "bundleIdentifier": os.environ["PIC_PAC_BUNDLE_ID"],
