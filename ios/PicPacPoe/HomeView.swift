@@ -58,7 +58,8 @@ struct HomeView: View {
     @ScaledMetric(relativeTo: .body) private var bodyLargeSize = 16.0
     @ScaledMetric(relativeTo: .subheadline) private var modeMarkWidth = 46.0
     let coordinator: GameCoordinator
-    @State private var difficulty = Difficulty.medium
+    @SceneStorage("home-difficulty") private var difficultyValue = Difficulty.medium.rawValue
+    private var difficulty: Difficulty { Difficulty(rawValue: difficultyValue) ?? .medium }
 
     var body: some View {
         GeometryReader { viewport in
@@ -86,7 +87,7 @@ struct HomeView: View {
                     let layout = typeSize >= .xxxLarge ? AnyLayout(VStackLayout(spacing: 8)) : AnyLayout(HStackLayout(spacing: 8))
                     layout {
                         ForEach(Difficulty.allCases.filter(\.isProduction), id: \.self) { choice in
-                            FormChoice(title: choice.title, selected: difficulty == choice) { difficulty = choice }
+                            FormChoice(title: choice.title, selected: difficulty == choice) { difficultyValue = choice.rawValue }
                                 .accessibilityIdentifier("difficulty-\(choice.rawValue)")
                         }
                     }.padding(.top, 14)
@@ -105,6 +106,9 @@ struct HomeView: View {
                 .padding(.horizontal, 20).padding(.vertical, 16)
                 .frame(maxWidth: 620).frame(maxWidth: .infinity)
             }
+            #if DEBUG
+            .defaultScrollAnchor(DebugLaunchConfiguration.scrollAnchor)
+            #endif
             .accessibilityIdentifier("home-screen")
         }
     }
@@ -210,11 +214,19 @@ struct HomeIllustration: View {
     let viewport: CGRect
     @State private var visible = true
     @State private var start = Date()
-    private var running: Bool { active && visible }
+    private var captureTime: Double? {
+        #if DEBUG
+        if DebugLaunchConfiguration.value(after: "-screenshot-scenario", in: ProcessInfo.processInfo.arguments) != nil {
+            return DebugLaunchConfiguration.value(after: "-snapshot-home-time", in: ProcessInfo.processInfo.arguments).flatMap(Double.init)
+        }
+        #endif
+        return nil
+    }
+    private var running: Bool { active && visible && captureTime == nil }
 
     var body: some View {
         TimelineView(.animation(minimumInterval: 1.0 / 60, paused: !running)) { context in
-            let motion = FormMotion.homeSymbol(elapsed: running ? context.date.timeIntervalSince(start) : 0, reduced: reduced)
+            let motion = FormMotion.homeSymbol(elapsed: captureTime ?? (running ? context.date.timeIntervalSince(start) : 0), reduced: reduced)
             ZStack {
                 Canvas { context, size in drawScene(context: &context, size: size) }
                 ZStack {

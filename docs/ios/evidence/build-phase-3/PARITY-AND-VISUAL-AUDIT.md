@@ -1,0 +1,31 @@
+# Independent Form Playground 2.0 audit
+
+The Build Phase 2 review was treated as a hypothesis. Every one of its 20 accepted 1206 × 2622 PNGs was opened individually at original resolution through the image viewer, including both themes of Home, human placement, Local handoff/reveal, computer targeting/settlement, result, Settings, How to Play and AI Lab. The viewer can scale a tall image for display; the original file was supplied, without cropping. This review did not substitute the Phase 2 contact sheet, hashes or prior conclusions for visual inspection.
+
+The inspected set is exactly the `captures` inventory in [the Phase 2 manifest](../build-phase-2/runs/phase2-complete-20260921/manifest.json). Canonical Android references were also opened directly: both themed Home scene X frames, Classic, computer targeting/settlement, results, Settings, How to Play and AI Lab; dark human placement/reveal and Local handoff/reveal. The governed Android PNGs are intentionally smaller exports and different platform typography. They establish semantic geometry and intent, not a valid pixel-diff baseline for native iOS.
+
+| Aspect | Direct comparison and disposition |
+| --- | --- |
+| Hierarchy | Home retains wordmark, explanation, game choices, computer difficulty and supporting destinations in the same order. Gameplay retains actor identity, instruction, held piece, board and probability tray. Information pages retain the canonical narrative order. |
+| Wordmark | The actual bundled Fredoka weights, rounded personality, neutral hyphens/Pac and coral Pic/pistachio Poe remain. The five measured runs fit the available width; the mark was not replaced with system text or a raster logo. |
+| Typography | Native SF body text wraps differently from Android. The regular iPhone subtitle uses two readable lines. Large text expands vertically and scrolls; it is not squeezed to reproduce Android line breaks. Supporting page headings remain strong. |
+| Board | The 12-point inset, 6-point gaps and `(side − 36)/3` cells preserve canonical proportions. Rounded recesses, top edge, cast shadow and gradient remain. The target is selected while empty, then receives the actual piece; actor and symbol are separate. |
+| Pieces | X and O retain their independent coral/pistachio roles, heavy rounded geometry, highlighted face, lower edge and restrained depth. Player identity remains teal/lavender; it is never inferred from the piece. |
+| Probability tray | Counts, next-draw percentages and held-piece exclusion remain explicit. Accessibility text gives symbol/count/percentage. Large-text layouts stack the two entries and remain scrollable. |
+| Stage clarity | Reveal, optional thinking, target, placement and settlement retain separate wording and visual states. Result art is a final board, not an interactive second board. The computer keeps actor emphasis throughout its settlement. |
+| Controls | Custom resin buttons, recessed choices, selected checkmarks and minimum target dimensions are retained. Native switches preserve native interaction semantics within the custom palette. Press feedback moves the face within a stable outer control. |
+| Modal/privacy | Local handoff renders no board, bag or held piece. Reveal/result hide and disable the underlying game. The audit found and corrected propagated accessibility IDs and miniature-cell leakage; final-board artwork now has one image summary. |
+| Spacing/safe areas | Native status/navigation safe areas differ from Android. iPad bounds the content and uses the wider gameplay arrangement; compact/large-text screens scroll without shrinking controls. Bottom captures and player-driven reachability tests supplement the initial viewport. |
+| Themes | Both warm dark and parchment light palettes retain exact semantic roles. Contrast is verified by palette tests and native accessibility audits, in addition to direct inspection. No generic SwiftUI card style replaced the accepted surfaces. |
+
+## Intentional corrections and before evidence
+
+- **Winning-line geometry:** Phase 2 used a 6/3-point shadow/focus pair. The canonical contract specifies a 5-point recess line with a 2-point text-colored center. The final board now uses that geometry, and its target/winning corner radius matches the canonical cell contour. Before: [Phase 2 dark result](../build-phase-2/runs/phase2-complete-20260921/captures/ios-result-dark.png) and [light result](../build-phase-2/runs/phase2-complete-20260921/captures/ios-result-light.png). After: the final baseline result and terminal-settlement captures. No other board/piece redesign was made.
+- **Restored speech:** Initial stage observation no longer emits transition announcements on restoration. Target/placement speech includes coordinates, and focusing the same computer instruction no longer duplicates the explicit announcement. Modal focus remains available for access to the current screen.
+- **Difficulty selection:** Home retains its selected difficulty through supporting-page navigation using native scene storage.
+- **Native resources:** A missing launcher icon was an ordinary codebase defect. The native icon is a reproducible render of the existing canonical adaptive-icon vector paths. A theme-aware launch canvas avoids the default white launch flash. See [native resource audit](NATIVE-RESOURCE-AUDIT.md).
+- **Native privacy copy:** Settings now says “internet access,” preserving the offline meaning without claiming an Android-style Internet permission exists on iOS.
+
+The exploratory large-text run exposed a first-boot Apple Intelligence banner over gameplay. That image was rejected, not accepted or cropped. The final capture harness prewarms each disposable simulator, checks a unique restoration marker and central image content, and retains complete screenshots including system UI. Only visually inspected intentional results can become baselines. Pixel comparison has no baseline-writing operation.
+
+The final accepted visual inventory, review record, repeated-capture calibration, temporal evidence and remaining device/runtime boundaries are linked from the consolidated completion report. This document records the comparison method and product decisions; it does not turn simulator evidence into physical-device certification.

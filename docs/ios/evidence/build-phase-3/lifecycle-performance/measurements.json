@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-21T12:59:40.316812+00:00",
+  "source": {
+    "baseCommit": "9423f47b34daee71cb5ed340cf0194c941e71b92",
+    "branch": "codex/ios-native-parity",
+    "worktreeChangesUnderTest": true,
+    "description": "Exact package source hashes identify the post-fix files; final enclosing phase commit is recorded by the consolidated release-candidate report.",
+    "sha256": {
+      "ios/Packages/PicPacKit/Package.swift": "0b0ec277e2de42951cce4bb71e83e9aa2c002c5537c6c203a9d063b2dbde4e03",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/AIContracts.swift": "973174752ace8fa621357bb096965d4ae7851f1defb9590fbfad4856b497c305",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/ExpectiminimaxAgent.swift": "09b42163f3d0d7dda5e1e468cd7344e12c209ff580d6f36f6e5a1ad01e5b408e",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/FastAgents.swift": "d1cd58e20f7cc50d79537e587587b73b367fe4510964a128e4f47912ccfc6950",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/PositionEvaluator.swift": "3968c8512644e7c15789334e76d492b46636a36f2beb4f6f811d1ee8fc54ee93",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/ProductionAIEngine.swift": "20e2b5680550c1e4773ded7c576b7354830a4a4caea998eb4ad4919fce6d5df4",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/RandomSources.swift": "d7105a47fde780b6cf369967ef6b918c750a608341ee8fa178021c28d07413b2",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/ReferenceExpectiminimax.swift": "2ac54e0435d2601ba6fe094f0ae810e8788bdd64291e31af88ec20e4817f19b8",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/SearchModel.swift": "f7772be59773a6ba0c6f621bee4eceb05282c94ca0e3c839b053f91e8ea1d852",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/StochasticMCTSAgent.swift": "f15f78851cf65fad9ca8f13a6752270ec24ff74ed94ff10ee960da27f32c4b4b",
+      "ios/Packages/PicPacKit/Sources/PicPacAI/TabularPolicy.swift": "607adcdb6ac9798e2f285fd064bfa48fb440cb02846d66610fd7735f1212627a",
+      "ios/Packages/PicPacKit/Sources/PicPacCore/AiObservation.swift": "7e61e5b6f11dd1d8c9f34093485ffa68259392da9f3eebf8ca8ba0cd33bb2386",
+      "ios/Packages/PicPacKit/Sources/PicPacCore/Model.swift": "8ba00ae7aaf04c472e401c37ced685bb1e2a97066f7ea2f850d6c570eba55b82",
+      "ios/Packages/PicPacKit/Sources/PicPacCore/Randomness.swift": "41292f829bd98855f0a56ce795b1f2b080e5274aca95608fb61f230261044e4a",
+      "ios/Packages/PicPacKit/Sources/PicPacCore/Rules.swift": "7a324c4403e9ba7fbead3ba9ed9438853bc96dd8ea2d3643f6d7449c8ebe17b0",
+      "ios/Packages/PicPacKit/Sources/PicPacCore/State.swift": "aa3bbf1ab11abfbe6ea283efd5c4399fcb1249e313b79e030534b77127b38466",
+      "ios/Packages/PicPacKit/Sources/PicPacPresentation/GameCoordinator.swift": "dd24473fb6470bc18c5813456c65015bff288ee0a099dc9d791b44a3f1e27c9a",
+      "ios/Packages/PicPacKit/Sources/PicPacPresentation/PresentationDependencies.swift": "a4290af50730da72a5f77467e1de351f9d7d65642be08b3e89e9b4f1a7422cae",
+      "ios/Packages/PicPacKit/Sources/PicPacPresentation/PresentationModels.swift": "563162f0bd9edd6717a70a5b8e07e4467d222ca8159ea556dd9e411722cfecf3",
+      "ios/Packages/PicPacKit/Sources/PicPacPresentation/RestorationValidation.swift": "9bba02d6e4b67c1a3a67ec08909452992d0d3ea6a5cb7d5164844cf58aabdb3d",
+      "ios/Packages/PicPacKit/Tests/PicPacKitTests/CoreDomainTests.swift": "d947d397262759f56c946394286f77406e24a995b0c3df4bd59ff7fb47e34fae",
+      "ios/Packages/PicPacKit/Tests/PicPacKitTests/GoldenFixtureTests.swift": "cbe455d3917b93d7b1fb58972f1d4999e43a913cf9dd2c99ba018576bc38e879",
+      "ios/Packages/PicPacKit/Tests/PicPacKitTests/PerformanceAuditTests.swift": "8f7764fcaba33b7cebec6e4037b325dd230fb70fd1984bcf4c45f7c62cd11f2f",
+      "ios/Packages/PicPacKit/Tests/PicPacKitTests/PresentationCoordinatorTests.swift": "cf2c6812d2d710885c9763821f7d2e8b9287d00ba8ba91a9cb97184d87bd75b1",
+      "ios/Packages/PicPacKit/Tests/PicPacKitTests/ProductionAITests.swift": "af11786a17dc4ef1074237d213741601f68fce7ca43037d8c0ac347bccb38177",
+      "ios/Packages/PicPacKit/Tests/PicPacKitTests/SearchAndGraphTests.swift": "4ee8691cc6c1ed840f68e94fa59390959d34af2783f712e54ac4351ab3738a22"
+    }
+  },
+  "canonicalCheckout": {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe",
+    "commit": "dc7cb397ad335783c13c7976d4cef816d2fc0909",
+    "readOnlyAndCleanConfirmed": true
+  },
+  "environment": {
+    "OS": "26.5.2",
+    "architecture": "arm64",
+    "xcode": "26.6 (17F113)",
+    "swift": "6.3.3",
+    "developerDirectoryPerCommand": "/Applications/Xcode.app/Contents/Developer",
+    "globalDeveloperDirectoryChanged": false,
+    "execution": "macOS host Swift package, not iOS simulator or physical device",
+    "hostLoad": "Shared host; simultaneous phase work, especially during final Debug suite. No thermal or scheduler isolation claimed."
+  },
+  "tests": {
+    "packageFinal": {
+      "configuration": "debug",
+      "executed": 62,
+      "failures": 0,
+      "durationSeconds": 94.194
+    },
+    "optimizedPerformance": {
+      "configuration": "release",
+      "executed": 1,
+      "failures": 0
+    },
+    "newLifecycleTests": 4,
+    "lifecycleBoundaryRows": 21,
+    "regressionsReproducedBeforeFix": 3
+  },
+  "measurements": {
+    "performance-debug-first.log": {
+      "framePacingEvidence": false,
+      "hardColdMilliseconds": [
+        2108.450959,
+        2266.634542,
+        2094.236,
+        2128.313084,
+        2484.661542
+      ],
+      "hardColdNodes": [
+        109706,
+        109706,
+        109706,
+        109706,
+        109706
+      ],
+      "hardInFlightCancellationMilliseconds": [
+        0.919042,
+        2.770291,
+        0.44525,
+        1.306542,
+        0.137334
+      ],
+      "hardWarmMilliseconds": [
+        0.306833,
+        0.61625,
+        0.271583,
+        0.283416,
+        0.302667
+      ],
+      "hardWarmNodes": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "kind": "macOS-host-production-agent-measurement",
+      "mainActorTwoMillisecondHeartbeat": {
+        "maxMilliseconds": 23.983625,
+        "p50Milliseconds": 3.102458,
+        "p95Milliseconds": 4.215833,
+        "samples": 4461
+      },
+      "mctsCompletedSimulationsPerCall": 2000,
+      "mctsMilliseconds": [
+        596.1635,
+        663.746084,
+        572.004291,
+        582.36975,
+        774.565833
+      ],
+      "physicalDeviceEvidence": false,
+      "sampleCount": 5,
+      "schemaVersion": 1
+    },
+    "package-final.log": {
+      "framePacingEvidence": false,
+      "hardColdMilliseconds": [
+        6453.769667,
+        5735.165125,
+        4360.036,
+        3703.181709,
+        3392.494875
+      ],
+      "hardColdNodes": [
+        109706,
+        109706,
+        109706,
+        109706,
+        109706
+      ],
+      "hardInFlightCancellationMilliseconds": [
+        19.738375,
+        7.399875,
+        9.259625,
+        4.1675,
+        3.574958
+      ],
+      "hardWarmMilliseconds": [
+        0.26725,
+        1.218291,
+        2.6485,
+        0.277125,
+        0.27175
+      ],
+      "hardWarmNodes": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "kind": "macOS-host-production-agent-measurement",
+      "mainActorTwoMillisecondHeartbeat": {
+        "maxMilliseconds": 70.524375,
+        "p50Milliseconds": 3.452375,
+        "p95Milliseconds": 14.659709,
+        "samples": 5426
+      },
+      "mctsCompletedSimulationsPerCall": 2000,
+      "mctsMilliseconds": [
+        1759.65625,
+        1002.01175,
+        1164.254917,
+        869.299333,
+        710.6345
+      ],
+      "physicalDeviceEvidence": false,
+      "sampleCount": 5,
+      "schemaVersion": 1
+    },
+    "performance-release.log": {
+      "framePacingEvidence": false,
+      "hardColdMilliseconds": [
+        123.792417,
+        153.328375,
+        92.04675,
+        95.107458,
+        84.6445
+      ],
+      "hardColdNodes": [
+        109706,
+        109706,
+        109706,
+        109706,
+        109706
+      ],
+      "hardInFlightCancellationMilliseconds": [
+        9.371458,
+        0.207583,
+        0.272083,
+        0.570166,
+        0.518
+      ],
+      "hardWarmMilliseconds": [
+        0.01675,
+        0.033125,
+        0.02125,
+        0.019917,
+        0.01975
+      ],
+      "hardWarmNodes": [
+        18,
+        18,
+        18,
+        18,
+        18
+      ],
+      "kind": "macOS-host-production-agent-measurement",
+      "mainActorTwoMillisecondHeartbeat": {
+        "maxMilliseconds": 19.181708,
+        "p50Milliseconds": 3.147416,
+        "p95Milliseconds": 8.445375,
+        "samples": 190
+      },
+      "mctsCompletedSimulationsPerCall": 2000,
+      "mctsMilliseconds": [
+        23.493958,
+        24.035959,
+        28.577,
+        28.282875,
+        30.969959
+      ],
+      "physicalDeviceEvidence": false,
+      "sampleCount": 5,
+      "schemaVersion": 1
+    }
+  },
+  "fixtureGovernance": {
+    "contractsChanged": false,
+    "canonicalSHA256": "c68308f7a6b3684cc413bc37f495a7dfade8e5bd7a928f4273d79cbb101021ae",
+    "swiftSHA256": "c68308f7a6b3684cc413bc37f495a7dfade8e5bd7a928f4273d79cbb101021ae"
+  },
+  "limitations": [
+    "Agent timings are host measurements, not simulator frame pacing or physical-device latency.",
+    "Real VoiceOver/Switch Control, sound/haptics and physical frame pacing remain separate device checks.",
+    "Runtime iOS 17 evidence is not supplied by a macOS package execution."
+  ]
+}

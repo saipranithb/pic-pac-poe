@@ -78,7 +78,20 @@ struct PhysicalBoard: View {
     var miniature = false
     var onCell: (Int) -> Void = { _ in }
 
-    var body: some View {
+    @ViewBuilder var body: some View {
+        if miniature {
+            artwork.accessibilityRepresentation {
+                Image(systemName: "square.grid.3x3")
+                    .accessibilityLabel(BoardSemantics.summary(board))
+                    .accessibilityIdentifier("final-board")
+            }
+        } else {
+            artwork.accessibilityElement(children: .contain)
+                .accessibilityLabel("Board").accessibilityIdentifier("game-board")
+        }
+    }
+
+    private var artwork: some View {
         GeometryReader { geometry in
             let side = geometry.size.width
             let cellSide = (side - 36) / 3
@@ -115,16 +128,13 @@ struct PhysicalBoard: View {
                         }
                         var line = Path()
                         line.move(to: center(winningLine.first)); line.addLine(to: center(winningLine.third))
-                        context.stroke(line, with: .color(colors.shadow.opacity(0.7)), style: StrokeStyle(lineWidth: 6, lineCap: .round))
-                        context.stroke(line, with: .color(colors.focus), style: StrokeStyle(lineWidth: 3, lineCap: .round))
+                        context.stroke(line, with: .color(colors.recess), style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                        context.stroke(line, with: .color(colors.text), style: StrokeStyle(lineWidth: 2, lineCap: .round))
                     }.allowsHitTesting(false).accessibilityHidden(true)
                 }
             }
         }
         .aspectRatio(1, contentMode: .fit)
-        .accessibilityElement(children: miniature ? .ignore : .contain)
-        .accessibilityLabel(miniature ? BoardSemantics.summary(board) : "Board")
-        .accessibilityIdentifier(miniature ? "final-board" : "game-board")
     }
 }
 
@@ -151,7 +161,7 @@ private struct BoardCell: View {
                         path.addLine(to: CGPoint(x: proxy.size.width - radius, y: 2))
                     }.stroke(colors.shadow.opacity(0.32), style: StrokeStyle(lineWidth: 2, lineCap: .round))
                     if target || winning {
-                        RoundedRectangle(cornerRadius: max(1, radius - 3)).strokeBorder(colors.focus, lineWidth: 2).padding(3)
+                        RoundedRectangle(cornerRadius: radius).strokeBorder(colors.focus, lineWidth: 2).padding(3)
                     }
                     if target {
                         RoundedRectangle(cornerRadius: max(1, radius - 7)).strokeBorder(colors.focus, lineWidth: 1).padding(7)

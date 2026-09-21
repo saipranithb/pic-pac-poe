@@ -155,10 +155,14 @@ public final class GameCoordinator {
     public func show(_ screen: AppScreen) async {
         guard isRestorationComplete else { return }
         guard screen != .game else { return }
+        let difficulty = state.screen == .game ? Difficulty.medium : state.difficulty
         if state.screen == .game {
-            await goHome()
+            // Exit synchronously, then publish only the requested destination.
+            // An awaited intermediate Home save could overwrite a newer command.
+            cancelAllWork()
+            feedbackEvent = nil
         }
-        let next = GamePresentationState(screen: screen, difficulty: state.difficulty)
+        let next = GamePresentationState(screen: screen, difficulty: difficulty)
         await publish(next)
     }
 
@@ -170,7 +174,7 @@ public final class GameCoordinator {
     }
 
     public func readyForReveal() async {
-        guard isRestorationComplete else { return }
+        guard isRestorationComplete, isSceneActive else { return }
         guard state.screen == .game, state.stage == .handoff else { return }
         await revealCurrentPiece()
     }
@@ -201,6 +205,7 @@ public final class GameCoordinator {
 
     public func place(at cellIndex: Int) async {
         guard isRestorationComplete,
+              isSceneActive,
               state.screen == .game,
               state.stage == .playing,
               (0...8).contains(cellIndex) else { return }
@@ -342,8 +347,12 @@ public final class GameCoordinator {
         next.aiTargetCell = nil
         next.aiMoveSymbol = nil
         next = advance(next, to: .revealing)
+        let revealGeneration = aiGeneration
         await publish(next, effect: .reveal)
 
+        // A slow persistence acknowledgement may outlive Home, replacement,
+        // or a suspend/resume cycle that has already restarted this search.
+        guard aiGeneration == revealGeneration else { return }
         if next.mode == .picPacAI, revealed.activePlayer == .two {
             launchAI(for: revealed)
         }
@@ -398,6 +407,10 @@ public final class GameCoordinator {
 
     private func launchAI(for game: PicPacState) {
         guard isSceneActive,
+              state.screen == .game,
+              state.mode == .picPacAI,
+              state.picPac == game,
+              state.stage == .revealing || state.stage == .aiThinking,
               case let .awaitingPlacement(held: _, token: token) = game.phase,
               game.activePlayer == .two,
               let observation = try? AiObservation.from(state: game, agentPlayer: .two) else {

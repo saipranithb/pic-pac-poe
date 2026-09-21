@@ -2,7 +2,7 @@ name: Android CI
 
 on:
   push:
-    branches: [dev, main]
+    branches: [dev, main, codex/ios-native-parity]
   pull_request:
     branches: [dev, main]
 
@@ -40,11 +40,31 @@ jobs:
       - name: Make Gradle wrapper executable
         run: chmod +x gradlew
 
-      - name: Run authoritative verification
-        run: ./gradlew --no-daemon clean check :app:assembleDebug :app:bundleRelease
+      - name: Verify portable handoff and exact fixture governance
+        run: python3 ios/Scripts/verify-ci-contract.py
 
-      - name: Upload failure reports
-        if: failure()
+      - name: Run Kotlin fixture consumers and Android regression checks
+        run: ./gradlew --no-daemon clean check
+
+      - name: Build Debug application and UI regression APK
+        run: ./gradlew --no-daemon :app:assembleDebug :app:assembleDebugAndroidTest
+
+      - name: Build unsigned Release bundle
+        run: ./gradlew --no-daemon :app:bundleRelease
+
+      - name: Verify Release bundle remains unsigned
+        shell: bash
+        run: |
+          set -euo pipefail
+          jarsigner -verify app/build/outputs/bundle/release/app-release.aab | tee "$RUNNER_TEMP/android-signature.txt"
+          grep -F 'jar is unsigned.' "$RUNNER_TEMP/android-signature.txt"
+
+      - name: Record gate outcomes
+        if: always()
+        run: echo 'Android Kotlin fixtures, regression checks, Debug/test APK and unsigned Release bundle — ${{ job.status }}. Connected emulator tests require their separately recorded run.' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Preserve Android reports
+        if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
           name: android-verification-reports-${{ github.run_id }}
@@ -53,3 +73,68 @@ jobs:
             **/build/test-results/**
           if-no-files-found: ignore
           retention-days: 7
+
+  ui-regression:
+    name: Android player flows and visual semantics
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Set up JDK 17
+        uses: actions/setup-java@c5195efecf7bdfc987ee8bae7a71cb8b11521c00 # v4.7.1
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Set up Gradle cache
+        uses: gradle/actions/setup-gradle@41ad77ca97e46ee2e825d5e6b9a95d8169fcc44c # v4.4.2
+      - name: Prepare ephemeral hosted Android emulator
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdkmanager 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
+          echo no | avdmanager create avd --force --name picpac-ci --package 'system-images;android-35;google_apis;x86_64' --device pixel_8
+          sudo chmod a+rw /dev/kvm
+          "$ANDROID_HOME/emulator/emulator" -avd picpac-ci -port 5554 -no-window -no-audio -no-boot-anim -no-snapshot -gpu swiftshader_indirect > "$RUNNER_TEMP/android-emulator.log" 2>&1 &
+          for attempt in {1..180}; do
+            if [[ "$(adb -s emulator-5554 shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" == 1 ]]; then
+              exit 0
+            fi
+            sleep 2
+          done
+          cat "$RUNNER_TEMP/android-emulator.log"
+          exit 1
+      - name: Build and install development test applications
+        run: |
+          sh gradlew --no-daemon :app:assembleDebug :app:assembleDebugAndroidTest
+          adb -s emulator-5554 install -r app/build/outputs/apk/debug/app-debug.apk
+          adb -s emulator-5554 install -r app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
+      - name: Execute full existing Android UI regression suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          adb -s emulator-5554 shell am instrument -w -r com.thevaguebox.probabilistictictactoe.test/androidx.test.runner.AndroidJUnitRunner | tee "$RUNNER_TEMP/android-ui-tests.log"
+          python3 - "$RUNNER_TEMP/android-ui-tests.log" <<'PY'
+          import pathlib, re, sys
+          text = pathlib.Path(sys.argv[1]).read_text()
+          result = re.search(r'OK \((\d+) tests?\)', text)
+          assert result and int(result[1]) >= 26, 'Full Android UI suite did not pass; adb exit code alone is insufficient'
+          assert not re.search(r'FAILURES!!!|INSTRUMENTATION_ABORTED|Process crashed', text), 'Android instrumentation failed'
+          PY
+      - name: Preserve emulator evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: android-ui-regression-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/android-ui-tests.log
+            ${{ runner.temp }}/android-emulator.log
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Stop owned emulator and record outcome
+        if: always()
+        run: |
+          adb -s emulator-5554 emu kill || true
+          echo 'Android full UI regression — ${{ job.status }}; hosted API 35 emulator, not physical-device validation' >> "$GITHUB_STEP_SUMMARY"

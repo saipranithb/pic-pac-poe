@@ -40,6 +40,17 @@ extension GamePresentationState {
     }
 }
 
+enum GameSpeech {
+    static func announcement(from old: TurnStage, to new: TurnStage, state: GamePresentationState, sceneActive: Bool) -> String? {
+        guard old != new, sceneActive, [.aiTargeting, .aiPlacing, .aiThinking, .turnStart].contains(new) else { return nil }
+        if [.aiTargeting, .aiPlacing].contains(new), let target = state.aiTargetCell {
+            return BoardSemantics.cell(target, symbol: state.board[Cell(target)], target: target,
+                                       moveSymbol: state.aiMoveSymbol, stage: new)
+        }
+        return "\(state.instructionTitle). \(state.instructionDetail)"
+    }
+}
+
 struct GameView: View {
     @Environment(\.formPalette) private var colors
     @Environment(\.dynamicTypeSize) private var typeSize
@@ -73,7 +84,11 @@ struct GameView: View {
                             }
                         }.padding(.horizontal, wide ? 32 : 20).padding(.top, 12).padding(.bottom, 24)
                             .frame(maxWidth: wide ? 1000 : 500).frame(maxWidth: .infinity)
-                    }.accessibilityHidden(modal).allowsHitTesting(!modal)
+                    }
+                    #if DEBUG
+                    .defaultScrollAnchor(DebugLaunchConfiguration.scrollAnchor)
+                    #endif
+                    .accessibilityHidden(modal).allowsHitTesting(!modal)
                     if modal {
                         Color.black.opacity(0.6).ignoresSafeArea().accessibilityHidden(true)
                         ViewThatFits(in: .vertical) {
@@ -81,18 +96,21 @@ struct GameView: View {
                             ScrollView { modalContent }.scrollBounceBehavior(.basedOnSize)
                         }
                         .frame(maxWidth: 400).padding(24)
+                        .accessibilityElement(children: .contain)
                         .accessibilityAddTraits(.isModal)
                         .accessibilityAction(.escape, home)
                     }
                 }
             }
         }
+        .accessibilityElement(children: .contain)
         .accessibilityIdentifier("game-screen")
         .onChange(of: state.stage, initial: true) { old, new in
-            if [.revealing, .terminal, .handoff].contains(new) { modalFocus = true }
-            else if old == .revealing { instructionFocus = true }
-            if [.aiTargeting, .aiPlacing, .aiThinking, .turnStart].contains(new), coordinator.isSceneActive {
-                let announcement = new == .aiTargeting ? state.instructionDetail : "\(state.instructionTitle). \(state.instructionDetail)"
+            modalFocus = [.revealing, .terminal, .handoff].contains(new)
+            // Restoring a presentation must not replay its transition speech.
+            guard old != new, coordinator.isSceneActive else { return }
+            if new == .playing && (old == .revealing || old == .terminal) { instructionFocus = true }
+            if let announcement = GameSpeech.announcement(from: old, to: new, state: state, sceneActive: coordinator.isSceneActive) {
                 UIAccessibility.post(notification: .announcement, argument: announcement)
             }
         }
@@ -158,7 +176,8 @@ struct GameView: View {
             Text("Pass the phone, then tap when they're ready.").font(.body).foregroundStyle(colors.secondary).multilineTextAlignment(.center)
             Button("Ready") { Task { await coordinator.readyForReveal() } }.buttonStyle(FormButtonStyle()).accessibilityIdentifier("ready")
             Button("Home", action: home).buttonStyle(FormButtonStyle(primary: false))
-        }.fixedSize(horizontal: false, vertical: true).accessibilityIdentifier("local-handoff")
+        }.fixedSize(horizontal: false, vertical: true)
+            .accessibilityElement(children: .contain).accessibilityIdentifier("local-handoff")
     }
     @ViewBuilder private var modalContent: some View {
         VStack(spacing: 16) {
@@ -178,6 +197,7 @@ struct GameView: View {
                 Button("Home", action: home).buttonStyle(FormButtonStyle(primary: false))
             }
         }.padding(24).frame(maxWidth: .infinity).modifier(FormSurface()).fixedSize(horizontal: false, vertical: true)
+            .accessibilityElement(children: .contain)
             .accessibilityIdentifier(state.stage == .revealing ? "reveal-dialog" : "result-dialog")
     }
     private var resultDetail: String { if case let .win(win) = state.outcome { "Three \(win.symbol.rawValue)s. One completed line." } else { "No line this time." } }

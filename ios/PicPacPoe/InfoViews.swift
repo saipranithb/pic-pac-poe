@@ -16,6 +16,9 @@ struct InfoPage<Content: View>: View {
             }.padding(.horizontal, 20).padding(.top, 16).padding(.bottom, 24)
                 .frame(maxWidth: 660).frame(maxWidth: .infinity)
         }
+        #if DEBUG
+        .defaultScrollAnchor(DebugLaunchConfiguration.scrollAnchor)
+        #endif
     }
 }
 
@@ -83,7 +86,7 @@ struct SettingsView: View {
                 }
             }.padding(.top, 12)
             Divider().overlay(colors.subtle).padding(.top, 28)
-            Text("Everything stays on this device. No account, ads, analytics, or Internet permission.")
+            Text("Everything stays on this device. No account, ads, analytics, or internet access.")
                 .font(.subheadline).foregroundStyle(colors.secondary).padding(.top, 20)
         }.accessibilityIdentifier("settings-screen")
     }

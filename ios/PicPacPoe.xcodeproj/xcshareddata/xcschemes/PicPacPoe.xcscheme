@@ -35,6 +35,7 @@
                ReferencedContainer = "container:PicPacPoe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+      <BuildActionEntry buildForTesting="YES" buildForRunning="NO" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="NO"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E60000000000000000000001" BuildableName="PicPacPoeUITests.xctest" BlueprintName="PicPacPoeUITests" ReferencedContainer="container:PicPacPoe.xcodeproj"/></BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -55,6 +56,7 @@
                ReferencedContainer = "container:PicPacPoe.xcodeproj">
             </BuildableReference>
          </TestableReference>
+      <TestableReference skipped="NO" parallelizable="NO"><BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="E60000000000000000000001" BuildableName="PicPacPoeUITests.xctest" BlueprintName="PicPacPoeUITests" ReferencedContainer="container:PicPacPoe.xcodeproj"/></TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

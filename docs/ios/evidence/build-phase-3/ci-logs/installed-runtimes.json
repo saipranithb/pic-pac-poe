@@ -1,0 +1,14 @@
+{
+  "runtimes": [
+    {
+      "name": "iOS 26.5",
+      "identifier": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+      "version": "26.5",
+      "buildversion": "23F77",
+      "isAvailable": true,
+      "supportedArchitectures": [
+        "arm64"
+      ]
+    }
+  ]
+}

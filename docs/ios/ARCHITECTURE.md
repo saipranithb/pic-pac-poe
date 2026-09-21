@@ -107,7 +107,7 @@ The current restorable presentation, including a match when one exists, is store
 | Sound and haptics | Native effect consumers honoring independent settings |
 | Golden behavior | Shared JSON plus independent Kotlin and Swift consumers |
 
-AI Lab is part of the complete iOS product. It includes the production explanations, Random and Heuristic opponents, MCTS configured for 2,000 simulations, Q-learning backed by the unchanged 891,749-byte policy artifact, and the governed fallback behavior. Training, telemetry, cloud inference and new algorithms remain out of scope.
+AI Lab is part of the complete iOS product. It explains Random, Heuristic and Expectiminimax, and offers playable MCTS configured for 2,000 simulations and Q-learning backed by the unchanged 891,749-byte policy artifact, with governed fallback behavior. Random and Heuristic are explanation rows, matching Android; they are not additional playable modes. Training, telemetry, cloud inference and new algorithms remain out of scope.
 
 ## Visual implementation and review
 
@@ -116,6 +116,10 @@ The SwiftUI layer uses the handoff's semantic tokens instead of platform-default
 The repeatable evidence tool builds the real Debug app unsigned and launches deterministic, in-memory presentation fixtures on an ephemeral simulator. It captures Home, human placement, Local handoff and reveal, computer targeting and settlement, result, Settings, How to Play and AI Lab in both themes, verifies the canonical Android reference hashes, and generates an uncropped comparison sheet. Fixture screenshots establish rendered state and visual intent; they do not substitute for Build Phase 3's live-flow, assistive-technology or performance checks.
 
 ## Six delivery phases
+
+Build Phase 3 adds native XCUITest flows with real production workers and atomic storage in an isolated Debug-only namespace. Explicitly labeled extended holds let tests inspect transient stages; ordinary complete games use production durations. Every injection switch is excluded from Release. The governed snapshot harness captures 24 states/viewports in both themes across seven device/text/motion profiles, records the exact build inputs and Android reference hashes, and requires a separate review record before baseline comparison. It never replaces baselines automatically. The native asset catalog contains a reproducible adaptation of the canonical launcher vectors and a semantic launch background.
+
+Hardening rejects inactive game input and stale worker launch after suspended persistence. Supporting-page navigation cancels old work and publishes its destination once, avoiding a stale intermediate Home continuation. Result artwork exposes one final-board image summary; underlying gameplay is hidden from modal accessibility and hit testing. Transition speech is silent on initial restoration, suspension and settlement, and announces actual selected/placed coordinates only on new transitions. Home difficulty uses native scene storage; the decorative loop remains outside all gameplay and persistence state.
 
 The fourteen milestones in the canonical parity checklist are acceptance criteria within these six owner-facing phases. Ordinary milestone work, verification and checkpoint commits proceed autonomously inside the authorized phase.
 

@@ -2,7 +2,7 @@ name: iOS CI
 
 on:
   push:
-    branches: [dev, main]
+    branches: [dev, main, codex/ios-native-parity]
   pull_request:
     branches: [dev, main]
 
@@ -13,78 +13,145 @@ concurrency:
   group: ios-ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
-jobs:
-  verify:
-    name: Verify unsigned native iOS product
-    runs-on: macos-26
-    timeout-minutes: 30
-    env:
-      DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+env:
+  DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+  XCODE_DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
 
+jobs:
+  package:
+    name: Shared fixtures and native package
+    runs-on: macos-26
+    timeout-minutes: 20
     steps:
       - name: Check out source
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           persist-credentials: false
-
-      - name: Assert pinned Apple toolchain
-        shell: bash
-        run: |
-          set -euo pipefail
-          [[ "$(sw_vers -productVersion)" == 26.* ]]
-          [[ "$(uname -m)" == "arm64" ]]
-          [[ "$(xcodebuild -version | sed -n '1p')" == "Xcode 26.6" ]]
-          [[ "$(xcodebuild -version | sed -n '2p')" == "Build version 17F113" ]]
-          swift --version | grep -F "Apple Swift version 6.3.3"
-          [[ "$(xcrun --sdk iphonesimulator --show-sdk-version)" == "26.5" ]]
-
-      - name: Verify portable handoff
-        run: python3 docs/ios-handoff/verify-handoff.py
-
-      - name: Test native Swift package
+      - name: Assert existing pinned Apple environment
+        run: bash ios/Scripts/verify-apple-toolchain.sh
+      - name: Verify handoff, exact fixture bytes and CI governance
+        run: python3 ios/Scripts/verify-ci-contract.py
+      - name: Test Swift rules, fixture consumers, AI and restoration
         run: swift test --package-path ios/Packages/PicPacKit
+      - name: Record gate outcome
+        if: always()
+        run: echo 'Native package and shared-fixture gate — ${{ job.status }}' >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Test unsigned app integration
+  app-tests:
+    name: ${{ matrix.label }}
+    runs-on: macos-26
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: Hosted native integration
+            configuration: Test
+            target: PicPacPoeTests
+          - label: Player-driven UI flows
+            configuration: Debug
+            target: PicPacPoeUITests
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Assert existing pinned Apple environment
+        run: bash ios/Scripts/verify-apple-toolchain.sh
+      - name: Run unsigned simulator tests
         run: >-
           xcodebuild
           -project ios/PicPacPoe.xcodeproj
           -scheme PicPacPoe
-          -configuration Test
+          -configuration '${{ matrix.configuration }}'
+          -only-testing:'${{ matrix.target }}'
           -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.5'
+          -parallel-testing-enabled NO
           -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-test"
-          CODE_SIGNING_ALLOWED=NO
+          -resultBundlePath "$RUNNER_TEMP/${{ matrix.target }}.xcresult"
+          CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
           test
+      - name: Preserve test results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ios-${{ matrix.target }}-${{ github.run_id }}
+          path: ${{ runner.temp }}/${{ matrix.target }}.xcresult
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Record gate outcome
+        if: always()
+        run: echo '${{ matrix.label }} — ${{ job.status }}; unsigned iOS 26.5 simulator evidence only' >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Build unsigned app (Debug)
+  unsigned-build:
+    name: Unsigned ${{ matrix.configuration }}
+    runs-on: macos-26
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Assert existing pinned Apple environment
+        run: bash ios/Scripts/verify-apple-toolchain.sh
+      - name: Build unsigned simulator app
         run: >-
           xcodebuild
           -project ios/PicPacPoe.xcodeproj
           -scheme PicPacPoe
-          -configuration Debug
+          -configuration '${{ matrix.configuration }}'
           -destination 'generic/platform=iOS Simulator'
-          -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-debug"
-          CODE_SIGNING_ALLOWED=NO
+          -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-build"
+          CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
           build
-
-      - name: Build unsigned app (Release)
-        run: >-
-          xcodebuild
-          -project ios/PicPacPoe.xcodeproj
-          -scheme PicPacPoe
-          -configuration Release
-          -destination 'generic/platform=iOS Simulator'
-          -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-release"
-          CODE_SIGNING_ALLOWED=NO
-          build
-
-      - name: Upload failure evidence
+      - name: Check Release identity and development-hook exclusion
+        if: matrix.configuration == 'Release'
+        run: python3 ios/Scripts/verify-unsigned-app.py "$RUNNER_TEMP/pic-pac-poe-build/Build/Products/Release-iphonesimulator/PicPacPoe.app"
+      - name: Preserve failure logs
         if: failure()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
         with:
-          name: ios-product-failure-${{ github.run_id }}
+          name: ios-${{ matrix.configuration }}-build-${{ github.run_id }}
+          path: ${{ runner.temp }}/pic-pac-poe-build/Logs/**
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Record gate outcome
+        if: always()
+        run: echo 'Unsigned ${{ matrix.configuration }} build — ${{ job.status }}; deployment target iOS 17.0 is compile-time coverage' >> "$GITHUB_STEP_SUMMARY"
+
+  snapshots:
+    name: Governed simulator snapshots
+    runs-on: macos-26
+    timeout-minutes: 60
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Assert existing pinned Apple environment
+        run: bash ios/Scripts/verify-apple-toolchain.sh
+      - name: Capture actual simulator matrix
+        run: python3 ios/Scripts/snapshot_phase3.py capture --output "$RUNNER_TEMP/pic-pac-poe-snapshots"
+      - name: Compare approved baselines without updating them
+        run: >-
+          python3 ios/Scripts/snapshot_phase3.py compare
+          --baseline docs/ios/evidence/build-phase-3/baselines
+          --candidate "$RUNNER_TEMP/pic-pac-poe-snapshots"
+          --output "$RUNNER_TEMP/snapshot-comparison.json"
+      - name: Preserve captures and comparison report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ios-snapshots-${{ github.run_id }}
           path: |
-            ${{ runner.temp }}/pic-pac-poe-debug/Logs/**
-            ${{ runner.temp }}/pic-pac-poe-release/Logs/**
-            ${{ runner.temp }}/pic-pac-poe-test/Logs/**
-          if-no-files-found: ignore
-          retention-days: 7
+            ${{ runner.temp }}/pic-pac-poe-snapshots/**
+            ${{ runner.temp }}/snapshot-comparison.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Record gate outcome
+        if: always()
+        run: echo 'Governed snapshots — ${{ job.status }}; same-toolchain 99.5% agreement at 2/255 per-channel tolerance; baseline changes require visual review' >> "$GITHUB_STEP_SUMMARY"

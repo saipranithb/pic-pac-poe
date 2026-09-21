@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "9423f47b34daee71cb5ed340cf0194c941e71b92",
+  "sourceNote": "Android source and fixture consumers unchanged during the phase; iOS and CI work occurred concurrently in the authorized implementation worktree.",
+  "branch": "codex/ios-native-parity",
+  "canonicalCheckoutCommit": "dc7cb397ad335783c13c7976d4cef816d2fc0909",
+  "androidRuntimeTree": "9e49470f81d1bf23afc083e3f26308b353d24dac",
+  "fixtureSHA256": "c68308f7a6b3684cc413bc37f495a7dfade8e5bd7a928f4273d79cbb101021ae",
+  "moduleExecutions": {
+    "game-core": {
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "game-ai": {
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "game-tools": {
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "app": {
+      "tests": 58,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "totalExecutions": 86,
+  "uniqueTests": 57,
+  "gradleCommand": "ANDROID_HOME=/Users/bavabangaru/Library/Android/sdk JAVA_HOME=/Users/bavabangaru/Library/Java/JavaVirtualMachines/temurin-17.0.20/Contents/Home sh gradlew --no-daemon clean check :app:assembleDebug :app:assembleDebugAndroidTest :app:bundleRelease",
+  "gradleResult": "BUILD SUCCESSFUL in 2m 3s; 151 tasks executed",
+  "lint": "No issues found.",
+  "diagnosticBundle": {
+    "path": "app/build/outputs/bundle/release/app-release.aab",
+    "bytes": 7719334,
+    "sha256": "755e94d976541620010f06b1b1faabcba1cd45173c72942b563eb6bcedaffdec",
+    "signature": "jar is unsigned.",
+    "uploadReady": false
+  },
+  "hostedActionsExecuted": false,
+  "releaseIdentityResolved": false,
+  "instrumentation": {
+    "result": "OK (26 tests)",
+    "tests": 26,
+    "seconds": 233.485,
+    "emulator": "Pixel_8",
+    "serial": "emulator-5554",
+    "androidVersion": "16",
+    "api": 36,
+    "abi": "arm64-v8a",
+    "physicalDevice": false,
+    "command": "adb -s emulator-5554 shell am instrument -w -r com.thevaguebox.probabilistictictactoe.test/androidx.test.runner.AndroidJUnitRunner"
+  }
+}

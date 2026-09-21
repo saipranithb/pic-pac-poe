@@ -23,6 +23,8 @@
 		D30000000000000000000001 /* fredoka_medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D40000000000000000000001 /* fredoka_medium.ttf */; };
 		D30000000000000000000002 /* fredoka_semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D40000000000000000000002 /* fredoka_semibold.ttf */; };
 		D30000000000000000000003 /* fredoka-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D40000000000000000000003 /* fredoka-OFL.txt */; };
+		E10000000000000000000001 = {isa = PBXBuildFile; fileRef = E20000000000000000000001; };
+		F10000000000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20000000000000000000001 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,7 @@
 			remoteGlobalIDString = A50000000000000000000001;
 			remoteInfo = PicPacPoe;
 		};
+		E50000000000000000000001 = {isa = PBXContainerItemProxy; containerPortal = A80000000000000000000001; proxyType = 1; remoteGlobalIDString = A50000000000000000000001; remoteInfo = PicPacPoe; };
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		D40000000000000000000001 /* fredoka_medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fredoka_medium.ttf"; path = "../app/src/main/res/font/fredoka_medium.ttf"; sourceTree = SOURCE_ROOT; };
 		D40000000000000000000002 /* fredoka_semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "fredoka_semibold.ttf"; path = "../app/src/main/res/font/fredoka_semibold.ttf"; sourceTree = SOURCE_ROOT; };
 		D40000000000000000000003 /* fredoka-OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = "fredoka-OFL.txt"; path = "../app/src/main/assets/licenses/fredoka-OFL.txt"; sourceTree = SOURCE_ROOT; };
+		E20000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPacPoeUITests.swift; sourceTree = "<group>"; };
+		E20000000000000000000002 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicPacPoeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F20000000000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E40000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -84,6 +91,7 @@
 			children = (
 				A40000000000000000000002 /* PicPacPoe */,
 				C50000000000000000000001 /* PicPacPoeTests */,
+				E30000000000000000000001 /* PicPacPoeUITests */,
 				A40000000000000000000003 /* Config */,
 				A40000000000000000000004 /* Products */,
 			);
@@ -94,6 +102,7 @@
 			children = (
 				A20000000000000000000001 /* PicPacPoeApp.swift */,
 				A20000000000000000000006 /* Info.plist */,
+				F20000000000000000000001 /* Assets.xcassets */,
 				D20000000000000000000001 /* FormTheme.swift */,
 				D20000000000000000000002 /* PhysicalBoard.swift */,
 				D20000000000000000000003 /* HomeView.swift */,
@@ -125,6 +134,7 @@
 			children = (
 				A20000000000000000000002 /* PicPacPoe.app */,
 				C30000000000000000000002 /* PicPacPoeTests.xctest */,
+				E20000000000000000000002 /* PicPacPoeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,6 +147,7 @@
 			path = PicPacPoeTests;
 			sourceTree = "<group>";
 		};
+		E30000000000000000000001 = {isa = PBXGroup; children = (E20000000000000000000001,); path = PicPacPoeUITests; sourceTree = "<group>"; };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -182,6 +193,17 @@
 			productReference = C30000000000000000000002 /* PicPacPoeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		E60000000000000000000001 /* PicPacPoeUITests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = E70000000000000000000001;
+            buildPhases = (E40000000000000000000001, E40000000000000000000002, E40000000000000000000003,);
+            buildRules = ();
+            dependencies = (E50000000000000000000002,);
+            name = PicPacPoeUITests;
+            productName = PicPacPoeUITests;
+            productReference = E20000000000000000000002;
+            productType = "com.apple.product-type.bundle.ui-testing";
+        };
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,6 +242,7 @@
 			targets = (
 				A50000000000000000000001 /* PicPacPoe */,
 				C60000000000000000000001 /* PicPacPoeTests */,
+				E60000000000000000000001 /* PicPacPoeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -232,6 +255,7 @@
 				D30000000000000000000001 /* fredoka_medium.ttf in Resources */,
 				D30000000000000000000002 /* fredoka_semibold.ttf in Resources */,
 				D30000000000000000000003 /* fredoka-OFL.txt in Resources */,
+				F10000000000000000000001 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +266,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E40000000000000000000003 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -269,6 +294,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E40000000000000000000001 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (E10000000000000000000001,); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -277,6 +303,7 @@
 			target = A50000000000000000000001 /* PicPacPoe */;
 			targetProxy = C20000000000000000000001 /* PBXContainerItemProxy */;
 		};
+		E50000000000000000000002 = {isa = PBXTargetDependency; target = A50000000000000000000001; targetProxy = E50000000000000000000001; };
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -489,6 +516,44 @@
 			};
 			name = Release;
 		};
+        E80000000000000000000001 /* Debug */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = A20000000000000000000003;
+            buildSettings = {
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = "";
+                PRODUCT_BUNDLE_IDENTIFIER = dev.saipranith.picpacpoe.uitests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                TEST_TARGET_NAME = PicPacPoe;
+                SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+            };
+            name = Debug;
+        };
+        E80000000000000000000002 /* Test */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = A20000000000000000000004;
+            buildSettings = {
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = "";
+                PRODUCT_BUNDLE_IDENTIFIER = dev.saipranith.picpacpoe.uitests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                TEST_TARGET_NAME = PicPacPoe;
+                SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+            };
+            name = Test;
+        };
+        E80000000000000000000003 /* Release */ = {
+            isa = XCBuildConfiguration;
+            baseConfigurationReference = A20000000000000000000007;
+            buildSettings = {
+                GENERATE_INFOPLIST_FILE = YES;
+                INFOPLIST_FILE = "";
+                PRODUCT_BUNDLE_IDENTIFIER = dev.saipranith.picpacpoe.uitests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                TEST_TARGET_NAME = PicPacPoe;
+            };
+            name = Release;
+        };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -522,6 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		E70000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (E80000000000000000000001, E80000000000000000000002, E80000000000000000000003,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */

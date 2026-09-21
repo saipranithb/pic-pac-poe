@@ -684,6 +684,164 @@ final class PresentationCoordinatorTests: XCTestCase {
 
     }
 
+    func testEveryBoundarySurvivesInactiveBackgroundRelaunchWithoutReplay() async throws {
+        let snapshots = try restorationBoundarySnapshots()
+        XCTAssertEqual(snapshots.count, 21)
+        for (name, snapshot) in snapshots {
+            let store = InMemoryLocalStateStore(snapshotData: try PersistenceCodec.encode(snapshot))
+            let random = ScriptedDrawRandom([])
+            let worker = CancellableCountingAIWorker()
+            let clock = RecordingClock()
+            let coordinator = makeCoordinator(random: random, clock: clock, worker: worker, store: store)
+            await coordinator.restore()
+            await drainTasks()
+            await coordinator.setSceneActive(false)
+            // A second inactive/background callback is inert and cannot resume a beat.
+            let writesBeforeBackground = await store.snapshotWriteCount
+            await coordinator.setSceneActive(false)
+            let writesAfterBackground = await store.snapshotWriteCount
+            XCTAssertEqual(writesBeforeBackground, writesAfterBackground, name)
+            for cell in 0...8 { await coordinator.place(at: cell) }
+            await coordinator.readyForReveal()
+            await coordinator.presentationStepFinished(snapshot.state.presentationID)
+            XCTAssertEqual(coordinator.state, snapshot.state, name)
+            XCTAssertNil(coordinator.feedbackEvent, name)
+            XCTAssertEqual(random.callCount, 0, name)
+
+            let savedData = await store.loadSnapshotData()
+            let persisted = try XCTUnwrap(savedData)
+            let encoded = try PersistenceCodec.decode(RestorationSnapshot.self, from: persisted)
+            XCTAssertEqual(encoded.state, snapshot.state, name)
+            let restoredClock = RecordingClock()
+            let restoredWorker = CancellableCountingAIWorker()
+            let relaunched = GameCoordinator(
+                drawRandom: random, clock: restoredClock, aiWorker: restoredWorker,
+                store: store, initialSceneIsActive: false,
+                requiresRestorationBeforeCommands: true
+            )
+            await relaunched.restore()
+            XCTAssertEqual(relaunched.state, snapshot.state, name)
+            XCTAssertNil(relaunched.feedbackEvent, name)
+            let inactiveSearches = await restoredWorker.numberOfCalls()
+            let inactiveClocks = await restoredClock.recordedMilliseconds()
+            XCTAssertEqual(inactiveSearches, 0, name)
+            XCTAssertEqual(inactiveClocks, [], name)
+            await relaunched.setSceneActive(true)
+            await drainTasks()
+            XCTAssertEqual(relaunched.state, snapshot.state, name)
+            XCTAssertNil(relaunched.feedbackEvent, name)
+            XCTAssertEqual(random.callCount, 0, name)
+            let resumedClocks = await restoredClock.recordedMilliseconds()
+            let expectedDelay = snapshot.state.screen == .game
+                ? snapshot.state.stage.delayMilliseconds(reducedMotion: false) : nil
+            XCTAssertEqual(resumedClocks, expectedDelay.map { [$0] } ?? [], name)
+            if snapshot.state.stage == .aiTargeting {
+                await relaunched.presentationStepFinished(relaunched.state.presentationID)
+                let committed = relaunched.state
+                XCTAssertEqual(committed.board.occupiedCount, snapshot.state.board.occupiedCount + 1, name)
+                await relaunched.presentationStepFinished(snapshot.state.presentationID)
+                XCTAssertEqual(relaunched.state, committed, name)
+            } else if [.aiPlacing, .aiSettling].contains(snapshot.state.stage) {
+                await relaunched.presentationStepFinished(relaunched.state.presentationID)
+                XCTAssertEqual(relaunched.state.board, snapshot.state.board, name)
+                XCTAssertEqual(random.callCount, 0, name)
+                XCTAssertNil(relaunched.feedbackEvent, name)
+            }
+            await relaunched.setSceneActive(false)
+        }
+    }
+
+    func testCancelledPreInterruptionDecisionCannotWinAgainstRestartedSearch() async {
+        let worker = GateAIWorker()
+        let random = ScriptedDrawRandom([0, 8])
+        let coordinator = makeCoordinator(random: random, worker: worker)
+        await advanceToComputerReveal(coordinator)
+        await waitForWorkerCalls(worker, count: 1)
+        let held = coordinator.state.picPac
+        await coordinator.setSceneActive(false)
+        await coordinator.setSceneActive(true)
+        await waitForWorkerCalls(worker, count: 2)
+        await coordinator.presentationStepFinished(coordinator.state.presentationID)
+        XCTAssertEqual(coordinator.state.stage, .aiThinking)
+        await worker.succeedNext(with: 4)
+        await drainTasks()
+        XCTAssertEqual(coordinator.state.stage, .aiThinking)
+        XCTAssertNil(coordinator.state.aiTargetCell)
+        await worker.succeedNext(with: 8)
+        await drainTasks()
+        XCTAssertEqual(coordinator.state.aiTargetCell, 8)
+        XCTAssertEqual(coordinator.state.picPac, held)
+        XCTAssertEqual(random.callCount, 2)
+        await coordinator.setSceneActive(false)
+    }
+
+    func testSlowRevealPersistenceCannotLaunchStaleSearchAfterReplacement() async {
+        let store = GatedSaveStore()
+        let worker = CancellableCountingAIWorker()
+        let coordinator = makeCoordinator(random: ScriptedDrawRandom([0, 8]), worker: worker, store: store)
+        await coordinator.startPicPacAI(difficulty: .hard)
+        await coordinator.presentationStepFinished(coordinator.state.presentationID)
+        await coordinator.presentationStepFinished(coordinator.state.presentationID)
+        await coordinator.place(at: 0)
+        await store.gateNextSave()
+        let reveal = Task { await coordinator.presentationStepFinished(coordinator.state.presentationID) }
+        for _ in 0..<100 {
+            if await store.isWaiting() { break }
+            await Task.yield()
+        }
+        XCTAssertEqual(coordinator.state.stage, .revealing)
+        await coordinator.startClassic()
+        let replacement = coordinator.state
+        await store.releaseSave()
+        await reveal.value
+        await drainTasks()
+        let searches = await worker.numberOfCalls()
+        XCTAssertEqual(searches, 0, "Obsolete reveal must not create any new search")
+        XCTAssertEqual(coordinator.state, replacement)
+        await coordinator.setSceneActive(false)
+    }
+
+    func testSlowNavigationCannotReplaceANewerUserDestination() async {
+        let store = GatedSaveStore()
+        let coordinator = makeCoordinator(store: store)
+        await coordinator.startClassic()
+        await store.gateNextSave()
+        let oldNavigation = Task { await coordinator.show(.settings) }
+        for _ in 0..<100 {
+            if await store.isWaiting() { break }
+            await Task.yield()
+        }
+        await coordinator.show(.howTo)
+        await store.releaseSave()
+        await oldNavigation.value
+        XCTAssertEqual(coordinator.state.screen, .howTo)
+    }
+
+    func testSlowNavigationCannotReplaceANewerReturnHome() async {
+        for newerCommand in ["goHome", "newGameThenHome", "showHome"] {
+            let store = GatedSaveStore()
+            let coordinator = makeCoordinator(store: store)
+            await coordinator.startClassic()
+            await store.gateNextSave()
+            let oldNavigation = Task { await coordinator.show(.settings) }
+            let deadline = ContinuousClock.now.advanced(by: .seconds(2))
+            while !(await store.isWaiting()), ContinuousClock.now < deadline { await Task.yield() }
+            let isWaiting = await store.isWaiting()
+            XCTAssertTrue(isWaiting, "The earlier save must actually be suspended")
+            if newerCommand == "newGameThenHome" { await coordinator.startClassic() }
+            if newerCommand == "showHome" { await coordinator.show(.home) }
+            else { await coordinator.goHome() }
+            await store.releaseSave()
+            await oldNavigation.value
+            XCTAssertEqual(coordinator.state.screen, .home, newerCommand)
+            XCTAssertNil(coordinator.feedbackEvent)
+            let persisted = await store.loadSnapshotData()
+            if let persisted, let snapshot = try? PersistenceCodec.decode(RestorationSnapshot.self, from: persisted) {
+                XCTAssertEqual(snapshot.state.screen, .home, "The latest destination must also persist: \(newerCommand)")
+            } else { XCTFail("Missing valid final Home snapshot") }
+        }
+    }
+
     private func makeCoordinator(
         random: ScriptedDrawRandom = ScriptedDrawRandom([]),
         clock: any PresentationClock = RecordingClock(),
@@ -1793,4 +1951,26 @@ private enum TestFailure: Error {
 private enum GoldenFixtureFailure: Error {
     case missing(String)
     case invalidValue(String)
+}
+
+/// Persists before suspending the acknowledgement, like a slow serial disk queue.
+private actor GatedSaveStore: LocalStateStore {
+    private var snapshot: Data?
+    private var settings: Data?
+    private var gate = false
+    private var waiter: CheckedContinuation<Void, Never>?
+    func gateNextSave() { gate = true }
+    func isWaiting() -> Bool { waiter != nil }
+    func releaseSave() { waiter?.resume(); waiter = nil }
+    func loadSnapshotData() -> Data? { snapshot }
+    func saveSnapshotData(_ data: Data) async {
+        snapshot = data
+        if gate {
+            gate = false
+            await withCheckedContinuation { waiter = $0 }
+        }
+    }
+    func clearSnapshot() { snapshot = nil }
+    func loadSettingsData() -> Data? { settings }
+    func saveSettingsData(_ data: Data) { settings = data }
 }
