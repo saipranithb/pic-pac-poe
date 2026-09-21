@@ -23,3 +23,10 @@ keystore.properties
 signing.properties
 .env
 .env.*
+
+# Xcode / Swift Package Manager
+**/xcuserdata/
+**/*.xcuserstate
+*.xcresult
+/DerivedData/
+/ios/.build/
