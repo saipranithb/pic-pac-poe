@@ -123,6 +123,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     testImplementation(libs.junit)
+    testImplementation(testFixtures(project(":game-core")))
     testImplementation(libs.androidx.arch.core.testing)
     testImplementation(libs.androidx.test.core.ktx)
     testImplementation(libs.kotlinx.coroutines.test)

@@ -47,6 +47,16 @@
       [2, 4, 6]
     ]
   },
+  "requiredFixtureGroups": [
+    "scriptedGames",
+    "ruleTransitions",
+    "bagProbabilities",
+    "deterministicDraws",
+    "scriptedRandomTraces",
+    "aiChoices",
+    "presentationScenarios",
+    "restorationScenarios"
+  ],
   "scriptedGames": [
     {
       "id": "picpac-player-one-wins-with-o",
@@ -287,6 +297,31 @@
     {"id": "two-one-boundary-x", "remainingX": 2, "remainingO": 1, "nextIntBound": 3, "scriptedResult": 1, "expectedSymbol": "X"},
     {"id": "two-one-boundary-o", "remainingX": 2, "remainingO": 1, "nextIntBound": 3, "scriptedResult": 2, "expectedSymbol": "O"}
   ],
+  "scriptedRandomTraces": [
+    {
+      "id": "bag-five-call-boundary-trace",
+      "consumer": "PIC_PAC_SESSION",
+      "initial": {"remainingX": 5, "remainingO": 5},
+      "steps": [
+        {"call": 1, "nextIntBound": 10, "scriptedResult": 4, "expectedSymbol": "X", "placeCell": 0},
+        {"call": 2, "nextIntBound": 9, "scriptedResult": 4, "expectedSymbol": "O", "placeCell": 1},
+        {"call": 3, "nextIntBound": 8, "scriptedResult": 3, "expectedSymbol": "X", "placeCell": 3},
+        {"call": 4, "nextIntBound": 7, "scriptedResult": 6, "expectedSymbol": "O", "placeCell": 4},
+        {"call": 5, "nextIntBound": 6, "scriptedResult": 2, "expectedSymbol": "X", "placeCell": 8}
+      ],
+      "portableNote": "Inject each bounded result in order. Assert every requested bound and call index; do not compare seeded platform RNG streams."
+    },
+    {
+      "id": "random-agent-three-call-index-trace",
+      "consumer": "RANDOM_AGENT",
+      "steps": [
+        {"call": 1, "board": [null, null, null, null, null, null, null, null, null], "heldSymbol": "X", "remainingX": 4, "remainingO": 5, "legalCells": [0, 1, 2, 3, 4, 5, 6, 7, 8], "nextIntBound": 9, "scriptedResult": 4, "expectedCell": 4},
+        {"call": 2, "board": ["X", null, null, null, null, null, null, null, null], "heldSymbol": "O", "remainingX": 4, "remainingO": 4, "legalCells": [1, 2, 3, 4, 5, 6, 7, 8], "nextIntBound": 8, "scriptedResult": 0, "expectedCell": 1},
+        {"call": 3, "board": ["X", null, null, null, "O", null, null, null, null], "heldSymbol": "X", "remainingX": 3, "remainingO": 4, "legalCells": [1, 2, 3, 5, 6, 7, 8], "nextIntBound": 7, "scriptedResult": 6, "expectedCell": 8}
+      ],
+      "portableNote": "Use one scripted bounded-random source for the whole trace and fail on an extra, missing, reordered or differently bounded call."
+    }
+  ],
   "aiChoices": [
     {
       "id": "easy-immediate-win-with-x",
@@ -353,6 +388,9 @@
       "id": "random-scripted-legal-index",
       "agent": "RANDOM_BASELINE",
       "board": ["X", null, null, null, "O", null, null, null, null],
+      "heldSymbol": "X",
+      "remainingX": 3,
+      "remainingO": 4,
       "legalCells": [1, 2, 3, 5, 6, 7, 8],
       "scriptedNextIntResult": 2,
       "expectedCell": 3,
