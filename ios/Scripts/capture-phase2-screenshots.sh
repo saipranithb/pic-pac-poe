@@ -376,6 +376,12 @@ with rows_path.open(newline="", encoding="utf-8") as handle:
                 "-AppleLanguages", "(en)",
                 "-AppleLocale", "en_US",
             ],
+            "settings": {
+                "soundEnabled": scenario == "settings" and theme == "dark",
+                "hapticsEnabled": scenario == "settings" and theme == "dark",
+                "reducedMotion": scenario == "settings" and theme == "light",
+                "theme": theme,
+            },
             "canonical": {
                 "relativePath": canonical_path,
                 "theme": reference["theme"],
@@ -425,9 +431,11 @@ manifest = {
         "scheme": "PicPacPoe",
         "configuration": "Debug",
         "codeSigningAllowed": False,
-        "soundEnabled": False,
-        "hapticsEnabled": False,
-        "reducedMotion": False,
+        "defaultFixtureSettings": {
+            "soundEnabled": False,
+            "hapticsEnabled": False,
+            "reducedMotion": False,
+        },
     },
     "canonicalReferenceManifest": "docs/ios-handoff/reference/screenshot-manifest.json",
     "captures": captures,

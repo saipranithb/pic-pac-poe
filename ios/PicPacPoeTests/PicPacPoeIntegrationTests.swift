@@ -111,6 +111,29 @@ final class PicPacPoeIntegrationTests: XCTestCase {
     }
 
     @MainActor
+    func testSettingsCaptureMatchesCanonicalControlStates() async throws {
+        #if DEBUG
+        let dark = try XCTUnwrap(DebugLaunchConfiguration.makeCoordinator(arguments: [
+            "-screenshot-scenario", "settings", "-screenshot-theme", "dark"
+        ]))
+        await dark.restore()
+        XCTAssertTrue(dark.settings.soundEnabled)
+        XCTAssertTrue(dark.settings.hapticsEnabled)
+        XCTAssertFalse(dark.settings.reducedMotion)
+        XCTAssertEqual(dark.settings.theme, .dark)
+
+        let light = try XCTUnwrap(DebugLaunchConfiguration.makeCoordinator(arguments: [
+            "-screenshot-scenario", "settings", "-screenshot-theme", "light"
+        ]))
+        await light.restore()
+        XCTAssertFalse(light.settings.soundEnabled)
+        XCTAssertFalse(light.settings.hapticsEnabled)
+        XCTAssertTrue(light.settings.reducedMotion)
+        XCTAssertEqual(light.settings.theme, .light)
+        #endif
+    }
+
+    @MainActor
     func testFeedbackCuesAreSmallLocalPCMFiles() throws {
         for kind in FeedbackKind.allCases {
             let data = FeedbackService.wave(kind)

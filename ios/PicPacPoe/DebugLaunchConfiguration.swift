@@ -14,9 +14,15 @@ enum DebugLaunchConfiguration {
         let scenario = value("-screenshot-scenario")
         guard scenario != nil || arguments.contains("-ui-test-reset") else { return nil }
         do {
-            let settings = AppSettings(soundEnabled: false, hapticsEnabled: false,
-                                       reducedMotion: arguments.contains("-screenshot-reduced"),
-                                       theme: ThemePreference(rawValue: value("-screenshot-theme") ?? "system") ?? .system)
+            let theme = ThemePreference(rawValue: value("-screenshot-theme") ?? "system") ?? .system
+            let canonicalSettingsDark = scenario == "settings" && theme == .dark
+            let canonicalSettingsLight = scenario == "settings" && theme == .light
+            let settings = AppSettings(
+                soundEnabled: canonicalSettingsDark,
+                hapticsEnabled: canonicalSettingsDark,
+                reducedMotion: arguments.contains("-screenshot-reduced") || canonicalSettingsLight,
+                theme: theme
+            )
             var snapshot = try snapshot(for: scenario ?? "home")
             if scenario == nil { snapshot.titleEntranceConsumed = false }
             let store = InMemoryLocalStateStore(snapshotData: try PersistenceCodec.encode(snapshot), settingsData: try PersistenceCodec.encode(settings))

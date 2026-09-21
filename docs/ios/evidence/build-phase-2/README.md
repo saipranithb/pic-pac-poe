@@ -57,7 +57,7 @@ Each app launch receives:
 -AppleLocale en_US
 ```
 
-The simulator uses Large content size, a deterministic 9:41 status bar, and normal motion. Debug fixtures disable sound and haptics and hold timed presentation stages through the screenshot clock. They prove rendered state and semantics, not live AI duration or end-to-end player progression.
+The simulator uses Large content size, a deterministic 9:41 status bar, and normal motion. Most Debug fixtures disable sound, haptics and reduced motion and hold timed presentation stages through the screenshot clock. The Settings fixtures reproduce the canonical control states: dark has Sound and Haptics on with Reduced motion off; light has Sound and Haptics off with Reduced motion on. Each capture's exact settings are recorded in `manifest.json`. Static launches do not emit feedback. These fixtures prove rendered state and semantics, not live AI duration or end-to-end player progression.
 
 After installation, the tool launches and terminates one unrecorded Home fixture. This absorbs the one-time system-service startup cost of a newly created simulator before any visual settle interval begins; `manifest.json` records the prewarm. Every recorded Home launch still starts its own governed animation clock and uses the stated 0.65-second X hold.
 
