@@ -1,0 +1,26 @@
+{
+  "sourceCommit": "bf384da11190cb45ff21866a6d804c85a35ce333",
+  "originalFrame": {
+    "configurationName": "Test Scheme Action",
+    "deviceId": "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+    "deviceName": "PicPac Phase3 UI",
+    "exportedFileName": "3A0AD34C-B001-4D1C-886B-C73B8453FD07.png",
+    "isAssociatedWithFailure": false,
+    "suggestedHumanReadableName": "terminal-settling-draw-before-interruption--uptime-4737682_0_0873E942-CF72-4655-A082-B86A2874433F.538",
+    "timestamp": 1789999806.46,
+    "path": "frames/terminal-settling-draw-before-interruption--uptime-4737682p538.png",
+    "testIdentifier": "PicPacPoeUITests/testTerminalComputerDrawSettlesBeforeResultAcrossRelaunch()",
+    "frameStem": "terminal-settling-draw-before-interruption",
+    "monotonicUptimeSeconds": 4737682.538,
+    "pixelWidth": 1206,
+    "pixelHeight": 2622,
+    "exifOrientation": 1,
+    "displayWidth": 1206,
+    "displayHeight": 2622,
+    "capturedAt": "2026-09-21T14:10:06.460000+00:00",
+    "sha256": "50623d93e7fc6b87322323d123b02abbe17b277dab6ccb88b1b601702bfd9a24"
+  },
+  "manifestSHA256": "d2cb39ef4c024cd93f8e89525971240cca6bf1d4a7157118971ad6ee335aab70",
+  "finding": "Terminal draw footer reads 1 pieces remain in the shared bag. Shared visible and AX footer now pluralizes piece/remain together.",
+  "originalRun": "/tmp/picpac-phase3-ui-bf384da-before-grammar"
+}

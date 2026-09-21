@@ -555,6 +555,9 @@ final class PicPacPoeUITests: XCTestCase {
         launch(extra: extra)
         XCTAssertTrue(element("game-board").waitForExistence(timeout: 10))
         XCTAssertFalse(result.exists, "Committed terminal move remains visible through settlement")
+        if expected == "Draw" {
+            XCTAssertTrue(app.staticTexts["1 piece remains in the shared bag"].exists, "Singular remaining count is grammatical in visible and accessibility copy")
+        }
         XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'cell-' AND enabled == YES")).count, 0)
         attach("\(scenario)-before-interruption")
         XCUIDevice.shared.press(.home)
@@ -562,6 +565,7 @@ final class PicPacPoeUITests: XCTestCase {
         else { app.activate() }
         XCTAssertTrue(element("game-board").waitForExistence(timeout: 10))
         XCTAssertFalse(result.exists, "Restoration resumes the entire readable settlement hold")
+        if expected == "Draw" { XCTAssertTrue(app.staticTexts["1 piece remains in the shared bag"].exists) }
         attach("\(scenario)-restored-settlement")
         XCTAssertTrue(result.waitForExistence(timeout: 20))
         XCTAssertTrue(app.staticTexts[expected].exists)

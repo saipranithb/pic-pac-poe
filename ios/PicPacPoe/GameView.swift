@@ -216,7 +216,9 @@ struct ProbabilityTray: View {
             Divider().overlay(colors.subtle).padding(.vertical, 10)
             let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 16)) : AnyLayout(HStackLayout(spacing: 16))
             layout { item(.x, count: remainingX); item(.o, count: remainingO) }
-            Text(held ? "\(remainingX + remainingO) pieces remain · held piece excluded" : "\(remainingX + remainingO) pieces remain in the shared bag")
+            let remaining = remainingX + remainingO
+            let countLabel = remaining == 1 ? "1 piece remains" : "\(remaining) pieces remain"
+            Text(held ? "\(countLabel) · held piece excluded" : "\(countLabel) in the shared bag")
                 .font(.system(.footnote, weight: .medium)).foregroundStyle(colors.secondary).padding(.top, 10)
         }.padding(16).modifier(FormSurface()).accessibilityElement(children: .contain)
             .accessibilitySortPriority(60).accessibilityIdentifier("bag")
