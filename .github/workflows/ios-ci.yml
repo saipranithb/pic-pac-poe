@@ -44,6 +44,17 @@ jobs:
       - name: Test native Swift package
         run: swift test --package-path ios/Packages/PicPacKit
 
+      - name: Test unsigned app integration
+        run: >-
+          xcodebuild
+          -project ios/PicPacPoe.xcodeproj
+          -scheme PicPacPoe
+          -configuration Test
+          -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.5'
+          -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-test"
+          CODE_SIGNING_ALLOWED=NO
+          test
+
       - name: Build unsigned app (Debug)
         run: >-
           xcodebuild
@@ -52,17 +63,6 @@ jobs:
           -configuration Debug
           -destination 'generic/platform=iOS Simulator'
           -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-debug"
-          CODE_SIGNING_ALLOWED=NO
-          build
-
-      - name: Build unsigned app (Test)
-        run: >-
-          xcodebuild
-          -project ios/PicPacPoe.xcodeproj
-          -scheme PicPacPoe
-          -configuration Test
-          -destination 'generic/platform=iOS Simulator'
-          -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-test"
           CODE_SIGNING_ALLOWED=NO
           build
 

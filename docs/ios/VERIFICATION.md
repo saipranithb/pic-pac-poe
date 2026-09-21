@@ -29,7 +29,19 @@ Run local checks from repository root with the installed Xcode selected per comm
 
 ```sh
 python3 docs/ios-handoff/verify-handoff.py
-swift test --package-path ios/Packages/PicPacKit
+python3 docs/ios-handoff/verify-handoff.py --strict-release
+ANDROID_HOME=/path/to/android/sdk sh gradlew --no-daemon \
+  :game-core:test :game-ai:test :game-tools:test :app:testDebugUnitTest
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
+  swift test --package-path ios/Packages/PicPacKit
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
+  xcodebuild -project ios/PicPacPoe.xcodeproj \
+  -scheme PicPacPoe \
+  -configuration Test \
+  -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.5' \
+  -derivedDataPath /tmp/pic-pac-poe-test \
+  CODE_SIGNING_ALLOWED=NO \
+  test
 DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
   xcodebuild -project ios/PicPacPoe.xcodeproj \
   -scheme PicPacPoe \
@@ -40,19 +52,25 @@ DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
   build
 ```
 
-Use `-configuration Test` for the deterministic test build. Package and coordinator test reports list individual fixture IDs and exhaustive assertion counts.
+The strict verifier's nonzero result is expected only while `releaseCommit` and `releaseTag` are null. Fixture failures are labeled by fixture ID, and named tests document the exhaustive board and state-space domains.
 
-| Gate | Required evidence | Scaffold result |
+| Gate | Required evidence | Build Phase 1 result |
 | --- | --- | --- |
 | Xcode project discovery | Shared `PicPacPoe` scheme appears in `xcodebuild -list` | Passed locally with Xcode 26.6 |
 | Unsigned Debug build | Generic iOS Simulator build succeeds with signing disabled | Passed locally for iOS Simulator 26.5 |
-| Unsigned Test build | Same project builds with the committed Test configuration | Passed locally for iOS Simulator 26.5 |
-| Swift package tests | Core, AI/presentation boundary and restoration test suites pass | Owned by Build Phase 1 integration |
-| Shared fixtures | Every recognized fixture group executes on Kotlin and Swift | Owned by Build Phase 1 integration |
-| Canonical graph | 11,065 chance + 21,314 decision + 6,648 terminal = 39,027 states | Owned by Build Phase 1 integration |
+| Xcode hosted test | Committed Test configuration builds and runs the application test target without signing | Passed on iPhone 17 Pro, iOS Simulator 26.5: 1 test, 0 failures |
+| Swift package tests | Core, AI/presentation boundary and restoration test suites pass | Passed: 41 tests, 0 failures |
+| Android/JVM tests | Existing modules plus Kotlin fixture consumers pass | Passed: 57 tests, 0 failures/errors/skips |
+| Shared fixtures | Every recognized fixture group executes on Kotlin and Swift | Passed: 36 unique IDs across eight required groups, including two scripted multi-call random traces; all seven presentation/restoration cases execute behaviorally; unknown schema/root groups are rejected |
+| Fixture identity | Swift's staged test resource exactly matches the canonical JSON | Passed: SHA-256 `c68308f7a6b3684cc413bc37f495a7dfade8e5bd7a928f4273d79cbb101021ae` |
+| Canonical graph | 11,065 chance + 21,314 decision + 6,648 terminal = 39,027 states | Passed, including exact opening values within `1e-12` |
+| Coordinator/restoration | Timing, worker races, lifecycle interruption and every restorable boundary pass | Passed with a virtual clock and controlled workers, including stale scene-task cancellation, teardown cancellation, exact terminal AI fields and fail-closed decoded-state validation |
+| Simulator launch | Built app installs and starts without signing | Passed on iPhone 17 Pro, iOS Simulator 26.5 |
 | CI definition | Read-only unsigned macOS 26 arm64/Xcode 26.6 lane has no secrets | Defined in `.github/workflows/ios-ci.yml` |
 
-The generic builds completed without booting a simulator. CoreSimulatorService was unavailable to the sandbox and emitted diagnostic warnings, but both build commands exited zero with `BUILD SUCCEEDED`. Interactive launch remains unverified. Update the package and fixture rows with exact command results after the combined Phase 1 implementation is present. Preserve failed or unavailable evidence honestly.
+The generic Debug build and hosted Test build include the local `PicPacPresentation` package product and complete with signing disabled. The Debug product was also installed and launched on a temporary iPhone 17 Pro simulator boot; the shell rendered and the simulator was returned to its prior shutdown state. This proves launchability of the Phase 1 shell, not product-screen parity or minimum-OS coverage.
+
+The ordinary handoff verifier passes after adding the governed fixtures. Strict release verification exits nonzero with one error solely because `releaseCommit` and `releaseTag` are intentionally null. Those values remain untouched. The local workflow definition was inspected and its commands were exercised locally; no hosted GitHub Actions run is claimed. The existing Android workflow provides JVM coverage, while `ios-ci.yml` provides the unsigned Swift package and app-build lane.
 
 ## Continuous integration contract
 
@@ -63,19 +81,22 @@ The Phase 1 iOS workflow:
 - asserts macOS major version, CPU architecture, Xcode build and Swift 6 compiler before building;
 - checks out with persisted credentials disabled and grants only `contents: read`;
 - executes the ordinary portable handoff verifier;
-- tests the local Swift package; and
-- builds the app for the generic iOS Simulator destination in both Debug and Test configurations with signing disabled.
+- tests the local Swift package;
+- builds and runs the hosted application integration test on the pinned iPhone 17 Pro/iOS 26.5 simulator; and
+- builds the Debug app for the generic iOS Simulator destination with signing disabled.
 
-It does not import certificates, provisioning profiles, Apple credentials, store API keys or repository secrets. It does not boot a simulator, upload an app, sign an archive or contact App Store Connect.
+It does not import certificates, provisioning profiles, Apple credentials, store API keys or repository secrets. It does not upload an app, sign an archive or contact App Store Connect.
 
-## Later verification matrix
+## Full product verification matrix
+
+Phase 1 established the core, fixture, graph, coordinator and restoration portions below. The matrix describes full product acceptance after the Build Phase 2 and 3 additions.
 
 | Layer | Build Phase 2/3 acceptance |
 | --- | --- |
 | Unit | Every win line/symbol, ownership, ninth-move precedence, conservation, rejection nonmutation and all 19,683 board encodings |
 | Fixture | Every shared ID on both platforms, unknown schema/group rejection, scripted random call order and exact/toleranced results |
 | AI | All-state legality, deterministic choices/values, center opening for both symbols, `5/21` and `11/126` within `1e-12`, policy hash/format/fallback and cancellation |
-| Coordinator | Every stage; early/late/throwing/canceled/stale workers; duplicate commands; locked cells; alternating starters and every restoration boundary |
+| Coordinator | Every stage; early/late/throwing/canceled/stale workers; duplicate commands; locked cells; alternating starters; scene/restoration races; teardown cancellation; and every restoration boundary |
 | Snapshot | Every screen/computer stage, both themes/symbols/motion settings, control states, narrow/regular/wide and accessibility layouts |
 | Accessibility | Labels/headings/traits, row-major cells, modal isolation, private handoff, target sizes, contrast, focus/reachability, VoiceOver and keyboard/Switch Control |
 | UI flow | Complete Classic, Local and Easy/Medium/Hard flows; experimental-agent smoke; terminal AI settlement; rematches; scene interruption; settings relaunch |
@@ -85,8 +106,9 @@ Visual acceptance requires exact semantic tokens, strings, state and clock confi
 
 ## Deliberately unverified in Build Phase 1
 
-- Simulator boot and interactive launch are deferred until the combined scaffold is ready; project buildability alone is not a launch claim.
+- Only the Phase 1 shell received an interactive startup smoke test on iOS Simulator 26.5. Product screens, gameplay UI and end-to-end flows remain Build Phase 2/3 work.
 - No iOS 17 simulator runtime is currently demonstrated on the host. Minimum-OS coverage needs a compatible runner or approved physical device.
+- Snapshot, accessibility, UI-flow and performance matrices reach final acceptance in Build Phase 3 after the complete visible product exists.
 - Physical VoiceOver, audio, haptics, frame pacing, install/update and scene-interruption behavior remain release gates.
 - Apple team membership, bundle registration, certificates, profiles, agreements and App Store Connect roles are not verified or configured.
 - Legal URL availability and final privacy/store declarations remain owner-reviewed submission work.

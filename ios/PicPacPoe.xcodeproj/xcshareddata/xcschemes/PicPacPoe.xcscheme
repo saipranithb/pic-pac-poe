@@ -21,6 +21,20 @@
                ReferencedContainer = "container:PicPacPoe.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C60000000000000000000001"
+               BuildableName = "PicPacPoeTests.xctest"
+               BlueprintName = "PicPacPoeTests"
+               ReferencedContainer = "container:PicPacPoe.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -30,6 +44,17 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       shouldAutocreateTestPlan = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C60000000000000000000001"
+               BuildableName = "PicPacPoeTests.xctest"
+               BlueprintName = "PicPacPoeTests"
+               ReferencedContainer = "container:PicPacPoe.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

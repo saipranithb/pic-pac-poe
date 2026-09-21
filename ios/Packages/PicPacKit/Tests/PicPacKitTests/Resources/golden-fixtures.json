@@ -1,0 +1,465 @@
+{
+  "schemaVersion": 1,
+  "pathBase": "repository root",
+  "purpose": "Platform-neutral behavioral fixtures for independent Android and iOS conformance tests. Values are derived from the authoritative Kotlin rules, AI tests, and coordinator tests; this file does not prescribe Kotlin or Swift implementation structure.",
+  "sources": [
+    "game-core/src/main/kotlin/com/thevaguebox/picpac/core/Model.kt",
+    "game-core/src/main/kotlin/com/thevaguebox/picpac/core/Rules.kt",
+    "game-core/src/main/kotlin/com/thevaguebox/picpac/core/Session.kt",
+    "game-core/src/main/kotlin/com/thevaguebox/picpac/core/State.kt",
+    "game-core/src/main/kotlin/com/thevaguebox/picpac/core/ai/SearchModel.kt",
+    "game-core/src/test/kotlin/com/thevaguebox/picpac/core/RulesTest.kt",
+    "game-core/src/test/kotlin/com/thevaguebox/picpac/core/ReachabilityTest.kt",
+    "game-ai/src/main/kotlin/com/thevaguebox/picpac/ai/PositionEvaluator.kt",
+    "game-ai/src/test/kotlin/com/thevaguebox/picpac/ai/AgentTest.kt",
+    "app/src/main/java/com/thevaguebox/probabilistictictactoe/ui/GameViewModel.kt",
+    "app/src/test/java/com/thevaguebox/probabilistictictactoe/ui/GameViewModelTest.kt"
+  ],
+  "encoding": {
+    "cellOrder": "row-major",
+    "cellIndices": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    "coordinateFormula": {
+      "rowOneBased": "floor(cell / 3) + 1",
+      "columnOneBased": "cell % 3 + 1"
+    },
+    "boardValues": [null, "X", "O"],
+    "boardBase3Digits": {
+      "empty": 0,
+      "X": 1,
+      "O": 2,
+      "formula": "sum(digit[cell] * 3^cell)"
+    },
+    "actors": ["ONE", "TWO"],
+    "symbols": ["X", "O"],
+    "initialBag": {
+      "X": 5,
+      "O": 5
+    },
+    "turnTokenFormula": "revision * 16 + occupiedCount + 1",
+    "winningLines": [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+    ]
+  },
+  "requiredFixtureGroups": [
+    "scriptedGames",
+    "ruleTransitions",
+    "bagProbabilities",
+    "deterministicDraws",
+    "scriptedRandomTraces",
+    "aiChoices",
+    "presentationScenarios",
+    "restorationScenarios"
+  ],
+  "scriptedGames": [
+    {
+      "id": "picpac-player-one-wins-with-o",
+      "mode": "PIC_PAC",
+      "starter": "ONE",
+      "moves": [
+        {"actor": "ONE", "draw": "O", "cell": 0},
+        {"actor": "TWO", "draw": "X", "cell": 3},
+        {"actor": "ONE", "draw": "O", "cell": 1},
+        {"actor": "TWO", "draw": "X", "cell": 4},
+        {"actor": "ONE", "draw": "O", "cell": 2}
+      ],
+      "expected": {
+        "board": ["O", "O", "O", "X", "X", null, null, null, null],
+        "remainingX": 3,
+        "remainingO": 2,
+        "outcome": {"kind": "WIN", "actor": "ONE", "symbol": "O", "lines": [[0, 1, 2]]}
+      }
+    },
+    {
+      "id": "picpac-player-two-wins-with-x",
+      "mode": "PIC_PAC",
+      "starter": "ONE",
+      "moves": [
+        {"actor": "ONE", "draw": "O", "cell": 0},
+        {"actor": "TWO", "draw": "X", "cell": 3},
+        {"actor": "ONE", "draw": "O", "cell": 8},
+        {"actor": "TWO", "draw": "X", "cell": 4},
+        {"actor": "ONE", "draw": "O", "cell": 1},
+        {"actor": "TWO", "draw": "X", "cell": 5}
+      ],
+      "expected": {
+        "board": ["O", "O", null, "X", "X", "X", null, null, "O"],
+        "remainingX": 2,
+        "remainingO": 2,
+        "outcome": {"kind": "WIN", "actor": "TWO", "symbol": "X", "lines": [[3, 4, 5]]}
+      }
+    },
+    {
+      "id": "picpac-full-board-draw",
+      "mode": "PIC_PAC",
+      "starter": "ONE",
+      "moves": [
+        {"actor": "ONE", "draw": "X", "cell": 0},
+        {"actor": "TWO", "draw": "O", "cell": 1},
+        {"actor": "ONE", "draw": "X", "cell": 2},
+        {"actor": "TWO", "draw": "X", "cell": 3},
+        {"actor": "ONE", "draw": "O", "cell": 4},
+        {"actor": "TWO", "draw": "O", "cell": 5},
+        {"actor": "ONE", "draw": "O", "cell": 6},
+        {"actor": "TWO", "draw": "X", "cell": 7},
+        {"actor": "ONE", "draw": "X", "cell": 8}
+      ],
+      "expected": {
+        "board": ["X", "O", "X", "X", "O", "O", "O", "X", "X"],
+        "remainingX": 0,
+        "remainingO": 1,
+        "outcome": {"kind": "DRAW"}
+      }
+    },
+    {
+      "id": "classic-player-one-top-row",
+      "mode": "CLASSIC",
+      "starter": "ONE",
+      "moves": [
+        {"actor": "ONE", "cell": 0},
+        {"actor": "TWO", "cell": 3},
+        {"actor": "ONE", "cell": 1},
+        {"actor": "TWO", "cell": 4},
+        {"actor": "ONE", "cell": 2}
+      ],
+      "expected": {
+        "board": ["X", "X", "X", "O", "O", null, null, null, null],
+        "outcome": {"kind": "WIN", "actor": "ONE", "symbol": "X", "lines": [[0, 1, 2]]}
+      }
+    }
+  ],
+  "ruleTransitions": [
+    {
+      "id": "draw-removes-piece-before-placement",
+      "mode": "PIC_PAC",
+      "initial": {
+        "board": [null, null, null, null, null, null, null, null, null],
+        "activePlayer": "ONE",
+        "remainingX": 5,
+        "remainingO": 5,
+        "phase": "AWAITING_DRAW",
+        "starter": "ONE",
+        "revision": 0
+      },
+      "input": {"action": "DRAW", "symbol": "X"},
+      "expected": {
+        "accepted": true,
+        "event": {"kind": "PIECE_REVEALED", "actor": "ONE", "symbol": "X"},
+        "remainingX": 4,
+        "remainingO": 5,
+        "hiddenTotal": 9,
+        "phase": "AWAITING_PLACEMENT",
+        "heldSymbol": "X",
+        "turnToken": 1
+      }
+    },
+    {
+      "id": "legal-placement-switches-actor",
+      "mode": "PIC_PAC",
+      "initial": {
+        "board": [null, null, null, null, null, null, null, null, null],
+        "activePlayer": "ONE",
+        "remainingX": 4,
+        "remainingO": 5,
+        "phase": "AWAITING_PLACEMENT",
+        "heldSymbol": "X",
+        "turnToken": 1,
+        "starter": "ONE",
+        "revision": 0
+      },
+      "input": {"action": "PLACE", "cell": 4, "turnToken": 1},
+      "expected": {
+        "accepted": true,
+        "event": {"kind": "PIECE_PLACED", "actor": "ONE", "symbol": "X", "cell": 4},
+        "board": [null, null, null, null, "X", null, null, null, null],
+        "activePlayer": "TWO",
+        "phase": "AWAITING_DRAW"
+      }
+    },
+    {
+      "id": "stale-turn-rejected-without-mutation",
+      "mode": "PIC_PAC",
+      "initial": {
+        "board": [null, null, null, null, null, null, null, null, null],
+        "activePlayer": "ONE",
+        "remainingX": 4,
+        "remainingO": 5,
+        "phase": "AWAITING_PLACEMENT",
+        "heldSymbol": "X",
+        "turnToken": 1,
+        "starter": "ONE",
+        "revision": 0
+      },
+      "input": {"action": "PLACE", "cell": 4, "turnToken": 2},
+      "expected": {"accepted": false, "rejection": "STALE_TURN", "stateUnchanged": true}
+    },
+    {
+      "id": "occupied-cell-rejected-without-mutation",
+      "mode": "PIC_PAC",
+      "initial": {
+        "board": [null, null, null, null, "X", null, null, null, null],
+        "activePlayer": "TWO",
+        "remainingX": 4,
+        "remainingO": 4,
+        "phase": "AWAITING_PLACEMENT",
+        "heldSymbol": "O",
+        "turnToken": 2,
+        "starter": "ONE",
+        "revision": 0
+      },
+      "input": {"action": "PLACE", "cell": 4, "turnToken": 2},
+      "expected": {"accepted": false, "rejection": "OCCUPIED", "stateUnchanged": true}
+    },
+    {
+      "id": "wrong-phase-rejected-without-mutation",
+      "mode": "PIC_PAC",
+      "initial": {
+        "board": [null, null, null, null, "X", null, null, null, null],
+        "activePlayer": "TWO",
+        "remainingX": 4,
+        "remainingO": 5,
+        "phase": "AWAITING_DRAW",
+        "starter": "ONE",
+        "revision": 0
+      },
+      "input": {"action": "PLACE", "cell": 0, "turnToken": 2},
+      "expected": {"accepted": false, "rejection": "WRONG_PHASE", "stateUnchanged": true}
+    },
+    {
+      "id": "exhausted-symbol-rejected-without-mutation",
+      "mode": "PIC_PAC",
+      "initial": {
+        "board": ["X", "O", "X", "X", null, null, null, "X", "X"],
+        "activePlayer": "ONE",
+        "remainingX": 0,
+        "remainingO": 4,
+        "phase": "AWAITING_DRAW",
+        "starter": "ONE",
+        "revision": 0
+      },
+      "input": {"action": "DRAW", "symbol": "X"},
+      "expected": {"accepted": false, "rejection": "EXHAUSTED_SYMBOL", "stateUnchanged": true}
+    },
+    {
+      "id": "terminal-command-rejected-without-mutation",
+      "mode": "PIC_PAC",
+      "initial": {
+        "board": ["X", "X", "X", "O", "O", null, null, null, null],
+        "activePlayer": "ONE",
+        "remainingX": 2,
+        "remainingO": 3,
+        "phase": "TERMINAL",
+        "outcome": {"kind": "WIN", "actor": "ONE", "symbol": "X", "lines": [[0, 1, 2]]},
+        "starter": "ONE",
+        "revision": 0
+      },
+      "input": {"action": "DRAW", "symbol": "O"},
+      "expected": {"accepted": false, "rejection": "TERMINAL", "stateUnchanged": true}
+    }
+  ],
+  "bagProbabilities": [
+    {
+      "id": "initial-five-five",
+      "remainingX": 5,
+      "remainingO": 5,
+      "expected": {"hiddenTotal": 10, "x": {"numerator": 5, "denominator": 10}, "o": {"numerator": 5, "denominator": 10}}
+    },
+    {
+      "id": "held-x-is-excluded",
+      "remainingX": 4,
+      "remainingO": 5,
+      "expected": {"hiddenTotal": 9, "x": {"numerator": 4, "denominator": 9}, "o": {"numerator": 5, "denominator": 9}}
+    },
+    {
+      "id": "held-o-is-excluded",
+      "remainingX": 5,
+      "remainingO": 4,
+      "expected": {"hiddenTotal": 9, "x": {"numerator": 5, "denominator": 9}, "o": {"numerator": 4, "denominator": 9}}
+    },
+    {
+      "id": "single-o-remains",
+      "remainingX": 0,
+      "remainingO": 1,
+      "expected": {"hiddenTotal": 1, "x": {"numerator": 0, "denominator": 1}, "o": {"numerator": 1, "denominator": 1}}
+    }
+  ],
+  "deterministicDraws": [
+    {"id": "initial-roll-zero-is-x", "remainingX": 5, "remainingO": 5, "nextIntBound": 10, "scriptedResult": 0, "expectedSymbol": "X"},
+    {"id": "initial-roll-four-is-x", "remainingX": 5, "remainingO": 5, "nextIntBound": 10, "scriptedResult": 4, "expectedSymbol": "X"},
+    {"id": "initial-roll-five-is-o", "remainingX": 5, "remainingO": 5, "nextIntBound": 10, "scriptedResult": 5, "expectedSymbol": "O"},
+    {"id": "initial-roll-nine-is-o", "remainingX": 5, "remainingO": 5, "nextIntBound": 10, "scriptedResult": 9, "expectedSymbol": "O"},
+    {"id": "two-one-boundary-x", "remainingX": 2, "remainingO": 1, "nextIntBound": 3, "scriptedResult": 1, "expectedSymbol": "X"},
+    {"id": "two-one-boundary-o", "remainingX": 2, "remainingO": 1, "nextIntBound": 3, "scriptedResult": 2, "expectedSymbol": "O"}
+  ],
+  "scriptedRandomTraces": [
+    {
+      "id": "bag-five-call-boundary-trace",
+      "consumer": "PIC_PAC_SESSION",
+      "initial": {"remainingX": 5, "remainingO": 5},
+      "steps": [
+        {"call": 1, "nextIntBound": 10, "scriptedResult": 4, "expectedSymbol": "X", "placeCell": 0},
+        {"call": 2, "nextIntBound": 9, "scriptedResult": 4, "expectedSymbol": "O", "placeCell": 1},
+        {"call": 3, "nextIntBound": 8, "scriptedResult": 3, "expectedSymbol": "X", "placeCell": 3},
+        {"call": 4, "nextIntBound": 7, "scriptedResult": 6, "expectedSymbol": "O", "placeCell": 4},
+        {"call": 5, "nextIntBound": 6, "scriptedResult": 2, "expectedSymbol": "X", "placeCell": 8}
+      ],
+      "portableNote": "Inject each bounded result in order. Assert every requested bound and call index; do not compare seeded platform RNG streams."
+    },
+    {
+      "id": "random-agent-three-call-index-trace",
+      "consumer": "RANDOM_AGENT",
+      "steps": [
+        {"call": 1, "board": [null, null, null, null, null, null, null, null, null], "heldSymbol": "X", "remainingX": 4, "remainingO": 5, "legalCells": [0, 1, 2, 3, 4, 5, 6, 7, 8], "nextIntBound": 9, "scriptedResult": 4, "expectedCell": 4},
+        {"call": 2, "board": ["X", null, null, null, null, null, null, null, null], "heldSymbol": "O", "remainingX": 4, "remainingO": 4, "legalCells": [1, 2, 3, 4, 5, 6, 7, 8], "nextIntBound": 8, "scriptedResult": 0, "expectedCell": 1},
+        {"call": 3, "board": ["X", null, null, null, "O", null, null, null, null], "heldSymbol": "X", "remainingX": 3, "remainingO": 4, "legalCells": [1, 2, 3, 5, 6, 7, 8], "nextIntBound": 7, "scriptedResult": 6, "expectedCell": 8}
+      ],
+      "portableNote": "Use one scripted bounded-random source for the whole trace and fail on an extra, missing, reordered or differently bounded call."
+    }
+  ],
+  "aiChoices": [
+    {
+      "id": "easy-immediate-win-with-x",
+      "agent": "HEURISTIC",
+      "board": ["X", "X", null, "O", null, null, null, null, null],
+      "heldSymbol": "X",
+      "remainingX": 2,
+      "remainingO": 4,
+      "expectedCell": 2,
+      "reason": "Only immediate winning move; random tie-breaking is not involved."
+    },
+    {
+      "id": "easy-immediate-win-with-o",
+      "agent": "HEURISTIC",
+      "board": ["O", "O", null, "X", null, null, null, null, null],
+      "heldSymbol": "O",
+      "remainingX": 4,
+      "remainingO": 2,
+      "expectedCell": 2,
+      "reason": "Only immediate winning move; random tie-breaking is not involved."
+    },
+    {
+      "id": "medium-opening-held-x",
+      "agent": "EXPECTIMINIMAX_DEPTH_4",
+      "board": [null, null, null, null, null, null, null, null, null],
+      "heldSymbol": "X",
+      "remainingX": 4,
+      "remainingO": 5,
+      "expectedCell": 4,
+      "tieOrder": [4, 0, 2, 6, 8, 1, 3, 5, 7]
+    },
+    {
+      "id": "hard-opening-held-x",
+      "agent": "EXPECTIMINIMAX_FULL",
+      "board": [null, null, null, null, null, null, null, null, null],
+      "heldSymbol": "X",
+      "remainingX": 4,
+      "remainingO": 5,
+      "expectedCell": 4,
+      "expectedRootValue": {"numerator": 5, "denominator": 21, "tolerance": 1e-12},
+      "expectedActionValues": {
+        "0": {"numerator": 11, "denominator": 126},
+        "1": {"numerator": 11, "denominator": 126},
+        "2": {"numerator": 11, "denominator": 126},
+        "3": {"numerator": 11, "denominator": 126},
+        "4": {"numerator": 5, "denominator": 21},
+        "5": {"numerator": 11, "denominator": 126},
+        "6": {"numerator": 11, "denominator": 126},
+        "7": {"numerator": 11, "denominator": 126},
+        "8": {"numerator": 11, "denominator": 126}
+      }
+    },
+    {
+      "id": "hard-opening-held-o",
+      "agent": "EXPECTIMINIMAX_FULL",
+      "board": [null, null, null, null, null, null, null, null, null],
+      "heldSymbol": "O",
+      "remainingX": 5,
+      "remainingO": 4,
+      "expectedCell": 4,
+      "expectedRootValue": {"numerator": 5, "denominator": 21, "tolerance": 1e-12}
+    },
+    {
+      "id": "random-scripted-legal-index",
+      "agent": "RANDOM_BASELINE",
+      "board": ["X", null, null, null, "O", null, null, null, null],
+      "heldSymbol": "X",
+      "remainingX": 3,
+      "remainingO": 4,
+      "legalCells": [1, 2, 3, 5, 6, 7, 8],
+      "scriptedNextIntResult": 2,
+      "expectedCell": 3,
+      "portableNote": "Inject the result for nextInt(7); do not expect Kotlin and Swift seeded RNG streams to match."
+    }
+  ],
+  "presentationScenarios": [
+    {
+      "id": "local-handoff-ready-reveal-place",
+      "mode": "PIC_PAC_LOCAL",
+      "initial": {"stage": "HANDOFF", "activePlayer": "ONE", "boardVisible": false, "bagVisible": false, "randomCalls": 0},
+      "steps": [
+        {"event": "READY", "scriptedDrawResult": 0, "expectedStage": "REVEALING", "expectedHeldSymbol": "X", "expectedRemainingX": 4, "expectedRemainingO": 5, "expectedRandomCalls": 1},
+        {"event": "PRESENTATION_FINISHED_CURRENT_ID", "expectedStage": "PLAYING", "expectedInputEnabledCells": [0, 1, 2, 3, 4, 5, 6, 7, 8]},
+        {"event": "PLACE", "cell": 4, "expectedStage": "HANDOFF", "expectedActivePlayer": "TWO", "expectedBoard": [null, null, null, null, "X", null, null, null, null], "expectedRandomCalls": 1}
+      ]
+    },
+    {
+      "id": "computer-winning-move-settles-before-result",
+      "mode": "PIC_PAC_AI",
+      "initial": {"stage": "AI_TARGETING", "presentationId": 42, "board": ["X", "X", null, null, null, null, null, null, null], "activePlayer": "TWO", "displayedPlayer": "TWO", "heldSymbol": "X", "remainingX": 2, "remainingO": 5, "turnToken": 3, "aiTargetCell": 2, "aiMoveSymbol": "X"},
+      "steps": [
+        {"event": "PRESENTATION_FINISHED", "presentationId": 42, "expectedStage": "AI_PLACING", "expectedBoard": ["X", "X", "X", null, null, null, null, null, null], "expectedDisplayedPlayer": "TWO", "expectedOutcome": {"kind": "WIN", "actor": "TWO", "symbol": "X"}, "resultVisible": false},
+        {"event": "PRESENTATION_FINISHED_CURRENT_ID", "expectedStage": "AI_SETTLING", "expectedDisplayedPlayer": "TWO", "resultVisible": false},
+        {"event": "PRESENTATION_FINISHED_CURRENT_ID", "expectedStage": "TERMINAL", "expectedDisplayedPlayer": "TWO", "resultVisible": true, "mustNotStartAnotherDraw": true}
+      ]
+    },
+    {
+      "id": "computer-draw-move-settles-before-result",
+      "mode": "PIC_PAC_AI",
+      "initial": {"stage": "AI_TARGETING", "presentationId": 51, "board": ["X", "O", "X", "X", "O", "O", "O", "X", null], "activePlayer": "TWO", "displayedPlayer": "TWO", "heldSymbol": "X", "remainingX": 0, "remainingO": 1, "turnToken": 9, "aiTargetCell": 8, "aiMoveSymbol": "X"},
+      "steps": [
+        {"event": "PRESENTATION_FINISHED", "presentationId": 51, "expectedStage": "AI_PLACING", "expectedBoard": ["X", "O", "X", "X", "O", "O", "O", "X", "X"], "expectedOutcome": {"kind": "DRAW"}, "resultVisible": false},
+        {"event": "PRESENTATION_FINISHED_CURRENT_ID", "expectedStage": "AI_SETTLING", "resultVisible": false},
+        {"event": "PRESENTATION_FINISHED_CURRENT_ID", "expectedStage": "TERMINAL", "resultVisible": true, "mustNotStartAnotherDraw": true}
+      ]
+    }
+  ],
+  "restorationScenarios": [
+    {
+      "id": "held-piece-restores-without-redraw",
+      "snapshot": {"screen": "GAME", "mode": "PIC_PAC_LOCAL", "stage": "REVEALING", "presentationId": 7, "board": [null, null, null, null, null, null, null, null, null], "activePlayer": "ONE", "starter": "ONE", "revision": 1, "phase": "AWAITING_PLACEMENT", "heldSymbol": "X", "turnToken": 17, "remainingX": 4, "remainingO": 5},
+      "expectedAfterRestore": {"stage": "REVEALING", "presentationId": 7, "heldSymbol": "X", "remainingX": 4, "remainingO": 5, "randomCalls": 0}
+    },
+    {
+      "id": "computer-target-restores-and-commits-once",
+      "snapshot": {"screen": "GAME", "mode": "PIC_PAC_AI", "difficulty": "MEDIUM", "stage": "AI_TARGETING", "presentationId": 23, "board": ["O", null, null, null, null, null, null, null, null], "activePlayer": "TWO", "starter": "ONE", "revision": 3, "phase": "AWAITING_PLACEMENT", "heldSymbol": "X", "turnToken": 50, "remainingX": 4, "remainingO": 4, "aiTargetCell": 4, "aiMoveSymbol": "X"},
+      "expectedAfterRestore": {"stage": "AI_TARGETING", "presentationId": 23, "aiTargetCell": 4, "aiMoveSymbol": "X", "boardOccupiedCount": 1, "randomCalls": 0, "newSearches": 0},
+      "expectedAfterCurrentCallback": {"stage": "AI_PLACING", "board": ["O", null, null, null, "X", null, null, null, null], "boardOccupiedCount": 2}
+    },
+    {
+      "id": "stale-presentation-callback-after-rematch-is-ignored",
+      "beforeReplacement": {"stage": "AI_TARGETING", "presentationId": 31},
+      "replacement": {"event": "REMATCH", "expectedStage": "TURN_START", "expectedBoardOccupiedCount": 0, "expectedPresentationIdGreaterThan": 31},
+      "lateEvent": {"event": "PRESENTATION_FINISHED", "presentationId": 31},
+      "expected": {"replacementStateUnchanged": true}
+    },
+    {
+      "id": "cancelled-ai-result-after-mode-replacement-is-ignored",
+      "beforeReplacement": {"mode": "PIC_PAC_AI", "stage": "AI_THINKING", "capturedRevision": 8, "capturedTurnToken": 130},
+      "replacement": {"event": "START_CLASSIC", "mode": "CLASSIC_LOCAL", "stage": "PLAYING", "boardOccupiedCount": 0},
+      "lateEvent": {"event": "AI_RESULT", "cell": 4, "revision": 8, "turnToken": 130},
+      "expected": {"replacementStateUnchanged": true}
+    }
+  ],
+  "graphOracle": {
+    "chanceStates": 11065,
+    "decisionStates": 21314,
+    "terminalStates": 6648,
+    "totalStates": 39027
+  }
+}

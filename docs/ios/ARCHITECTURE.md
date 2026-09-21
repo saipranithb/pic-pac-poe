@@ -37,9 +37,9 @@ ios/
   PicPacPoe.xcodeproj/       ordinary Xcode project and shared scheme
   PicPacPoe/                 SwiftUI application/platform integration
   Packages/PicPacKit/        local pure Swift package
-  PicPacPoeTests/            future application integration tests
-  PicPacPoeUITests/          future UI and accessibility tests
-  TestSupport/               future fixtures, clocks and controlled workers
+  PicPacPoeTests/            hosted application integration tests
+  PicPacPoeUITests/          planned UI and accessibility tests
+  TestSupport/               planned shared snapshot/UI test support
 .github/workflows/           independent Android and unsigned iOS lanes
 ```
 
@@ -50,21 +50,19 @@ Android paths, Gradle commands and release history remain stable. A future direc
 The local `PicPacKit` package has three directional modules:
 
 ```text
-PicPacPresentation  ->  PicPacAI  ->  PicPacCore
-        |                    |             |
-        +--------------------+-------------+
+PicPacPoe  ->  PicPacPresentation  ->  PicPacCore  <-  PicPacAI
 ```
 
-- `PicPacCore` owns immutable domain values, validated board/state types, pure rules, sessions, public search state and random-source capabilities. It does not import SwiftUI.
-- `PicPacAI` owns the evaluator, heuristic agent, expectiminimax, MCTS and the versioned bundled policy reader. It receives lawful public observations only. Offline training remains in `game-tools`.
-- `PicPacPresentation` owns the main-actor coordinator, immutable view snapshots, presentation stages, injectable clock and AI-worker boundaries, settings/restoration models, and guarded ephemeral effects. It does not own views or platform I/O.
-- `PicPacPoe` owns SwiftUI views, scene lifecycle, persistence adapters, design tokens, bundled assets, accessibility, sound and haptics.
+- `PicPacCore` owns immutable domain values, validated board/state types, pure rules, AI observations and bounded-random contracts. It does not import SwiftUI.
+- `PicPacAI` owns public chance/decision search state and the Phase 1 reference expectiminimax solver. Build Phase 2 adds the production evaluator, Easy/Medium/Hard agents, MCTS and versioned policy reader. It receives lawful public observations only; offline training remains in `game-tools`.
+- `PicPacPresentation` owns the main-actor coordinator, immutable view snapshots, presentation stages, injectable clock, AI and storage boundaries, settings/restoration models, the versioned persistence codec, the Foundation Application Support adapter and guarded ephemeral effects. It does not own SwiftUI views or visual, audio or haptic output.
+- `PicPacPoe` owns SwiftUI views, scene-lifecycle wiring, dependency composition, design tokens, bundled assets, accessibility, sound and haptics.
 
-Dependency direction is enforced by package targets and tests. Views render snapshots and send typed intentions. They do not mutate rules, consume the game random source or authorize stage completion. CPU-bound AI work runs outside the main actor and delivers a result through revision, turn-token, presentation-ID and task-generation guards.
+Dependency direction is enforced by package targets and tests. Build Phase 2 will compose production `PicPacAI` agents into `PicPacPresentation`'s worker boundary at the application root. Views render snapshots and send typed intentions. They do not mutate rules, consume the game random source or authorize stage completion. CPU-bound AI work runs outside the main actor and delivers a result through revision, turn-token, presentation-ID and task-generation guards.
 
 ## Build Phase 1 boundary
 
-Build Phase 1 establishes the unsigned project, fixture governance, rules/search foundations, coordinator, presentation state and restoration. It may add test-only Kotlin fixture consumption so both implementations execute the same contracts. It does not implement production screens, board rendering, typography, assets, feedback or store integration.
+Build Phase 1 establishes the unsigned project, fixture governance, rules/search foundations, coordinator, presentation state and restoration. It may add test-only Kotlin fixture consumption so both implementations execute the same contracts. It does not implement production screens, board rendering, typography, assets, feedback consumers or store integration.
 
 Phase 1 is accepted only when:
 
@@ -76,7 +74,7 @@ Phase 1 is accepted only when:
 - no source, dependency or capability introduces networking, accounts, analytics, ads, cloud synchronization or background execution; and
 - CI runs with read-only repository permissions and no signing or store secrets.
 
-The product shell in this phase exists only to prove project buildability. Visible product implementation belongs to Build Phase 2.
+The product shell in this phase exists only to prove project buildability and lifecycle composition. It does not implement production screens, board rendering, typography, assets, or visual/audio/haptic feedback consumers. Visible product implementation belongs to Build Phase 2.
 
 ## Shared fixture governance
 
@@ -84,7 +82,7 @@ The product shell in this phase exists only to prove project buildability. Visib
 
 - reject an unknown schema version or unhandled fixture group;
 - identify failures by fixture ID;
-- resolve the repository fixture rather than maintaining platform copies;
+- consume the repository fixture directly on Kotlin and stage an exact byte-for-byte Swift test resource whose equality is enforced before behavioral assertions;
 - compare exact discrete outcomes and use the contract's stated tolerance for floating-point values; and
 - use scripted draws and scripted tie choices for stochastic cases instead of assuming that equal Swift and Kotlin seeds produce equal streams.
 
@@ -92,11 +90,11 @@ Generated exhaustive cases remain generated in tests. They are not expanded into
 
 ## Coordinator and restoration policy
 
-One `@MainActor` observable coordinator is the only presentation mutation authority. Domain state and visible presentation stage remain separate because a move can be committed while the interface is still placing or settling it. Essential clock acknowledgements are identity-checked commands, not animation callbacks with mutation authority.
+One `@MainActor @Observable` coordinator is the only presentation mutation authority. Domain state and visible presentation stage remain separate because a move can be committed while the interface is still placing or settling it. Essential clock acknowledgements are identity-checked commands, not animation callbacks with mutation authority. App commands remain gated until the initial validated restoration completes.
 
-When a scene becomes inactive or enters the background, the app will checkpoint the current valid snapshot, stop stage acknowledgements and decorative motion, and cancel unfinished AI work. Callbacks from the old scene/task generation are rejected. On activation, the app resumes the same stage with its full readable duration. An already committed move is never committed again; targeting restores its exact target; an unfinished AI search restarts only when no target has been selected.
+The application declares single-scene support so one coordinator owns the one current-match file. When that scene becomes inactive or enters the background, the app checkpoints the current valid snapshot, stops stage acknowledgements and decorative motion, consumes pending feedback and cancels unfinished AI work. A canceled scene task cannot apply a stale phase after a slow restoration. Callbacks from an old scene/task generation are rejected, and coordinator teardown cancels its owned clock and search tasks. On activation, the app resumes the same stage with its full readable duration. An already committed move is never committed again; targeting restores its exact target; an unfinished AI search restarts only when no target has been selected.
 
-The last valid current match and four typed settings are stored as versioned, validated Codable data in app-private Application Support. Files are written atomically and marked excluded from backup after replacement. Home clears the current match. Search caches, random-generator internals, elapsed animation time and consumed feedback events are not persisted. Invalid or unsupported snapshots safely return Home. No iCloud, Files exposure or match-history database is used.
+The current restorable presentation, including a match when one exists, is stored as a versioned, validated Codable snapshot in app-private Application Support. The four typed settings use a separate Codable payload. Files are written atomically, and backup exclusion is reapplied and verified after replacement. Returning Home cancels work and removes the domain match payload while retaining the session counters, alternating next starter and title-entrance flag. Search caches, random-generator internals, elapsed animation time and consumed feedback events are not persisted. Invalid or unsupported snapshots safely return Home. No iCloud, Files exposure or match-history database is used.
 
 ## Product and platform mapping
 
@@ -105,7 +103,8 @@ The last valid current match and four typed settings are stored as versioned, va
 | Rules, bag conservation, actor/symbol distinction | `PicPacCore` |
 | Easy/Medium/Hard and AI Lab algorithms | `PicPacAI` |
 | Stages, guards, restoration values and effect events | `PicPacPresentation` |
-| Scene lifecycle and local storage adapter | iOS application |
+| Scene lifecycle wiring and local-storage composition | iOS application |
+| Storage contract, versioned codec and backup-excluded file adapter | `PicPacPresentation` |
 | Design tokens, Fredoka resources and vector assets | iOS application, sourced from the handoff manifest |
 | Accessibility labels, grouping, focus and announcements | SwiftUI views driven by presentation snapshots |
 | Sound and haptics | Native effect consumers honoring independent settings |
