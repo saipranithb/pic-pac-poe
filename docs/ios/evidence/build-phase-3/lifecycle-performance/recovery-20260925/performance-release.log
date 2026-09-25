@@ -1,0 +1,28 @@
+[0/1] Planning build
+Building for production...
+[0/5] Write sources
+[2/5] Write swift-version--58304C5D6DBC2206.txt
+[4/6] Compiling PicPacCore AiObservation.swift
+[5/8] Compiling PicPacPresentation GameCoordinator.swift
+[6/8] Compiling PicPacAI AIContracts.swift
+[7/9] Compiling PicPacKitTests CoreDomainTests.swift
+[8/10] Compiling PicPacKitPackageTests runner.swift
+[8/10] Write Objects.LinkFileList
+[9/10] Linking PicPacKitPackageTests
+Build complete! (20.92s)
+Test Suite 'Selected tests' started at 2026-09-25 04:46:15.166.
+Test Suite 'PicPacKitPackageTests.xctest' started at 2026-09-25 04:46:15.166.
+Test Suite 'PerformanceAuditTests' started at 2026-09-25 04:46:15.166.
+Test Case '-[PicPacKitTests.PerformanceAuditTests testProductionSearchLatencyBudgetCancellationAndMainActorProgress]' started.
+Test Case '-[PicPacKitTests.PerformanceAuditTests testProductionSearchLatencyBudgetCancellationAndMainActorProgress]' passed (0.522 seconds).
+Test Suite 'PerformanceAuditTests' passed at 2026-09-25 04:46:15.688.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.522 (0.522) seconds
+Test Suite 'PicPacKitPackageTests.xctest' passed at 2026-09-25 04:46:15.689.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.522 (0.522) seconds
+Test Suite 'Selected tests' passed at 2026-09-25 04:46:15.689.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.522 (0.523) seconds
+PHASE3_PERFORMANCE_JSON {"framePacingEvidence":false,"hardColdMilliseconds":[75.290291999999994,75.243250000000003,75.341667000000001,75.334582999999995,75.522209000000004],"hardColdNodes":[109706,109706,109706,109706,109706],"hardInFlightCancellationMilliseconds":[0.24254100000000001,0.17008300000000001,0.092832999999999999,0.055208,0.19704199999999999],"hardWarmMilliseconds":[0.015417,0.018709,0.016583000000000001,0.015167,0.014125],"hardWarmNodes":[18,18,18,18,18],"kind":"macOS-host-production-agent-measurement","mainActorTwoMillisecondHeartbeat":{"maxMilliseconds":3.0684170000000002,"p50Milliseconds":3.0475840000000001,"p95Milliseconds":3.05925,"samples":177},"mctsCompletedSimulationsPerCall":2000,"mctsMilliseconds":[22.327209,22.645416000000001,21.954083000000001,22.785250000000001,22.582457999999999],"physicalDeviceEvidence":false,"sampleCount":5,"schemaVersion":1}
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

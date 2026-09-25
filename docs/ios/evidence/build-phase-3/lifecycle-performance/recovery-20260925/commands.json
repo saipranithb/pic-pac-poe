@@ -1,0 +1,211 @@
+[
+  {
+    "name": "environment",
+    "command": [
+      "sh",
+      "-c",
+      "xcodebuild -version; swift --version; sw_vers; uname -m; sysctl -n machdep.cpu.brand_string; uptime"
+    ],
+    "startedAtUTC": "2026-09-25T08:43:49.732835+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:43:49.920765+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "simulator-before",
+    "command": [
+      "xcrun",
+      "simctl",
+      "list",
+      "devices",
+      "booted",
+      "--json"
+    ],
+    "startedAtUTC": "2026-09-25T08:43:49.921092+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:43:50.022790+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "simulator-boot",
+    "command": [
+      "xcrun",
+      "simctl",
+      "boot",
+      "97FAA70C-E2D7-4893-9D76-FE172A792433"
+    ],
+    "startedAtUTC": "2026-09-25T08:43:50.023481+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:43:50.593559+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "simulator-bootstatus",
+    "command": [
+      "xcrun",
+      "simctl",
+      "bootstatus",
+      "97FAA70C-E2D7-4893-9D76-FE172A792433",
+      "-b"
+    ],
+    "startedAtUTC": "2026-09-25T08:43:50.594897+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:43:58.157084+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "hosted",
+    "command": [
+      "xcodebuild",
+      "-project",
+      "ios/PicPacPoe.xcodeproj",
+      "-scheme",
+      "PicPacPoe",
+      "-configuration",
+      "Test",
+      "-only-testing:PicPacPoeTests",
+      "-destination",
+      "platform=iOS Simulator,id=97FAA70C-E2D7-4893-9D76-FE172A792433",
+      "-parallel-testing-enabled",
+      "NO",
+      "-derivedDataPath",
+      "/tmp/picpac-phase3-recovery-lifecycle-derived-20260925",
+      "-resultBundlePath",
+      "/tmp/picpac-phase3-recovery-lifecycle-20260925/hosted.xcresult",
+      "CODE_SIGNING_ALLOWED=NO",
+      "CODE_SIGNING_REQUIRED=NO",
+      "test"
+    ],
+    "startedAtUTC": "2026-09-25T08:43:58.158723+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:44:59.580406+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "hosted-inventory",
+    "command": [
+      "python3",
+      "ios/Scripts/verify-xcresult.py",
+      "--result",
+      "/tmp/picpac-phase3-recovery-lifecycle-20260925/hosted.xcresult",
+      "--target",
+      "PicPacPoeTests",
+      "--configuration",
+      "Test",
+      "--output",
+      "/tmp/picpac-phase3-recovery-lifecycle-20260925/hosted-inventory.json"
+    ],
+    "startedAtUTC": "2026-09-25T08:44:59.622092+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:45:00.227145+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "hosted-attachments",
+    "command": [
+      "xcrun",
+      "xcresulttool",
+      "export",
+      "attachments",
+      "--path",
+      "/tmp/picpac-phase3-recovery-lifecycle-20260925/hosted.xcresult",
+      "--output-path",
+      "/tmp/picpac-phase3-recovery-lifecycle-20260925/attachments"
+    ],
+    "startedAtUTC": "2026-09-25T08:45:00.227562+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:45:00.271737+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "simulator-after",
+    "command": [
+      "xcrun",
+      "simctl",
+      "list",
+      "devices",
+      "booted",
+      "--json"
+    ],
+    "startedAtUTC": "2026-09-25T08:45:00.272109+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:45:00.557834+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "simulator-shutdown",
+    "command": [
+      "xcrun",
+      "simctl",
+      "shutdown",
+      "97FAA70C-E2D7-4893-9D76-FE172A792433"
+    ],
+    "startedAtUTC": "2026-09-25T08:45:00.558513+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:45:03.816630+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "package-final",
+    "command": [
+      "swift",
+      "test",
+      "--package-path",
+      "ios/Packages/PicPacKit"
+    ],
+    "startedAtUTC": "2026-09-25T08:45:03.817662+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:45:53.724099+00:00",
+    "exitCode": 0
+  },
+  {
+    "name": "performance-release",
+    "command": [
+      "swift",
+      "test",
+      "--configuration",
+      "release",
+      "--package-path",
+      "ios/Packages/PicPacKit",
+      "--filter",
+      "PerformanceAuditTests"
+    ],
+    "startedAtUTC": "2026-09-25T08:45:53.724578+00:00",
+    "environmentOverrides": {
+      "DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer",
+      "XCODE_DEVELOPER_DIR": "/Applications/Xcode.app/Contents/Developer"
+    },
+    "endedAtUTC": "2026-09-25T08:46:15.732845+00:00",
+    "exitCode": 0
+  }
+]

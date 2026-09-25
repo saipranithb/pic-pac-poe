@@ -1,5 +1,9 @@
 # Build Phase 3 lifecycle and AI audit
 
+**Final recovery verification passed:** [accepted 25 September run](recovery-20260925/REPORT.md) at source `03d44f794ef98e66ebeb63cd467313ece2331b91`: **63 package tests, 12 hosted integration tests with zero skips, and the optimized performance audit**, all passing. It includes actual simulator search/callback measurements and original full-resolution Home active/inactive frame sequences. [Final checksums](recovery-20260925/checksums.sha256).
+
+The earlier results below remain historical evidence of defect reproduction and refinement; their 62-test count is superseded by the final 63-test run.
+
 The earlier complete package regression passed **62 tests, zero failures**. A later adversarial navigation refinement passed its two targeted regressions; the final consolidated package run is recorded separately when complete. The optimized production-agent audit also passed. These are local executions; they do not claim GitHub-hosted CI, iOS 17 runtime coverage or physical-device validation.
 
 ## Defects corrected
