@@ -1,0 +1,10 @@
+/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphoneos/Build/Products/Debug-iphoneos/PicPacPoe.app/PicPacPoe:
+Load command 11
+      cmd LC_BUILD_VERSION
+  cmdsize 32
+ platform IOS
+    minos 17.0
+      sdk 26.5
+   ntools 1
+     tool LD
+  version 1267.0

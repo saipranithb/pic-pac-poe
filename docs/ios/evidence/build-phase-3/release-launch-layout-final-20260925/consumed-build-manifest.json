@@ -1,0 +1,389 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "commit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+    "branch": "codex/ios-native-parity",
+    "status": [],
+    "iosSourceSHA256": "7294c6d0018d9c3b39bfb1c5c56fec2ea72a1554a02a6e3a3dc95e93d041e482",
+    "buildInputSHA256": "2be2a20569eb23b3b22553c8e39ed8ce25ebeeb23fbab3665a8a3d175eb2dec3",
+    "externalInputs": {
+      "app/src/main/res/font/fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+      "app/src/main/res/font/fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9",
+      "app/src/main/assets/licenses/fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+      "docs/ios-handoff/reference/screenshot-manifest.json": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+    }
+  },
+  "startedAt": "2026-09-25T10:54:59.076904+00:00",
+  "builds": [
+    {
+      "configuration": "Debug",
+      "sdk": "iphonesimulator",
+      "destination": "generic/platform=iOS Simulator",
+      "command": [
+        "xcodebuild",
+        "-project",
+        "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/PicPacPoe.xcodeproj",
+        "-scheme",
+        "PicPacPoe",
+        "-configuration",
+        "Debug",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphonesimulator",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "ENABLE_CODE_COVERAGE=NO",
+        "CLANG_ENABLE_CODE_COVERAGE=NO",
+        "CLANG_COVERAGE_MAPPING=NO",
+        "build"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 16.081518417,
+      "completedAt": "2026-09-25T10:55:15.339168+00:00",
+      "artifact": "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphonesimulator/Build/Products/Debug-iphonesimulator/PicPacPoe.app",
+      "unsigned": true,
+      "appFileSHA256": {
+        "AppIcon60x60@2x.png": "8269815fc34bc17b1dd75c254cd8575eb08f0d4715b71623ef996757cdd36c90",
+        "AppIcon76x76@2x~ipad.png": "7b444e033901f6d3a18dc5d041a0aa711fe5b05b4b3de4e05de2d2b08ac1f1b0",
+        "Assets.car": "70a56f33266c816320a0c9ddbabc2eebfdfe0c3b7ee00906b590e4f995c030ef",
+        "Info.plist": "3ca49aa4937e59114c77dedb8fe3f625d36f7a80d7a6ffd33eec593726be86b3",
+        "PicPacKit_PicPacAI.bundle/Info.plist": "eaad37a8ced0ff734e5f44ec6a14297f2ce9bd00b1802b424aeace068fa550b2",
+        "PicPacKit_PicPacAI.bundle/picpac_rl_policy_v1.bin": "9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1",
+        "PicPacPoe": "9d06d24dd6bf082b9891272ae95c9e400941c6a19acbb8d30d44abbaef1fd65e",
+        "PicPacPoe.debug.dylib": "ad0333aa16faf96109ebc92a4172a3be7142f69c87fea3f17ae15184e39a7454",
+        "PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+        "__preview.dylib": "b55b14b10d53d7aa95fde3971b9184d6fc36165f120ac5f70f082868913f230a",
+        "fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+        "fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+        "fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9"
+      },
+      "appBundleSHA256": "c4368cd7398a1c051ca83d75377dd5576c4ab0b3087a4dc554305e7e24dbc1f6",
+      "identity": {
+        "CFBundleIdentifier": "dev.saipranith.picpacpoe",
+        "CFBundleShortVersionString": "2.0.0",
+        "CFBundleVersion": "1",
+        "MinimumOSVersion": "17.0",
+        "CFBundleSupportedPlatforms": [
+          "iPhoneSimulator"
+        ],
+        "UIDeviceFamily": [
+          1,
+          2
+        ],
+        "UILaunchScreen": {
+          "UIColorName": "LaunchBackground"
+        },
+        "CFBundleIcons": {
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon60x60"
+            ],
+            "CFBundleIconName": "AppIcon"
+          }
+        },
+        "CFBundleIcons~ipad": {
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon60x60",
+              "AppIcon76x76"
+            ],
+            "CFBundleIconName": "AppIcon"
+          }
+        }
+      },
+      "machoMinimums": [
+        "17.0",
+        "17.0"
+      ],
+      "machoPlatforms": [
+        "IOSSIMULATOR",
+        "IOSSIMULATOR"
+      ]
+    },
+    {
+      "configuration": "Release",
+      "sdk": "iphonesimulator",
+      "destination": "generic/platform=iOS Simulator",
+      "command": [
+        "xcodebuild",
+        "-project",
+        "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/PicPacPoe.xcodeproj",
+        "-scheme",
+        "PicPacPoe",
+        "-configuration",
+        "Release",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphonesimulator",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "ENABLE_CODE_COVERAGE=NO",
+        "CLANG_ENABLE_CODE_COVERAGE=NO",
+        "CLANG_COVERAGE_MAPPING=NO",
+        "build"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 16.908304958000002,
+      "completedAt": "2026-09-25T10:55:32.486642+00:00",
+      "artifact": "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphonesimulator/Build/Products/Release-iphonesimulator/PicPacPoe.app",
+      "unsigned": true,
+      "appFileSHA256": {
+        "AppIcon60x60@2x.png": "8269815fc34bc17b1dd75c254cd8575eb08f0d4715b71623ef996757cdd36c90",
+        "AppIcon76x76@2x~ipad.png": "7b444e033901f6d3a18dc5d041a0aa711fe5b05b4b3de4e05de2d2b08ac1f1b0",
+        "Assets.car": "5d76a6afac32a081421877509359fa4b4e68d2a45d32c0b876a704802ebc65b1",
+        "Info.plist": "3ca49aa4937e59114c77dedb8fe3f625d36f7a80d7a6ffd33eec593726be86b3",
+        "PicPacKit_PicPacAI.bundle/Info.plist": "eaad37a8ced0ff734e5f44ec6a14297f2ce9bd00b1802b424aeace068fa550b2",
+        "PicPacKit_PicPacAI.bundle/picpac_rl_policy_v1.bin": "9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1",
+        "PicPacPoe": "a6469797ac1845e26f4bdf0ba8609866149230e17fbf4658044840f8af2de0a6",
+        "PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+        "fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+        "fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+        "fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9"
+      },
+      "appBundleSHA256": "f7c28bdb49ffb69905731865ad3629a21e6dc4714eee7076225d28cb472bab28",
+      "identity": {
+        "CFBundleIdentifier": "dev.saipranith.picpacpoe",
+        "CFBundleShortVersionString": "2.0.0",
+        "CFBundleVersion": "1",
+        "MinimumOSVersion": "17.0",
+        "CFBundleSupportedPlatforms": [
+          "iPhoneSimulator"
+        ],
+        "UIDeviceFamily": [
+          1,
+          2
+        ],
+        "UILaunchScreen": {
+          "UIColorName": "LaunchBackground"
+        },
+        "CFBundleIcons": {
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon60x60"
+            ],
+            "CFBundleIconName": "AppIcon"
+          }
+        },
+        "CFBundleIcons~ipad": {
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon60x60",
+              "AppIcon76x76"
+            ],
+            "CFBundleIconName": "AppIcon"
+          }
+        }
+      },
+      "machoMinimums": [
+        "17.0",
+        "17.0"
+      ],
+      "machoPlatforms": [
+        "IOSSIMULATOR",
+        "IOSSIMULATOR"
+      ],
+      "coverageSectionsAbsent": true,
+      "instrumentedCompilerCommands": 0,
+      "verificationCommand": [
+        "python3",
+        "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Scripts/verify-unsigned-app.py",
+        "--platform",
+        "iphonesimulator",
+        "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphonesimulator/Build/Products/Release-iphonesimulator/PicPacPoe.app"
+      ],
+      "verificationExitCode": 0
+    },
+    {
+      "configuration": "Debug",
+      "sdk": "iphoneos",
+      "destination": "generic/platform=iOS",
+      "command": [
+        "xcodebuild",
+        "-project",
+        "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/PicPacPoe.xcodeproj",
+        "-scheme",
+        "PicPacPoe",
+        "-configuration",
+        "Debug",
+        "-destination",
+        "generic/platform=iOS",
+        "-derivedDataPath",
+        "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphoneos",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "ENABLE_CODE_COVERAGE=NO",
+        "CLANG_ENABLE_CODE_COVERAGE=NO",
+        "CLANG_COVERAGE_MAPPING=NO",
+        "build"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 9.978596374999995,
+      "completedAt": "2026-09-25T10:55:42.833356+00:00",
+      "artifact": "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphoneos/Build/Products/Debug-iphoneos/PicPacPoe.app",
+      "unsigned": true,
+      "appFileSHA256": {
+        "AppIcon60x60@2x.png": "4756300ff3b8b7612f9bd679cf62abfb455c37375da45b74f7a2d6b0fe512740",
+        "AppIcon76x76@2x~ipad.png": "8f2320947948819c659ae739c8a26044ef3cc6f5933f4b90ffbd428a6e099b1b",
+        "Assets.car": "5d76a6afac32a081421877509359fa4b4e68d2a45d32c0b876a704802ebc65b1",
+        "Info.plist": "5d65a4b2e12412bf3f8c25c388d007b24b2dc9064481e5a1d6a6352eb7abc300",
+        "PicPacKit_PicPacAI.bundle/Info.plist": "e53658c0fd261b2ea02108d7b5b3eafa1448a4eb98fd4bb5ef737cf9d861cd38",
+        "PicPacKit_PicPacAI.bundle/picpac_rl_policy_v1.bin": "9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1",
+        "PicPacPoe": "2131b2e8e206f80fc9ce83f226f0551802cab85e30fd09147cfb075e7ba29a7a",
+        "PicPacPoe.debug.dylib": "fd05ece1cfb8f1da33723ec9c5a3a2648b966ffe6b2cbbb0708eea90342ee7e0",
+        "PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+        "__preview.dylib": "6b3634da2b9a90dadeea451cace81777453a0fe8dcbd8352054ef973694ec35c",
+        "fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+        "fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+        "fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9"
+      },
+      "appBundleSHA256": "7828006d747a3ab60c04bdfcd85e431c8f2180f68b16985070886ee9d683ca22",
+      "identity": {
+        "CFBundleIdentifier": "dev.saipranith.picpacpoe",
+        "CFBundleShortVersionString": "2.0.0",
+        "CFBundleVersion": "1",
+        "MinimumOSVersion": "17.0",
+        "CFBundleSupportedPlatforms": [
+          "iPhoneOS"
+        ],
+        "UIDeviceFamily": [
+          1,
+          2
+        ],
+        "UILaunchScreen": {
+          "UIColorName": "LaunchBackground"
+        },
+        "CFBundleIcons": {
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon60x60"
+            ],
+            "CFBundleIconName": "AppIcon"
+          }
+        },
+        "CFBundleIcons~ipad": {
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon60x60",
+              "AppIcon76x76"
+            ],
+            "CFBundleIconName": "AppIcon"
+          }
+        }
+      },
+      "machoMinimums": [
+        "17.0"
+      ],
+      "machoPlatforms": [
+        "IOS"
+      ]
+    },
+    {
+      "configuration": "Release",
+      "sdk": "iphoneos",
+      "destination": "generic/platform=iOS",
+      "command": [
+        "xcodebuild",
+        "-project",
+        "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/PicPacPoe.xcodeproj",
+        "-scheme",
+        "PicPacPoe",
+        "-configuration",
+        "Release",
+        "-destination",
+        "generic/platform=iOS",
+        "-derivedDataPath",
+        "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphoneos",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "ENABLE_CODE_COVERAGE=NO",
+        "CLANG_ENABLE_CODE_COVERAGE=NO",
+        "CLANG_COVERAGE_MAPPING=NO",
+        "build"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 13.702279917000006,
+      "completedAt": "2026-09-25T10:55:56.762592+00:00",
+      "artifact": "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphoneos/Build/Products/Release-iphoneos/PicPacPoe.app",
+      "unsigned": true,
+      "appFileSHA256": {
+        "AppIcon60x60@2x.png": "4756300ff3b8b7612f9bd679cf62abfb455c37375da45b74f7a2d6b0fe512740",
+        "AppIcon76x76@2x~ipad.png": "8f2320947948819c659ae739c8a26044ef3cc6f5933f4b90ffbd428a6e099b1b",
+        "Assets.car": "70a56f33266c816320a0c9ddbabc2eebfdfe0c3b7ee00906b590e4f995c030ef",
+        "Info.plist": "5d65a4b2e12412bf3f8c25c388d007b24b2dc9064481e5a1d6a6352eb7abc300",
+        "PicPacKit_PicPacAI.bundle/Info.plist": "e53658c0fd261b2ea02108d7b5b3eafa1448a4eb98fd4bb5ef737cf9d861cd38",
+        "PicPacKit_PicPacAI.bundle/picpac_rl_policy_v1.bin": "9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1",
+        "PicPacPoe": "fd2901c2db0f46ec4b0a609cb3eed2006c87b21b1311f5e54a7236aa40ccc9fb",
+        "PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+        "fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+        "fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+        "fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9"
+      },
+      "appBundleSHA256": "108e1f5778cad48cc59f32cd64284125711936b6b9f9175197410030d144abba",
+      "identity": {
+        "CFBundleIdentifier": "dev.saipranith.picpacpoe",
+        "CFBundleShortVersionString": "2.0.0",
+        "CFBundleVersion": "1",
+        "MinimumOSVersion": "17.0",
+        "CFBundleSupportedPlatforms": [
+          "iPhoneOS"
+        ],
+        "UIDeviceFamily": [
+          1,
+          2
+        ],
+        "UILaunchScreen": {
+          "UIColorName": "LaunchBackground"
+        },
+        "CFBundleIcons": {
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon60x60"
+            ],
+            "CFBundleIconName": "AppIcon"
+          }
+        },
+        "CFBundleIcons~ipad": {
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon60x60",
+              "AppIcon76x76"
+            ],
+            "CFBundleIconName": "AppIcon"
+          }
+        }
+      },
+      "machoMinimums": [
+        "17.0"
+      ],
+      "machoPlatforms": [
+        "IOS"
+      ],
+      "coverageSectionsAbsent": true,
+      "instrumentedCompilerCommands": 0,
+      "verificationCommand": [
+        "python3",
+        "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Scripts/verify-unsigned-app.py",
+        "--platform",
+        "iphoneos",
+        "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphoneos/Build/Products/Release-iphoneos/PicPacPoe.app"
+      ],
+      "verificationExitCode": 0
+    }
+  ],
+  "supersedesProductBuildEvidence": "unsigned-builds-final-20260925: preserved pre-layout-fix binaries on 03d44f794ef98e66ebeb63cd467313ece2331b91",
+  "hostedActionsExecuted": false,
+  "minimumRuntimeExecuted": false,
+  "physicalDeviceExecuted": false,
+  "claim": "Local unsigned Debug/Release simulator and device SDK compilation. These commands reproduce the unsigned CI build gates with an explicitly selected existing local Xcode; no hosted CI, iOS 17 runtime, physical-device, signing or upload proof.",
+  "toolchain": {
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "swift": "swift-driver version: 1.148.6 Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0",
+    "macOS": "26.5.2",
+    "architecture": "arm64"
+  },
+  "stableSource": true,
+  "pass": true,
+  "completedAt": "2026-09-25T10:55:57.074687+00:00"
+}

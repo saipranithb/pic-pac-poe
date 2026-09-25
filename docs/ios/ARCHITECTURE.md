@@ -115,6 +115,35 @@ The SwiftUI layer uses the handoff's semantic tokens instead of platform-default
 
 The repeatable evidence tool builds the real Debug app unsigned and launches deterministic, in-memory presentation fixtures on an ephemeral simulator. It captures Home, human placement, Local handoff and reveal, computer targeting and settlement, result, Settings, How to Play and AI Lab in both themes, verifies the canonical Android reference hashes, and generates an uncropped comparison sheet. Fixture screenshots establish rendered state and visual intent; they do not substitute for Build Phase 3's live-flow, assistive-technology or performance checks.
 
+## Stable layout at large text sizes
+
+Gameplay reserves enough space for every instruction title/detail that its
+mode can show. The envelope uses the same `GameInstructionCopy` values, actual
+available width and SwiftUI fonts as the live copy, so Dynamic Type can wrap
+naturally. A constant 62pt piece slot keeps the text width unchanged when a
+held or placed piece appears. The player headers reserve both active-turn and
+Waiting text heights and a constant 3pt rule slot. The probability footer
+reserves the complete finite set of counts from 0 through 10, both with and
+without a held piece, including singular grammar. These view-only sizing
+copies are hidden from accessibility and hit testing. They do not change
+coordinator state, randomness, persistence or transition timing.
+
+The result is a stable board origin when readable stage copy or bag wording
+changes, including when the gameplay scroll view is at its bottom. Shorter
+copy intentionally leaves space inside the envelope. How to Play markers keep
+their number and period together at their natural Dynamic Type width, retaining
+the normal 34pt minimum gutter and a 6pt body gap. Each step remains one combined
+accessibility row. Full-size text and ordinary vertical scrolling are retained.
+
+The UI target contains 26 tests. In addition to the prior 24 flow, restoration
+and accessibility methods, two regressions compare all nine cell rectangles
+across six stages at regular and AX3 text/top and bottom fixture anchors, and
+verify complete tutorial labels and real scroll reachability at AX3 and AX5.
+Original screenshots receive a separate visual punctuation/layout review.
+This source inventory describes the implemented contract; accepted execution
+counts must come from the final governed result inventory. Historical 24-test
+runs retain their original source identity and counts.
+
 ## Six delivery phases
 
 Build Phase 3 adds native XCUITest flows with real production workers and atomic storage in an isolated Debug-only namespace. Explicitly labeled extended holds let tests inspect transient stages; ordinary complete games use production durations. Every injection switch is excluded from Release. The governed snapshot harness captures 24 states/viewports in both themes across seven device/text/motion profiles, records the exact build inputs and Android reference hashes, and requires a separate review record before baseline comparison. It never replaces baselines automatically. The native asset catalog contains a reproducible adaptation of the canonical launcher vectors and a semantic launch background.

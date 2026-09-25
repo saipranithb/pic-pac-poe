@@ -1,0 +1,1008 @@
+{
+  "reviewer": "independent agent recovery_ui",
+  "method": "Every assigned original PNG opened individually with view_image(detail=original); no crop, contact-sheet substitution or threshold-only approval. Semantic Android comparison uses directly opened canonical references listed here.",
+  "startedAt": "2026-09-25T10:05:19.133675+00:00",
+  "sourceCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+  "candidateRoot": "/tmp/picpac-phase3-baseline-post-layout-20260925",
+  "canonicalReferencesOpened": [
+    {
+      "path": "docs/ios-handoff/reference/home-scene-dark-normal-412dp-x.png",
+      "sha256": "dd23cc69f604120d2c46f71efac6f954079861398783ed5889701cefd2806d13",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/classic-dark.png",
+      "sha256": "d5967bda86ca3b6d47871fb9b987f79cb6c412b04765938546ee51c0219421ca",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-targeting-dark.png",
+      "sha256": "ed04bd3ae2397d2f64a607f8ddffd1882ec4183b66230c8aff4ab34af85776bf",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/result-dark.png",
+      "sha256": "1c85a690df2ad179a454e3ee6a42d77fc1f0ca2032b07cb51ee1cd108f173e97",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/home-scene-light-normal-412dp-x.png",
+      "sha256": "13990275fd4d0dfc5d260f7e9a64478895f393717605b6ba49c6bb56196104f5",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/classic-light.png",
+      "sha256": "a26cc780ea2fdf193d5f2b85d1c6ff81b13afd4ab775b3bfc9e995d6f14346f4",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-targeting-light.png",
+      "sha256": "fd7685ea55870a86f7adff9a00f688f526410bd2fb45cde485b354314942cd2e",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/result-light.png",
+      "sha256": "b60274a9734d63f63bcabbfe592688e42f4273c27b094b06d87378d86a276451",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/settings-dark.png",
+      "sha256": "602a0e8d2ce628c74ce10b88c2b5e2bfd895a60f9b77837bdc21c60d5bfb748a",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/how-to-dark.png",
+      "sha256": "fbe97e92a1ce60f156aad262048f91431811d869d5481088405298b9cdb3f513",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/ai-lab-dark.png",
+      "sha256": "3344a5f567ba59bb693fa50dc83759fbf212fc008dd40201b58da94b421d3686",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/settings-light.png",
+      "sha256": "c73385438eb48f6b302e78356a260c3647716df5e7c0cef6959585cc1e5f6f6a",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/how-to-light.png",
+      "sha256": "0e5ac024e97a08f008916f105a4a787b62914cedd93b027b90f70af2f44d9779",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/ai-lab-light.png",
+      "sha256": "63fd4de045a8ae68cb36837d33542069f415ac01967a163125bb2929646b86a9",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/local-handoff-dark.png",
+      "sha256": "7e8326795189f98e02eb8afdc66c7072cb6e0dd8cd075607c6eefdf2a58dee1a",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/local-reveal-dark.png",
+      "sha256": "3cee784c0a6f20528dfcb53005e68bd44a5459f07c8afc49fdc74f4f576bbcb5",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/human-reveal-dark.png",
+      "sha256": "7fbc0752f678c2de435e84ab1a0e0630437d6e6703aaf7d4440ebb5b025efba6",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/human-placement-dark.png",
+      "sha256": "e43d090d87246f5eb579f78055d3b87cda06ef9b6a613916e30f76f473a3aa85",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-reveal-dark.png",
+      "sha256": "d4ebea7b59be4d903f629d6cb20bdc8627fb0edbf9e0f394b51d9a8957fc2731",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-thinking-dark.png",
+      "sha256": "26afc63d405d20707c0ee51a49b6c1255d34ab814c4387b51fef08344045c272",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-reveal-light.png",
+      "sha256": "a3a6bff2c9675168dff8ba8da8ff59c5d663fea6a7003a99e3c492c138d124c5",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-thinking-light.png",
+      "sha256": "c939677e3d8fca13ee6b48078f95f6dc07c14bfc41fc24ca25b9b6717a92f8df",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-placement-light.png",
+      "sha256": "4b842530dfbf20102edd6293a5d11258ea571cecd662ac30e81c7711675b775c",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-settled-light.png",
+      "sha256": "afc65a10fcddcff552f6493671cd9a80065e53d01f5b5f99ae72ed6c9498ec8a",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-placement-dark.png",
+      "sha256": "81741744562289419aa452c393977c439dfcf11a90934951716a5a4e4fd661b7",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-settled-dark.png",
+      "sha256": "8b573606f5712aa85055c498dacfccec4ea32b7eb626cf1d46db328c2969e737",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-turn-start-dark.png",
+      "sha256": "ddddbb7f5dac787ca25126bf2e54f0ecce216bec3c18e81627e6cff251515abe",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-turn-start-light.png",
+      "sha256": "317d3c86ba74d4f7bb4dfbfedc989b5ac93c03680a543978777d5db7b17754c1",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/home-narrow-large-dark.png",
+      "sha256": "0925aa65d5dfb8d14f8ce1fd345d2e2c330512f0311c0466a8970c6376110a30",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/home-narrow-large-light.png",
+      "sha256": "ea695a331fb110cefaeb6f8a2b84e547578441008494c5f961788ced62179119",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/home-native-large-200.png",
+      "sha256": "4fbdd8b1f2be492e849a2611836ccf99e6cbb5067fbc6c0c963452b4b28865e4",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "docs/ios-handoff/reference/home-native-large-130.png",
+      "sha256": "dcef7c2df5f6e0c4e76ac8dec15123c051002f53903eb0953902585bac54b3fd",
+      "openedAtOriginalResolution": true
+    }
+  ],
+  "captures": [
+    {
+      "path": "regular--dark--home.png",
+      "sha256": "e3254745424991676d4fa7e059411eb4b97caa777f99c842ddacf0bb5247d615",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original inspected. Fredoka semantic wordmark, bag-to-board explanation, selected Medium and tactile Play retain Android hierarchy and warm resin styling; native safe area and two-line tagline fit without clipping.",
+      "reviewedAt": "2026-09-25T10:10:10.310383+00:00"
+    },
+    {
+      "path": "regular--dark--classic.png",
+      "sha256": "6c2bc926f83fcdaeec17e441814337b960dfa7a0d1310c1b15a9887530260f27",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original inspected. Full board and stage instruction fit; warm cell surfaces and coral X remain tactile. Actor accents are distinct from symbols. Handoff shows no board or bag; reveal cards have complete readable copy. Human start and placement retain board geometry, with complete bag/footer above safe area.",
+      "reviewedAt": "2026-09-25T10:10:43.885949+00:00"
+    },
+    {
+      "path": "regular--dark--local-handoff.png",
+      "sha256": "6ea7da552b5cf73d2ebef11fb82c2dac057ebb3b807fbc729d8adec4d94b62b3",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original inspected. Full board and stage instruction fit; warm cell surfaces and coral X remain tactile. Actor accents are distinct from symbols. Handoff shows no board or bag; reveal cards have complete readable copy. Human start and placement retain board geometry, with complete bag/footer above safe area.",
+      "reviewedAt": "2026-09-25T10:10:43.886311+00:00"
+    },
+    {
+      "path": "regular--dark--local-reveal.png",
+      "sha256": "5490cd7daf3f46c156422d18a57e90134af70d192da80f4854c7805e8c1f37ec",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original inspected. Full board and stage instruction fit; warm cell surfaces and coral X remain tactile. Actor accents are distinct from symbols. Handoff shows no board or bag; reveal cards have complete readable copy. Human start and placement retain board geometry, with complete bag/footer above safe area.",
+      "reviewedAt": "2026-09-25T10:10:43.886868+00:00"
+    },
+    {
+      "path": "regular--dark--human-turn-start.png",
+      "sha256": "e28db9eb2da2cf89e02148c8fa9b9f186dd98d32c8e637e1397a88ac47629a55",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original inspected. Full board and stage instruction fit; warm cell surfaces and coral X remain tactile. Actor accents are distinct from symbols. Handoff shows no board or bag; reveal cards have complete readable copy. Human start and placement retain board geometry, with complete bag/footer above safe area.",
+      "reviewedAt": "2026-09-25T10:10:43.887370+00:00"
+    },
+    {
+      "path": "regular--dark--human-reveal.png",
+      "sha256": "cd16420a218386c5b2d346ff9a986d949a40bc7174b51de23be47af881f94bf0",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original inspected. Full board and stage instruction fit; warm cell surfaces and coral X remain tactile. Actor accents are distinct from symbols. Handoff shows no board or bag; reveal cards have complete readable copy. Human start and placement retain board geometry, with complete bag/footer above safe area.",
+      "reviewedAt": "2026-09-25T10:10:43.887909+00:00"
+    },
+    {
+      "path": "regular--dark--human-placement.png",
+      "sha256": "46de9af6a916a02a297fcb99abfd0152f17ffa623ae60523427da196b3629197",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original inspected. Full board and stage instruction fit; warm cell surfaces and coral X remain tactile. Actor accents are distinct from symbols. Handoff shows no board or bag; reveal cards have complete readable copy. Human start and placement retain board geometry, with complete bag/footer above safe area.",
+      "reviewedAt": "2026-09-25T10:10:43.888438+00:00"
+    },
+    {
+      "path": "regular--dark--computer-reveal.png",
+      "sha256": "8d117eab8e82aa734ecb528a68fd5fb233f6e39492a35f35aa7cde99a4f7a4c2",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution visual inspection: complete stage copy, stable board and tray, selected target ring retained through placement and settlement, distinct computer actor and semantic symbols; terminal board remains visible before result. No new defect.",
+      "reviewedAt": "2026-09-25T10:12:46.164689+00:00"
+    },
+    {
+      "path": "regular--dark--computer-thinking.png",
+      "sha256": "318848b063e7aaf4bb104a6c4d3f5d25135b4376ac9ffd669647e3c6c2abf3ba",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution visual inspection: complete stage copy, stable board and tray, selected target ring retained through placement and settlement, distinct computer actor and semantic symbols; terminal board remains visible before result. No new defect.",
+      "reviewedAt": "2026-09-25T10:12:46.166004+00:00"
+    },
+    {
+      "path": "regular--dark--computer-targeting.png",
+      "sha256": "2915238ca97c1c1fb054c4de4a89ea04926cc7add86cd6f12c3652552726fac0",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution visual inspection: complete stage copy, stable board and tray, selected target ring retained through placement and settlement, distinct computer actor and semantic symbols; terminal board remains visible before result. No new defect.",
+      "reviewedAt": "2026-09-25T10:12:46.166974+00:00"
+    },
+    {
+      "path": "regular--dark--computer-placement.png",
+      "sha256": "9d84999599da6283532c7b61b6006bdf94aebae58e8e23374c5a029707a93404",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution visual inspection: complete stage copy, stable board and tray, selected target ring retained through placement and settlement, distinct computer actor and semantic symbols; terminal board remains visible before result. No new defect.",
+      "reviewedAt": "2026-09-25T10:12:46.168017+00:00"
+    },
+    {
+      "path": "regular--dark--computer-settled.png",
+      "sha256": "4946b5657769330cb58a69b39370ec10a4394174ae3e530ca4266abadefca206",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution visual inspection: complete stage copy, stable board and tray, selected target ring retained through placement and settlement, distinct computer actor and semantic symbols; terminal board remains visible before result. No new defect.",
+      "reviewedAt": "2026-09-25T10:12:46.169083+00:00"
+    },
+    {
+      "path": "regular--dark--terminal-settling-win.png",
+      "sha256": "859c82bdf37804826bf8f782751a148a041fce2b30d1788d328b7d57827aa2f7",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution visual inspection: complete stage copy, stable board and tray, selected target ring retained through placement and settlement, distinct computer actor and semantic symbols; terminal board remains visible before result. No new defect.",
+      "reviewedAt": "2026-09-25T10:12:46.170065+00:00"
+    },
+    {
+      "path": "regular--dark--terminal-settling-draw.png",
+      "sha256": "0b99d24be17b17a79973f683d90b84a8aca7bf3c88e50145d1fd8978899e7a10",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. Settled draw retains selected final cell and singular bag grammar; result card and controls are complete. Settings hierarchy and theme state readable; tutorial punctuation intact. AI Lab top has expected scroll continuation below viewport, without horizontal clipping.",
+      "reviewedAt": "2026-09-25T10:13:05.332313+00:00"
+    },
+    {
+      "path": "regular--dark--result.png",
+      "sha256": "be0bbd8593f03a1e1c8ca098c3698f1d7ec6236819a2557cf3f6382b5ea7038d",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. Settled draw retains selected final cell and singular bag grammar; result card and controls are complete. Settings hierarchy and theme state readable; tutorial punctuation intact. AI Lab top has expected scroll continuation below viewport, without horizontal clipping.",
+      "reviewedAt": "2026-09-25T10:13:05.332990+00:00"
+    },
+    {
+      "path": "regular--dark--draw-result.png",
+      "sha256": "de2d655206a6bf36682df3506d564318ba2fda7529748797654831a311fdc4fd",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. Settled draw retains selected final cell and singular bag grammar; result card and controls are complete. Settings hierarchy and theme state readable; tutorial punctuation intact. AI Lab top has expected scroll continuation below viewport, without horizontal clipping.",
+      "reviewedAt": "2026-09-25T10:13:05.333582+00:00"
+    },
+    {
+      "path": "regular--dark--settings.png",
+      "sha256": "c4cb6f362206b3a7ebb21d65af11d27e7afa133a0b6af0e995fb2b497eaeb882",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. Settled draw retains selected final cell and singular bag grammar; result card and controls are complete. Settings hierarchy and theme state readable; tutorial punctuation intact. AI Lab top has expected scroll continuation below viewport, without horizontal clipping.",
+      "reviewedAt": "2026-09-25T10:13:05.334040+00:00"
+    },
+    {
+      "path": "regular--dark--how-to.png",
+      "sha256": "68eafe1f8184e703d75bbab192849eb56ac69ca3cae1a7f5af005e86bb7647cd",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. Settled draw retains selected final cell and singular bag grammar; result card and controls are complete. Settings hierarchy and theme state readable; tutorial punctuation intact. AI Lab top has expected scroll continuation below viewport, without horizontal clipping.",
+      "reviewedAt": "2026-09-25T10:13:05.334654+00:00"
+    },
+    {
+      "path": "regular--dark--ai-lab.png",
+      "sha256": "2deae51ec600fe21ee9519a6a545dfc9949f6c3865f46461b4c8895e17e3d16b",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. Settled draw retains selected final cell and singular bag grammar; result card and controls are complete. Settings hierarchy and theme state readable; tutorial punctuation intact. AI Lab top has expected scroll continuation below viewport, without horizontal clipping.",
+      "reviewedAt": "2026-09-25T10:13:05.335298+00:00"
+    },
+    {
+      "path": "regular--dark--home-bottom.png",
+      "sha256": "46506338f4c02afc6f8ffd62ecd78a0451a2646d356ac82f8a880a4e89b45e8a",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: all lower controls and copy are complete, tactile styles and semantic colors retained. Explicit bottom anchor places short content lower; this is a fixture offset, not production launch or proof of a user scroll. AI Lab ending is complete; tutorial markers remain intact.",
+      "reviewedAt": "2026-09-25T10:13:17.966548+00:00"
+    },
+    {
+      "path": "regular--dark--human-placement-bottom.png",
+      "sha256": "e9ecccce8296d2d6c9fa79f88806e7866bfc0ab5dc5e85699e82bf08ca42c680",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: all lower controls and copy are complete, tactile styles and semantic colors retained. Explicit bottom anchor places short content lower; this is a fixture offset, not production launch or proof of a user scroll. AI Lab ending is complete; tutorial markers remain intact.",
+      "reviewedAt": "2026-09-25T10:13:17.967213+00:00"
+    },
+    {
+      "path": "regular--dark--settings-bottom.png",
+      "sha256": "8b6f79ae3555bef3577d035258e12f3bcfbd80d1279a72102199f5f36dc8e1f0",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: all lower controls and copy are complete, tactile styles and semantic colors retained. Explicit bottom anchor places short content lower; this is a fixture offset, not production launch or proof of a user scroll. AI Lab ending is complete; tutorial markers remain intact.",
+      "reviewedAt": "2026-09-25T10:13:17.967574+00:00"
+    },
+    {
+      "path": "regular--dark--how-to-bottom.png",
+      "sha256": "e529020c98da6c44693a30d8d4eb55c2114e3216139a554cc47f9d20f36339fa",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: all lower controls and copy are complete, tactile styles and semantic colors retained. Explicit bottom anchor places short content lower; this is a fixture offset, not production launch or proof of a user scroll. AI Lab ending is complete; tutorial markers remain intact.",
+      "reviewedAt": "2026-09-25T10:13:17.968037+00:00"
+    },
+    {
+      "path": "regular--dark--ai-lab-bottom.png",
+      "sha256": "a4d07ce49eb551b643a20d12a7c44717c11e5e5c58a1ab10115a1b6cdf1985b1",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: all lower controls and copy are complete, tactile styles and semantic colors retained. Explicit bottom anchor places short content lower; this is a fixture offset, not production launch or proof of a user scroll. AI Lab ending is complete; tutorial markers remain intact.",
+      "reviewedAt": "2026-09-25T10:13:17.969330+00:00"
+    },
+    {
+      "path": "regular--light--home.png",
+      "sha256": "e778af93475e93b63068bea79f8dbb052eab74f755f1eb8ff5d116b6c24f8ff5",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution inspection: light resin palette and semantic wordmark agree with canonical intent. Complete Home choices and bag-to-board explanation; square board and piece depth preserved. Handoff hides the board and draw; reveal identifies actor and symbol distinctly; stage instruction and tray readable.",
+      "reviewedAt": "2026-09-25T10:13:35.438245+00:00"
+    },
+    {
+      "path": "regular--light--classic.png",
+      "sha256": "3b65ef368d135d411fe6982c5a5fe0f09da5cca01096c5ca79d17461cbe34942",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution inspection: light resin palette and semantic wordmark agree with canonical intent. Complete Home choices and bag-to-board explanation; square board and piece depth preserved. Handoff hides the board and draw; reveal identifies actor and symbol distinctly; stage instruction and tray readable.",
+      "reviewedAt": "2026-09-25T10:13:35.438544+00:00"
+    },
+    {
+      "path": "regular--light--local-handoff.png",
+      "sha256": "ef501e9d9d88caccda85f2862ef5d3c237a5a6e9c5ef379de08504200e6a2dde",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution inspection: light resin palette and semantic wordmark agree with canonical intent. Complete Home choices and bag-to-board explanation; square board and piece depth preserved. Handoff hides the board and draw; reveal identifies actor and symbol distinctly; stage instruction and tray readable.",
+      "reviewedAt": "2026-09-25T10:13:35.438639+00:00"
+    },
+    {
+      "path": "regular--light--local-reveal.png",
+      "sha256": "000d1bf5315cc1d64c9dcf464fd6beee386c6791e91bdc1cb60e50b303e31b58",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution inspection: light resin palette and semantic wordmark agree with canonical intent. Complete Home choices and bag-to-board explanation; square board and piece depth preserved. Handoff hides the board and draw; reveal identifies actor and symbol distinctly; stage instruction and tray readable.",
+      "reviewedAt": "2026-09-25T10:13:35.438928+00:00"
+    },
+    {
+      "path": "regular--light--human-turn-start.png",
+      "sha256": "03ad95fe0f051b40f3fd8334a749796560d061fbde17b1dc8f6affeb64003090",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution inspection: light resin palette and semantic wordmark agree with canonical intent. Complete Home choices and bag-to-board explanation; square board and piece depth preserved. Handoff hides the board and draw; reveal identifies actor and symbol distinctly; stage instruction and tray readable.",
+      "reviewedAt": "2026-09-25T10:13:35.439178+00:00"
+    },
+    {
+      "path": "regular--light--human-reveal.png",
+      "sha256": "3fd930a237dac4279e5a5ec6c0c3df34fa9278cc088d94acaa53e676462ec78e",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original-resolution inspection: light resin palette and semantic wordmark agree with canonical intent. Complete Home choices and bag-to-board explanation; square board and piece depth preserved. Handoff hides the board and draw; reveal identifies actor and symbol distinctly; stage instruction and tray readable.",
+      "reviewedAt": "2026-09-25T10:13:35.439461+00:00"
+    },
+    {
+      "path": "regular--light--human-placement.png",
+      "sha256": "5a78da2a9ee56238b2793951c20763a4fafea448bdd47c7a69982af3b5ecd7af",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened every original. Complete stage instructions and held piece badges; computer actor purple remains separate from semantic green O. Selected-cell ring, piece scale, shadows, board cell positions and tray structure stay coherent across target/place/settle. No new clipping or layout defect.",
+      "reviewedAt": "2026-09-25T10:13:52.519807+00:00"
+    },
+    {
+      "path": "regular--light--computer-reveal.png",
+      "sha256": "3acedb41d2461a68697c3ff957e19aad74c1b261926ca63331a0b2b9d04d60a4",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened every original. Complete stage instructions and held piece badges; computer actor purple remains separate from semantic green O. Selected-cell ring, piece scale, shadows, board cell positions and tray structure stay coherent across target/place/settle. No new clipping or layout defect.",
+      "reviewedAt": "2026-09-25T10:13:52.520629+00:00"
+    },
+    {
+      "path": "regular--light--computer-thinking.png",
+      "sha256": "9f928e7477567660744d55bb27ce0c4d28e33f65b10c315a506c2d1e262d3b3f",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened every original. Complete stage instructions and held piece badges; computer actor purple remains separate from semantic green O. Selected-cell ring, piece scale, shadows, board cell positions and tray structure stay coherent across target/place/settle. No new clipping or layout defect.",
+      "reviewedAt": "2026-09-25T10:13:52.521342+00:00"
+    },
+    {
+      "path": "regular--light--computer-targeting.png",
+      "sha256": "80f7d511d86c45911fc2526edefd512d9a80ce2c898d7ef40b47cd39de58703e",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened every original. Complete stage instructions and held piece badges; computer actor purple remains separate from semantic green O. Selected-cell ring, piece scale, shadows, board cell positions and tray structure stay coherent across target/place/settle. No new clipping or layout defect.",
+      "reviewedAt": "2026-09-25T10:13:52.522083+00:00"
+    },
+    {
+      "path": "regular--light--computer-placement.png",
+      "sha256": "9c5f4734e05fa633d8c96454eea2aac511f9db26c3bddf551eea5fe95832fd8f",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened every original. Complete stage instructions and held piece badges; computer actor purple remains separate from semantic green O. Selected-cell ring, piece scale, shadows, board cell positions and tray structure stay coherent across target/place/settle. No new clipping or layout defect.",
+      "reviewedAt": "2026-09-25T10:13:52.522866+00:00"
+    },
+    {
+      "path": "regular--light--computer-settled.png",
+      "sha256": "1446176c6549038d0d128270373ab76cb074cbdab8dad3db29c95564183e750c",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened every original. Complete stage instructions and held piece badges; computer actor purple remains separate from semantic green O. Selected-cell ring, piece scale, shadows, board cell positions and tray structure stay coherent across target/place/settle. No new clipping or layout defect.",
+      "reviewedAt": "2026-09-25T10:13:52.523617+00:00"
+    },
+    {
+      "path": "regular--light--terminal-settling-win.png",
+      "sha256": "9dc08acf9f075909bd6a34957dc67eb490750751ca1fb5b298fce73de5bc2714",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: settlement boards and result mini-boards preserve state and alignment; result copy and rematch/Home controls complete. Singular one-piece grammar correct. Settings native switches and selected theme clear. Tutorial numbering intact and all regular-size body copy visible.",
+      "reviewedAt": "2026-09-25T10:14:11.381525+00:00"
+    },
+    {
+      "path": "regular--light--terminal-settling-draw.png",
+      "sha256": "954621fb7100745169082afc757283b98943b265459d552b2eccbf23c638dd5f",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: settlement boards and result mini-boards preserve state and alignment; result copy and rematch/Home controls complete. Singular one-piece grammar correct. Settings native switches and selected theme clear. Tutorial numbering intact and all regular-size body copy visible.",
+      "reviewedAt": "2026-09-25T10:14:11.382388+00:00"
+    },
+    {
+      "path": "regular--light--result.png",
+      "sha256": "7b7416ca0a5c611495cee316ebdca88d0ce1ff53950f4e64b8ebaff08e05864e",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: settlement boards and result mini-boards preserve state and alignment; result copy and rematch/Home controls complete. Singular one-piece grammar correct. Settings native switches and selected theme clear. Tutorial numbering intact and all regular-size body copy visible.",
+      "reviewedAt": "2026-09-25T10:14:11.383247+00:00"
+    },
+    {
+      "path": "regular--light--draw-result.png",
+      "sha256": "279a467243dab168e188c763f6e81d129048b0aabb3ee0863a9b4210f0137ed2",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: settlement boards and result mini-boards preserve state and alignment; result copy and rematch/Home controls complete. Singular one-piece grammar correct. Settings native switches and selected theme clear. Tutorial numbering intact and all regular-size body copy visible.",
+      "reviewedAt": "2026-09-25T10:14:11.383982+00:00"
+    },
+    {
+      "path": "regular--light--settings.png",
+      "sha256": "f8b7564ce45b6b2c4b43369fc65891dd262a0451a3dfbc1d3a44e643cd269d88",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: settlement boards and result mini-boards preserve state and alignment; result copy and rematch/Home controls complete. Singular one-piece grammar correct. Settings native switches and selected theme clear. Tutorial numbering intact and all regular-size body copy visible.",
+      "reviewedAt": "2026-09-25T10:14:11.384365+00:00"
+    },
+    {
+      "path": "regular--light--how-to.png",
+      "sha256": "960796d358d0ea39007d77dd454f00d32c08fc30dadf651e2378c5a0270da8be",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Original resolution: settlement boards and result mini-boards preserve state and alignment; result copy and rematch/Home controls complete. Singular one-piece grammar correct. Settings native switches and selected theme clear. Tutorial numbering intact and all regular-size body copy visible.",
+      "reviewedAt": "2026-09-25T10:14:11.384863+00:00"
+    },
+    {
+      "path": "regular--light--ai-lab.png",
+      "sha256": "bfe4fc2ddd090460f66d02a4f105dedf45d7fc7d13c63728383533eb96229151",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Every original opened: hierarchy and complete bottom content preserved, all visible controls readable with tactile surface treatment. AI Lab top naturally continues below viewport; bottom shows remaining copy. Explicit bottom anchor accounts for underflow placement; no production launch offset or gesture claim.",
+      "reviewedAt": "2026-09-25T10:14:32.428037+00:00"
+    },
+    {
+      "path": "regular--light--home-bottom.png",
+      "sha256": "d248472609a5cbceee87e0343622dc41aa3b3dd4e9f6ee9d4d1f4af560e6d895",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Every original opened: hierarchy and complete bottom content preserved, all visible controls readable with tactile surface treatment. AI Lab top naturally continues below viewport; bottom shows remaining copy. Explicit bottom anchor accounts for underflow placement; no production launch offset or gesture claim.",
+      "reviewedAt": "2026-09-25T10:14:32.428844+00:00"
+    },
+    {
+      "path": "regular--light--human-placement-bottom.png",
+      "sha256": "b223942a8de4359f5696b1282af47c18c3741fb306af11a6ef72dd5ae8171be9",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Every original opened: hierarchy and complete bottom content preserved, all visible controls readable with tactile surface treatment. AI Lab top naturally continues below viewport; bottom shows remaining copy. Explicit bottom anchor accounts for underflow placement; no production launch offset or gesture claim.",
+      "reviewedAt": "2026-09-25T10:14:32.429809+00:00"
+    },
+    {
+      "path": "regular--light--settings-bottom.png",
+      "sha256": "c9d2739130a099da721af680932c8363f915e665ffeac832f7472a4abcd62767",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Every original opened: hierarchy and complete bottom content preserved, all visible controls readable with tactile surface treatment. AI Lab top naturally continues below viewport; bottom shows remaining copy. Explicit bottom anchor accounts for underflow placement; no production launch offset or gesture claim.",
+      "reviewedAt": "2026-09-25T10:14:32.430553+00:00"
+    },
+    {
+      "path": "regular--light--how-to-bottom.png",
+      "sha256": "b908e29eb3f204bc439df07c25ea049b539ae4d2257a1f99c15f67e7ad242539",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Every original opened: hierarchy and complete bottom content preserved, all visible controls readable with tactile surface treatment. AI Lab top naturally continues below viewport; bottom shows remaining copy. Explicit bottom anchor accounts for underflow placement; no production launch offset or gesture claim.",
+      "reviewedAt": "2026-09-25T10:14:32.431896+00:00"
+    },
+    {
+      "path": "regular--light--ai-lab-bottom.png",
+      "sha256": "2e248df92573db2b62cd395634d0573618a252e7de79c43e00e9d36a8951d41c",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Every original opened: hierarchy and complete bottom content preserved, all visible controls readable with tactile surface treatment. AI Lab top naturally continues below viewport; bottom shows remaining copy. Explicit bottom anchor accounts for underflow placement; no production launch offset or gesture claim.",
+      "reviewedAt": "2026-09-25T10:14:32.432688+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--home.png",
+      "sha256": "a7e958806db0fea3e0f62495ff01c3689814e6bd22fc4bde263ec8b7a75edf1d",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. AX3 body wraps naturally without truncation; lower Home and board continue in scroll content. Handoff hides private state with full Ready/Home controls. Reveal actor, full title and caption fit. Mode-wide instruction envelope intentionally reserves height; no compressed text or horizontal overflow.",
+      "reviewedAt": "2026-09-25T10:20:40.963527+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--classic.png",
+      "sha256": "a538a3cf5f2a0cb3dbf00fd9cf98350a4811b8659bcb8b46a80f9cc12b4b3c18",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. AX3 body wraps naturally without truncation; lower Home and board continue in scroll content. Handoff hides private state with full Ready/Home controls. Reveal actor, full title and caption fit. Mode-wide instruction envelope intentionally reserves height; no compressed text or horizontal overflow.",
+      "reviewedAt": "2026-09-25T10:20:40.964144+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--local-handoff.png",
+      "sha256": "5d9100127bce4f92b3e0c21cc7e87728445d8db36759b5f50613aafd2de4270c",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. AX3 body wraps naturally without truncation; lower Home and board continue in scroll content. Handoff hides private state with full Ready/Home controls. Reveal actor, full title and caption fit. Mode-wide instruction envelope intentionally reserves height; no compressed text or horizontal overflow.",
+      "reviewedAt": "2026-09-25T10:20:40.964706+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--local-reveal.png",
+      "sha256": "383aee73c0ee0c627fc9fb140557728dac83d8999f0b4e83ff658f080db2eee0",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. AX3 body wraps naturally without truncation; lower Home and board continue in scroll content. Handoff hides private state with full Ready/Home controls. Reveal actor, full title and caption fit. Mode-wide instruction envelope intentionally reserves height; no compressed text or horizontal overflow.",
+      "reviewedAt": "2026-09-25T10:20:40.965234+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--human-turn-start.png",
+      "sha256": "26e8170c2dc17620a12b1c28c39d91d28710fb81f524e5587ceb7f78810b62a3",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. AX3 body wraps naturally without truncation; lower Home and board continue in scroll content. Handoff hides private state with full Ready/Home controls. Reveal actor, full title and caption fit. Mode-wide instruction envelope intentionally reserves height; no compressed text or horizontal overflow.",
+      "reviewedAt": "2026-09-25T10:20:40.965735+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--human-reveal.png",
+      "sha256": "a9de8034f600086f89a59d0e5420fae179e0eb8230194b8c8e51446a5c69e72c",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original resolution. AX3 body wraps naturally without truncation; lower Home and board continue in scroll content. Handoff hides private state with full Ready/Home controls. Reveal actor, full title and caption fit. Mode-wide instruction envelope intentionally reserves height; no compressed text or horizontal overflow.",
+      "reviewedAt": "2026-09-25T10:20:40.966289+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--human-placement.png",
+      "sha256": "4f4ff6dd10b4ee15565963dfec2963208651b475f316f39aa1d556e8eb6cc1a9",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "All original-resolution frames opened. Complete AX3 instructions and actor labels wrap without truncation. Previously observed board shift is absent across these stage originals: board top and badge slot visually align. Reserved instruction space is intentional; scroll continuation exposes lower board. Computer reveal card fits fully with separate actor and symbol.",
+      "reviewedAt": "2026-09-25T10:21:00.478545+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--computer-reveal.png",
+      "sha256": "300c8901e226021e477d0fad06515c9dc239cc72e71d16e6e74c883490dc1275",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "All original-resolution frames opened. Complete AX3 instructions and actor labels wrap without truncation. Previously observed board shift is absent across these stage originals: board top and badge slot visually align. Reserved instruction space is intentional; scroll continuation exposes lower board. Computer reveal card fits fully with separate actor and symbol.",
+      "reviewedAt": "2026-09-25T10:21:00.479411+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--computer-thinking.png",
+      "sha256": "990f3682f0b23c25d32dec10105946f092ed091dd7b5170a92267970c9e04e67",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "All original-resolution frames opened. Complete AX3 instructions and actor labels wrap without truncation. Previously observed board shift is absent across these stage originals: board top and badge slot visually align. Reserved instruction space is intentional; scroll continuation exposes lower board. Computer reveal card fits fully with separate actor and symbol.",
+      "reviewedAt": "2026-09-25T10:21:00.479900+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--computer-targeting.png",
+      "sha256": "c5bb1112b3b12611b4505ab4e6bf0fa1e8a482ed5d0422c9b3deb664f1c34df9",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "All original-resolution frames opened. Complete AX3 instructions and actor labels wrap without truncation. Previously observed board shift is absent across these stage originals: board top and badge slot visually align. Reserved instruction space is intentional; scroll continuation exposes lower board. Computer reveal card fits fully with separate actor and symbol.",
+      "reviewedAt": "2026-09-25T10:21:00.480410+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--computer-placement.png",
+      "sha256": "01c33f902ec3667e01053a7cabec1fd1074bf7af8072dd2977a22973f8b1315e",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "All original-resolution frames opened. Complete AX3 instructions and actor labels wrap without truncation. Previously observed board shift is absent across these stage originals: board top and badge slot visually align. Reserved instruction space is intentional; scroll continuation exposes lower board. Computer reveal card fits fully with separate actor and symbol.",
+      "reviewedAt": "2026-09-25T10:21:00.480824+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--computer-settled.png",
+      "sha256": "f97d76513b9109befeb50fc645deda7dbf0d5a74fc2102cb86c838ea1f67b40e",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "All original-resolution frames opened. Complete AX3 instructions and actor labels wrap without truncation. Previously observed board shift is absent across these stage originals: board top and badge slot visually align. Reserved instruction space is intentional; scroll continuation exposes lower board. Computer reveal card fits fully with separate actor and symbol.",
+      "reviewedAt": "2026-09-25T10:21:00.481254+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--terminal-settling-win.png",
+      "sha256": "786e4ee02040eac4ad7259a63da2144def20c40edda070d351afc99c867084ea",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened at original 1206\u00d72622 resolution. Terminal instructions and board origin remain stable; lower board continuation requires normal scrolling. Result cards, mini-board, Rematch and Home fit. Settings labels and native controls remain readable with normal lower continuation. How to Play numerals and punctuation stay together on one line; body wraps naturally without truncation. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:23:14.606305+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--terminal-settling-draw.png",
+      "sha256": "5f6be722705a2a2fb19ce0023d5375e33809df4f929d771049483ea2fcfdc8ac",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened at original 1206\u00d72622 resolution. Terminal instructions and board origin remain stable; lower board continuation requires normal scrolling. Result cards, mini-board, Rematch and Home fit. Settings labels and native controls remain readable with normal lower continuation. How to Play numerals and punctuation stay together on one line; body wraps naturally without truncation. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:23:14.606956+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--result.png",
+      "sha256": "519883bbff14b38a8e3dbfa1964da76691f45f528af1d6a6b03772c62b357101",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened at original 1206\u00d72622 resolution. Terminal instructions and board origin remain stable; lower board continuation requires normal scrolling. Result cards, mini-board, Rematch and Home fit. Settings labels and native controls remain readable with normal lower continuation. How to Play numerals and punctuation stay together on one line; body wraps naturally without truncation. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:23:14.607625+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--draw-result.png",
+      "sha256": "d97b9fd1e2342571400cf19882935026280dd2131471fdd4f15ed7f870a3dbbf",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened at original 1206\u00d72622 resolution. Terminal instructions and board origin remain stable; lower board continuation requires normal scrolling. Result cards, mini-board, Rematch and Home fit. Settings labels and native controls remain readable with normal lower continuation. How to Play numerals and punctuation stay together on one line; body wraps naturally without truncation. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:23:14.608358+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--settings.png",
+      "sha256": "ae93c0ae76baab594a32b7c49f538a8caf254d0b62f084f2c07e06656bd55f59",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened at original 1206\u00d72622 resolution. Terminal instructions and board origin remain stable; lower board continuation requires normal scrolling. Result cards, mini-board, Rematch and Home fit. Settings labels and native controls remain readable with normal lower continuation. How to Play numerals and punctuation stay together on one line; body wraps naturally without truncation. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:23:14.608761+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--how-to.png",
+      "sha256": "19e50910e1e4177e290a5037c07b344e01e1489c4ce86bc0ee33ab19cf998554",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened at original 1206\u00d72622 resolution. Terminal instructions and board origin remain stable; lower board continuation requires normal scrolling. Result cards, mini-board, Rematch and Home fit. Settings labels and native controls remain readable with normal lower continuation. How to Play numerals and punctuation stay together on one line; body wraps naturally without truncation. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:23:14.609152+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--ai-lab.png",
+      "sha256": "f9f28e58c40518b49e4d9f834c0084a0e9139f4cc705a560ecb7057aa76df0c7",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. All visible text wraps naturally; controls have stable resin styling and readable selected state. Bottom-anchor fixtures intentionally start mid-scroll and show complete lower content, including bag held-piece explanation, theme/privacy text, tutorial final rule and AI Lab Q-learning/Hard explanation. No horizontal clipping or unwanted ellipsis. These endpoints do not alone establish middle-item reachability; separate UI coverage does. No new ordinary defect.",
+      "reviewedAt": "2026-09-25T10:23:35.483115+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--home-bottom.png",
+      "sha256": "b7170d42a91cbac2860b0001439ef39b08d9291cfa10f8a6f539969d167c2f46",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. All visible text wraps naturally; controls have stable resin styling and readable selected state. Bottom-anchor fixtures intentionally start mid-scroll and show complete lower content, including bag held-piece explanation, theme/privacy text, tutorial final rule and AI Lab Q-learning/Hard explanation. No horizontal clipping or unwanted ellipsis. These endpoints do not alone establish middle-item reachability; separate UI coverage does. No new ordinary defect.",
+      "reviewedAt": "2026-09-25T10:23:35.483501+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--human-placement-bottom.png",
+      "sha256": "cd2e56041e09ed84c5f232e91b66aacef551310b8b67a8b0240ae4e0a2a2ece1",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. All visible text wraps naturally; controls have stable resin styling and readable selected state. Bottom-anchor fixtures intentionally start mid-scroll and show complete lower content, including bag held-piece explanation, theme/privacy text, tutorial final rule and AI Lab Q-learning/Hard explanation. No horizontal clipping or unwanted ellipsis. These endpoints do not alone establish middle-item reachability; separate UI coverage does. No new ordinary defect.",
+      "reviewedAt": "2026-09-25T10:23:35.484088+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--settings-bottom.png",
+      "sha256": "a756f52a6dee24b9b281660f2dcf93951221832f73012eb11fe97329282fd33a",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. All visible text wraps naturally; controls have stable resin styling and readable selected state. Bottom-anchor fixtures intentionally start mid-scroll and show complete lower content, including bag held-piece explanation, theme/privacy text, tutorial final rule and AI Lab Q-learning/Hard explanation. No horizontal clipping or unwanted ellipsis. These endpoints do not alone establish middle-item reachability; separate UI coverage does. No new ordinary defect.",
+      "reviewedAt": "2026-09-25T10:23:35.484428+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--how-to-bottom.png",
+      "sha256": "bd388f229a0ca5143451c057ee7170399c4000bbcabcdd605ea195ed37cac8bf",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. All visible text wraps naturally; controls have stable resin styling and readable selected state. Bottom-anchor fixtures intentionally start mid-scroll and show complete lower content, including bag held-piece explanation, theme/privacy text, tutorial final rule and AI Lab Q-learning/Hard explanation. No horizontal clipping or unwanted ellipsis. These endpoints do not alone establish middle-item reachability; separate UI coverage does. No new ordinary defect.",
+      "reviewedAt": "2026-09-25T10:23:35.484836+00:00"
+    },
+    {
+      "path": "regular-ax3--dark--ai-lab-bottom.png",
+      "sha256": "44a8f3f59c7be89550e8a4ef1c52f67b56f605fb85f6b1330fcb5bfd0f3985a5",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. All visible text wraps naturally; controls have stable resin styling and readable selected state. Bottom-anchor fixtures intentionally start mid-scroll and show complete lower content, including bag held-piece explanation, theme/privacy text, tutorial final rule and AI Lab Q-learning/Hard explanation. No horizontal clipping or unwanted ellipsis. These endpoints do not alone establish middle-item reachability; separate UI coverage does. No new ordinary defect.",
+      "reviewedAt": "2026-09-25T10:23:35.485199+00:00"
+    },
+    {
+      "path": "regular-ax3--light--home.png",
+      "sha256": "30b0baffbff2bb336612fe48acd074358e5a208469d490242edbd2581b916905",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light palette preserves warm resin, Fredoka wordmark and semantic X colouring. Home explanation and game rows wrap naturally with ordinary scroll continuation. Handoff shows no board or private draw and Ready/Home fit. Reveal actor and piece remain distinct, full card captions readable. Human start uses reserved instruction height with no truncation; Classic board continues below viewport naturally.",
+      "reviewedAt": "2026-09-25T10:23:52.043361+00:00"
+    },
+    {
+      "path": "regular-ax3--light--classic.png",
+      "sha256": "4cb3b23ad0cafe388b30bbc3fab5940be7ad9a33ecff3bb25cd83fe8cee2f34e",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light palette preserves warm resin, Fredoka wordmark and semantic X colouring. Home explanation and game rows wrap naturally with ordinary scroll continuation. Handoff shows no board or private draw and Ready/Home fit. Reveal actor and piece remain distinct, full card captions readable. Human start uses reserved instruction height with no truncation; Classic board continues below viewport naturally.",
+      "reviewedAt": "2026-09-25T10:23:52.044554+00:00"
+    },
+    {
+      "path": "regular-ax3--light--local-handoff.png",
+      "sha256": "26d60a5df7403adf3711b86c315f0d290b669308e586c0a1af7751255589c184",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light palette preserves warm resin, Fredoka wordmark and semantic X colouring. Home explanation and game rows wrap naturally with ordinary scroll continuation. Handoff shows no board or private draw and Ready/Home fit. Reveal actor and piece remain distinct, full card captions readable. Human start uses reserved instruction height with no truncation; Classic board continues below viewport naturally.",
+      "reviewedAt": "2026-09-25T10:23:52.045196+00:00"
+    },
+    {
+      "path": "regular-ax3--light--local-reveal.png",
+      "sha256": "40b76318c56025645f304f09c5794a35748fcd292d98b598a65c4d5c9ec85cbe",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light palette preserves warm resin, Fredoka wordmark and semantic X colouring. Home explanation and game rows wrap naturally with ordinary scroll continuation. Handoff shows no board or private draw and Ready/Home fit. Reveal actor and piece remain distinct, full card captions readable. Human start uses reserved instruction height with no truncation; Classic board continues below viewport naturally.",
+      "reviewedAt": "2026-09-25T10:23:52.046284+00:00"
+    },
+    {
+      "path": "regular-ax3--light--human-turn-start.png",
+      "sha256": "deb034671a63064d8cd4d69d17c8d304a9c4b001cf056500d663821726a2f4f8",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light palette preserves warm resin, Fredoka wordmark and semantic X colouring. Home explanation and game rows wrap naturally with ordinary scroll continuation. Handoff shows no board or private draw and Ready/Home fit. Reveal actor and piece remain distinct, full card captions readable. Human start uses reserved instruction height with no truncation; Classic board continues below viewport naturally.",
+      "reviewedAt": "2026-09-25T10:23:52.048072+00:00"
+    },
+    {
+      "path": "regular-ax3--light--human-reveal.png",
+      "sha256": "05cb7d001c5cf701a487b75bff833b45d301bafc3a4619b64279fbbff42904d9",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light palette preserves warm resin, Fredoka wordmark and semantic X colouring. Home explanation and game rows wrap naturally with ordinary scroll continuation. Handoff shows no board or private draw and Ready/Home fit. Reveal actor and piece remain distinct, full card captions readable. Human start uses reserved instruction height with no truncation; Classic board continues below viewport naturally.",
+      "reviewedAt": "2026-09-25T10:23:52.049281+00:00"
+    },
+    {
+      "path": "regular-ax3--light--human-placement.png",
+      "sha256": "07c77e11467b912853012feef2411ec81b988f34d16afe175f23234c75f427f0",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Full stage title/subtitle and actor status are readable; badge alignment and board origin stay fixed through human placement and computer thinking, targeting, placement and settlement. Reserved whitespace under shorter text is intentional stable geometry. Light X/O scale, depth and semantic colours agree with Android intent. Reveal card fully fits. Lower board requires scrolling at AX3; no claim that top still displays the selected row or whole board.",
+      "reviewedAt": "2026-09-25T10:24:09.689803+00:00"
+    },
+    {
+      "path": "regular-ax3--light--computer-reveal.png",
+      "sha256": "a34a3790e3ad2c852834349a333c87161dca67b0bb89e9eae281bcda5e2d764a",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Full stage title/subtitle and actor status are readable; badge alignment and board origin stay fixed through human placement and computer thinking, targeting, placement and settlement. Reserved whitespace under shorter text is intentional stable geometry. Light X/O scale, depth and semantic colours agree with Android intent. Reveal card fully fits. Lower board requires scrolling at AX3; no claim that top still displays the selected row or whole board.",
+      "reviewedAt": "2026-09-25T10:24:09.690317+00:00"
+    },
+    {
+      "path": "regular-ax3--light--computer-thinking.png",
+      "sha256": "859a35ddeedb3b9813f45fd6f1f29160f99e7d5a92cac77c0a48b53f924d89ce",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Full stage title/subtitle and actor status are readable; badge alignment and board origin stay fixed through human placement and computer thinking, targeting, placement and settlement. Reserved whitespace under shorter text is intentional stable geometry. Light X/O scale, depth and semantic colours agree with Android intent. Reveal card fully fits. Lower board requires scrolling at AX3; no claim that top still displays the selected row or whole board.",
+      "reviewedAt": "2026-09-25T10:24:09.690600+00:00"
+    },
+    {
+      "path": "regular-ax3--light--computer-targeting.png",
+      "sha256": "65a2c7d0e7f2954108947783312114381a35688bb57f4585b09726d49e3635a8",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Full stage title/subtitle and actor status are readable; badge alignment and board origin stay fixed through human placement and computer thinking, targeting, placement and settlement. Reserved whitespace under shorter text is intentional stable geometry. Light X/O scale, depth and semantic colours agree with Android intent. Reveal card fully fits. Lower board requires scrolling at AX3; no claim that top still displays the selected row or whole board.",
+      "reviewedAt": "2026-09-25T10:24:09.690848+00:00"
+    },
+    {
+      "path": "regular-ax3--light--computer-placement.png",
+      "sha256": "a3501d62e9601f58213f1fd23dadd2b8eaf702922cd2a5f8031518fa2f1b2ef8",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Full stage title/subtitle and actor status are readable; badge alignment and board origin stay fixed through human placement and computer thinking, targeting, placement and settlement. Reserved whitespace under shorter text is intentional stable geometry. Light X/O scale, depth and semantic colours agree with Android intent. Reveal card fully fits. Lower board requires scrolling at AX3; no claim that top still displays the selected row or whole board.",
+      "reviewedAt": "2026-09-25T10:24:09.691088+00:00"
+    },
+    {
+      "path": "regular-ax3--light--computer-settled.png",
+      "sha256": "f6d25465e1d1bf2965679abc7090403779426f47c7fb17e77bb1e95232936a96",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Full stage title/subtitle and actor status are readable; badge alignment and board origin stay fixed through human placement and computer thinking, targeting, placement and settlement. Reserved whitespace under shorter text is intentional stable geometry. Light X/O scale, depth and semantic colours agree with Android intent. Reveal card fully fits. Lower board requires scrolling at AX3; no claim that top still displays the selected row or whole board.",
+      "reviewedAt": "2026-09-25T10:24:09.691314+00:00"
+    },
+    {
+      "path": "regular-ax3--light--terminal-settling-win.png",
+      "sha256": "e0d1c24d12a4f923f0e8b7c92b3384b0a3be9743d8986e73e653f0ce1629c1f9",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Both terminal settlement fixtures retain full status and fixed board origin; winning line remains legible across X pieces. Result and Draw cards include complete caption, mini-board and both buttons. Settings continues below viewport normally without compressed text. All four tutorial markers include punctuation on the first line and clear hanging-indent wrapped body. No ordinary visual defect.",
+      "reviewedAt": "2026-09-25T10:24:25.731672+00:00"
+    },
+    {
+      "path": "regular-ax3--light--terminal-settling-draw.png",
+      "sha256": "17cf9e3fdb458f9c7ce78684850d185accbe8922be3ffb85902bf85f508fb5c3",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Both terminal settlement fixtures retain full status and fixed board origin; winning line remains legible across X pieces. Result and Draw cards include complete caption, mini-board and both buttons. Settings continues below viewport normally without compressed text. All four tutorial markers include punctuation on the first line and clear hanging-indent wrapped body. No ordinary visual defect.",
+      "reviewedAt": "2026-09-25T10:24:25.732555+00:00"
+    },
+    {
+      "path": "regular-ax3--light--result.png",
+      "sha256": "0c438ca9c58a7c2158c119f60e21e159d962eb0928b68d3e307bdd43baab8430",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Both terminal settlement fixtures retain full status and fixed board origin; winning line remains legible across X pieces. Result and Draw cards include complete caption, mini-board and both buttons. Settings continues below viewport normally without compressed text. All four tutorial markers include punctuation on the first line and clear hanging-indent wrapped body. No ordinary visual defect.",
+      "reviewedAt": "2026-09-25T10:24:25.733263+00:00"
+    },
+    {
+      "path": "regular-ax3--light--draw-result.png",
+      "sha256": "a20228a5708718c0a2e6c5c3d6225a29589af9b97ad906c06eef906f4156792a",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Both terminal settlement fixtures retain full status and fixed board origin; winning line remains legible across X pieces. Result and Draw cards include complete caption, mini-board and both buttons. Settings continues below viewport normally without compressed text. All four tutorial markers include punctuation on the first line and clear hanging-indent wrapped body. No ordinary visual defect.",
+      "reviewedAt": "2026-09-25T10:24:25.734128+00:00"
+    },
+    {
+      "path": "regular-ax3--light--settings.png",
+      "sha256": "cee2547b17d99a9c5719190c0e4e97c92251c0e884ce5a24fcc878952c5a8bd0",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Both terminal settlement fixtures retain full status and fixed board origin; winning line remains legible across X pieces. Result and Draw cards include complete caption, mini-board and both buttons. Settings continues below viewport normally without compressed text. All four tutorial markers include punctuation on the first line and clear hanging-indent wrapped body. No ordinary visual defect.",
+      "reviewedAt": "2026-09-25T10:24:25.734632+00:00"
+    },
+    {
+      "path": "regular-ax3--light--how-to.png",
+      "sha256": "99a57f7c15b9dd3b7695581be01b28c063c112d07d46d93d961a86606060660d",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Both terminal settlement fixtures retain full status and fixed board origin; winning line remains legible across X pieces. Result and Draw cards include complete caption, mini-board and both buttons. Settings continues below viewport normally without compressed text. All four tutorial markers include punctuation on the first line and clear hanging-indent wrapped body. No ordinary visual defect.",
+      "reviewedAt": "2026-09-25T10:24:25.734926+00:00"
+    },
+    {
+      "path": "regular-ax3--light--ai-lab.png",
+      "sha256": "376e25d4dbf5507e742572e54c8fb2e769dd6bfdb31dcae665bdbcc3f39632ea",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light theme lower content and tactile controls preserve hierarchy and contrast intent. Bag counts, percentages and held-piece footer fit the card; settings theme selected check and full privacy text fit; How to Play and AI Lab lower explanations wrap naturally. Bottom-anchor fixtures intentionally start mid-content and are not user gestures or launch defaults. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:25:14.950440+00:00"
+    },
+    {
+      "path": "regular-ax3--light--home-bottom.png",
+      "sha256": "16966de93d19fb13474660016cc7f897535e47e18f4e7462bcf8825ac30a191c",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light theme lower content and tactile controls preserve hierarchy and contrast intent. Bag counts, percentages and held-piece footer fit the card; settings theme selected check and full privacy text fit; How to Play and AI Lab lower explanations wrap naturally. Bottom-anchor fixtures intentionally start mid-content and are not user gestures or launch defaults. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:25:14.951106+00:00"
+    },
+    {
+      "path": "regular-ax3--light--human-placement-bottom.png",
+      "sha256": "385b2ab1ce396212f19f74ffafcac4d98268ee4b1123762459742f43d6df26dc",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light theme lower content and tactile controls preserve hierarchy and contrast intent. Bag counts, percentages and held-piece footer fit the card; settings theme selected check and full privacy text fit; How to Play and AI Lab lower explanations wrap naturally. Bottom-anchor fixtures intentionally start mid-content and are not user gestures or launch defaults. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:25:14.951734+00:00"
+    },
+    {
+      "path": "regular-ax3--light--settings-bottom.png",
+      "sha256": "b5af1cc3255536547c89c0f10f850cdf9261532f7ffa51f1c82414eca7417c6c",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light theme lower content and tactile controls preserve hierarchy and contrast intent. Bag counts, percentages and held-piece footer fit the card; settings theme selected check and full privacy text fit; How to Play and AI Lab lower explanations wrap naturally. Bottom-anchor fixtures intentionally start mid-content and are not user gestures or launch defaults. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:25:14.952184+00:00"
+    },
+    {
+      "path": "regular-ax3--light--how-to-bottom.png",
+      "sha256": "baee1f52de052cf6d3e62ec601371facc4777c457123074ab262971532d98279",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light theme lower content and tactile controls preserve hierarchy and contrast intent. Bag counts, percentages and held-piece footer fit the card; settings theme selected check and full privacy text fit; How to Play and AI Lab lower explanations wrap naturally. Bottom-anchor fixtures intentionally start mid-content and are not user gestures or launch defaults. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:25:14.952657+00:00"
+    },
+    {
+      "path": "regular-ax3--light--ai-lab-bottom.png",
+      "sha256": "09373c07fd5ebc54e9a1b776a5bae5858deb5758dabf5349199fe1b02a8ca13e",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Opened original 1206\u00d72622. Light theme lower content and tactile controls preserve hierarchy and contrast intent. Bag counts, percentages and held-piece footer fit the card; settings theme selected check and full privacy text fit; How to Play and AI Lab lower explanations wrap naturally. Bottom-anchor fixtures intentionally start mid-content and are not user gestures or launch defaults. No ordinary visual defect found.",
+      "reviewedAt": "2026-09-25T10:25:14.953255+00:00"
+    }
+  ],
+  "verdict": "PASS",
+  "canonicalReferencesReopenedDuringPostFixReview": [
+    "home-scene-dark-normal-412dp-x.png",
+    "home-scene-light-normal-412dp-x.png",
+    "computer-targeting-dark.png",
+    "computer-targeting-light.png",
+    "how-to-dark.png",
+    "how-to-light.png",
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios-handoff/reference/classic-dark.png",
+      "sha256": "d5967bda86ca3b6d47871fb9b987f79cb6c412b04765938546ee51c0219421ca",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios-handoff/reference/local-handoff-dark.png",
+      "sha256": "7e8326795189f98e02eb8afdc66c7072cb6e0dd8cd075607c6eefdf2a58dee1a",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios-handoff/reference/local-reveal-dark.png",
+      "sha256": "3cee784c0a6f20528dfcb53005e68bd44a5459f07c8afc49fdc74f4f576bbcb5",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios-handoff/reference/result-dark.png",
+      "sha256": "1c85a690df2ad179a454e3ee6a42d77fc1f0ca2032b07cb51ee1cd108f173e97",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios-handoff/reference/settings-light.png",
+      "sha256": "c73385438eb48f6b302e78356a260c3647716df5e7c0cef6959585cc1e5f6f6a",
+      "openedAtOriginalResolution": true
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios-handoff/reference/ai-lab-light.png",
+      "sha256": "63fd4de045a8ae68cb36837d33542069f415ac01967a163125bb2929646b86a9",
+      "openedAtOriginalResolution": true
+    }
+  ],
+  "regularSemanticAssessment": "48 regular originals inspected. iOS preserves Android information order, full-screen private handoff, centered resin reveal/result cards, tactile controls, square board/cell intent and X/O scale/depth. Native safe areas, larger body type/line wrapping and native toggle shape are intentional platform differences; the surfaces retain the established design rather than generic system cards. Selected/winning rings remain unambiguous. Pressed state and timing are assessed in separate interaction evidence, not inferred from stills.",
+  "reviewCompletedAt": "2026-09-25T10:25:15.180990+00:00",
+  "reviewedCaptureCount": 96,
+  "summary": "All 96 regular and regular-ax3 originals were opened at full 1206\u00d72622 resolution after the layout fixes, in both themes across all 24 scenarios. The tutorial punctuation defect is fixed; AX3 instruction and board origins are stable across stage snapshots with complete text. Android semantic hierarchy, warm moulded-resin treatment, wordmark identity, X/O colouring, piece depth, tray structure and modal intent are preserved. No new ordinary visual defect found in these 96 captures.",
+  "limitations": [
+    "This is independent visual acceptance for the two named profiles, not certification of unreviewed profiles.",
+    "Bottom scenarios explicitly use a bottom scroll anchor; these are not production launch offsets or gesture evidence.",
+    "At AX3 ordinary scrolling is required for lower gameplay and long information pages. Top and bottom stills do not alone prove every intermediate target reachable.",
+    "Stills cannot establish physical VoiceOver/Switch Control, keyboard interaction, actual sound/haptics, frame pacing, locked-tap handling or terminal timing; separate automated and temporal evidence applies.",
+    "Android-to-iOS comparison is semantic; deterministic same-toolchain pixel tolerance is a separate gate."
+  ],
+  "contactSheetReview": [
+    {
+      "path": "contact-sheets/regular.png",
+      "sha256": "299835c1382acef3621c954211a84b1d57ab39f7ebbf28641f837adf8a1970d2",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "reviewedAt": "2026-09-25T10:29:12.940607+00:00",
+      "notes": "All 48 full portrait frame thumbnails retain their complete bounds and labelled theme/scenario. Comparative layout confirms consistent board origins across stages, complete resin identity and coherent dark/light hierarchy. No crop or mismatched label found. Individual 1206\u00d72622 originals were inspected separately before this sheet."
+    },
+    {
+      "path": "contact-sheets/regular-ax3.png",
+      "sha256": "8614de340548c5ce973a76ca21eac191ecd87558fa4633248243a2d630ad2e33",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "reviewedAt": "2026-09-25T10:29:12.943817+00:00",
+      "notes": "All 48 full portrait frame thumbnails retain their complete bounds and labelled theme/scenario. Comparative layout confirms consistent board origins across stages, complete resin identity and coherent dark/light hierarchy. No crop or mismatched label found. Individual 1206\u00d72622 originals were inspected separately before this sheet."
+    }
+  ],
+  "candidateManifestSHA256": "5bad48fd0cda4fbbccf1b25ad1090ee7ad396a25d0ff6ea5f9533c54201e5236"
+}

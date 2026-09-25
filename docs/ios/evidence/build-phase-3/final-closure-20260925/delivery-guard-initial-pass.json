@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "checksumEntries": 3635,
+  "completeSourceInventoryFiles": 267,
+  "nativeDeliveryChanges": [
+    "ios/PicPacPoeUITests/README.md"
+  ],
+  "allDeliveryPathsAllowed": true,
+  "canonicalClean": true,
+  "sourceCheckpoint": "e6c0c65c9c5ad84e2f961839c5eede753c25448e"
+}

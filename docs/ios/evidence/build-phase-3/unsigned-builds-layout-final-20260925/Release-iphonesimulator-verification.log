@@ -1,0 +1,1 @@
+PASS: unsigned Release iphonesimulator artifact; Mach-O iOS 17 minimum; iPhone+iPad; native icon/launch assets and canonical resources; no development launch hooks or LLVM coverage instrumentation; compile-time compatibility only

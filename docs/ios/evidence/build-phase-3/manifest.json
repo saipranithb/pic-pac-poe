@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "phase": "Build Phase 3 \u2014 Parity, Integration and Hardening",
+  "completedAt": "2026-09-25T11:31:25.234676+00:00",
+  "unsignedReleaseCandidateVerdict": "PASS",
+  "verdictScope": "Complete unsigned release-candidate codebase; local ordinary software gates complete. Not signed, store-ready, physical-device-certified, minimum-runtime-executed or GitHub-hosted-CI-approved.",
+  "recoveryClassification": "Partially complete and dirty; valid checkpoints and coherent uncommitted work preserved and completed.",
+  "branch": "codex/ios-native-parity",
+  "phase2Base": "9423f47b34daee71cb5ed340cf0194c941e71b92",
+  "testedProductCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+  "phase3Checkpoints": [
+    {
+      "commit": "bb7668087f3b8b1647cac4f3af5cd3aa90bfdbf8",
+      "subject": "Harden native parity flows, lifecycle, accessibility and unsigned gates"
+    },
+    {
+      "commit": "1004223b1a39fcb2d0f965b1a530bbc9dfc43424",
+      "subject": "Pin snapshot runtime identity and verify unsigned device SDK builds"
+    },
+    {
+      "commit": "bf384da11190cb45ff21866a6d804c85a35ce333",
+      "subject": "Resolve visual audit findings and govern complete simulator evidence"
+    },
+    {
+      "commit": "ad1a3b40570406a7cf967c600a7c88516dbf2c0c",
+      "subject": "Correct singular bag copy found in terminal visual review"
+    },
+    {
+      "commit": "2a04a4858d14b22f2f7dd0d4592ed55f9d3a6e68",
+      "subject": "Preserve recovered audit evidence and close Release instrumentation gaps"
+    },
+    {
+      "commit": "03d44f794ef98e66ebeb63cd467313ece2331b91",
+      "subject": "Use supported coverage settings for unsigned build gates"
+    },
+    {
+      "commit": "8c4cd77d4bbf9233d301f2171261968f5e085085",
+      "subject": "Record final unsigned builds and recovered lifecycle performance gates"
+    },
+    {
+      "commit": "6ef2ed9033cdcb6c8b35f22a6a47c4d9078a8c4a",
+      "subject": "Retain governed hosted result bundle with its checksum inventory"
+    },
+    {
+      "commit": "8eabb669b6b154e982d82d3e8de8b34b778e337b",
+      "subject": "Preserve bounded Release interaction bridge failure without claiming a pass"
+    },
+    {
+      "commit": "ea2a1a2f7ffa26a165715f8af28422a99b335c22",
+      "subject": "Record complete final UI flows and reviewed temporal evidence"
+    },
+    {
+      "commit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+      "subject": "Stabilize large-text gameplay geometry and tutorial markers"
+    }
+  ],
+  "canonical": {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe",
+    "commit": "dc7cb397ad335783c13c7976d4cef816d2fc0909",
+    "untouched": true,
+    "referenceManifestSHA256": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+  },
+  "toolchain": {
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "swift": "swift-driver version: 1.148.6 Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0",
+    "macOS": "26.5.2",
+    "architecture": "arm64"
+  },
+  "runtime": "26.5",
+  "captureEnvironment": {
+    "architecture": "arm64",
+    "macOS": "26.5.2",
+    "swift": "Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0",
+    "simulatorSDK": "26.5",
+    "runtimeBuild": "23F77"
+  },
+  "sourceDelivery": "source-delivery.json",
+  "acceptedEvidence": {
+    "baselines/manifest.json": "5bad48fd0cda4fbbccf1b25ad1090ee7ad396a25d0ff6ea5f9533c54201e5236",
+    "baselines/REVIEW.json": "84aa6563d32f2ec1db996dcf8c9306ccf8dad097129aff954f2b9ee5093eff01",
+    "repeated-captures/manifest.json": "3450adbbdf2ed364b89fb0e89a51e9202cde43c754aba7feb423a1822cdb8d32",
+    "snapshot-comparison.json": "95fae761c7f05d285a77743df01fa0c403417ed5e2891b89b55a96d789937d54",
+    "snapshot-calibration/SUMMARY.json": "81142ecf5fa39b4f2b532b149ee505eb7fdbae3e4b8d875e0256a0e88f35b920",
+    "visual-overview/manifest.json": "5625785623dc0b4d99a735ee0aa375e2d6a9889462cb2018a58c0f79d3ecf40a",
+    "defects/large-type-layout-20260925/post-fix/manifest.json": "227609578ecff19e2fc78c766a10ef5c16a8bef5a8c5a2a48e7bd9aeef492d69",
+    "unsigned-builds-layout-final-20260925/manifest.json": "54538264d10b3173f0e8b946d21f093f1d122ec334d5f8297c9de6786bb4aa20",
+    "release-launch-layout-final-20260925/manifest.json": "058a43cdd6ef935895802e40156c783b1aa738c71da08131a155d7883ba1926d",
+    "lifecycle-performance/post-layout-20260925/measurements.json": "81c7165ff907a6403c41a37bda00cf5b58a486fcf12cd6fe133df32da2ea9cd4",
+    "lifecycle-performance/post-layout-20260925/hosted-inventory.json": "0158769d1517095f633f85853e589b77de82baa4aeba7a104b5668bc6ee6652f",
+    "ui-flows-layout-final-20260925/manifest.json": "4ac4786deae0c35e3a057b9439c479e39f3c5cc84f6125f9c096fe0d6ca8fe70",
+    "source-delivery.json": "3bd85c9c2688c9ca6e8999f2e4f8fc6fb3bf14424d79e9000408515925775516",
+    "final-closure-20260925/retained-package-map.json": "5b1f4059b9de049f945f129ae30c9c72e59325df56e17d443e38c42a7cd3cba7",
+    "final-closure-20260925/tested-complete-source-inventory.json": "e595c692d3b11e8b8f6a9997509749b69bfd667bf69b3a74d258e3681358d404"
+  },
+  "gates": {
+    "sharedFixtures": {
+      "groups": 8,
+      "exactIDs": 36,
+      "sha256": "c68308f7a6b3684cc413bc37f495a7dfade8e5bd7a928f4273d79cbb101021ae",
+      "evidence": "CI-CONTRACT-AUDIT.md",
+      "kotlinSwiftExact": true
+    },
+    "android": {
+      "jvmExecutions": 86,
+      "uniqueTests": 57,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "instrumentationTests": 26,
+      "instrumentationSeconds": 233.485,
+      "device": "Pixel_8 Android 16 / API 36 arm64",
+      "lintIssues": 0,
+      "unsignedAABSHA256": "755e94d976541620010f06b1b1faabcba1cd45173c72942b563eb6bcedaffdec",
+      "evidence": "ci-logs/",
+      "sourceScope": "Retained complete regression run; Android runtime/shared JSON unchanged by later native fixes."
+    },
+    "swiftPackage": {
+      "passed": 63,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 34.322
+    },
+    "hostedIntegration": {
+      "passed": 12,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 18.344,
+      "inventory": "lifecycle-performance/post-layout-20260925/hosted-inventory.json"
+    },
+    "optimizedPerformanceTest": {
+      "passed": 1,
+      "failed": 0,
+      "seconds": 0.526,
+      "measurements": "lifecycle-performance/post-layout-20260925/measurements.json"
+    },
+    "playerDrivenUI": {
+      "passed": 26,
+      "failed": 0,
+      "inventoryGatePassed": true,
+      "originalFrames": 98,
+      "requiredFrameFamilies": 37,
+      "completeOrdinaryTimingGames": 15,
+      "nativeAuditViewports": 28,
+      "deviceConfigurations": [
+        {
+          "device": {
+            "architecture": "arm64",
+            "deviceId": "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+            "deviceName": "PicPac Phase3 UI",
+            "modelName": "iPhone 17 Pro",
+            "osBuildNumber": "23F77",
+            "osVersion": "26.5",
+            "platform": "iOS Simulator"
+          },
+          "expectedFailures": 0,
+          "failedTests": 0,
+          "passedTests": 26,
+          "skippedTests": 0,
+          "testPlanConfiguration": {
+            "configurationId": "1",
+            "configurationName": "Test Scheme Action"
+          }
+        }
+      ],
+      "accessibilityAudit": {
+        "viewportsAudited": 28,
+        "types": [
+          "contrast",
+          "hitRegion",
+          "sufficientElementDescription",
+          "textClipped",
+          "trait"
+        ],
+        "nativeFindings": [
+          {
+            "configurationName": "Test Scheme Action",
+            "deviceId": "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+            "deviceName": "PicPac Phase3 UI",
+            "exportedFileName": "FD618FF6-1618-45BD-B319-67654995116D.txt",
+            "isAssociatedWithFailure": false,
+            "suggestedHumanReadableName": "Accessibility audit finding_0_EBDF112E-7129-4053-8F4A-5935A10C915A.txt",
+            "timestamp": 1790334259.515,
+            "path": "semantics/FD618FF6-1618-45BD-B319-67654995116D.txt",
+            "testIdentifier": "PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes()",
+            "sha256": "4a80bfbd2d2403ab734f46a5237063194cf70be4218848742650b383370e69b7",
+            "disposition": "acknowledged offscreen auditor artifact",
+            "detail": "ai-lab / dark / bottom: Contrast failed for SwiftUI.AccessibilityNode\nACKNOWLEDGED OFFSCREEN AUDITOR ARTIFACT (visible top audit passed; measured contrast 9.856:1); visible height at clipped top 62pt: 0.6666666666665719pt\nAttributes: StaticText, 0x113dc3980, {{20.0, -1.7}, {340.3, 64.3}}, label: 'Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.'\nElement subtree:\n \u2192StaticText, 0x113dc3980, {{20.0, -1.7}, {340.3, 64.3}}, label: 'Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.'\nPath to element:\n \u2192Application, 0x113dc2440, pid: 19545, label: 'Pic-Pac-Poe'\n  \u21b3Window (Main), 0x113dc26c0, {{0.0, 0.0}, {402.0, 874.0}}\n   \u21b3Other, 0x113dc2800, {{0.0, 0.0}, {402.0, 874.0}}\n    \u21b3Other, 0x113dc2a80, {{0.0, 0.0}, {402.0, 874.0}}\n     \u21b3Other, 0x113dc2bc0, {{0.0, 0.0}, {402.0, 874.0}}\n      \u21b3Other, 0x113dc2e40, {{0.0, 0.0}, {402.0, 874.0}}\n       \u21b3ScrollView, 0x113dc30c0, {{0.0, -0.0}, {402.0, 874.0}}, identifier: 'ai-lab-screen'\n        \u21b3Other, 0x113dc3340, {{0.0, -102.7}, {402.0, 942.7}}\n         \u21b3StaticText, 0x113dc3980, {{20.0, -1.7}, {340.3, 64.3}}, label: 'Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.'\nQuery chain:\n \u2192Find: Target Application 'dev.saipranith.picpacpoe'\n  Output: {\n    Application, 0x113f77e80, pid: 19545, label: 'Pic-Pac-Poe'\n  }\n  \u21aa\ufe0eFind: Descendant with identity binding to AX element pid: 19545, elementOrHash.elementID: 4403423744.31\n    Output: {\n      StaticText, 0x113f76300, {{20.0, -1.7}, {340.3, 64.3}}, label: 'Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.'\n    }\n"
+          }
+        ],
+        "interpretation": "All findings are preserved. The only permitted artifact is the exact dark AI Lab offscreen introductory paragraph contrast finding at the reviewed 402x874pt bottom viewport, after its visible top audit passes. This is not a zero-finding claim."
+      },
+      "evidence": "ui-flows-layout-final-20260925/manifest.json"
+    },
+    "unsignedBuilds": {
+      "passed": 4,
+      "matrix": [
+        {
+          "configuration": "Debug",
+          "sdk": "iphonesimulator",
+          "elapsedSeconds": 16.081518417,
+          "appBundleSHA256": "c4368cd7398a1c051ca83d75377dd5576c4ab0b3087a4dc554305e7e24dbc1f6",
+          "machoMinimums": [
+            "17.0",
+            "17.0"
+          ],
+          "machoPlatforms": [
+            "IOSSIMULATOR",
+            "IOSSIMULATOR"
+          ],
+          "unsigned": true
+        },
+        {
+          "configuration": "Release",
+          "sdk": "iphonesimulator",
+          "elapsedSeconds": 16.908304958000002,
+          "appBundleSHA256": "f7c28bdb49ffb69905731865ad3629a21e6dc4714eee7076225d28cb472bab28",
+          "machoMinimums": [
+            "17.0",
+            "17.0"
+          ],
+          "machoPlatforms": [
+            "IOSSIMULATOR",
+            "IOSSIMULATOR"
+          ],
+          "unsigned": true
+        },
+        {
+          "configuration": "Debug",
+          "sdk": "iphoneos",
+          "elapsedSeconds": 9.978596374999995,
+          "appBundleSHA256": "7828006d747a3ab60c04bdfcd85e431c8f2180f68b16985070886ee9d683ca22",
+          "machoMinimums": [
+            "17.0"
+          ],
+          "machoPlatforms": [
+            "IOS"
+          ],
+          "unsigned": true
+        },
+        {
+          "configuration": "Release",
+          "sdk": "iphoneos",
+          "elapsedSeconds": 13.702279917000006,
+          "appBundleSHA256": "108e1f5778cad48cc59f32cd64284125711936b6b9f9175197410030d144abba",
+          "machoMinimums": [
+            "17.0"
+          ],
+          "machoPlatforms": [
+            "IOS"
+          ],
+          "unsigned": true
+        }
+      ],
+      "releaseHooksAndInstrumentationExcluded": true,
+      "evidence": "unsigned-builds-layout-final-20260925/manifest.json"
+    },
+    "releaseLaunch": {
+      "pass": true,
+      "evidence": "release-launch-layout-final-20260925/manifest.json",
+      "scope": "No-argument unsigned simulator Release launch; one inspected settled frame, not every launch frame or physical-device execution."
+    },
+    "snapshots": {
+      "approvedOriginals": 336,
+      "independentRepeats": 336,
+      "minimumRequiredPixelAgreement": 0.995,
+      "perChannelTolerance": 2,
+      "minimumObservedPixelAgreement": 0.9979611856810532,
+      "allPixelsCompared": true,
+      "noCrop": true,
+      "noMasks": true,
+      "noAutomaticReplacement": true,
+      "residualAnalysis": "snapshot-calibration/SUMMARY.json"
+    },
+    "handoff": {
+      "ordinary": "PASS",
+      "strictRelease": "Expected failure solely for deliberately null releaseCommit and releaseTag",
+      "evidence": "final-closure-20260925/"
+    },
+    "ci": {
+      "workflowDefinitionsInspected": true,
+      "workflowCommandsReproducedLocally": true,
+      "githubHostedActionsExecuted": false,
+      "reason": "Push and hosted dispatch not authorized; no hosted pass claimed."
+    }
+  },
+  "visualAndMotion": {
+    "overview": "visual-overview/contact-sheet.png",
+    "allApprovedOriginals": "baselines/",
+    "beforeAfter": "defects/large-type-layout-20260925/post-fix/before-after-contact-sheet.png",
+    "currentHomeSequence": "lifecycle-performance/post-layout-20260925/home-frames/manifest.json",
+    "currentPlayerSequences": "ui-flows-layout-final-20260925/manifest.json",
+    "supplementalOrdinaryTimingMovies": "interactive-motion/manifest.json",
+    "supplementalMovieSourceCommit": "bf384da11190cb45ff21866a6d804c85a35ce333",
+    "timingCaveat": "Controlled UI sequences disclose 10x/20x holds. Earlier real interactive movies retain their own exact source, not relabelled as post-layout captures."
+  },
+  "historicalEvidenceDisposition": {
+    "unsigned-builds/": "Incomplete rejected command preserved; not accepted build proof.",
+    "unsigned-builds-final-20260925/": "Passing pre-layout builds preserved, superseded for final product by e6 builds.",
+    "ui-flows/": "Passing 24-test pre-layout suite preserved, superseded for final product by 26 tests.",
+    "lifecycle-performance/recovery-20260925/": "Passing pre-layout integration/performance retained, including observed old outliers.",
+    "recovery-20260925/release-keyboard-bridge/": "Incomplete environment bridge attempt; no UI interaction pass.",
+    "defects/large-type-layout-20260925/": "Rejected candidate originals and successful focused regression retained; full rejected candidate remains at original /tmp location."
+  },
+  "remainingExternalGates": [
+    "Already available compatible iOS/iPadOS 17 runtime execution",
+    "Physical iPhone/iPad VoiceOver spoken traversal, focus and announcements",
+    "Physical Switch Control and external keyboard, including focus recovery and first move after rematch",
+    "Physical sound and haptics",
+    "Physical thermal/memory/frame pacing and launch/install/update validation",
+    "Owner-authorized Git promotion and actual GitHub-hosted CI",
+    "Separately authorized signing/archive/TestFlight and later privacy/store/submission work"
+  ],
+  "prohibitedActionsPerformed": {
+    "push": false,
+    "pullRequest": false,
+    "merge": false,
+    "tag": false,
+    "signing": false,
+    "secretsCreatedOrRequested": false,
+    "runtimeInstalled": false,
+    "globalDeveloperDirectoryChanged": false,
+    "storeConsoleInteraction": false,
+    "uploadOrSubmission": false
+  },
+  "handoffPrompt": "APP-STORE-PHASE-1-PROMPT.md",
+  "checksumInventory": "checksums.sha256",
+  "checksumScope": "The root inventory covers every final file including nested checksum inventories, excluding only itself. Historical parent inventories retain their original checkpoint scope and bytes; each new package has its own checksum inventory."
+}

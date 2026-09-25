@@ -1,0 +1,12 @@
+{
+  "command": [
+    "xcrun",
+    "simctl",
+    "shutdown",
+    "F36B6568-2C34-4D22-A88D-0AB8C240E6CA"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "at": "2026-09-25T11:21:19.108626+00:00"
+}

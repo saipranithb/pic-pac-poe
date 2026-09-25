@@ -1,0 +1,3692 @@
+[
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular--dark--classic.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular--dark--local-handoff.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6434,
+    "path" : "regular--dark--local-reveal.png",
+    "pixelsBeyondTolerance" : 6434,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6427,
+    "path" : "regular--dark--human-turn-start.png",
+    "pixelsBeyondTolerance" : 6427,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular--dark--human-reveal.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6422,
+    "path" : "regular--dark--human-placement.png",
+    "pixelsBeyondTolerance" : 6422,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      796,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 5844,
+    "path" : "regular--dark--computer-reveal.png",
+    "pixelsBeyondTolerance" : 5844,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular--dark--computer-thinking.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular--dark--computer-targeting.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6427,
+    "path" : "regular--dark--computer-placement.png",
+    "pixelsBeyondTolerance" : 6427,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      814,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6271,
+    "path" : "regular--dark--computer-settled.png",
+    "pixelsBeyondTolerance" : 6271,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6434,
+    "path" : "regular--dark--terminal-settling-draw.png",
+    "pixelsBeyondTolerance" : 6434,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      798,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 4301,
+    "path" : "regular--dark--draw-result.png",
+    "pixelsBeyondTolerance" : 4301,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      406,
+      2583,
+      766,
+      2586
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 29,
+    "path" : "regular--dark--settings.png",
+    "pixelsBeyondTolerance" : 29,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular--dark--how-to.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      390,
+      2583,
+      778,
+      2588
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 393,
+    "path" : "regular--dark--ai-lab.png",
+    "pixelsBeyondTolerance" : 393,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      395,
+      2583,
+      776,
+      2590
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 414,
+    "path" : "regular--dark--home-bottom.png",
+    "pixelsBeyondTolerance" : 414,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6418,
+    "path" : "regular--dark--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 6418,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6412,
+    "path" : "regular--dark--settings-bottom.png",
+    "pixelsBeyondTolerance" : 6412,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular--dark--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6442,
+    "path" : "regular--light--home.png",
+    "pixelsBeyondTolerance" : 6442,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular--light--classic.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular--light--local-handoff.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      814,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6227,
+    "path" : "regular--light--local-reveal.png",
+    "pixelsBeyondTolerance" : 6227,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular--light--human-turn-start.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      398,
+      2583,
+      746,
+      2585
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 300,
+    "path" : "regular--light--human-reveal.png",
+    "pixelsBeyondTolerance" : 300,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular--light--human-placement.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      399,
+      2583,
+      744,
+      2584
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 21,
+    "path" : "regular--light--computer-reveal.png",
+    "pixelsBeyondTolerance" : 21,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6440,
+    "path" : "regular--light--computer-targeting.png",
+    "pixelsBeyondTolerance" : 6440,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular--light--computer-settled.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular--light--terminal-settling-win.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular--light--terminal-settling-draw.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6414,
+    "path" : "regular--light--result.png",
+    "pixelsBeyondTolerance" : 6414,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      814,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6227,
+    "path" : "regular--light--draw-result.png",
+    "pixelsBeyondTolerance" : 6227,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular--light--settings.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular--light--how-to.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6431,
+    "path" : "regular--light--ai-lab.png",
+    "pixelsBeyondTolerance" : 6431,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6444,
+    "path" : "regular--light--home-bottom.png",
+    "pixelsBeyondTolerance" : 6444,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular--light--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6447,
+    "path" : "regular--light--settings-bottom.png",
+    "pixelsBeyondTolerance" : 6447,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular--light--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6441,
+    "path" : "regular--light--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 6441,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5980,
+    "path" : "ipad--dark--classic.png",
+    "pixelsBeyondTolerance" : 5980,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1105,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5922,
+    "path" : "ipad--dark--local-handoff.png",
+    "pixelsBeyondTolerance" : 5922,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5980,
+    "path" : "ipad--dark--local-reveal.png",
+    "pixelsBeyondTolerance" : 5980,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1103,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5923,
+    "path" : "ipad--dark--human-turn-start.png",
+    "pixelsBeyondTolerance" : 5923,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5983,
+    "path" : "ipad--dark--human-reveal.png",
+    "pixelsBeyondTolerance" : 5983,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      562,
+      2394,
+      1087,
+      2400
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 1323,
+    "path" : "ipad--dark--human-placement.png",
+    "pixelsBeyondTolerance" : 1323,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5984,
+    "path" : "ipad--dark--computer-reveal.png",
+    "pixelsBeyondTolerance" : 5984,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5984,
+    "path" : "ipad--dark--computer-thinking.png",
+    "pixelsBeyondTolerance" : 5984,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5980,
+    "path" : "ipad--dark--computer-targeting.png",
+    "pixelsBeyondTolerance" : 5980,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5973,
+    "path" : "ipad--dark--computer-placement.png",
+    "pixelsBeyondTolerance" : 5973,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5981,
+    "path" : "ipad--dark--draw-result.png",
+    "pixelsBeyondTolerance" : 5981,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5978,
+    "path" : "ipad--dark--settings.png",
+    "pixelsBeyondTolerance" : 5978,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1105,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5917,
+    "path" : "ipad--dark--how-to.png",
+    "pixelsBeyondTolerance" : 5917,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      568,
+      2394,
+      1066,
+      2394
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 46,
+    "path" : "ipad--dark--ai-lab.png",
+    "pixelsBeyondTolerance" : 46,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      567,
+      2394,
+      1085,
+      2397
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 976,
+    "path" : "ipad--dark--home-bottom.png",
+    "pixelsBeyondTolerance" : 976,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5959,
+    "path" : "ipad--dark--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 5959,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1105,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5907,
+    "path" : "ipad--dark--settings-bottom.png",
+    "pixelsBeyondTolerance" : 5907,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      565,
+      2394,
+      1077,
+      2396
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 458,
+    "path" : "ipad--dark--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 458,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      568,
+      2394,
+      1066,
+      2394
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 46,
+    "path" : "ipad--dark--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 46,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5988,
+    "path" : "ipad--light--home.png",
+    "pixelsBeyondTolerance" : 5988,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5982,
+    "path" : "ipad--light--local-handoff.png",
+    "pixelsBeyondTolerance" : 5982,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      566,
+      2394,
+      1071,
+      2396
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 13,
+    "path" : "ipad--light--local-reveal.png",
+    "pixelsBeyondTolerance" : 13,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5978,
+    "path" : "ipad--light--human-turn-start.png",
+    "pixelsBeyondTolerance" : 5978,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5974,
+    "path" : "ipad--light--human-reveal.png",
+    "pixelsBeyondTolerance" : 5974,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1104,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5874,
+    "path" : "ipad--light--computer-reveal.png",
+    "pixelsBeyondTolerance" : 5874,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      1668,
+      2420,
+      -1,
+      -1
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "ipad--light--computer-thinking.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5985,
+    "path" : "ipad--light--computer-placement.png",
+    "pixelsBeyondTolerance" : 5985,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5988,
+    "path" : "ipad--light--computer-settled.png",
+    "pixelsBeyondTolerance" : 5988,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5984,
+    "path" : "ipad--light--terminal-settling-draw.png",
+    "pixelsBeyondTolerance" : 5984,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      567,
+      2394,
+      1068,
+      2398
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 494,
+    "path" : "ipad--light--result.png",
+    "pixelsBeyondTolerance" : 494,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5972,
+    "path" : "ipad--light--draw-result.png",
+    "pixelsBeyondTolerance" : 5972,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5993,
+    "path" : "ipad--light--how-to.png",
+    "pixelsBeyondTolerance" : 5993,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5985,
+    "path" : "ipad--light--ai-lab.png",
+    "pixelsBeyondTolerance" : 5985,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5990,
+    "path" : "ipad--light--home-bottom.png",
+    "pixelsBeyondTolerance" : 5990,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5992,
+    "path" : "ipad--light--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 5992,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5982,
+    "path" : "ipad--light--settings-bottom.png",
+    "pixelsBeyondTolerance" : 5982,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5984,
+    "path" : "ipad--light--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 5984,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5993,
+    "path" : "ipad--light--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 5993,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular-ax3--dark--home.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6434,
+    "path" : "regular-ax3--dark--classic.png",
+    "pixelsBeyondTolerance" : 6434,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6434,
+    "path" : "regular-ax3--dark--local-handoff.png",
+    "pixelsBeyondTolerance" : 6434,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-ax3--dark--local-reveal.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6409,
+    "path" : "regular-ax3--dark--human-turn-start.png",
+    "pixelsBeyondTolerance" : 6409,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6435,
+    "path" : "regular-ax3--dark--human-reveal.png",
+    "pixelsBeyondTolerance" : 6435,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6416,
+    "path" : "regular-ax3--dark--human-placement.png",
+    "pixelsBeyondTolerance" : 6416,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-ax3--dark--computer-reveal.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6434,
+    "path" : "regular-ax3--dark--computer-thinking.png",
+    "pixelsBeyondTolerance" : 6434,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-ax3--dark--computer-targeting.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-ax3--dark--computer-placement.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6414,
+    "path" : "regular-ax3--dark--computer-settled.png",
+    "pixelsBeyondTolerance" : 6414,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-ax3--dark--terminal-settling-draw.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      800,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 5944,
+    "path" : "regular-ax3--dark--draw-result.png",
+    "pixelsBeyondTolerance" : 5944,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      813,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6245,
+    "path" : "regular-ax3--dark--settings.png",
+    "pixelsBeyondTolerance" : 6245,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular-ax3--dark--how-to.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6426,
+    "path" : "regular-ax3--dark--ai-lab.png",
+    "pixelsBeyondTolerance" : 6426,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      395,
+      2583,
+      776,
+      2590
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 414,
+    "path" : "regular-ax3--dark--home-bottom.png",
+    "pixelsBeyondTolerance" : 414,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      406,
+      2583,
+      766,
+      2586
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 29,
+    "path" : "regular-ax3--dark--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 29,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular-ax3--dark--settings-bottom.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-ax3--dark--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      815,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6238,
+    "path" : "regular-ax3--dark--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 6238,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6445,
+    "path" : "regular-ax3--light--home.png",
+    "pixelsBeyondTolerance" : 6445,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      795,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 2987,
+    "path" : "regular-ax3--light--classic.png",
+    "pixelsBeyondTolerance" : 2987,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      814,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6197,
+    "path" : "regular-ax3--light--local-reveal.png",
+    "pixelsBeyondTolerance" : 6197,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-ax3--light--human-turn-start.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      814,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6158,
+    "path" : "regular-ax3--light--human-reveal.png",
+    "pixelsBeyondTolerance" : 6158,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-ax3--light--human-placement.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      401,
+      2583,
+      743,
+      2584
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 20,
+    "path" : "regular-ax3--light--computer-reveal.png",
+    "pixelsBeyondTolerance" : 20,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular-ax3--light--computer-thinking.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6441,
+    "path" : "regular-ax3--light--computer-targeting.png",
+    "pixelsBeyondTolerance" : 6441,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular-ax3--light--computer-placement.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-ax3--light--computer-settled.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-ax3--light--terminal-settling-win.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-ax3--light--terminal-settling-draw.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      398,
+      2583,
+      773,
+      2589
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 354,
+    "path" : "regular-ax3--light--result.png",
+    "pixelsBeyondTolerance" : 354,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      814,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6227,
+    "path" : "regular-ax3--light--draw-result.png",
+    "pixelsBeyondTolerance" : 6227,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular-ax3--light--settings.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-ax3--light--how-to.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6446,
+    "path" : "regular-ax3--light--ai-lab.png",
+    "pixelsBeyondTolerance" : 6446,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6446,
+    "path" : "regular-ax3--light--home-bottom.png",
+    "pixelsBeyondTolerance" : 6446,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular-ax3--light--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-ax3--light--settings-bottom.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6440,
+    "path" : "regular-ax3--light--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 6440,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6440,
+    "path" : "regular-ax3--light--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 6440,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5980,
+    "path" : "ipad-ax3--dark--classic.png",
+    "pixelsBeyondTolerance" : 5980,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5984,
+    "path" : "ipad-ax3--dark--local-handoff.png",
+    "pixelsBeyondTolerance" : 5984,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5984,
+    "path" : "ipad-ax3--dark--local-reveal.png",
+    "pixelsBeyondTolerance" : 5984,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5976,
+    "path" : "ipad-ax3--dark--human-turn-start.png",
+    "pixelsBeyondTolerance" : 5976,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5969,
+    "path" : "ipad-ax3--dark--human-reveal.png",
+    "pixelsBeyondTolerance" : 5969,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5980,
+    "path" : "ipad-ax3--dark--human-placement.png",
+    "pixelsBeyondTolerance" : 5980,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5982,
+    "path" : "ipad-ax3--dark--computer-reveal.png",
+    "pixelsBeyondTolerance" : 5982,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5983,
+    "path" : "ipad-ax3--dark--computer-thinking.png",
+    "pixelsBeyondTolerance" : 5983,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1104,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5925,
+    "path" : "ipad-ax3--dark--computer-targeting.png",
+    "pixelsBeyondTolerance" : 5925,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5983,
+    "path" : "ipad-ax3--dark--computer-placement.png",
+    "pixelsBeyondTolerance" : 5983,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5976,
+    "path" : "ipad-ax3--dark--computer-settled.png",
+    "pixelsBeyondTolerance" : 5976,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      1059,
+      2394,
+      1065,
+      2396
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 3,
+    "path" : "ipad-ax3--dark--terminal-settling-draw.png",
+    "pixelsBeyondTolerance" : 3,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1099,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5215,
+    "path" : "ipad-ax3--dark--draw-result.png",
+    "pixelsBeyondTolerance" : 5215,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1105,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5922,
+    "path" : "ipad-ax3--dark--settings.png",
+    "pixelsBeyondTolerance" : 5922,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      565,
+      2394,
+      1077,
+      2396
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 458,
+    "path" : "ipad-ax3--dark--how-to.png",
+    "pixelsBeyondTolerance" : 458,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5973,
+    "path" : "ipad-ax3--dark--ai-lab.png",
+    "pixelsBeyondTolerance" : 5973,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5975,
+    "path" : "ipad-ax3--dark--home-bottom.png",
+    "pixelsBeyondTolerance" : 5975,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1105,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5907,
+    "path" : "ipad-ax3--dark--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 5907,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      1668,
+      2420,
+      -1,
+      -1
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "ipad-ax3--dark--settings-bottom.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1105,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5907,
+    "path" : "ipad-ax3--dark--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 5907,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      565,
+      2394,
+      1077,
+      2396
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 7,
+    "path" : "ipad-ax3--dark--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 7,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5983,
+    "path" : "ipad-ax3--light--home.png",
+    "pixelsBeyondTolerance" : 5983,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5982,
+    "path" : "ipad-ax3--light--classic.png",
+    "pixelsBeyondTolerance" : 5982,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      566,
+      2394,
+      1071,
+      2396
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 13,
+    "path" : "ipad-ax3--light--local-reveal.png",
+    "pixelsBeyondTolerance" : 13,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      1668,
+      2420,
+      -1,
+      -1
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "ipad-ax3--light--human-turn-start.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5980,
+    "path" : "ipad-ax3--light--human-placement.png",
+    "pixelsBeyondTolerance" : 5980,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5985,
+    "path" : "ipad-ax3--light--computer-targeting.png",
+    "pixelsBeyondTolerance" : 5985,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5989,
+    "path" : "ipad-ax3--light--terminal-settling-win.png",
+    "pixelsBeyondTolerance" : 5989,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      572,
+      2394,
+      1058,
+      2394
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 487,
+    "path" : "ipad-ax3--light--result.png",
+    "pixelsBeyondTolerance" : 487,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      566,
+      2394,
+      1071,
+      2396
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 13,
+    "path" : "ipad-ax3--light--draw-result.png",
+    "pixelsBeyondTolerance" : 13,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5980,
+    "path" : "ipad-ax3--light--settings.png",
+    "pixelsBeyondTolerance" : 5980,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5989,
+    "path" : "ipad-ax3--light--ai-lab.png",
+    "pixelsBeyondTolerance" : 5989,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5980,
+    "path" : "ipad-ax3--light--home-bottom.png",
+    "pixelsBeyondTolerance" : 5980,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5982,
+    "path" : "ipad-ax3--light--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 5982,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5991,
+    "path" : "ipad-ax3--light--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 5991,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2394,
+      2404
+    ],
+    "boundingBox" : [
+      561,
+      2394,
+      1106,
+      2404
+    ],
+    "height" : 2420,
+    "last120RowsBeyondTolerance" : 5989,
+    "path" : "ipad-ax3--light--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 5989,
+    "width" : 1668
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular-reduced--dark--classic.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular-reduced--dark--local-handoff.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6434,
+    "path" : "regular-reduced--dark--local-reveal.png",
+    "pixelsBeyondTolerance" : 6434,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--dark--human-turn-start.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6434,
+    "path" : "regular-reduced--dark--human-reveal.png",
+    "pixelsBeyondTolerance" : 6434,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--dark--human-placement.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--dark--computer-reveal.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular-reduced--dark--computer-thinking.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular-reduced--dark--computer-targeting.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6424,
+    "path" : "regular-reduced--dark--computer-placement.png",
+    "pixelsBeyondTolerance" : 6424,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--dark--computer-settled.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--dark--terminal-settling-draw.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6435,
+    "path" : "regular-reduced--dark--draw-result.png",
+    "pixelsBeyondTolerance" : 6435,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-reduced--dark--settings.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--dark--how-to.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6435,
+    "path" : "regular-reduced--dark--ai-lab.png",
+    "pixelsBeyondTolerance" : 6435,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--dark--home-bottom.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--dark--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      817,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6403,
+    "path" : "regular-reduced--dark--settings-bottom.png",
+    "pixelsBeyondTolerance" : 6403,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6435,
+    "path" : "regular-reduced--dark--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 6435,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6422,
+    "path" : "regular-reduced--dark--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 6422,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-reduced--light--home.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6447,
+    "path" : "regular-reduced--light--classic.png",
+    "pixelsBeyondTolerance" : 6447,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6447,
+    "path" : "regular-reduced--light--local-handoff.png",
+    "pixelsBeyondTolerance" : 6447,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-reduced--light--local-reveal.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6444,
+    "path" : "regular-reduced--light--human-turn-start.png",
+    "pixelsBeyondTolerance" : 6444,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      814,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6227,
+    "path" : "regular-reduced--light--human-reveal.png",
+    "pixelsBeyondTolerance" : 6227,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-reduced--light--human-placement.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      399,
+      2583,
+      744,
+      2584
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 21,
+    "path" : "regular-reduced--light--computer-reveal.png",
+    "pixelsBeyondTolerance" : 21,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular-reduced--light--computer-thinking.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--light--computer-targeting.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-reduced--light--computer-placement.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6442,
+    "path" : "regular-reduced--light--computer-settled.png",
+    "pixelsBeyondTolerance" : 6442,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6445,
+    "path" : "regular-reduced--light--terminal-settling-win.png",
+    "pixelsBeyondTolerance" : 6445,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-reduced--light--terminal-settling-draw.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6425,
+    "path" : "regular-reduced--light--result.png",
+    "pixelsBeyondTolerance" : 6425,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      1206,
+      2622,
+      -1,
+      -1
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 0,
+    "path" : "regular-reduced--light--draw-result.png",
+    "pixelsBeyondTolerance" : 0,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-reduced--light--settings.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6441,
+    "path" : "regular-reduced--light--how-to.png",
+    "pixelsBeyondTolerance" : 6441,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--light--home-bottom.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6430,
+    "path" : "regular-reduced--light--human-placement-bottom.png",
+    "pixelsBeyondTolerance" : 6430,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6432,
+    "path" : "regular-reduced--light--settings-bottom.png",
+    "pixelsBeyondTolerance" : 6432,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6438,
+    "path" : "regular-reduced--light--how-to-bottom.png",
+    "pixelsBeyondTolerance" : 6438,
+    "width" : 1206
+  },
+  {
+    "aboveLast120RowsBeyondTolerance" : 0,
+    "anyDifferenceYRange" : [
+      2583,
+      2597
+    ],
+    "boundingBox" : [
+      387,
+      2583,
+      818,
+      2597
+    ],
+    "height" : 2622,
+    "last120RowsBeyondTolerance" : 6433,
+    "path" : "regular-reduced--light--ai-lab-bottom.png",
+    "pixelsBeyondTolerance" : 6433,
+    "width" : 1206
+  }
+]

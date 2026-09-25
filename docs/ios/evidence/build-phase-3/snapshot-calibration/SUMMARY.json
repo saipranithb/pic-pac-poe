@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+  "reviewedAt": "2026-09-25T10:57:29.005301+00:00",
+  "result": "PASS",
+  "captureCount": 336,
+  "pixelIdenticalImageCount": 131,
+  "completeAgreementWithinToleranceCount": 143,
+  "minimumAgreement": 0.9979611856810532,
+  "maximumChannelDeltaIncludingOutliers": 84,
+  "minimumRequiredAgreement": 0.995,
+  "perChannelPixelAgreementTolerance": 2,
+  "allPixelsCompared": true,
+  "masksApplied": false,
+  "baselineChangedByComparison": false,
+  "sourceStableAndClean": true,
+  "residualFinding": "All observed nonzero pixel differences occur only in system Home-indicator row bands: regular iPhone y2583...2597; iPad y2394...2404, zero-based decoded full-frame coordinates. The product pixels outside these bands are exactly identical. System bar fades differ at capture time. These pixels remain included in the actual full-frame gate; this diagnostic did not mask or retest away differences.",
+  "originalVisualSpotCheck": {
+    "path": "regular--light--settings-bottom.png",
+    "baselineAndRepeatOpenedAtOriginalResolution": true,
+    "reviewer": "Codex root",
+    "finding": "App typography, surfaces, controls, selected values and geometry identical by direct visual inspection; only system Home-indicator shade differs."
+  },
+  "profileMinimumAgreement": {
+    "compact": 1.0,
+    "regular": 0.9979611856810532,
+    "ipad": 0.9985153199754246,
+    "compact-xxxl": 1.0,
+    "regular-ax3": 0.9979615019233858,
+    "ipad-ax3": 0.9985158154468161,
+    "regular-reduced": 0.9979611856810532
+  },
+  "comparatorSourceSHA256": "4c7288ba91eefae6bc6727907c566d7a9ed717ced634641de6a0ce7d737f8526",
+  "diagnosticExecutableSHA256": "3d6ee98470be0da0a5553801652eb249e16d0dcd79031ce1dc132570e0cfc63d"
+}

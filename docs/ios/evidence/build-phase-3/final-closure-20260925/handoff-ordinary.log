@@ -1,0 +1,3 @@
+WARNING: Release commit/tag unresolved: portable package validation is not exact-release certification
+Checked 7 JSON documents, 243 relative Markdown links, 131 file hashes; 0 error(s).
+PASS: portable handoff verification (read-only; no network or Git mutation).

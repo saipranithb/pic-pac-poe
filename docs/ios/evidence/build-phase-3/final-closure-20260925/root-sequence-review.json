@@ -1,0 +1,11 @@
+{
+  "reviewedAt": "2026-09-25T11:29:45.860198+00:00",
+  "reviewer": "Codex root",
+  "sourceCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+  "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/sequence-contact-sheet.png",
+  "sha256": "5052c85b306bc65ecd6e6f2a57284db249e25c1f62927406867f961bdbe23ab0",
+  "detail": "original",
+  "outcome": "PASS",
+  "frameCount": 17,
+  "notes": "Whole-frame sheet independently inspected. Human reveal/placement, computer reveal/empty target/placement/settle, win/draw settled before result, restored selected and committed positions are coherent. Actor/symbol identity, bag counts and singular piece copy agree. Sheet labels correctly disclose 10x/20x controlled holds and per-frame monotonic uptime; this is not normal-speed pacing."
+}

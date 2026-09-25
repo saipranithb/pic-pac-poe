@@ -1,0 +1,142 @@
+[
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/regular-ax3--dark--how-to.png",
+    "label": "BEFORE / regular-ax3 / dark / how-to",
+    "sha256": "36fba4efa6139c98025feb4511d9cba1099414857296920a6179d64adb3f5976"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/regular-ax3--dark--how-to.png",
+    "label": "AFTER / regular-ax3 / dark / how-to",
+    "sha256": "19e50910e1e4177e290a5037c07b344e01e1489c4ce86bc0ee33ab19cf998554"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/regular-ax3--dark--computer-thinking.png",
+    "label": "BEFORE / regular-ax3 / dark / computer-thinking",
+    "sha256": "31babffaa2d6d7ea5f9b655c39be91b31d284ba1fab7fbe497f1557290e3a2a7"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/regular-ax3--dark--computer-thinking.png",
+    "label": "AFTER / regular-ax3 / dark / computer-thinking",
+    "sha256": "990f3682f0b23c25d32dec10105946f092ed091dd7b5170a92267970c9e04e67"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/regular-ax3--dark--computer-targeting.png",
+    "label": "BEFORE / regular-ax3 / dark / computer-targeting",
+    "sha256": "c5b9207f83c6ce11a838c32b1f87838fa0882e46288b15d26479a40e46c64e07"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/regular-ax3--dark--computer-targeting.png",
+    "label": "AFTER / regular-ax3 / dark / computer-targeting",
+    "sha256": "c5bb1112b3b12611b4505ab4e6bf0fa1e8a482ed5d0422c9b3deb664f1c34df9"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/regular-ax3--dark--computer-placement.png",
+    "label": "BEFORE / regular-ax3 / dark / computer-placement",
+    "sha256": "7a16923598818163edfd739a2e1e9909eede0fe3c4754b260a368469e2f6fce8"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/regular-ax3--dark--computer-placement.png",
+    "label": "AFTER / regular-ax3 / dark / computer-placement",
+    "sha256": "01c33f902ec3667e01053a7cabec1fd1074bf7af8072dd2977a22973f8b1315e"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/regular-ax3--light--how-to.png",
+    "label": "BEFORE / regular-ax3 / light / how-to",
+    "sha256": "0bc49503a8a3f0e8c7386004620cd822ea1a9cccd6943786c929950cf14fe56d"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/regular-ax3--light--how-to.png",
+    "label": "AFTER / regular-ax3 / light / how-to",
+    "sha256": "99a57f7c15b9dd3b7695581be01b28c063c112d07d46d93d961a86606060660d"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/regular-ax3--light--computer-thinking.png",
+    "label": "BEFORE / regular-ax3 / light / computer-thinking",
+    "sha256": "5e2ac9c67bf301e39c02c4aa9a09c5b822badeb36b68e675e16346269d9618a9"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/regular-ax3--light--computer-thinking.png",
+    "label": "AFTER / regular-ax3 / light / computer-thinking",
+    "sha256": "859a35ddeedb3b9813f45fd6f1f29160f99e7d5a92cac77c0a48b53f924d89ce"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/regular-ax3--light--computer-targeting.png",
+    "label": "BEFORE / regular-ax3 / light / computer-targeting",
+    "sha256": "70a05c0171d224500e8440e098fc0de91fcc93566020620c60c0df4dcecee332"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/regular-ax3--light--computer-targeting.png",
+    "label": "AFTER / regular-ax3 / light / computer-targeting",
+    "sha256": "65a2c7d0e7f2954108947783312114381a35688bb57f4585b09726d49e3635a8"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/regular-ax3--light--computer-placement.png",
+    "label": "BEFORE / regular-ax3 / light / computer-placement",
+    "sha256": "bc45c091aa47f305484f4579b4851d02313955fbc407aaab528e11f892ac9f4b"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/regular-ax3--light--computer-placement.png",
+    "label": "AFTER / regular-ax3 / light / computer-placement",
+    "sha256": "a3501d62e9601f58213f1fd23dadd2b8eaf702922cd2a5f8031518fa2f1b2ef8"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/ipad-ax3--dark--how-to.png",
+    "label": "BEFORE / ipad-ax3 / dark / how-to",
+    "sha256": "fb8a52d7d2c3bd6c8966666d4229ef6b193660e0792da40bd8aacc5cb5f7e7a1"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/ipad-ax3--dark--how-to.png",
+    "label": "AFTER / ipad-ax3 / dark / how-to",
+    "sha256": "86d529cc07672a59e88c96bcae42fcea82c7a1ee24b8fb194126bea8f6865756"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/ipad-ax3--dark--computer-thinking.png",
+    "label": "BEFORE / ipad-ax3 / dark / computer-thinking",
+    "sha256": "540f9da8e30e9c25c0d03694f4a4054dcfc0381accaaa6db2500aea32cc71a3e"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/ipad-ax3--dark--computer-thinking.png",
+    "label": "AFTER / ipad-ax3 / dark / computer-thinking",
+    "sha256": "99074170ee189247ed3f0091d2142bacb31946309876cec74a075913add4e7e6"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/ipad-ax3--dark--computer-targeting.png",
+    "label": "BEFORE / ipad-ax3 / dark / computer-targeting",
+    "sha256": "c5bea3572e28eb6ade4cb9a9cc7207b797879f5e0f6d84a6f6fa616ce233521a"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/ipad-ax3--dark--computer-targeting.png",
+    "label": "AFTER / ipad-ax3 / dark / computer-targeting",
+    "sha256": "1a36e3b763015fadf99d9183c76f848885f360d770f4b893faa635a77aed09f2"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/ipad-ax3--light--how-to.png",
+    "label": "BEFORE / ipad-ax3 / light / how-to",
+    "sha256": "dccef3761b08299de4998d7298b0a555b7696692cd68bf27f0ccd607c7165318"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/ipad-ax3--light--how-to.png",
+    "label": "AFTER / ipad-ax3 / light / how-to",
+    "sha256": "7281d6ec53eb5647723f2f350821588afab074cf5f0a7643a6630ce9a8189868"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/ipad-ax3--light--computer-thinking.png",
+    "label": "BEFORE / ipad-ax3 / light / computer-thinking",
+    "sha256": "8ec47a1d549efd325fb82b58e7184b388fb7a068fd678e5b61072450e944e6b5"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/ipad-ax3--light--computer-thinking.png",
+    "label": "AFTER / ipad-ax3 / light / computer-thinking",
+    "sha256": "993387642698087f9856763b00f1f85d7e16862633d2cba7d959cfb037d059cf"
+  },
+  {
+    "path": "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/before/ipad-ax3--light--computer-targeting.png",
+    "label": "BEFORE / ipad-ax3 / light / computer-targeting",
+    "sha256": "3d2483370d2b0282e4f31631e755fab57f80c4e20fd873d68d71963fc0afbf50"
+  },
+  {
+    "path": "/tmp/picpac-phase3-large-type-layout-after-20260925/after/ipad-ax3--light--computer-targeting.png",
+    "label": "AFTER / ipad-ax3 / light / computer-targeting",
+    "sha256": "0e19966683425ea753de6d7dcda65e42fa7992389ad40880bc1157f3112cb65f"
+  }
+]

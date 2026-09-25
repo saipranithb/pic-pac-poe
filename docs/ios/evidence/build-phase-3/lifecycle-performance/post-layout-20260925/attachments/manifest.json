@@ -1,0 +1,122 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "3E9F00F4-66F3-47F6-810E-8A17FABE4EA3.json",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "SIMULATOR_SEARCH_PERFORMANCE_JSON_0_A169F161-D983-416C-BD01-C2B483A6092E.json",
+        "timestamp" : 1790333932.442
+      }
+    ],
+    "testIdentifier" : "PicPacPoePerformanceIntegrationTests/testSimulatorProductionSearchBudgetLatencyAndCancellation()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeTests/PicPacPoePerformanceIntegrationTests/testSimulatorProductionSearchBudgetLatencyAndCancellation"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "DD832C0B-B9DA-4BAD-886F-8D536471A4B9.json",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "SIMULATOR_FRAME_PACING_JSON_0_A724FC70-81F9-4BBD-93D6-503EE5093C4C.json",
+        "timestamp" : 1790333950.395
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "5763FDEB-98F3-4566-B74D-825A32DA8F2C.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-reduce-motion-inactive-plus-1_0_A16A18A7-F8B0-478F-8921-ECEE4154947E.5",
+        "timestamp" : 1790333946.225
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "4C17AB6E-B368-4BA2-B682-77315EBC13F0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-reduce-motion-inactive-start_0_BC5397D1-1314-4FE4-9A59-16A5A8D66BE4.png",
+        "timestamp" : 1790333944.581
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "BB65FCCC-BDC5-4174-96CD-E9397A44249D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-reduce-motion-active-1_0_CE10632B-E2A3-46DF-B84F-DD05EA42E448.4",
+        "timestamp" : 1790333944.333
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "96857FF1-4530-4D34-A0C0-024F4E8CBF92.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-reduce-motion-active-0_0_1FDEEB70-7E5B-451A-B239-17D6A4CBFB09.34",
+        "timestamp" : 1790333943.256
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "E2FB4629-D757-47FB-96B2-023DE51D77B6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-reduce-motion-active-0_0_3C733EE9-4013-4500-98F2-C21ADA818E08.0",
+        "timestamp" : 1790333942.927
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "24B19E02-4351-4922-BFF0-4D87D58EC7AE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-normal-motion-inactive-plus-1_0_4965BEFB-9F97-465C-919B-1E465043C65D.5",
+        "timestamp" : 1790333939.335
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "BDC7A0B2-447E-4025-A10D-98DADC2B3673.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-normal-motion-inactive-start_0_EDF75791-FBD4-4C7B-9991-81B8F6C48FFF.png",
+        "timestamp" : 1790333937.698
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "D5505C65-117A-4707-ACB7-2F4F5DFB4479.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-normal-motion-active-1_0_00D9A825-D6DC-470D-9F4F-222B58CC19FC.4",
+        "timestamp" : 1790333937.446
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "3679C1CD-FF7A-4700-92F7-CC85CD757DD3.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-normal-motion-active-0_0_F2B716F0-F03A-4804-8120-984458642AF4.34",
+        "timestamp" : 1790333936.38
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "deviceName" : "PicPacPoe Phase3 Performance",
+        "exportedFileName" : "C9945D45-8E73-4DE5-B110-D9D49177B3FA.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "home-normal-motion-active-0_0_43CFCB09-AEA4-42B4-8C49-E92844B2BB97.0",
+        "timestamp" : 1790333936.062
+      }
+    ],
+    "testIdentifier" : "PicPacPoePerformanceIntegrationTests/testVisibleHomeMotionAndLiveHardTurnDisplayCadence()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeTests/PicPacPoePerformanceIntegrationTests/testVisibleHomeMotionAndLiveHardTurnDisplayCadence"
+  }
+]

@@ -1,0 +1,2 @@
+ERROR: Strict release: git.releaseCommit must be 40 hex characters and git.releaseTag must be non-null/nonempty
+Checked 7 JSON documents, 243 relative Markdown links, 131 file hashes; 1 error(s).

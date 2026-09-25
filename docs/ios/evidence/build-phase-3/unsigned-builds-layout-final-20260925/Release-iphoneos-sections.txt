@@ -1,0 +1,41 @@
+
+/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphoneos/Build/Products/Release-iphoneos/PicPacPoe.app/PicPacPoe:	file format mach-o arm64
+
+Sections:
+Idx Name             Size     VMA              Type
+  0 __text           000863fc 0000000100004000 TEXT
+  1 __stubs          00001884 000000010008a3fc TEXT
+  2 __objc_stubs     00000360 000000010008bc80 TEXT
+  3 __const          000078d0 000000010008bfe0 DATA
+  4 __constg_swiftt  00001bcc 00000001000938b0 DATA
+  5 __swift5_typeref 000115a8 000000010009547c DATA
+  6 __swift5_entry   00000008 00000001000a6a24 DATA
+  7 __swift5_fieldmd 00001dc8 00000001000a6a2c DATA
+  8 __swift5_reflstr 00001076 00000001000a8800 DATA
+  9 __swift5_assocty 000004e0 00000001000a9878 DATA
+ 10 __cstring        000015a9 00000001000a9d60 DATA
+ 11 __swift5_capture 000006b8 00000001000ab30c DATA
+ 12 __swift5_builtin 000000dc 00000001000ab9c4 DATA
+ 13 __swift5_proto   00000548 00000001000abaa0 DATA
+ 14 __swift5_types   00000220 00000001000abfe8 DATA
+ 15 __swift_as_entry 00000150 00000001000ac208 DATA
+ 16 __swift_as_ret   00000168 00000001000ac358 DATA
+ 17 __objc_classname 000003de 00000001000ac4c0 DATA
+ 18 __objc_methname  0000060e 00000001000ac8a0 DATA
+ 19 __objc_methtype  00000001 00000001000aceae DATA
+ 20 __swift5_protos  00000018 00000001000aceb0 DATA
+ 21 __swift5_mpenum  0000003c 00000001000acec8 DATA
+ 22 __unwind_info    000024e0 00000001000acf04 DATA
+ 23 __eh_frame       00004288 00000001000af3e8 DATA
+ 24 __oslogstring    00000085 00000001000b4000 DATA
+ 25 __got            00001b20 00000001000b8000 DATA
+ 26 __const          00004df0 00000001000b9b20 DATA
+ 27 __objc_classlist 00000090 00000001000be910 DATA
+ 28 __objc_imageinfo 00000008 00000001000be9a0 DATA
+ 29 __objc_const     00001368 00000001000c0000 DATA
+ 30 __objc_selrefs   000000d8 00000001000c1368 DATA
+ 31 __objc_classrefs 00000040 00000001000c1440 DATA
+ 32 __objc_data      000000f0 00000001000c1480 DATA
+ 33 __data           00004cd8 00000001000c1570 DATA
+ 34 __bss            0000a3b8 00000001000c6250 BSS
+ 35 __common         00000020 00000001000d0608 BSS

@@ -1,130 +1,84 @@
 # Native iOS verification record
 
-This record distinguishes executed evidence from planned acceptance. Do not treat an unchecked or future row as a pass.
+This record distinguishes executed local evidence, inspected workflow definitions, and external release gates. The consolidated [Build Phase 3 report](evidence/build-phase-3/REVIEW.md) and [accepted evidence manifest](evidence/build-phase-3/manifest.json) are the authoritative closure record. The [Build Phase 2 report](evidence/build-phase-2/REVIEW.md) remains historical evidence.
 
 ## Source and environment
 
-| Item | Recorded value |
+| Item | Value |
 | --- | --- |
-| Canonical handoff commit | `dc7cb397ad335783c13c7976d4cef816d2fc0909` |
-| Implementation branch | `codex/ios-native-parity` |
-| Android runtime candidate | `f936faf7d21e85ed71e859d94d65e125fe61b436` |
-| macOS host | 26.5.2 (25F84), Apple M3 Pro, arm64 |
-| Local Xcode | 26.6 (17F113) at `/Applications/Xcode.app` |
-| Swift | 6.3.3, Swift 6 language mode |
-| Deployment target | iOS/iPadOS 17.0 |
-| Installed local simulator SDK | iOS Simulator 26.5 |
+| Canonical checkout, unchanged | `dc7cb397ad335783c13c7976d4cef816d2fc0909` |
+| Implementation branch / Phase 2 base | `codex/ios-native-parity` / `9423f47b34daee71cb5ed340cf0194c941e71b92` |
+| Final product/build-input revision | `e6c0c65c9c5ad84e2f961839c5eede753c25448e`; later evidence-only descendants are identified in each manifest |
+| Host | macOS 26.5.2 (25F84), Apple M3 Pro, arm64 |
+| Xcode / Swift | 26.6 (17F113) / 6.3.3, Swift 6 language mode |
+| Deployment target | iOS/iPadOS 17.0, verified in actual simulator and device SDK Mach-O slices |
+| Executed runtime | Installed iOS Simulator 26.5, build 23F77 |
 
-The default host developer directory points to Command Line Tools. Local Xcode commands use a per-command `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer` override; global developer selection is not changed.
+Commands use `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer` per process. Global developer selection and installed runtimes were not changed. No connected compatible physical device or installed iOS 17 runtime was available. Compilation with the iOS 17 deployment target is not minimum-runtime execution.
 
-## Handoff gate
+## Executed local gates
 
-Before implementation, the ordinary handoff verifier completed successfully with seven JSON documents, 243 relative links, 131 hashes and zero errors. Strict verification failed only because `releaseCommit` and `releaseTag` remain null. That failure is the approved Android release-identity gate; native implementation must not invent or resolve either value.
+| Gate | Actual result |
+| --- | --- |
+| Shared fixture governance | Eight groups / 36 exact IDs consumed in Kotlin and Swift; SHA-256 `c68308f7a6b3684cc413bc37f495a7dfade8e5bd7a928f4273d79cbb101021ae`; unknown groups/schema rejected, scripted random call order and presentation/restoration behavior checked |
+| Android regression | 86 JVM executions / 57 unique tests, zero failures/errors/skips; clean lint; Debug and test APKs, unsigned AAB; 26 instrumentation tests passed in 233.485 s on Pixel_8 Android 16 / API 36 arm64 |
+| Swift package | 63 tests passed, zero failures, 34.322 s; exhaustive core/fixture/AI/presentation/restoration suites |
+| Hosted integration | All 12 source-discovered methods passed, zero skips, 18.344 s; iPhone 17 Pro / iOS 26.5 |
+| Player-driven UI | 26 tests passed, zero failures/skips; 15 complete ordinary-timing games, 28 native audit viewports and 98 original timestamped frames; 1,036.414 s test execution / 1,063.142 s result-bundle duration |
+| Governed snapshot baseline and repeat | 336 reviewed originals and 336 independent repeats: all PASS, minimum 99.7961185681% full-frame agreement at 2/255 per-channel tolerance |
+| Unsigned build matrix | All four Debug/Release × simulator/device SDK builds passed; no signing material, correct resources/identity/platform/minimum. Both Release artifacts exclude testing controls and LLVM coverage instrumentation |
+| Performance audit | Optimized host test passed; actual simulator search and visible UIKit-hosted view measurements retained separately below |
+| Handoff | Ordinary verifier: seven JSON documents, 243 relative links, 131 hashes, zero errors; strict failure solely for deliberately null `releaseCommit` and `releaseTag` |
 
-The canonical checkout remains the read-only reference. Implementation occurs in its dedicated worktree and branch.
+Android runtime and shared JSON inputs are unchanged from the verified product. The retained complete regression run remains applicable; the native CI and verification tooling changes do not change Kotlin runtime behavior. Detailed commands, log hashes, counts and the unsigned AAB identity are in the [CI contract audit](evidence/build-phase-3/CI-CONTRACT-AUDIT.md).
 
-## Executed build checks
+Actual Release artifacts are checked for bundle `dev.saipranith.picpacpoe`, version 2.0.0/build 1, iPhone/iPad support, minimum iOS 17.0, native icon and theme-aware launch color, exact Fredoka/OFL and production policy bytes, absent signing material/test bundles, absent Debug launch switches/types, and absent LLVM coverage/profile sections. Device SDK compilation is not physical-device execution. See the [four-build manifest](evidence/build-phase-3/unsigned-builds-layout-final-20260925/manifest.json).
 
-Run local checks from repository root with the installed Xcode selected per command:
+## Behavior, accessibility and visual acceptance
+
+The application keeps Form Playground 2.0's warm moulded-resin styling, semantic coral X/pistachio O, Fredoka wordmark, dimensional pieces and tactile controls. All 20 accepted Phase 2 originals were inspected at full resolution against canonical Android references. The [parity audit](evidence/build-phase-3/PARITY-AND-VISUAL-AUDIT.md) records intentional native ergonomics and material before/after fixes. Android-to-iOS comparison uses semantic geometry and intent, not blanket pixel equality.
+
+Final visual acceptance requires exact semantic tokens, strings, state and clock configuration; geometry within 0.5 point of specified formulas; wordmark optical centering within 1 point; and zero tolerance for clipping, actor/symbol ambiguity, privacy leaks, moving targets or premature results. Governed same-toolchain regression compares every full-frame sRGB RGBA pixel: at least 99.5% agree with at most 2/255 variance in every channel. Baselines require explicit inspection of each original capture; comparison cannot replace them. See [snapshot governance](evidence/build-phase-3/SNAPSHOT-GOVERNANCE.md).
+
+Lifecycle tests cover 21 interruption/restoration boundary rows, pending and cancellation-unaware AI workers, selected targets, committed moves and terminal settlement. Inactive scenes cannot accept gameplay commands or start a stale worker. Restoration does not replay draws, moves, speech, sounds or haptics. Interactive recordings supplement deterministic tests with ordinary production AI/RNG and presentation timing.
+
+Accessibility checks include labels/headings/traits, row-major board traversal, modal privacy, 44-point targets, semantic contrast, Dynamic Type, landscape reachability, locked stages and announcement deduplication. Native automation preserves every finding. Its sole permitted artifact is the exact already-reviewed dark AI Lab offscreen paragraph at the bottom viewport after its fully visible top audit passes; its visible sliver is under 1 point and authored text contrast is 9.856:1. The final run emitted exactly one such acknowledged finding and zero unhandled findings; this is not zero native findings. At source `bf384da11190cb45ff21866a6d804c85a35ce333`, simulator Full Keyboard Access was exercised interactively through a complete Classic game, result and keyboard-activated alternate-starter rematch. No subsequent keyboard move is recorded. An additional Release follow-up launched successfully but the computer-use bridge hung before interaction; it is not counted as a pass. Physical VoiceOver, Switch Control and keyboard ergonomics, including focus recovery after rematch, remain explicitly open.
+
+## Measured responsiveness
+
+Instrumented hosted Test configuration on the iOS 26.5 simulator measured three samples per operation: cold Hard 76.871500–77.285834 ms, warm 0.020209–0.022833 ms, exactly 2,000 MCTS simulations in 23.446875–24.048583 ms, and cancellation 0.107125–1.241625 ms. The separate optimized host package measured five samples: cold Hard 75.477959–77.157333 ms, warm 0.016250–0.034833 ms, MCTS 22.168125–23.234708 ms and cancellation 0.108958–0.238084 ms.
+
+Visible UIKit-hosted app views measured 186/185/184 CADisplayLink callbacks for normal Home, Reduce Motion Home and live Hard. Callback p95/max was 16.824/17.189 ms, 16.791/17.133 ms and 16.697/22.113 ms respectively. No callback reached 25 ms and no delivered timestamp interval exceeded 1.5× nominal 60 Hz in these samples. These instrumented Test observations distinguish display timestamps and callback-arrival intervals; they do not measure Release GPU completion or physical-device pacing. A separate 2 ms main-actor heartbeat had 176 samples with p95/max 3.069916/3.089167 ms. Raw arrays and exact configuration are retained.
+
+Active Home alternates X/O in both motion modes. Inactive full-window pixels remain identical. Gameplay state, RNG calls, decorative-loop persistence and feedback remain unchanged. Ordinary interactive recordings from `bf384da11190cb45ff21866a6d804c85a35ce333` also verify unchanged persisted file bytes and modification times and show the normal pulse. Home motion source is unchanged through final `e6c0c65`; older gameplay movies retain their earlier layout provenance and are complemented by current-source UI frames. See [final lifecycle/performance evidence](evidence/build-phase-3/lifecycle-performance/post-layout-20260925/REPORT.md) and [interactive motion](evidence/build-phase-3/interactive-motion/README.md).
+
+## Unsigned CI contract and reproducible commands
+
+Both workflow definitions use read-only permissions and SHA-pinned actions; checkout does not persist credentials. Separate visible gates cover Kotlin/shared fixtures and Android regressions/UI flows; native package/shared fixtures; hosted integration; player-driven XCUITest; approved snapshots; and unsigned Debug/Release builds for simulator and device SDK. Exact XCTest inventory guards reject missing, duplicate, failed or skipped methods. Environment assertions fail visibly if the pinned compiler/runtime is unavailable. No runtime is installed to hide that failure.
+
+Workflow definitions were inspected and their commands reproduced locally. **GitHub-hosted Actions has not executed**, because pushing and dispatching remain unauthorized. Local Android instrumentation used the installed API 36 emulator; the workflow's API 35 emulator remains a future hosted execution environment.
+
+From repository root, use fresh output paths and the already available simulator UDID:
 
 ```sh
 python3 docs/ios-handoff/verify-handoff.py
 python3 docs/ios-handoff/verify-handoff.py --strict-release
-ANDROID_HOME=/path/to/android/sdk sh gradlew --no-daemon \
-  :game-core:test :game-ai:test :game-tools:test :app:testDebugUnitTest
-DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
-  swift test --package-path ios/Packages/PicPacKit
-DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
-  xcodebuild -project ios/PicPacPoe.xcodeproj \
-  -scheme PicPacPoe \
-  -configuration Test \
-  -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.5' \
-  -derivedDataPath /tmp/pic-pac-poe-test \
-  CODE_SIGNING_ALLOWED=NO \
-  test
-DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
-  xcodebuild -project ios/PicPacPoe.xcodeproj \
-  -scheme PicPacPoe \
-  -configuration Debug \
-  -destination 'generic/platform=iOS Simulator' \
-  -derivedDataPath /tmp/pic-pac-poe-debug \
-  CODE_SIGNING_ALLOWED=NO \
-  build
-DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer \
-  xcodebuild -project ios/PicPacPoe.xcodeproj \
-  -scheme PicPacPoe \
-  -configuration Release \
-  -destination 'generic/platform=iOS Simulator' \
-  -derivedDataPath /tmp/pic-pac-poe-release \
-  CODE_SIGNING_ALLOWED=NO \
-  build
-EVIDENCE_RUN_ID=phase2-complete-20260921 \
-  ios/Scripts/capture-phase2-screenshots.sh
+python3 ios/Scripts/verify-ci-contract.py
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer swift test --package-path ios/Packages/PicPacKit
+DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer xcodebuild -project ios/PicPacPoe.xcodeproj -scheme PicPacPoe -configuration Test -destination 'platform=iOS Simulator,id=<available-UDID>' -only-testing:PicPacPoeTests -parallel-testing-enabled NO -derivedDataPath <fresh-path> -resultBundlePath <fresh.xcresult> CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO test
+python3 ios/Scripts/ui_phase3.py --destination <available-UDID> --output <fresh-evidence-path> --derived-data <fresh-derived-data-path>
+python3 ios/Scripts/snapshot_phase3.py capture --output <fresh-candidate-path>
+python3 ios/Scripts/snapshot_phase3.py compare --baseline docs/ios/evidence/build-phase-3/baselines --candidate <fresh-candidate-path> --output <fresh-report.json>
 ```
 
-The strict verifier's nonzero result is expected only while `releaseCommit` and `releaseTag` are null. Fixture failures are labeled by fixture ID, and named tests document the exhaustive board and state-space domains.
+Unsigned build gates use the supported `ENABLE_CODE_COVERAGE=NO CLANG_ENABLE_CODE_COVERAGE=NO CLANG_COVERAGE_MAPPING=NO` settings. The historical rejected `-enableCodeCoverage NO` build command is preserved, not counted as a pass. Strict handoff verification is expected to fail only for the approved null Android release identity, never for an unrelated error.
 
-| Gate | Required evidence | Latest executed result |
-| --- | --- | --- |
-| Xcode project discovery | Shared `PicPacPoe` scheme appears in `xcodebuild -list` | Passed locally with Xcode 26.6 |
-| Unsigned Debug build | Generic iOS Simulator build succeeds with signing disabled | Passed locally for the complete product on iOS Simulator 26.5 |
-| Unsigned Release build | Generic iOS Simulator Release build and shared archive/profile scheme configuration use the matched Release settings | Passed locally with signing disabled |
-| Xcode hosted tests | The Test configuration builds and runs application integration tests without signing | Passed on iPhone 17 Pro, iOS Simulator 26.5: 9 tests, 0 failures |
-| Swift package tests | Core, fixture, production AI, presentation and restoration suites pass | Passed: 57 tests, 0 failures (13 core, 3 fixture, 24 presentation, 14 production AI, 3 search/graph) |
-| Android/JVM tests | Existing modules plus Kotlin fixture consumers pass | Passed: 57 tests, 0 failures/errors/skips |
-| Shared fixtures | Every recognized fixture group executes on Kotlin and Swift | Passed: 36 unique IDs across eight required groups, including two scripted multi-call random traces; all seven presentation/restoration cases execute behaviorally; unknown schema/root groups are rejected |
-| Fixture identity | Swift's staged test resource exactly matches the canonical JSON | Passed: SHA-256 `c68308f7a6b3684cc413bc37f495a7dfade8e5bd7a928f4273d79cbb101021ae` |
-| Canonical graph | 11,065 chance + 21,314 decision + 6,648 terminal = 39,027 states | Passed, including exact opening values within `1e-12` |
-| Coordinator/restoration | Timing, worker races, lifecycle interruption and every restorable boundary pass | Passed with a virtual clock and controlled workers, including stale scene-task cancellation, teardown cancellation, exact terminal AI fields and fail-closed decoded-state validation |
-| Production AI | All production routes, legal moves, cancellation, limits, artifact integrity and fallbacks are governed | Passed for Easy, depth-four Medium, exact Hard, 2,000-simulation MCTS and Q-learning; policy has 20,266 nonzero rows, is 891,749 bytes, and hashes to `9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1` |
-| Product integration | Fonts, palettes, wordmark fit, motion, capture restoration, accessibility announcements and local feedback resources are checked in the hosted app | Passed: 9 hosted tests, including exact canonical Fredoka resources and Settings fixture states |
-| Simulator launch and capture | Complete app installs, starts and renders every required review state without signing | Passed on an ephemeral iPhone 17 Pro, iOS Simulator 26.5 |
-| Visual evidence integrity | Twenty actual simulator frames, canonical provenance, no-crop contact sheet and checksums are complete | Passed at clean source commit `0f499f230e8dd5e5999eb1a4e702e0b111c789c3`; all 23 checksum entries verify |
-| CI definition | Read-only unsigned macOS 26 arm64/Xcode 26.6 lane has no secrets | Defined in `.github/workflows/ios-ci.yml` |
+## Remaining external release gates
 
-The generic Debug and Release builds and the hosted Test build include the complete SwiftUI application and local package with signing disabled. The product was installed on a temporary iPhone 17 Pro simulator and captured in ten governed states for both dark and light appearances. Review rejected an earlier candidate because dark Home was captured before restoration completed. The accepted run waits for a unique Debug-only ready marker after restoration and a main-actor yield, allows appearance to settle, and rejects visually blank sampled content.
+- Already available compatible iOS 17 runtime execution: launch, play, restoration and native presentation on the declared minimum OS.
+- Approved physical iPhone/iPad: VoiceOver speech/focus/modal isolation, Switch Control and external keyboard, actual sound/haptics, thermal/memory/frame pacing, fresh install and documented test-build update behavior.
+- Actual hosted CI after owner-authorized Git promotion.
+- Owner-supervised Apple signing/account/identifier/archive/TestFlight work; later store metadata, legal URLs, privacy declarations and submission.
+- Separate Android signed-release identity remains deliberately null.
 
-The accepted visual package is [`runs/phase2-complete-20260921/review-contact-sheet.png`](evidence/build-phase-2/runs/phase2-complete-20260921/review-contact-sheet.png). Its [`manifest.json`](evidence/build-phase-2/runs/phase2-complete-20260921/manifest.json) records the source commit, clean status, launch arguments, exact theme/settings state, canonical reference path and hash, simulator/toolchain metadata and every output hash. It covers Home, human placement, privacy handoff, reveal, computer targeting, computer settlement, result, Settings, How to Play and AI Lab in both themes. Three light Local/human states use the available dark Android image solely as a labeled geometry/state proxy; their semantic light palette is judged against the theme-matched references for the other seven states.
-
-The ordinary handoff verifier passes after adding the governed fixtures. Strict release verification exits nonzero with one error solely because `releaseCommit` and `releaseTag` are intentionally null. Those values remain untouched. The Android regression command completed successfully with 40 tasks up to date. The local workflow definition was inspected and its commands were exercised locally; no hosted GitHub Actions run is claimed.
-
-## Unsigned continuous integration contract
-
-The iOS workflow:
-
-- runs on an explicitly selected macOS 26 arm64 image;
-- selects Xcode 26.6 without changing repository or account state;
-- asserts macOS major version, CPU architecture, Xcode build and Swift 6 compiler before building;
-- checks out with persisted credentials disabled and grants only `contents: read`;
-- executes the ordinary portable handoff verifier;
-- tests the local Swift package;
-- builds and runs the hosted application integration test on the pinned iPhone 17 Pro/iOS 26.5 simulator;
-- builds both Debug and Release products for the generic iOS Simulator destination with signing disabled; and
-- retains bounded build/test logs on failure without exposing credentials.
-
-It does not import certificates, provisioning profiles, Apple credentials, store API keys or repository secrets. It does not upload an app, sign an archive or contact App Store Connect.
-
-## Product verification matrix
-
-| Layer | Build Phase 2 evidence | Build Phase 3 closure |
-| --- | --- | --- |
-| Unit | Passed for every win line/symbol, ownership, ninth-move precedence, conservation, rejection nonmutation and all 19,683 board encodings | Retain as regression gates while hardening |
-| Fixture | Passed for every shared ID on Kotlin and Swift, unknown schema/group rejection, scripted random call order and exact/toleranced results | Add CI reporting that makes cross-platform contract failures one visible required check |
-| AI | Passed for all-state legality where applicable, deterministic choices/values, opening oracle, production routing, policy hash/format/fallback, MCTS budget and cancellation | Measure cold/warm search and cancellation budgets on supported simulator/device classes |
-| Coordinator | Passed for every stage, worker timing/failure/cancellation, duplicate commands, locked cells, starters, lifecycle races, teardown and restoration boundaries | Exercise the same boundaries through complete application flows |
-| Visual | Twenty accepted simulator captures cover the required states in both themes, backed by canonical hashes and a review sheet; exploratory iPhone/iPad and accessibility-size review also passed | Add stable snapshot baselines across narrow/regular/wide and accessibility layouts; calibrate repeated-capture variance and resolve every visual delta |
-| Accessibility | Hosted tests cover semantic contrast, modal isolation inputs, target/committed announcements, bounded Reduce Motion and responsive reading order design | Run VoiceOver, keyboard/Switch Control, focus, reachability, Dynamic Type and announcement timing through live flows |
-| UI flow | Production views and every mode are implemented; deterministic fixture restoration proves each major rendered state | Add XCUITest coverage for complete Classic, Local, Easy/Medium/Hard and AI Lab flows, rematches, relaunch, scene interruption and terminal AI settlement |
-| Performance/device | AI work is detached from the main actor and cancellation guarded | Measure frame pacing, cold/warm Hard search, MCTS budget, sound and haptics; physical-device release testing remains App Store Phase 1 |
-
-Visual acceptance requires exact semantic tokens, strings, state and clock configuration; geometry within 0.5 point of specified formulas; wordmark optical centering within 1 point; and zero tolerance for clipping, actor/symbol ambiguity, privacy leaks, moving targets or premature results. Same-toolchain iOS regression captures target 99.5% pixel agreement with per-channel variance no greater than 2/255, calibrated with repeated captures and reviewed semantically. Android-to-iOS review compares normalized geometry and intent rather than blanket pixel equality.
-
-## Remaining after Build Phase 2
-
-- No iOS 17 simulator runtime is installed on this host. Minimum-OS launch coverage needs a compatible CI runner/runtime or approved physical device.
-- The final screenshots are deterministic state fixtures. Full player-driven XCUITest flows, automated snapshot baselines and repeated-capture pixel calibration remain Build Phase 3 work.
-- Human assistive-technology review, including VoiceOver traversal/announcement timing and keyboard/Switch Control, remains Build Phase 3 and device validation.
-- Physical audio, haptics, frame pacing, install/update and release-device behavior remain later gates. Simulator evidence cannot close them.
-- Apple team membership, bundle registration, certificates, profiles, agreements and App Store Connect roles are not verified or configured.
-- Legal URL availability and final privacy/store declarations remain owner-reviewed submission work.
-- Android signed release identity remains blocked by its intentionally null release commit/tag and pending release gates.
+None of these is claimed by simulator evidence. No push, PR, merge, tag, signing, credentials, upload, store-console access or production submission occurred in this build phase. The [single App Store Phase 1 prompt](evidence/build-phase-3/APP-STORE-PHASE-1-PROMPT.md) includes the proposed owner-controlled Git promotion sequence.
