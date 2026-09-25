@@ -1,0 +1,7 @@
+{
+  "start": "2026-09-21T13:57:39.157Z",
+  "stop": "2026-09-21T13:59:09.706Z",
+  "file": "keyboard-classic.mov",
+  "actions": "Native Full Keyboard Access: Tab/Down to row1column1; Space X; repeated Space rejected; Right/Down/Down Space O atcell7; Up/Up Space Xcell1; Right/Down/Down Space Ocell8; Up/Up Space Xcell2; resultPlayer1wins; Down/Space Rematch; emptyboardPlayer2O starts.",
+  "sourceCommit": "bf384da11190cb45ff21866a6d804c85a35ce333"
+}

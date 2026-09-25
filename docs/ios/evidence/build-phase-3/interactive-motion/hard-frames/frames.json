@@ -1,0 +1,361 @@
+{
+  "durationSeconds": 280.7266666666667,
+  "encodedHeight": 2622,
+  "encodedWidth": 1206,
+  "extraction": "AVAssetImageGenerator; preferred orientation applied; zero requested tolerance; no resizing/cropping. actualSeconds records the returned video presentation timestamp, which can precede requestedSeconds during a held frame.",
+  "frames": [
+    {
+      "actualSeconds": 19.996666666666666,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-000.png",
+      "requestedSeconds": 20,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-000.png"
+    },
+    {
+      "actualSeconds": 20.198333333333334,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-001.png",
+      "requestedSeconds": 20.2,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-001.png"
+    },
+    {
+      "actualSeconds": 20.39666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-002.png",
+      "requestedSeconds": 20.4,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-002.png"
+    },
+    {
+      "actualSeconds": 20.6,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-003.png",
+      "requestedSeconds": 20.6,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-003.png"
+    },
+    {
+      "actualSeconds": 20.798333333333332,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-004.png",
+      "requestedSeconds": 20.8,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-004.png"
+    },
+    {
+      "actualSeconds": 20.996666666666666,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-005.png",
+      "requestedSeconds": 21,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-005.png"
+    },
+    {
+      "actualSeconds": 21.015,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-006.png",
+      "requestedSeconds": 21.2,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-006.png"
+    },
+    {
+      "actualSeconds": 21.236666666666668,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-007.png",
+      "requestedSeconds": 21.4,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-007.png"
+    },
+    {
+      "actualSeconds": 21.89666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-008.png",
+      "requestedSeconds": 22,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-010.png"
+    },
+    {
+      "actualSeconds": 22.64666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-009.png",
+      "requestedSeconds": 22.8,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-014.png"
+    },
+    {
+      "actualSeconds": 22.996666666666666,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-010.png",
+      "requestedSeconds": 23,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-015.png"
+    },
+    {
+      "actualSeconds": 23.14666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-011.png",
+      "requestedSeconds": 23.2,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-016.png"
+    },
+    {
+      "actualSeconds": 23.305,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-012.png",
+      "requestedSeconds": 23.4,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-017.png"
+    },
+    {
+      "actualSeconds": 23.821666666666665,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-013.png",
+      "requestedSeconds": 24,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-020.png"
+    },
+    {
+      "actualSeconds": 24.18166666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-014.png",
+      "requestedSeconds": 24.2,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-021.png"
+    },
+    {
+      "actualSeconds": 24.861666666666668,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-015.png",
+      "requestedSeconds": 25,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-025.png"
+    },
+    {
+      "actualSeconds": 132.45166666666665,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-016.png",
+      "requestedSeconds": 138,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-000.png"
+    },
+    {
+      "actualSeconds": 141.89833333333334,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-017.png",
+      "requestedSeconds": 141.9,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-026.png"
+    },
+    {
+      "actualSeconds": 141.91333333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-018.png",
+      "requestedSeconds": 142.05,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-027.png"
+    },
+    {
+      "actualSeconds": 142.1,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-019.png",
+      "requestedSeconds": 142.2,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-028.png"
+    },
+    {
+      "actualSeconds": 142.76333333333332,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-020.png",
+      "requestedSeconds": 142.8,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-032.png"
+    },
+    {
+      "actualSeconds": 143.07,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-021.png",
+      "requestedSeconds": 143.1,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-034.png"
+    },
+    {
+      "actualSeconds": 143.24666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-022.png",
+      "requestedSeconds": 143.25,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-035.png"
+    },
+    {
+      "actualSeconds": 143.26666666666668,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-023.png",
+      "requestedSeconds": 143.4,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-036.png"
+    },
+    {
+      "actualSeconds": 143.42833333333334,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-024.png",
+      "requestedSeconds": 143.55,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-037.png"
+    },
+    {
+      "actualSeconds": 143.92833333333334,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-025.png",
+      "requestedSeconds": 144,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-040.png"
+    },
+    {
+      "actualSeconds": 144.28833333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-026.png",
+      "requestedSeconds": 144.3,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-human/frame-042.png"
+    },
+    {
+      "actualSeconds": 144.94333333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-027.png",
+      "requestedSeconds": 145,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-026.png"
+    },
+    {
+      "actualSeconds": 156.75166666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-028.png",
+      "requestedSeconds": 156.8,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-085.png"
+    },
+    {
+      "actualSeconds": 197.62166666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-029.png",
+      "requestedSeconds": 200,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-087.png"
+    },
+    {
+      "actualSeconds": 206.395,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-030.png",
+      "requestedSeconds": 206.4,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-119.png"
+    },
+    {
+      "actualSeconds": 206.58,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-031.png",
+      "requestedSeconds": 206.6,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-120.png"
+    },
+    {
+      "actualSeconds": 206.73333333333332,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-032.png",
+      "requestedSeconds": 206.8,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-121.png"
+    },
+    {
+      "actualSeconds": 207.415,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-033.png",
+      "requestedSeconds": 207.6,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-125.png"
+    },
+    {
+      "actualSeconds": 207.79833333333335,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-034.png",
+      "requestedSeconds": 207.8,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-126.png"
+    },
+    {
+      "actualSeconds": 207.93166666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-035.png",
+      "requestedSeconds": 208,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-127.png"
+    },
+    {
+      "actualSeconds": 208.13166666666666,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-036.png",
+      "requestedSeconds": 208.2,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-128.png"
+    },
+    {
+      "actualSeconds": 208.64166666666668,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-037.png",
+      "requestedSeconds": 208.8,
+      "width": 1206,
+      "originalExtraction": "picpac-phase3-hard-detail/frame-131.png"
+    }
+  ],
+  "input": "hard-live-game.mov",
+  "nominalFrameRate": 8.497966766357422,
+  "preferredTransform": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+  ],
+  "selection": "Distinct actual timestamps around initial computer/human turn, first actual human placement, terminal computer move, and rematch. Original complete MOV retained."
+}

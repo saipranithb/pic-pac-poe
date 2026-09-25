@@ -1,0 +1,106 @@
+{
+  "durationSeconds": 74.245,
+  "encodedHeight": 2622,
+  "encodedWidth": 1206,
+  "extraction": "AVAssetImageGenerator; preferred orientation applied; zero requested tolerance; no resizing/cropping. actualSeconds records the returned video presentation timestamp, which can precede requestedSeconds during a held frame.",
+  "frames": [
+    {
+      "actualSeconds": 0,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-000.png",
+      "requestedSeconds": 0,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 4.985,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-001.png",
+      "requestedSeconds": 5,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 9.936666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-002.png",
+      "requestedSeconds": 10,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 10.75,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-003.png",
+      "requestedSeconds": 20,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 10.75,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-004.png",
+      "requestedSeconds": 30,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 10.75,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-005.png",
+      "requestedSeconds": 40,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 10.75,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-006.png",
+      "requestedSeconds": 50,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 59.76,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-007.png",
+      "requestedSeconds": 60,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 64.99166666666666,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-008.png",
+      "requestedSeconds": 65,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 69.98833333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-009.png",
+      "requestedSeconds": 70,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 72.99333333333334,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-010.png",
+      "requestedSeconds": 73,
+      "width": 1206
+    }
+  ],
+  "input": "home-interruption.mov",
+  "nominalFrameRate": 33.48072814941406,
+  "preferredTransform": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+  ]
+}

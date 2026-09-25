@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reject incomplete XCTest suites; allow only two named/reasoned Test skips."""
+"""Reject incomplete XCTest suites; require every configured method to pass."""
 import argparse
 import hashlib
 import json
@@ -14,11 +14,6 @@ SOURCES = {
     'PicPacPoeTests': ROOT / 'ios/PicPacPoeTests/PicPacPoeIntegrationTests.swift',
     'PicPacPoeUITests': ROOT / 'ios/PicPacPoeUITests/PicPacPoeUITests.swift',
 }
-TEST_SKIPS = {
-    'PicPacPoeIntegrationTests/testDebugCaptureSnapshotsRestoreWithoutLosingStage()': 'Capture fixtures are DEBUG-only; governed simulator captures exercise them in Debug.',
-    'PicPacPoeIntegrationTests/testSettingsCaptureMatchesCanonicalControlStates()': 'Capture fixture settings are DEBUG-only; governed captures exercise them in Debug.',
-}
-
 
 def run(*args):
     return subprocess.run([str(x) for x in args], cwd=ROOT, env=ENV, check=True,
@@ -28,8 +23,8 @@ def run(*args):
 def inventory(path, configuration):
     # The Swift parser recognizes real declarations. Comments, raw/multiline
     # strings and nested local functions must not inflate a regex source count.
-    parsed = run('xcrun', 'swiftc', '-frontend', '-dump-parse', '-D',
-                 'DEBUG' if configuration == 'Debug' else 'TESTING', path)
+    conditions = ['-D', 'DEBUG'] + (['-D', 'TESTING'] if configuration == 'Test' else [])
+    parsed = run('xcrun', 'swiftc', '-frontend', '-dump-parse', *conditions, path)
     current = None
     methods = []
     for line in parsed.splitlines():
@@ -56,39 +51,7 @@ def walk(value):
             yield from walk(child)
 
 
-def scalar(value):
-    return value.get('_value') if isinstance(value, dict) else None
-
-
-def skip_reasons(result, identifiers):
-    # The pinned Xcode's typed result schema retains the exact skip message in
-    # ActionTestSummary.skipNoticeSummary, reachable through testsRef/summaryRef.
-    def obj(identifier=None):
-        args = ['xcrun', 'xcresulttool', 'get', 'object', '--legacy', '--format', 'json', '--path', result]
-        if identifier:
-            args += ['--id', identifier]
-        return json.loads(run(*args))
-    root = obj()
-    references = {scalar(node['testsRef'].get('id')) for node in walk(root) if 'testsRef' in node}
-    reasons = {}
-    for reference in references:
-        if not reference:
-            continue
-        for node in walk(obj(reference)):
-            identifier = scalar(node.get('identifier'))
-            if identifier not in identifiers or scalar(node.get('testStatus')) != 'Skipped':
-                continue
-            detail = node
-            if 'skipNoticeSummary' not in detail and 'summaryRef' in detail:
-                detail = obj(scalar(detail['summaryRef'].get('id')))
-            message = scalar(detail.get('skipNoticeSummary', {}).get('message'))
-            if identifier in reasons:
-                raise ValueError('Duplicate skip notice: ' + identifier)
-            reasons[identifier] = message
-    return reasons
-
-
-def validate(expected, summary, nodes, allowed, reasons):
+def validate(expected, summary, nodes):
     errors = []
     cases = [node for node in walk(nodes) if node.get('nodeType') == 'Test Case']
     identifiers = [node.get('nodeIdentifier') for node in cases]
@@ -100,14 +63,11 @@ def validate(expected, summary, nodes, allowed, reasons):
         errors.append(f'Test inventory differs: missing={missing}, unexpected={extra}')
     observed = {node.get('nodeIdentifier'): node.get('result') for node in cases}
     for identifier in expected:
-        wanted = 'Skipped' if identifier in allowed else 'Passed'
+        wanted = 'Passed'
         if observed.get(identifier) != wanted:
             errors.append(f'{identifier}: expected {wanted}, got {observed.get(identifier)}')
-    for identifier, reason in allowed.items():
-        if reasons.get(identifier) not in (reason, 'Test skipped - ' + reason):
-            errors.append(f'{identifier}: missing or changed skip reason: {reasons.get(identifier)!r}')
     wanted_counts = {'result': 'Passed', 'totalTestCount': len(expected),
-                     'passedTests': len(expected) - len(allowed), 'skippedTests': len(allowed),
+                     'passedTests': len(expected), 'skippedTests': 0,
                      'failedTests': 0, 'expectedFailures': 0}
     for key, wanted in wanted_counts.items():
         if summary.get(key) != wanted:
@@ -124,25 +84,21 @@ def main():
     args = parser.parse_args()
     source = SOURCES[args.target]
     expected = inventory(source, args.configuration)
-    allowed = TEST_SKIPS if args.target == 'PicPacPoeTests' and args.configuration == 'Test' else {}
     summary = json.loads(run('xcrun', 'xcresulttool', 'get', 'test-results', 'summary', '--path', args.result))
     nodes = json.loads(run('xcrun', 'xcresulttool', 'get', 'test-results', 'tests', '--path', args.result))
-    skipped = {node.get('nodeIdentifier') for node in walk(nodes)
-               if node.get('nodeType') == 'Test Case' and node.get('result') == 'Skipped'}
-    reasons = skip_reasons(args.result, skipped) if skipped else {}
-    errors, observed = validate(expected, summary, nodes, allowed, reasons)
+    errors, observed = validate(expected, summary, nodes)
     report = {'schemaVersion': 1, 'pass': not errors, 'target': args.target,
               'configuration': args.configuration, 'source': str(source.relative_to(ROOT)),
               'sourceSHA256': hashlib.sha256(source.read_bytes()).hexdigest(),
               'inventoryMethod': 'Swift parser direct class/extension function declarations',
               'expectedTests': expected, 'observedTests': observed,
-              'allowedSkips': allowed, 'observedSkipReasons': reasons,
+              'allowedSkips': {},
               'summary': summary, 'errors': errors}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + '\n')
     if errors:
         raise SystemExit('\n'.join('ERROR: ' + error for error in errors))
-    print(f'PASS: exact {args.target} inventory; {len(expected)-len(allowed)} passed; {len(allowed)} specifically governed skips')
+    print(f'PASS: exact {args.target} inventory; {len(expected)} passed; zero skips')
 
 
 if __name__ == '__main__':

@@ -1,0 +1,36 @@
+{
+  "kind": "normal-motion Home, observed12-second interval",
+  "startedAt": "2026-09-21T14:00:07.169022+00:00",
+  "endedAt": "2026-09-21T14:00:19.565557+00:00",
+  "recordExitStatus": 0,
+  "file": "home-normal.mov",
+  "noCrop": true,
+  "ordinaryClock": true,
+  "fixtureTimeOverride": null,
+  "beforePersistedFiles": {
+    "current-match.json": {
+      "sha256": "cdd4793bc8fdba9e52d7c51736914ccbd83099ac73b19e919a240ca62cbd2368",
+      "mtimeNS": 1789999177605173759,
+      "bytes": 190
+    },
+    "settings.json": {
+      "sha256": "00ccaa30c10ebdb4bb0ee84870ef7f91331b94cd51f5d3dc8edfa1ec5645b5b9",
+      "mtimeNS": 1789998224049609144,
+      "bytes": 80
+    }
+  },
+  "afterPersistedFiles": {
+    "current-match.json": {
+      "sha256": "cdd4793bc8fdba9e52d7c51736914ccbd83099ac73b19e919a240ca62cbd2368",
+      "mtimeNS": 1789999177605173759,
+      "bytes": 190
+    },
+    "settings.json": {
+      "sha256": "00ccaa30c10ebdb4bb0ee84870ef7f91331b94cd51f5d3dc8edfa1ec5645b5b9",
+      "mtimeNS": 1789998224049609144,
+      "bytes": 80
+    }
+  },
+  "persistedBytesAndModificationTimesUnchanged": true,
+  "limitation": "File invariance is direct runtime evidence. Zero RNG/feedback calls are separately proven by hosted injected dependency tests."
+}

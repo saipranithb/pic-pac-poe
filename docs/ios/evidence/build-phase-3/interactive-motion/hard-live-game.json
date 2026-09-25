@@ -1,0 +1,33 @@
+{
+  "start": "2026-09-21T14:06:48.381Z",
+  "stop": "2026-09-21T14:11:28.407Z",
+  "file": "hard-live-game.mov",
+  "sourceCommit": "bf384da11190cb45ff21866a6d804c85a35ce333",
+  "ordinaryClock": true,
+  "productionRandomness": true,
+  "productionAI": true,
+  "fixtureInjected": false,
+  "starter": "Computer; carried from actual Classic rematch, as canonical contract specifies",
+  "humanInputs": [
+    {
+      "humanSymbol": "X",
+      "cell": 0,
+      "computerNextReveal": "X",
+      "computerTarget": 8,
+      "retrospectiveNoteRecordedAt": "2026-09-21T14:09:26.852Z"
+    },
+    {
+      "humanSymbol": "O",
+      "cell": 1,
+      "computerNextReveal": "O",
+      "computerTarget": 7,
+      "outcome": "Computer wins; O indices1,4,7; finalboardX,O,empty/empty,O,empty/empty,O,X",
+      "retrospectiveNoteRecordedAt": "2026-09-21T14:11:28.407Z"
+    }
+  ],
+  "completed": true,
+  "rematch": "Difficulty Hard retained; You starts, draws X, reaches empty playable board",
+  "noCrop": true,
+  "notes": "Recording includes inspection pauses while human input is awaited. CUA coordinate routing failed before issuing any move; continued with verified native Full Keyboard Access. This recording is temporal state evidence, not a benchmark of player decision time or physical-device performance.",
+  "inputTimestampInterpretation": "Input notes were recorded after observing each sequence; they are not exact tap timestamps. The MOV timeline and extracted actual frame timestamps govern temporal order."
+}

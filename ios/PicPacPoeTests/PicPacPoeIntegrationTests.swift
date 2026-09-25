@@ -99,7 +99,7 @@ final class PicPacPoeIntegrationTests: XCTestCase {
 
     @MainActor
     func testTransitionSpeechNeverReplaysRestorationOrDuplicatesFocusedContent() throws {
-        let token = TurnToken(22)
+        let token = TurnToken(18)
         let pending = try PicPacState(board: Board(symbols: [.x, nil, nil, nil, nil, nil, nil, nil, nil]),
                                       activePlayer: .two, remainingX: 4, remainingO: 4,
                                       phase: .awaitingPlacement(held: .o, token: token), starter: .one, revision: 1)
@@ -205,8 +205,11 @@ final class PicPacPoePerformanceIntegrationTests: XCTestCase {
         let scene = try XCTUnwrap(UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first)
         let window = try XCTUnwrap(scene.windows.first(where: \.isKeyWindow))
         let previousController = window.rootViewController
-        // Replace the visible controller so an obscured second Home timeline
-        // cannot contaminate the sample; restore the original test host after.
+        // Render one visible hierarchy, then restore the original app host.
+        // A UIKit-created host has no SwiftUI Scene environment: supply the
+        // actual foreground phase explicitly. SceneStorage uses its default
+        // here; persistence of the real app scene is exercised by XCUITest.
+        XCTAssertEqual(scene.activationState, .foregroundActive)
         defer {
             window.rootViewController = previousController
             window.makeKeyAndVisible()
@@ -220,7 +223,7 @@ final class PicPacPoePerformanceIntegrationTests: XCTestCase {
             await coordinator.restore()
             await coordinator.updateSettings(AppSettings(soundEnabled: false, hapticsEnabled: false, reducedMotion: reduced))
             await coordinator.markTitleEntranceConsumed()
-            window.rootViewController = UIHostingController(rootView: PicPacPoeRoot(coordinator: coordinator))
+            window.rootViewController = UIHostingController(rootView: PicPacPoeRoot(coordinator: coordinator).environment(\.scenePhase, .active))
             window.makeKeyAndVisible()
             try await Task.sleep(for: .milliseconds(350))
             XCTAssertNotNil(window.rootViewController?.view.window)
@@ -292,7 +295,7 @@ final class PicPacPoePerformanceIntegrationTests: XCTestCase {
         let coordinator = GameCoordinator(drawRandom: HostedDrawProbe(), aiWorker: worker, store: InMemoryLocalStateStore())
         await coordinator.restore()
         await coordinator.updateSettings(AppSettings(soundEnabled: false, hapticsEnabled: false))
-        window.rootViewController = UIHostingController(rootView: PicPacPoeRoot(coordinator: coordinator))
+        window.rootViewController = UIHostingController(rootView: PicPacPoeRoot(coordinator: coordinator).environment(\.scenePhase, .active))
         window.makeKeyAndVisible()
         await coordinator.startPicPacAI(difficulty: .hard)
         try await waitForPlaying(coordinator)
@@ -331,7 +334,9 @@ final class PicPacPoePerformanceIntegrationTests: XCTestCase {
             "schemaVersion": 1, "environment": simulatorEnvironment,
             "measurement": "CADisplayLink delivered timestamps and actual main-runloop callback intervals",
             "requestedDisplayLinkHz": 60, "gpuCompletionMeasured": false,
-            "physicalDeviceEvidence": false, "samples": samples, "liveHardStages": stages,
+            "physicalDeviceEvidence": false,
+            "viewHosting": "Real app views in a visible UIKit UIHostingController with explicit active scene environment; SceneStorage uses default values. Real SwiftUI scene persistence and OS interruptions are covered separately by XCUITest.",
+            "samples": samples, "liveHardStages": stages,
             "homeDrawCalls": 0, "homeDecorativeSnapshotWrites": 0,
             "homeTemporalSequences": homeSequences
         ])

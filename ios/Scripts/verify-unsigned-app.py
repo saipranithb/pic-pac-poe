@@ -71,6 +71,15 @@ if not platforms or any(value != expected_macho for value in platforms):
     errors.append(f'Mach-O platform mismatch: {platforms}')
 if len(minimums) != len(platforms) or any(value != '17.0' for value in minimums):
     errors.append(f'Mach-O deployment target mismatch: {minimums}')
+# Instrumented code can exist without DEBUG launch switches. Inspect every
+# Mach-O slice's actual sections, including statically linked package code.
+sections = subprocess.run(
+    ['xcrun', 'llvm-objdump', '--section-headers', str(executable)],
+    check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+    env=dict(os.environ, DEVELOPER_DIR=os.environ.get('XCODE_DEVELOPER_DIR', os.environ.get('DEVELOPER_DIR', '/Applications/Xcode.app/Contents/Developer'))),
+).stdout
+if re.search(r'__llvm_(?:prf|cov)', sections):
+    errors.append('Release binary contains LLVM coverage/profile instrumentation')
 # User-facing identifiers are legitimate in Release. Only development launch
 # switches/fixture and diagnostic type symbols are forbidden here.
 for marker in (
@@ -81,4 +90,4 @@ for marker in (
 if errors:
     print('\n'.join('ERROR: ' + message for message in errors), file=sys.stderr)
     raise SystemExit(1)
-print(f'PASS: unsigned Release {args.platform} artifact; Mach-O iOS 17 minimum; iPhone+iPad; native icon/launch assets and canonical resources; no development launch hooks; compile-time coverage only')
+print(f'PASS: unsigned Release {args.platform} artifact; Mach-O iOS 17 minimum; iPhone+iPad; native icon/launch assets and canonical resources; no development launch hooks or LLVM coverage instrumentation; compile-time compatibility only')

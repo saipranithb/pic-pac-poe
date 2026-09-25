@@ -1,0 +1,8 @@
+{
+  "finding.json": "ed3065fc7426a0dfc79a847c0c07fb38ee96f94ee342b142018da57e5014cdad",
+  "iphoneos-compile-flags.txt": "8aeb89c6878e82131f53f7ca65f909f1f6bec1933c854e0a72410f18f9fcd9c4",
+  "iphoneos-sections.txt": "1b155bde5ff5445537656bf8e807edff6a41312df6ac20ca8c87de8a41ef1eb1",
+  "iphonesimulator-compile-flags.txt": "5fa38dd40bb3914b406c0c01a7192419dae11c78a8157ce4455960750ca15a0e",
+  "iphonesimulator-sections.txt": "35328db67d2bda03f5ae3fc22846bedafe2e7f5f44fb422e57e7a7641b217b10",
+  "new-verifier-rejects-before.log": "b56d757ac7d16a07184c440b1212a9cdb5104506f7d2569c1f2a287c5634bf45"
+}

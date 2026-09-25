@@ -71,7 +71,7 @@ jobs:
           -resultBundlePath "$RUNNER_TEMP/${{ matrix.target }}.xcresult"
           CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
           test
-      - name: Require the complete XCTest inventory and governed skips
+      - name: Require the complete XCTest inventory without skips
         if: always()
         run: >-
           python3 ios/Scripts/verify-xcresult.py
@@ -120,6 +120,7 @@ jobs:
           -project ios/PicPacPoe.xcodeproj
           -scheme PicPacPoe
           -configuration '${{ matrix.configuration }}'
+          -enableCodeCoverage NO
           -destination '${{ matrix.destination }}'
           -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-build"
           CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
