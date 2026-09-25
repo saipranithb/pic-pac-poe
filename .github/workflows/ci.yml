@@ -97,14 +97,27 @@ jobs:
           android_tools="${ANDROID_HOME:?Android SDK root is unavailable}/cmdline-tools/latest/bin"
           export PATH="$ANDROID_HOME/platform-tools:$PATH"
           printf '%s\n' "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
+          export ANDROID_AVD_HOME="$RUNNER_TEMP/picpac-avd"
+          mkdir -p "$ANDROID_AVD_HOME"
           "$android_tools/sdkmanager" 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
           "$android_tools/avdmanager" list device -c
           # The hosted command-line tools include Pixel 7 (1080x2400, 420dpi).
-          echo no | "$android_tools/avdmanager" create avd --force --name picpac-ci --package 'system-images;android-35;google_apis;x86_64' --device pixel_7
+          echo no | "$android_tools/avdmanager" create avd --force --name picpac-ci --path "$ANDROID_AVD_HOME/picpac-ci.avd" --package 'system-images;android-35;google_apis;x86_64' --device pixel_7
+          test -s "$ANDROID_AVD_HOME/picpac-ci.ini"
+          "$ANDROID_HOME/emulator/emulator" -list-avds | grep -Fx 'picpac-ci'
           sudo chmod a+rw /dev/kvm
           "$ANDROID_HOME/emulator/emulator" -avd picpac-ci -port 5554 -no-window -no-audio -no-boot-anim -no-snapshot -gpu swiftshader_indirect > "$RUNNER_TEMP/android-emulator.log" 2>&1 &
+          emulator_pid=$!
           for attempt in {1..180}; do
+            if ! kill -0 "$emulator_pid" 2>/dev/null; then
+              cat "$RUNNER_TEMP/android-emulator.log"
+              exit 1
+            fi
             if [[ "$(adb -s emulator-5554 shell getprop sys.boot_completed 2>/dev/null | tr -d '\r')" == 1 ]]; then
+              adb -s emulator-5554 shell getprop ro.product.model
+              adb -s emulator-5554 shell getprop ro.build.version.sdk
+              adb -s emulator-5554 shell wm size
+              adb -s emulator-5554 shell wm density
               exit 0
             fi
             sleep 2
@@ -136,6 +149,8 @@ jobs:
           path: |
             ${{ runner.temp }}/android-ui-tests.log
             ${{ runner.temp }}/android-emulator.log
+            ${{ runner.temp }}/picpac-avd/*.ini
+            ${{ runner.temp }}/picpac-avd/*.avd/config.ini
           if-no-files-found: warn
           retention-days: 14
       - name: Stop owned emulator and record outcome
