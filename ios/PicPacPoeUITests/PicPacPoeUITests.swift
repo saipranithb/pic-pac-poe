@@ -308,6 +308,85 @@ final class PicPacPoeUITests: XCTestCase {
         attach("accessibility-largest-rematch")
     }
 
+    func testBoardFramesStayFixedAcrossHumanAndComputerStagesAtLargeText() {
+        // Held snapshots isolate layout from transition timing. Compare actual
+        // native cell rectangles, including the bottom anchor where changing
+        // bag footer height used to move the complete content above it.
+        let stages = ["human-turn-start", "human-placement", "computer-thinking", "computer-targeting", "computer-placement", "computer-settled"]
+        for largeText in [false, true] {
+            let size = largeText ? "ax3" : "regular"
+            for bottom in [false, true] {
+                let anchor = bottom ? "bottom" : "top"
+                var reference: [CGRect]?
+                for stage in stages {
+                    app.launchArguments = ["-screenshot-scenario", stage, "-screenshot-theme", "dark"]
+                    if largeText {
+                        app.launchArguments += ["-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityXL"]
+                    }
+                    if bottom { app.launchArguments += ["-snapshot-scroll-bottom"] }
+                    app.launch()
+                    XCTAssertTrue(cell(8).waitForExistence(timeout: 10))
+                    var previous: [CGRect] = []
+                    var stableSince = Date()
+                    eventually("Cell geometry settles for \(stage)", timeout: 5) {
+                        let current = (0..<9).map { self.cell($0).frame }
+                        if current != previous { previous = current; stableSince = Date(); return false }
+                        return Date().timeIntervalSince(stableSince) >= 0.3
+                    }
+                    let frames = (0..<9).map { cell($0).frame }
+                    XCTAssertEqual(app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH 'cell-'")).count, 9)
+                    if let reference {
+                        for (index, frame) in frames.enumerated() {
+                            let context = "\(size) / \(anchor) / \(stage) / cell \(index)"
+                            XCTAssertEqual(frame.minX, reference[index].minX, accuracy: 0.5, context)
+                            XCTAssertEqual(frame.minY, reference[index].minY, accuracy: 0.5, context)
+                            XCTAssertEqual(frame.width, reference[index].width, accuracy: 0.5, context)
+                            XCTAssertEqual(frame.height, reference[index].height, accuracy: 0.5, context)
+                        }
+                    } else { reference = frames }
+                    for frame in frames {
+                        XCTAssertGreaterThanOrEqual(frame.width, 48)
+                        XCTAssertEqual(frame.width, frame.height, accuracy: 0.5)
+                    }
+                    if stage != "human-placement" { XCTAssertEqual(legalCells.count, 0) }
+                    if !bottom {
+                        let viewport = app.frame.inset(by: UIEdgeInsets(top: 64, left: 0, bottom: 40, right: 0))
+                        XCTAssertTrue(viewport.contains(element("turn-status").frame), "Complete instruction fits the top viewport at \(size) / \(stage)")
+                    }
+                    attach("stable-board-\(size)-\(anchor)-\(stage)")
+                    app.terminate()
+                }
+            }
+        }
+    }
+
+    func testTutorialStepsRemainReadableAtAccessibilityTextSizes() {
+        let steps = ["Draw one.", "See what you got.", "Put it in any empty square.", "Make three Xs or three Os in a row."]
+        for (size, category) in [("ax3", "UICTContentSizeCategoryAccessibilityXL"), ("ax5", "UICTContentSizeCategoryAccessibilityXXXL")] {
+            app.launchArguments = ["-screenshot-scenario", "how-to", "-screenshot-theme", "light",
+                                   "-UIPreferredContentSizeCategoryName", category]
+            app.launch()
+            XCTAssertTrue(element("how-to-screen").waitForExistence(timeout: 10))
+            let viewport = app.frame.inset(by: UIEdgeInsets(top: 64, left: 0, bottom: 40, right: 0))
+            for (index, copy) in steps.enumerated() {
+                let row = element("tutorial-step-\(index + 1)")
+                XCTAssertTrue(row.exists, "Each step remains one combined accessibility element")
+                XCTAssertTrue(row.label.contains("\(index + 1)."))
+                XCTAssertTrue(row.label.contains(copy), "Complete step copy remains available")
+                for _ in 0..<8 {
+                    if viewport.contains(row.frame) { break }
+                    if row.frame.minY < viewport.minY { app.swipeDown() } else { app.swipeUp() }
+                }
+                XCTAssertTrue(viewport.contains(row.frame), "Whole step \(index + 1) is reachable at \(size)")
+                attach("tutorial-\(size)-step-\(index + 1)")
+            }
+            // Retained full frames are independently inspected for punctuation
+            // wrapping. A combined VoiceOver row does not expose separate marker
+            // text bounds; semantic labels alone cannot certify painted glyphs.
+            app.terminate()
+        }
+    }
+
     func testLandscapeAndLargestTextKeepLastSquareAndBagReachable() {
         defer { XCUIDevice.shared.orientation = .portrait }
         for largeText in [false, true] {

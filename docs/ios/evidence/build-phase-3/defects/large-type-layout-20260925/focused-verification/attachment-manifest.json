@@ -1,0 +1,302 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "CAF8E7E4-7AD2-4C13-84AF-47FA97911C5D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-bottom-computer-settled--uptime-5068255_0_BB759DB9-C1BA-4A19-A38D-D03646A59A51.360",
+        "timestamp" : 1790330380.868
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "F584E8CB-4680-424B-8C7C-0183E07EFB8F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-bottom-computer-placement--uptime-5068248_0_6C3D80B6-503E-4B64-8C1B-88903951F39C.544",
+        "timestamp" : 1790330374.052
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "9847CF9A-BC12-488A-B6D7-8F62CAFE09A5.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-bottom-computer-targeting--uptime-5068241_0_52ACF214-795A-4E20-9FC2-71A128D63CE4.570",
+        "timestamp" : 1790330367.077
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "B6E12367-811B-4FA0-AB36-F966A3A0F900.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-bottom-computer-thinking--uptime-5068234_0_119F343D-0986-4CF2-9128-FBA111BD83B5.774",
+        "timestamp" : 1790330360.281
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "7E6F66B4-EA9F-4840-8CB3-0DFFC589BC93.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-bottom-human-placement--uptime-5068227_0_2707EA64-46A6-4564-9E61-6B56AB168370.863",
+        "timestamp" : 1790330353.37
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "D81EAB85-4AD1-48C8-87AD-90110496B918.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-bottom-human-turn-start--uptime-5068221_0_B0230E0E-75AE-4CE3-93FF-D3AA866F614E.065",
+        "timestamp" : 1790330346.572
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "E94CDE7E-A0E2-428D-A477-209CA00C39FA.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-top-computer-settled--uptime-5068214_0_F6BFA333-8D71-41FC-8535-27A1367C242F.210",
+        "timestamp" : 1790330339.718
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "CA0A60A7-6189-4BF9-A8DD-E72431289257.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-top-computer-placement--uptime-5068207_0_CDDA83E8-F2A3-4955-9BA7-41F43A079AE5.388",
+        "timestamp" : 1790330332.896
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "256D9B77-AA31-48C8-995C-3DCEEF9F0E00.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-top-computer-targeting--uptime-5068200_0_6DB4BD71-EA95-49E5-963A-E780B375606E.469",
+        "timestamp" : 1790330325.978
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "A48D8299-5984-43D4-AC27-9B6E3E30D527.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-top-computer-thinking--uptime-5068193_0_D8F29C51-C073-4A3E-990E-9477268A19F5.649",
+        "timestamp" : 1790330319.158
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "1C4C80B5-DC54-4FAC-9A9E-5D23BCB1CCD4.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-top-human-placement--uptime-5068186_0_C3F1C7E8-C68B-4BAB-BAF9-1983DAF72D90.845",
+        "timestamp" : 1790330312.356
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "E2FE2535-446F-4F90-84F9-82050267040D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-ax3-top-human-turn-start--uptime-5068179_0_818A58F7-CA4A-42E1-9B81-B0C929A439C5.947",
+        "timestamp" : 1790330305.46
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "F34416EC-49AB-403C-92B8-7BD5EAA342B1.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-bottom-computer-settled--uptime-5068173_0_465C13B9-6E0A-463E-B58D-4DB978CA366D.125",
+        "timestamp" : 1790330298.642
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "6CF62EA6-78AC-404C-BD13-2691C79E5F1A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-bottom-computer-placement--uptime-5068166_0_9FB49210-495B-4C9E-8C45-CCD9983E2F64.299",
+        "timestamp" : 1790330291.822
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "A015F953-3EA9-45F5-912D-6F597BE38C35.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-bottom-computer-targeting--uptime-5068159_0_D646307B-C1C7-4E3E-A14F-E304F68602B2.486",
+        "timestamp" : 1790330285.011
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "4E019882-75AD-417A-9461-DDAFEFDE66A8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-bottom-computer-thinking--uptime-5068152_0_C4B5459B-769B-4254-8397-B633EC90EC49.632",
+        "timestamp" : 1790330278.158
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "C9EAE721-B0F6-4633-AF22-CA6B52C43278.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-bottom-human-placement--uptime-5068145_0_09A73469-38E0-42F6-A9EC-A493E6509AA6.843",
+        "timestamp" : 1790330271.368
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "08B7BE46-2ACD-4F29-832E-4A7F78CE11B7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-bottom-human-turn-start--uptime-5068139_0_68494956-7CA2-4A79-B67E-A6F3CBF01D3A.026",
+        "timestamp" : 1790330264.551
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "35BA8A4C-2940-454D-880A-1525464DA545.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-top-computer-settled--uptime-5068132_0_CADB53E6-4BA8-4F09-AB42-3182C7450A8C.238",
+        "timestamp" : 1790330257.764
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "37959044-C6DE-487C-934C-9DB0597AEA6B.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-top-computer-placement--uptime-5068125_0_CF65251D-A747-4E65-A3B7-1D73CAA6E9B2.249",
+        "timestamp" : 1790330250.774
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "0F52EBB7-AD89-42CD-B859-178C3E09981D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-top-computer-targeting--uptime-5068118_0_9B4E018C-A8B8-42B9-981D-0BE5E553070E.298",
+        "timestamp" : 1790330243.823
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "D2EF0DA6-CCA7-42A9-B829-D1FEDC9933DF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-top-computer-thinking--uptime-5068111_0_24F4F02F-2525-44D0-B312-25D9516CA6E4.379",
+        "timestamp" : 1790330236.904
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "769388AA-6E5F-4B2A-9A5E-307EEC4949BB.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-top-human-placement--uptime-5068104_0_2E40934A-FF43-493A-AE39-39AE39F046C5.452",
+        "timestamp" : 1790330229.978
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "7458A144-CCDA-4F3C-AA51-7A53D99401E8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "stable-board-regular-top-human-turn-start--uptime-5068097_0_7BC4A2C3-0FB0-44CC-BCD1-3614FAD0378A.509",
+        "timestamp" : 1790330223.034
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testBoardFramesStayFixedAcrossHumanAndComputerStagesAtLargeText()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testBoardFramesStayFixedAcrossHumanAndComputerStagesAtLargeText"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "AE30DDA3-9892-49C8-BE02-5E09D07E1AB7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-ax5-step-4--uptime-5068268_0_D44DDE79-3AEE-4B6C-9990-054D8F134A21.650",
+        "timestamp" : 1790330394.157
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "15912221-C27D-4B00-B86D-D732761A5935.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-ax5-step-3--uptime-5068268_0_82541129-AB52-44F4-BEBD-37E49F8EABE1.480",
+        "timestamp" : 1790330393.987
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "3B6E28C2-CCEC-4D0C-BD61-4E13DF26A1E6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-ax5-step-2--uptime-5068265_0_1A9C4CA9-6A67-46A3-9505-0B5696BEF3A6.569",
+        "timestamp" : 1790330391.077
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "B9980E14-E5B9-4B7A-945A-601F2AC9ABBF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-ax5-step-1--uptime-5068265_0_AD5E5831-9D7A-4891-9A3C-0814830ED1D7.405",
+        "timestamp" : 1790330390.913
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "4B3D3761-1ED7-4028-8F4B-D08FAF6F369D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-ax3-step-4--uptime-5068260_0_62346560-C36B-4EAC-B57E-8EABA6A3D975.636",
+        "timestamp" : 1790330386.144
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "84F24A47-0187-4BCA-BA80-05351FD6679E.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-ax3-step-3--uptime-5068260_0_A6419192-2513-4680-BA73-FA21AD4A7A2D.463",
+        "timestamp" : 1790330385.97
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "1A6F45CA-8FA6-4C03-B34F-BDC1FA387044.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-ax3-step-2--uptime-5068260_0_886705C1-7932-4633-920D-0267D5F8F3A6.292",
+        "timestamp" : 1790330385.8
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "C6B049A6-6DC8-4125-911D-4935FA61C0BB.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-ax3-step-1--uptime-5068260_0_56DAA8EA-E158-47E1-87D5-9993C667E0CF.127",
+        "timestamp" : 1790330385.634
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testTutorialStepsRemainReadableAtAccessibilityTextSizes()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testTutorialStepsRemainReadableAtAccessibilityTextSizes"
+  }
+]

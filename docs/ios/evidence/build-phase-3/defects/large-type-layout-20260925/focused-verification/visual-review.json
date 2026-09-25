@@ -1,0 +1,132 @@
+{
+  "method": "Each listed original PNG actually opened with view_image(detail=original), no crop or contact-sheet substitution.",
+  "count": 18,
+  "frames": [
+    {
+      "path": "frames/stable-board-ax3-bottom-computer-placement--uptime-5068248p544.png",
+      "sha256": "0debfee7fed8c971f10e2d8e7644a0a987a7008b4d019ddd44a4ea4b91487830",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-bottom-computer-targeting--uptime-5068241p570.png",
+      "sha256": "04549320dd8795eca5c26c18d6b68da4b20a04d8ae723f2ec613ff529e2e9d51",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-bottom-human-placement--uptime-5068227p863.png",
+      "sha256": "c88251de59c0a425e0fc5fe2192363d370f7e8bd1ac79f931f9b4790f89965c8",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-bottom-human-turn-start--uptime-5068221p065.png",
+      "sha256": "6b4bdeb34d08d916dfa50b6d56db2803087aabae01173ab8af83a505957881e1",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-top-computer-settled--uptime-5068214p210.png",
+      "sha256": "b59125519da6a534ce7309faef81b507423b873e1eb3adeba9134cd0c3e71877",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-top-computer-placement--uptime-5068207p388.png",
+      "sha256": "6d81a68baf83e5191fab276499d7b1d3753c296d209806ab37ecd6243da33d67",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-top-computer-targeting--uptime-5068200p469.png",
+      "sha256": "44e2c52c93f5249a73dffc89a67258adda450116e62d414061fd82f521c72dcb",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-top-computer-thinking--uptime-5068193p649.png",
+      "sha256": "6b23e78c5977ccc56fd24fb501754e0acff1248a4a74ac87096fed6b6405fdd6",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-top-human-placement--uptime-5068186p845.png",
+      "sha256": "746daea6e2f30cc38327fb05585347657d1952232d4f1df6a5635e8c8998071a",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/stable-board-ax3-top-human-turn-start--uptime-5068179p947.png",
+      "sha256": "f4c5ec51b971620ef999089d392169e5af44025801e13c1cb6dbb24ef324a3f6",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Board geometry and full instruction remain stable; extra reserved vertical space is intentional to prevent movement as stage copy wraps. Bottom fixture anchors preserve tray and target geometry; top cutoff reflects scroll position."
+    },
+    {
+      "path": "frames/tutorial-ax5-step-4--uptime-5068268p650.png",
+      "sha256": "59f21c061220168b36e0453d8d98cb26e093fdee5ff46197ea640c5918a6a247",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Marker numbers and periods remain on one line; body copy wraps naturally without horizontal clipping. The AX5 latter steps are shown after an actual test-driven swipe."
+    },
+    {
+      "path": "frames/tutorial-ax5-step-3--uptime-5068268p480.png",
+      "sha256": "59f21c061220168b36e0453d8d98cb26e093fdee5ff46197ea640c5918a6a247",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Marker numbers and periods remain on one line; body copy wraps naturally without horizontal clipping. The AX5 latter steps are shown after an actual test-driven swipe."
+    },
+    {
+      "path": "frames/tutorial-ax5-step-2--uptime-5068265p569.png",
+      "sha256": "8a56b26886ad8cec853b1d05fa2a9af02800364043e8dd967d31b52d19bad31b",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Marker numbers and periods remain on one line; body copy wraps naturally without horizontal clipping. The AX5 latter steps are shown after an actual test-driven swipe."
+    },
+    {
+      "path": "frames/tutorial-ax5-step-1--uptime-5068265p405.png",
+      "sha256": "8a56b26886ad8cec853b1d05fa2a9af02800364043e8dd967d31b52d19bad31b",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Marker numbers and periods remain on one line; body copy wraps naturally without horizontal clipping. The AX5 latter steps are shown after an actual test-driven swipe."
+    },
+    {
+      "path": "frames/tutorial-ax3-step-4--uptime-5068260p636.png",
+      "sha256": "e989d6fb29051ba7ee7f37ee010720bbfb94eff4903d8dd5a20e7a4de0c368a6",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Marker numbers and periods remain on one line; body copy wraps naturally without horizontal clipping. The AX5 latter steps are shown after an actual test-driven swipe."
+    },
+    {
+      "path": "frames/tutorial-ax3-step-3--uptime-5068260p463.png",
+      "sha256": "e989d6fb29051ba7ee7f37ee010720bbfb94eff4903d8dd5a20e7a4de0c368a6",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Marker numbers and periods remain on one line; body copy wraps naturally without horizontal clipping. The AX5 latter steps are shown after an actual test-driven swipe."
+    },
+    {
+      "path": "frames/tutorial-ax3-step-2--uptime-5068260p292.png",
+      "sha256": "e989d6fb29051ba7ee7f37ee010720bbfb94eff4903d8dd5a20e7a4de0c368a6",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Marker numbers and periods remain on one line; body copy wraps naturally without horizontal clipping. The AX5 latter steps are shown after an actual test-driven swipe."
+    },
+    {
+      "path": "frames/tutorial-ax3-step-1--uptime-5068260p127.png",
+      "sha256": "e989d6fb29051ba7ee7f37ee010720bbfb94eff4903d8dd5a20e7a4de0c368a6",
+      "openedAtOriginalResolution": true,
+      "verdict": "PASS",
+      "notes": "Marker numbers and periods remain on one line; body copy wraps naturally without horizontal clipping. The AX5 latter steps are shown after an actual test-driven swipe."
+    }
+  ]
+}

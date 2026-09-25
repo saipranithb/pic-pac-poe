@@ -1,0 +1,1 @@
+Sandboxed xcresulttool summary exited 64: no permission to save native TestReport cache. Retried authorized read/export.

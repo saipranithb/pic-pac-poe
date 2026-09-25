@@ -1,0 +1,1 @@
+Initial sandboxed simctl list failed with CoreSimulator connection invalid and Operation not permitted opening its log. Retried with approved simulator access; no device/data mutation occurred in failed list.

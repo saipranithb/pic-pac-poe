@@ -1,0 +1,922 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "/root/recovery_ci",
+  "status": "All96 compact originals inspected; pre-fix candidate not approved because independent AX3 review found two layout defects outside these profiles",
+  "candidateDirectory": "/tmp/picpac-phase3-baseline-candidate-20260925",
+  "scopeProfiles": [
+    "compact",
+    "compact-xxxl"
+  ],
+  "method": "Each listed PNG explicitly opened with view_image detail original and visually inspected; hashes recorded afterward for identity, not substituted for inspection.",
+  "inspected": [
+    {
+      "path": "compact--dark--home.png",
+      "sha256": "25f314c13fa9d559853d2dba76cdd87b1bc28154819b109c0bdf677ec2d1f5ee",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.712373+00:00",
+      "outcome": "PASS",
+      "notes": "Fredoka semantic wordmark, full two-line subtitle and bag\u2192X\u2192board explanation retain Android hierarchy. All visible mode/difficulty/Play labels fit; bottom navigation is below viewport, paired bottom frame reviewed."
+    },
+    {
+      "path": "compact--dark--home-bottom.png",
+      "sha256": "67974030650af25aa9db7c30cf2b00f49477d1d5bba4dc6dda9324060c7379e6",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.713128+00:00",
+      "outcome": "PASS",
+      "notes": "All three supporting-page buttons and entire Play control are visible with bottom spacing. Scroll offset intentionally removes wordmark; status area remains clear."
+    },
+    {
+      "path": "compact--light--home.png",
+      "sha256": "2ae622dabdea926478a64712d68c7844f0a9f758c42cb88e09cd04535800faaf",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.713505+00:00",
+      "outcome": "PASS",
+      "notes": "Cream/cocoa with deep coral X and green O wordmark matches canonical light intent; no compressed labels or illustration overlap. Footer reachability confirmed in bottom counterpart."
+    },
+    {
+      "path": "compact--light--home-bottom.png",
+      "sha256": "456047df980e545bc264a8c9d5951fddf62d619d829803fa890b1e96b842ffaa",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.713796+00:00",
+      "outcome": "PASS",
+      "notes": "Complete native footer actions and tactile Play remain visible; medium selected state clear, no internal text clipping."
+    },
+    {
+      "path": "compact--dark--classic.png",
+      "sha256": "6e2b9f30ca28a3c9bcb45b0ea23770e6a3d0e12460f42dde645ed8ad8ba44074",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.714328+00:00",
+      "outcome": "PASS",
+      "notes": "Square equal cells, recessed cocoa board, coral held X and distinct player accent retained. All nine cells and instruction visible with safe spacing."
+    },
+    {
+      "path": "compact--light--classic.png",
+      "sha256": "96d54740f2854983c4d94f43ac59683386ef05b2c721008478608781ecf683e9",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.714823+00:00",
+      "outcome": "PASS",
+      "notes": "Equal square cells and warm resin depth remain clear in light palette. Entire Classic board fits; no word wrapping or hit-target deformation visible."
+    },
+    {
+      "path": "compact--dark--human-turn-start.png",
+      "sha256": "d5cef332205604aef71b7bcab48bbea20d9aa6316e982485c52a263021074aea",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.715198+00:00",
+      "outcome": "PASS",
+      "notes": "Your turn and pending bag draw are explicit; empty board without premature held piece. Lower tray extends below viewport through native scrolling; human-placement-bottom demonstrates same layout reachability."
+    },
+    {
+      "path": "compact--light--human-turn-start.png",
+      "sha256": "39870396cb8a22d1ce3e92987d3b57b408a735f44c60eefbcbc6b8dcdde5115b",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.715582+00:00",
+      "outcome": "PASS",
+      "notes": "Human actor and pending draw clear in light palette; no clipped internal title. Tray below fold uses shared reachable game scroll layout."
+    },
+    {
+      "path": "compact--dark--human-placement.png",
+      "sha256": "77d46daba0fa9eb6ac3d0d3899100fd6240c8ab22a617628fc0ee9bd882ed5f5",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.715865+00:00",
+      "outcome": "PASS",
+      "notes": "Place X with human teal actor and coral held symbol; all nine empty targets visible, tray begins below board and continues below viewport."
+    },
+    {
+      "path": "compact--dark--human-placement-bottom.png",
+      "sha256": "b73cb86670ae2b2c1c6af4f9dcc9c9a06e0ef3a855684018cbe9c70cdc512261",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.716229+00:00",
+      "outcome": "PASS",
+      "notes": "Whole board, held X instruction and full two-column tray visible after scrolling. X4/O5,44/56%, held-piece exclusion all readable; no status-bar overdraw."
+    },
+    {
+      "path": "compact--light--human-placement.png",
+      "sha256": "74ca6c6fb43eadb70caa151fcffb543b30a5df1d9d24b143a6c2ef61db83f463",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.716563+00:00",
+      "outcome": "PASS",
+      "notes": "Human actor and X identity remain separate; all nine board targets visible and stable square geometry. Lower tray continues below fold."
+    },
+    {
+      "path": "compact--light--human-placement-bottom.png",
+      "sha256": "0a371d1cff4e425a1a53fb38f3d64a81812610ff0d15fe618f60cbaffac2977d",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.716939+00:00",
+      "outcome": "PASS",
+      "notes": "Complete tray and board reachable; footnote weight and both semantic probability colors readable, no internal clipping or status-bar intrusion."
+    },
+    {
+      "path": "compact--dark--human-reveal.png",
+      "sha256": "d2fdb8a743ad0e0bbf02de2224dd7e49ade2bdf9cd9d8a3b6e58a18fbd486081",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.717301+00:00",
+      "outcome": "PASS",
+      "notes": "Centered resin reveal, teal You and coral X distinctly communicate actor versus symbol. Modal wording fits, dimmed background supports focus, no premature placement."
+    },
+    {
+      "path": "compact--light--human-reveal.png",
+      "sha256": "efd690d7824858af85ddb3ebef3d59790e26e3397ff01a7b80c374af2b94ea7a",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.717672+00:00",
+      "outcome": "PASS",
+      "notes": "Light reveal retains full heading, large tactile X and readable explanation; modal fits safely and backdrop is consistent."
+    },
+    {
+      "path": "compact--dark--local-handoff.png",
+      "sha256": "c5cff4ff292fb683895dc439253d56e52125d1b173b123d0e4cdf597aedce93e",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.717895+00:00",
+      "outcome": "PASS",
+      "notes": "Private full-screen handoff shows only player identity and Ready/Home. No board, bag or held piece visible. All content fits."
+    },
+    {
+      "path": "compact--light--local-handoff.png",
+      "sha256": "4c8f77dbd523d3c22753a86b24a0bb717f424a2e393ab029ac3127feacf362ce",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.718116+00:00",
+      "outcome": "PASS",
+      "notes": "Complete private handoff in cream palette; two-line explanatory copy intentional and fully visible. No private board/bag leakage."
+    },
+    {
+      "path": "compact--dark--local-reveal.png",
+      "sha256": "d9c07475175d75ef56421ed91f8178c3cade86ef0edfffa324841e9393e67779",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.718479+00:00",
+      "outcome": "PASS",
+      "notes": "Player1 teal label and coral X reveal are distinct; title and explanation fit full modal, no leaked private handoff content."
+    },
+    {
+      "path": "compact--light--local-reveal.png",
+      "sha256": "9470180f2c0b829e00022b44062b58f727d08e890815e526b3df68881655da43",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.719024+00:00",
+      "outcome": "PASS",
+      "notes": "Light Local reveal retains identity hierarchy and unclipped modal controls/content; full resin piece shape aligned."
+    },
+    {
+      "path": "compact--dark--computer-reveal.png",
+      "sha256": "49f57297fc53ba320f62ec486fe2b76f73159ea51506ac190ccb779f8483b774",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.719376+00:00",
+      "outcome": "PASS",
+      "notes": "Lavender Computer label with pistachio O prevents actor/symbol confusion. Complete Computer drew O heading and next-action explanation fit modal."
+    },
+    {
+      "path": "compact--light--computer-reveal.png",
+      "sha256": "c718b1f690c2876a0fc4ec5d08328cb7cc55e5933d2bbb9c1cc2a3a2b9a1ed10",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:32:50.719744+00:00",
+      "outcome": "PASS",
+      "notes": "Computer lavender and O green retain canonical semantics with legible light modal; no early target or result shown."
+    },
+    {
+      "path": "compact--dark--computer-thinking.png",
+      "sha256": "2d593b58f47894064ac6d37af673f5050f966b9b052a16b4b790583eb4f3b26b",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:33:22.449923+00:00",
+      "outcome": "PASS",
+      "notes": "Full thinking heading and choosing O copy fit without compression. Lavender Computer stage, held O and untargeted empty final square clearly precede placement."
+    },
+    {
+      "path": "compact--light--computer-thinking.png",
+      "sha256": "10217228b5fbcf0e0e60c1b69e6448abe2150e897f13146a3cf0fa4a7bce49df",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:33:22.450418+00:00",
+      "outcome": "PASS",
+      "notes": "Light palette retains tactile X/O scale and center alignment. Thinking text fits; no target/result drawn early."
+    },
+    {
+      "path": "compact--dark--computer-targeting.png",
+      "sha256": "c9601997d04a99b6612f1835069ac46c8592dfa5689cb495c2bd5a07fb403248",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:33:22.450603+00:00",
+      "outcome": "PASS",
+      "notes": "Row3,column3 description matches empty outlined bottom-right cell. Equal square geometry and stable symbol size match thinking frame; lower tray uses shared scroll reachability."
+    },
+    {
+      "path": "compact--light--computer-targeting.png",
+      "sha256": "e62b3972219eba400c870d3b56b14d4116077cdd679064b7614c2efe3e63192d",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:33:22.450783+00:00",
+      "outcome": "PASS",
+      "notes": "Dark contour visibly targets empty bottom-right square with complete coordinate text and held O; semantic actor distinction retained, no internal clipping."
+    },
+    {
+      "path": "compact--dark--computer-placement.png",
+      "sha256": "8862ae81522592dec515d83c372b0b025aa83fe9062782d98755905ae171b8d5",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:34:18.118100+00:00",
+      "outcome": "PASS",
+      "notes": "Placing O visibly commits the selected bottom-right O while Computer stays active. Piece depth/scale/outline fit cell; no premature result."
+    },
+    {
+      "path": "compact--light--computer-placement.png",
+      "sha256": "59a1233dd7e59bb19d646b6b9386e1fe120288f96e1a3c84bbdcdb17cd959ed6",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:34:18.118631+00:00",
+      "outcome": "PASS",
+      "notes": "Light committed O occupies previously empty target and retained contour; instructions fully fit, equal board geometry remains unchanged."
+    },
+    {
+      "path": "compact--dark--computer-settled.png",
+      "sha256": "64e740de8aea2ebec36fddcf67edb696bc73110495018b3d669fc1c7d7b9efa9",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:34:18.119019+00:00",
+      "outcome": "PASS",
+      "notes": "Move placed and Computer identity persist with target O on board; settlement distinguished from choosing/placing, no result overlay early."
+    },
+    {
+      "path": "compact--light--computer-settled.png",
+      "sha256": "66e182335cc87c241f79c6fee11d79a2aa0701b2bc57629491afdf759395cba0",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:34:18.119418+00:00",
+      "outcome": "PASS",
+      "notes": "Light settlement holds Computer and visible committed O; wording, target contour and piece alignment clean. Shared lower tray scroll behavior unchanged."
+    },
+    {
+      "path": "compact--dark--terminal-settling-win.png",
+      "sha256": "daa7d09e5598f94f9fd015670c874ccd18b4e56f0852720222a255b529f1670b",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:34:50.310401+00:00",
+      "outcome": "PASS",
+      "notes": "Winning top-row X line visible while still Move placed/Computer turn; selected last square and winning outlines are distinct. No premature result overlay."
+    },
+    {
+      "path": "compact--light--terminal-settling-win.png",
+      "sha256": "d782cc9f0bd4eac0131021a1d6653aefdd2adabe4a0178aafbedbf0d15548017",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:34:50.310884+00:00",
+      "outcome": "PASS",
+      "notes": "Light winning line spans centered X pieces cleanly; settlement retains actor and full instruction, no premature modal."
+    },
+    {
+      "path": "compact--dark--terminal-settling-draw.png",
+      "sha256": "a0289afa1905db81b254a431a2712242fd78fbacf8edd73678529e82f7736f05",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:34:50.311329+00:00",
+      "outcome": "PASS",
+      "notes": "Full nine-piece draw board remains visible and unlined; bottom-right committed X target contour and Computer settlement read clearly."
+    },
+    {
+      "path": "compact--light--terminal-settling-draw.png",
+      "sha256": "374298c400bd6461bbb4f6c12a7a6ca8a3383a6c110d47b48f837e2806e09ca5",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:34:50.311757+00:00",
+      "outcome": "PASS",
+      "notes": "Light draw settlement shows exact nine pieces, no false winner line and no early result. Board/piece alignment stays consistent."
+    },
+    {
+      "path": "compact--dark--result.png",
+      "sha256": "51a1438f9fb529139d5ff1e9abc6a8947e7feb4bd691fdc73b2e82abe0d98cdc",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:35:19.490941+00:00",
+      "outcome": "PASS",
+      "notes": "Full Computer wins Fredoka heading, completed-X explanation, exact miniature winning board and both Rematch/Home controls fit within resin modal and screen gutters."
+    },
+    {
+      "path": "compact--light--result.png",
+      "sha256": "f6dd201b5ca4cdd3ad7dbed0063b2961fcb1ef670601ae19762ed9e4209b528a",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:35:19.491500+00:00",
+      "outcome": "PASS",
+      "notes": "Light result preserves correct Computer winner despite X symbol, complete board summary art and separated tactile actions; no modal clipping."
+    },
+    {
+      "path": "compact--dark--draw-result.png",
+      "sha256": "64be781b267452056a256b7f1378c655ff6860e2fcbb2743e37b2e9f02c5f0b1",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:35:19.491863+00:00",
+      "outcome": "PASS",
+      "notes": "Draw/No line this time agree with full nine-piece miniature; both actions and complete modal edges visible. Background remains dimmed."
+    },
+    {
+      "path": "compact--light--draw-result.png",
+      "sha256": "18e4ec617964a77667e9133b5ac38a74ae5eb16349e0b79d0640a3760658ba7e",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:35:19.492231+00:00",
+      "outcome": "PASS",
+      "notes": "Complete cream Draw modal with unlined final board, readable headings and tactile Rematch/Home; no internal compression or cut-off controls."
+    },
+    {
+      "path": "compact--dark--settings.png",
+      "sha256": "2708817514484bdf851dc96fdf518e3b20fca881c9e381aba6d22a236264ab5e",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:35:52.579201+00:00",
+      "outcome": "PASS",
+      "notes": "Three native switches retain tactile coral on/gray off semantics beside fully wrapped labels; Theme selected Dark clear, privacy copy fully visible. Whole page fits."
+    },
+    {
+      "path": "compact--dark--settings-bottom.png",
+      "sha256": "49ee473b5c6f3de2e024631dd8e1d1793ae9cf14d0765de791b23757807ccbdf",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:35:52.579664+00:00",
+      "outcome": "PASS",
+      "notes": "Bottom-anchored capture shifts fitting Settings content downward but keeps complete header, switches, themes and privacy copy visible; no overlap or clipping."
+    },
+    {
+      "path": "compact--light--settings.png",
+      "sha256": "bf300f5a4700cce7a66a31062053198d9963b5dd7285b15937d3487d0f7817cc",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:35:52.579971+00:00",
+      "outcome": "PASS",
+      "notes": "Sound/Haptics off, Reduced motion on and selected Light match canonical fixture intent with native controls. All explanatory and privacy text fits."
+    },
+    {
+      "path": "compact--light--settings-bottom.png",
+      "sha256": "51bf94b66bc608657490a0e10a085951ad1224f11e8d12c556a8e9f20c95c680",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:35:52.580258+00:00",
+      "outcome": "PASS",
+      "notes": "Full bottom-anchored light Settings remains readable with separated touch controls and bottom privacy statement; no hidden action or compressed label."
+    },
+    {
+      "path": "compact--dark--how-to.png",
+      "sha256": "f21587f4528ab13461f502d3e200b3535e21fe2df26d2bb674d15445845bcb81",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:37:02.579812+00:00",
+      "outcome": "PASS",
+      "notes": "Android information order retained: Pic-Pac steps, neither-player-is-symbol rule, probability example. Complete wrapped paragraphs and example; lower explanatory copy continues through scroll viewport."
+    },
+    {
+      "path": "compact--dark--how-to-bottom.png",
+      "sha256": "677fca12749c874b1f15e9bd0f8e71b717103013feb23ba5430e7e759c064f30",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:37:02.580199+00:00",
+      "outcome": "PASS",
+      "notes": "Previously below-fold odds explanation and Classic rule fully reachable with trailing padding. No status-area overdraw, internal truncation or misleading percentages."
+    },
+    {
+      "path": "compact--light--how-to.png",
+      "sha256": "c31cf985ad4f21a70d50af52e93a95916cab2d36de9037251b1ade6ce6eae232",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:37:02.580490+00:00",
+      "outcome": "PASS",
+      "notes": "Light tutorial has clear numbered hierarchy and warm example card; X4/O5 and44/56% readable. Bottom overflow is ordinary scroll content."
+    },
+    {
+      "path": "compact--light--how-to-bottom.png",
+      "sha256": "b0c85d2e8b8b5765d41336b3e4312b205a171a97b1f61f41f06641df26e7c3ea",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:37:02.580795+00:00",
+      "outcome": "PASS",
+      "notes": "Entire odds note and Classic explanation visible after scroll; both semantic example pieces and text remain unclipped."
+    },
+    {
+      "path": "compact--dark--ai-lab.png",
+      "sha256": "7d1f1c9acb38f1073876be48c88ad47a4501f4695fd90c145649defb87b06d50",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:37:57.501214+00:00",
+      "outcome": "PASS",
+      "notes": "AI Lab hierarchy matches Android; full intro, Random/Heuristic/Expectiminimax explanations and MCTS action/budget readable. Q-learning is below fold, checked in bottom frame."
+    },
+    {
+      "path": "compact--dark--ai-lab-bottom.png",
+      "sha256": "6390f82a11db5f6f425dfd31bbc60dc1df0c8fe6097f9141b444a4144c5ad226",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:37:57.501647+00:00",
+      "outcome": "PASS",
+      "notes": "Both experiment controls,2000 budget,92.3% explanation and complete closing paragraph reachable; scroll clips above status safe area with no visible overdraw."
+    },
+    {
+      "path": "compact--light--ai-lab.png",
+      "sha256": "ec72197740ea3e3525ec8c605dcfeb2bd0a32bd2d7eacfe06f28347a7983ac3d",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:37:57.501950+00:00",
+      "outcome": "PASS",
+      "notes": "All top AI headings and wrapped explanations fit light palette; tactile Play MCTS and exact budget visible, lower experiment intentionally requires scroll."
+    },
+    {
+      "path": "compact--light--ai-lab-bottom.png",
+      "sha256": "a4c7c16d3e521b28e53fe3eab3a5af5ba86e9d059c85b5cee5e6bd5f4b36cb09",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:37:57.502247+00:00",
+      "outcome": "PASS",
+      "notes": "Q-learning action and full final explanation visible with bottom padding; no internal clipping or unsafe status-area overlap. Native wrapping retains meaning."
+    },
+    {
+      "path": "compact-xxxl--dark--home.png",
+      "sha256": "12c6f0ffda0cadd944cf86c0f63a6836d2edd5ead00dfed24458a51ed78aa838",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:42:52.320553+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Fredoka semantic coral/cream/pistachio wordmark, two-line tagline, bag/X/board and caption fully readable. Large rows fit without compression. Difficulty and footer continue below viewport; paired bottom inspected."
+    },
+    {
+      "path": "compact-xxxl--dark--home-bottom.png",
+      "sha256": "2667cf76c9f8209bb643917c4f2b47782cc26eeb1b062eadda02e2e4825cebbe",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:42:52.320878+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: full Easy/selected Medium/Hard controls, descriptive line, tactile Play and vertically reflowed How to play/AI Lab/Settings all visible and reachable. Top clipping is natural scrolled content; no internal truncation."
+    },
+    {
+      "path": "compact-xxxl--light--home.png",
+      "sha256": "890ec692125f7b6ec831518d08a52d6bb0b0ace43000b9c916e1e5215363b973",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:42:52.321201+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: warm cream canvas with deep-coral X and green O wordmark preserves canonical identity. Home explanation and large row typography fit; lower content continues into paired bottom."
+    },
+    {
+      "path": "compact-xxxl--light--home-bottom.png",
+      "sha256": "a73f201128556df6f5df6dc47f72cbb1f25aa41c63cf19268b95362bbff82b41",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:42:52.321468+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: difficulty selection is legible cocoa/cream, Play remains deep coral and tactile. All three footer links fully fit with spacing. Natural top scroll clipping only."
+    },
+    {
+      "path": "compact-xxxl--dark--classic.png",
+      "sha256": "62f8ebc350a4c6801056e92b9d13fb2420fb98f958fd988f9189d43c47b53fa5",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:09.400376+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: player rows reflow vertically with Player 1 teal active rule and Player 2 lavender waiting; Place X text and coral held piece fully fit. Equal square resin cells preserved; final board rim below viewport requires normal vertical scrolling, as gameplay bottom frame demonstrates."
+    },
+    {
+      "path": "compact-xxxl--light--classic.png",
+      "sha256": "719be805cded0fe3a58ae52c1392a4043cf6556221d8d1e7a98bf183c2dc6f2e",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:09.400746+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: native large player typography remains legible, teal actor identity separate from deep-coral X. Board proportions and inset cell depth retain canonical intent. Bottom rim continues beyond viewport, no internal label truncation."
+    },
+    {
+      "path": "compact-xxxl--dark--local-handoff.png",
+      "sha256": "4470ae49a86606b1d4bbc007abae29ac8b5c73c2c4fd34948d01ac5cbe5ce98f",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:09.400956+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: private handoff fully fits. Player 1 title, teal number, two-line explanation, Ready and Home all clear. No board, bag or held-symbol information visible."
+    },
+    {
+      "path": "compact-xxxl--light--local-handoff.png",
+      "sha256": "5df8b32619156f9be4cc1d91433de647b16c3dbdf84cf1fbce5caf3a7ce8b012",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:09.401124+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: private handoff with warm cream/cocoa and teal actor marker. Fredoka title and both large tactile actions fit safely; no private game information leaks."
+    },
+    {
+      "path": "compact-xxxl--dark--local-reveal.png",
+      "sha256": "6e3131582962f0e2638e3c01450f21ed5b8e43d4fb84b419979ca44084ceacce",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:25.351686+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Player 1 teal label, You drew X Fredoka heading, large centered coral moulded X and two-line explanatory copy fit modal. Underlay darkened; modal all safely visible, player identity separate from symbol."
+    },
+    {
+      "path": "compact-xxxl--light--local-reveal.png",
+      "sha256": "9840826e40adabf9388e8a81eecc1036de2a7188d81ca40cb6bbdd7a0ba36fa9",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:25.352102+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: cream resin reveal with deep-coral X and teal Player 1, full instruction and title fit. Dimmed board remains background context; no overlapping modal text."
+    },
+    {
+      "path": "compact-xxxl--dark--human-turn-start.png",
+      "sha256": "0a39f9e64659089671eb58bc6c325e1e79f4dc6e83e3c30e19668f687d8193c6",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:25.352412+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Vs Computer/Medium two-line header, vertically stacked actor status and Your turn/shared bag explanation all clear. Board keeps equal square cells; lower board/tray below viewport, normal scrolling with paired gameplay bottom reviewed."
+    },
+    {
+      "path": "compact-xxxl--light--human-turn-start.png",
+      "sha256": "51932cab92361c8fe33bf04cea83455f4073dc6cb01bd97847a2d62a18825247",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:25.352737+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: large header/status/stage hierarchy fits; human teal and computer purple remain distinct from piece palette. Board proportions unchanged; lower viewport continuation is scroll content."
+    },
+    {
+      "path": "compact-xxxl--dark--human-reveal.png",
+      "sha256": "46eeb477c67ef93f0b4847706f458eccf7ff36dcabcaabeb0b03547083963462",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:42.298697+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: You label teal, large coral X and clear You drew X heading. Two-line explanatory copy fits modal, whole panel within screen. Canvas behind remains dimmed."
+    },
+    {
+      "path": "compact-xxxl--light--human-reveal.png",
+      "sha256": "f21139afff46eb8c5e942b8a28098a659b73c75f3db3a618ca7baf93066485c9",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:42.299479+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: readable cream reveal panel, deep-coral X with moulded depth, identity teal. All large text fully rendered without compression or clipping."
+    },
+    {
+      "path": "compact-xxxl--dark--human-placement.png",
+      "sha256": "187a7826a2025883bca037ec0934e7346997be5768797e81ebbca75aec5b7f2f",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:42.299895+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Place X headline and full empty-square instruction beside held X are stable and clear. Board square-cell geometry intact; below-fold lower cells/tray correspond to next reviewed bottom image."
+    },
+    {
+      "path": "compact-xxxl--light--human-placement.png",
+      "sha256": "155c573a37d70bcd4b137a209bae111e90ddd62a745695240cbdf86231b8c883",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:43:42.300442+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: deep-coral held X distinct from teal human marker. Stage copy and large header fit; recessed board cells remain equal and not distorted by text scaling."
+    },
+    {
+      "path": "compact-xxxl--dark--human-placement-bottom.png",
+      "sha256": "dff215c3c765b4748e6b7b330200764d84d7a9e906674d046b546a1bc93edb4a",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:09.605993+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: complete nine-cell board and full resin Bag tray visible together. Large X\u00d74/O\u00d75,44%/56%, next draw and two-line held-piece-excluded note all fit. This verifies below-fold gameplay content reachability; top scrolled stage partially occluded naturally."
+    },
+    {
+      "path": "compact-xxxl--light--human-placement-bottom.png",
+      "sha256": "c328880059a5ca83945b076623ffd8a4923d4342570d9ce069ec707796fd4347",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:09.606569+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: complete square board and warm cream probability tray visible without bottom clipping. Symbol counts, percentages and held-piece note fit. Piece colors remain deep-coral/green independent of actor colors."
+    },
+    {
+      "path": "compact-xxxl--dark--computer-reveal.png",
+      "sha256": "78ca46c1c6afa2aa48c543a89386786eeb54d7b05821026ca107d9276645d78b",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:09.606961+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: lavender Computer label, two-line Computer drew O heading, centered pistachio moulded O and two-line instruction fully fit modal. No actor/symbol confusion or overlay clipping."
+    },
+    {
+      "path": "compact-xxxl--light--computer-reveal.png",
+      "sha256": "165f31b07098458c97b9855a71ad9947aacaf477cd6f08e91fb7d0f3d94a5233",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:09.607374+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: purple Computer identity separate from green O; title and instruction wrap intentionally. Whole reveal panel fits safe area with dimmed board context."
+    },
+    {
+      "path": "compact-xxxl--dark--computer-thinking.png",
+      "sha256": "631aa7cb70b076d34b8074e3367523bec370f237eeb3d3dcd3cbc8e658a2d80a",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:29.559558+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Computer is thinking wraps cleanly into two lines, with full choosing-O description and pistachio held piece. Lavender computer active marker remains obvious. Moulded pieces centered and proportional; board lower row naturally below fold."
+    },
+    {
+      "path": "compact-xxxl--light--computer-thinking.png",
+      "sha256": "b687714b8b2f0c64d056cd3528232cabe2da1a4caee9645677394c6ba5ade7fe",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:29.559818+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: purple computer identity and green O separate, two-line thinking title readable without overlap. Full choice description and equal square board cells retain warm resin styling."
+    },
+    {
+      "path": "compact-xxxl--dark--computer-targeting.png",
+      "sha256": "a824ba6aac218c110cbd922a23169131ab037ec42267e796512b7da888cb49e5",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:29.560003+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Square selected fits one line; row3/column3 description wraps two lines. Empty target cell has clear cream double outline, while held O remains above board; lower target continues below viewport naturally."
+    },
+    {
+      "path": "compact-xxxl--light--computer-targeting.png",
+      "sha256": "85f82c02cf38a369819b9c30bd6d537151a317e415221bed9cc72a8beea5d46f",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:29.560182+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: row3/column3 target text legible, empty selected cell cocoa outline visible, O not prematurely in cell. Purple active computer and green symbol visually distinct."
+    },
+    {
+      "path": "compact-xxxl--dark--computer-placement.png",
+      "sha256": "9bc3cb894b9867ad0bea55223c50d669da4252b9dc7fed886bbdcb17d5282222",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:57.842818+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Placing O and explanatory copy fit, computer remains active. Target outline remains at same row3/column3 position as preceding target frame with O now present. Lower board scroll continuation; no target movement between target/place."
+    },
+    {
+      "path": "compact-xxxl--light--computer-placement.png",
+      "sha256": "79db6a318c5bc9aede565b22a56db84dcdb63543546b7a37b824b0e32e4724c3",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:57.843326+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: placing stage legible, purple computer remains active, green O present inside selected target. Board and target geometry match targeting frame; warm light resin preserved."
+    },
+    {
+      "path": "compact-xxxl--dark--computer-settled.png",
+      "sha256": "63f28ff710a103ac09320f482ac25384f3ee7a0de44c84f42eeca64ca76056dd",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:57.843765+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Move placed title and full two-line description fit; lavender computer identity retained and target O remains aligned. No result overlay or premature human-turn marker."
+    },
+    {
+      "path": "compact-xxxl--light--computer-settled.png",
+      "sha256": "0e4120cc2885d2b8e25cf2cf6b2b65f1d446a0545b3d67b217f89b45aa98bbc8",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:44:57.844162+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: settled description clear with unchanged placement geometry. Computer remains visibly active; no result or human-turn presentation before settlement concludes."
+    },
+    {
+      "path": "compact-xxxl--dark--terminal-settling-win.png",
+      "sha256": "72096b76be5b784453e33116918de3b13f718ef5cb9ce2ba602b53ee6d710e74",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:45:23.168681+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: top-row coral X line and triple cell emphasis clear, computer active and Move placed remain. No premature result panel. Text fully fits and strike line centered across resin pieces."
+    },
+    {
+      "path": "compact-xxxl--light--terminal-settling-win.png",
+      "sha256": "b266245ac9d27d8202300f4d8baba2d7819ac403062641c503fb2d4dd6425b0d",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:45:23.169083+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: warm light terminal win retains purple computer active state and Move placed description. Cocoa/cream strike line centers across top three X pieces; no result overlay."
+    },
+    {
+      "path": "compact-xxxl--dark--terminal-settling-draw.png",
+      "sha256": "568a89606bcecbaf0fd4ecde98628945c55c4d19ea995860c5b909d93e4bb81d",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:45:23.169508+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: full-board draw arrangement visible except natural lower viewport edge; target ninth X marked, no win line or result panel. Computer retained as active during Move placed settlement."
+    },
+    {
+      "path": "compact-xxxl--light--terminal-settling-draw.png",
+      "sha256": "090f130972e4cafb240d9d3ba2e9a18647960c6b3a020486a5ba365e00f7dfd7",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:45:23.169929+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: settled draw board preserves coral/green pieces and target outline, active computer and readable stage. No premature result presentation or actor/symbol ambiguity."
+    },
+    {
+      "path": "compact-xxxl--dark--result.png",
+      "sha256": "739cf55d0563163dc48eaca58ff5fc5a844613254070ac121ff61fd4bac947eb",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:45:46.100911+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Computer wins heading fits, two-line completed-X explanation, correct miniature top-row win, tactile Rematch and Home all safely within modal/screen. Fredoka/resin identity preserved."
+    },
+    {
+      "path": "compact-xxxl--light--result.png",
+      "sha256": "84fbc2a17fe85241af8127d73c572f28038b2548bf567aa9e3f0605cba2cf50d",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:45:46.101563+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: whole cream result panel fits large text, correct X winning line in miniature and both actions fully visible. Deep-coral Rematch and cream Home retain tactile shadow; no text clipping."
+    },
+    {
+      "path": "compact-xxxl--dark--draw-result.png",
+      "sha256": "69394564f14e87f395dfd961591005c01a2ffa5840f29dd37f25b517f30375b2",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:45:46.102550+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Draw heading, No line this time, complete nine-piece miniature and full Rematch/Home controls visible. No false win line; semantic coral/pistachio pieces retain depth and alignment."
+    },
+    {
+      "path": "compact-xxxl--light--draw-result.png",
+      "sha256": "311cfd126e02a083da721d8af84ca0fe4d70d46801b2a427bd5ee0b3fc8ca2e5",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:45:46.103039+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: full draw panel and actions fit safely. Miniature matches settled draw pattern, green O and deep-coral X have consistent scale and centered resin forms; no overlap."
+    },
+    {
+      "path": "compact-xxxl--dark--settings.png",
+      "sha256": "93a7e7a94b04434112c5631a0e06cf40d249b85efe872b0375e167e7de51b0eb",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:46:28.464576+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: Sound/Haptics/Reduced motion titles and two-line descriptions all fit beside native switches. Theme buttons vertically reflow; lower options below fold confirmed in paired bottom."
+    },
+    {
+      "path": "compact-xxxl--dark--settings-bottom.png",
+      "sha256": "bad64a821783da45e23143513f24ae0c39a5cab182277f01f1756f7f86764c9b",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:46:28.464936+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: full Theme System/Light/selected Dark stack and three-line local-only information paragraph visible. No control overlap; natural top scroll clipping only."
+    },
+    {
+      "path": "compact-xxxl--light--settings.png",
+      "sha256": "47cc7819c9f27c156d7a5a68fd7c969926c01870b791ef58f64a5b789c73e152",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:46:28.465206+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: feedback labels and full descriptions readable; light off Sound/Haptics and on Reduced motion visibly distinguished. Vertical Theme options continue below viewport."
+    },
+    {
+      "path": "compact-xxxl--light--settings-bottom.png",
+      "sha256": "815e88ba993a92c01f46e0adc3161755dfc0072bce6b54f9a0ecf97df96c8baf",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:46:28.465480+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: all Theme options and selected Light readable, local-device paragraph fits with safe bottom margin. No compressed labels or clipped control contents."
+    },
+    {
+      "path": "compact-xxxl--dark--how-to.png",
+      "sha256": "28de0ae8e022b1e31237671df572c22dc1060f10e655b507ca9b511c4174a810",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:46:54.148551+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: How to play heading fits, four numbered markers retain periods on same line at xxxl, fourth instruction wraps legibly. Not-X/not-O heading and explanation complete; example tray continues below fold."
+    },
+    {
+      "path": "compact-xxxl--dark--how-to-bottom.png",
+      "sha256": "a78fd65b61b0b701ddc1dbd1cbce04c1142b461194a0efac08185af13536f0fd",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:46:54.149165+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: entire After drawing X probability example vertically reflows X44/O56, explanatory paragraph and complete Classic rule visible. No loss of content at bottom or internal card clipping."
+    },
+    {
+      "path": "compact-xxxl--light--how-to.png",
+      "sha256": "d2526520a3f26286f8727225ae3d8ca3f94f365f0c0d6783ba705c7ce9ebc35d",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:46:54.149488+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: all four numbered instructions legible, numbers/periods unsplit at xxxl. Semantic player/symbol explanation clear. Cream/cocoa theme retains canonical hierarchy; below-fold example has paired bottom."
+    },
+    {
+      "path": "compact-xxxl--light--how-to-bottom.png",
+      "sha256": "2baad139ab32cca90fcd20d527d4b2493dfd0e00cf299386ebb7bc1453b9283f",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:46:54.149850+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: full 44%/56% resin example, odds paragraph and Classic rule fit scroll endpoint. Consistent symbol colors and native large text; no compressed labels."
+    },
+    {
+      "path": "compact-xxxl--dark--ai-lab.png",
+      "sha256": "a6d3a6335dc57707cfbf70fc16386b9dca78a813b81263b8e1100dd150f33601",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:47:25.477759+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: AI Lab heading/subtitle, full informational paragraph, Random/Heuristic/Expectiminimax explanations readable without internal clipping. Large layout retains information order; experiment section below viewport paired with bottom."
+    },
+    {
+      "path": "compact-xxxl--dark--ai-lab-bottom.png",
+      "sha256": "7df3ed89e514cf4359714731e343e49b65cbeb215ba0333dd02e3cda7a0d0466",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:47:25.478117+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: MCTS and Q-learning explanations, both tactile play buttons, exact budget and agreement copy all readable. Closing Hard-search explanation wraps fully and safely above bottom; natural top scroll clipping only."
+    },
+    {
+      "path": "compact-xxxl--light--ai-lab.png",
+      "sha256": "8e4f17636ddb5a8455a939790a15492c27755c89dc8a946366908ce682543535",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:47:25.478407+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: warm light typography and full opponent descriptions fit. Native vertical flow preserves Android hierarchy and density intent; no generic grouped-form substitution."
+    },
+    {
+      "path": "compact-xxxl--light--ai-lab-bottom.png",
+      "sha256": "aeb6c2830dc07758c9bc7ab2641db563fee5ea6d2d119b2256e8d83f66b56cca",
+      "viewDetail": "original",
+      "inspectedAt": "2026-09-25T09:47:25.478686+00:00",
+      "outcome": "PASS",
+      "notes": "Original 750x1334: both play actions, 2,000 simulations, 92.3% fixed sample and complete final paragraph fit within scroll endpoint. Tactile primary/secondary styling and full large labels preserved."
+    }
+  ],
+  "findings": [],
+  "profileResults": {
+    "compact": {
+      "pass": true,
+      "inspectedCount": 48,
+      "unresolvedVisualDefects": 0,
+      "summary": "All48 originals opened at original750x1334 pixels. Form Playground2.0 semantic palette/Fredoka, hierarchy, resin pieces and square board retained against directly viewed canonical Android references. Long compact content scrolls; bottom counterparts show full Home actions, game probability tray, Settings, How to Play and AI Lab. No clipped internal labels, compressed controls, actor/symbol confusion, private handoff leakage or premature result presentation found."
+    },
+    "compact-xxxl": {
+      "pass": true,
+      "inspectedCount": 48,
+      "unresolvedVisualDefects": 0,
+      "summary": "All48 originals opened explicitly at original750x1334 pixels. Large text reflows without internal clipping; gameplay, Home, Settings, How to Play and AI Lab bottom frames demonstrate scroll reachability. Semantic palettes, Fredoka, resin geometry and actor/symbol distinction preserved. Computer target/place/settle share stable board geometry in this profile. How-to number/period markers remain on one line at xxxl. No additional material visual defects beyond parent-reported AX3 issues."
+    }
+  },
+  "canonicalReferencesInspected": [
+    {
+      "path": "docs/ios-handoff/reference/home-scene-dark-normal-320dp-x.png",
+      "sha256": "025d30c16fa6272f97b07ade99c4918f42e3b07ac68e75421c5f5388f58c58bf",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/home-scene-light-normal-320dp-x.png",
+      "sha256": "b97d60e280264824bad7ee08dd8117a939a0a5944e5b0a573d40f803b7bcfef8",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/home-narrow-large-dark.png",
+      "sha256": "0925aa65d5dfb8d14f8ce1fd345d2e2c330512f0311c0466a8970c6376110a30",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/home-narrow-large-light.png",
+      "sha256": "ea695a331fb110cefaeb6f8a2b84e547578441008494c5f961788ced62179119",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/classic-dark.png",
+      "sha256": "d5967bda86ca3b6d47871fb9b987f79cb6c412b04765938546ee51c0219421ca",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-targeting-dark.png",
+      "sha256": "ed04bd3ae2397d2f64a607f8ddffd1882ec4183b66230c8aff4ab34af85776bf",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/result-dark.png",
+      "sha256": "1c85a690df2ad179a454e3ee6a42d77fc1f0ca2032b07cb51ee1cd108f173e97",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/settings-dark.png",
+      "sha256": "602a0e8d2ce628c74ce10b88c2b5e2bfd895a60f9b77837bdc21c60d5bfb748a",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/classic-light.png",
+      "sha256": "a26cc780ea2fdf193d5f2b85d1c6ff81b13afd4ab775b3bfc9e995d6f14346f4",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-targeting-light.png",
+      "sha256": "fd7685ea55870a86f7adff9a00f688f526410bd2fb45cde485b354314942cd2e",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/result-light.png",
+      "sha256": "b60274a9734d63f63bcabbfe592688e42f4273c27b094b06d87378d86a276451",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/settings-light.png",
+      "sha256": "c73385438eb48f6b302e78356a260c3647716df5e7c0cef6959585cc1e5f6f6a",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/how-to-dark.png",
+      "sha256": "fbe97e92a1ce60f156aad262048f91431811d869d5481088405298b9cdb3f513",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/how-to-light.png",
+      "sha256": "0e5ac024e97a08f008916f105a4a787b62914cedd93b027b90f70af2f44d9779",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/ai-lab-dark.png",
+      "sha256": "3344a5f567ba59bb693fa50dc83759fbf212fc008dd40201b58da94b421d3686",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/ai-lab-light.png",
+      "sha256": "63fd4de045a8ae68cb36837d33542069f415ac01967a163125bb2929646b86a9",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/local-handoff-dark.png",
+      "sha256": "7e8326795189f98e02eb8afdc66c7072cb6e0dd8cd075607c6eefdf2a58dee1a",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/local-reveal-dark.png",
+      "sha256": "3cee784c0a6f20528dfcb53005e68bd44a5459f07c8afc49fdc74f4f576bbcb5",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/human-reveal-dark.png",
+      "sha256": "7fbc0752f678c2de435e84ab1a0e0630437d6e6703aaf7d4440ebb5b025efba6",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/human-placement-dark.png",
+      "sha256": "e43d090d87246f5eb579f78055d3b87cda06ef9b6a613916e30f76f473a3aa85",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-thinking-dark.png",
+      "sha256": "26afc63d405d20707c0ee51a49b6c1255d34ab814c4387b51fef08344045c272",
+      "viewDetail": "original"
+    },
+    {
+      "path": "docs/ios-handoff/reference/computer-settled-dark.png",
+      "sha256": "8b573606f5712aa85055c498dacfccec4ea32b7eb626cf1d46db328c2969e737",
+      "viewDetail": "original"
+    }
+  ],
+  "canonicalComparisonBoundary": "Compared original governed Android reference PNGs as distributed by canonical handoff (their manifest documents Android source image resizing); no claim of same-renderer or raw Android pixel equivalence. Native iOS SF body typography, controls and safe areas retain semantic geometry/intent.",
+  "overallBaselineApproved": false,
+  "parentReportedOtherProfileDefects": [
+    {
+      "profile": "AX3",
+      "defect": "How to Play 34pt marker column wraps periods to second line",
+      "status": "root correcting; this candidate retained as pre-fix"
+    },
+    {
+      "profile": "AX3",
+      "defect": "GameView stage title height changes shift board approximately52pt between selected and placement",
+      "status": "root correcting; this candidate retained as pre-fix"
+    }
+  ]
+}

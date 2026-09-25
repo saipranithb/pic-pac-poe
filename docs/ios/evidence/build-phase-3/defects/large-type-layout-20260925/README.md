@@ -1,0 +1,9 @@
+# Large-text layout defects found during independent visual audit
+
+The complete 336-frame candidate from clean `ea2a1a2f7ffa26a165715f8af28422a99b335c22` was rejected before baseline approval. Its full original manifest is retained here as provenance, and the complete original package remains at the path in `before-manifest.json`. Fourteen unmodified full-screen originals retain the material defects in both themes and two device classes. The full manifest inventories the original package; it does not imply that all 336 images are copied into this defect subset.
+
+At accessibility text sizes, the fixed 34-point How to Play marker column put the periods for steps 2–4 on separate lines. Independently, changing instruction wrapping and the optional held-piece slot moved the board between presentation stages; measured visual displacement reached about 52 points. Variable player-status and bag-footer heights also had to be bounded so bottom-scrolled boards could remain stationary. The prior passing automated suite had not asserted that cross-stage geometry.
+
+The intentional fix preserves full Dynamic Type wrapping and semantic copy. Tutorial markers use intrinsic single-line width, tabular digits and a minimum normal-text gutter. Gameplay measures a finite set of the same native SwiftUI text copies, keeps those measurement views inaccessible and noninteractive, and reserves stable instruction, piece, player-status and footer space. No game state, randomness, persistence, actor ownership or AI algorithm is changed.
+
+New native UI regressions compare all nine cell rectangles across six human/computer stages at normal and accessibility text sizes, with both top and bottom fixture anchors. Tutorial checks preserve four combined accessible rows and retain full frames for visual punctuation inspection. Final actual post-fix capture and repeated calibration remain required; this package is not a passing baseline.

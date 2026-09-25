@@ -3,6 +3,69 @@ import PicPacPresentation
 import SwiftUI
 import UIKit
 
+struct GameInstructionCopy: Hashable, Sendable {
+    let title: String
+    let detail: String
+
+    static func make(stage: TurnStage, symbol: Symbol? = nil, moveSymbol: Symbol? = nil,
+                     turnLabel: String = "", drawLabel: String? = nil,
+                     playerLabel: String = "", target: Int? = nil) -> Self {
+        switch stage {
+        case .playing:
+            Self(title: symbol.map { "Place \($0.rawValue)" } ?? turnLabel, detail: "Choose any empty square.")
+        case .turnStart:
+            Self(title: turnLabel, detail: "A piece comes from the shared bag.")
+        case .revealing:
+            Self(title: drawLabel ?? "Drawing a piece", detail: "Draw first. Then choose a square.")
+        case .aiThinking:
+            Self(title: "Computer is thinking", detail: "Choosing where to place \(symbol?.rawValue ?? "").")
+        case .aiTargeting:
+            Self(title: "Square selected", detail: target.map { "Computer chose row \($0 / 3 + 1), column \($0 % 3 + 1)." } ?? "Computer has chosen a square.")
+        case .aiPlacing:
+            Self(title: "Placing \(moveSymbol?.rawValue ?? "")", detail: "Computer is placing its piece.")
+        case .aiSettling:
+            Self(title: "Move placed", detail: "Computer's move is on the board.")
+        case .terminal:
+            Self(title: "Game over", detail: "The final position.")
+        case .handoff:
+            Self(title: "Pass to \(playerLabel)", detail: "Pass the phone before revealing.")
+        }
+    }
+
+    // Measure the same copy as the live view, at its actual SwiftUI width and font size.
+    // This finite envelope keeps the board still without limiting text wrapping.
+    static func layoutCopies(for mode: GameMode?) -> [Self] {
+        copiesByMode[mode ?? .classicLocal] ?? []
+    }
+
+    private static let copiesByMode: [GameMode: [Self]] = Dictionary(uniqueKeysWithValues: GameMode.allCases.map { mode in
+        let labels = GamePresentationState(mode: mode)
+        var copies = Symbol.allCases.map { make(stage: .playing, symbol: $0) }
+        copies.append(make(stage: .terminal))
+        if mode != .classicLocal {
+            copies.append(make(stage: .revealing))
+            for player in Player.allCases {
+                copies.append(make(stage: .turnStart, turnLabel: labels.turnLabel(for: player)))
+                let actor = mode == .picPacAI ? labels.actorLabel(for: player) : "You"
+                for symbol in Symbol.allCases {
+                    copies.append(make(stage: .revealing, drawLabel: "\(actor) drew \(symbol.rawValue)"))
+                }
+            }
+        }
+        if mode == .picPacAI {
+            for symbol in Symbol.allCases {
+                copies.append(make(stage: .aiThinking, symbol: symbol))
+                copies.append(make(stage: .aiPlacing, moveSymbol: symbol))
+            }
+            copies.append(make(stage: .aiTargeting))
+            copies.append(contentsOf: (0..<9).map { make(stage: .aiTargeting, target: $0) })
+            copies.append(make(stage: .aiSettling))
+        }
+        var seen = Set<Self>()
+        return (mode, copies.filter { seen.insert($0).inserted })
+    })
+}
+
 extension GamePresentationState {
     var winningLine: WinningLine? { if case let .win(win) = outcome { win.lines.first } else { nil } }
     var inputEnabled: Bool { stage == .playing && (mode != .picPacAI || activePlayer == .one) }
@@ -12,32 +75,12 @@ extension GamePresentationState {
         if mode == .classicLocal && stage == .playing { return activePlayer == .one ? .x : .o }
         return nil
     }
-    var instructionTitle: String {
-        switch stage {
-        case .playing: instructionSymbol.map { "Place \($0.rawValue)" } ?? turnLabel()
-        case .aiThinking: "Computer is thinking"
-        case .aiTargeting: "Square selected"
-        case .aiPlacing: "Placing \(aiMoveSymbol?.rawValue ?? "")"
-        case .aiSettling: "Move placed"
-        case .terminal: "Game over"
-        case .revealing: drawLabel ?? "Drawing a piece"
-        case .handoff: "Pass to \(activePlayer.label)"
-        case .turnStart: turnLabel()
-        }
+    var instructionCopy: GameInstructionCopy {
+        .make(stage: stage, symbol: instructionSymbol, moveSymbol: aiMoveSymbol,
+              turnLabel: turnLabel(), drawLabel: drawLabel, playerLabel: activePlayer.label, target: aiTargetCell)
     }
-    var instructionDetail: String {
-        switch stage {
-        case .playing: "Choose any empty square."
-        case .turnStart: "A piece comes from the shared bag."
-        case .revealing: "Draw first. Then choose a square."
-        case .aiThinking: "Choosing where to place \(instructionSymbol?.rawValue ?? "")."
-        case .aiTargeting: aiTargetCell.map { "Computer chose row \($0 / 3 + 1), column \($0 % 3 + 1)." } ?? "Computer has chosen a square."
-        case .aiPlacing: "Computer is placing its piece."
-        case .aiSettling: "Computer's move is on the board."
-        case .terminal: "The final position."
-        case .handoff: "Pass the phone before revealing."
-        }
-    }
+    var instructionTitle: String { instructionCopy.title }
+    var instructionDetail: String { instructionCopy.detail }
 }
 
 enum GameSpeech {
@@ -137,27 +180,49 @@ struct GameView: View {
                         Circle().fill(colors.player(player)).frame(width: 7, height: 7).accessibilityHidden(true)
                         Text(state.actorLabel(for: player)).font(.system(.body, weight: .semibold)).foregroundStyle(active ? colors.text : colors.secondary)
                     }
-                    Text(active ? state.turnLabel(for: player) : "Waiting")
+                    ZStack(alignment: .topLeading) {
+                        ZStack(alignment: .topLeading) {
+                            Text(state.turnLabel(for: player))
+                            Text("Waiting")
+                        }.hidden().accessibilityHidden(true).allowsHitTesting(false)
+                        Text(active ? state.turnLabel(for: player) : "Waiting")
+                    }
                         .font(.system(.caption, weight: .bold)).foregroundStyle(active ? colors.player(player) : colors.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading).fixedSize(horizontal: false, vertical: true)
                         .padding(.top, 3).padding(.bottom, 8)
                     Rectangle().fill(active ? colors.player(player) : colors.subtle).frame(height: active ? 3 : 1)
+                        .frame(height: 3, alignment: .bottom)
                 }.frame(maxWidth: .infinity, alignment: .leading).accessibilityElement(children: .combine)
             }
         }
     }
     private var instructions: some View {
         HStack(spacing: 12) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(state.instructionTitle).font(.system(.title2, weight: .bold)).accessibilityAddTraits(.isHeader)
-                Text(state.instructionDetail).font(.subheadline).foregroundStyle(colors.secondary)
-            }.frame(maxWidth: .infinity, alignment: .leading).fixedSize(horizontal: false, vertical: true)
-                .accessibilityElement(children: .combine).accessibilityFocused($instructionFocus)
-            if let symbol = state.instructionSymbol, state.stage != .terminal {
-                RecessedPiece(symbol: symbol).frame(width: 62, height: 62)
-                    .accessibilityElement(children: .ignore)
-                    .accessibilityLabel([.aiPlacing, .aiSettling].contains(state.stage) ? "Placed \(symbol.rawValue)" : "Piece in hand: \(symbol.rawValue)")
-            }
+            ZStack(alignment: .topLeading) {
+                ZStack(alignment: .topLeading) {
+                    ForEach(GameInstructionCopy.layoutCopies(for: state.mode), id: \.self) { copy in
+                        instructionText(copy, live: false)
+                    }
+                }.hidden().accessibilityHidden(true).allowsHitTesting(false)
+                instructionText(state.instructionCopy, live: true)
+                    .accessibilityElement(children: .combine).accessibilityFocused($instructionFocus)
+            }.frame(maxWidth: .infinity, alignment: .leading)
+            ZStack {
+                Color.clear.accessibilityHidden(true)
+                if let symbol = state.instructionSymbol, state.stage != .terminal {
+                    RecessedPiece(symbol: symbol)
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel([.aiPlacing, .aiSettling].contains(state.stage) ? "Placed \(symbol.rawValue)" : "Piece in hand: \(symbol.rawValue)")
+                }
+            }.frame(width: 62, height: 62)
         }.accessibilityElement(children: .contain).accessibilitySortPriority(80).accessibilityIdentifier("turn-status")
+    }
+
+    private func instructionText(_ copy: GameInstructionCopy, live: Bool) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(copy.title).font(.system(.title2, weight: .bold)).accessibilityAddTraits(live ? .isHeader : [])
+            Text(copy.detail).font(.subheadline).foregroundStyle(colors.secondary)
+        }.frame(maxWidth: .infinity, alignment: .leading).fixedSize(horizontal: false, vertical: true)
     }
 
     private var handoff: some View {
@@ -216,12 +281,25 @@ struct ProbabilityTray: View {
             Divider().overlay(colors.subtle).padding(.vertical, 10)
             let layout = typeSize.isAccessibilitySize ? AnyLayout(VStackLayout(alignment: .leading, spacing: 16)) : AnyLayout(HStackLayout(spacing: 16))
             layout { item(.x, count: remainingX); item(.o, count: remainingO) }
-            let remaining = remainingX + remainingO
-            let countLabel = remaining == 1 ? "1 piece remains" : "\(remaining) pieces remain"
-            Text(held ? "\(countLabel) · held piece excluded" : "\(countLabel) in the shared bag")
+            ZStack(alignment: .topLeading) {
+                ZStack(alignment: .topLeading) {
+                    ForEach(Self.footerCopies, id: \.self) { Text($0) }
+                }.hidden().accessibilityHidden(true).allowsHitTesting(false)
+                Text(Self.footerCopy(remaining: remainingX + remainingO, held: held))
+            }
+                .frame(maxWidth: .infinity, alignment: .leading).fixedSize(horizontal: false, vertical: true)
                 .font(.system(.footnote, weight: .medium)).foregroundStyle(colors.secondary).padding(.top, 10)
         }.padding(16).modifier(FormSurface()).accessibilityElement(children: .contain)
             .accessibilitySortPriority(60).accessibilityIdentifier("bag")
+    }
+
+    private static func footerCopy(remaining: Int, held: Bool) -> String {
+        let countLabel = remaining == 1 ? "1 piece remains" : "\(remaining) pieces remain"
+        return held ? "\(countLabel) · held piece excluded" : "\(countLabel) in the shared bag"
+    }
+
+    private static let footerCopies = (0...10).flatMap { remaining in
+        [footerCopy(remaining: remaining, held: false), footerCopy(remaining: remaining, held: true)]
     }
     private func item(_ symbol: Symbol, count: Int) -> some View {
         let total = remainingX + remainingO

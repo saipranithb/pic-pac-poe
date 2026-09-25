@@ -34,9 +34,13 @@ struct HowToPlayView: View {
             VStack(alignment: .leading, spacing: 0) {
                 ForEach(Array(["Draw one.", "See what you got.", "Put it in any empty square.", "Make three Xs or three Os in a row."].enumerated()), id: \.offset) { index, text in
                     HStack(alignment: .top, spacing: 0) {
-                        Text("\(index + 1).").fontWeight(.bold).foregroundStyle(colors.secondary).frame(width: 34, alignment: .leading)
+                        Text("\(index + 1).").fontWeight(.bold).monospacedDigit()
+                            .foregroundStyle(colors.secondary)
+                            .fixedSize(horizontal: true, vertical: true)
+                            .padding(.trailing, 6).frame(minWidth: 34, alignment: .leading)
                         Text(text).frame(maxWidth: .infinity, alignment: .leading)
                     }.padding(.vertical, 8).accessibilityElement(children: .combine)
+                        .accessibilityIdentifier("tutorial-step-\(index + 1)")
                 }
             }.padding(.top, 16)
             heading("You're not X. You're not O.").padding(.top, 24)

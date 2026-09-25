@@ -1,0 +1,1078 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "recovery_lifecycle independent agent",
+  "sourceCommit": "ea2a1a2",
+  "method": "Every listed original PNG opened with view_image(detail=original); no crop or thumbnail substitution. Canonical Android references opened directly.",
+  "images": [
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--home.png",
+      "sha256": "df0b796d0924f75e74ccb8df2a357135505f663be238d8d8f4bc0d67782b8cbf",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:36:54.400333+00:00",
+      "finding": "Full hierarchy and coral/Fredoka/pistachio wordmark match canonical; bounded readable Home content, resin illustration/control depth preserved.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--classic.png",
+      "sha256": "050d6bc3e916e5d2a291a07bd8b01afc5c2e247894e7c1f87d266543daac0605",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:36:54.400885+00:00",
+      "finding": "Wide board/instruction arrangement follows canonical tablet intent; empty cell geometry and player1 active identity clear; safe areas unobstructed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--human-placement.png",
+      "sha256": "992ec9a47ef34a0d3ab3a5d8c1fa54d39ec7b83b5d8bcc2bd29752b649d57346",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:36:54.401315+00:00",
+      "finding": "Wide board and bag tray aligned; held X separate from player identity;44/56% counts and held exclusion clear, no clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--human-turn-start.png",
+      "sha256": "b9543d02caddba4e3c79095e33f9b9af2afe09df7b63008ac007317e1bf5c13e",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:36:54.401749+00:00",
+      "finding": "No premature held symbol; shared bag10 and50/50% visible; You active, board stable; no clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--human-reveal.png",
+      "sha256": "5d18c4760da98f8f8ddc8744bfecebb6fcdeca0a99002c58c14873de467c0123",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:37:43.399406+00:00",
+      "finding": "Stage identity, semantic held symbol and target-before-placement are clear. Reveal modal is centered with intact text and dimmed board; Local handoff hides all board/bag/piece content. Canonical warm resin surfaces and wide board proportions preserved; no fixed-box clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--local-handoff.png",
+      "sha256": "5af696b25aeb5b027cbc89bb9efc7f73f3c75367e331cb33bb72705c025e3e94",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:37:43.400905+00:00",
+      "finding": "Stage identity, semantic held symbol and target-before-placement are clear. Reveal modal is centered with intact text and dimmed board; Local handoff hides all board/bag/piece content. Canonical warm resin surfaces and wide board proportions preserved; no fixed-box clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--local-reveal.png",
+      "sha256": "61c0373c62ae92b773be2941114176d323d9b550b0f7150ee0edfc92baef7315",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:37:43.401995+00:00",
+      "finding": "Stage identity, semantic held symbol and target-before-placement are clear. Reveal modal is centered with intact text and dimmed board; Local handoff hides all board/bag/piece content. Canonical warm resin surfaces and wide board proportions preserved; no fixed-box clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--computer-reveal.png",
+      "sha256": "e75bcfe91e9827be544257635ed8b2308a0449804ab187dffed801fde5bdc713",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:37:43.403111+00:00",
+      "finding": "Stage identity, semantic held symbol and target-before-placement are clear. Reveal modal is centered with intact text and dimmed board; Local handoff hides all board/bag/piece content. Canonical warm resin surfaces and wide board proportions preserved; no fixed-box clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--computer-thinking.png",
+      "sha256": "1cf75d80ad4ff9272dd9d0cf84392c46550001b09cb48fe12fc00fb4a48ae204",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:37:43.404229+00:00",
+      "finding": "Stage identity, semantic held symbol and target-before-placement are clear. Reveal modal is centered with intact text and dimmed board; Local handoff hides all board/bag/piece content. Canonical warm resin surfaces and wide board proportions preserved; no fixed-box clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--computer-targeting.png",
+      "sha256": "d9d72e76a8485eaf6babcbda3a892574dc7a2767a24e31c685af421a1460e91f",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:37:43.405220+00:00",
+      "finding": "Stage identity, semantic held symbol and target-before-placement are clear. Reveal modal is centered with intact text and dimmed board; Local handoff hides all board/bag/piece content. Canonical warm resin surfaces and wide board proportions preserved; no fixed-box clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--computer-placement.png",
+      "sha256": "8969e360a6bd479ffe8bebc3b46a0f660bd005d7195f7cdd26a1d191da112f82",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:38:16.143290+00:00",
+      "finding": "Placement/settlement retain computer actor and exact target contour. Winning line and final-board miniature align; result modal appears only in result fixture. Draw no-line position and singular one-piece footer correct. No clipping or privacy leak.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--computer-settled.png",
+      "sha256": "63d0abac4765914b27103aa93b2ec38ecd0386e0345b27ba342654be551fb8bd",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:38:16.144556+00:00",
+      "finding": "Placement/settlement retain computer actor and exact target contour. Winning line and final-board miniature align; result modal appears only in result fixture. Draw no-line position and singular one-piece footer correct. No clipping or privacy leak.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--terminal-settling-win.png",
+      "sha256": "ec97492c90b6044619802aed3a7d0b70c1275b93d383a6ad6d4f12e76a0d1bd5",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:38:16.145163+00:00",
+      "finding": "Placement/settlement retain computer actor and exact target contour. Winning line and final-board miniature align; result modal appears only in result fixture. Draw no-line position and singular one-piece footer correct. No clipping or privacy leak.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--result.png",
+      "sha256": "1913316afac861ecd8c6189aa61724d33bca99e9c9cb99a27cf53b1aeb19cf36",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:38:16.145844+00:00",
+      "finding": "Placement/settlement retain computer actor and exact target contour. Winning line and final-board miniature align; result modal appears only in result fixture. Draw no-line position and singular one-piece footer correct. No clipping or privacy leak.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--terminal-settling-draw.png",
+      "sha256": "9a85473e4be295914444659e1f276993cb87f235260f19c8be797a9a19a7e2eb",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:38:16.146395+00:00",
+      "finding": "Placement/settlement retain computer actor and exact target contour. Winning line and final-board miniature align; result modal appears only in result fixture. Draw no-line position and singular one-piece footer correct. No clipping or privacy leak.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--draw-result.png",
+      "sha256": "c97d665ced31340ddb5c3191a3140ab243c4de09c6918281a7510b95e6597f58",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:38:16.146997+00:00",
+      "finding": "Placement/settlement retain computer actor and exact target contour. Winning line and final-board miniature align; result modal appears only in result fixture. Draw no-line position and singular one-piece footer correct. No clipping or privacy leak.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--settings.png",
+      "sha256": "0332cae9bdb38a8a847ccbcc4ba7e32c4e706de76a2fff60609b1dcd0019a98c",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:41:12.753309+00:00",
+      "finding": "Full-resolution inspected. Canonical hierarchy, resin treatment, semantic colours and readable wrapping preserved. All content and controls visible; governed bottom-anchor capture also demonstrates footer/tray reachability. No fixed-box clipping or privacy/actor ambiguity observed. Bottom anchor can align short content low in the viewport; normal top capture is separately reviewed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--settings-bottom.png",
+      "sha256": "fc4c7fe923730d774f106f6f05f73456c52369d139153dd0bccf3feb812cea64",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:41:12.753763+00:00",
+      "finding": "Full-resolution inspected. Canonical hierarchy, resin treatment, semantic colours and readable wrapping preserved. All content and controls visible; governed bottom-anchor capture also demonstrates footer/tray reachability. No fixed-box clipping or privacy/actor ambiguity observed. Bottom anchor can align short content low in the viewport; normal top capture is separately reviewed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--how-to.png",
+      "sha256": "a7c6704fbce9f972dc1059253018ae08936bb943d7c59d8351e6b3856d08ea81",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:41:12.754099+00:00",
+      "finding": "Full-resolution inspected. Canonical hierarchy, resin treatment, semantic colours and readable wrapping preserved. All content and controls visible; governed bottom-anchor capture also demonstrates footer/tray reachability. No fixed-box clipping or privacy/actor ambiguity observed. Bottom anchor can align short content low in the viewport; normal top capture is separately reviewed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--how-to-bottom.png",
+      "sha256": "3067ec32c4db10ce822175580468ed3cf85b9b8655bc55dfa0136b4469442ff1",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:41:12.754421+00:00",
+      "finding": "Full-resolution inspected. Canonical hierarchy, resin treatment, semantic colours and readable wrapping preserved. All content and controls visible; governed bottom-anchor capture also demonstrates footer/tray reachability. No fixed-box clipping or privacy/actor ambiguity observed. Bottom anchor can align short content low in the viewport; normal top capture is separately reviewed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--ai-lab.png",
+      "sha256": "f52cbcb655c47e67eb782ba69fdd4238850b9dcdeeca9b133181ee2928cba917",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:41:12.754765+00:00",
+      "finding": "Full-resolution inspected. Canonical hierarchy, resin treatment, semantic colours and readable wrapping preserved. All content and controls visible; governed bottom-anchor capture also demonstrates footer/tray reachability. No fixed-box clipping or privacy/actor ambiguity observed. Bottom anchor can align short content low in the viewport; normal top capture is separately reviewed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--ai-lab-bottom.png",
+      "sha256": "b7bb0e91a3090ecf451530756b4006c80a771c11399bc0c0729b1b6d0b69a976",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:41:12.755112+00:00",
+      "finding": "Full-resolution inspected. Canonical hierarchy, resin treatment, semantic colours and readable wrapping preserved. All content and controls visible; governed bottom-anchor capture also demonstrates footer/tray reachability. No fixed-box clipping or privacy/actor ambiguity observed. Bottom anchor can align short content low in the viewport; normal top capture is separately reviewed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--home-bottom.png",
+      "sha256": "a497806961fb1816ec844a818deedb4ba74e6f7937bbec27e2eaf67afbcdb54a",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:41:12.755463+00:00",
+      "finding": "Full-resolution inspected. Canonical hierarchy, resin treatment, semantic colours and readable wrapping preserved. All content and controls visible; governed bottom-anchor capture also demonstrates footer/tray reachability. No fixed-box clipping or privacy/actor ambiguity observed. Bottom anchor can align short content low in the viewport; normal top capture is separately reviewed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--dark--human-placement-bottom.png",
+      "sha256": "19c71b2026705feedfde15f10f76771372206246684bdfddc1b3ce998a327c96",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:41:12.755867+00:00",
+      "finding": "Full-resolution inspected. Canonical hierarchy, resin treatment, semantic colours and readable wrapping preserved. All content and controls visible; governed bottom-anchor capture also demonstrates footer/tray reachability. No fixed-box clipping or privacy/actor ambiguity observed. Bottom anchor can align short content low in the viewport; normal top capture is separately reviewed.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--home.png",
+      "sha256": "b24b4c4730605ba99873161c7676ab3902ea9bc335d7e4a47beb36fa90971310",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:03.380531+00:00",
+      "finding": "Full-resolution light originals inspected. Warm cream/coral/pistachio palette, Fredoka Home, tactile board/held piece and clear active actor preserved against canonical light references. Wide native layout stable; no compressed text or clipping. Reveal actor label distinguishes player from X.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--classic.png",
+      "sha256": "41bf517a10e42c2dd769204c7517a1f906d45cf9fce43d246bdcff208aaddf0a",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:03.381027+00:00",
+      "finding": "Full-resolution light originals inspected. Warm cream/coral/pistachio palette, Fredoka Home, tactile board/held piece and clear active actor preserved against canonical light references. Wide native layout stable; no compressed text or clipping. Reveal actor label distinguishes player from X.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--human-turn-start.png",
+      "sha256": "f734eee74b95b285e52d169c4c1706cec1565fdb24200f454ea1a64a09e9e351",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:03.381486+00:00",
+      "finding": "Full-resolution light originals inspected. Warm cream/coral/pistachio palette, Fredoka Home, tactile board/held piece and clear active actor preserved against canonical light references. Wide native layout stable; no compressed text or clipping. Reveal actor label distinguishes player from X.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--human-reveal.png",
+      "sha256": "fc49ba6ebe7468022c30f02860945cd4c720ef0171365121ce737aba0663f7eb",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:03.381995+00:00",
+      "finding": "Full-resolution light originals inspected. Warm cream/coral/pistachio palette, Fredoka Home, tactile board/held piece and clear active actor preserved against canonical light references. Wide native layout stable; no compressed text or clipping. Reveal actor label distinguishes player from X.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--human-placement.png",
+      "sha256": "bbd3edcbde71c997a7118cce67d2ee03b19b1fda5cb1aa1b6f7ab720f48fe990",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:03.382452+00:00",
+      "finding": "Full-resolution light originals inspected. Warm cream/coral/pistachio palette, Fredoka Home, tactile board/held piece and clear active actor preserved against canonical light references. Wide native layout stable; no compressed text or clipping. Reveal actor label distinguishes player from X.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--local-handoff.png",
+      "sha256": "0ee09660715d61632ecf53c50181656366e5e54fa721a24624f0a0548cb1170b",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:34.569502+00:00",
+      "finding": "Full-resolution light modal/computer sequence inspected. Private handoff hides board, bag and drawn symbol; reveal distinguishes actor from symbol. Thinking, empty target and committed O retain clear lavender computer actor. Proportional tactile pieces and stable cell geometry match canonical intent; no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--local-reveal.png",
+      "sha256": "c8a0791a20f30a69ff5319a8651a66efe82157273b1c483b3b2679a3466283f7",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:34.570050+00:00",
+      "finding": "Full-resolution light modal/computer sequence inspected. Private handoff hides board, bag and drawn symbol; reveal distinguishes actor from symbol. Thinking, empty target and committed O retain clear lavender computer actor. Proportional tactile pieces and stable cell geometry match canonical intent; no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--computer-reveal.png",
+      "sha256": "fe62ac9da33eed8480cedf82fe249832974314e56cd5d665d92e7905cc4d4685",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:34.570721+00:00",
+      "finding": "Full-resolution light modal/computer sequence inspected. Private handoff hides board, bag and drawn symbol; reveal distinguishes actor from symbol. Thinking, empty target and committed O retain clear lavender computer actor. Proportional tactile pieces and stable cell geometry match canonical intent; no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--computer-thinking.png",
+      "sha256": "03067bc53e6a3a1bc1804d4aa1f592cc365044464d2af1fe4d326007db257932",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:34.571357+00:00",
+      "finding": "Full-resolution light modal/computer sequence inspected. Private handoff hides board, bag and drawn symbol; reveal distinguishes actor from symbol. Thinking, empty target and committed O retain clear lavender computer actor. Proportional tactile pieces and stable cell geometry match canonical intent; no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--computer-targeting.png",
+      "sha256": "8d777ec52da1b8e3b5d565bc94613a0cba2f9b1766cd2de2a7126f5158da5fb4",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:34.571921+00:00",
+      "finding": "Full-resolution light modal/computer sequence inspected. Private handoff hides board, bag and drawn symbol; reveal distinguishes actor from symbol. Thinking, empty target and committed O retain clear lavender computer actor. Proportional tactile pieces and stable cell geometry match canonical intent; no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--computer-placement.png",
+      "sha256": "f162fe51e6012ce525c684fa25a6f8c2c2f641f756aaea9e7838747130b9ce07",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:42:34.572511+00:00",
+      "finding": "Full-resolution light modal/computer sequence inspected. Private handoff hides board, bag and drawn symbol; reveal distinguishes actor from symbol. Thinking, empty target and committed O retain clear lavender computer actor. Proportional tactile pieces and stable cell geometry match canonical intent; no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--computer-settled.png",
+      "sha256": "8a8331a4a9376a6f8e8eac88d8a32045f7678f68619b7539f5a416b49abe8c8d",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:02.491860+00:00",
+      "finding": "Full-resolution inspected. Settling retains computer actor; win line and draw position are coherent before separate result modal. Result miniature matches board and all Rematch/Home controls fit. Draw tray has correct singular piece remains copy. Light Settings native switches and selected theme remain legible without clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--terminal-settling-win.png",
+      "sha256": "e35db906c04b61588e5ebac4f8cdf5472c663bd32e76b1d9ab68f4625fd40e99",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:02.492485+00:00",
+      "finding": "Full-resolution inspected. Settling retains computer actor; win line and draw position are coherent before separate result modal. Result miniature matches board and all Rematch/Home controls fit. Draw tray has correct singular piece remains copy. Light Settings native switches and selected theme remain legible without clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--result.png",
+      "sha256": "6f69dce1893c0cce9a53ffa44c54c7fc240020b545a02084163b114a407e522f",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:02.493173+00:00",
+      "finding": "Full-resolution inspected. Settling retains computer actor; win line and draw position are coherent before separate result modal. Result miniature matches board and all Rematch/Home controls fit. Draw tray has correct singular piece remains copy. Light Settings native switches and selected theme remain legible without clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--terminal-settling-draw.png",
+      "sha256": "710ea225c2b8c471c9c252da87228b848e3eda28782e9ebdb9da990755ea34da",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:02.493506+00:00",
+      "finding": "Full-resolution inspected. Settling retains computer actor; win line and draw position are coherent before separate result modal. Result miniature matches board and all Rematch/Home controls fit. Draw tray has correct singular piece remains copy. Light Settings native switches and selected theme remain legible without clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--draw-result.png",
+      "sha256": "24d1759d5839c436ae7c19c73d78db35a1ed90fa7c2756c9d6a1f4221458b6a0",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:02.493873+00:00",
+      "finding": "Full-resolution inspected. Settling retains computer actor; win line and draw position are coherent before separate result modal. Result miniature matches board and all Rematch/Home controls fit. Draw tray has correct singular piece remains copy. Light Settings native switches and selected theme remain legible without clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--settings.png",
+      "sha256": "5b87375e6cf8d0246a4fcdc4c7828ff4598fdbd727048f0a22513717e8b116b2",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:02.494009+00:00",
+      "finding": "Full-resolution inspected. Settling retains computer actor; win line and draw position are coherent before separate result modal. Result miniature matches board and all Rematch/Home controls fit. Draw tray has correct singular piece remains copy. Light Settings native switches and selected theme remain legible without clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--settings-bottom.png",
+      "sha256": "1371b084ddb0c3afbf4ec12856214a46cf1e4b3d5917ddba7228d44402186fe2",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:39.027930+00:00",
+      "finding": "Full-resolution inspected. Light information hierarchy and wrapping match canonical intent; no internal clipping, squashed controls or obscured lower copy. Bottom variants are declared Debug bottom anchors (short content aligned low), not user-gesture final offset; normal top view separately inspected. Footer, theme choices and probability tray fully visible.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--how-to.png",
+      "sha256": "94cc13b972cf32aad862eb8f1d629c3c21b97b605f304b3a0f20d446d8374321",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:39.028604+00:00",
+      "finding": "Full-resolution inspected. Light information hierarchy and wrapping match canonical intent; no internal clipping, squashed controls or obscured lower copy. Bottom variants are declared Debug bottom anchors (short content aligned low), not user-gesture final offset; normal top view separately inspected. Footer, theme choices and probability tray fully visible.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--how-to-bottom.png",
+      "sha256": "b971fb19b3a8c2a236b732af41a435a017425c7f99d243a65e3f799fb4b570e0",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:39.029291+00:00",
+      "finding": "Full-resolution inspected. Light information hierarchy and wrapping match canonical intent; no internal clipping, squashed controls or obscured lower copy. Bottom variants are declared Debug bottom anchors (short content aligned low), not user-gesture final offset; normal top view separately inspected. Footer, theme choices and probability tray fully visible.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--ai-lab.png",
+      "sha256": "f1d088dd2ac636a6b94a0e8cb336a6b1e4bbd6aa5fce015be93c93d34711e7ae",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:39.029900+00:00",
+      "finding": "Full-resolution inspected. Light information hierarchy and wrapping match canonical intent; no internal clipping, squashed controls or obscured lower copy. Bottom variants are declared Debug bottom anchors (short content aligned low), not user-gesture final offset; normal top view separately inspected. Footer, theme choices and probability tray fully visible.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--ai-lab-bottom.png",
+      "sha256": "f7c29647e1974bc3a5880f56ac54abd77d4d2c68ffbcfaca46153251783b9380",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:39.030332+00:00",
+      "finding": "Full-resolution inspected. Light information hierarchy and wrapping match canonical intent; no internal clipping, squashed controls or obscured lower copy. Bottom variants are declared Debug bottom anchors (short content aligned low), not user-gesture final offset; normal top view separately inspected. Footer, theme choices and probability tray fully visible.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--home-bottom.png",
+      "sha256": "443c2f6fe8c9208159781b95b6c5a07e14b850fcb1a2b86bc66220e37ed54226",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:39.030723+00:00",
+      "finding": "Full-resolution inspected. Light information hierarchy and wrapping match canonical intent; no internal clipping, squashed controls or obscured lower copy. Bottom variants are declared Debug bottom anchors (short content aligned low), not user-gesture final offset; normal top view separately inspected. Footer, theme choices and probability tray fully visible.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad--light--human-placement-bottom.png",
+      "sha256": "7283b330cf276416887ec37c4d2c1e4861cbf4a5809f5c998b7c48b1c7d9ca98",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:43:39.031454+00:00",
+      "finding": "Full-resolution inspected. Light information hierarchy and wrapping match canonical intent; no internal clipping, squashed controls or obscured lower copy. Bottom variants are declared Debug bottom anchors (short content aligned low), not user-gesture final offset; normal top view separately inspected. Footer, theme choices and probability tray fully visible.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--home.png",
+      "sha256": "623d83756adc9cd5d95e27172fce735e0d5b7babd9262ec78638d3aab7f3519d",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:45:27.954520+00:00",
+      "finding": "Full-resolution AX3 inspected. Home retains Fredoka semantic wordmark and explanation; large controls stack rather than compress. Game becomes readable single column with separately stacked actor rows and square board. Lower probability tray/Home footer crosses scroll viewport boundary, requiring paired bottom inspection; no internal fixed-box clipping observed. Reveal and handoff text wrap cleanly; private handoff contains no board/bag/symbol.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--classic.png",
+      "sha256": "6caef4f39614b47db72f5bb4e43d47c1741e548807ebfd050c580a649f2c69a3",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:45:27.955104+00:00",
+      "finding": "Full-resolution AX3 inspected. Home retains Fredoka semantic wordmark and explanation; large controls stack rather than compress. Game becomes readable single column with separately stacked actor rows and square board. Lower probability tray/Home footer crosses scroll viewport boundary, requiring paired bottom inspection; no internal fixed-box clipping observed. Reveal and handoff text wrap cleanly; private handoff contains no board/bag/symbol.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--human-placement.png",
+      "sha256": "0c79781f9f56d192e7078240188ec04a704c4e8f75ebae6305d64db76a5a84e9",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:45:27.955652+00:00",
+      "finding": "Full-resolution AX3 inspected. Home retains Fredoka semantic wordmark and explanation; large controls stack rather than compress. Game becomes readable single column with separately stacked actor rows and square board. Lower probability tray/Home footer crosses scroll viewport boundary, requiring paired bottom inspection; no internal fixed-box clipping observed. Reveal and handoff text wrap cleanly; private handoff contains no board/bag/symbol.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--human-turn-start.png",
+      "sha256": "f64b24e8d000988c65dc9954996ca4907e5b097065501ae0540af850a6f32d08",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:45:27.956187+00:00",
+      "finding": "Full-resolution AX3 inspected. Home retains Fredoka semantic wordmark and explanation; large controls stack rather than compress. Game becomes readable single column with separately stacked actor rows and square board. Lower probability tray/Home footer crosses scroll viewport boundary, requiring paired bottom inspection; no internal fixed-box clipping observed. Reveal and handoff text wrap cleanly; private handoff contains no board/bag/symbol.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--human-reveal.png",
+      "sha256": "f6ae3fd7dd3efb728256e5748f6ca1d765cad053d84e5f763165a661e786d3c7",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:45:27.956874+00:00",
+      "finding": "Full-resolution AX3 inspected. Home retains Fredoka semantic wordmark and explanation; large controls stack rather than compress. Game becomes readable single column with separately stacked actor rows and square board. Lower probability tray/Home footer crosses scroll viewport boundary, requiring paired bottom inspection; no internal fixed-box clipping observed. Reveal and handoff text wrap cleanly; private handoff contains no board/bag/symbol.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--local-handoff.png",
+      "sha256": "583a8559772201a5019fd2c72cf9a4d2ebb9ef01a91fca39924dbb02a974bef9",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:45:27.957342+00:00",
+      "finding": "Full-resolution AX3 inspected. Home retains Fredoka semantic wordmark and explanation; large controls stack rather than compress. Game becomes readable single column with separately stacked actor rows and square board. Lower probability tray/Home footer crosses scroll viewport boundary, requiring paired bottom inspection; no internal fixed-box clipping observed. Reveal and handoff text wrap cleanly; private handoff contains no board/bag/symbol.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--local-reveal.png",
+      "sha256": "4346d675b21d4bf239d76219ec1b653614faf6a2d27ab514a43fc09e49cec218",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:14.759794+00:00",
+      "finding": "AX3 reveal modal fits actor, semantic symbol, wrapped heading and body without internal clipping; privacy and actor-versus-symbol meaning remain clear.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--computer-reveal.png",
+      "sha256": "71df33dbc5867166c6e88afadf5999e22ac7eb9a85c235d250ae6c153e684819",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:14.760602+00:00",
+      "finding": "AX3 reveal modal fits actor, semantic symbol, wrapped heading and body without internal clipping; privacy and actor-versus-symbol meaning remain clear.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--computer-thinking.png",
+      "sha256": "540f9da8e30e9c25c0d03694f4a4054dcfc0381accaaa6db2500aea32cc71a3e",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:14.847743+00:00",
+      "finding": "PRE-FIX DEFECT: AX3 computer-thinking title uses two lines while selected/placing/settled use one; board top shifts about 104px (52pt) between thinking and target stages. No piece alignment or fixed-box clipping issue otherwise; actor/symbol semantics preserved.",
+      "materialDefect": true,
+      "defectID": "AX3-AI-HEADING-HEIGHT"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--computer-targeting.png",
+      "sha256": "c5bea3572e28eb6ade4cb9a9cc7207b797879f5e0f6d84a6f6fa616ce233521a",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:14.848573+00:00",
+      "finding": "PRE-FIX DEFECT: AX3 computer-thinking title uses two lines while selected/placing/settled use one; board top shifts about 104px (52pt) between thinking and target stages. No piece alignment or fixed-box clipping issue otherwise; actor/symbol semantics preserved.",
+      "materialDefect": true,
+      "defectID": "AX3-AI-HEADING-HEIGHT"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--computer-placement.png",
+      "sha256": "d7fff0a9d687b1ef729c64d2587bfafb9870430bb4e2b6b416aaceaa2baecea4",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:14.849262+00:00",
+      "finding": "PRE-FIX DEFECT: AX3 computer-thinking title uses two lines while selected/placing/settled use one; board top shifts about 104px (52pt) between thinking and target stages. No piece alignment or fixed-box clipping issue otherwise; actor/symbol semantics preserved.",
+      "materialDefect": true,
+      "defectID": "AX3-AI-HEADING-HEIGHT"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--computer-settled.png",
+      "sha256": "ecc12e002e3e5ec3abbf385d935c75b4ace5dad55d81e477545402d1e520aeb9",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:14.850040+00:00",
+      "finding": "PRE-FIX DEFECT: AX3 computer-thinking title uses two lines while selected/placing/settled use one; board top shifts about 104px (52pt) between thinking and target stages. No piece alignment or fixed-box clipping issue otherwise; actor/symbol semantics preserved.",
+      "materialDefect": true,
+      "defectID": "AX3-AI-HEADING-HEIGHT"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--terminal-settling-win.png",
+      "sha256": "cb157168baaf1563e33835f05c56aab4de7b1ff2fd33549dd5af8043af846bb2",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:28.128593+00:00",
+      "finding": "AX3 terminal board and settlement show correct line/full-board state before result. Result modal fits title, wrapped outcome, mini-board and large buttons; actor outcome Computer versus X symbol remains unambiguous. Tray extends naturally below viewport, no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--result.png",
+      "sha256": "18b74bdab27c8d1c9ba1544a824d6d6db065ab4ae46a6bbc0b84dc3968d41767",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:28.129049+00:00",
+      "finding": "AX3 terminal board and settlement show correct line/full-board state before result. Result modal fits title, wrapped outcome, mini-board and large buttons; actor outcome Computer versus X symbol remains unambiguous. Tray extends naturally below viewport, no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--terminal-settling-draw.png",
+      "sha256": "dcdea32112fb6e5a56c33af086709c37b895228f296dd92529c489da22b1da23",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:28.129431+00:00",
+      "finding": "AX3 terminal board and settlement show correct line/full-board state before result. Result modal fits title, wrapped outcome, mini-board and large buttons; actor outcome Computer versus X symbol remains unambiguous. Tray extends naturally below viewport, no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--draw-result.png",
+      "sha256": "fe11d99f3c94e664c95116d9aa6b379cd4c6935bce29a4b82ddfb48d59904f2e",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:39.889342+00:00",
+      "finding": "AX3 draw-result fully fits modal, mini-board and controls. Settings heading, row labels and two-line descriptions remain whole with native switches; theme choices stack at accessibility size and privacy footer remains readable in paired bottom view.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--settings.png",
+      "sha256": "5d5b19848e74e1bc7ec718b2a44649656c04b106566812d0596ea53dba0c737c",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:39.889608+00:00",
+      "finding": "AX3 draw-result fully fits modal, mini-board and controls. Settings heading, row labels and two-line descriptions remain whole with native switches; theme choices stack at accessibility size and privacy footer remains readable in paired bottom view.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--settings-bottom.png",
+      "sha256": "3da353aa722d656bc1d901b110e68286128316094a9c5958e1b6536b5d00796a",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:49:39.889789+00:00",
+      "finding": "AX3 draw-result fully fits modal, mini-board and controls. Settings heading, row labels and two-line descriptions remain whole with native switches; theme choices stack at accessibility size and privacy footer remains readable in paired bottom view.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--how-to.png",
+      "sha256": "fb8a52d7d2c3bd6c8966666d4229ef6b193660e0792da40bd8aacc5cb5f7e7a1",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:06.648927+00:00",
+      "finding": "PRE-FIX DEFECT: fixed-width numbered step markers wrap periods for 2/3/4 onto separate lines at AX3, creating stray dots and excessive row heights. Body, probability tray and Classic text remain readable and lower content is reachable in paired bottom view.",
+      "materialDefect": true,
+      "defectID": "AX3-TUTORIAL-MARKER-WRAP"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--how-to-bottom.png",
+      "sha256": "7ce0175d6973aa31ee3cfa4763a8a7bb19cf3f75c6399b5a41d55c8f301f16d9",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:06.649266+00:00",
+      "finding": "PRE-FIX DEFECT: fixed-width numbered step markers wrap periods for 2/3/4 onto separate lines at AX3, creating stray dots and excessive row heights. Body, probability tray and Classic text remain readable and lower content is reachable in paired bottom view.",
+      "materialDefect": true,
+      "defectID": "AX3-TUTORIAL-MARKER-WRAP"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--ai-lab.png",
+      "sha256": "c627e73d9422f7ae6f233089f0c968301bc4b3132c517e41aeffd7b9198f2c33",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:06.731548+00:00",
+      "finding": "AX3 AI Lab retains section order and distinct hierarchy; descriptions wrap without fixed-box clipping and full-width Play MCTS fits. Further content naturally below viewport, paired bottom pending.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--ai-lab-bottom.png",
+      "sha256": "da56a8411bce6b86acc07a7fd47cb4f4d434747549c5bf07af7e20e649067100",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:22.443245+00:00",
+      "finding": "AX3 paired bottom view confirms all lower controls and text are whole and reachable in declared fixture: Home footer and full difficulty/Play controls; AI Lab MCTS/Q controls, budget, agreement and footer; full bag tray 44/56 probabilities with held-piece explanation. Viewport edge cuts at top reflect intentional scroll position, no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--home-bottom.png",
+      "sha256": "0257cbc5d46469633adb92d6d5db8d1c5cfb2b73e076578798785a45fad07baa",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:22.443492+00:00",
+      "finding": "AX3 paired bottom view confirms all lower controls and text are whole and reachable in declared fixture: Home footer and full difficulty/Play controls; AI Lab MCTS/Q controls, budget, agreement and footer; full bag tray 44/56 probabilities with held-piece explanation. Viewport edge cuts at top reflect intentional scroll position, no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--dark--human-placement-bottom.png",
+      "sha256": "54d822dc10fe6d6cd0bde9f052ff11b669bec20656f3ea7072ba8d4b5519ab33",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:22.443831+00:00",
+      "finding": "AX3 paired bottom view confirms all lower controls and text are whole and reachable in declared fixture: Home footer and full difficulty/Play controls; AI Lab MCTS/Q controls, budget, agreement and footer; full bag tray 44/56 probabilities with held-piece explanation. Viewport edge cuts at top reflect intentional scroll position, no internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--home.png",
+      "sha256": "bbfc31b8f64cefab182973f9038f79a3278430acd8c975519592404838375c31",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:36.733250+00:00",
+      "finding": "Light AX3 Home Fredoka semantic wordmark, bag-to-board hierarchy and stacked difficulty control remain intact; Classic and human placement preserve warm resin board depth, clear teal actor and coral held symbol. Text wraps naturally, no internal clipping; lower content in paired bottom frames.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--classic.png",
+      "sha256": "9c3ad0b0210a0de70e5349fa5df578eeba6b76b6daeb6ff4b886936d77653772",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:36.733561+00:00",
+      "finding": "Light AX3 Home Fredoka semantic wordmark, bag-to-board hierarchy and stacked difficulty control remain intact; Classic and human placement preserve warm resin board depth, clear teal actor and coral held symbol. Text wraps naturally, no internal clipping; lower content in paired bottom frames.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--human-placement.png",
+      "sha256": "ad5e4af561790f1b8d25e58d39934c955068b59a4452da3bd70e1cc4e33b709b",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:36.733834+00:00",
+      "finding": "Light AX3 Home Fredoka semantic wordmark, bag-to-board hierarchy and stacked difficulty control remain intact; Classic and human placement preserve warm resin board depth, clear teal actor and coral held symbol. Text wraps naturally, no internal clipping; lower content in paired bottom frames.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--human-turn-start.png",
+      "sha256": "e28c98d1d50bd70b15a2f141ff7d5b0a18b4c9a811bc8f63ece71e2cd35be71e",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:51.290174+00:00",
+      "finding": "Light AX3 turn-start and human reveal have natural wrapping, distinct teal actor and coral X, tactile centered modal. Private handoff contains only intended player/Ready/Home content; no board/bag/reveal leak or internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--human-reveal.png",
+      "sha256": "299f9c4de0b8aa7a906517a095cc860ad71ad2c09e361e6386c3d707007597df",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:51.290584+00:00",
+      "finding": "Light AX3 turn-start and human reveal have natural wrapping, distinct teal actor and coral X, tactile centered modal. Private handoff contains only intended player/Ready/Home content; no board/bag/reveal leak or internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--local-handoff.png",
+      "sha256": "f51ac375f958ddca1182f231b89837a46e61326c48460cd3330cb1189d685ce0",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:50:51.290719+00:00",
+      "finding": "Light AX3 turn-start and human reveal have natural wrapping, distinct teal actor and coral X, tactile centered modal. Private handoff contains only intended player/Ready/Home content; no board/bag/reveal leak or internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--local-reveal.png",
+      "sha256": "9e7e33fb189e8053ce3e033de044582cc5f0fbf2a81e87549411cf9e8a655eba",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:06.028099+00:00",
+      "finding": "Light AX3 local and computer reveals fit wrapped headline/body and resin symbol with clear actor header, fully isolated modal foreground.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--computer-reveal.png",
+      "sha256": "4ebfecfb51975945c04068db471e9d512e8681d415a1483fae95c8628bbb1447",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:06.028539+00:00",
+      "finding": "Light AX3 local and computer reveals fit wrapped headline/body and resin symbol with clear actor header, fully isolated modal foreground.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--computer-thinking.png",
+      "sha256": "8ec47a1d549efd325fb82b58e7184b388fb7a068fd678e5b61072450e944e6b5",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:06.111273+00:00",
+      "finding": "PRE-FIX DEFECT: AX3 two-line thinking heading shifts board top about 104px/52pt relative to one-line selected/placing/settled instruction. Text itself remains readable; clear lavender actor and pistachio O.",
+      "materialDefect": true,
+      "defectID": "AX3-AI-HEADING-HEIGHT"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--computer-targeting.png",
+      "sha256": "3d2483370d2b0282e4f31631e755fab57f80c4e20fd873d68d71963fc0afbf50",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:21.055528+00:00",
+      "finding": "PRE-FIX DEFECT CONTEXT: target/placing/settled use one heading line, causing about 104px/52pt board shift from thinking. These three stages themselves have stable board geometry, clear selected empty cell then O, aligned resin pieces and lavender actor.",
+      "materialDefect": true,
+      "defectID": "AX3-AI-HEADING-HEIGHT"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--computer-placement.png",
+      "sha256": "abb3387fef1e4a215f541115377f72223d9671c5fbd4c17eb948d1671f0a1c0d",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:21.055997+00:00",
+      "finding": "PRE-FIX DEFECT CONTEXT: target/placing/settled use one heading line, causing about 104px/52pt board shift from thinking. These three stages themselves have stable board geometry, clear selected empty cell then O, aligned resin pieces and lavender actor.",
+      "materialDefect": true,
+      "defectID": "AX3-AI-HEADING-HEIGHT"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--computer-settled.png",
+      "sha256": "fd265ebe02e7c7180b992828175c1f1218dd13e55c6483b82b50828849637a3c",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:21.056393+00:00",
+      "finding": "PRE-FIX DEFECT CONTEXT: target/placing/settled use one heading line, causing about 104px/52pt board shift from thinking. These three stages themselves have stable board geometry, clear selected empty cell then O, aligned resin pieces and lavender actor.",
+      "materialDefect": true,
+      "defectID": "AX3-AI-HEADING-HEIGHT"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--terminal-settling-win.png",
+      "sha256": "96f33f8497302258d0e8e34bc46e78fff97de15a4f5d6472c8283cc565c69763",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:35.613807+00:00",
+      "finding": "Light AX3 terminal settlement shows complete winning line or full draw board before result. Result modal fits full outcome, mini-board and buttons; Computer outcome remains distinct from three Xs. No internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--result.png",
+      "sha256": "a3261fdd724c99e256fc633eef9e93ca9e0dc005e8ae413306dafbc8a990cb16",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:35.614267+00:00",
+      "finding": "Light AX3 terminal settlement shows complete winning line or full draw board before result. Result modal fits full outcome, mini-board and buttons; Computer outcome remains distinct from three Xs. No internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--terminal-settling-draw.png",
+      "sha256": "0af7eb57aa9509e863bd17ff271986339ea39809f2df32ec2bf554af222e8091",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:35.614666+00:00",
+      "finding": "Light AX3 terminal settlement shows complete winning line or full draw board before result. Result modal fits full outcome, mini-board and buttons; Computer outcome remains distinct from three Xs. No internal clipping.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--draw-result.png",
+      "sha256": "8cb84b7d729db47f7876d17bc58e84ebe96b7afe451670d8a9d998a20f1509ba",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:55.103315+00:00",
+      "finding": "Light AX3 draw-result fully fits mini-board and buttons. Settings descriptions wrap cleanly with switches separate, selected Light check and stacked theme choices, privacy footer readable in paired bottom view; Sound/Haptic off and Reduced Motion on are deliberate fixture settings.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--settings.png",
+      "sha256": "774b2cf36b42090e608e6a143a04ad30b09365f520f33e0412a00caca1ef284d",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:55.103589+00:00",
+      "finding": "Light AX3 draw-result fully fits mini-board and buttons. Settings descriptions wrap cleanly with switches separate, selected Light check and stacked theme choices, privacy footer readable in paired bottom view; Sound/Haptic off and Reduced Motion on are deliberate fixture settings.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--settings-bottom.png",
+      "sha256": "54fe05e7b9f70fa73be3240aa048ec35e9467e3dbe2ba1701fb3dc7d5054886c",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:51:55.103782+00:00",
+      "finding": "Light AX3 draw-result fully fits mini-board and buttons. Settings descriptions wrap cleanly with switches separate, selected Light check and stacked theme choices, privacy footer readable in paired bottom view; Sound/Haptic off and Reduced Motion on are deliberate fixture settings.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--how-to.png",
+      "sha256": "dccef3761b08299de4998d7298b0a555b7696692cd68bf27f0ccd607c7165318",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:52:13.645504+00:00",
+      "finding": "PRE-FIX DEFECT: light AX3 tutorial numbered markers 2/3/4 wrap periods into separate lines. All remaining tutorial body, probabilities, odds explanation and Classic content fit without internal clipping and lower content is reachable in bottom fixture.",
+      "materialDefect": true,
+      "defectID": "AX3-TUTORIAL-MARKER-WRAP"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--how-to-bottom.png",
+      "sha256": "4e24d61260fd8144c1e389e8e8398c57aa84792dbac60c4cdf67b63900c4bf31",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:52:13.645852+00:00",
+      "finding": "PRE-FIX DEFECT: light AX3 tutorial numbered markers 2/3/4 wrap periods into separate lines. All remaining tutorial body, probabilities, odds explanation and Classic content fit without internal clipping and lower content is reachable in bottom fixture.",
+      "materialDefect": true,
+      "defectID": "AX3-TUTORIAL-MARKER-WRAP"
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--ai-lab.png",
+      "sha256": "b66e62cab2b50b851665f0020642d3e03b9bdd45a9876d737ed7280e1eac8284",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:52:13.727735+00:00",
+      "finding": "Light AX3 AI Lab preserves canonical information order and hierarchy. Wrapped descriptions fit naturally and Play MCTS is fully readable with resin button depth. Lower content follows in paired bottom frame.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--ai-lab-bottom.png",
+      "sha256": "e41544bebf390e875f935a45dddcb3292e8116434504bf702e02db4e5ad07858",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:52:37.874414+00:00",
+      "finding": "Light AX3 bottom fixtures confirm whole lower content: Home footer/difficulty/Play; AI Lab MCTS and Q-learning buttons, 2000 budget, 92.3 percent agreement and footer; full bag tray with 44/56 and held-piece note. No internal clipping or symbol ambiguity; top-edge cuts are expected scroll viewport.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--home-bottom.png",
+      "sha256": "a86ac860c4334e97641b10930b4275ce9087daa45e64caaec42c66eb9f1dbe8b",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:52:37.874653+00:00",
+      "finding": "Light AX3 bottom fixtures confirm whole lower content: Home footer/difficulty/Play; AI Lab MCTS and Q-learning buttons, 2000 budget, 92.3 percent agreement and footer; full bag tray with 44/56 and held-piece note. No internal clipping or symbol ambiguity; top-edge cuts are expected scroll viewport.",
+      "materialDefect": false
+    },
+    {
+      "path": "/tmp/picpac-phase3-baseline-candidate-20260925/ipad-ax3--light--human-placement-bottom.png",
+      "sha256": "0cece8766bd5148ef9fc15c4d5b8ef960b47a250f093ab581748db539cea4660",
+      "width": 1668,
+      "height": 2420,
+      "openedAtUTC": "2026-09-25T09:52:37.874945+00:00",
+      "finding": "Light AX3 bottom fixtures confirm whole lower content: Home footer/difficulty/Play; AI Lab MCTS and Q-learning buttons, 2000 budget, 92.3 percent agreement and footer; full bag tray with 44/56 and held-piece note. No internal clipping or symbol ambiguity; top-edge cuts are expected scroll viewport.",
+      "materialDefect": false
+    }
+  ],
+  "canonicalReferences": [
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/home-scene-dark-normal-412dp-x.png",
+      "sha256": "dd23cc69f604120d2c46f71efac6f954079861398783ed5889701cefd2806d13",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:36:54.402128+00:00",
+      "finding": "Direct canonical hierarchy, semantics, palette and wide gameplay comparison reference.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/game-wide-dark.png",
+      "sha256": "16a1f58e0afc4a748b3dcd099f757fd645a384ab30e6cf0492f3fbd405623644",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:36:54.402459+00:00",
+      "finding": "Direct canonical hierarchy, semantics, palette and wide gameplay comparison reference.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/home-scene-light-normal-412dp-x.png",
+      "sha256": "13990275fd4d0dfc5d260f7e9a64478895f393717605b6ba49c6bb56196104f5",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:36:54.402985+00:00",
+      "finding": "Direct canonical hierarchy, semantics, palette and wide gameplay comparison reference.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/game-wide-light.png",
+      "sha256": "1a924ee32f4145536de8907957d1d74c3eea47500403cc4279bb549946c1cc70",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:36:54.403212+00:00",
+      "finding": "Direct canonical hierarchy, semantics, palette and wide gameplay comparison reference.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/human-reveal-dark.png",
+      "sha256": "7fbc0752f678c2de435e84ab1a0e0630437d6e6703aaf7d4440ebb5b025efba6",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:37:43.405611+00:00",
+      "finding": "Direct modal/privacy, actor identity, target/placement/settlement and result reference; native tablet layout compared semantically.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/local-handoff-dark.png",
+      "sha256": "7e8326795189f98e02eb8afdc66c7072cb6e0dd8cd075607c6eefdf2a58dee1a",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:37:43.406146+00:00",
+      "finding": "Direct modal/privacy, actor identity, target/placement/settlement and result reference; native tablet layout compared semantically.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/local-reveal-dark.png",
+      "sha256": "3cee784c0a6f20528dfcb53005e68bd44a5459f07c8afc49fdc74f4f576bbcb5",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:37:43.407115+00:00",
+      "finding": "Direct modal/privacy, actor identity, target/placement/settlement and result reference; native tablet layout compared semantically.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/computer-thinking-dark.png",
+      "sha256": "26afc63d405d20707c0ee51a49b6c1255d34ab814c4387b51fef08344045c272",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:37:43.407660+00:00",
+      "finding": "Direct modal/privacy, actor identity, target/placement/settlement and result reference; native tablet layout compared semantically.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/computer-targeting-dark.png",
+      "sha256": "ed04bd3ae2397d2f64a607f8ddffd1882ec4183b66230c8aff4ab34af85776bf",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:37:43.408438+00:00",
+      "finding": "Direct modal/privacy, actor identity, target/placement/settlement and result reference; native tablet layout compared semantically.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/computer-placement-dark.png",
+      "sha256": "81741744562289419aa452c393977c439dfcf11a90934951716a5a4e4fd661b7",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:37:43.408990+00:00",
+      "finding": "Direct modal/privacy, actor identity, target/placement/settlement and result reference; native tablet layout compared semantically.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/computer-settled-dark.png",
+      "sha256": "8b573606f5712aa85055c498dacfccec4ea32b7eb626cf1d46db328c2969e737",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:37:43.409613+00:00",
+      "finding": "Direct modal/privacy, actor identity, target/placement/settlement and result reference; native tablet layout compared semantically.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/result-dark.png",
+      "sha256": "1c85a690df2ad179a454e3ee6a42d77fc1f0ca2032b07cb51ee1cd108f173e97",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:37:43.410050+00:00",
+      "finding": "Direct modal/privacy, actor identity, target/placement/settlement and result reference; native tablet layout compared semantically.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/settings-dark.png",
+      "sha256": "602a0e8d2ce628c74ce10b88c2b5e2bfd895a60f9b77837bdc21c60d5bfb748a",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:41:12.756262+00:00",
+      "finding": "Original canonical Android information screen opened for direct hierarchy, theme, copy order and control comparison.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/how-to-dark.png",
+      "sha256": "fbe97e92a1ce60f156aad262048f91431811d869d5481088405298b9cdb3f513",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:41:12.756608+00:00",
+      "finding": "Original canonical Android information screen opened for direct hierarchy, theme, copy order and control comparison.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/ai-lab-dark.png",
+      "sha256": "3344a5f567ba59bb693fa50dc83759fbf212fc008dd40201b58da94b421d3686",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:41:12.756930+00:00",
+      "finding": "Original canonical Android information screen opened for direct hierarchy, theme, copy order and control comparison.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/settings-light.png",
+      "sha256": "c73385438eb48f6b302e78356a260c3647716df5e7c0cef6959585cc1e5f6f6a",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:41:12.757145+00:00",
+      "finding": "Original canonical Android information screen opened for direct hierarchy, theme, copy order and control comparison.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/how-to-light.png",
+      "sha256": "0e5ac024e97a08f008916f105a4a787b62914cedd93b027b90f70af2f44d9779",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:41:12.757400+00:00",
+      "finding": "Original canonical Android information screen opened for direct hierarchy, theme, copy order and control comparison.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/ai-lab-light.png",
+      "sha256": "63fd4de045a8ae68cb36837d33542069f415ac01967a163125bb2929646b86a9",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:41:12.757773+00:00",
+      "finding": "Original canonical Android information screen opened for direct hierarchy, theme, copy order and control comparison.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/classic-light.png",
+      "sha256": "a26cc780ea2fdf193d5f2b85d1c6ff81b13afd4ab775b3bfc9e995d6f14346f4",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:42:03.414261+00:00",
+      "finding": "Original canonical Android light screen opened directly for semantic colours, depth, board geometry, modal and result comparison.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/computer-reveal-light.png",
+      "sha256": "a3a6bff2c9675168dff8ba8da8ff59c5d663fea6a7003a99e3c492c138d124c5",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:42:03.414710+00:00",
+      "finding": "Original canonical Android light screen opened directly for semantic colours, depth, board geometry, modal and result comparison.",
+      "materialDefect": false
+    },
+    {
+      "path": "/Users/bavabangaru/Developer/pic-pac-poe/docs/ios-handoff/reference/result-light.png",
+      "sha256": "b60274a9734d63f63bcabbfe592688e42f4273c27b094b06d87378d86a276451",
+      "width": 540,
+      "height": 1200,
+      "openedAtUTC": "2026-09-25T09:42:03.415049+00:00",
+      "finding": "Original canonical Android light screen opened directly for semantic colours, depth, board geometry, modal and result comparison.",
+      "materialDefect": false
+    }
+  ],
+  "bottomFixtureInterpretation": "Bottom fixtures declare Debug .defaultScrollAnchor(.bottom). For short iPad content this aligns content low, while normal default-top views are separately captured and lower content is already reachable without scrolling. These are intentional fixture views, not evidence of a user gesture final offset or normal iPad default layout.",
+  "disposition": "REJECTED pre-fix candidate: AX3 tutorial marker wrapping and AI heading height instability require intentional fixes and post-fix originals.",
+  "summary": "All 96 iPad/iPad AX3 originals opened at original resolution and reviewed against 21 directly opened Android originals. Normal iPad shows no material defect. AX3 tutorial markers and AI heading-height board movement confirmed in both themes; this is a rejected pre-fix candidate. All bottom counterparts reviewed for whole lower content. No additional material clipping, actor/symbol ambiguity, modal privacy or semantic style regressions observed."
+}
