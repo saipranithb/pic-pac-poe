@@ -120,10 +120,10 @@ jobs:
           -project ios/PicPacPoe.xcodeproj
           -scheme PicPacPoe
           -configuration '${{ matrix.configuration }}'
-          -enableCodeCoverage NO
           -destination '${{ matrix.destination }}'
           -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-build"
           CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+          ENABLE_CODE_COVERAGE=NO CLANG_ENABLE_CODE_COVERAGE=NO CLANG_COVERAGE_MAPPING=NO
           build
       - name: Check Release identity and development-hook exclusion
         if: matrix.configuration == 'Release'
