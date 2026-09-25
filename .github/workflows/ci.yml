@@ -95,10 +95,12 @@ jobs:
         run: |
           set -euo pipefail
           android_tools="${ANDROID_HOME:?Android SDK root is unavailable}/cmdline-tools/latest/bin"
-          "$android_tools/sdkmanager" 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
-          echo no | "$android_tools/avdmanager" create avd --force --name picpac-ci --package 'system-images;android-35;google_apis;x86_64' --device pixel_8
           export PATH="$ANDROID_HOME/platform-tools:$PATH"
           printf '%s\n' "$ANDROID_HOME/platform-tools" >> "$GITHUB_PATH"
+          "$android_tools/sdkmanager" 'platforms;android-36' 'build-tools;35.0.0' 'platform-tools' 'emulator' 'system-images;android-35;google_apis;x86_64'
+          "$android_tools/avdmanager" list device -c
+          # The hosted command-line tools include Pixel 7 (1080x2400, 420dpi).
+          echo no | "$android_tools/avdmanager" create avd --force --name picpac-ci --package 'system-images;android-35;google_apis;x86_64' --device pixel_7
           sudo chmod a+rw /dev/kvm
           "$ANDROID_HOME/emulator/emulator" -avd picpac-ci -port 5554 -no-window -no-audio -no-boot-anim -no-snapshot -gpu swiftshader_indirect > "$RUNNER_TEMP/android-emulator.log" 2>&1 &
           for attempt in {1..180}; do
@@ -140,4 +142,4 @@ jobs:
         if: always()
         run: |
           adb -s emulator-5554 emu kill || true
-          echo 'Android full UI regression — ${{ job.status }}; hosted API 35 emulator, not physical-device validation' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Android full UI regression — ${{ job.status }}; hosted Pixel 7 / API 35 emulator, not physical-device validation' >> "$GITHUB_STEP_SUMMARY"
