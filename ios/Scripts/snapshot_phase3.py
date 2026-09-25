@@ -47,6 +47,43 @@ def canonical(scenario,theme):
 def compile_pixels(tmp):
  tool=tmp/'snapshot-pixels';run('xcrun','swiftc','-O',ROOT/'ios/Scripts/SnapshotPixels.swift','-o',tool);return tool
 
+def capture_presented_frame(udid, output, name, tool, expected_pixels):
+ # A restoration marker can precede SpringBoard's app-launch transition on a
+ # hosted simulator. Wait for presentation within this same launch, never for
+ # agreement with a baseline. A stable but incorrect UI still fails compare().
+ diagnostics=output/'capture-diagnostics'/pathlib.Path(name).stem
+ diagnostics.mkdir(parents=True)
+ probes=[];previous=None;accepted=False;failure=None;deadline=time.monotonic()+30
+ try:
+  while time.monotonic()<deadline:
+   probe=diagnostics/f'probe-{len(probes)+1:03d}.png'
+   observation={'path':str(probe.relative_to(output)),'requestedAt':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+   probes.append(observation)
+   remaining=deadline-time.monotonic()
+   if remaining<=0:raise RuntimeError('Presentation deadline exceeded: '+name)
+   run('xcrun','simctl','io',udid,'screenshot','--type=png',probe,timeout=remaining)
+   remaining=deadline-time.monotonic()
+   if remaining<=0:raise RuntimeError('Presentation deadline exceeded: '+name)
+   inspected=json.loads(run(tool,'inspect',probe,timeout=remaining))
+   observation.update({'sha256':sha(probe),'observedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),**inspected})
+   if time.monotonic()>=deadline:raise RuntimeError('Presentation deadline exceeded: '+name)
+   if (inspected['width'],inspected['height'])!=expected_pixels:raise RuntimeError('Unexpected full-frame dimensions: '+name)
+   digest=inspected['rgbaSHA256'] if inspected['nonblank'] and inspected['opaque'] else None
+   if digest is not None and digest==previous:
+    probe.replace(output/name);probes[-1]['path']=name;accepted=True
+    return inspected
+   previous=digest
+   time.sleep(min(0.5,max(0,deadline-time.monotonic())))
+  raise RuntimeError('No stable nonblank opaque presentation within 30 seconds: '+name)
+ except Exception as error:
+  failure=type(error).__name__+': '+str(error)
+  raise
+ finally:
+  for observation in probes:
+   path=output/observation['path']
+   if path.is_file():observation['sha256']=sha(path)
+  (diagnostics/'probes.json').write_text(json.dumps({'accepted':accepted,'sameLaunch':True,'baselineConsulted':False,'deadlineSeconds':30,'requiredConsecutiveStableFrames':2,'error':failure,'probes':probes},indent=2)+'\n')
+
 def capture(args):
  profiles=selected(args.profiles,PROFILES,'profiles');scenarios=selected(args.scenarios,SCENARIOS,'scenarios')
  start=source();records=[]
@@ -94,11 +131,8 @@ def capture(args):
        time.sleep(0.05)
       time.sleep(1.25)
       name=f'{profile}--{theme}--{scenario}.png'
-      sim('io',udid,'screenshot','--type=png',output/name)
-      inspected=json.loads(run(tool,'inspect',output/name))
-      if not inspected['nonblank'] or not inspected['opaque']:raise RuntimeError('Blank or nonopaque app frame: '+name)
-      if (inspected['width'],inspected['height']) != DEVICE_PIXELS[device]:raise RuntimeError('Unexpected full-frame dimensions: '+name)
-      records.append({'path':name,'profile':profile,'theme':theme,'scenario':scenario,'device':device,'runtime':'26.5','contentSize':size,'reducedMotion':reduced or (fixture=='settings' and theme=='light'),'homeTime':0,'launchArguments':launch,'sha256':sha(output/name),'capturedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'readiness':'unique post-restoration marker + 1250ms settle','canonical':references[scenario+'--'+theme]})
+      inspected=capture_presented_frame(udid,output,name,tool,DEVICE_PIXELS[device])
+      records.append({'path':name,'profile':profile,'theme':theme,'scenario':scenario,'device':device,'runtime':'26.5','contentSize':size,'reducedMotion':reduced or (fixture=='settings' and theme=='light'),'homeTime':0,'launchArguments':launch,'sha256':sha(output/name),'capturedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'readiness':'unique post-restoration marker + 1250ms minimum settle + two consecutive identical valid full RGBA frames','canonical':references[scenario+'--'+theme]})
       records[-1].update(inspected)
       print(name,flush=True)
    finally:

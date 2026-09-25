@@ -1,4 +1,5 @@
 import AppKit
+import CryptoKit
 import Foundation
 
 func pixels(_ path: String) throws -> (Int, Int, [UInt8]) {
@@ -25,7 +26,8 @@ if args[1] == "inspect" {
         }
     }
     let opaque = stride(from: 3, to: value.2.count, by: 4).allSatisfy { value.2[$0] == 255 }
-    print("{\"width\":\(value.0),\"height\":\(value.1),\"centralDistinctColors\":\(colors.count),\"nonblank\":\(colors.count >= 20),\"opaque\":\(opaque)}")
+    let rgbaSHA256 = SHA256.hash(data: Data(value.2)).map { String(format: "%02x", $0) }.joined()
+    print("{\"width\":\(value.0),\"height\":\(value.1),\"centralDistinctColors\":\(colors.count),\"nonblank\":\(colors.count >= 20),\"opaque\":\(opaque),\"rgbaSHA256\":\"\(rgbaSHA256)\"}")
 } else if args[1] == "compare" {
     guard args.count == 4 else { fatalError("compare requires two image paths") }
     let a = try pixels(args[2]), b = try pixels(args[3])
