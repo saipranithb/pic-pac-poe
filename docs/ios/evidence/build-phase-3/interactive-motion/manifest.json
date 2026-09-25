@@ -20,7 +20,7 @@
   ],
   "files": {
     "ExtractVideoFrames.swift": "eff060a7624045ce6f98d4936e50fc112726ab48ce8e261b762c53f8556f446e",
-    "README.md": "56feb7dc75a9fa741b93064c31f0a50218be1e90ee979a2f3495001a67b39538",
+    "README.md": "608617f9a94bd04351eb7cdd31fc24064d6fe859b31405de9cf03183da77f8c3",
     "RecordHome.py": "94349850dcb39abcda88cce55347f799c954ac257ae02f620838c25edf9ca1e3",
     "availability/full-keyboard-access-enabled.png": "7a87d5e3efeb59e5d4d708209f829086d322fe86f43fd1b9d8976c3e2675085b",
     "availability/simulator-accessibility-settings.png": "9fa207613f27605d3f3061d4e77db74f67fc4055bb1cf7bd158100e051e0ed00",
@@ -136,5 +136,6 @@
     "keyboard-frames/frames.json": "5836425a6fb2497b20e886ec74a1d783b09b0cfbf1fadb4925831d25806ea678",
     "source.json": "d26924094060e328f441af5acebde76dc6fcdf31b9a6c0540bde72a9302eab6d"
   },
-  "review": "Original Home phases and computer reveal/thinking frames plus all sequence contact sheets visually inspected; final automated UI/baseline package separately governs final post-copy-fix source. Full Keyboard Access rematch continuation to be appended as separate Release evidence."
+  "review": "Original Home phases and computer reveal/thinking frames plus all sequence contact sheets visually inspected; final automated UI/baseline package separately governs final post-copy-fix source. Full Keyboard Access rematch continuation to be appended as separate Release evidence.",
+  "keyboardFollowup": "Complete Debug keyboard game, result and rematch activation observed. Post-rematch Release keyboard placement unobserved: computer-use bridge unavailable; see recovery-20260925/release-keyboard-bridge. No demonstrated app key-routing defect."
 }

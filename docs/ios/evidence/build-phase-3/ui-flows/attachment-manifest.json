@@ -1,0 +1,734 @@
+[
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "3EF81B0B-F702-45EB-87D0-EDBEA8181395.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "audit-ai-lab-light-bottom--uptime-5065500_0_51D0BF8B-3BA8-4590-9509-219F5FCA47C6.227",
+        "timestamp" : 1790327625.733
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "B3165380-A875-4B5D-973E-57BFD0C86ED8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "audit-ai-lab-light-top--uptime-5065491_0_47E3263C-4459-456E-BA5D-3DB336EE8292.834",
+        "timestamp" : 1790327617.34
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "262E679F-655D-499D-9457-2FC1221D6426.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "audit-offscreen-artifact-ai-lab-dark-bottom--uptime-5065394_0_6E077969-365D-4ACE-B1ED-856B47BE52AA.649",
+        "timestamp" : 1790327520.154
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "1D52466E-335E-4994-8AAC-34DDBD6986EB.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "Accessibility audit finding_0_BD4C4121-3CBF-4F79-A5B6-4DA4AEB8EA7C.txt",
+        "timestamp" : 1790327520.083
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "12119D7E-48E2-4551-B06B-891B7EECFBC1.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "audit-ai-lab-dark-bottom--uptime-5065392_0_F266BCA9-2C77-474C-95FE-F7C573B71F60.589",
+        "timestamp" : 1790327518.095
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "00F870A0-A66C-4A94-97DE-E032EE4EDA2F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "audit-ai-lab-dark-top--uptime-5065384_0_EF3F2BA2-AED5-4766-8835-6F1EDF46C91C.109",
+        "timestamp" : 1790327509.615
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "31B64580-B011-4D50-8323-0952C22418BF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "board-target-geometry--uptime-5065520_0_C5D8CA25-6154-407F-A7F6-257DC7724944.251",
+        "timestamp" : 1790327645.757
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testBoardOrderTargetsAndOccupiedCellGate()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testBoardOrderTargetsAndOccupiedCellGate"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "3A4D7E48-85E3-4AB8-99BD-5130CCB89B30.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "classic-draw--uptime-5065543_0_05201D78-74C3-442A-A77B-0A6ABA80533F.798",
+        "timestamp" : 1790327669.304
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testCompleteClassicDraw()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteClassicDraw"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "D5714050-84B1-42C0-9AA9-60A206738F41.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "classic-player-two-rematch-win--uptime-5065560_0_A1EC983B-181B-414D-90D3-DE95984C02C3.284",
+        "timestamp" : 1790327685.791
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "D9FEFE8A-D31E-46DD-B5D5-0D308F799619.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "classic-player-one-win--uptime-5065551_0_F0738684-20BC-44E2-988C-0F1DDE320342.667",
+        "timestamp" : 1790327677.173
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testCompleteClassicWinRematchAndTerminalRelaunch()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteClassicWinRematchAndTerminalRelaunch"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "0347E718-CAB2-4A68-AA2B-33F0C95515D8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "easy-rematch-result--uptime-5065598_0_4BD2C034-E836-4897-A364-CD2E80993FC8.073",
+        "timestamp" : 1790327723.58
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "2437BA1A-4625-4F61-AC9E-7799F60EE3B3.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "easy-first-result--uptime-5065582_0_A9B0F3F6-0DE3-40C9-822C-93BC837B1ABF.511",
+        "timestamp" : 1790327708.018
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testCompleteEasyGameAndRematch()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteEasyGameAndRematch"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "7A79FFA6-2523-4521-9CEF-FB6E55EF81F7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "hard-rematch-result--uptime-5065644_0_E0D71650-6F04-4672-9E7A-EC6809D11535.023",
+        "timestamp" : 1790327769.529
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "9A1A4955-865B-4668-B34F-57C36BC61560.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "hard-first-result--uptime-5065623_0_A6D19D14-57C0-4D73-81BC-0C482BBA84F0.041",
+        "timestamp" : 1790327748.548
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testCompleteHardGameAndRematch()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteHardGameAndRematch"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "443877B7-8FFD-4319-8BA2-22BD7BFB58E9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "local-rematch-result--uptime-5065729_0_82CBAA9D-F991-4BE0-864F-84D410EA2EC3.614",
+        "timestamp" : 1790327855.121
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "6EB0EBE8-DB22-49CF-A30E-9D3377DA2814.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "local-first-result--uptime-5065688_0_F498C8BC-C8C6-434D-BF4D-7D2B9C84974B.959",
+        "timestamp" : 1790327814.467
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testCompleteLocalGameAndRematchWithPrivacy()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteLocalGameAndRematchWithPrivacy"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "68A5438A-9509-4EF0-93DD-0A9298907C7D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "mcts-rematch-result--uptime-5065768_0_4D6B66C1-BEDC-4989-B36A-C2B37761B955.211",
+        "timestamp" : 1790327893.718
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "96B3AF04-09E6-4281-907D-F54C6D9E4ED8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "mcts-first-result--uptime-5065749_0_1C6C3828-C71A-4FF3-AA07-6764C277D0D8.277",
+        "timestamp" : 1790327874.785
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testCompleteMCTSGameAndRematch()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteMCTSGameAndRematch"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "9AB84D5A-5913-46FF-9245-A139B01A4D8A.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "medium-rematch-result--uptime-5065801_0_401E9B65-276C-489C-AE3F-CBCA6A43840A.650",
+        "timestamp" : 1790327927.158
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "EDC0D6DE-BD3F-4CAE-9713-E5650AC961A7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "medium-first-result--uptime-5065791_0_873D7B74-C6AB-4930-BF3B-CCE4B285690C.441",
+        "timestamp" : 1790327916.949
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testCompleteMediumGameAndRematch()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteMediumGameAndRematch"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "C0632C50-EC04-4C95-AECE-9D26F8955514.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "qlearning-rematch-result--uptime-5065842_0_6473EB37-DA5F-4583-8E04-86889E163A7C.112",
+        "timestamp" : 1790327967.621
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "25F0D06A-DA1B-4BA9-A9CD-584643893CDE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "qlearning-first-result--uptime-5065827_0_D2F56CBA-3A1A-4B27-BA37-CF6EC84F54CB.736",
+        "timestamp" : 1790327953.245
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testCompleteQLearningGameAndRematch()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteQLearningGameAndRematch"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "746F8CEA-4CB3-47B3-A610-0CB4D605DEF3.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "sequence-clock10-computer-settle--uptime-5065876_0_AFB8FEDC-AE29-49D0-B203-BFAD0BE16CBC.263",
+        "timestamp" : 1790328001.772
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "3C6E85F6-7962-4078-B946-B5375FB64B59.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "sequence-clock10-computer-place--uptime-5065871_0_497EF399-788B-468C-BCC7-7357E50CA9D5.994",
+        "timestamp" : 1790327997.503
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "FA3022CA-EC90-4DB6-8F2C-601E4E15DCB7.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "sequence-clock10-computer-target--uptime-5065869_0_D2A65ECA-262F-4D4E-A9F2-7F00DFCB76B9.794",
+        "timestamp" : 1790327995.303
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "2A372C87-F84C-4C9F-9462-C4D0D6B6B7B0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "sequence-clock10-computer-reveal--uptime-5065862_0_F3320E09-A355-4625-BFF9-C6757D8330AA.628",
+        "timestamp" : 1790327988.136
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "88B899FD-EE6C-41D6-8DFA-B0B856572D26.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "sequence-clock10-human-placed-computer-turn-start--uptime-5065859_0_453E0F4A-419B-45F5-B233-9F6822ABC12F.500",
+        "timestamp" : 1790327985.009
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "C5CF5402-E28A-4B6D-B61B-AFC2A85B4311.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "sequence-clock10-human-playing--uptime-5065859_0_B34BC738-E90D-40E5-B631-0A9A0488A5CD.083",
+        "timestamp" : 1790327984.592
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "B358E8D2-F832-41D2-AB54-4C60659EFDDB.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "sequence-clock10-human-reveal--uptime-5065851_0_AC886AC8-8836-4162-B660-4C8F4AB94A28.926",
+        "timestamp" : 1790327977.434
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testGovernedLiveHumanAndComputerSequence()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testGovernedLiveHumanAndComputerSequence"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "79354389-4480-4750-8CB3-A38B9CE73677.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-result-light--uptime-5065947_0_BC9FB487-3E3F-4A9F-98EC-988496300B97.928",
+        "timestamp" : 1790328073.437
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "36BD3C43-A7E1-4C20-9D32-377AF2200801.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-settled-light--uptime-5065943_0_B93E6289-2CAB-474A-911F-33AC87C07485.420",
+        "timestamp" : 1790328068.929
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "D5B74B11-83F2-4308-B1DB-72FD4E7B02B9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-placement-light--uptime-5065939_0_F426CB71-2469-4479-909D-6A476E196596.023",
+        "timestamp" : 1790328064.532
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "69D90F70-CD48-48AC-9893-24C0EABED8BC.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-targeting-light--uptime-5065934_0_DA5B5D1A-E44F-4A44-A3B4-8B4635A90185.597",
+        "timestamp" : 1790328060.106
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "BEB6A533-E317-4DBB-87FE-F8DFF230829D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-thinking-light--uptime-5065930_0_BA61CD18-371C-4D62-A932-ABFE0543871A.172",
+        "timestamp" : 1790328055.681
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "3486890F-BB99-4707-9E27-65109AFDB97D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-reveal-light--uptime-5065925_0_E57D95FB-82E8-4EB4-9BFE-19F5B1E554F7.739",
+        "timestamp" : 1790328051.248
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "321E14F4-60D8-4737-A49C-53A5CF040F41.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-local-reveal-light--uptime-5065921_0_B8EA6778-639A-45D7-BA80-C0A0DBB71C56.276",
+        "timestamp" : 1790328046.785
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "62358A58-EC66-44A6-BE62-91A7D9BAF731.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-local-handoff-light--uptime-5065916_0_8DB53D32-71CC-492B-8EA9-43211D1CA6CC.802",
+        "timestamp" : 1790328042.311
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "56C5A40D-5E81-4D2C-9D5A-FAEC2BE95AA1.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-result-dark--uptime-5065912_0_0365479A-AB30-4AAA-9E0B-01DB70ED06A2.412",
+        "timestamp" : 1790328037.921
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "266B81B1-4350-41E6-AB21-BDBD1FACC488.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-settled-dark--uptime-5065907_0_E2C1CD47-F7E5-4BE0-AEED-0726FFB8984B.828",
+        "timestamp" : 1790328033.337
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "44096B65-774A-4390-BB91-6618B6274195.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-placement-dark--uptime-5065903_0_8A049077-FA19-4036-A1DF-DB8E873800B3.313",
+        "timestamp" : 1790328028.821
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "96717560-45F9-4247-AC7C-F9FF717CF8E9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-targeting-dark--uptime-5065898_0_8A8812ED-C576-4F2A-8D3D-818AA9163C49.788",
+        "timestamp" : 1790328024.297
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "6C110267-B1AD-4D31-99FC-9CC64D5E7490.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-thinking-dark--uptime-5065894_0_DC820B70-F69E-430D-A164-01C74DD811AC.282",
+        "timestamp" : 1790328019.791
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "45B515A0-E515-4BA3-8AB9-D411D916BC4D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-computer-reveal-dark--uptime-5065889_0_CE657255-717C-4703-BDAB-AE01441EE4A2.812",
+        "timestamp" : 1790328015.321
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "45572177-9BC6-49B6-BDB9-58A62D61BAD4.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-local-reveal-dark--uptime-5065885_0_E7DEDE29-0831-459C-BAA7-BC5DDA4EF3BA.412",
+        "timestamp" : 1790328010.921
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "4D31673E-9EFA-47C9-A381-303E7558FCF9.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "locked-local-handoff-dark--uptime-5065881_0_5E1E7DEC-7C82-4C26-B7D4-536A9A6BE81F.006",
+        "timestamp" : 1790328006.515
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testHeldFixturesKeepLockedStagesPrivateInBothThemes()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testHeldFixturesKeepLockedStagesPrivateInBothThemes"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "599764C8-6DF5-446A-B382-81C773BADE64.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "tutorial-reachable--uptime-5065957_0_FE437B0D-FFD3-4F39-B9C5-EA31D2B5C17E.362",
+        "timestamp" : 1790328082.872
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testHomeHeadingExplanationAndTutorialReachability()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testHomeHeadingExplanationAndTutorialReachability"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "34385265-45AF-443F-88A6-57853FCAF7DF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "human-reveal-single-placement--uptime-5066007_0_0F78AE8B-71BF-478B-BF94-08C280516D69.545",
+        "timestamp" : 1790328133.055
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "04559305-BF44-44EC-AFD1-49A1F15C21B6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "human-reveal-restored--uptime-5065994_0_910BDFA8-E345-42AB-A4CC-A6451FEE8A40.991",
+        "timestamp" : 1790328120.501
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "5528A340-30C8-4D6A-97A7-338CFEE25108.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "human-turn-start-single-placement--uptime-5065985_0_03D7C75E-030F-4EB6-8D85-AF5ED6CDFA5A.563",
+        "timestamp" : 1790328111.072
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "C38445B8-CB78-41CF-8DD9-28D46EAE3E4F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "human-turn-start-restored--uptime-5065967_0_FE79402F-2CC5-4CA1-9A25-3E26196DC1E3.021",
+        "timestamp" : 1790328092.531
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testHumanTurnStartAndRevealResumeWithoutRedraw()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testHumanTurnStartAndRevealResumeWithoutRedraw"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "E5050A93-ECCB-45BA-9DE0-8856E2AEF6B8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "largest-type-last-square-and-bag--uptime-5066029_0_ECD82D67-2001-47E6-8416-7E6177E8BF22.019",
+        "timestamp" : 1790328154.529
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "DCEA646C-5A6F-4E96-83FC-568F2BFA93A6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "largest-type-before-last-square--uptime-5066025_0_56E0A36B-6A90-456F-9F15-7371F1E8A1C8.213",
+        "timestamp" : 1790328150.723
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "7C423B09-9283-426C-9301-5CA19A980CDD.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "landscape-last-square-and-bag--uptime-5066018_0_EAD6180F-30E6-4D96-8BCA-FCC48AE55E51.116",
+        "timestamp" : 1790328143.626
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "C9A31DD2-7194-40DC-A9FE-05FE1AFDB895.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "landscape-before-last-square--uptime-5066015_0_A76B63C9-C30D-4092-AFC4-15FCF8EA187E.408",
+        "timestamp" : 1790328140.918
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testLandscapeAndLargestTextKeepLastSquareAndBagReachable()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testLandscapeAndLargestTextKeepLastSquareAndBagReachable"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "D9E2F4C4-D82A-47C6-A797-266ADABAB52F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-largest-rematch--uptime-5066052_0_920A3858-A1F9-4B24-AB76-F6828410A7FA.678",
+        "timestamp" : 1790328178.188
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "55DFD1D3-F90D-4F1A-A235-0494AF3881E6.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "accessibility-largest-settings--uptime-5066045_0_558FF284-F82A-45D3-A562-C6AC60626A37.672",
+        "timestamp" : 1790328171.181
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testLargestDynamicTypeKeepsActionsReachable()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testLargestDynamicTypeKeepsActionsReachable"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "7DAAF3DE-5EC4-4EFB-8AA0-E3E5CCFF36CE.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "committed-target-after-relaunch--uptime-5066100_0_3BFF97D6-63F5-48FD-A453-E7EBF352ABA4.528",
+        "timestamp" : 1790328226.038
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "04E3A40A-40A7-448A-9637-AEFA2F08AA86.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "target-committed-once--uptime-5066095_0_89744951-E343-4BF6-8A40-D637741891E1.529",
+        "timestamp" : 1790328221.039
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "1AE36AA7-A0DA-48AC-A28B-6D1E63B2461D.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "target-after-relaunch--uptime-5066091_0_732EA820-0671-475A-9CB2-1EDF95DC0A88.357",
+        "timestamp" : 1790328216.867
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "1DF3727C-979E-4DBE-BBBB-DC12D4AE4BC0.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "target-before-relaunch--uptime-5066086_0_21E694EE-541B-4894-AE43-8397FD5F55EA.423",
+        "timestamp" : 1790328211.933
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testSelectedComputerTargetSurvivesRelaunchAndCommitsOnce()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testSelectedComputerTargetSurvivesRelaunchAndCommitsOnce"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "925FEAF9-AC05-4472-9F7B-9655B004884F.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "settings-restored--uptime-5066134_0_9CC76F91-11BB-4922-94AE-49A7AB0E830D.956",
+        "timestamp" : 1790328260.467
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "82B8DECC-BF37-4BEA-8DD0-7785E311EA1D.txt",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "settings-native-controls_0_C5DEACD1-47BE-4F8E-97E4-4CED5625D0D5.txt",
+        "timestamp" : 1790328242.405
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testSettingsPersistAcrossNavigationBackgroundAndRelaunch()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testSettingsPersistAcrossNavigationBackgroundAndRelaunch"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "CCC4B288-3ECA-4E8E-9F8F-EE1A7BE35744.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "terminal-settling-draw-result--uptime-5066153_0_3A803898-6F2F-4464-B2C5-3F5A89138994.066",
+        "timestamp" : 1790328278.576
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "38A6196A-16ED-4E14-9D1E-801306F061C8.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "terminal-settling-draw-restored-settlement--uptime-5066144_0_1C3582A0-96FB-4C32-A8C3-30600EF6CD91.883",
+        "timestamp" : 1790328270.393
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "532D6D45-C093-4C93-9AE9-48AC86F751EF.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "terminal-settling-draw-before-interruption--uptime-5066139_0_BE32AB47-8BD4-4F82-9746-9738C2690CE1.797",
+        "timestamp" : 1790328265.307
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testTerminalComputerDrawSettlesBeforeResultAcrossRelaunch()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testTerminalComputerDrawSettlesBeforeResultAcrossRelaunch"
+  },
+  {
+    "attachments" : [
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "82FCF32D-478E-45C9-8F37-2C5F5A56DD73.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "terminal-settling-win-result--uptime-5066169_0_ADDB8512-830B-4976-8801-97AA92EBDABB.377",
+        "timestamp" : 1790328294.888
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "71F95382-7372-490A-826F-36334EE8CF17.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "terminal-settling-win-restored-settlement--uptime-5066160_0_26AC2681-5930-48EB-8AB4-466F73A4DBB2.204",
+        "timestamp" : 1790328285.715
+      },
+      {
+        "configurationName" : "Test Scheme Action",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "exportedFileName" : "BF3A0C33-29FC-4DA1-AEE9-8E7BC6721C41.png",
+        "isAssociatedWithFailure" : false,
+        "suggestedHumanReadableName" : "terminal-settling-win-before-interruption--uptime-5066157_0_BFF6351C-B578-4C33-8B37-C5F70D55DB6B.948",
+        "timestamp" : 1790328283.459
+      }
+    ],
+    "testIdentifier" : "PicPacPoeUITests/testTerminalComputerWinSettlesBeforeResultAcrossBackground()",
+    "testIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testTerminalComputerWinSettlesBeforeResultAcrossBackground"
+  }
+]

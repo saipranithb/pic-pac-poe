@@ -1,0 +1,46 @@
+{
+  "devicesAndConfigurations" : [
+    {
+      "device" : {
+        "architecture" : "arm64",
+        "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName" : "PicPac Phase3 UI",
+        "modelName" : "iPhone 17 Pro",
+        "osBuildNumber" : "23F77",
+        "osVersion" : "26.5",
+        "platform" : "iOS Simulator"
+      },
+      "expectedFailures" : 0,
+      "failedTests" : 0,
+      "passedTests" : 24,
+      "skippedTests" : 0,
+      "testPlanConfiguration" : {
+        "configurationId" : "1",
+        "configurationName" : "Test Scheme Action"
+      }
+    }
+  ],
+  "environmentDescription" : "PicPacPoe · Built with macOS 26.5.2",
+  "expectedFailures" : 0,
+  "failedTests" : 0,
+  "finishTime" : 1790328295.655,
+  "passedTests" : 24,
+  "result" : "Passed",
+  "skippedTests" : 0,
+  "startTime" : 1790327401.336,
+  "statistics" : [
+
+  ],
+  "testFailures" : [
+
+  ],
+  "title" : "Test - PicPacPoe",
+  "topInsights" : [
+    {
+      "category" : "Longest Test Runs",
+      "impact" : "24% of duration",
+      "text" : "1 longest test run with outlier durations exceeding 163.63s (three standard deviations)"
+    }
+  ],
+  "totalTestCount" : 24
+}
