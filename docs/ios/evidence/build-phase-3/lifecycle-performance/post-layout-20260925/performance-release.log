@@ -1,0 +1,20 @@
+[0/1] Planning build
+Building for production...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.14s)
+Test Suite 'Selected tests' started at 2026-09-25 06:59:48.338.
+Test Suite 'PicPacKitPackageTests.xctest' started at 2026-09-25 06:59:48.339.
+Test Suite 'PerformanceAuditTests' started at 2026-09-25 06:59:48.339.
+Test Case '-[PicPacKitTests.PerformanceAuditTests testProductionSearchLatencyBudgetCancellationAndMainActorProgress]' started.
+Test Case '-[PicPacKitTests.PerformanceAuditTests testProductionSearchLatencyBudgetCancellationAndMainActorProgress]' passed (0.526 seconds).
+Test Suite 'PerformanceAuditTests' passed at 2026-09-25 06:59:48.865.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.526 (0.526) seconds
+Test Suite 'PicPacKitPackageTests.xctest' passed at 2026-09-25 06:59:48.865.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.526 (0.526) seconds
+Test Suite 'Selected tests' passed at 2026-09-25 06:59:48.865.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.526 (0.527) seconds
+PHASE3_PERFORMANCE_JSON {"framePacingEvidence":false,"hardColdMilliseconds":[75.477958999999998,77.157332999999994,75.482624999999999,75.767875000000004,76.221708000000007],"hardColdNodes":[109706,109706,109706,109706,109706],"hardInFlightCancellationMilliseconds":[0.23666699999999999,0.108958,0.161166,0.23808399999999999,0.231542],"hardWarmMilliseconds":[0.017500000000000002,0.016250000000000001,0.034833000000000003,0.016458,0.017500000000000002],"hardWarmNodes":[18,18,18,18,18],"kind":"macOS-host-production-agent-measurement","mainActorTwoMillisecondHeartbeat":{"maxMilliseconds":3.0891670000000002,"p50Milliseconds":3.048292,"p95Milliseconds":3.0699160000000001,"samples":176},"mctsCompletedSimulationsPerCall":2000,"mctsMilliseconds":[22.638583000000001,22.8475,22.168125,22.877041999999999,23.234708000000001],"physicalDeviceEvidence":false,"sampleCount":5,"schemaVersion":1}
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

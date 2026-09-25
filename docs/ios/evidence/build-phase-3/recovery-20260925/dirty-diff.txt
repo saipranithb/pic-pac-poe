@@ -1,0 +1,312 @@
+diff --git a/.github/workflows/ios-ci.yml b/.github/workflows/ios-ci.yml
+index edc6b9e..5ba982b 100644
+--- a/.github/workflows/ios-ci.yml
++++ b/.github/workflows/ios-ci.yml
+@@ -71,7 +71,7 @@ jobs:
+           -resultBundlePath "$RUNNER_TEMP/${{ matrix.target }}.xcresult"
+           CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+           test
+-      - name: Require the complete XCTest inventory and governed skips
++      - name: Require the complete XCTest inventory without skips
+         if: always()
+         run: >-
+           python3 ios/Scripts/verify-xcresult.py
+@@ -120,6 +120,7 @@ jobs:
+           -project ios/PicPacPoe.xcodeproj
+           -scheme PicPacPoe
+           -configuration '${{ matrix.configuration }}'
++          -enableCodeCoverage NO
+           -destination '${{ matrix.destination }}'
+           -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-build"
+           CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+diff --git a/docs/ios/evidence/build-phase-3/CI-CONTRACT-AUDIT.md b/docs/ios/evidence/build-phase-3/CI-CONTRACT-AUDIT.md
+index 834849a..615d09a 100644
+--- a/docs/ios/evidence/build-phase-3/CI-CONTRACT-AUDIT.md
++++ b/docs/ios/evidence/build-phase-3/CI-CONTRACT-AUDIT.md
+@@ -15,6 +15,8 @@ This audit concerns the authorized implementation worktree on `codex/ios-native-
+ | Android Release signature | PASS: `jarsigner` reports `jar is unsigned.` The diagnostic artifact is not an upload artifact |
+ | Existing Android instrumentation | PASS: `OK (26 tests)`, 233.485 seconds, on the installed API 36 arm64 emulator; raw runner summary retained |
+ | Apple environment preflight | PASS locally: arm64, Xcode 26.6 (17F113), Swift 6.3.3, installed iOS Simulator 26.5 (23F77) |
++| Unsigned native Release builds | Earlier `ad1a3b4` builds compiled and passed identity/resource checks, but independent inspection found LLVM coverage instrumentation. Superseded; strengthened final rebuild required |
++| Unsigned native Debug device SDK build | PASS on the same source; no signing material in the app. This is compilation, not device execution |
+ | Workflow syntax and shell bodies | YAML files parsed locally; every embedded run block passed `bash -n`; Python gate scripts compiled. Synthetic Release-verifier checks reject development hooks and an incorrect deployment target |
+ | Native app/package/UI/snapshot execution | Recorded by the consolidated Phase 3 report and native result bundles; this audit does not duplicate or infer their results |
+ 
+@@ -30,6 +32,8 @@ The unchanged regression suite was run explicitly on the already installed `Pixe
+ 
+ The local diagnostic AAB is 7,719,334 bytes with SHA-256 `755e94d976541620010f06b1b1faabcba1cd45173c72942b563eb6bcedaffdec`; `ci-logs/android-results.json` records the measured artifact metadata. It is ignored build output and deliberately absent from the reviewable evidence package.
+ 
++The earlier unsigned builds compiled with stable source and passed their then-current identity/resource gate, but independent binary inspection found LLVM coverage sections. Their full package is preserved locally at `/tmp/picpac-phase3-unsigned-builds-ad1-before-coverage`; compact [finding, source provenance, compile flags and binary hashes](defects/release-coverage/finding.json) are retained here. The strengthened gate rejects that actual earlier binary. Final rebuilt artifacts must additionally prove no LLVM coverage/profile instrumentation from either the app or linked packages.
++
+ ## Fixture governance
+ 
+ The contract has 36 unique fixture IDs in eight explicitly required groups. Both languages reject unsupported schema versions and unknown groups; missing ownership fails. Kotlin's core, AI and application consumers execute the shared cases. Swift executes rule/AI cases in `GoldenFixtureTests` and all seven presentation/restoration scenarios behaviorally in `PresentationCoordinatorTests`. Discrete outcomes remain exact; the full-search oracle uses the documented `1e-12` floating tolerance. Scripted bounded results test random-call order and bounds rather than comparing platform PRNG streams.
+@@ -42,7 +46,7 @@ Both unsigned workflows keep `contents: read`, checkout `persist-credentials: fa
+ 
+ The Android workflow now reports Kotlin/shared-fixture checks, Debug/test APK assembly, unsigned Release assembly/signature and an independent complete UI-regression emulator gate. Instrumentation requires a successful runner summary of at least 26 tests; `adb` process success alone cannot pass it. The emulator is explicitly selected, logs are retained and the owned hosted emulator is stopped afterward.
+ 
+-The iOS workflow reports independent native-package/shared-fixture, hosted application integration, player-driven XCUITest, unsigned Debug and Release for both simulator and generic iOS device SDKs, and governed snapshot gates. `xcodebuild` runs with signing disabled. The platform-aware Release artifact gate checks bundle/version identity, the actual Mach-O platform and iOS 17 deployment target in every slice, iPhone/iPad support, compiled icon/launch resources, exact canonical fonts/OFL and policy bytes, absent signing material/test bundles and absence of development-only launch switches/type names. A generic device SDK build is compile-time evidence only; it does not claim a physical-device run. The XCTest gate discovers actual direct class/extension test methods with the Swift parser, verifies every executed identifier and rejects empty, partial, duplicate, failed or unexpected-skipped suites. UI requires all 24 current methods to pass. Hosted Test requires 10 current methods to pass and exactly two named Debug-only capture-fixture methods to skip with their exact recorded reasons; those fixture methods require separate Debug execution, whose actual result belongs in the final validation record. No blanket skip allowance is used. Snapshot comparison never updates approved baselines. Test result bundles, snapshot candidates/comparisons and failure build logs remain reviewable Actions artifacts, with explicit job summaries.
++The iOS workflow reports independent native-package/shared-fixture, hosted application integration, player-driven XCUITest, unsigned Debug and Release for both simulator and generic iOS device SDKs, and governed snapshot gates. `xcodebuild` runs with signing disabled. The platform-aware Release artifact gate checks bundle/version identity, the actual Mach-O platform and iOS 17 deployment target in every slice, iPhone/iPad support, compiled icon/launch resources, exact canonical fonts/OFL and policy bytes, absent signing material/test bundles and absence of development-only launch switches/type names or LLVM coverage/profile sections. Unsigned commands explicitly disable code coverage for the workspace and packages, backed by Release configuration exclusions. A generic device SDK build is compile-time evidence only; it does not claim a physical-device run. The XCTest gate discovers actual direct class/extension test methods with the Swift parser, verifies every executed identifier and rejects empty, partial, duplicate, failed or unexpected-skipped suites. UI requires all 24 current methods to pass. Hosted Test requires all 12 current methods to pass with zero skips. Actual compiler flags confirm the project Test configuration defines both TESTING and DEBUG, so its two capture-fixture methods execute normally; an earlier assumption based only on the xcconfig was corrected. Neither target permits any skipped method. Snapshot comparison never updates approved baselines. Test result bundles, snapshot candidates/comparisons and failure build logs remain reviewable Actions artifacts, with explicit job summaries.
+ 
+ The Apple environment is asserted before work: macOS 26 arm64, Xcode 26.6 build 17F113, Swift 6.3.3 and the already installed iOS 26.5 runtime. A missing or changed environment fails visibly; no runtime download or global `xcode-select` mutation is used to suppress it. GitHub's published [runner-label inventory](https://github.com/actions/runner-images#available-images) identifies `macos-26` as arm64, and its [macOS 26 arm64 image inventory](https://github.com/actions/runner-images/blob/main/images/macos/macos-26-arm64-Readme.md) lists Xcode 26.6/17F113. These references were inspected on 2026-09-21; hosted image inventory is mutable, so runtime assertions remain authoritative during a future job.
+ 
+@@ -54,4 +58,4 @@ Local read-only runtime discovery found only iOS 26.5; `/Applications` contains
+ 
+ Unsigned simulator compilation and testing do not certify physical iPhone/iPad behavior. Minimum-runtime execution, physical VoiceOver/Switch Control/keyboard usability, real haptic/audio quality, device frame pacing, and signed install/update validation remain accurately separated owner-controlled release gates. They do not excuse ordinary software defects within the unsigned product-build scope.
+ 
+-The exact-inventory verifier was locally checked against the canceled hosted result and the interrupted partial UI result, both correctly rejected. A parser probe excluded test-shaped strings, comments and nested local functions. Synthetic gate checks accepted a complete named/reasoned inventory and rejected missing/duplicate methods, unexpected skips/failures, empty suites and changed skip reasons. These are verifier checks, not successful application-suite evidence; final actual result verification is recorded separately.
++The exact-inventory verifier was locally checked against the canceled hosted result and the interrupted partial UI result, both correctly rejected. A parser probe excluded test-shaped strings, comments and nested local functions. Synthetic gate checks accepted a complete zero-skip inventory and rejected missing/duplicate methods, skips/failures and empty suites. The actual earlier full UI result passes 24/24 under the final no-skip policy; a focused single-method passing result correctly fails the complete-suite gate. These are verifier checks, not successful application-suite evidence; final actual result verification is recorded separately.
+diff --git a/docs/ios/evidence/build-phase-3/NATIVE-RESOURCE-AUDIT.md b/docs/ios/evidence/build-phase-3/NATIVE-RESOURCE-AUDIT.md
+index 03a303b..8bed99a 100644
+--- a/docs/ios/evidence/build-phase-3/NATIVE-RESOURCE-AUDIT.md
++++ b/docs/ios/evidence/build-phase-3/NATIVE-RESOURCE-AUDIT.md
+@@ -12,4 +12,4 @@ The catalog is included in the ordinary application Resources phase and `ASSETCA
+ 
+ Source inspection retains iOS 17 compatibility: Observation, the two-argument/initial `onChange` form and SwiftUI accessibility APIs used by the app are available at the declared minimum or earlier. A successful build with deployment target 17.0 confirms compile-time API availability only; it cannot prove runtime behavior on iOS 17. The local host has only iOS Simulator 26.5, as recorded by `ci-logs/installed-runtimes.json`. No runtime installation or global developer-directory change occurred.
+ 
+-An isolated unsigned Release simulator resource build was initially started, then deliberately canceled to avoid contention with the active UI suite. It is not a passing result. Final compiled resource, Mach-O deployment-target and Release-hook results are recorded in the consolidated Phase 3 validation report after a completed build. Physical VoiceOver/Switch Control/keyboard focus and real launch/device appearance remain device-validation evidence requirements; source modifiers alone are not human certification.
++Earlier unsigned Release builds for both generic iOS Simulator and generic iOS device SDK passed identity/resource verification on `ad1a3b40570406a7cf967c600a7c88516dbf2c0c`, as did unsigned Debug device SDK compilation. Independent inspection then found LLVM coverage instrumentation, so those binaries are superseded pending the strengthened final rebuild. The [coverage finding](defects/release-coverage/finding.json) retains their exact source and binary hashes. Their native icon metadata for iPhone/iPad and launch dictionary containing only `UIColorName: LaunchBackground` were valid. Every Release Mach-O slice declares minimum iOS 17.0 and its correct simulator/device platform; neither Release executable contains development launch hooks, and neither app contains signing material. These are actual compiler/resource checks, not iOS 17 or physical-device runtime validation. Physical VoiceOver/Switch Control/keyboard focus and real launch/device appearance remain device-validation evidence requirements; source modifiers alone are not human certification.
+diff --git a/ios/Config/Release.xcconfig b/ios/Config/Release.xcconfig
+index d27881e..cc10e47 100644
+--- a/ios/Config/Release.xcconfig
++++ b/ios/Config/Release.xcconfig
+@@ -6,3 +6,8 @@ DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+ ENABLE_TESTABILITY = NO
+ GCC_OPTIMIZATION_LEVEL = s
+ VALIDATE_PRODUCT = YES
++
++// Distribution builds must not carry LLVM coverage counters or runtime hooks.
++ENABLE_CODE_COVERAGE = NO
++CLANG_ENABLE_CODE_COVERAGE = NO
++CLANG_COVERAGE_MAPPING = NO
+diff --git a/ios/PicPacPoe.xcodeproj/project.pbxproj b/ios/PicPacPoe.xcodeproj/project.pbxproj
+index df8d0a3..e5c3cf0 100644
+--- a/ios/PicPacPoe.xcodeproj/project.pbxproj
++++ b/ios/PicPacPoe.xcodeproj/project.pbxproj
+@@ -435,6 +435,9 @@
+ 				CLANG_WARN_UNREACHABLE_CODE = YES;
+ 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+ 				COPY_PHASE_STRIP = YES;
++				ENABLE_CODE_COVERAGE = NO;
++				CLANG_ENABLE_CODE_COVERAGE = NO;
++				CLANG_COVERAGE_MAPPING = NO;
+ 				ENABLE_NS_ASSERTIONS = NO;
+ 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+ 				GCC_C_LANGUAGE_STANDARD = gnu17;
+diff --git a/ios/PicPacPoe.xcodeproj/xcshareddata/xcschemes/PicPacPoe.xcscheme b/ios/PicPacPoe.xcodeproj/xcshareddata/xcschemes/PicPacPoe.xcscheme
+index f13a964..8957f50 100644
+--- a/ios/PicPacPoe.xcodeproj/xcshareddata/xcschemes/PicPacPoe.xcscheme
++++ b/ios/PicPacPoe.xcodeproj/xcshareddata/xcschemes/PicPacPoe.xcscheme
+@@ -43,7 +43,8 @@
+       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+       shouldUseLaunchSchemeArgsEnv = "YES"
+-      shouldAutocreateTestPlan = "YES">
++      shouldAutocreateTestPlan = "YES"
++      codeCoverageEnabled = "NO">
+       <Testables>
+          <TestableReference
+             skipped = "NO"
+diff --git a/ios/PicPacPoeTests/PicPacPoeIntegrationTests.swift b/ios/PicPacPoeTests/PicPacPoeIntegrationTests.swift
+index 49a7532..06a6a3e 100644
+--- a/ios/PicPacPoeTests/PicPacPoeIntegrationTests.swift
++++ b/ios/PicPacPoeTests/PicPacPoeIntegrationTests.swift
+@@ -99,7 +99,7 @@ final class PicPacPoeIntegrationTests: XCTestCase {
+ 
+     @MainActor
+     func testTransitionSpeechNeverReplaysRestorationOrDuplicatesFocusedContent() throws {
+-        let token = TurnToken(22)
++        let token = TurnToken(18)
+         let pending = try PicPacState(board: Board(symbols: [.x, nil, nil, nil, nil, nil, nil, nil, nil]),
+                                       activePlayer: .two, remainingX: 4, remainingO: 4,
+                                       phase: .awaitingPlacement(held: .o, token: token), starter: .one, revision: 1)
+@@ -205,8 +205,11 @@ final class PicPacPoePerformanceIntegrationTests: XCTestCase {
+         let scene = try XCTUnwrap(UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }.first)
+         let window = try XCTUnwrap(scene.windows.first(where: \.isKeyWindow))
+         let previousController = window.rootViewController
+-        // Replace the visible controller so an obscured second Home timeline
+-        // cannot contaminate the sample; restore the original test host after.
++        // Render one visible hierarchy, then restore the original app host.
++        // A UIKit-created host has no SwiftUI Scene environment: supply the
++        // actual foreground phase explicitly. SceneStorage uses its default
++        // here; persistence of the real app scene is exercised by XCUITest.
++        XCTAssertEqual(scene.activationState, .foregroundActive)
+         defer {
+             window.rootViewController = previousController
+             window.makeKeyAndVisible()
+@@ -220,7 +223,7 @@ final class PicPacPoePerformanceIntegrationTests: XCTestCase {
+             await coordinator.restore()
+             await coordinator.updateSettings(AppSettings(soundEnabled: false, hapticsEnabled: false, reducedMotion: reduced))
+             await coordinator.markTitleEntranceConsumed()
+-            window.rootViewController = UIHostingController(rootView: PicPacPoeRoot(coordinator: coordinator))
++            window.rootViewController = UIHostingController(rootView: PicPacPoeRoot(coordinator: coordinator).environment(\.scenePhase, .active))
+             window.makeKeyAndVisible()
+             try await Task.sleep(for: .milliseconds(350))
+             XCTAssertNotNil(window.rootViewController?.view.window)
+@@ -292,7 +295,7 @@ final class PicPacPoePerformanceIntegrationTests: XCTestCase {
+         let coordinator = GameCoordinator(drawRandom: HostedDrawProbe(), aiWorker: worker, store: InMemoryLocalStateStore())
+         await coordinator.restore()
+         await coordinator.updateSettings(AppSettings(soundEnabled: false, hapticsEnabled: false))
+-        window.rootViewController = UIHostingController(rootView: PicPacPoeRoot(coordinator: coordinator))
++        window.rootViewController = UIHostingController(rootView: PicPacPoeRoot(coordinator: coordinator).environment(\.scenePhase, .active))
+         window.makeKeyAndVisible()
+         await coordinator.startPicPacAI(difficulty: .hard)
+         try await waitForPlaying(coordinator)
+@@ -331,7 +334,9 @@ final class PicPacPoePerformanceIntegrationTests: XCTestCase {
+             "schemaVersion": 1, "environment": simulatorEnvironment,
+             "measurement": "CADisplayLink delivered timestamps and actual main-runloop callback intervals",
+             "requestedDisplayLinkHz": 60, "gpuCompletionMeasured": false,
+-            "physicalDeviceEvidence": false, "samples": samples, "liveHardStages": stages,
++            "physicalDeviceEvidence": false,
++            "viewHosting": "Real app views in a visible UIKit UIHostingController with explicit active scene environment; SceneStorage uses default values. Real SwiftUI scene persistence and OS interruptions are covered separately by XCUITest.",
++            "samples": samples, "liveHardStages": stages,
+             "homeDrawCalls": 0, "homeDecorativeSnapshotWrites": 0,
+             "homeTemporalSequences": homeSequences
+         ])
+diff --git a/ios/Scripts/verify-unsigned-app.py b/ios/Scripts/verify-unsigned-app.py
+index d5f30eb..4d24ae0 100755
+--- a/ios/Scripts/verify-unsigned-app.py
++++ b/ios/Scripts/verify-unsigned-app.py
+@@ -71,6 +71,15 @@ if not platforms or any(value != expected_macho for value in platforms):
+     errors.append(f'Mach-O platform mismatch: {platforms}')
+ if len(minimums) != len(platforms) or any(value != '17.0' for value in minimums):
+     errors.append(f'Mach-O deployment target mismatch: {minimums}')
++# Instrumented code can exist without DEBUG launch switches. Inspect every
++# Mach-O slice's actual sections, including statically linked package code.
++sections = subprocess.run(
++    ['xcrun', 'llvm-objdump', '--section-headers', str(executable)],
++    check=True, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
++    env=dict(os.environ, DEVELOPER_DIR=os.environ.get('XCODE_DEVELOPER_DIR', os.environ.get('DEVELOPER_DIR', '/Applications/Xcode.app/Contents/Developer'))),
++).stdout
++if re.search(r'__llvm_(?:prf|cov)', sections):
++    errors.append('Release binary contains LLVM coverage/profile instrumentation')
+ # User-facing identifiers are legitimate in Release. Only development launch
+ # switches/fixture and diagnostic type symbols are forbidden here.
+ for marker in (
+@@ -81,4 +90,4 @@ for marker in (
+ if errors:
+     print('\n'.join('ERROR: ' + message for message in errors), file=sys.stderr)
+     raise SystemExit(1)
+-print(f'PASS: unsigned Release {args.platform} artifact; Mach-O iOS 17 minimum; iPhone+iPad; native icon/launch assets and canonical resources; no development launch hooks; compile-time coverage only')
++print(f'PASS: unsigned Release {args.platform} artifact; Mach-O iOS 17 minimum; iPhone+iPad; native icon/launch assets and canonical resources; no development launch hooks or LLVM coverage instrumentation; compile-time compatibility only')
+diff --git a/ios/Scripts/verify-xcresult.py b/ios/Scripts/verify-xcresult.py
+index ddb7070..ff3c520 100644
+--- a/ios/Scripts/verify-xcresult.py
++++ b/ios/Scripts/verify-xcresult.py
+@@ -1,5 +1,5 @@
+ #!/usr/bin/env python3
+-"""Reject incomplete XCTest suites; allow only two named/reasoned Test skips."""
++"""Reject incomplete XCTest suites; require every configured method to pass."""
+ import argparse
+ import hashlib
+ import json
+@@ -14,11 +14,6 @@ SOURCES = {
+     'PicPacPoeTests': ROOT / 'ios/PicPacPoeTests/PicPacPoeIntegrationTests.swift',
+     'PicPacPoeUITests': ROOT / 'ios/PicPacPoeUITests/PicPacPoeUITests.swift',
+ }
+-TEST_SKIPS = {
+-    'PicPacPoeIntegrationTests/testDebugCaptureSnapshotsRestoreWithoutLosingStage()': 'Capture fixtures are DEBUG-only; governed simulator captures exercise them in Debug.',
+-    'PicPacPoeIntegrationTests/testSettingsCaptureMatchesCanonicalControlStates()': 'Capture fixture settings are DEBUG-only; governed captures exercise them in Debug.',
+-}
+-
+ 
+ def run(*args):
+     return subprocess.run([str(x) for x in args], cwd=ROOT, env=ENV, check=True,
+@@ -28,8 +23,8 @@ def run(*args):
+ def inventory(path, configuration):
+     # The Swift parser recognizes real declarations. Comments, raw/multiline
+     # strings and nested local functions must not inflate a regex source count.
+-    parsed = run('xcrun', 'swiftc', '-frontend', '-dump-parse', '-D',
+-                 'DEBUG' if configuration == 'Debug' else 'TESTING', path)
++    conditions = ['-D', 'DEBUG'] + (['-D', 'TESTING'] if configuration == 'Test' else [])
++    parsed = run('xcrun', 'swiftc', '-frontend', '-dump-parse', *conditions, path)
+     current = None
+     methods = []
+     for line in parsed.splitlines():
+@@ -56,39 +51,7 @@ def walk(value):
+             yield from walk(child)
+ 
+ 
+-def scalar(value):
+-    return value.get('_value') if isinstance(value, dict) else None
+-
+-
+-def skip_reasons(result, identifiers):
+-    # The pinned Xcode's typed result schema retains the exact skip message in
+-    # ActionTestSummary.skipNoticeSummary, reachable through testsRef/summaryRef.
+-    def obj(identifier=None):
+-        args = ['xcrun', 'xcresulttool', 'get', 'object', '--legacy', '--format', 'json', '--path', result]
+-        if identifier:
+-            args += ['--id', identifier]
+-        return json.loads(run(*args))
+-    root = obj()
+-    references = {scalar(node['testsRef'].get('id')) for node in walk(root) if 'testsRef' in node}
+-    reasons = {}
+-    for reference in references:
+-        if not reference:
+-            continue
+-        for node in walk(obj(reference)):
+-            identifier = scalar(node.get('identifier'))
+-            if identifier not in identifiers or scalar(node.get('testStatus')) != 'Skipped':
+-                continue
+-            detail = node
+-            if 'skipNoticeSummary' not in detail and 'summaryRef' in detail:
+-                detail = obj(scalar(detail['summaryRef'].get('id')))
+-            message = scalar(detail.get('skipNoticeSummary', {}).get('message'))
+-            if identifier in reasons:
+-                raise ValueError('Duplicate skip notice: ' + identifier)
+-            reasons[identifier] = message
+-    return reasons
+-
+-
+-def validate(expected, summary, nodes, allowed, reasons):
++def validate(expected, summary, nodes):
+     errors = []
+     cases = [node for node in walk(nodes) if node.get('nodeType') == 'Test Case']
+     identifiers = [node.get('nodeIdentifier') for node in cases]
+@@ -100,14 +63,11 @@ def validate(expected, summary, nodes, allowed, reasons):
+         errors.append(f'Test inventory differs: missing={missing}, unexpected={extra}')
+     observed = {node.get('nodeIdentifier'): node.get('result') for node in cases}
+     for identifier in expected:
+-        wanted = 'Skipped' if identifier in allowed else 'Passed'
++        wanted = 'Passed'
+         if observed.get(identifier) != wanted:
+             errors.append(f'{identifier}: expected {wanted}, got {observed.get(identifier)}')
+-    for identifier, reason in allowed.items():
+-        if reasons.get(identifier) not in (reason, 'Test skipped - ' + reason):
+-            errors.append(f'{identifier}: missing or changed skip reason: {reasons.get(identifier)!r}')
+     wanted_counts = {'result': 'Passed', 'totalTestCount': len(expected),
+-                     'passedTests': len(expected) - len(allowed), 'skippedTests': len(allowed),
++                     'passedTests': len(expected), 'skippedTests': 0,
+                      'failedTests': 0, 'expectedFailures': 0}
+     for key, wanted in wanted_counts.items():
+         if summary.get(key) != wanted:
+@@ -124,25 +84,21 @@ def main():
+     args = parser.parse_args()
+     source = SOURCES[args.target]
+     expected = inventory(source, args.configuration)
+-    allowed = TEST_SKIPS if args.target == 'PicPacPoeTests' and args.configuration == 'Test' else {}
+     summary = json.loads(run('xcrun', 'xcresulttool', 'get', 'test-results', 'summary', '--path', args.result))
+     nodes = json.loads(run('xcrun', 'xcresulttool', 'get', 'test-results', 'tests', '--path', args.result))
+-    skipped = {node.get('nodeIdentifier') for node in walk(nodes)
+-               if node.get('nodeType') == 'Test Case' and node.get('result') == 'Skipped'}
+-    reasons = skip_reasons(args.result, skipped) if skipped else {}
+-    errors, observed = validate(expected, summary, nodes, allowed, reasons)
++    errors, observed = validate(expected, summary, nodes)
+     report = {'schemaVersion': 1, 'pass': not errors, 'target': args.target,
+               'configuration': args.configuration, 'source': str(source.relative_to(ROOT)),
+               'sourceSHA256': hashlib.sha256(source.read_bytes()).hexdigest(),
+               'inventoryMethod': 'Swift parser direct class/extension function declarations',
+               'expectedTests': expected, 'observedTests': observed,
+-              'allowedSkips': allowed, 'observedSkipReasons': reasons,
++              'allowedSkips': {},
+               'summary': summary, 'errors': errors}
+     args.output.parent.mkdir(parents=True, exist_ok=True)
+     args.output.write_text(json.dumps(report, indent=2) + '\n')
+     if errors:
+         raise SystemExit('\n'.join('ERROR: ' + error for error in errors))
+-    print(f'PASS: exact {args.target} inventory; {len(expected)-len(allowed)} passed; {len(allowed)} specifically governed skips')
++    print(f'PASS: exact {args.target} inventory; {len(expected)} passed; zero skips')
+ 
+ 
+ if __name__ == '__main__':

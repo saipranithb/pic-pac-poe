@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "claim": "Original capture manifests and their historical absolute paths are unchanged. These verified byte-identical repository paths are the portable retained packages. Canonical reference paths remain relative to repository root.",
+  "packages": [
+    {
+      "originalPath": "/tmp/picpac-phase3-baseline-post-layout-20260925",
+      "retainedPath": "baselines",
+      "byteIdenticalCopy": true,
+      "files": 352,
+      "checksumSHA256": "5862cbf9568b9e09a4bdaea5873c92b8b4e886aa2ec325849b104a3a35a19cd5"
+    },
+    {
+      "originalPath": "/tmp/picpac-phase3-repeat-post-layout-20260925",
+      "retainedPath": "repeated-captures",
+      "byteIdenticalCopy": true,
+      "files": 347,
+      "checksumSHA256": "87ba76d2aed228c12e1f4c5f02fa7d5c0ca3949b23274957cc8d562734b5e825"
+    },
+    {
+      "originalPath": "/tmp/picpac-phase3-snapshot-calibration-20260925",
+      "retainedPath": "snapshot-calibration",
+      "byteIdenticalCopy": true,
+      "files": 8,
+      "checksumSHA256": "55379c4209e6e466d5868091abd7d4db44e665526592f6725d0c4fc045888386"
+    },
+    {
+      "originalPath": "/tmp/picpac-phase3-consolidated-visual-20260925",
+      "retainedPath": "visual-overview",
+      "byteIdenticalCopy": true,
+      "files": 7,
+      "checksumSHA256": "0ecd16817a238c8ca8695dfd745166ebd0504f4d178fa6c6a8e586e1ab96e8a4"
+    },
+    {
+      "originalPath": "/tmp/picpac-phase3-large-type-layout-after-20260925",
+      "retainedPath": "defects/large-type-layout-20260925/post-fix",
+      "byteIdenticalCopy": true,
+      "files": 22,
+      "checksumSHA256": "cf3dffbf6c44e687c276814afdf788eedc3408cb98602378b96a8da593a66b44"
+    },
+    {
+      "originalPath": "/tmp/picpac-phase3-unsigned-builds-layout-final-unsandboxed-20260925",
+      "retainedPath": "unsigned-builds-layout-final-20260925",
+      "byteIdenticalCopy": true,
+      "files": 19,
+      "checksumSHA256": "04ea7747d6ac2164be5259d349a83596a13765cadf813e6f2319a7b975dcd5ac"
+    },
+    {
+      "originalPath": "/tmp/picpac-phase3-release-launch-layout-final-20260925",
+      "retainedPath": "release-launch-layout-final-20260925",
+      "byteIdenticalCopy": true,
+      "files": 6,
+      "checksumSHA256": "21f43ed7041fc4e510e76b53acc67edb174359d7fc2999f138bd68de8b32d6ff"
+    },
+    {
+      "originalPath": "/tmp/picpac-phase3-post-layout-lifecycle-20260925",
+      "retainedPath": "lifecycle-performance/post-layout-20260925",
+      "byteIdenticalCopy": true,
+      "files": 118,
+      "checksumSHA256": "2bc45c2b0163765ba329746fca81458f973f7f1afa1c804f1cb3c7e731774c5c"
+    },
+    {
+      "originalPath": "/tmp/picpac-phase3-ui-flows-layout-final-20260925",
+      "retainedPath": "ui-flows-layout-final-20260925",
+      "byteIdenticalCopy": true,
+      "files": 390,
+      "checksumSHA256": "6e6c410fb2b7bcc6cd68c32806f5621611c6a9b018f4c9cbe5435572745d688f"
+    }
+  ]
+}

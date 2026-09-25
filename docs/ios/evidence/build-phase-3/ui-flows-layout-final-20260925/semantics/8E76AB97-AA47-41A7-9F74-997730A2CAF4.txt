@@ -1,0 +1,44 @@
+Optional(Attributes: Application, 0x115cae1c0, pid: 20959, label: 'Pic-Pac-Poe'
+Element subtree:
+ →Application, 0x115cae1c0, pid: 20959, label: 'Pic-Pac-Poe'
+    Window (Main), 0x115cae080, {{0.0, 0.0}, {402.0, 874.0}}
+      Other, 0x115cac8c0, {{0.0, 0.0}, {402.0, 874.0}}
+        Other, 0x115cad2c0, {{0.0, 0.0}, {402.0, 874.0}}
+          Other, 0x115cad540, {{0.0, 0.0}, {402.0, 874.0}}
+            Other, 0x115cac000, {{0.0, 0.0}, {402.0, 874.0}}
+              ScrollView, 0x115cac140, {{0.0, 0.0}, {402.0, 874.0}}, identifier: 'settings-screen'
+                Other, 0x115cac280, {{0.0, 62.0}, {402.0, 585.7}}
+                  Button, 0x115cacb40, {{20.0, 78.0}, {48.0, 48.0}}, identifier: 'back', label: 'Back'
+                  StaticText, 0x115cac640, {{76.0, 84.0}, {123.7, 36.0}}, label: 'Settings'
+                  StaticText, 0x115cad400, {{20.0, 154.0}, {78.0, 20.3}}, label: 'Feedback'
+                  Switch, 0x115cade00, {{20.0, 190.3}, {362.0, 46.0}}, identifier: 'setting-sound', label: 'Sound, Small tones for draws, moves, and results.', value: 1
+                    StaticText, 0x115caee40, {{20.0, 190.3}, {60.7, 24.0}}, label: 'Sound'
+                    StaticText, 0x115cadf40, {{20.0, 218.3}, {288.3, 18.0}}, label: 'Small tones for draws, moves, and results.'
+                    Switch, 0x115cadb80, {{321.0, 199.3}, {63.0, 28.0}}, value: 1
+                  Switch, 0x115cacdc0, {{20.0, 268.7}, {362.0, 46.0}}, identifier: 'setting-haptics', label: 'Haptics, Vibrate on draws, moves, and results.', value: 1
+                    StaticText, 0x115cacc80, {{20.0, 268.7}, {72.7, 24.0}}, label: 'Haptics'
+                    StaticText, 0x115cad7c0, {{20.0, 296.7}, {256.3, 18.0}}, label: 'Vibrate on draws, moves, and results.'
+                    Switch, 0x115cae300, {{321.0, 277.7}, {63.0, 28.0}}, value: 1
+                  Switch, 0x115cae440, {{20.0, 347.0}, {362.0, 66.0}}, identifier: 'setting-motion', label: 'Reduced motion, Keep every turn readable without extra movement.', value: 0
+                    StaticText, 0x115cae580, {{20.0, 347.0}, {153.7, 24.0}}, label: 'Reduced motion'
+                    StaticText, 0x115cae6c0, {{20.0, 375.0}, {230.7, 38.0}}, label: 'Keep every turn readable without extra movement.'
+                    Switch, 0x115cae800, {{321.0, 366.0}, {63.0, 28.0}}, value: 0
+                  StaticText, 0x115cae940, {{20.0, 457.0}, {55.0, 20.3}}, label: 'Theme'
+                  Button, 0x115caea80, {{20.0, 489.3}, {115.3, 48.0}}, identifier: 'theme-system', label: 'System', Selected
+                    Image, 0x115caed00, {{41.7, 507.7}, {12.0, 11.3}}, identifier: 'checkmark', label: 'Selected', Selected
+                    StaticText, 0x115caebc0, {{60.2, 504.3}, {55.3, 18.0}}, label: 'System'
+                  Button, 0x115caef80, {{143.3, 489.3}, {115.3, 48.0}}, identifier: 'theme-light', label: 'Light'
+                  Button, 0x115caf0c0, {{266.7, 489.3}, {115.3, 48.0}}, identifier: 'theme-dark', label: 'Dark'
+                  StaticText, 0x115caf200, {{20.0, 585.7}, {339.7, 38.0}}, label: 'Everything stays on this device. No account, ads, analytics, or internet access.'
+                Other, 0x115caf340, {{369.0, 62.0}, {30.0, 750.0}}, label: 'Vertical scroll bar, 1 page', value: 0%
+                  Other, 0x115caf480, {{396.0, 257.3}, {3.0, 551.7}}
+                Other, 0x115caf5c0, {{369.0, 62.0}, {30.0, 750.0}}, label: 'Vertical scroll bar, 1 page', value: 0%
+                  Other, 0x115caf700, {{396.0, 257.3}, {3.0, 551.7}}
+Path to element:
+ →Application, 0x115cae1c0, pid: 20959, label: 'Pic-Pac-Poe'
+Query chain:
+ →Find: Target Application 'dev.saipranith.picpacpoe'
+  Output: {
+    Application, 0x115caf840, pid: 20959, label: 'Pic-Pac-Poe'
+  }
+)

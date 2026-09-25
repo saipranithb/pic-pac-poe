@@ -1,0 +1,70 @@
+[
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/sequence-clock10-human-reveal--uptime-5072732p625.png",
+    "label": "Human reveal\nx10 controlled holds / uptime 5072732.625s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/sequence-clock10-human-playing--uptime-5072739p797.png",
+    "label": "Human placement ready\nx10 controlled holds / uptime 5072739.797s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/sequence-clock10-human-placed-computer-turn-start--uptime-5072740p219.png",
+    "label": "Human placed / computer turn\nx10 controlled holds / uptime 5072740.219s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/sequence-clock10-computer-reveal--uptime-5072743p345.png",
+    "label": "Computer reveal\nx10 controlled holds / uptime 5072743.345s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/sequence-clock10-computer-target--uptime-5072750p533.png",
+    "label": "Computer target\nx10 controlled holds / uptime 5072750.533s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/sequence-clock10-computer-place--uptime-5072752p743.png",
+    "label": "Computer place\nx10 controlled holds / uptime 5072752.743s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/sequence-clock10-computer-settle--uptime-5072756p950.png",
+    "label": "Computer settle\nx10 controlled holds / uptime 5072756.950s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/terminal-settling-draw-before-interruption--uptime-5073028p283.png",
+    "label": "Draw settle / before interrupt\nx20 controlled holds / uptime 5073028.283s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/terminal-settling-draw-restored-settlement--uptime-5073033p417.png",
+    "label": "Draw restored settlement\nx20 controlled holds / uptime 5073033.417s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/terminal-settling-draw-result--uptime-5073041p553.png",
+    "label": "Draw result\nx20 controlled holds / uptime 5073041.553s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/terminal-settling-win-before-interruption--uptime-5073046p480.png",
+    "label": "Win settle / before interrupt\nx20 controlled holds / uptime 5073046.480s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/terminal-settling-win-restored-settlement--uptime-5073048p762.png",
+    "label": "Win restored settlement\nx20 controlled holds / uptime 5073048.762s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/terminal-settling-win-result--uptime-5073057p973.png",
+    "label": "Win result\nx20 controlled holds / uptime 5073057.973s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/target-before-relaunch--uptime-5072974p077.png",
+    "label": "Target before relaunch\nx20 controlled holds / uptime 5072974.077s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/target-after-relaunch--uptime-5072979p226.png",
+    "label": "Target after relaunch\nx20 controlled holds / uptime 5072979.226s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/target-committed-once--uptime-5072983p420.png",
+    "label": "Target committed once\nx20 controlled holds / uptime 5072983.420s"
+  },
+  {
+    "path": "/tmp/picpac-phase3-ui-flows-layout-final-20260925/frames/committed-target-after-relaunch--uptime-5072988p575.png",
+    "label": "Committed target restored\nx20 controlled holds / uptime 5072988.575s"
+  }
+]

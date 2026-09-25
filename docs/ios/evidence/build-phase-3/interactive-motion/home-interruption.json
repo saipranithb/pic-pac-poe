@@ -1,0 +1,10 @@
+{
+  "start": "2026-09-21T14:05:01.088Z",
+  "inactiveObserved": "2026-09-21T14:05:32.012Z",
+  "resumedObserved": "2026-09-21T14:06:14.469Z",
+  "file": "home-interruption.mov",
+  "actions": "Actual native Home button backgrounds the app, then the Pic-Pac-Poe launcher icon resumes it. Home restores immediately; the title does not replay. Full original framebuffer retained.",
+  "limitation": "The hidden application's animation cannot be directly seen in the SpringBoard portion. Separate hosted-window inactive frames and zero-RNG/state/write/feedback assertions establish that decorative animation stops.",
+  "sourceCommit": "bf384da11190cb45ff21866a6d804c85a35ce333",
+  "noCrop": true
+}

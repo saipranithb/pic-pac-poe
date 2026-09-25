@@ -1,0 +1,82 @@
+{
+  "durationSeconds": 91.16666666666667,
+  "encodedHeight": 2622,
+  "encodedWidth": 1206,
+  "extraction": "AVAssetImageGenerator; preferred orientation applied; zero requested tolerance; no resizing/cropping. actualSeconds records the returned video presentation timestamp, which can precede requestedSeconds during a held frame.",
+  "frames": [
+    {
+      "actualSeconds": 0,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-000.png",
+      "requestedSeconds": 0,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 14.973333333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-001.png",
+      "requestedSeconds": 15,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 29.94333333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-002.png",
+      "requestedSeconds": 30,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 42.25,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-003.png",
+      "requestedSeconds": 45,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 59.355,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-004.png",
+      "requestedSeconds": 60,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 66.31333333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-005.png",
+      "requestedSeconds": 70,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 76.305,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-006.png",
+      "requestedSeconds": 80,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 82.45166666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-007.png",
+      "requestedSeconds": 85,
+      "width": 1206
+    }
+  ],
+  "input": "keyboard-classic.mov",
+  "nominalFrameRate": 0.9598656296730042,
+  "preferredTransform": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+  ]
+}

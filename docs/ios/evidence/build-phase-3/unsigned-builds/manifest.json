@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "commit": "2a04a4858d14b22f2f7dd0d4592ed55f9d3a6e68",
+    "branch": "codex/ios-native-parity",
+    "status": [],
+    "iosSourceSHA256": "6e740a682012a9dfb099ed0965e65be2782e806faa3b5499a0c61cc29ae9f574",
+    "buildInputSHA256": "fa7edfd6ad37fed863f0b6231da42ff248cf709c7e084e82d1f3d36ec573cfcd",
+    "externalInputs": {
+      "app/src/main/res/font/fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+      "app/src/main/res/font/fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9",
+      "app/src/main/assets/licenses/fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+      "docs/ios-handoff/reference/screenshot-manifest.json": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+    }
+  },
+  "startedAt": "2026-09-25T08:40:23.983752+00:00",
+  "builds": [
+    {
+      "configuration": "Debug",
+      "sdk": "iphonesimulator",
+      "destination": "generic/platform=iOS Simulator",
+      "command": [
+        "xcodebuild",
+        "-project",
+        "/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/PicPacPoe.xcodeproj",
+        "-scheme",
+        "PicPacPoe",
+        "-configuration",
+        "Debug",
+        "-enableCodeCoverage",
+        "NO",
+        "-destination",
+        "generic/platform=iOS Simulator",
+        "-derivedDataPath",
+        "/tmp/picpac-phase3-recovery-build-2a04a4858d14-20260925T084023Z/iphonesimulator",
+        "CODE_SIGNING_ALLOWED=NO",
+        "CODE_SIGNING_REQUIRED=NO",
+        "build"
+      ],
+      "exitCode": 64,
+      "elapsedSeconds": 1.916382666,
+      "completedAt": "2026-09-25T08:40:27.462579+00:00"
+    }
+  ],
+  "hostedActionsExecuted": false,
+  "minimumRuntimeExecuted": false,
+  "physicalDeviceExecuted": false,
+  "claim": "Local unsigned Debug/Release simulator and device SDK compilation. These commands reproduce the unsigned CI build gates with an explicitly selected existing local Xcode; no hosted CI, iOS 17 runtime, physical-device, signing or upload proof.",
+  "toolchain": {
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "swift": "swift-driver version: 1.148.6 Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\nTarget: arm64-apple-macosx26.0",
+    "macOS": "26.5.2",
+    "architecture": "arm64"
+  }
+}

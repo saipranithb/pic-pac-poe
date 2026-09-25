@@ -1,0 +1,9 @@
+Monitoring boot status for PicPac Phase3 UI (F36B6568-2C34-4D22-A88D-0AB8C240E6CA).
+[2026-09-25 09:56:22 +0000] Status=2, isTerminal=NO, Elapsed=00:01.
+	Waiting on Data Migration
+		Reason:(null)
+		Migration Elapsed:00:00 seconds
+
+[2026-09-25 09:56:26 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:05.
+	Finished
+

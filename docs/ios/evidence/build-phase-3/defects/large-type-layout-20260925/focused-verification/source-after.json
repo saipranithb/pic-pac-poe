@@ -1,0 +1,18 @@
+{
+  "commit": "ea2a1a2f7ffa26a165715f8af28422a99b335c22",
+  "branch": "codex/ios-native-parity",
+  "status": [
+    "M ios/PicPacPoe/GameView.swift",
+    " M ios/PicPacPoe/InfoViews.swift",
+    " M ios/PicPacPoeUITests/PicPacPoeUITests.swift",
+    "?? docs/ios/evidence/build-phase-3/defects/large-type-layout-20260925/"
+  ],
+  "iosSourceSHA256": "7294c6d0018d9c3b39bfb1c5c56fec2ea72a1554a02a6e3a3dc95e93d041e482",
+  "buildInputSHA256": "2be2a20569eb23b3b22553c8e39ed8ce25ebeeb23fbab3665a8a3d175eb2dec3",
+  "externalInputs": {
+    "app/src/main/res/font/fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+    "app/src/main/res/font/fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9",
+    "app/src/main/assets/licenses/fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+    "docs/ios-handoff/reference/screenshot-manifest.json": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+  }
+}

@@ -1,0 +1,176 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [dev, main, codex/ios-native-parity]
+  pull_request:
+    branches: [dev, main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+  XCODE_DEVELOPER_DIR: /Applications/Xcode_26.6.app/Contents/Developer
+
+jobs:
+  package:
+    name: Shared fixtures and native package
+    runs-on: macos-26
+    timeout-minutes: 20
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Assert existing pinned Apple environment
+        run: bash ios/Scripts/verify-apple-toolchain.sh
+      - name: Verify handoff, exact fixture bytes and CI governance
+        run: python3 ios/Scripts/verify-ci-contract.py
+      - name: Test Swift rules, fixture consumers, AI and restoration
+        run: swift test --package-path ios/Packages/PicPacKit
+      - name: Record gate outcome
+        if: always()
+        run: echo 'Native package and shared-fixture gate — ${{ job.status }}' >> "$GITHUB_STEP_SUMMARY"
+
+  app-tests:
+    name: ${{ matrix.label }}
+    runs-on: macos-26
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: Hosted native integration
+            configuration: Test
+            target: PicPacPoeTests
+          - label: Player-driven UI flows
+            configuration: Debug
+            target: PicPacPoeUITests
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Assert existing pinned Apple environment
+        run: bash ios/Scripts/verify-apple-toolchain.sh
+      - name: Run unsigned simulator tests
+        run: >-
+          xcodebuild
+          -project ios/PicPacPoe.xcodeproj
+          -scheme PicPacPoe
+          -configuration '${{ matrix.configuration }}'
+          -only-testing:'${{ matrix.target }}'
+          -destination 'platform=iOS Simulator,name=iPhone 17 Pro,OS=26.5'
+          -parallel-testing-enabled NO
+          -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-test"
+          -resultBundlePath "$RUNNER_TEMP/${{ matrix.target }}.xcresult"
+          CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+          test
+      - name: Require the complete XCTest inventory without skips
+        if: always()
+        run: >-
+          python3 ios/Scripts/verify-xcresult.py
+          --result "$RUNNER_TEMP/${{ matrix.target }}.xcresult"
+          --target '${{ matrix.target }}'
+          --configuration '${{ matrix.configuration }}'
+          --output "$RUNNER_TEMP/${{ matrix.target }}-inventory.json"
+      - name: Preserve test results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ios-${{ matrix.target }}-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/${{ matrix.target }}.xcresult
+            ${{ runner.temp }}/${{ matrix.target }}-inventory.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Record gate outcome
+        if: always()
+        run: echo '${{ matrix.label }} — ${{ job.status }}; unsigned iOS 26.5 simulator evidence only' >> "$GITHUB_STEP_SUMMARY"
+
+  unsigned-build:
+    name: Unsigned ${{ matrix.configuration }} (${{ matrix.sdk }})
+    runs-on: macos-26
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
+        sdk: [iphonesimulator, iphoneos]
+        include:
+          - sdk: iphonesimulator
+            destination: generic/platform=iOS Simulator
+          - sdk: iphoneos
+            destination: generic/platform=iOS
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Assert existing pinned Apple environment
+        run: bash ios/Scripts/verify-apple-toolchain.sh
+      - name: Build unsigned app
+        run: >-
+          xcodebuild
+          -project ios/PicPacPoe.xcodeproj
+          -scheme PicPacPoe
+          -configuration '${{ matrix.configuration }}'
+          -destination '${{ matrix.destination }}'
+          -derivedDataPath "$RUNNER_TEMP/pic-pac-poe-build"
+          CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO
+          ENABLE_CODE_COVERAGE=NO CLANG_ENABLE_CODE_COVERAGE=NO CLANG_COVERAGE_MAPPING=NO
+          build
+      - name: Check Release identity and development-hook exclusion
+        if: matrix.configuration == 'Release'
+        run: python3 ios/Scripts/verify-unsigned-app.py --platform '${{ matrix.sdk }}' "$RUNNER_TEMP/pic-pac-poe-build/Build/Products/Release-${{ matrix.sdk }}/PicPacPoe.app"
+      - name: Preserve failure logs
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ios-${{ matrix.configuration }}-${{ matrix.sdk }}-build-${{ github.run_id }}
+          path: ${{ runner.temp }}/pic-pac-poe-build/Logs/**
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Record gate outcome
+        if: always()
+        run: echo 'Unsigned ${{ matrix.configuration }} (${{ matrix.sdk }}) build — ${{ job.status }}; iOS 17.0 is compile-time coverage; device SDK build is not physical-device validation' >> "$GITHUB_STEP_SUMMARY"
+
+  snapshots:
+    name: Governed simulator snapshots
+    runs-on: macos-26
+    # Seven fresh hosted simulators take about five minutes each to start.
+    # Preserve the complete matrix plus bounded presentation checks and upload.
+    timeout-minutes: 90
+    steps:
+      - name: Check out source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Assert existing pinned Apple environment
+        run: bash ios/Scripts/verify-apple-toolchain.sh
+      - name: Capture actual simulator matrix
+        run: python3 ios/Scripts/snapshot_phase3.py capture --output "$RUNNER_TEMP/pic-pac-poe-snapshots"
+      - name: Compare approved baselines without updating them
+        run: >-
+          python3 ios/Scripts/snapshot_phase3.py compare
+          --baseline docs/ios/evidence/build-phase-3/baselines
+          --candidate "$RUNNER_TEMP/pic-pac-poe-snapshots"
+          --output "$RUNNER_TEMP/snapshot-comparison.json"
+      - name: Preserve captures and comparison report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: ios-snapshots-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/pic-pac-poe-snapshots/**
+            ${{ runner.temp }}/snapshot-comparison.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Record gate outcome
+        if: always()
+        run: echo 'Governed snapshots — ${{ job.status }}; same-toolchain 99.5% agreement at 2/255 per-channel tolerance; baseline changes require visual review' >> "$GITHUB_STEP_SUMMARY"

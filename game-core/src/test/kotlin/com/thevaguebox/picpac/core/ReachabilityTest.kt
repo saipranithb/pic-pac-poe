@@ -4,6 +4,8 @@ import com.thevaguebox.picpac.core.ai.PicPacChanceState
 import com.thevaguebox.picpac.core.ai.PicPacDecisionState
 import com.thevaguebox.picpac.core.ai.PublicPicPacSearchModel
 import com.thevaguebox.picpac.core.ai.SearchTransition
+import com.thevaguebox.picpac.testing.GoldenFixtureDocument
+import com.thevaguebox.picpac.testing.requireInt
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -43,10 +45,11 @@ class ReachabilityTest {
         decisionVisitor = ::visitDecisionImpl
         visitChance(PicPacChanceState(Board.EMPTY, 5, 5))
 
-        assertEquals(11_065, chance.size)
-        assertEquals(21_314, decision.size)
-        assertEquals(6_648, terminal.size)
-        assertEquals(39_027, chance.size + decision.size + terminal.size)
+        val oracle = GoldenFixtureDocument.load().objectValue("graphOracle")
+        assertEquals(oracle.requireInt("chanceStates"), chance.size)
+        assertEquals(oracle.requireInt("decisionStates"), decision.size)
+        assertEquals(oracle.requireInt("terminalStates"), terminal.size)
+        assertEquals(oracle.requireInt("totalStates"), chance.size + decision.size + terminal.size)
     }
 
     private data class ChanceKey(val board: Int, val x: Int, val o: Int)

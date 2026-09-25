@@ -1,0 +1,25 @@
+human-placement / light / top: Contrast failed for SwiftUI.AccessibilityNode
+UNHANDLED FINDING; visible height at clipped top 62pt: 751.3333333333334pt
+Attributes: StaticText, 0x11501f480, {{36.0, 797.7}, {227.7, 15.7}}, label: '9 pieces remain · held piece excluded'
+Element subtree:
+ →StaticText, 0x11501f480, {{36.0, 797.7}, {227.7, 15.7}}, label: '9 pieces remain · held piece excluded'
+Path to element:
+ →Application, 0x1151d7e80, pid: 12004, label: 'Pic-Pac-Poe'
+  ↳Window (Main), 0x1151d4140, {{0.0, 0.0}, {402.0, 874.0}}
+   ↳Other, 0x1151d4a00, {{0.0, 0.0}, {402.0, 874.0}}
+    ↳Other, 0x1151d48c0, {{0.0, 0.0}, {402.0, 874.0}}
+     ↳Other, 0x11501c000, {{0.0, 0.0}, {402.0, 874.0}}
+      ↳Other, 0x11501c140, {{0.0, 0.0}, {402.0, 874.0}}
+       ↳ScrollView, 0x11501c280, {{0.0, 0.0}, {402.0, 874.0}}, identifier: 'game-screen'
+        ↳Other, 0x11501c3c0, {{0.0, 62.0}, {402.0, 791.3}}
+         ↳Other, 0x11501e6c0, {{20.0, 674.7}, {362.0, 154.7}}, identifier: 'bag'
+          ↳StaticText, 0x11501f480, {{36.0, 797.7}, {227.7, 15.7}}, label: '9 pieces remain · held piece excluded'
+Query chain:
+ →Find: Target Application 'dev.saipranith.picpacpoe'
+  Output: {
+    Application, 0x115392e40, pid: 12004, label: 'Pic-Pac-Poe'
+  }
+  ↪︎Find: Descendant with identity binding to AX element pid: 12004, elementOrHash.elementID: 4370271744.32
+    Output: {
+      StaticText, 0x115392800, {{36.0, 797.7}, {227.7, 15.7}}, label: '9 pieces remain · held piece excluded'
+    }

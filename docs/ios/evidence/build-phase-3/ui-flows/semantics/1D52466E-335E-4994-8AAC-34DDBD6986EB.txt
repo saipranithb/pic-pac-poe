@@ -1,0 +1,24 @@
+ai-lab / dark / bottom: Contrast failed for SwiftUI.AccessibilityNode
+ACKNOWLEDGED OFFSCREEN AUDITOR ARTIFACT (visible top audit passed; measured contrast 9.856:1); visible height at clipped top 62pt: 0.6666666666665719pt
+Attributes: StaticText, 0x113dcf700, {{20.0, -1.7}, {340.3, 64.3}}, label: 'Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.'
+Element subtree:
+ →StaticText, 0x113dcf700, {{20.0, -1.7}, {340.3, 64.3}}, label: 'Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.'
+Path to element:
+ →Application, 0x113dce1c0, pid: 87616, label: 'Pic-Pac-Poe'
+  ↳Window (Main), 0x113dce440, {{0.0, 0.0}, {402.0, 874.0}}
+   ↳Other, 0x113dce580, {{0.0, 0.0}, {402.0, 874.0}}
+    ↳Other, 0x113dce800, {{0.0, 0.0}, {402.0, 874.0}}
+     ↳Other, 0x113dce940, {{0.0, 0.0}, {402.0, 874.0}}
+      ↳Other, 0x113dcebc0, {{0.0, 0.0}, {402.0, 874.0}}
+       ↳ScrollView, 0x113dcee40, {{0.0, -0.0}, {402.0, 874.0}}, identifier: 'ai-lab-screen'
+        ↳Other, 0x113dcf0c0, {{0.0, -102.7}, {402.0, 942.7}}
+         ↳StaticText, 0x113dcf700, {{20.0, -1.7}, {340.3, 64.3}}, label: 'Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.'
+Query chain:
+ →Find: Target Application 'dev.saipranith.picpacpoe'
+  Output: {
+    Application, 0x113f83c00, pid: 87616, label: 'Pic-Pac-Poe'
+  }
+  ↪︎Find: Descendant with identity binding to AX element pid: 87616, elementOrHash.elementID: 4336544256.31
+    Output: {
+      StaticText, 0x113f82080, {{20.0, -1.7}, {340.3, 64.3}}, label: 'Each opponent sees the board, the piece in hand, and the bag counts. None can peek at the next draw.'
+    }

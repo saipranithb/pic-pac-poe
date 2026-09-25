@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "pass": true,
+  "target": "PicPacPoeUITests",
+  "configuration": "Debug",
+  "source": "ios/PicPacPoeUITests/PicPacPoeUITests.swift",
+  "sourceSHA256": "11711450954cbdd94437298b797c16b46fa3c505841cec74edf13231955d73da",
+  "inventoryMethod": "Swift parser direct class/extension function declarations",
+  "expectedTests": [
+    "PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes()",
+    "PicPacPoeUITests/testBoardOrderTargetsAndOccupiedCellGate()",
+    "PicPacPoeUITests/testClassicBoardSurvivesSceneInterruptionAndRelaunch()",
+    "PicPacPoeUITests/testCompleteClassicDraw()",
+    "PicPacPoeUITests/testCompleteClassicWinRematchAndTerminalRelaunch()",
+    "PicPacPoeUITests/testCompleteEasyGameAndRematch()",
+    "PicPacPoeUITests/testCompleteHardGameAndRematch()",
+    "PicPacPoeUITests/testCompleteLocalGameAndRematchWithPrivacy()",
+    "PicPacPoeUITests/testCompleteMCTSGameAndRematch()",
+    "PicPacPoeUITests/testCompleteMediumGameAndRematch()",
+    "PicPacPoeUITests/testCompleteQLearningGameAndRematch()",
+    "PicPacPoeUITests/testGovernedLiveHumanAndComputerSequence()",
+    "PicPacPoeUITests/testHeldFixturesKeepLockedStagesPrivateInBothThemes()",
+    "PicPacPoeUITests/testHomeHeadingExplanationAndTutorialReachability()",
+    "PicPacPoeUITests/testHumanTurnStartAndRevealResumeWithoutRedraw()",
+    "PicPacPoeUITests/testLandscapeAndLargestTextKeepLastSquareAndBagReachable()",
+    "PicPacPoeUITests/testLargestDynamicTypeKeepsActionsReachable()",
+    "PicPacPoeUITests/testLeavingComputerSequenceCannotMutateNewClassicGame()",
+    "PicPacPoeUITests/testLocalHandoffAndHeldPieceSurviveRelaunchWithoutRedraw()",
+    "PicPacPoeUITests/testSelectedComputerTargetSurvivesRelaunchAndCommitsOnce()",
+    "PicPacPoeUITests/testSelectedDifficultySurvivesSupportingPageNavigation()",
+    "PicPacPoeUITests/testSettingsPersistAcrossNavigationBackgroundAndRelaunch()",
+    "PicPacPoeUITests/testTerminalComputerDrawSettlesBeforeResultAcrossRelaunch()",
+    "PicPacPoeUITests/testTerminalComputerWinSettlesBeforeResultAcrossBackground()"
+  ],
+  "observedTests": {
+    "PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes()": "Passed",
+    "PicPacPoeUITests/testBoardOrderTargetsAndOccupiedCellGate()": "Passed",
+    "PicPacPoeUITests/testClassicBoardSurvivesSceneInterruptionAndRelaunch()": "Passed",
+    "PicPacPoeUITests/testCompleteClassicDraw()": "Passed",
+    "PicPacPoeUITests/testCompleteClassicWinRematchAndTerminalRelaunch()": "Passed",
+    "PicPacPoeUITests/testCompleteEasyGameAndRematch()": "Passed",
+    "PicPacPoeUITests/testCompleteHardGameAndRematch()": "Passed",
+    "PicPacPoeUITests/testCompleteLocalGameAndRematchWithPrivacy()": "Passed",
+    "PicPacPoeUITests/testCompleteMCTSGameAndRematch()": "Passed",
+    "PicPacPoeUITests/testCompleteMediumGameAndRematch()": "Passed",
+    "PicPacPoeUITests/testCompleteQLearningGameAndRematch()": "Passed",
+    "PicPacPoeUITests/testGovernedLiveHumanAndComputerSequence()": "Passed",
+    "PicPacPoeUITests/testHeldFixturesKeepLockedStagesPrivateInBothThemes()": "Passed",
+    "PicPacPoeUITests/testHomeHeadingExplanationAndTutorialReachability()": "Passed",
+    "PicPacPoeUITests/testHumanTurnStartAndRevealResumeWithoutRedraw()": "Passed",
+    "PicPacPoeUITests/testLandscapeAndLargestTextKeepLastSquareAndBagReachable()": "Passed",
+    "PicPacPoeUITests/testLargestDynamicTypeKeepsActionsReachable()": "Passed",
+    "PicPacPoeUITests/testLeavingComputerSequenceCannotMutateNewClassicGame()": "Passed",
+    "PicPacPoeUITests/testLocalHandoffAndHeldPieceSurviveRelaunchWithoutRedraw()": "Passed",
+    "PicPacPoeUITests/testSelectedComputerTargetSurvivesRelaunchAndCommitsOnce()": "Passed",
+    "PicPacPoeUITests/testSelectedDifficultySurvivesSupportingPageNavigation()": "Passed",
+    "PicPacPoeUITests/testSettingsPersistAcrossNavigationBackgroundAndRelaunch()": "Passed",
+    "PicPacPoeUITests/testTerminalComputerDrawSettlesBeforeResultAcrossRelaunch()": "Passed",
+    "PicPacPoeUITests/testTerminalComputerWinSettlesBeforeResultAcrossBackground()": "Passed"
+  },
+  "allowedSkips": {},
+  "summary": {
+    "devicesAndConfigurations": [
+      {
+        "device": {
+          "architecture": "arm64",
+          "deviceId": "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+          "deviceName": "PicPac Phase3 UI",
+          "modelName": "iPhone 17 Pro",
+          "osBuildNumber": "23F77",
+          "osVersion": "26.5",
+          "platform": "iOS Simulator"
+        },
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "passedTests": 24,
+        "skippedTests": 0,
+        "testPlanConfiguration": {
+          "configurationId": "1",
+          "configurationName": "Test Scheme Action"
+        }
+      }
+    ],
+    "environmentDescription": "PicPacPoe \u00b7 Built with macOS 26.5.2",
+    "expectedFailures": 0,
+    "failedTests": 0,
+    "finishTime": 1790328295.655,
+    "passedTests": 24,
+    "result": "Passed",
+    "skippedTests": 0,
+    "startTime": 1790327401.336,
+    "statistics": [],
+    "testFailures": [],
+    "title": "Test - PicPacPoe",
+    "topInsights": [
+      {
+        "category": "Longest Test Runs",
+        "impact": "24% of duration",
+        "text": "1 longest test run with outlier durations exceeding 163.63s (three standard deviations)"
+      }
+    ],
+    "totalTestCount": 24
+  },
+  "errors": []
+}

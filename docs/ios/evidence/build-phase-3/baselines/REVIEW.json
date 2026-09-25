@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "approved": true,
+  "reviewer": "Codex root with independent compact, regular and iPad reviewers",
+  "reviewedAt": "2026-09-25T10:36:55.894225+00:00",
+  "manifestSHA256": "5bad48fd0cda4fbbccf1b25ad1090ee7ad396a25d0ff6ea5f9533c54201e5236",
+  "captureCount": 336,
+  "notes": "Every original inspected at full resolution; all seven profile contact sheets and representative sheet inspected. Intentional e6c0c65 corrections retain complete typography while stabilizing gameplay geometry and tutorial markers. Direct canonical Android semantic comparisons are recorded per reviewer. No remaining material visual defect found. Bottom-anchor fixtures explicitly differ from production initial top alignment for underflow content. Approval is an intentional product review before calibration, not automatic baseline replacement.",
+  "reviewInventories": {
+    "visual-review/compact.json": "e24835923ce6b69d2dfdbc61bc568694e29f45dd683d0a2091b0ce29a47b9f3a",
+    "visual-review/ipad.json": "a78d04cec700498b545bcefea87580ef911d036c8a2439d7e2a40840778f8a13",
+    "visual-review/reduced.json": "9cd76ee79ce931f14c88a0d37fa1c84cc625484a013816b10a8f5ee3aff2518a",
+    "visual-review/regular.json": "fff368e333ce3b9150d0639dbb8bd325d2a7b4e21a796bfee6cca046d3434470"
+  },
+  "rejectedPriorCandidate": "/tmp/picpac-phase3-baseline-candidate-20260925; retained before/focused evidence under defects/large-type-layout-20260925"
+}

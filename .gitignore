@@ -17,9 +17,22 @@ local.properties
 *.keystore
 *.p12
 *.pfx
+*.p8
+*.cer
+*.mobileprovision
 *.pem
 *.key
 keystore.properties
 signing.properties
 .env
 .env.*
+
+# Xcode / Swift Package Manager
+**/xcuserdata/
+**/*.xcuserstate
+*.xcresult
+*.xcarchive
+*.ipa
+/DerivedData/
+/ios/.build/
+/ios/**/.build/

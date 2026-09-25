@@ -1,0 +1,23 @@
+{
+  "recordedAt": "2026-09-25T11:32:53.682186+00:00",
+  "canonical": {
+    "commit": "dc7cb397ad335783c13c7976d4cef816d2fc0909",
+    "status": []
+  },
+  "androidAndCanonicalHandoffChangesSincePhase2": [],
+  "checkedAndroidPaths": [
+    "app",
+    "game-core",
+    "game-ai",
+    "game-tools",
+    "settings.gradle.kts",
+    "build.gradle.kts",
+    "gradle.properties",
+    "gradle",
+    "gradlew",
+    "gradlew.bat",
+    "docs/ios-handoff"
+  ],
+  "activePhaseBuildTestCaptureProcesses": [],
+  "scope": "Read-only scoped process inventory; old Manual simulator/data preserved; no global service reset. The default sandbox denied ps; this successful authorized read-only retry used escalation."
+}

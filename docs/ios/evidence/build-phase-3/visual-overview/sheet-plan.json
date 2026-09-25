@@ -1,0 +1,212 @@
+[
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact--dark--home.png",
+    "label": "compact / dark / home",
+    "sha256": "25f314c13fa9d559853d2dba76cdd87b1bc28154819b109c0bdf677ec2d1f5ee"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact--dark--computer-targeting.png",
+    "label": "compact / dark / computer-targeting",
+    "sha256": "3316e0a66b51866d55467ad486877265e95184b6be28ff214998a891c18d9d03"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact--dark--how-to.png",
+    "label": "compact / dark / how-to",
+    "sha256": "4c690445a5a4dd95f57fbab9decdf69223593ed7c28d59cccfcc7f3f705ab78b"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact--light--home.png",
+    "label": "compact / light / home",
+    "sha256": "2ae622dabdea926478a64712d68c7844f0a9f758c42cb88e09cd04535800faaf"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact--light--computer-targeting.png",
+    "label": "compact / light / computer-targeting",
+    "sha256": "abb6ee6437bfbb5252f89f7f35a9b32d535fb706f8e3468c729c8a4ae3c20a40"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact--light--how-to.png",
+    "label": "compact / light / how-to",
+    "sha256": "fce0787f9fd22001e67b137d2e708254697204d252a232d4abca41fe61f5ee5b"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--home.png",
+    "label": "regular / dark / home",
+    "sha256": "e3254745424991676d4fa7e059411eb4b97caa777f99c842ddacf0bb5247d615"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--computer-targeting.png",
+    "label": "regular / dark / computer-targeting",
+    "sha256": "2915238ca97c1c1fb054c4de4a89ea04926cc7add86cd6f12c3652552726fac0"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--how-to.png",
+    "label": "regular / dark / how-to",
+    "sha256": "68eafe1f8184e703d75bbab192849eb56ac69ca3cae1a7f5af005e86bb7647cd"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--home.png",
+    "label": "regular / light / home",
+    "sha256": "e778af93475e93b63068bea79f8dbb052eab74f755f1eb8ff5d116b6c24f8ff5"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--computer-targeting.png",
+    "label": "regular / light / computer-targeting",
+    "sha256": "80f7d511d86c45911fc2526edefd512d9a80ce2c898d7ef40b47cd39de58703e"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--how-to.png",
+    "label": "regular / light / how-to",
+    "sha256": "960796d358d0ea39007d77dd454f00d32c08fc30dadf651e2378c5a0270da8be"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--home.png",
+    "label": "ipad / dark / home",
+    "sha256": "df0b796d0924f75e74ccb8df2a357135505f663be238d8d8f4bc0d67782b8cbf"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--computer-targeting.png",
+    "label": "ipad / dark / computer-targeting",
+    "sha256": "53f7c21b7b9b17079ec0174a8618fa633c9f5d5c15b2bffad0604a9c5aca00a2"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--how-to.png",
+    "label": "ipad / dark / how-to",
+    "sha256": "56b9773bc526502bfde988ddd3f842e49c53db3df69e267b5c7c96a717c91712"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--home.png",
+    "label": "ipad / light / home",
+    "sha256": "4eb33b95fcf70321efb36ddc30f3560f6d446e492e9637118df9dab548da7c83"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--computer-targeting.png",
+    "label": "ipad / light / computer-targeting",
+    "sha256": "be664d3edc8e188138e9dca5552f8407db7d2a90778ffb8381f41b2a6133b19c"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--how-to.png",
+    "label": "ipad / light / how-to",
+    "sha256": "3c75cb9a7bd72d0f4e7d8b6733794285211ba388260adb827c093369f4afc4d1"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact-xxxl--dark--home.png",
+    "label": "compact-xxxl / dark / home",
+    "sha256": "12c6f0ffda0cadd944cf86c0f63a6836d2edd5ead00dfed24458a51ed78aa838"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact-xxxl--dark--computer-targeting.png",
+    "label": "compact-xxxl / dark / computer-targeting",
+    "sha256": "e4dcb1dbec3bc1b874a4980a0e2fbae9a1dcfe3636cb31b2686c197e7c608fe5"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact-xxxl--dark--how-to.png",
+    "label": "compact-xxxl / dark / how-to",
+    "sha256": "a557981e993ce1103cd1b4cd8a324523c104ba7fd134685386f2d43ff1c63daf"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact-xxxl--light--home.png",
+    "label": "compact-xxxl / light / home",
+    "sha256": "890ec692125f7b6ec831518d08a52d6bb0b0ace43000b9c916e1e5215363b973"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact-xxxl--light--computer-targeting.png",
+    "label": "compact-xxxl / light / computer-targeting",
+    "sha256": "4b8298df65823bdfd91025502a2ad23573f898a5e4faaf9e56afb8b8a69b362e"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact-xxxl--light--how-to.png",
+    "label": "compact-xxxl / light / how-to",
+    "sha256": "c5494dcbe376c6723a78f714eca93e3cecc00bf692ef7bc2acd0decf81c9cc38"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--home.png",
+    "label": "regular-ax3 / dark / home",
+    "sha256": "a7e958806db0fea3e0f62495ff01c3689814e6bd22fc4bde263ec8b7a75edf1d"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--computer-targeting.png",
+    "label": "regular-ax3 / dark / computer-targeting",
+    "sha256": "c5bb1112b3b12611b4505ab4e6bf0fa1e8a482ed5d0422c9b3deb664f1c34df9"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--how-to.png",
+    "label": "regular-ax3 / dark / how-to",
+    "sha256": "19e50910e1e4177e290a5037c07b344e01e1489c4ce86bc0ee33ab19cf998554"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--home.png",
+    "label": "regular-ax3 / light / home",
+    "sha256": "30b0baffbff2bb336612fe48acd074358e5a208469d490242edbd2581b916905"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--computer-targeting.png",
+    "label": "regular-ax3 / light / computer-targeting",
+    "sha256": "65a2c7d0e7f2954108947783312114381a35688bb57f4585b09726d49e3635a8"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--how-to.png",
+    "label": "regular-ax3 / light / how-to",
+    "sha256": "99a57f7c15b9dd3b7695581be01b28c063c112d07d46d93d961a86606060660d"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--home.png",
+    "label": "ipad-ax3 / dark / home",
+    "sha256": "623d83756adc9cd5d95e27172fce735e0d5b7babd9262ec78638d3aab7f3519d"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--computer-targeting.png",
+    "label": "ipad-ax3 / dark / computer-targeting",
+    "sha256": "1a36e3b763015fadf99d9183c76f848885f360d770f4b893faa635a77aed09f2"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--how-to.png",
+    "label": "ipad-ax3 / dark / how-to",
+    "sha256": "86d529cc07672a59e88c96bcae42fcea82c7a1ee24b8fb194126bea8f6865756"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--home.png",
+    "label": "ipad-ax3 / light / home",
+    "sha256": "bbfc31b8f64cefab182973f9038f79a3278430acd8c975519592404838375c31"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--computer-targeting.png",
+    "label": "ipad-ax3 / light / computer-targeting",
+    "sha256": "0e19966683425ea753de6d7dcda65e42fa7992389ad40880bc1157f3112cb65f"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--how-to.png",
+    "label": "ipad-ax3 / light / how-to",
+    "sha256": "7281d6ec53eb5647723f2f350821588afab074cf5f0a7643a6630ce9a8189868"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--home.png",
+    "label": "regular-reduced / dark / home",
+    "sha256": "e3254745424991676d4fa7e059411eb4b97caa777f99c842ddacf0bb5247d615"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--computer-targeting.png",
+    "label": "regular-reduced / dark / computer-targeting",
+    "sha256": "38dd89065c5dce5f452048067437ebae71603e89149cbad4ace1ab188f49fefe"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--how-to.png",
+    "label": "regular-reduced / dark / how-to",
+    "sha256": "a290aae4e1168b0680a33933def5457a810e9983b802a56dcedbe9b7a27cc0be"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--home.png",
+    "label": "regular-reduced / light / home",
+    "sha256": "8728e1c617921a80f78eb930e974952ce6d274cd9b3b14e44491ba1a703e5abc"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--computer-targeting.png",
+    "label": "regular-reduced / light / computer-targeting",
+    "sha256": "78cf181455c15bd0624fa0c983a8ff70730f120da6dce54821d86c8931f6c9c3"
+  },
+  {
+    "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--how-to.png",
+    "label": "regular-reduced / light / how-to",
+    "sha256": "960796d358d0ea39007d77dd454f00d32c08fc30dadf651e2378c5a0270da8be"
+  }
+]

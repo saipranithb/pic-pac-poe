@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "root",
+  "sourceCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+  "package": "/tmp/picpac-phase3-baseline-post-layout-20260925",
+  "profiles": [
+    "regular-reduced"
+  ],
+  "expectedCaptureCount": 48,
+  "approved": true,
+  "inspectionMethod": "Each original PNG supplied to view_image with detail original; whole frame, no cropping. Contact sheets supplement, not substitute.",
+  "captures": [
+    {
+      "path": "regular-reduced--dark--home.png",
+      "sha256": "e3254745424991676d4fa7e059411eb4b97caa777f99c842ddacf0bb5247d615",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:24.166455+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Complete native Home hierarchy/Fredoka semantic wordmark and bag-to-board X scene, tactile controls and selected Medium retained. Classic full board aligns within safe areas. Local handoff hides all private gameplay; reveal card shows actor and coral X with complete copy and dimmed background. No internal clipping or material visual defect."
+    },
+    {
+      "path": "regular-reduced--dark--classic.png",
+      "sha256": "1b9d83533b693f3b1367ef2f826fd8d29ca914e798095213c4965d95e23a3294",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:24.167316+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Complete native Home hierarchy/Fredoka semantic wordmark and bag-to-board X scene, tactile controls and selected Medium retained. Classic full board aligns within safe areas. Local handoff hides all private gameplay; reveal card shows actor and coral X with complete copy and dimmed background. No internal clipping or material visual defect."
+    },
+    {
+      "path": "regular-reduced--dark--local-handoff.png",
+      "sha256": "7ecf2d840fff43162d31f01f15af22763a2f6b0a284395a8e084e39f0fea0de4",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:24.167769+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Complete native Home hierarchy/Fredoka semantic wordmark and bag-to-board X scene, tactile controls and selected Medium retained. Classic full board aligns within safe areas. Local handoff hides all private gameplay; reveal card shows actor and coral X with complete copy and dimmed background. No internal clipping or material visual defect."
+    },
+    {
+      "path": "regular-reduced--dark--local-reveal.png",
+      "sha256": "acdab0a8378b2dab07f57ed128dd82b1829722fa67b4bd8f05e7377050a5e933",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:24.168448+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Complete native Home hierarchy/Fredoka semantic wordmark and bag-to-board X scene, tactile controls and selected Medium retained. Classic full board aligns within safe areas. Local handoff hides all private gameplay; reveal card shows actor and coral X with complete copy and dimmed background. No internal clipping or material visual defect."
+    },
+    {
+      "path": "regular-reduced--dark--human-turn-start.png",
+      "sha256": "213fefb824739d1d3912f42aefa8ce71c6a30ab4d1222dc7fb84a1c213a4d9fe",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:39.829854+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Human start/reveal/placement retain complete stage text, stable board origin and full probability tray. Held coral X reduces bag count exactly once and footer excludes held piece. Computer reveal clearly separates lavender actor from pistachio O, with centered card and no result shown. No internal clipping or visual identity ambiguity."
+    },
+    {
+      "path": "regular-reduced--dark--human-reveal.png",
+      "sha256": "8f3aad72d1833cbf1fe05bb142ec7f8abd2666f78b3e3406d9b605a4f645e627",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:39.830621+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Human start/reveal/placement retain complete stage text, stable board origin and full probability tray. Held coral X reduces bag count exactly once and footer excludes held piece. Computer reveal clearly separates lavender actor from pistachio O, with centered card and no result shown. No internal clipping or visual identity ambiguity."
+    },
+    {
+      "path": "regular-reduced--dark--human-placement.png",
+      "sha256": "81828efbf859ff7779da748ce5cc9ffb3581baec8ee7a8a5154ba35d50dc3655",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:39.831258+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Human start/reveal/placement retain complete stage text, stable board origin and full probability tray. Held coral X reduces bag count exactly once and footer excludes held piece. Computer reveal clearly separates lavender actor from pistachio O, with centered card and no result shown. No internal clipping or visual identity ambiguity."
+    },
+    {
+      "path": "regular-reduced--dark--computer-reveal.png",
+      "sha256": "dd0e11d51751f1ad115894a15bf13587e37171b250641159ed2de58c3ffd8957",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:39.831941+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Human start/reveal/placement retain complete stage text, stable board origin and full probability tray. Held coral X reduces bag count exactly once and footer excludes held piece. Computer reveal clearly separates lavender actor from pistachio O, with centered card and no result shown. No internal clipping or visual identity ambiguity."
+    },
+    {
+      "path": "regular-reduced--dark--computer-thinking.png",
+      "sha256": "61aac716022bd804677733ed915a8de79402f72b3ec16089853449f32dea3fc9",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:57.654793+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Computer thinking/target/placement/settled views keep the same board and badge geometry. The selected bottom-right square is empty before placement, then contains one pistachio O; settled emphasis remains on Computer. Complete row/column and bag copy are visible, held exclusion removed after commit, and no premature result card appears. Still fixtures prove presentation only, not transition timing."
+    },
+    {
+      "path": "regular-reduced--dark--computer-targeting.png",
+      "sha256": "38dd89065c5dce5f452048067437ebae71603e89149cbad4ace1ab188f49fefe",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:57.655609+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Computer thinking/target/placement/settled views keep the same board and badge geometry. The selected bottom-right square is empty before placement, then contains one pistachio O; settled emphasis remains on Computer. Complete row/column and bag copy are visible, held exclusion removed after commit, and no premature result card appears. Still fixtures prove presentation only, not transition timing."
+    },
+    {
+      "path": "regular-reduced--dark--computer-placement.png",
+      "sha256": "fc8d77ce3b1bbfbf6c87160ac1aa255a43832486fbda6bfddd4f2504a19089c7",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:57.656367+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Computer thinking/target/placement/settled views keep the same board and badge geometry. The selected bottom-right square is empty before placement, then contains one pistachio O; settled emphasis remains on Computer. Complete row/column and bag copy are visible, held exclusion removed after commit, and no premature result card appears. Still fixtures prove presentation only, not transition timing."
+    },
+    {
+      "path": "regular-reduced--dark--computer-settled.png",
+      "sha256": "31b54439d9087f9c5438cfa35a7311663cbab188243a05754835d23c9a43e2bc",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:26:57.657142+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Computer thinking/target/placement/settled views keep the same board and badge geometry. The selected bottom-right square is empty before placement, then contains one pistachio O; settled emphasis remains on Computer. Complete row/column and bag copy are visible, held exclusion removed after commit, and no premature result card appears. Still fixtures prove presentation only, not transition timing."
+    },
+    {
+      "path": "regular-reduced--dark--terminal-settling-win.png",
+      "sha256": "859c82bdf37804826bf8f782751a148a041fce2b30d1788d328b7d57827aa2f7",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:13.619786+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Win and draw settlement retain committed pieces and Computer emphasis before any result card. Winning row line/contours and draw full board are correct. Singular bag grammar is fixed. Result modal copy, miniature final board, Rematch/Home controls and outer margins are complete; final board is visually noninteractive. No clipping or premature result visible in held settlement states."
+    },
+    {
+      "path": "regular-reduced--dark--terminal-settling-draw.png",
+      "sha256": "888d29eb390bf76f8dfd94726ce9d6df595f4a544ad4571b44f6370b4359ff9a",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:13.620829+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Win and draw settlement retain committed pieces and Computer emphasis before any result card. Winning row line/contours and draw full board are correct. Singular bag grammar is fixed. Result modal copy, miniature final board, Rematch/Home controls and outer margins are complete; final board is visually noninteractive. No clipping or premature result visible in held settlement states."
+    },
+    {
+      "path": "regular-reduced--dark--result.png",
+      "sha256": "be0bbd8593f03a1e1c8ca098c3698f1d7ec6236819a2557cf3f6382b5ea7038d",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:13.621504+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Win and draw settlement retain committed pieces and Computer emphasis before any result card. Winning row line/contours and draw full board are correct. Singular bag grammar is fixed. Result modal copy, miniature final board, Rematch/Home controls and outer margins are complete; final board is visually noninteractive. No clipping or premature result visible in held settlement states."
+    },
+    {
+      "path": "regular-reduced--dark--draw-result.png",
+      "sha256": "6bc67268481116a7f538ee131ea3b8fb8030b5370096efc44b1475ea34c6199d",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:13.622186+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Win and draw settlement retain committed pieces and Computer emphasis before any result card. Winning row line/contours and draw full board are correct. Singular bag grammar is fixed. Result modal copy, miniature final board, Rematch/Home controls and outer margins are complete; final board is visually noninteractive. No clipping or premature result visible in held settlement states."
+    },
+    {
+      "path": "regular-reduced--dark--settings.png",
+      "sha256": "4c43e3e1ca5b1fcb1de90c110b4d95bc6d07d1624ca7a7487bc35f0164839488",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:36.268477+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Settings native switches, selected Dark, Reduce Motion and offline copy fully readable. Tutorial number punctuation and body spacing intact, probability example and Classic copy complete. AI Lab hierarchy and experiment controls retained; lower policy copy continues below viewport and is checked in bottom capture. Home bottom uses explicit Debug bottom anchoring of fitting content, not a claim about production default alignment or gesture offset."
+    },
+    {
+      "path": "regular-reduced--dark--how-to.png",
+      "sha256": "a290aae4e1168b0680a33933def5457a810e9983b802a56dcedbe9b7a27cc0be",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:36.269085+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Settings native switches, selected Dark, Reduce Motion and offline copy fully readable. Tutorial number punctuation and body spacing intact, probability example and Classic copy complete. AI Lab hierarchy and experiment controls retained; lower policy copy continues below viewport and is checked in bottom capture. Home bottom uses explicit Debug bottom anchoring of fitting content, not a claim about production default alignment or gesture offset."
+    },
+    {
+      "path": "regular-reduced--dark--ai-lab.png",
+      "sha256": "2ea66af48b60cbc6aa3e59b69aaa9fe1554125ed26d82d398dea5abbc4e97aa3",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:36.269437+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Settings native switches, selected Dark, Reduce Motion and offline copy fully readable. Tutorial number punctuation and body spacing intact, probability example and Classic copy complete. AI Lab hierarchy and experiment controls retained; lower policy copy continues below viewport and is checked in bottom capture. Home bottom uses explicit Debug bottom anchoring of fitting content, not a claim about production default alignment or gesture offset."
+    },
+    {
+      "path": "regular-reduced--dark--home-bottom.png",
+      "sha256": "94b0221bf26863a1c224505608c5bd978223237f3c0c899ec2f56b57cc758921",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:36.269787+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Settings native switches, selected Dark, Reduce Motion and offline copy fully readable. Tutorial number punctuation and body spacing intact, probability example and Classic copy complete. AI Lab hierarchy and experiment controls retained; lower policy copy continues below viewport and is checked in bottom capture. Home bottom uses explicit Debug bottom anchoring of fitting content, not a claim about production default alignment or gesture offset."
+    },
+    {
+      "path": "regular-reduced--dark--human-placement-bottom.png",
+      "sha256": "28a8f9918ebd12658ee76b83c5e02ab8ec06ef17ae533f55ca1c6b63cb37026f",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:51.736612+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Bottom endpoints show full probability tray, settings/offline text, Classic tutorial rule and final AI Lab policy/explanation with safe-area clipping of scrolled-away content. No internal truncation. Fitting Settings bottom is deliberate fixture underflow alignment rather than production default layout; top pair was inspected separately."
+    },
+    {
+      "path": "regular-reduced--dark--settings-bottom.png",
+      "sha256": "1cf5658efa6ccab99ae03976308b2219b7d04ec75b80973c4233b15151fa285e",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:51.736828+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Bottom endpoints show full probability tray, settings/offline text, Classic tutorial rule and final AI Lab policy/explanation with safe-area clipping of scrolled-away content. No internal truncation. Fitting Settings bottom is deliberate fixture underflow alignment rather than production default layout; top pair was inspected separately."
+    },
+    {
+      "path": "regular-reduced--dark--how-to-bottom.png",
+      "sha256": "d0c4b466bdd806eed320aa4a228e739290e0cf937a7cd43e4c40953e9ee2cc77",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:51.737017+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Bottom endpoints show full probability tray, settings/offline text, Classic tutorial rule and final AI Lab policy/explanation with safe-area clipping of scrolled-away content. No internal truncation. Fitting Settings bottom is deliberate fixture underflow alignment rather than production default layout; top pair was inspected separately."
+    },
+    {
+      "path": "regular-reduced--dark--ai-lab-bottom.png",
+      "sha256": "185b17f9a342f34ec63fab79706a0221cb30053766858f3956cba8c4bae2c689",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:27:51.737178+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Bottom endpoints show full probability tray, settings/offline text, Classic tutorial rule and final AI Lab policy/explanation with safe-area clipping of scrolled-away content. No internal truncation. Fitting Settings bottom is deliberate fixture underflow alignment rather than production default layout; top pair was inspected separately."
+    },
+    {
+      "path": "regular-reduced--light--home.png",
+      "sha256": "8728e1c617921a80f78eb930e974952ce6d274cd9b3b14e44491ba1a703e5abc",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:30:02.048009+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Light Home retains warm parchment, darker semantic coral/green wordmark and X, selected Medium and complete supporting controls. Classic board resin shading and cell proportions remain clear. Local handoff fully hides gameplay; reveal shows correct actor and symbol with complete modal copy. No internal clipping, compression or generic replacement styling."
+    },
+    {
+      "path": "regular-reduced--light--classic.png",
+      "sha256": "31aeb00ec42b69fae94e0effedcc0cccfd0b5f489c71cfb6f0a061f9a462f364",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:30:02.048597+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Light Home retains warm parchment, darker semantic coral/green wordmark and X, selected Medium and complete supporting controls. Classic board resin shading and cell proportions remain clear. Local handoff fully hides gameplay; reveal shows correct actor and symbol with complete modal copy. No internal clipping, compression or generic replacement styling."
+    },
+    {
+      "path": "regular-reduced--light--local-handoff.png",
+      "sha256": "38fff2305094d836f212267c303353067035e8a47298647428454a78909c0cb2",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:30:02.048906+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Light Home retains warm parchment, darker semantic coral/green wordmark and X, selected Medium and complete supporting controls. Classic board resin shading and cell proportions remain clear. Local handoff fully hides gameplay; reveal shows correct actor and symbol with complete modal copy. No internal clipping, compression or generic replacement styling."
+    },
+    {
+      "path": "regular-reduced--light--local-reveal.png",
+      "sha256": "71f9e1ca41120f22de0b7ccf786975932daf1288ccb35db4b40889c0528841b0",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:30:02.049669+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Light Home retains warm parchment, darker semantic coral/green wordmark and X, selected Medium and complete supporting controls. Classic board resin shading and cell proportions remain clear. Local handoff fully hides gameplay; reveal shows correct actor and symbol with complete modal copy. No internal clipping, compression or generic replacement styling."
+    },
+    {
+      "path": "regular-reduced--light--human-turn-start.png",
+      "sha256": "4f3f5ed17d6035f134ab419bd7290652f636f8214fdd00d9322a13a5eb80056c",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:34:19.245196+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Full instructions and trays, stable board geometry, correct held-piece 4/5 counts and 44/56 probabilities. Computer actor accent remains distinct from semantic O. No internal clipping or ambiguous stage."
+    },
+    {
+      "path": "regular-reduced--light--human-reveal.png",
+      "sha256": "c1787ae9b6d0d1e67acd82cd9591f7455ae8a6ad306e96d3552f9b0e65751e07",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:34:19.246183+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Full instructions and trays, stable board geometry, correct held-piece 4/5 counts and 44/56 probabilities. Computer actor accent remains distinct from semantic O. No internal clipping or ambiguous stage."
+    },
+    {
+      "path": "regular-reduced--light--human-placement.png",
+      "sha256": "300e107367ef65b0353d4b91d4c4f8414c3697a541543913a24d349ac62630ac",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:34:19.246824+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Full instructions and trays, stable board geometry, correct held-piece 4/5 counts and 44/56 probabilities. Computer actor accent remains distinct from semantic O. No internal clipping or ambiguous stage."
+    },
+    {
+      "path": "regular-reduced--light--computer-reveal.png",
+      "sha256": "3226f614575af798160f739598d6362aa35c81c6c9d44aa285862e92d59ea2a3",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:34:19.247511+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Full instructions and trays, stable board geometry, correct held-piece 4/5 counts and 44/56 probabilities. Computer actor accent remains distinct from semantic O. No internal clipping or ambiguous stage."
+    },
+    {
+      "path": "regular-reduced--light--computer-thinking.png",
+      "sha256": "e0cdebcfc911a30c7d3683e71ba392b9b82896f3b7d55e40c56f395c814f221b",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:34:51.783410+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Computer thinking, empty selected target, committed O and settled O remain aligned with unchanged board and tray geometry. Purple actor and green O identities distinct. Complete text, no premature result, held-piece footer transitions correctly."
+    },
+    {
+      "path": "regular-reduced--light--computer-targeting.png",
+      "sha256": "78cf181455c15bd0624fa0c983a8ff70730f120da6dce54821d86c8931f6c9c3",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:34:51.784360+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Computer thinking, empty selected target, committed O and settled O remain aligned with unchanged board and tray geometry. Purple actor and green O identities distinct. Complete text, no premature result, held-piece footer transitions correctly."
+    },
+    {
+      "path": "regular-reduced--light--computer-placement.png",
+      "sha256": "9c5f4734e05fa633d8c96454eea2aac511f9db26c3bddf551eea5fe95832fd8f",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:34:51.785090+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Computer thinking, empty selected target, committed O and settled O remain aligned with unchanged board and tray geometry. Purple actor and green O identities distinct. Complete text, no premature result, held-piece footer transitions correctly."
+    },
+    {
+      "path": "regular-reduced--light--computer-settled.png",
+      "sha256": "f43b89fc6501abc4a232c5df9b38ec73aef06e6cdd16696cfbd0700599b6ce96",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:34:51.785793+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Computer thinking, empty selected target, committed O and settled O remain aligned with unchanged board and tray geometry. Purple actor and green O identities distinct. Complete text, no premature result, held-piece footer transitions correctly."
+    },
+    {
+      "path": "regular-reduced--light--terminal-settling-win.png",
+      "sha256": "23756fef92aa7d4b7cea4e961b9eb7285e3cbec09b91249b241895419f5b16c8",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:08.430113+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Terminal win and full-board draw visibly settle on board before result modal; win line and latest target clear. Complete result copy and both tactile actions, correct miniature board, no symbol/player confusion, singular last-piece copy fixed."
+    },
+    {
+      "path": "regular-reduced--light--terminal-settling-draw.png",
+      "sha256": "c0d6d8f8f5432385107bcaf381b05c8107acc428541251249e7cba07245dc197",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:08.431021+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Terminal win and full-board draw visibly settle on board before result modal; win line and latest target clear. Complete result copy and both tactile actions, correct miniature board, no symbol/player confusion, singular last-piece copy fixed."
+    },
+    {
+      "path": "regular-reduced--light--result.png",
+      "sha256": "2e3ccdf42ac9d3cb1123d8c63884190baa9fdbd4f17eb451300c131591a96939",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:08.431686+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Terminal win and full-board draw visibly settle on board before result modal; win line and latest target clear. Complete result copy and both tactile actions, correct miniature board, no symbol/player confusion, singular last-piece copy fixed."
+    },
+    {
+      "path": "regular-reduced--light--draw-result.png",
+      "sha256": "ccb78a7e25f4c7850728337dc3af0284bb63c502af919a7a6f485549cc319ca8",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:08.432361+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Terminal win and full-board draw visibly settle on board before result modal; win line and latest target clear. Complete result copy and both tactile actions, correct miniature board, no symbol/player confusion, singular last-piece copy fixed."
+    },
+    {
+      "path": "regular-reduced--light--settings.png",
+      "sha256": "f8b7564ce45b6b2c4b43369fc65891dd262a0451a3dfbc1d3a44e643cd269d88",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:21.635496+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Settings native toggles with complete labels and offline explanation. Tutorial markers and paragraphs clear. AI Lab lower policy text intentionally below scroll viewport; visible controls intact. Home bottom fixture includes every navigation control and preserves Fredoka semantic wordmark/bag-to-board hierarchy; bottom-anchor underflow is declared fixture behavior."
+    },
+    {
+      "path": "regular-reduced--light--how-to.png",
+      "sha256": "960796d358d0ea39007d77dd454f00d32c08fc30dadf651e2378c5a0270da8be",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:21.636383+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Settings native toggles with complete labels and offline explanation. Tutorial markers and paragraphs clear. AI Lab lower policy text intentionally below scroll viewport; visible controls intact. Home bottom fixture includes every navigation control and preserves Fredoka semantic wordmark/bag-to-board hierarchy; bottom-anchor underflow is declared fixture behavior."
+    },
+    {
+      "path": "regular-reduced--light--ai-lab.png",
+      "sha256": "eb829c08afd81cd28fdb2402ef752cc8b3a23060d5ba2456086cb389a0dd4b00",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:21.637021+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Settings native toggles with complete labels and offline explanation. Tutorial markers and paragraphs clear. AI Lab lower policy text intentionally below scroll viewport; visible controls intact. Home bottom fixture includes every navigation control and preserves Fredoka semantic wordmark/bag-to-board hierarchy; bottom-anchor underflow is declared fixture behavior."
+    },
+    {
+      "path": "regular-reduced--light--home-bottom.png",
+      "sha256": "d01b671ec9c38e5929cea6749f3651949adbf276003cd2c1116e9a4c83a8906b",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:21.638101+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Settings native toggles with complete labels and offline explanation. Tutorial markers and paragraphs clear. AI Lab lower policy text intentionally below scroll viewport; visible controls intact. Home bottom fixture includes every navigation control and preserves Fredoka semantic wordmark/bag-to-board hierarchy; bottom-anchor underflow is declared fixture behavior."
+    },
+    {
+      "path": "regular-reduced--light--human-placement-bottom.png",
+      "sha256": "b223942a8de4359f5696b1282af47c18c3741fb306af11a6ef72dd5ae8171be9",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:39.946568+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Bottom gameplay shows all nine square cells and full held-piece tray; top back-button edge is outside the scrolled viewport, not internal text clipping. Settings/How-to underflow reflects declared bottom-anchor fixture. AI Lab bottom exposes complete Q-learning statistic and final explanation, intact actions. No new defect."
+    },
+    {
+      "path": "regular-reduced--light--settings-bottom.png",
+      "sha256": "94f438e3cf5982ed778fdb2734b4226df5a74683fb9e5cf940ef83646767ed8e",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:39.947665+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Bottom gameplay shows all nine square cells and full held-piece tray; top back-button edge is outside the scrolled viewport, not internal text clipping. Settings/How-to underflow reflects declared bottom-anchor fixture. AI Lab bottom exposes complete Q-learning statistic and final explanation, intact actions. No new defect."
+    },
+    {
+      "path": "regular-reduced--light--how-to-bottom.png",
+      "sha256": "b9dbf099486c3d982dcc3cc81a1e74a3602f4d600e2fc3cb7c4f23050db0e339",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:39.948784+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Bottom gameplay shows all nine square cells and full held-piece tray; top back-button edge is outside the scrolled viewport, not internal text clipping. Settings/How-to underflow reflects declared bottom-anchor fixture. AI Lab bottom exposes complete Q-learning statistic and final explanation, intact actions. No new defect."
+    },
+    {
+      "path": "regular-reduced--light--ai-lab-bottom.png",
+      "sha256": "379876626d35744a30a66b53af0fb63562f57dfed1364d38e2cf8859e3f95e1a",
+      "width": 1206,
+      "height": 2622,
+      "reviewedAt": "2026-09-25T10:35:39.949383+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "Bottom gameplay shows all nine square cells and full held-piece tray; top back-button edge is outside the scrolled viewport, not internal text clipping. Settings/How-to underflow reflects declared bottom-anchor fixture. AI Lab bottom exposes complete Q-learning statistic and final explanation, intact actions. No new defect."
+    }
+  ],
+  "contactSheets": [
+    {
+      "path": "contact-sheets/regular-reduced.png",
+      "sha256": "22498907fb91a930499bdd2debbb93d23d90bafc53a9c1686411953e63ea3028",
+      "reviewedAt": "2026-09-25T10:36:55.894225+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "All whole frames retained with readable identity labels; overview confirms consistent theme, stage hierarchy and board geometry. Original screenshots were separately inspected."
+    },
+    {
+      "path": "contact-sheet.png",
+      "sha256": "299835c1382acef3621c954211a84b1d57ab39f7ebbf28641f837adf8a1970d2",
+      "reviewedAt": "2026-09-25T10:36:55.894225+00:00",
+      "viewedAtOriginalResolution": true,
+      "result": "PASS",
+      "notes": "All whole frames retained with readable identity labels; overview confirms consistent theme, stage hierarchy and board geometry. Original screenshots were separately inspected."
+    }
+  ],
+  "supplementalOriginalInspections": [
+    {
+      "path": "/tmp/picpac-phase3-baseline-post-layout-20260925/compact--dark--human-placement.png",
+      "sha256": "7e86f5e182fe4cb768a541489fb7ed784d391c74a9b598dbefb7f7af7e53667e",
+      "reviewedAt": "2026-09-25T10:07:25.894400+00:00",
+      "result": "PASS",
+      "comparison": {
+        "path": "docs/ios-handoff/reference/human-placement-dark.png",
+        "sha256": "e43d090d87246f5eb579f78055d3b87cda06ef9b6a613916e30f76f473a3aa85"
+      },
+      "notes": "Direct original Android/iOS comparison: hierarchy, resin board/cell proportions, held coral X and separate teal/lavender actors, tray ordering and theme preserved. Compact iPhone lower tray requires native vertical scrolling; complete board and instruction remain visible."
+    }
+  ],
+  "completedAt": "2026-09-25T10:36:55.894225+00:00",
+  "candidateManifestSHA256": "5bad48fd0cda4fbbccf1b25ad1090ee7ad396a25d0ff6ea5f9533c54201e5236"
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "beforeSource": {
+    "commit": "ad1a3b40570406a7cf967c600a7c88516dbf2c0c",
+    "branch": "codex/ios-native-parity",
+    "status": [],
+    "iosSourceSHA256": "eab480a702c6b963a3bd4640a435aba5487ff53f7e7172d3154e628be95081cd",
+    "buildInputSHA256": "5d077b11599f7c648d800e6dd7b8ea807a1f724bfd65d954f4f587edd8e0ebb2",
+    "externalInputs": {
+      "app/src/main/res/font/fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+      "app/src/main/res/font/fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9",
+      "app/src/main/assets/licenses/fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+      "docs/ios-handoff/reference/screenshot-manifest.json": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+    }
+  },
+  "finding": "Actual unsigned Release app and linked Swift package code carried LLVM profile/coverage instrumentation. Existing identity/resource gate did not detect it. Both distribution binaries are superseded.",
+  "beforeArtifacts": [
+    {
+      "sdk": "iphonesimulator",
+      "binarySHA256": "96e7d3c45467bc3972b39c62451eceb80dd81bf20f3a100c6b005307df8ff715",
+      "appBundleSHA256": "9bc36610b4281a1092946fb1545e217788eab093018085db1dcc9449e91ea736",
+      "instrumentedCompilerCommands": 24,
+      "binaryPath": "/tmp/picpac-phase3-final-build-ad1a3b405704/iphonesimulator/Build/Products/Release-iphonesimulator/PicPacPoe.app/PicPacPoe"
+    },
+    {
+      "sdk": "iphoneos",
+      "binarySHA256": "c288a723b84f7a4f741651ef1fab9010035cfeb4b025b77d482f7b77a3dd6cda",
+      "appBundleSHA256": "1e0d0662e8e6a64796f9bbd94185729b89da3aed60128338cf921540475d5382",
+      "instrumentedCompilerCommands": 12,
+      "binaryPath": "/tmp/picpac-phase3-final-build-ad1a3b405704/iphoneos/Build/Products/Release-iphoneos/PicPacPoe.app/PicPacPoe"
+    }
+  ],
+  "fix": "Explicit Release project/xcconfig coverage exclusion, shared scheme coverage disabled, unsigned xcodebuild -enableCodeCoverage NO for workspace/package propagation, binary gate rejects LLVM coverage/profile sections.",
+  "resolvedAppSettingsBeforeRebuild": {
+    "PicPacPoe": {
+      "ENABLE_CODE_COVERAGE": "NO",
+      "CLANG_ENABLE_CODE_COVERAGE": "NO",
+      "CLANG_COVERAGE_MAPPING": "YES",
+      "IPHONEOS_DEPLOYMENT_TARGET": "17.0"
+    }
+  },
+  "validation": "New gate rejects original actual simulator binary. Final rebuilt simulator/device binaries must pass this strengthened gate; no final rebuild claimed here."
+}

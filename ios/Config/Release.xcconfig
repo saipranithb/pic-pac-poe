@@ -1,0 +1,13 @@
+#include "Shared.xcconfig"
+
+SWIFT_OPTIMIZATION_LEVEL = -O
+SWIFT_COMPILATION_MODE = wholemodule
+DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
+ENABLE_TESTABILITY = NO
+GCC_OPTIMIZATION_LEVEL = s
+VALIDATE_PRODUCT = YES
+
+// Distribution builds must not carry LLVM coverage counters or runtime hooks.
+ENABLE_CODE_COVERAGE = NO
+CLANG_ENABLE_CODE_COVERAGE = NO
+CLANG_COVERAGE_MAPPING = NO

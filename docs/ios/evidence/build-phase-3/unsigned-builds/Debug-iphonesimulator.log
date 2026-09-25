@@ -1,0 +1,15 @@
+Command line invocation:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild -project /Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/PicPacPoe.xcodeproj -scheme PicPacPoe -configuration Debug -enableCodeCoverage NO -destination "generic/platform=iOS Simulator" -derivedDataPath /tmp/picpac-phase3-recovery-build-2a04a4858d14-20260925T084023Z/iphonesimulator CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
+
+Build settings from command line:
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+
+Resolve Package Graph
+
+
+Resolved source packages:
+  PicPacKit: /Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit @ local
+
+2026-09-25 04:40:27.412 xcodebuild[82682:115711843] Writing error result bundle to /var/folders/fh/vt8wk6pn5dgd_tv982c123440000gp/T/ResultBundle_2026-25-09_04-40-0027.xcresult
+xcodebuild: error: The flag -enableCodeCoverage is only supported when testing.

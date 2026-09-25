@@ -55,6 +55,9 @@ GOLDEN_IDS = {
         "initial-roll-zero-is-x", "initial-roll-four-is-x", "initial-roll-five-is-o",
         "initial-roll-nine-is-o", "two-one-boundary-x", "two-one-boundary-o",
     },
+    "scriptedRandomTraces": {
+        "bag-five-call-boundary-trace", "random-agent-three-call-index-trace",
+    },
     "aiChoices": {
         "easy-immediate-win-with-x", "easy-immediate-win-with-o", "medium-opening-held-x",
         "hard-opening-held-x", "hard-opening-held-o", "random-scripted-legal-index",
@@ -427,6 +430,12 @@ class Verifier:
         if encoding.get("initialBag") != {"X": 5, "O": 5}:
             self.fail(f"{name}: initial bag must contain five X and five O pieces")
 
+        required_groups = document.get("requiredFixtureGroups")
+        if required_groups != list(GOLDEN_IDS):
+            self.fail(
+                f"{name}: requiredFixtureGroups must exactly match the ordered fixture-group contract"
+            )
+
         def board(value, context):
             valid = isinstance(value, list) and len(value) == 9 and all(cell in (None, "X", "O") for cell in value)
             if not valid:
@@ -538,6 +547,76 @@ class Verifier:
             if row.get("expectedSymbol") != expected_symbol:
                 self.fail(f"{context}: expectedSymbol does not match weighted-draw boundary")
 
+        for index, trace in enumerate(document.get("scriptedRandomTraces", [])):
+            context = f"{name}:scriptedRandomTraces[{index}]"
+            if not isinstance(trace, dict):
+                self.fail(f"{context}: expected an object")
+                continue
+            consumer = trace.get("consumer")
+            steps = trace.get("steps")
+            if consumer not in {"PIC_PAC_SESSION", "RANDOM_AGENT"}:
+                self.fail(f"{context}: unknown scripted-random consumer")
+                continue
+            if not isinstance(steps, list) or not steps:
+                self.fail(f"{context}: steps must be a nonempty list")
+                continue
+            if [step.get("call") for step in steps if isinstance(step, dict)] != list(range(1, len(steps) + 1)):
+                self.fail(f"{context}: call indices must be contiguous and one-based")
+
+            if consumer == "PIC_PAC_SESSION":
+                initial = trace.get("initial", {})
+                x, o = initial.get("remainingX"), initial.get("remainingO")
+                occupied = set()
+                if (x, o) != (5, 5):
+                    self.fail(f"{context}: session trace must begin with the canonical 5+5 bag")
+                    continue
+                for step_index, step in enumerate(steps):
+                    step_context = f"{context}:steps[{step_index}]"
+                    if not isinstance(step, dict):
+                        self.fail(f"{step_context}: expected an object")
+                        continue
+                    bound, result = step.get("nextIntBound"), step.get("scriptedResult")
+                    if type(bound) is not int or type(result) is not int or bound != x + o or result not in range(bound):
+                        self.fail(f"{step_context}: invalid or out-of-order bag bound/result")
+                        continue
+                    expected_symbol = "X" if result < x else "O"
+                    if step.get("expectedSymbol") != expected_symbol:
+                        self.fail(f"{step_context}: expectedSymbol does not match weighted-draw boundary")
+                    if expected_symbol == "X":
+                        x -= 1
+                    else:
+                        o -= 1
+                    cell = step.get("placeCell")
+                    if type(cell) is not int or cell not in range(9) or cell in occupied:
+                        self.fail(f"{step_context}: placeCell must be a unique row-major cell")
+                    else:
+                        occupied.add(cell)
+            else:
+                for step_index, step in enumerate(steps):
+                    step_context = f"{context}:steps[{step_index}]"
+                    if not isinstance(step, dict):
+                        self.fail(f"{step_context}: expected an object")
+                        continue
+                    cells = board(step.get("board"), step_context)
+                    legal = step.get("legalCells")
+                    bound, result = step.get("nextIntBound"), step.get("scriptedResult")
+                    expected_cell = step.get("expectedCell")
+                    if cells is None:
+                        continue
+                    actual_legal = [cell for cell, value in enumerate(cells) if value is None]
+                    if legal != actual_legal:
+                        self.fail(f"{step_context}: legalCells differ from the row-major empty cells")
+                    if type(bound) is not int or bound != len(actual_legal) or type(result) is not int or result not in range(bound):
+                        self.fail(f"{step_context}: invalid random-agent bound/result")
+                    elif expected_cell != actual_legal[result]:
+                        self.fail(f"{step_context}: scripted result does not select expectedCell")
+                    held = step.get("heldSymbol")
+                    remaining_x, remaining_o = step.get("remainingX"), step.get("remainingO")
+                    if held not in {"X", "O"} or not all(type(value) is int for value in (remaining_x, remaining_o)):
+                        self.fail(f"{step_context}: invalid held symbol or remaining counts")
+                    elif cells.count("X") + remaining_x + (1 if held == "X" else 0) != 5 or cells.count("O") + remaining_o + (1 if held == "O" else 0) != 5:
+                        self.fail(f"{step_context}: random-agent state violates bag conservation")
+
         for index, row in enumerate(document.get("aiChoices", [])):
             context = f"{name}:aiChoices[{index}]"
             if not isinstance(row, dict):
@@ -548,6 +627,13 @@ class Verifier:
             if cells is None or type(expected_cell) is not int or expected_cell not in range(9) or cells[expected_cell] is not None:
                 self.fail(f"{context}: expectedCell must be an empty board cell")
                 continue
+            held = row.get("heldSymbol")
+            remaining_x, remaining_o = row.get("remainingX"), row.get("remainingO")
+            if held not in {"X", "O"} or not all(type(value) is int for value in (remaining_x, remaining_o)):
+                self.fail(f"{context}: invalid held symbol or remaining counts")
+                continue
+            if cells.count("X") + remaining_x + (1 if held == "X" else 0) != 5 or cells.count("O") + remaining_o + (1 if held == "O" else 0) != 5:
+                self.fail(f"{context}: AI state violates bag conservation")
             if row.get("agent") == "HEURISTIC":
                 trial = cells.copy()
                 trial[expected_cell] = row.get("heldSymbol")

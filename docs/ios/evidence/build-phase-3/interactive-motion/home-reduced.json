@@ -1,0 +1,42 @@
+{
+  "kind": "home-reduced, observed twelve-second interval",
+  "startedAt": "2026-09-21T14:03:03.871458+00:00",
+  "endedAt": "2026-09-21T14:03:16.065240+00:00",
+  "recordExitStatus": 0,
+  "file": "home-reduced.mov",
+  "noCrop": true,
+  "ordinaryClock": true,
+  "fixtureTimeOverride": null,
+  "settings": {
+    "hapticsEnabled": true,
+    "reducedMotion": true,
+    "soundEnabled": true,
+    "theme": "dark"
+  },
+  "beforePersistedFiles": {
+    "current-match.json": {
+      "sha256": "cdd4793bc8fdba9e52d7c51736914ccbd83099ac73b19e919a240ca62cbd2368",
+      "mtimeNS": 1789999338523283734,
+      "bytes": 190
+    },
+    "settings.json": {
+      "sha256": "67912823457c5fd86513a85e420010ac3ea1e0e37dc82c64480337ed3497ecee",
+      "mtimeNS": 1789999329976722748,
+      "bytes": 79
+    }
+  },
+  "afterPersistedFiles": {
+    "current-match.json": {
+      "sha256": "cdd4793bc8fdba9e52d7c51736914ccbd83099ac73b19e919a240ca62cbd2368",
+      "mtimeNS": 1789999338523283734,
+      "bytes": 190
+    },
+    "settings.json": {
+      "sha256": "67912823457c5fd86513a85e420010ac3ea1e0e37dc82c64480337ed3497ecee",
+      "mtimeNS": 1789999329976722748,
+      "bytes": 79
+    }
+  },
+  "persistedBytesAndModificationTimesUnchanged": true,
+  "limitation": "File invariance is direct runtime evidence. Zero RNG/feedback calls are separately proven by hosted injected dependency tests."
+}

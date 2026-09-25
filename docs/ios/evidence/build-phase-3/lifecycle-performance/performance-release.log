@@ -1,0 +1,32 @@
+Another instance of SwiftPM (PID: 97989) is already running using '/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit/.build', waiting until that process has finished execution...Building for production...
+[0/11] Write sources
+[3/11] Copying picpac_rl_policy_v1.bin
+[4/11] Write sources
+[5/11] Copying golden-fixtures.json
+[6/11] /Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit/.build/arm64-apple-macosx/release/PicPacKitPackageTests.derived/runner.swift
+[7/11] Write sources
+[8/11] Write swift-version--58304C5D6DBC2206.txt
+[10/12] Compiling PicPacCore AiObservation.swift
+[11/14] Compiling PicPacPresentation GameCoordinator.swift
+[12/14] Compiling PicPacAI AIContracts.swift
+[13/15] Compiling PicPacKitTests CoreDomainTests.swift
+[14/16] Compiling PicPacKitPackageTests runner.swift
+[14/16] Write Objects.LinkFileList
+[15/16] Linking PicPacKitPackageTests
+Build complete! (63.20s)
+Test Suite 'Selected tests' started at 2026-09-21 08:56:12.476.
+Test Suite 'PicPacKitPackageTests.xctest' started at 2026-09-21 08:56:12.481.
+Test Suite 'PerformanceAuditTests' started at 2026-09-21 08:56:12.481.
+Test Case '-[PicPacKitTests.PerformanceAuditTests testProductionSearchLatencyBudgetCancellationAndMainActorProgress]' started.
+Test Case '-[PicPacKitTests.PerformanceAuditTests testProductionSearchLatencyBudgetCancellationAndMainActorProgress]' passed (0.743 seconds).
+Test Suite 'PerformanceAuditTests' passed at 2026-09-21 08:56:13.225.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.743 (0.744) seconds
+Test Suite 'PicPacKitPackageTests.xctest' passed at 2026-09-21 08:56:13.225.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.743 (0.744) seconds
+Test Suite 'Selected tests' passed at 2026-09-21 08:56:13.225.
+	 Executed 1 test, with 0 failures (0 unexpected) in 0.743 (0.750) seconds
+PHASE3_PERFORMANCE_JSON {"framePacingEvidence":false,"hardColdMilliseconds":[123.792417,153.32837499999999,92.046750000000003,95.107457999999994,84.644499999999994],"hardColdNodes":[109706,109706,109706,109706,109706],"hardInFlightCancellationMilliseconds":[9.3714580000000005,0.20758299999999999,0.27208300000000002,0.57016599999999995,0.51800000000000002],"hardWarmMilliseconds":[0.016750000000000001,0.033125000000000002,0.021250000000000002,0.019917000000000001,0.01975],"hardWarmNodes":[18,18,18,18,18],"kind":"macOS-host-production-agent-measurement","mainActorTwoMillisecondHeartbeat":{"maxMilliseconds":19.181708,"p50Milliseconds":3.1474160000000002,"p95Milliseconds":8.4453750000000003,"samples":190},"mctsCompletedSimulationsPerCall":2000,"mctsMilliseconds":[23.493957999999999,24.035958999999998,28.577000000000002,28.282875000000001,30.969958999999999],"physicalDeviceEvidence":false,"sampleCount":5,"schemaVersion":1}
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

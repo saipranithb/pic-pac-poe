@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-09-25T11:31:30.436218+00:00",
+  "checks": [
+    {
+      "gate": "handoff-ordinary",
+      "command": [
+        "python3",
+        "docs/ios-handoff/verify-handoff.py"
+      ],
+      "exitCode": 0,
+      "output": "handoff-ordinary.log"
+    },
+    {
+      "gate": "handoff-strict-release",
+      "command": [
+        "python3",
+        "docs/ios-handoff/verify-handoff.py",
+        "--strict-release"
+      ],
+      "exitCode": 1,
+      "output": "handoff-strict-release.log"
+    },
+    {
+      "gate": "ci-contract",
+      "command": [
+        "python3",
+        "ios/Scripts/verify-ci-contract.py"
+      ],
+      "exitCode": 0,
+      "output": "ci-contract.log"
+    },
+    {
+      "gate": "whitespace",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "output": "whitespace.log"
+    }
+  ],
+  "strictReleaseDisposition": "Exact strict-release error-set validation is performed by the passing ci-contract gate; only deliberately null releaseCommit/releaseTag are accepted."
+}

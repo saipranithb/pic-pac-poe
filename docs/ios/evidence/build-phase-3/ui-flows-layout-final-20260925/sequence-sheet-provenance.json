@@ -1,0 +1,154 @@
+{
+  "sourceCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+  "sheet": "sequence-contact-sheet.png",
+  "presentation": "17 full portrait captures, aspect-fit without crop; labels retain original monotonic capture uptime.",
+  "interpretation": "x10 player/production AI sequence; x20 explicit valid interruption snapshots with production transitions. These prove stage order and restoration, not normal-speed pacing. Separate complete-game tests use ordinary clock, worker and RNG.",
+  "frames": [
+    {
+      "frameStem": "sequence-clock10-human-reveal",
+      "path": "frames/sequence-clock10-human-reveal--uptime-5072732p625.png",
+      "sha256": "d44bbac34251788914881c53c790b611c61a0b1f8ad4b736a53cbce533bb4409",
+      "capturedAt": "2026-09-25T11:14:18.142000+00:00",
+      "monotonicUptimeSeconds": 5072732.625,
+      "controlledEssentialHoldMultiplier": 10
+    },
+    {
+      "frameStem": "sequence-clock10-human-playing",
+      "path": "frames/sequence-clock10-human-playing--uptime-5072739p797.png",
+      "sha256": "6bb0765d615bb4fa31ba71f60b379b6b9ccf259ad4012ab4bf8790d0872ab1d9",
+      "capturedAt": "2026-09-25T11:14:25.313000+00:00",
+      "monotonicUptimeSeconds": 5072739.797,
+      "controlledEssentialHoldMultiplier": 10
+    },
+    {
+      "frameStem": "sequence-clock10-human-placed-computer-turn-start",
+      "path": "frames/sequence-clock10-human-placed-computer-turn-start--uptime-5072740p219.png",
+      "sha256": "458b91a14d9b7bb1f6bb57f59d3441426e6c64f24d5ed972fcb403d75bfd08fd",
+      "capturedAt": "2026-09-25T11:14:25.736000+00:00",
+      "monotonicUptimeSeconds": 5072740.219,
+      "controlledEssentialHoldMultiplier": 10
+    },
+    {
+      "frameStem": "sequence-clock10-computer-reveal",
+      "path": "frames/sequence-clock10-computer-reveal--uptime-5072743p345.png",
+      "sha256": "58d1a16978983d6a2d0355e5579faf8d280772230a40c566702f6053201a4e0b",
+      "capturedAt": "2026-09-25T11:14:28.862000+00:00",
+      "monotonicUptimeSeconds": 5072743.345,
+      "controlledEssentialHoldMultiplier": 10
+    },
+    {
+      "frameStem": "sequence-clock10-computer-target",
+      "path": "frames/sequence-clock10-computer-target--uptime-5072750p533.png",
+      "sha256": "bbcb542157f7a37c3fb527dd62e5984930a5fa80a4dafa3730ee422386df6660",
+      "capturedAt": "2026-09-25T11:14:36.050000+00:00",
+      "monotonicUptimeSeconds": 5072750.533,
+      "controlledEssentialHoldMultiplier": 10
+    },
+    {
+      "frameStem": "sequence-clock10-computer-place",
+      "path": "frames/sequence-clock10-computer-place--uptime-5072752p743.png",
+      "sha256": "09b40731aaf00ec4da6fbabfafaebdaca1872e562d2516e70d5ac0c3088a2403",
+      "capturedAt": "2026-09-25T11:14:38.259000+00:00",
+      "monotonicUptimeSeconds": 5072752.743,
+      "controlledEssentialHoldMultiplier": 10
+    },
+    {
+      "frameStem": "sequence-clock10-computer-settle",
+      "path": "frames/sequence-clock10-computer-settle--uptime-5072756p950.png",
+      "sha256": "e596014b318214814a021bc25d6aaccd8079c9364c1a79ad39bbc23da756ed0f",
+      "capturedAt": "2026-09-25T11:14:42.467000+00:00",
+      "monotonicUptimeSeconds": 5072756.95,
+      "controlledEssentialHoldMultiplier": 10
+    },
+    {
+      "frameStem": "terminal-settling-draw-before-interruption",
+      "path": "frames/terminal-settling-draw-before-interruption--uptime-5073028p283.png",
+      "sha256": "7095b7971557d3ff38739a7424b1998fcd1b9f3015b82561a887de940d4257b5",
+      "capturedAt": "2026-09-25T11:19:13.799000+00:00",
+      "monotonicUptimeSeconds": 5073028.283,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "terminal-settling-draw-restored-settlement",
+      "path": "frames/terminal-settling-draw-restored-settlement--uptime-5073033p417.png",
+      "sha256": "7095b7971557d3ff38739a7424b1998fcd1b9f3015b82561a887de940d4257b5",
+      "capturedAt": "2026-09-25T11:19:18.933000+00:00",
+      "monotonicUptimeSeconds": 5073033.417,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "terminal-settling-draw-result",
+      "path": "frames/terminal-settling-draw-result--uptime-5073041p553.png",
+      "sha256": "d493ea8f3752b9069a53373d344f318667a46927e2aad38a36fe8e72a44aa32b",
+      "capturedAt": "2026-09-25T11:19:27.069000+00:00",
+      "monotonicUptimeSeconds": 5073041.553,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "terminal-settling-win-before-interruption",
+      "path": "frames/terminal-settling-win-before-interruption--uptime-5073046p480.png",
+      "sha256": "2379e726c3fee7fd7908b26a784eb9371103052ae7ffe2a5eeb7a409af77a99b",
+      "capturedAt": "2026-09-25T11:19:31.996000+00:00",
+      "monotonicUptimeSeconds": 5073046.48,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "terminal-settling-win-restored-settlement",
+      "path": "frames/terminal-settling-win-restored-settlement--uptime-5073048p762.png",
+      "sha256": "1dd713bcf47f9e46c5f4f134e03a57ffae8abba833576cd89b04eac3577cd64c",
+      "capturedAt": "2026-09-25T11:19:34.279000+00:00",
+      "monotonicUptimeSeconds": 5073048.762,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "terminal-settling-win-result",
+      "path": "frames/terminal-settling-win-result--uptime-5073057p973.png",
+      "sha256": "6473f2624d181e0fa47a565ecc943f123e9cdea77b74598bbd4c7b6b22b133e3",
+      "capturedAt": "2026-09-25T11:19:43.489000+00:00",
+      "monotonicUptimeSeconds": 5073057.973,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "target-before-relaunch",
+      "path": "frames/target-before-relaunch--uptime-5072974p077.png",
+      "sha256": "5b678cd8998b354e87e656fceb0587607529e9b4bd37a01c071687e67f3dd283",
+      "capturedAt": "2026-09-25T11:18:19.594000+00:00",
+      "monotonicUptimeSeconds": 5072974.077,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "target-after-relaunch",
+      "path": "frames/target-after-relaunch--uptime-5072979p226.png",
+      "sha256": "5b678cd8998b354e87e656fceb0587607529e9b4bd37a01c071687e67f3dd283",
+      "capturedAt": "2026-09-25T11:18:24.742000+00:00",
+      "monotonicUptimeSeconds": 5072979.226,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "target-committed-once",
+      "path": "frames/target-committed-once--uptime-5072983p420.png",
+      "sha256": "fa5bccfaae41032b69c94ff373a970e3f7afeb6d216cd65a08a474d786b3c113",
+      "capturedAt": "2026-09-25T11:18:28.936000+00:00",
+      "monotonicUptimeSeconds": 5072983.42,
+      "controlledEssentialHoldMultiplier": 20
+    },
+    {
+      "frameStem": "committed-target-after-relaunch",
+      "path": "frames/committed-target-after-relaunch--uptime-5072988p575.png",
+      "sha256": "fa5bccfaae41032b69c94ff373a970e3f7afeb6d216cd65a08a474d786b3c113",
+      "capturedAt": "2026-09-25T11:18:34.091000+00:00",
+      "monotonicUptimeSeconds": 5072988.575,
+      "controlledEssentialHoldMultiplier": 20
+    }
+  ],
+  "sheetSHA256": "5052c85b306bc65ecd6e6f2a57284db249e25c1f62927406867f961bdbe23ab0",
+  "renderer": {
+    "source": "ios/Scripts/SnapshotPixels.swift",
+    "sourceSHA256": "4c7288ba91eefae6bc6727907c566d7a9ed717ced634641de6a0ce7d737f8526",
+    "executable": "/tmp/picpac-snapshot-pixels-final",
+    "executableSHA256": "13a57c85f5151ac45ced01c67f8972ea234c380e7fec5aad36133052b819c342",
+    "command": "/tmp/picpac-snapshot-pixels-final sheet /tmp/picpac-phase3-ui-flows-layout-final-20260925/sequence-sheet-plan.json /tmp/picpac-phase3-ui-flows-layout-final-20260925/sequence-contact-sheet.png",
+    "pixelWidth": 1440,
+    "pixelHeight": 1710
+  }
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "module": "PicPacCore",
+    "optimizationFlags": [
+      "-O",
+      "-whole-module-optimization"
+    ],
+    "compilationConditions": [
+      "-DSWIFT_PACKAGE",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-DXcode",
+      "-DSWIFT_PACKAGE"
+    ],
+    "instrumentationFlags": [
+      "-profile-coverage-mapping",
+      "-profile-generate"
+    ]
+  },
+  {
+    "module": "PicPacPresentation",
+    "optimizationFlags": [
+      "-O",
+      "-whole-module-optimization"
+    ],
+    "compilationConditions": [
+      "-DSWIFT_PACKAGE",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-DXcode",
+      "-DSWIFT_PACKAGE"
+    ],
+    "instrumentationFlags": [
+      "-profile-coverage-mapping",
+      "-profile-generate"
+    ]
+  },
+  {
+    "module": "PicPacAI",
+    "optimizationFlags": [
+      "-O",
+      "-whole-module-optimization"
+    ],
+    "compilationConditions": [
+      "-DSWIFT_PACKAGE",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_AVAILABLE",
+      "-DXcode",
+      "-DSWIFT_PACKAGE"
+    ],
+    "instrumentationFlags": [
+      "-profile-coverage-mapping",
+      "-profile-generate"
+    ]
+  },
+  {
+    "module": "PicPacPoe",
+    "optimizationFlags": [
+      "-Onone"
+    ],
+    "compilationConditions": [
+      "-DTESTING",
+      "-DDEBUG",
+      "-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG"
+    ],
+    "instrumentationFlags": [
+      "-profile-coverage-mapping",
+      "-profile-generate"
+    ]
+  },
+  {
+    "module": "PicPacPoeUITests",
+    "optimizationFlags": [
+      "-Onone"
+    ],
+    "compilationConditions": [
+      "-DTESTING",
+      "-DDEBUG",
+      "-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG"
+    ],
+    "instrumentationFlags": [
+      "-profile-coverage-mapping",
+      "-profile-generate"
+    ]
+  },
+  {
+    "module": "PicPacPoeTests",
+    "optimizationFlags": [
+      "-Onone"
+    ],
+    "compilationConditions": [
+      "-DTESTING",
+      "-DDEBUG",
+      "-D_LIBCPP_HARDENING_MODE=_LIBCPP_HARDENING_MODE_DEBUG"
+    ],
+    "instrumentationFlags": [
+      "-profile-coverage-mapping",
+      "-profile-generate"
+    ]
+  }
+]

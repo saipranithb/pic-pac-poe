@@ -1,0 +1,9 @@
+{
+  "reviewer": "Codex root",
+  "reviewedAt": "2026-09-25T10:40:29.940938+00:00",
+  "path": "before-after-contact-sheet.png",
+  "sha256": "14d46273d9917efe96585dded950a2f0df99a044a88c213d1b03ec21031d6590",
+  "originalResolutionOpened": true,
+  "result": "PASS",
+  "notes": "Fourteen adjacent before/after pairs retain whole frames. Tutorial periods no longer wrap; thinking/target/placement board position aligned after fix. No new clipping or branding change."
+}

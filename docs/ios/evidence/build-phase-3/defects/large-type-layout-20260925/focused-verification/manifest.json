@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "kind": "Focused unsigned Debug simulator verification of two layout defects from coherent dirty source; not full-suite or baseline acceptance",
+  "createdAt": "2026-09-25T10:03:38.285371+00:00",
+  "source": {
+    "commit": "ea2a1a2f7ffa26a165715f8af28422a99b335c22",
+    "branch": "codex/ios-native-parity",
+    "status": [
+      "M ios/PicPacPoe/GameView.swift",
+      " M ios/PicPacPoe/InfoViews.swift",
+      " M ios/PicPacPoeUITests/PicPacPoeUITests.swift"
+    ],
+    "iosSourceSHA256": "7294c6d0018d9c3b39bfb1c5c56fec2ea72a1554a02a6e3a3dc95e93d041e482",
+    "buildInputSHA256": "2be2a20569eb23b3b22553c8e39ed8ce25ebeeb23fbab3665a8a3d175eb2dec3",
+    "externalInputs": {
+      "app/src/main/res/font/fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+      "app/src/main/res/font/fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9",
+      "app/src/main/assets/licenses/fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+      "docs/ios-handoff/reference/screenshot-manifest.json": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+    }
+  },
+  "buildInputsStable": true,
+  "result": "Passed",
+  "passedTests": 2,
+  "failedTests": 0,
+  "skippedTests": 0,
+  "expectedFailures": 0,
+  "executionSeconds": 179.548,
+  "summaryElapsedSeconds": 205.79900002479553,
+  "devicesAndConfigurations": [
+    {
+      "device": {
+        "architecture": "arm64",
+        "deviceId": "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+        "deviceName": "PicPac Phase3 UI",
+        "modelName": "iPhone 17 Pro",
+        "osBuildNumber": "23F77",
+        "osVersion": "26.5",
+        "platform": "iOS Simulator"
+      },
+      "expectedFailures": 0,
+      "failedTests": 0,
+      "passedTests": 2,
+      "skippedTests": 0,
+      "testPlanConfiguration": {
+        "configurationId": "1",
+        "configurationName": "Test Scheme Action"
+      }
+    }
+  ],
+  "originalFrameCount": 32,
+  "fullResolutionVisualReviewCount": 18,
+  "noCrop": true,
+  "assertions": "24 held geometry cases: six stages \u00d7 regular/AX3 \u00d7 top/bottom. All nine native cell rectangles fixed within 0.5pt; square >=48pt; locked stage controls disabled; full top instruction frame. Eight tutorial row cases at AX3/AX5: full combined copy and gesture reachability. Painted marker single-line status checked in eight actual originals.",
+  "retainedXCResult": "/tmp/picpac-phase3-layout-focused-20260925/focused.xcresult",
+  "retainedXCResultInventory": "retained-xcresult-checksums.json",
+  "retainedXCResultInventorySHA256": "c76d524c2a0e0cc47b764bcfed228f13fa806bcf1be4cac423c5e0ae6484807b",
+  "builtBinaries": {
+    "PicPacPoe.app/PicPacPoe": "1e5e5531460c0bc30e199ea9c75df79d46f1b4a1ac83534546bef0b9359336b6",
+    "PicPacPoe.app/PicPacPoe.debug.dylib": "1643e115c3a492369a883037f8ed6a1f88cbd404b631f018dcc4ff8b366421f8",
+    "PicPacPoeUITests-Runner.app/PlugIns/PicPacPoeUITests.xctest/PicPacPoeUITests": "5972ce211643d1b7b27e994bd40b5b05eb17d5be5718e16e844553ee5fc853b9"
+  },
+  "simulatorShutdownExit": 0,
+  "limitations": [
+    "Focused subset only; full 26-method clean-source run still required.",
+    "Held geometry fixtures do not claim normal-speed motion timing.",
+    "iOS 26.5 simulator does not certify iOS 17 runtime or physical assistive technology.",
+    "No hosted GitHub CI run implied."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "fullCommand": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "fullExitCode": 2,
+  "rawLogFindings": {
+    "docs/ios/evidence/build-phase-3/baselines/build.log": 69,
+    "docs/ios/evidence/build-phase-3/lifecycle-performance/post-layout-20260925/hosted.log": 18,
+    "docs/ios/evidence/build-phase-3/lifecycle-performance/post-layout-20260925/simulator-bootstatus.log": 1,
+    "docs/ios/evidence/build-phase-3/repeated-captures/build.log": 69,
+    "docs/ios/evidence/build-phase-3/ui-flows-layout-final-20260925/test.log": 38,
+    "docs/ios/evidence/build-phase-3/unsigned-builds-layout-final-20260925/Debug-iphoneos.log": 35,
+    "docs/ios/evidence/build-phase-3/unsigned-builds-layout-final-20260925/Debug-iphonesimulator.log": 69,
+    "docs/ios/evidence/build-phase-3/unsigned-builds-layout-final-20260925/Release-iphoneos.log": 5,
+    "docs/ios/evidence/build-phase-3/unsigned-builds-layout-final-20260925/Release-iphonesimulator.log": 9,
+    "docs/ios/evidence/build-phase-3/unsigned-builds-layout-final-20260925/failed-sandbox-attempt/Debug-iphonesimulator.log": 1
+  },
+  "findingCount": 314,
+  "disposition": "All 314 findings are original Xcode/simulator stdout whitespace in 10 retained raw logs. These bytes are intentionally preserved with their verified capture/build checksums; no authored source or documentation whitespace defect exists. Logs are not normalized or silently changed.",
+  "authoredSourceCommand": [
+    "git",
+    "diff",
+    "--cached",
+    "--check",
+    "--",
+    ".",
+    ":(glob,exclude)docs/ios/evidence/build-phase-3/**/*.log"
+  ],
+  "authoredSourceExitCode": 0,
+  "authoredSourceOutput": ""
+}

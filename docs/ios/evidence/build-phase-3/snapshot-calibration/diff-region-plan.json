@@ -1,0 +1,1027 @@
+[
+  {
+    "path": "regular--dark--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--classic.png"
+  },
+  {
+    "path": "regular--dark--local-handoff.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--local-handoff.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--local-handoff.png"
+  },
+  {
+    "path": "regular--dark--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--local-reveal.png"
+  },
+  {
+    "path": "regular--dark--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--human-turn-start.png"
+  },
+  {
+    "path": "regular--dark--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--human-reveal.png"
+  },
+  {
+    "path": "regular--dark--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--human-placement.png"
+  },
+  {
+    "path": "regular--dark--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--computer-reveal.png"
+  },
+  {
+    "path": "regular--dark--computer-thinking.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--computer-thinking.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--computer-thinking.png"
+  },
+  {
+    "path": "regular--dark--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--computer-targeting.png"
+  },
+  {
+    "path": "regular--dark--computer-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--computer-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--computer-placement.png"
+  },
+  {
+    "path": "regular--dark--computer-settled.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--computer-settled.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--computer-settled.png"
+  },
+  {
+    "path": "regular--dark--terminal-settling-draw.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--terminal-settling-draw.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--terminal-settling-draw.png"
+  },
+  {
+    "path": "regular--dark--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--draw-result.png"
+  },
+  {
+    "path": "regular--dark--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--settings.png"
+  },
+  {
+    "path": "regular--dark--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--how-to.png"
+  },
+  {
+    "path": "regular--dark--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--ai-lab.png"
+  },
+  {
+    "path": "regular--dark--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--home-bottom.png"
+  },
+  {
+    "path": "regular--dark--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--human-placement-bottom.png"
+  },
+  {
+    "path": "regular--dark--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--settings-bottom.png"
+  },
+  {
+    "path": "regular--dark--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--dark--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--dark--how-to-bottom.png"
+  },
+  {
+    "path": "regular--light--home.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--home.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--home.png"
+  },
+  {
+    "path": "regular--light--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--classic.png"
+  },
+  {
+    "path": "regular--light--local-handoff.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--local-handoff.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--local-handoff.png"
+  },
+  {
+    "path": "regular--light--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--local-reveal.png"
+  },
+  {
+    "path": "regular--light--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--human-turn-start.png"
+  },
+  {
+    "path": "regular--light--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--human-reveal.png"
+  },
+  {
+    "path": "regular--light--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--human-placement.png"
+  },
+  {
+    "path": "regular--light--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--computer-reveal.png"
+  },
+  {
+    "path": "regular--light--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--computer-targeting.png"
+  },
+  {
+    "path": "regular--light--computer-settled.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--computer-settled.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--computer-settled.png"
+  },
+  {
+    "path": "regular--light--terminal-settling-win.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--terminal-settling-win.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--terminal-settling-win.png"
+  },
+  {
+    "path": "regular--light--terminal-settling-draw.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--terminal-settling-draw.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--terminal-settling-draw.png"
+  },
+  {
+    "path": "regular--light--result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--result.png"
+  },
+  {
+    "path": "regular--light--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--draw-result.png"
+  },
+  {
+    "path": "regular--light--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--settings.png"
+  },
+  {
+    "path": "regular--light--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--how-to.png"
+  },
+  {
+    "path": "regular--light--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--ai-lab.png"
+  },
+  {
+    "path": "regular--light--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--home-bottom.png"
+  },
+  {
+    "path": "regular--light--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--human-placement-bottom.png"
+  },
+  {
+    "path": "regular--light--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--settings-bottom.png"
+  },
+  {
+    "path": "regular--light--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--how-to-bottom.png"
+  },
+  {
+    "path": "regular--light--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular--light--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular--light--ai-lab-bottom.png"
+  },
+  {
+    "path": "ipad--dark--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--classic.png"
+  },
+  {
+    "path": "ipad--dark--local-handoff.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--local-handoff.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--local-handoff.png"
+  },
+  {
+    "path": "ipad--dark--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--local-reveal.png"
+  },
+  {
+    "path": "ipad--dark--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--human-turn-start.png"
+  },
+  {
+    "path": "ipad--dark--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--human-reveal.png"
+  },
+  {
+    "path": "ipad--dark--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--human-placement.png"
+  },
+  {
+    "path": "ipad--dark--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--computer-reveal.png"
+  },
+  {
+    "path": "ipad--dark--computer-thinking.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--computer-thinking.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--computer-thinking.png"
+  },
+  {
+    "path": "ipad--dark--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--computer-targeting.png"
+  },
+  {
+    "path": "ipad--dark--computer-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--computer-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--computer-placement.png"
+  },
+  {
+    "path": "ipad--dark--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--draw-result.png"
+  },
+  {
+    "path": "ipad--dark--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--settings.png"
+  },
+  {
+    "path": "ipad--dark--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--how-to.png"
+  },
+  {
+    "path": "ipad--dark--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--ai-lab.png"
+  },
+  {
+    "path": "ipad--dark--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--home-bottom.png"
+  },
+  {
+    "path": "ipad--dark--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--human-placement-bottom.png"
+  },
+  {
+    "path": "ipad--dark--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--settings-bottom.png"
+  },
+  {
+    "path": "ipad--dark--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--how-to-bottom.png"
+  },
+  {
+    "path": "ipad--dark--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--dark--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--dark--ai-lab-bottom.png"
+  },
+  {
+    "path": "ipad--light--home.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--home.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--home.png"
+  },
+  {
+    "path": "ipad--light--local-handoff.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--local-handoff.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--local-handoff.png"
+  },
+  {
+    "path": "ipad--light--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--local-reveal.png"
+  },
+  {
+    "path": "ipad--light--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--human-turn-start.png"
+  },
+  {
+    "path": "ipad--light--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--human-reveal.png"
+  },
+  {
+    "path": "ipad--light--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--computer-reveal.png"
+  },
+  {
+    "path": "ipad--light--computer-thinking.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--computer-thinking.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--computer-thinking.png"
+  },
+  {
+    "path": "ipad--light--computer-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--computer-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--computer-placement.png"
+  },
+  {
+    "path": "ipad--light--computer-settled.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--computer-settled.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--computer-settled.png"
+  },
+  {
+    "path": "ipad--light--terminal-settling-draw.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--terminal-settling-draw.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--terminal-settling-draw.png"
+  },
+  {
+    "path": "ipad--light--result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--result.png"
+  },
+  {
+    "path": "ipad--light--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--draw-result.png"
+  },
+  {
+    "path": "ipad--light--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--how-to.png"
+  },
+  {
+    "path": "ipad--light--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--ai-lab.png"
+  },
+  {
+    "path": "ipad--light--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--home-bottom.png"
+  },
+  {
+    "path": "ipad--light--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--human-placement-bottom.png"
+  },
+  {
+    "path": "ipad--light--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--settings-bottom.png"
+  },
+  {
+    "path": "ipad--light--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--how-to-bottom.png"
+  },
+  {
+    "path": "ipad--light--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad--light--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad--light--ai-lab-bottom.png"
+  },
+  {
+    "path": "regular-ax3--dark--home.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--home.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--home.png"
+  },
+  {
+    "path": "regular-ax3--dark--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--classic.png"
+  },
+  {
+    "path": "regular-ax3--dark--local-handoff.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--local-handoff.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--local-handoff.png"
+  },
+  {
+    "path": "regular-ax3--dark--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--local-reveal.png"
+  },
+  {
+    "path": "regular-ax3--dark--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--human-turn-start.png"
+  },
+  {
+    "path": "regular-ax3--dark--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--human-reveal.png"
+  },
+  {
+    "path": "regular-ax3--dark--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--human-placement.png"
+  },
+  {
+    "path": "regular-ax3--dark--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--computer-reveal.png"
+  },
+  {
+    "path": "regular-ax3--dark--computer-thinking.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--computer-thinking.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--computer-thinking.png"
+  },
+  {
+    "path": "regular-ax3--dark--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--computer-targeting.png"
+  },
+  {
+    "path": "regular-ax3--dark--computer-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--computer-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--computer-placement.png"
+  },
+  {
+    "path": "regular-ax3--dark--computer-settled.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--computer-settled.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--computer-settled.png"
+  },
+  {
+    "path": "regular-ax3--dark--terminal-settling-draw.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--terminal-settling-draw.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--terminal-settling-draw.png"
+  },
+  {
+    "path": "regular-ax3--dark--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--draw-result.png"
+  },
+  {
+    "path": "regular-ax3--dark--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--settings.png"
+  },
+  {
+    "path": "regular-ax3--dark--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--how-to.png"
+  },
+  {
+    "path": "regular-ax3--dark--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--ai-lab.png"
+  },
+  {
+    "path": "regular-ax3--dark--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--home-bottom.png"
+  },
+  {
+    "path": "regular-ax3--dark--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--human-placement-bottom.png"
+  },
+  {
+    "path": "regular-ax3--dark--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--settings-bottom.png"
+  },
+  {
+    "path": "regular-ax3--dark--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--how-to-bottom.png"
+  },
+  {
+    "path": "regular-ax3--dark--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--dark--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--dark--ai-lab-bottom.png"
+  },
+  {
+    "path": "regular-ax3--light--home.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--home.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--home.png"
+  },
+  {
+    "path": "regular-ax3--light--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--classic.png"
+  },
+  {
+    "path": "regular-ax3--light--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--local-reveal.png"
+  },
+  {
+    "path": "regular-ax3--light--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--human-turn-start.png"
+  },
+  {
+    "path": "regular-ax3--light--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--human-reveal.png"
+  },
+  {
+    "path": "regular-ax3--light--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--human-placement.png"
+  },
+  {
+    "path": "regular-ax3--light--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--computer-reveal.png"
+  },
+  {
+    "path": "regular-ax3--light--computer-thinking.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--computer-thinking.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--computer-thinking.png"
+  },
+  {
+    "path": "regular-ax3--light--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--computer-targeting.png"
+  },
+  {
+    "path": "regular-ax3--light--computer-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--computer-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--computer-placement.png"
+  },
+  {
+    "path": "regular-ax3--light--computer-settled.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--computer-settled.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--computer-settled.png"
+  },
+  {
+    "path": "regular-ax3--light--terminal-settling-win.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--terminal-settling-win.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--terminal-settling-win.png"
+  },
+  {
+    "path": "regular-ax3--light--terminal-settling-draw.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--terminal-settling-draw.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--terminal-settling-draw.png"
+  },
+  {
+    "path": "regular-ax3--light--result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--result.png"
+  },
+  {
+    "path": "regular-ax3--light--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--draw-result.png"
+  },
+  {
+    "path": "regular-ax3--light--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--settings.png"
+  },
+  {
+    "path": "regular-ax3--light--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--how-to.png"
+  },
+  {
+    "path": "regular-ax3--light--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--ai-lab.png"
+  },
+  {
+    "path": "regular-ax3--light--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--home-bottom.png"
+  },
+  {
+    "path": "regular-ax3--light--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--human-placement-bottom.png"
+  },
+  {
+    "path": "regular-ax3--light--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--settings-bottom.png"
+  },
+  {
+    "path": "regular-ax3--light--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--how-to-bottom.png"
+  },
+  {
+    "path": "regular-ax3--light--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-ax3--light--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-ax3--light--ai-lab-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--dark--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--classic.png"
+  },
+  {
+    "path": "ipad-ax3--dark--local-handoff.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--local-handoff.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--local-handoff.png"
+  },
+  {
+    "path": "ipad-ax3--dark--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--local-reveal.png"
+  },
+  {
+    "path": "ipad-ax3--dark--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--human-turn-start.png"
+  },
+  {
+    "path": "ipad-ax3--dark--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--human-reveal.png"
+  },
+  {
+    "path": "ipad-ax3--dark--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--human-placement.png"
+  },
+  {
+    "path": "ipad-ax3--dark--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--computer-reveal.png"
+  },
+  {
+    "path": "ipad-ax3--dark--computer-thinking.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--computer-thinking.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--computer-thinking.png"
+  },
+  {
+    "path": "ipad-ax3--dark--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--computer-targeting.png"
+  },
+  {
+    "path": "ipad-ax3--dark--computer-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--computer-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--computer-placement.png"
+  },
+  {
+    "path": "ipad-ax3--dark--computer-settled.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--computer-settled.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--computer-settled.png"
+  },
+  {
+    "path": "ipad-ax3--dark--terminal-settling-draw.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--terminal-settling-draw.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--terminal-settling-draw.png"
+  },
+  {
+    "path": "ipad-ax3--dark--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--draw-result.png"
+  },
+  {
+    "path": "ipad-ax3--dark--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--settings.png"
+  },
+  {
+    "path": "ipad-ax3--dark--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--how-to.png"
+  },
+  {
+    "path": "ipad-ax3--dark--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--ai-lab.png"
+  },
+  {
+    "path": "ipad-ax3--dark--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--home-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--dark--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--human-placement-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--dark--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--settings-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--dark--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--how-to-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--dark--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--dark--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--dark--ai-lab-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--light--home.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--home.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--home.png"
+  },
+  {
+    "path": "ipad-ax3--light--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--classic.png"
+  },
+  {
+    "path": "ipad-ax3--light--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--local-reveal.png"
+  },
+  {
+    "path": "ipad-ax3--light--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--human-turn-start.png"
+  },
+  {
+    "path": "ipad-ax3--light--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--human-placement.png"
+  },
+  {
+    "path": "ipad-ax3--light--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--computer-targeting.png"
+  },
+  {
+    "path": "ipad-ax3--light--terminal-settling-win.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--terminal-settling-win.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--terminal-settling-win.png"
+  },
+  {
+    "path": "ipad-ax3--light--result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--result.png"
+  },
+  {
+    "path": "ipad-ax3--light--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--draw-result.png"
+  },
+  {
+    "path": "ipad-ax3--light--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--settings.png"
+  },
+  {
+    "path": "ipad-ax3--light--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--ai-lab.png"
+  },
+  {
+    "path": "ipad-ax3--light--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--home-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--light--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--human-placement-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--light--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--how-to-bottom.png"
+  },
+  {
+    "path": "ipad-ax3--light--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/ipad-ax3--light--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/ipad-ax3--light--ai-lab-bottom.png"
+  },
+  {
+    "path": "regular-reduced--dark--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--classic.png"
+  },
+  {
+    "path": "regular-reduced--dark--local-handoff.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--local-handoff.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--local-handoff.png"
+  },
+  {
+    "path": "regular-reduced--dark--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--local-reveal.png"
+  },
+  {
+    "path": "regular-reduced--dark--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--human-turn-start.png"
+  },
+  {
+    "path": "regular-reduced--dark--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--human-reveal.png"
+  },
+  {
+    "path": "regular-reduced--dark--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--human-placement.png"
+  },
+  {
+    "path": "regular-reduced--dark--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--computer-reveal.png"
+  },
+  {
+    "path": "regular-reduced--dark--computer-thinking.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--computer-thinking.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--computer-thinking.png"
+  },
+  {
+    "path": "regular-reduced--dark--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--computer-targeting.png"
+  },
+  {
+    "path": "regular-reduced--dark--computer-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--computer-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--computer-placement.png"
+  },
+  {
+    "path": "regular-reduced--dark--computer-settled.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--computer-settled.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--computer-settled.png"
+  },
+  {
+    "path": "regular-reduced--dark--terminal-settling-draw.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--terminal-settling-draw.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--terminal-settling-draw.png"
+  },
+  {
+    "path": "regular-reduced--dark--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--draw-result.png"
+  },
+  {
+    "path": "regular-reduced--dark--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--settings.png"
+  },
+  {
+    "path": "regular-reduced--dark--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--how-to.png"
+  },
+  {
+    "path": "regular-reduced--dark--ai-lab.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--ai-lab.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--ai-lab.png"
+  },
+  {
+    "path": "regular-reduced--dark--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--home-bottom.png"
+  },
+  {
+    "path": "regular-reduced--dark--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--human-placement-bottom.png"
+  },
+  {
+    "path": "regular-reduced--dark--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--settings-bottom.png"
+  },
+  {
+    "path": "regular-reduced--dark--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--how-to-bottom.png"
+  },
+  {
+    "path": "regular-reduced--dark--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--dark--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--dark--ai-lab-bottom.png"
+  },
+  {
+    "path": "regular-reduced--light--home.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--home.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--home.png"
+  },
+  {
+    "path": "regular-reduced--light--classic.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--classic.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--classic.png"
+  },
+  {
+    "path": "regular-reduced--light--local-handoff.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--local-handoff.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--local-handoff.png"
+  },
+  {
+    "path": "regular-reduced--light--local-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--local-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--local-reveal.png"
+  },
+  {
+    "path": "regular-reduced--light--human-turn-start.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--human-turn-start.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--human-turn-start.png"
+  },
+  {
+    "path": "regular-reduced--light--human-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--human-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--human-reveal.png"
+  },
+  {
+    "path": "regular-reduced--light--human-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--human-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--human-placement.png"
+  },
+  {
+    "path": "regular-reduced--light--computer-reveal.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--computer-reveal.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--computer-reveal.png"
+  },
+  {
+    "path": "regular-reduced--light--computer-thinking.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--computer-thinking.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--computer-thinking.png"
+  },
+  {
+    "path": "regular-reduced--light--computer-targeting.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--computer-targeting.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--computer-targeting.png"
+  },
+  {
+    "path": "regular-reduced--light--computer-placement.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--computer-placement.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--computer-placement.png"
+  },
+  {
+    "path": "regular-reduced--light--computer-settled.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--computer-settled.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--computer-settled.png"
+  },
+  {
+    "path": "regular-reduced--light--terminal-settling-win.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--terminal-settling-win.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--terminal-settling-win.png"
+  },
+  {
+    "path": "regular-reduced--light--terminal-settling-draw.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--terminal-settling-draw.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--terminal-settling-draw.png"
+  },
+  {
+    "path": "regular-reduced--light--result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--result.png"
+  },
+  {
+    "path": "regular-reduced--light--draw-result.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--draw-result.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--draw-result.png"
+  },
+  {
+    "path": "regular-reduced--light--settings.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--settings.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--settings.png"
+  },
+  {
+    "path": "regular-reduced--light--how-to.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--how-to.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--how-to.png"
+  },
+  {
+    "path": "regular-reduced--light--home-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--home-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--home-bottom.png"
+  },
+  {
+    "path": "regular-reduced--light--human-placement-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--human-placement-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--human-placement-bottom.png"
+  },
+  {
+    "path": "regular-reduced--light--settings-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--settings-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--settings-bottom.png"
+  },
+  {
+    "path": "regular-reduced--light--how-to-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--how-to-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--how-to-bottom.png"
+  },
+  {
+    "path": "regular-reduced--light--ai-lab-bottom.png",
+    "left": "/tmp/picpac-phase3-baseline-post-layout-20260925/regular-reduced--light--ai-lab-bottom.png",
+    "right": "/tmp/picpac-phase3-repeat-post-layout-20260925/regular-reduced--light--ai-lab-bottom.png"
+  }
+]

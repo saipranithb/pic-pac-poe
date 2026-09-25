@@ -1,0 +1,37 @@
+Skipped export for PicPacPoeIntegrationTests/testAppHostLoadsPresentationPackage(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testBoardAnnouncementsDistinguishTargetFromCommittedPiece(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testBothPalettesPreserveWordmarkAndActorContrast(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testBundledBrandFontsResolveAndMatchCanonicalFiles(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testDebugCaptureSnapshotsRestoreWithoutLosingStage(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testFeedbackCuesAreSmallLocalPCMFiles(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testHomeMotionIsBoundedAndReducedMotionNeverScales(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testSettingsCaptureMatchesCanonicalControlStates(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testTransitionSpeechNeverReplaysRestorationOrDuplicatesFocusedContent(): no matching attachments
+
+Skipped export for PicPacPoeIntegrationTests/testWordmarkFittingKeepsAllFiveRunsInsideGutters(): no matching attachments
+
+Exported 1 attachment for: PicPacPoePerformanceIntegrationTests/testSimulatorProductionSearchBudgetLatencyAndCancellation():
+File: 3E9F00F4-66F3-47F6-810E-8A17FABE4EA3.json, suggested name: "SIMULATOR_SEARCH_PERFORMANCE_JSON_0_A169F161-D983-416C-BD01-C2B483A6092E.json"
+
+Exported 11 attachments for: PicPacPoePerformanceIntegrationTests/testVisibleHomeMotionAndLiveHardTurnDisplayCadence():
+File: DD832C0B-B9DA-4BAD-886F-8D536471A4B9.json, suggested name: "SIMULATOR_FRAME_PACING_JSON_0_A724FC70-81F9-4BBD-93D6-503EE5093C4C.json"
+File: 5763FDEB-98F3-4566-B74D-825A32DA8F2C.png, suggested name: "home-reduce-motion-inactive-plus-1_0_A16A18A7-F8B0-478F-8921-ECEE4154947E.5"
+File: 4C17AB6E-B368-4BA2-B682-77315EBC13F0.png, suggested name: "home-reduce-motion-inactive-start_0_BC5397D1-1314-4FE4-9A59-16A5A8D66BE4.png"
+File: BB65FCCC-BDC5-4174-96CD-E9397A44249D.png, suggested name: "home-reduce-motion-active-1_0_CE10632B-E2A3-46DF-B84F-DD05EA42E448.4"
+File: 96857FF1-4530-4D34-A0C0-024F4E8CBF92.png, suggested name: "home-reduce-motion-active-0_0_1FDEEB70-7E5B-451A-B239-17D6A4CBFB09.34"
+File: E2FB4629-D757-47FB-96B2-023DE51D77B6.png, suggested name: "home-reduce-motion-active-0_0_3C733EE9-4013-4500-98F2-C21ADA818E08.0"
+File: 24B19E02-4351-4922-BFF0-4D87D58EC7AE.png, suggested name: "home-normal-motion-inactive-plus-1_0_4965BEFB-9F97-465C-919B-1E465043C65D.5"
+File: BDC7A0B2-447E-4025-A10D-98DADC2B3673.png, suggested name: "home-normal-motion-inactive-start_0_EDF75791-FBD4-4C7B-9991-81B8F6C48FFF.png"
+File: D5505C65-117A-4707-ACB7-2F4F5DFB4479.png, suggested name: "home-normal-motion-active-1_0_00D9A825-D6DC-470D-9F4F-222B58CC19FC.4"
+File: 3679C1CD-FF7A-4700-92F7-CC85CD757DD3.png, suggested name: "home-normal-motion-active-0_0_F2B716F0-F03A-4804-8120-984458642AF4.34"
+File: C9945D45-8E73-4DE5-B110-D9D49177B3FA.png, suggested name: "home-normal-motion-active-0_0_43CFCB09-AEA4-42B4-8C49-E92844B2BB97.0"
+
+Generated manifest file with attachment details: /tmp/picpac-phase3-post-layout-lifecycle-20260925/attachments/manifest.json

@@ -6,4 +6,5 @@ dependencies {
     implementation(project(":game-core"))
     implementation(libs.kotlinx.coroutines.core)
     testImplementation(libs.junit)
+    testImplementation(testFixtures(project(":game-core")))
 }

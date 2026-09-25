@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "kind": "Native iOS icon adaptation from canonical Android vector source",
+  "canonicalHandoffCommit": "dc7cb397ad335783c13c7976d4cef816d2fc0909",
+  "androidRuntimeCandidate": "f936faf7d21e85ed71e859d94d65e125fe61b436",
+  "sourceViewport": [
+    108,
+    108
+  ],
+  "nativePixels": [
+    1024,
+    1024
+  ],
+  "opaque": true,
+  "renderer": "CoreGraphics sRGB, no Android mask, no crop, exact source paths and colors",
+  "license": "Apache-2.0, Copyright 2026 Pic-Pac-Poe contributors; project LICENSE",
+  "visualReview": "Inspected full 1024x1024 output; canonical cocoa band/grid, coral X and pistachio O retain original overlaps and proportions. No new logo treatment.",
+  "repeatRender": "Two renderer executions produced byte-identical PNGs on Xcode26.6/macOS26.5.2",
+  "files": [
+    {
+      "path": "app/src/main/res/drawable/ic_launcher_background.xml",
+      "bytes": 558,
+      "sha256": "ff5891a708fe82a702db39079d4ecdb6639f32ad4a926e339ded0b756bde9eff"
+    },
+    {
+      "path": "app/src/main/res/drawable/ic_launcher_foreground.xml",
+      "bytes": 641,
+      "sha256": "02c17b5f4c6146d684836abd31bb305ed9598f5ae594572f91ec4afa3efc712c"
+    },
+    {
+      "path": "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+      "bytes": 343,
+      "sha256": "88f7653499ef524126ea5018a99baf9cc3269e7e584d6205dfdd76db39f39cc0"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 10615,
+      "sha256": "51cf47043aab663fc4e419feeca0e2267e4d91f013e7ea8b6b8f0bd4627a6c9f"
+    },
+    {
+      "path": "ios/Scripts/GenerateNativeAppIcon.swift",
+      "bytes": 5329,
+      "sha256": "2a43714ce8509bf154597295a9e3dae8f63b0ba033661c6327dfe24caa047d7c"
+    },
+    {
+      "path": "ios/PicPacPoe/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+      "bytes": 44064,
+      "sha256": "5bf5f0f7cb44c7146c62bc6095adf04c38dd1440db839ee1c688705650a2ae8a"
+    },
+    {
+      "path": "ios/PicPacPoe/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "bytes": 153,
+      "sha256": "8c61453d2626ef9e6f5fee48ee531dda898971cdb7ad2d8ca990386da90f87d9"
+    },
+    {
+      "path": "ios/PicPacPoe/Assets.xcassets/LaunchBackground.colorset/Contents.json",
+      "bytes": 407,
+      "sha256": "b6e177a310c67335d56347552e94ef7cf68319a0257ecba4c7bebbcea39937fd"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "classification": "Partially complete and dirty",
+  "auditedAt": "2026-09-25T08:38:24.605496+00:00",
+  "implementationHEAD": "ad1a3b40570406a7cf967c600a7c88516dbf2c0c",
+  "branch": "codex/ios-native-parity",
+  "stagedFiles": 0,
+  "canonicalHEAD": "dc7cb397ad335783c13c7976d4cef816d2fc0909",
+  "canonicalClean": true,
+  "completedEvidence": {
+    "priorUI": {
+      "commit": "bf384da11190cb45ff21866a6d804c85a35ce333",
+      "passed": 24,
+      "failed": 0,
+      "skipped": 0,
+      "checksumsVerified": 76,
+      "frameCount": 66
+    },
+    "manualMotionChecksumsVerified": 117,
+    "androidChecksumsVerified": 7,
+    "earlierLifecycleChecksumsVerified": 8
+  },
+  "unfinished": [
+    "Verify and commit existing coverage exclusion and hosted harness fixes",
+    "Rebuild unsigned simulator and device SDK products with strengthened binary gate",
+    "Run current 63 package tests and corrected 12 hosted tests; retain actual display-link and inactive Home evidence",
+    "Run final 24 UI tests including corrected singular footer",
+    "Complete 336 snapshot baselines and repeated-capture calibration; inspect every baseline; approve intentionally",
+    "Finish Release keyboard rematch follow-up; finalize consolidated report, provenance and handoff"
+  ],
+  "staleProcess": {
+    "simulator": "2E93AE9F-D234-4B40-8F3D-254C53B9A6EC",
+    "appPID": 21542,
+    "renderPID": 21313,
+    "recording": "/tmp/picpac-phase3-release-keyboard/release-keyboard.mov",
+    "unfinalizedSidecar": "/tmp/picpac-phase3-release-keyboard/release-keyboard.mov.sb-f0e42eff-wTxM0c",
+    "otherBuildOrTestProcessObserved": false,
+    "disposition": "Gracefully shut down this exact task-owned simulator; preserve both original recording files; do not accept interrupted recording as completed evidence."
+  },
+  "hostedCIExecuted": false,
+  "runtime": "iOS 26.5 (23F77) only; iOS 17 and physical-device checks remain release gates"
+}

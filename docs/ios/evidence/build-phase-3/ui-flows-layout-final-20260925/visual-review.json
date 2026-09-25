@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+  "method": "Every listed PNG opened at original 1206x2622 pixel resolution with view_image(detail=original). No filename, hash, threshold, or sheet substitution.",
+  "reviewedFrames": [
+    {
+      "frameStem": "tutorial-ax3-step-1",
+      "path": "frames/tutorial-ax3-step-1--uptime-5073062p778.png",
+      "sha256": "4395f168a3caf556aa2a49123742317a7ebbfe716024a588e0ce54d2dc40e95a",
+      "result": "PASS",
+      "notes": "Number and period remain together on the first line; full combined step copy readable without horizontal clipping. AX3 all rows fit; AX5 actual swipes reach later rows; expected viewport edge occlusion is not truncation."
+    },
+    {
+      "frameStem": "tutorial-ax3-step-2",
+      "path": "frames/tutorial-ax3-step-2--uptime-5073062p938.png",
+      "sha256": "4395f168a3caf556aa2a49123742317a7ebbfe716024a588e0ce54d2dc40e95a",
+      "result": "PASS",
+      "notes": "Number and period remain together on the first line; full combined step copy readable without horizontal clipping. AX3 all rows fit; AX5 actual swipes reach later rows; expected viewport edge occlusion is not truncation."
+    },
+    {
+      "frameStem": "tutorial-ax3-step-3",
+      "path": "frames/tutorial-ax3-step-3--uptime-5073063p105.png",
+      "sha256": "4395f168a3caf556aa2a49123742317a7ebbfe716024a588e0ce54d2dc40e95a",
+      "result": "PASS",
+      "notes": "Number and period remain together on the first line; full combined step copy readable without horizontal clipping. AX3 all rows fit; AX5 actual swipes reach later rows; expected viewport edge occlusion is not truncation."
+    },
+    {
+      "frameStem": "tutorial-ax3-step-4",
+      "path": "frames/tutorial-ax3-step-4--uptime-5073063p280.png",
+      "sha256": "4395f168a3caf556aa2a49123742317a7ebbfe716024a588e0ce54d2dc40e95a",
+      "result": "PASS",
+      "notes": "Number and period remain together on the first line; full combined step copy readable without horizontal clipping. AX3 all rows fit; AX5 actual swipes reach later rows; expected viewport edge occlusion is not truncation."
+    },
+    {
+      "frameStem": "tutorial-ax5-step-1",
+      "path": "frames/tutorial-ax5-step-1--uptime-5073067p811.png",
+      "sha256": "394a57fb1da980036b42afd2bfd7145ee20632de0c1b6cbff057b839408ce5fd",
+      "result": "PASS",
+      "notes": "Number and period remain together on the first line; full combined step copy readable without horizontal clipping. AX3 all rows fit; AX5 actual swipes reach later rows; expected viewport edge occlusion is not truncation."
+    },
+    {
+      "frameStem": "tutorial-ax5-step-2",
+      "path": "frames/tutorial-ax5-step-2--uptime-5073067p970.png",
+      "sha256": "394a57fb1da980036b42afd2bfd7145ee20632de0c1b6cbff057b839408ce5fd",
+      "result": "PASS",
+      "notes": "Number and period remain together on the first line; full combined step copy readable without horizontal clipping. AX3 all rows fit; AX5 actual swipes reach later rows; expected viewport edge occlusion is not truncation."
+    },
+    {
+      "frameStem": "tutorial-ax5-step-3",
+      "path": "frames/tutorial-ax5-step-3--uptime-5073070p728.png",
+      "sha256": "968b2b1ade620afc4ec9477feef354ab09812191d9ff9035048908c49c4b21f4",
+      "result": "PASS",
+      "notes": "Number and period remain together on the first line; full combined step copy readable without horizontal clipping. AX3 all rows fit; AX5 actual swipes reach later rows; expected viewport edge occlusion is not truncation."
+    },
+    {
+      "frameStem": "tutorial-ax5-step-4",
+      "path": "frames/tutorial-ax5-step-4--uptime-5073070p896.png",
+      "sha256": "968b2b1ade620afc4ec9477feef354ab09812191d9ff9035048908c49c4b21f4",
+      "result": "PASS",
+      "notes": "Number and period remain together on the first line; full combined step copy readable without horizontal clipping. AX3 all rows fit; AX5 actual swipes reach later rows; expected viewport edge occlusion is not truncation."
+    },
+    {
+      "frameStem": "sequence-clock10-human-reveal",
+      "path": "frames/sequence-clock10-human-reveal--uptime-5072732p625.png",
+      "sha256": "d44bbac34251788914881c53c790b611c61a0b1f8ad4b736a53cbce533bb4409",
+      "result": "PASS",
+      "notes": "Actor and held piece are distinct; coral X / pistachio O, stable board geometry, bag count and held-piece wording follow reveal, target, place and settle."
+    },
+    {
+      "frameStem": "sequence-clock10-human-playing",
+      "path": "frames/sequence-clock10-human-playing--uptime-5072739p797.png",
+      "sha256": "6bb0765d615bb4fa31ba71f60b379b6b9ccf259ad4012ab4bf8790d0872ab1d9",
+      "result": "PASS",
+      "notes": "Actor and held piece are distinct; coral X / pistachio O, stable board geometry, bag count and held-piece wording follow reveal, target, place and settle."
+    },
+    {
+      "frameStem": "sequence-clock10-human-placed-computer-turn-start",
+      "path": "frames/sequence-clock10-human-placed-computer-turn-start--uptime-5072740p219.png",
+      "sha256": "458b91a14d9b7bb1f6bb57f59d3441426e6c64f24d5ed972fcb403d75bfd08fd",
+      "result": "PASS",
+      "notes": "Actor and held piece are distinct; coral X / pistachio O, stable board geometry, bag count and held-piece wording follow reveal, target, place and settle."
+    },
+    {
+      "frameStem": "sequence-clock10-computer-reveal",
+      "path": "frames/sequence-clock10-computer-reveal--uptime-5072743p345.png",
+      "sha256": "58d1a16978983d6a2d0355e5579faf8d280772230a40c566702f6053201a4e0b",
+      "result": "PASS",
+      "notes": "Actor and held piece are distinct; coral X / pistachio O, stable board geometry, bag count and held-piece wording follow reveal, target, place and settle."
+    },
+    {
+      "frameStem": "sequence-clock10-computer-target",
+      "path": "frames/sequence-clock10-computer-target--uptime-5072750p533.png",
+      "sha256": "bbcb542157f7a37c3fb527dd62e5984930a5fa80a4dafa3730ee422386df6660",
+      "result": "PASS",
+      "notes": "Actor and held piece are distinct; coral X / pistachio O, stable board geometry, bag count and held-piece wording follow reveal, target, place and settle."
+    },
+    {
+      "frameStem": "sequence-clock10-computer-place",
+      "path": "frames/sequence-clock10-computer-place--uptime-5072752p743.png",
+      "sha256": "09b40731aaf00ec4da6fbabfafaebdaca1872e562d2516e70d5ac0c3088a2403",
+      "result": "PASS",
+      "notes": "Actor and held piece are distinct; coral X / pistachio O, stable board geometry, bag count and held-piece wording follow reveal, target, place and settle."
+    },
+    {
+      "frameStem": "sequence-clock10-computer-settle",
+      "path": "frames/sequence-clock10-computer-settle--uptime-5072756p950.png",
+      "sha256": "e596014b318214814a021bc25d6aaccd8079c9364c1a79ad39bbc23da756ed0f",
+      "result": "PASS",
+      "notes": "Actor and held piece are distinct; coral X / pistachio O, stable board geometry, bag count and held-piece wording follow reveal, target, place and settle."
+    },
+    {
+      "frameStem": "terminal-settling-draw-before-interruption",
+      "path": "frames/terminal-settling-draw-before-interruption--uptime-5073028p283.png",
+      "sha256": "7095b7971557d3ff38739a7424b1998fcd1b9f3015b82561a887de940d4257b5",
+      "result": "PASS",
+      "notes": "Win/draw board remains settled before and after interruption, with result modal appearing only in subsequent result frame. Draw bag footer correctly reads \u201c1 piece remains\u201d; result names actor and line accurately."
+    },
+    {
+      "frameStem": "terminal-settling-draw-restored-settlement",
+      "path": "frames/terminal-settling-draw-restored-settlement--uptime-5073033p417.png",
+      "sha256": "7095b7971557d3ff38739a7424b1998fcd1b9f3015b82561a887de940d4257b5",
+      "result": "PASS",
+      "notes": "Win/draw board remains settled before and after interruption, with result modal appearing only in subsequent result frame. Draw bag footer correctly reads \u201c1 piece remains\u201d; result names actor and line accurately."
+    },
+    {
+      "frameStem": "terminal-settling-draw-result",
+      "path": "frames/terminal-settling-draw-result--uptime-5073041p553.png",
+      "sha256": "d493ea8f3752b9069a53373d344f318667a46927e2aad38a36fe8e72a44aa32b",
+      "result": "PASS",
+      "notes": "Win/draw board remains settled before and after interruption, with result modal appearing only in subsequent result frame. Draw bag footer correctly reads \u201c1 piece remains\u201d; result names actor and line accurately."
+    },
+    {
+      "frameStem": "terminal-settling-win-before-interruption",
+      "path": "frames/terminal-settling-win-before-interruption--uptime-5073046p480.png",
+      "sha256": "2379e726c3fee7fd7908b26a784eb9371103052ae7ffe2a5eeb7a409af77a99b",
+      "result": "PASS",
+      "notes": "Win/draw board remains settled before and after interruption, with result modal appearing only in subsequent result frame. Draw bag footer correctly reads \u201c1 piece remains\u201d; result names actor and line accurately."
+    },
+    {
+      "frameStem": "terminal-settling-win-restored-settlement",
+      "path": "frames/terminal-settling-win-restored-settlement--uptime-5073048p762.png",
+      "sha256": "1dd713bcf47f9e46c5f4f134e03a57ffae8abba833576cd89b04eac3577cd64c",
+      "result": "PASS",
+      "notes": "Win/draw board remains settled before and after interruption, with result modal appearing only in subsequent result frame. Draw bag footer correctly reads \u201c1 piece remains\u201d; result names actor and line accurately."
+    },
+    {
+      "frameStem": "terminal-settling-win-result",
+      "path": "frames/terminal-settling-win-result--uptime-5073057p973.png",
+      "sha256": "6473f2624d181e0fa47a565ecc943f123e9cdea77b74598bbd4c7b6b22b133e3",
+      "result": "PASS",
+      "notes": "Win/draw board remains settled before and after interruption, with result modal appearing only in subsequent result frame. Draw bag footer correctly reads \u201c1 piece remains\u201d; result names actor and line accurately."
+    },
+    {
+      "frameStem": "target-before-relaunch",
+      "path": "frames/target-before-relaunch--uptime-5072974p077.png",
+      "sha256": "5b678cd8998b354e87e656fceb0587607529e9b4bd37a01c071687e67f3dd283",
+      "result": "PASS",
+      "notes": "Selected row 3 column 3, bag and preexisting board persist through relaunch; O is committed exactly once and remains in the same cell after committed-stage relaunch."
+    },
+    {
+      "frameStem": "target-after-relaunch",
+      "path": "frames/target-after-relaunch--uptime-5072979p226.png",
+      "sha256": "5b678cd8998b354e87e656fceb0587607529e9b4bd37a01c071687e67f3dd283",
+      "result": "PASS",
+      "notes": "Selected row 3 column 3, bag and preexisting board persist through relaunch; O is committed exactly once and remains in the same cell after committed-stage relaunch."
+    },
+    {
+      "frameStem": "target-committed-once",
+      "path": "frames/target-committed-once--uptime-5072983p420.png",
+      "sha256": "fa5bccfaae41032b69c94ff373a970e3f7afeb6d216cd65a08a474d786b3c113",
+      "result": "PASS",
+      "notes": "Selected row 3 column 3, bag and preexisting board persist through relaunch; O is committed exactly once and remains in the same cell after committed-stage relaunch."
+    },
+    {
+      "frameStem": "committed-target-after-relaunch",
+      "path": "frames/committed-target-after-relaunch--uptime-5072988p575.png",
+      "sha256": "fa5bccfaae41032b69c94ff373a970e3f7afeb6d216cd65a08a474d786b3c113",
+      "result": "PASS",
+      "notes": "Selected row 3 column 3, bag and preexisting board persist through relaunch; O is committed exactly once and remains in the same cell after committed-stage relaunch."
+    },
+    {
+      "frameStem": "stable-board-ax3-top-computer-targeting",
+      "path": "frames/stable-board-ax3-top-computer-targeting--uptime-5072367p369.png",
+      "sha256": "40f4e01cafa2492fdca41be14cfc02a170eade187d0124dc3f58d06db4a7daed",
+      "result": "PASS",
+      "notes": "Full-size wrapping readable; board origin and cell geometry remain fixed across paired stages. Bottom fixture explicitly anchors scroll to bottom; it is not production launch offset or proof of a user scroll gesture. Viewport occlusion at scroll edges is expected."
+    },
+    {
+      "frameStem": "stable-board-ax3-top-computer-placement",
+      "path": "frames/stable-board-ax3-top-computer-placement--uptime-5072374p183.png",
+      "sha256": "82156f69908bcb533014e7162037b6991a472ebab0efcdc46509438048e441a0",
+      "result": "PASS",
+      "notes": "Full-size wrapping readable; board origin and cell geometry remain fixed across paired stages. Bottom fixture explicitly anchors scroll to bottom; it is not production launch offset or proof of a user scroll gesture. Viewport occlusion at scroll edges is expected."
+    },
+    {
+      "frameStem": "stable-board-ax3-bottom-computer-targeting",
+      "path": "frames/stable-board-ax3-bottom-computer-targeting--uptime-5072408p629.png",
+      "sha256": "d489770cd9ee970562a451f7d0d3fb97119c0147c668411023ab379ef3e6b122",
+      "result": "PASS",
+      "notes": "Full-size wrapping readable; board origin and cell geometry remain fixed across paired stages. Bottom fixture explicitly anchors scroll to bottom; it is not production launch offset or proof of a user scroll gesture. Viewport occlusion at scroll edges is expected."
+    },
+    {
+      "frameStem": "stable-board-ax3-bottom-computer-placement",
+      "path": "frames/stable-board-ax3-bottom-computer-placement--uptime-5072415p551.png",
+      "sha256": "285f1439150b83d31bd2439537894e4166232c961d8119d16288676a69d78dbf",
+      "result": "PASS",
+      "notes": "Full-size wrapping readable; board origin and cell geometry remain fixed across paired stages. Bottom fixture explicitly anchors scroll to bottom; it is not production launch offset or proof of a user scroll gesture. Viewport occlusion at scroll edges is expected."
+    },
+    {
+      "frameStem": "stable-board-ax3-top-human-turn-start",
+      "path": "frames/stable-board-ax3-top-human-turn-start--uptime-5072346p668.png",
+      "sha256": "0fc5f96928320b985a19ae19ed67e76544c1ca0d7be123399b31a0b6344f62dd",
+      "result": "PASS",
+      "notes": "Full-size wrapping readable; board origin and cell geometry remain fixed across paired stages. Bottom fixture explicitly anchors scroll to bottom; it is not production launch offset or proof of a user scroll gesture. Viewport occlusion at scroll edges is expected."
+    },
+    {
+      "frameStem": "stable-board-ax3-top-human-placement",
+      "path": "frames/stable-board-ax3-top-human-placement--uptime-5072353p589.png",
+      "sha256": "c8305ad4ba5358090a5650389fe71ccb8d365076b52cf07154a3e94479bc8402",
+      "result": "PASS",
+      "notes": "Full-size wrapping readable; board origin and cell geometry remain fixed across paired stages. Bottom fixture explicitly anchors scroll to bottom; it is not production launch offset or proof of a user scroll gesture. Viewport occlusion at scroll edges is expected."
+    },
+    {
+      "frameStem": "audit-ai-lab-dark-top",
+      "path": "frames/audit-ai-lab-dark-top--uptime-5072123p263.png",
+      "sha256": "2b58e8846c4d1406c2d342c2d5c80dd580e7c202dcf736f54352fefb3e2f8c9a",
+      "result": "PASS with acknowledged native auditor artifact",
+      "notes": "Intro paragraph readable at top. At bottom its almost wholly offscreen AX bounds generated the narrowly governed native contrast artifact; visible content and controls are clear. One finding is preserved, not a zero-finding claim."
+    },
+    {
+      "frameStem": "audit-offscreen-artifact-ai-lab-dark-bottom",
+      "path": "frames/audit-offscreen-artifact-ai-lab-dark-bottom--uptime-5072134p073.png",
+      "sha256": "c1271824d5d8d2e2d68f496b30d8b155a3f10d73801a4474a5b01ffb520fbbb9",
+      "result": "PASS with acknowledged native auditor artifact",
+      "notes": "Intro paragraph readable at top. At bottom its almost wholly offscreen AX bounds generated the narrowly governed native contrast artifact; visible content and controls are clear. One finding is preserved, not a zero-finding claim."
+    }
+  ],
+  "contactSheets": [
+    {
+      "path": "sequence-contact-sheet.png",
+      "sha256": "5052c85b306bc65ecd6e6f2a57284db249e25c1f62927406867f961bdbe23ab0",
+      "pixelWidth": 1440,
+      "pixelHeight": 1710,
+      "result": "PASS",
+      "method": "Opened at original sheet resolution after all 17 source originals were separately opened.",
+      "notes": "All 17 full portrait frames aspect-fit without crop; readable stage, controlled-hold and original monotonic-uptime labels; no timing normalization or removal of native status/safe areas."
+    }
+  ],
+  "notClaimed": "No claim that all 98 exported UI frames received full-resolution visual review. Final governed baseline originals were separately reviewed in full.",
+  "counts": {
+    "tutorialOriginals": 8,
+    "temporalOriginals": 17,
+    "representativeAX3GeometryOriginals": 6,
+    "AI_LabArtifactContextOriginals": 2,
+    "totalOriginalsOpened": 33
+  }
+}

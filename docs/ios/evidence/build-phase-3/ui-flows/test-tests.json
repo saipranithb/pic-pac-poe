@@ -1,0 +1,260 @@
+{
+  "devices" : [
+    {
+      "architecture" : "arm64",
+      "deviceId" : "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+      "deviceName" : "PicPac Phase3 UI",
+      "modelName" : "iPhone 17 Pro",
+      "osBuildNumber" : "23F77",
+      "osVersion" : "26.5",
+      "platform" : "iOS Simulator"
+    }
+  ],
+  "testNodes" : [
+    {
+      "children" : [
+        {
+          "children" : [
+            {
+              "children" : [
+                {
+                  "duration" : "3m 37s",
+                  "durationInSeconds" : 217.16978204250336,
+                  "name" : "testAutomatedAccessibilityAuditBothThemes()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "5s",
+                  "durationInSeconds" : 5.089556932449341,
+                  "name" : "testBoardOrderTargetsAndOccupiedCellGate()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testBoardOrderTargetsAndOccupiedCellGate()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testBoardOrderTargetsAndOccupiedCellGate",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "13s",
+                  "durationInSeconds" : 13.695572018623352,
+                  "name" : "testClassicBoardSurvivesSceneInterruptionAndRelaunch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testClassicBoardSurvivesSceneInterruptionAndRelaunch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testClassicBoardSurvivesSceneInterruptionAndRelaunch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "9s",
+                  "durationInSeconds" : 9.807024955749512,
+                  "name" : "testCompleteClassicDraw()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testCompleteClassicDraw()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteClassicDraw",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "16s",
+                  "durationInSeconds" : 16.48360300064087,
+                  "name" : "testCompleteClassicWinRematchAndTerminalRelaunch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testCompleteClassicWinRematchAndTerminalRelaunch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteClassicWinRematchAndTerminalRelaunch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "39s",
+                  "durationInSeconds" : 39.29920995235443,
+                  "name" : "testCompleteEasyGameAndRematch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testCompleteEasyGameAndRematch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteEasyGameAndRematch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "45s",
+                  "durationInSeconds" : 45.922170996665955,
+                  "name" : "testCompleteHardGameAndRematch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testCompleteHardGameAndRematch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteHardGameAndRematch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "1m 24s",
+                  "durationInSeconds" : 84.16847693920135,
+                  "name" : "testCompleteLocalGameAndRematchWithPrivacy()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testCompleteLocalGameAndRematchWithPrivacy()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteLocalGameAndRematchWithPrivacy",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "38s",
+                  "durationInSeconds" : 38.5868079662323,
+                  "name" : "testCompleteMCTSGameAndRematch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testCompleteMCTSGameAndRematch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteMCTSGameAndRematch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "34s",
+                  "durationInSeconds" : 34.8666729927063,
+                  "name" : "testCompleteMediumGameAndRematch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testCompleteMediumGameAndRematch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteMediumGameAndRematch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "39s",
+                  "durationInSeconds" : 39.01011788845062,
+                  "name" : "testCompleteQLearningGameAndRematch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testCompleteQLearningGameAndRematch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testCompleteQLearningGameAndRematch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "34s",
+                  "durationInSeconds" : 34.16329002380371,
+                  "name" : "testGovernedLiveHumanAndComputerSequence()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testGovernedLiveHumanAndComputerSequence()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testGovernedLiveHumanAndComputerSequence",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "1m 12s",
+                  "durationInSeconds" : 72.53333508968353,
+                  "name" : "testHeldFixturesKeepLockedStagesPrivateInBothThemes()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testHeldFixturesKeepLockedStagesPrivateInBothThemes()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testHeldFixturesKeepLockedStagesPrivateInBothThemes",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "8s",
+                  "durationInSeconds" : 8.51057493686676,
+                  "name" : "testHomeHeadingExplanationAndTutorialReachability()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testHomeHeadingExplanationAndTutorialReachability()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testHomeHeadingExplanationAndTutorialReachability",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "51s",
+                  "durationInSeconds" : 51.05305898189545,
+                  "name" : "testHumanTurnStartAndRevealResumeWithoutRedraw()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testHumanTurnStartAndRevealResumeWithoutRedraw()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testHumanTurnStartAndRevealResumeWithoutRedraw",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "21s",
+                  "durationInSeconds" : 21.481052041053772,
+                  "name" : "testLandscapeAndLargestTextKeepLastSquareAndBagReachable()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testLandscapeAndLargestTextKeepLastSquareAndBagReachable()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testLandscapeAndLargestTextKeepLastSquareAndBagReachable",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "22s",
+                  "durationInSeconds" : 22.80757200717926,
+                  "name" : "testLargestDynamicTypeKeepsActionsReachable()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testLargestDynamicTypeKeepsActionsReachable()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testLargestDynamicTypeKeepsActionsReachable",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "10s",
+                  "durationInSeconds" : 10.414577007293701,
+                  "name" : "testLeavingComputerSequenceCannotMutateNewClassicGame()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testLeavingComputerSequenceCannotMutateNewClassicGame()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testLeavingComputerSequenceCannotMutateNewClassicGame",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "18s",
+                  "durationInSeconds" : 18.462682008743286,
+                  "name" : "testLocalHandoffAndHeldPieceSurviveRelaunchWithoutRedraw()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testLocalHandoffAndHeldPieceSurviveRelaunchWithoutRedraw()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testLocalHandoffAndHeldPieceSurviveRelaunchWithoutRedraw",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "18s",
+                  "durationInSeconds" : 18.977692008018494,
+                  "name" : "testSelectedComputerTargetSurvivesRelaunchAndCommitsOnce()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testSelectedComputerTargetSurvivesRelaunchAndCommitsOnce()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testSelectedComputerTargetSurvivesRelaunchAndCommitsOnce",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "11s",
+                  "durationInSeconds" : 11.085309028625488,
+                  "name" : "testSelectedDifficultySurvivesSupportingPageNavigation()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testSelectedDifficultySurvivesSupportingPageNavigation()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testSelectedDifficultySurvivesSupportingPageNavigation",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "23s",
+                  "durationInSeconds" : 23.339900016784668,
+                  "name" : "testSettingsPersistAcrossNavigationBackgroundAndRelaunch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testSettingsPersistAcrossNavigationBackgroundAndRelaunch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testSettingsPersistAcrossNavigationBackgroundAndRelaunch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "18s",
+                  "durationInSeconds" : 18.09255802631378,
+                  "name" : "testTerminalComputerDrawSettlesBeforeResultAcrossRelaunch()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testTerminalComputerDrawSettlesBeforeResultAcrossRelaunch()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testTerminalComputerDrawSettlesBeforeResultAcrossRelaunch",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                },
+                {
+                  "duration" : "16s",
+                  "durationInSeconds" : 16.34142005443573,
+                  "name" : "testTerminalComputerWinSettlesBeforeResultAcrossBackground()",
+                  "nodeIdentifier" : "PicPacPoeUITests/testTerminalComputerWinSettlesBeforeResultAcrossBackground()",
+                  "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests/testTerminalComputerWinSettlesBeforeResultAcrossBackground",
+                  "nodeType" : "Test Case",
+                  "result" : "Passed"
+                }
+              ],
+              "name" : "PicPacPoeUITests",
+              "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests/PicPacPoeUITests",
+              "nodeType" : "Test Suite",
+              "result" : "Passed"
+            }
+          ],
+          "name" : "PicPacPoeUITests",
+          "nodeIdentifierURL" : "test://com.apple.xcode/PicPacPoe/PicPacPoeUITests",
+          "nodeType" : "UI test bundle",
+          "result" : "Passed"
+        }
+      ],
+      "name" : "PicPacPoe",
+      "nodeType" : "Test Plan",
+      "result" : "Passed"
+    }
+  ],
+  "testPlanConfigurations" : [
+    {
+      "configurationId" : "1",
+      "configurationName" : "Test Scheme Action"
+    }
+  ]
+}

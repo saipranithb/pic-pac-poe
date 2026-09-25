@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-09-25T09:01:18.219825+00:00",
+  "device": "2E93AE9F-D234-4B40-8F3D-254C53B9A6EC",
+  "observedState": "Shutting Down",
+  "ownedCommandsStopped": [
+    {
+      "pid": 82485,
+      "command": "simctl shutdown 2E93AE9F-D234-4B40-8F3D-254C53B9A6EC",
+      "elapsedAtDiagnosis": "21:36",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 84817,
+      "command": "simctl boot 2E93AE9F-D234-4B40-8F3D-254C53B9A6EC",
+      "elapsedAtDiagnosis": "12:59",
+      "signal": "SIGTERM"
+    }
+  ],
+  "identityCheck": "Exact ps command identity checked immediately before each signal",
+  "dataReset": false,
+  "deviceDeleted": false,
+  "otherDevicesAltered": false,
+  "interpretation": "Recovery of interrupted task simulator. Existing recording and application data preserved; this is not a product failure or accepted keyboard result."
+}

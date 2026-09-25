@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "testedProductCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+  "testedSource": {
+    "commit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+    "branch": "codex/ios-native-parity",
+    "status": [],
+    "iosSourceSHA256": "7294c6d0018d9c3b39bfb1c5c56fec2ea72a1554a02a6e3a3dc95e93d041e482",
+    "buildInputSHA256": "2be2a20569eb23b3b22553c8e39ed8ce25ebeeb23fbab3665a8a3d175eb2dec3",
+    "externalInputs": {
+      "app/src/main/res/font/fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+      "app/src/main/res/font/fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9",
+      "app/src/main/assets/licenses/fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+      "docs/ios-handoff/reference/screenshot-manifest.json": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+    }
+  },
+  "deliveryBeforeCommit": {
+    "parentCommit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+    "branch": "codex/ios-native-parity",
+    "iosSourceSHA256": "35e0f298d89aea463c75ab9d6075d9e0039e5ae999a670ef702591641d490242",
+    "buildInputSHA256": "7c41af0ccc23985c118a76432b75d587d9135f2e95a97e08105eccaa2841e963",
+    "externalInputs": {
+      "app/src/main/res/font/fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+      "app/src/main/res/font/fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9",
+      "app/src/main/assets/licenses/fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+      "docs/ios-handoff/reference/screenshot-manifest.json": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+    }
+  },
+  "nativeChangesAfterTesting": [
+    {
+      "path": "ios/PicPacPoeUITests/README.md",
+      "beforeSHA256": "fd2add4d6f7aea806ceab7518b2cbbe8a9fde9f29ff36aa8fc26d63a610b6452",
+      "afterSHA256": "b5bfb1ec6e6de076a7d646f9c4125dd536a803d00ccebce9b3fbe8be2355ad0a",
+      "classification": "Noncompiled README only: 24 to 26 methods and two inspected layout regressions"
+    }
+  ],
+  "compiledProductionTestsConfigurationScriptsResourcesChanged": false,
+  "verification": "Every repository change after the tested product revision is restricted to docs/ios/** and this noncompiled README by the final delivery guard. The original 191-file input inventory, independent complete 267-file non-delivery inventory and repository-wide Git delta are retained. Reconstructing the prior broad fingerprints with only the original README bytes reproduces both tested hashes exactly. Broad snapshot fingerprints include README, so final documentation fingerprints intentionally differ from tested capture fingerprints.",
+  "finalDeliveryCommit": "The commit containing this manifest; exact final SHA is provided in the completion response. Self-referential commit hashing is intentionally avoided."
+}

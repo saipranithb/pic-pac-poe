@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "pass": true,
+  "target": "PicPacPoeTests",
+  "configuration": "Test",
+  "source": "ios/PicPacPoeTests/PicPacPoeIntegrationTests.swift",
+  "sourceSHA256": "b82666deb24bc87e20ae861db698e2b4c8187ad23d68c9737be6f11439b405bf",
+  "inventoryMethod": "Swift parser direct class/extension function declarations",
+  "expectedTests": [
+    "PicPacPoeIntegrationTests/testAppHostLoadsPresentationPackage()",
+    "PicPacPoeIntegrationTests/testBoardAnnouncementsDistinguishTargetFromCommittedPiece()",
+    "PicPacPoeIntegrationTests/testBothPalettesPreserveWordmarkAndActorContrast()",
+    "PicPacPoeIntegrationTests/testBundledBrandFontsResolveAndMatchCanonicalFiles()",
+    "PicPacPoeIntegrationTests/testDebugCaptureSnapshotsRestoreWithoutLosingStage()",
+    "PicPacPoeIntegrationTests/testFeedbackCuesAreSmallLocalPCMFiles()",
+    "PicPacPoeIntegrationTests/testHomeMotionIsBoundedAndReducedMotionNeverScales()",
+    "PicPacPoeIntegrationTests/testSettingsCaptureMatchesCanonicalControlStates()",
+    "PicPacPoeIntegrationTests/testTransitionSpeechNeverReplaysRestorationOrDuplicatesFocusedContent()",
+    "PicPacPoeIntegrationTests/testWordmarkFittingKeepsAllFiveRunsInsideGutters()",
+    "PicPacPoePerformanceIntegrationTests/testSimulatorProductionSearchBudgetLatencyAndCancellation()",
+    "PicPacPoePerformanceIntegrationTests/testVisibleHomeMotionAndLiveHardTurnDisplayCadence()"
+  ],
+  "observedTests": {
+    "PicPacPoeIntegrationTests/testAppHostLoadsPresentationPackage()": "Passed",
+    "PicPacPoeIntegrationTests/testBoardAnnouncementsDistinguishTargetFromCommittedPiece()": "Passed",
+    "PicPacPoeIntegrationTests/testBothPalettesPreserveWordmarkAndActorContrast()": "Passed",
+    "PicPacPoeIntegrationTests/testBundledBrandFontsResolveAndMatchCanonicalFiles()": "Passed",
+    "PicPacPoeIntegrationTests/testDebugCaptureSnapshotsRestoreWithoutLosingStage()": "Passed",
+    "PicPacPoeIntegrationTests/testFeedbackCuesAreSmallLocalPCMFiles()": "Passed",
+    "PicPacPoeIntegrationTests/testHomeMotionIsBoundedAndReducedMotionNeverScales()": "Passed",
+    "PicPacPoeIntegrationTests/testSettingsCaptureMatchesCanonicalControlStates()": "Passed",
+    "PicPacPoeIntegrationTests/testTransitionSpeechNeverReplaysRestorationOrDuplicatesFocusedContent()": "Passed",
+    "PicPacPoeIntegrationTests/testWordmarkFittingKeepsAllFiveRunsInsideGutters()": "Passed",
+    "PicPacPoePerformanceIntegrationTests/testSimulatorProductionSearchBudgetLatencyAndCancellation()": "Passed",
+    "PicPacPoePerformanceIntegrationTests/testVisibleHomeMotionAndLiveHardTurnDisplayCadence()": "Passed"
+  },
+  "allowedSkips": {},
+  "summary": {
+    "devicesAndConfigurations": [
+      {
+        "device": {
+          "architecture": "arm64",
+          "deviceId": "97FAA70C-E2D7-4893-9D76-FE172A792433",
+          "deviceName": "PicPacPoe Phase3 Performance",
+          "modelName": "iPhone 17 Pro",
+          "osBuildNumber": "23F77",
+          "osVersion": "26.5",
+          "platform": "iOS Simulator"
+        },
+        "expectedFailures": 0,
+        "failedTests": 0,
+        "passedTests": 12,
+        "skippedTests": 0,
+        "testPlanConfiguration": {
+          "configurationId": "1",
+          "configurationName": "Test Scheme Action"
+        }
+      }
+    ],
+    "environmentDescription": "PicPacPoe \u00b7 Built with macOS 26.5.2",
+    "expectedFailures": 0,
+    "failedTests": 0,
+    "finishTime": 1790325899.261,
+    "passedTests": 12,
+    "result": "Passed",
+    "skippedTests": 0,
+    "startTime": 1790325841.533,
+    "statistics": [],
+    "testFailures": [],
+    "title": "Test - PicPacPoe",
+    "topInsights": [
+      {
+        "category": "Longest Test Runs",
+        "impact": "97% of duration",
+        "text": "1 longest test run with outlier durations exceeding 16.39s (three standard deviations)"
+      }
+    ],
+    "totalTestCount": 12
+  },
+  "errors": []
+}

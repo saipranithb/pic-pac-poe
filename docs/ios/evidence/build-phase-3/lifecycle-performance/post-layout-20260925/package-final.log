@@ -1,0 +1,159 @@
+[0/1] Planning build
+Building for debugging...
+[0/2] Write swift-version--58304C5D6DBC2206.txt
+Build complete! (0.16s)
+Test Suite 'All tests' started at 2026-09-25 06:59:13.306.
+Test Suite 'PicPacKitPackageTests.xctest' started at 2026-09-25 06:59:13.308.
+Test Suite 'CoreDomainTests' started at 2026-09-25 06:59:13.308.
+Test Case '-[PicPacKitTests.CoreDomainTests testActorOwnsWinIndependentlyOfSymbol]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testActorOwnsWinIndependentlyOfSymbol]' passed (0.002 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testAllBase3BoardCodesRoundTrip]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testAllBase3BoardCodesRoundTrip]' passed (0.056 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testAllEightWinningLinesRemainInStableOrder]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testAllEightWinningLinesRemainInStableOrder]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testBoardEncodingUsesRowMajorLeastSignificantCellOrder]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testBoardEncodingUsesRowMajorLeastSignificantCellOrder]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testClassicSymbolsRemainBoundToPlayersWhenPlayerTwoStarts]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testClassicSymbolsRemainBoundToPlayersWhenPlayerTwoStarts]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testCodableRoundTripRevalidatesState]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testCodableRoundTripRevalidatesState]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testDecodedTerminalStatesRejectSimultaneousWinners]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testDecodedTerminalStatesRejectSimultaneousWinners]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testNinthMoveWinTakesPrecedenceOverDraw]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testNinthMoveWinTakesPrecedenceOverDraw]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testOnePlacementCanRetainMultipleWinningLines]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testOnePlacementCanRetainMultipleWinningLines]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testPublicObservationSeparatesActiveAndAgentActors]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testPublicObservationSeparatesActiveAndAgentActors]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testRejectedTransitionsLeaveValueStateUnchanged]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testRejectedTransitionsLeaveValueStateUnchanged]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testStateValidationEnforcesBagConservation]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testStateValidationEnforcesBagConservation]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.CoreDomainTests testStateValidationRejectsUnreachableTurnsAndFullNonterminalBoards]' started.
+Test Case '-[PicPacKitTests.CoreDomainTests testStateValidationRejectsUnreachableTurnsAndFullNonterminalBoards]' passed (0.000 seconds).
+Test Suite 'CoreDomainTests' passed at 2026-09-25 06:59:13.370.
+	 Executed 13 tests, with 0 failures (0 unexpected) in 0.061 (0.062) seconds
+Test Suite 'GoldenFixtureTests' started at 2026-09-25 06:59:13.370.
+Test Case '-[PicPacKitTests.GoldenFixtureTests testBundledFixtureBytesExactlyMatchCanonicalFile]' started.
+Test Case '-[PicPacKitTests.GoldenFixtureTests testBundledFixtureBytesExactlyMatchCanonicalFile]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.GoldenFixtureTests testSchemaAndEveryFixtureRouteAreExplicit]' started.
+Test Case '-[PicPacKitTests.GoldenFixtureTests testSchemaAndEveryFixtureRouteAreExplicit]' passed (5.445 seconds).
+Test Case '-[PicPacKitTests.GoldenFixtureTests testUnknownSchemaVersionAndRootGroupAreRejected]' started.
+Test Case '-[PicPacKitTests.GoldenFixtureTests testUnknownSchemaVersionAndRootGroupAreRejected]' passed (0.001 seconds).
+Test Suite 'GoldenFixtureTests' passed at 2026-09-25 06:59:18.817.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 5.447 (5.447) seconds
+Test Suite 'PerformanceAuditTests' started at 2026-09-25 06:59:18.817.
+Test Case '-[PicPacKitTests.PerformanceAuditTests testProductionSearchLatencyBudgetCancellationAndMainActorProgress]' started.
+Test Case '-[PicPacKitTests.PerformanceAuditTests testProductionSearchLatencyBudgetCancellationAndMainActorProgress]' passed (11.600 seconds).
+Test Suite 'PerformanceAuditTests' passed at 2026-09-25 06:59:30.417.
+	 Executed 1 test, with 0 failures (0 unexpected) in 11.600 (11.600) seconds
+Test Suite 'PresentationCoordinatorTests' started at 2026-09-25 06:59:30.417.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testAITerminalRestorationRequiresExactCommittedMoveFields]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testAITerminalRestorationRequiresExactCommittedMoveFields]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testAllSevenPresentationOwnedGoldenFixturesExecuteBehaviorally]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testAllSevenPresentationOwnedGoldenFixturesExecuteBehaviorally]' passed (0.004 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCancelledLateAIResultCannotMutateReplacementGame]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCancelledLateAIResultCannotMutateReplacementGame]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCancelledPreInterruptionDecisionCannotWinAgainstRestartedSearch]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCancelledPreInterruptionDecisionCannotWinAgainstRestartedSearch]' passed (0.002 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCoordinatorForwardsSelectedDifficultyToWorker]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCoordinatorForwardsSelectedDifficultyToWorker]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCoordinatorTeardownCancelsOwnedClockAndSearchTasks]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCoordinatorTeardownCancelsOwnedClockAndSearchTasks]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCorruptSnapshotFailsClosedToHomeAndIsRemoved]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCorruptSnapshotFailsClosedToHomeAndIsRemoved]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCounterBoundariesRejectOverflowingRevisionAndWrapPresentationIdentity]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testCounterBoundariesRejectOverflowingRevisionAndWrapPresentationIdentity]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testDetachedWorkerBoundaryDoesNotRunSynchronousSearchOnMainThread]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testDetachedWorkerBoundaryDoesNotRunSynchronousSearchOnMainThread]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testDetachedWorkerPropagatesCancellationToCooperativeSearch]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testDetachedWorkerPropagatesCancellationToCooperativeSearch]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testEarlyAIResultWaitsForRevealThenTargetsBeforeCommit]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testEarlyAIResultWaitsForRevealThenTargetsBeforeCommit]' passed (0.002 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testEveryBoundarySurvivesInactiveBackgroundRelaunchWithoutReplay]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testEveryBoundarySurvivesInactiveBackgroundRelaunchWithoutReplay]' passed (0.030 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testEveryRestorationBoundaryRoundTripsAndLockedStagesRejectInput]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testEveryRestorationBoundaryRoundTripsAndLockedStagesRejectInput]' passed (0.014 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testHeldPieceRestoresAndSceneResumeRestartsFullBeatWithoutRedraw]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testHeldPieceRestoresAndSceneResumeRestartsFullBeatWithoutRedraw]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testLateAIResultUsesTruthfulThinkingStage]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testLateAIResultUsesTruthfulThinkingStage]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testLocalHandoffRevealsOnceAndRejectsRapidDuplicatePlacement]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testLocalHandoffRevealsOnceAndRejectsRapidDuplicatePlacement]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testPresentationTimingContractKeepsEveryRequiredBeat]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testPresentationTimingContractKeepsEveryRequiredBeat]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testPrivateFilesAreAtomicReadableAndExcludedFromBackup]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testPrivateFilesAreAtomicReadableAndExcludedFromBackup]' passed (0.004 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testRematchAlternatesStarterAndHomeRetainsSessionCounters]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testRematchAlternatesStarterAndHomeRetainsSessionCounters]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testRestorationReadinessPreventsCommandsAndTracksLatestScenePhase]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testRestorationReadinessPreventsCommandsAndTracksLatestScenePhase]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSceneInactivityCancelsAndRelaunchesComputerSearchWithoutRedraw]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSceneInactivityCancelsAndRelaunchesComputerSearchWithoutRedraw]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSceneInactivityConsumesPendingFeedbackWithoutReplay]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSceneInactivityConsumesPendingFeedbackWithoutReplay]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSettingsAreTypedAndPersistSeparatelyFromMatchSnapshot]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSettingsAreTypedAndPersistSeparatelyFromMatchSnapshot]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerUserDestination]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerUserDestination]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSlowRevealPersistenceCannotLaunchStaleSearchAfterReplacement]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSlowRevealPersistenceCannotLaunchStaleSearchAfterReplacement]' passed (0.001 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSystemReducedMotionCombinesWithSavedPreferenceWithoutPersistingIt]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSystemReducedMotionCombinesWithSavedPreferenceWithoutPersistingIt]' passed (0.003 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testTargetingRestoresWithoutDrawOrSearchAndCommitsExactlyOnce]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testTargetingRestoresWithoutDrawOrSearchAndCommitsExactlyOnce]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testThrowingAndIllegalWorkersUseFirstRowMajorLegalFallback]' started.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testThrowingAndIllegalWorkersUseFirstRowMajorLegalFallback]' passed (0.003 seconds).
+Test Suite 'PresentationCoordinatorTests' passed at 2026-09-25 06:59:30.495.
+	 Executed 29 tests, with 0 failures (0 unexpected) in 0.076 (0.078) seconds
+Test Suite 'ProductionAITests' started at 2026-09-25 06:59:30.495.
+Test Case '-[PicPacKitTests.ProductionAITests testBundledPolicyMatchesCanonicalArtifactAndKnownOpeningRow]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testBundledPolicyMatchesCanonicalArtifactAndKnownOpeningRow]' passed (0.063 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testEasyTakesEveryImmediateWinAndUsesStableRandomTieBand]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testEasyTakesEveryImmediateWinAndUsesStableRandomTieBand]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testExactLimitFallsBackToUnboundedHeuristic]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testExactLimitFallsBackToUnboundedHeuristic]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testHardProductionSolverMatchesExactOpeningOracleAndRetainsCache]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testHardProductionSolverMatchesExactOpeningOracleAndRetainsCache]' passed (1.826 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testHardSearchObservesCancellation]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testHardSearchObservesCancellation]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testMCTSExpiredDeadlineUsesFirstRowMajorLegalFallback]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testMCTSExpiredDeadlineUsesFirstRowMajorLegalFallback]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testMCTSIsRepeatableBoundedAndProductionBudgetIsTwoThousand]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testMCTSIsRepeatableBoundedAndProductionBudgetIsTwoThousand]' passed (0.685 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testMCTSScriptedCallsProveExpansionChanceAndRolloutBounds]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testMCTSScriptedCallsProveExpansionChanceAndRolloutBounds]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testMediumUsesDepthFourAndStableOpeningChoice]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testMediumUsesDepthFourAndStableOpeningChoice]' passed (2.285 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testPolicyAlwaysMasksIllegalCellsAcrossReachableGraph]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testPolicyAlwaysMasksIllegalCellsAcrossReachableGraph]' passed (1.197 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testPolicyFallbackOnlyAppliesWhenWholeTableIsEmpty]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testPolicyFallbackOnlyAppliesWhenWholeTableIsEmpty]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testPolicyFormatRoundTripsAndRejectsIncompatibleArtifacts]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testPolicyFormatRoundTripsAndRejectsIncompatibleArtifacts]' passed (0.000 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testProductionEngineMapsEveryOpponentToItsGovernedConfiguration]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testProductionEngineMapsEveryOpponentToItsGovernedConfiguration]' passed (2.811 seconds).
+Test Case '-[PicPacKitTests.ProductionAITests testRandomAndEasyAreLegalAcrossEveryReachableDecisionState]' started.
+Test Case '-[PicPacKitTests.ProductionAITests testRandomAndEasyAreLegalAcrossEveryReachableDecisionState]' passed (3.560 seconds).
+Test Suite 'ProductionAITests' passed at 2026-09-25 06:59:42.925.
+	 Executed 14 tests, with 0 failures (0 unexpected) in 12.429 (12.430) seconds
+Test Suite 'SearchAndGraphTests' started at 2026-09-25 06:59:42.925.
+Test Case '-[PicPacKitTests.SearchAndGraphTests testCanonicalPhaseAwareGraphCounts]' started.
+Test Case '-[PicPacKitTests.SearchAndGraphTests testCanonicalPhaseAwareGraphCounts]' passed (1.057 seconds).
+Test Case '-[PicPacKitTests.SearchAndGraphTests testOpeningOracleForBothHeldSymbols]' started.
+Test Case '-[PicPacKitTests.SearchAndGraphTests testOpeningOracleForBothHeldSymbols]' passed (3.652 seconds).
+Test Case '-[PicPacKitTests.SearchAndGraphTests testScriptedBoundedRandomnessChecksBoundsAndCallOrder]' started.
+Test Case '-[PicPacKitTests.SearchAndGraphTests testScriptedBoundedRandomnessChecksBoundsAndCallOrder]' passed (0.000 seconds).
+Test Suite 'SearchAndGraphTests' passed at 2026-09-25 06:59:47.635.
+	 Executed 3 tests, with 0 failures (0 unexpected) in 4.710 (4.710) seconds
+Test Suite 'PicPacKitPackageTests.xctest' passed at 2026-09-25 06:59:47.635.
+	 Executed 63 tests, with 0 failures (0 unexpected) in 34.322 (34.327) seconds
+Test Suite 'All tests' passed at 2026-09-25 06:59:47.635.
+	 Executed 63 tests, with 0 failures (0 unexpected) in 34.322 (34.329) seconds
+PHASE3_PERFORMANCE_JSON {"framePacingEvidence":false,"hardColdMilliseconds":[1822.860167,1825.3572079999999,1828.73775,1837.7402500000001,1836.1598329999999],"hardColdNodes":[109706,109706,109706,109706,109706],"hardInFlightCancellationMilliseconds":[4.1036659999999996,0.1205,4.2568330000000003,0.122375,4.0607090000000001],"hardWarmMilliseconds":[0.280584,0.25716699999999998,0.30116599999999999,0.26691700000000002,0.25808399999999998],"hardWarmNodes":[18,18,18,18,18],"kind":"macOS-host-production-agent-measurement","mainActorTwoMillisecondHeartbeat":{"maxMilliseconds":3.1547499999999999,"p50Milliseconds":3.049042,"p95Milliseconds":3.068416,"samples":3912},"mctsCompletedSimulationsPerCall":2000,"mctsMilliseconds":[476.887542,474.43179199999997,482.89058299999999,462.99166700000001,490.712041],"physicalDeviceEvidence":false,"sampleCount":5,"schemaVersion":1}
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

@@ -1,0 +1,6 @@
+Fixtures: 8 groups, 36 unique IDs; SHA-256 c68308f7a6b3684cc413bc37f495a7dfade8e5bd7a928f4273d79cbb101021ae
+WARNING: Release commit/tag unresolved: portable package validation is not exact-release certification
+Checked 7 JSON documents, 243 relative Markdown links, 131 file hashes; 0 error(s).
+PASS: portable handoff verification (read-only; no network or Git mutation).
+EXPECTED RELEASE GATE: strict verifier fails solely for null releaseCommit and releaseTag
+PASS: shared bytes, fixture IDs, read-only SHA-pinned credential-free CI, ordinary and strict-release governance

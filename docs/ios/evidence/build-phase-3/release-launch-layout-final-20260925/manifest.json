@@ -1,0 +1,154 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "commit": "e6c0c65c9c5ad84e2f961839c5eede753c25448e",
+    "branch": "codex/ios-native-parity",
+    "status": [],
+    "iosSourceSHA256": "7294c6d0018d9c3b39bfb1c5c56fec2ea72a1554a02a6e3a3dc95e93d041e482",
+    "buildInputSHA256": "2be2a20569eb23b3b22553c8e39ed8ce25ebeeb23fbab3665a8a3d175eb2dec3",
+    "externalInputs": {
+      "app/src/main/res/font/fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+      "app/src/main/res/font/fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9",
+      "app/src/main/assets/licenses/fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+      "docs/ios-handoff/reference/screenshot-manifest.json": "1ff8c78331dd39a646b9836b768a9ad1755d1119f4abdd76a8b5e191733a3e22"
+    }
+  },
+  "sourceBuildManifest": "/tmp/picpac-phase3-unsigned-builds-layout-final-unsandboxed-20260925/manifest.json",
+  "sourceBuildManifestSHA256": "ce5b2c0734182994b21abcb35b5c07e7b6e606e3b2c15403363f4a27ce593e13",
+  "appPath": "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphonesimulator/Build/Products/Release-iphonesimulator/PicPacPoe.app",
+  "appBundleSHA256": "f7c28bdb49ffb69905731865ad3629a21e6dc4714eee7076225d28cb472bab28",
+  "appFileSHA256": {
+    "AppIcon60x60@2x.png": "8269815fc34bc17b1dd75c254cd8575eb08f0d4715b71623ef996757cdd36c90",
+    "AppIcon76x76@2x~ipad.png": "7b444e033901f6d3a18dc5d041a0aa711fe5b05b4b3de4e05de2d2b08ac1f1b0",
+    "Assets.car": "5d76a6afac32a081421877509359fa4b4e68d2a45d32c0b876a704802ebc65b1",
+    "Info.plist": "3ca49aa4937e59114c77dedb8fe3f625d36f7a80d7a6ffd33eec593726be86b3",
+    "PicPacKit_PicPacAI.bundle/Info.plist": "eaad37a8ced0ff734e5f44ec6a14297f2ce9bd00b1802b424aeace068fa550b2",
+    "PicPacKit_PicPacAI.bundle/picpac_rl_policy_v1.bin": "9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1",
+    "PicPacPoe": "a6469797ac1845e26f4bdf0ba8609866149230e17fbf4658044840f8af2de0a6",
+    "PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+    "fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+    "fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+    "fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9"
+  },
+  "device": {
+    "lastBootedAt": "2026-09-25T09:02:14Z",
+    "dataPath": "/Users/bavabangaru/Library/Developer/CoreSimulator/Devices/97FAA70C-E2D7-4893-9D76-FE172A792433/data",
+    "dataPathSize": 2351501312,
+    "logPath": "/Users/bavabangaru/Library/Logs/CoreSimulator/97FAA70C-E2D7-4893-9D76-FE172A792433",
+    "udid": "97FAA70C-E2D7-4893-9D76-FE172A792433",
+    "isAvailable": true,
+    "logPathSize": 360448,
+    "deviceTypeIdentifier": "com.apple.CoreSimulator.SimDeviceType.iPhone-17-Pro",
+    "state": "Shutdown",
+    "name": "PicPacPoe Phase3 Performance"
+  },
+  "runtime": "com.apple.CoreSimulator.SimRuntime.iOS-26-5",
+  "commands": [
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "boot",
+        "97FAA70C-E2D7-4893-9D76-FE172A792433"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedSeconds": 0.567527667,
+      "completedAt": "2026-09-25T10:56:24.729064+00:00"
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "bootstatus",
+        "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "-b"
+      ],
+      "exitCode": 0,
+      "stdout": "Monitoring boot status for PicPacPoe Phase3 Performance (97FAA70C-E2D7-4893-9D76-FE172A792433).\n[2026-09-25 10:56:26 +0000] Status=1, isTerminal=NO, Elapsed=00:01.\n\tWaiting on BackBoard\n\n[2026-09-25 10:56:32 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:08.\n\tFinished\n\n",
+      "stderr": "",
+      "elapsedSeconds": 7.701098707999999,
+      "completedAt": "2026-09-25T10:56:32.432398+00:00"
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "install",
+        "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "/tmp/picpac-phase3-layout-final-build-e6c0c65c9c5a-20260925T105458Z/iphonesimulator/Build/Products/Release-iphonesimulator/PicPacPoe.app"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedSeconds": 7.753246875000002,
+      "completedAt": "2026-09-25T10:56:40.190584+00:00"
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "launch",
+        "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "dev.saipranith.picpacpoe"
+      ],
+      "exitCode": 0,
+      "stdout": "dev.saipranith.picpacpoe: 17669\n",
+      "stderr": "",
+      "elapsedSeconds": 0.8310408329999994,
+      "completedAt": "2026-09-25T10:56:41.023002+00:00"
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "io",
+        "97FAA70C-E2D7-4893-9D76-FE172A792433",
+        "screenshot",
+        "--type=png",
+        "/tmp/picpac-phase3-release-launch-layout-final-20260925/release-launch-full-frame.png"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "Note: No display specified. Defaulting to display: 8A5C8A20-39DB-4550-88F3-58B286BF9D49 (screenID: 1, name: LCD)\nWrote screenshot to: /tmp/picpac-phase3-release-launch-layout-final-20260925/release-launch-full-frame.png\n",
+      "elapsedSeconds": 0.18898962500000138,
+      "completedAt": "2026-09-25T10:56:44.216740+00:00"
+    },
+    {
+      "command": [
+        "xcrun",
+        "simctl",
+        "shutdown",
+        "97FAA70C-E2D7-4893-9D76-FE172A792433"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "",
+      "elapsedSeconds": 3.2055788750000005,
+      "completedAt": "2026-09-25T10:56:47.781040+00:00"
+    }
+  ],
+  "startedAt": "2026-09-25T10:56:24.161377+00:00",
+  "launchArguments": [],
+  "visualReview": {
+    "reviewer": "/root/recovery_ci",
+    "reviewedAt": "2026-09-25T10:58:32.176895+00:00",
+    "viewDetail": "original",
+    "dimensions": [
+      1206,
+      2622
+    ],
+    "outcome": "PASS",
+    "notes": "Original no-argument Release launch full frame shows completely rendered light-theme Home: full Fredoka semantic-color wordmark, complete description, warm resin bag-to-alternating-piece-to-board explanation, Classic/Local choices, selected Medium, Play and all bottom links. No blank or partially restored content, internal clipping or Debug/testing controls. Screenshot naturally catches the decorative X/O crossfade; this still alone is not temporal or physical-device proof."
+  },
+  "physicalDeviceExecuted": false,
+  "minimumRuntimeExecuted": false,
+  "statePolicy": "Install over the existing simulator app while preserving its data; no uninstall, erase, preference writes, launch arguments or test hooks. Boot and clean shutdown only on the assigned existing simulator.",
+  "screenshotSHA256": "1404fd924fac1aeceecf59f8830c7a44250efe16d666933c975477a06f9be402",
+  "commandsPassed": true,
+  "shutdownConfirmed": true,
+  "completedAt": "2026-09-25T10:56:47.891592+00:00",
+  "pass": true,
+  "consumedBuildManifestCopy": "consumed-build-manifest.json"
+}

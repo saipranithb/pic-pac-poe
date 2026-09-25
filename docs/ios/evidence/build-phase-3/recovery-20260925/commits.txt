@@ -1,0 +1,4 @@
+ad1a3b40570406a7cf967c600a7c88516dbf2c0c Correct singular bag copy found in terminal visual review
+bf384da11190cb45ff21866a6d804c85a35ce333 Resolve visual audit findings and govern complete simulator evidence
+1004223b1a39fcb2d0f965b1a530bbc9dfc43424 Pin snapshot runtime identity and verify unsigned device SDK builds
+bb7668087f3b8b1647cac4f3af5cd3aa90bfdbf8 Harden native parity flows, lifecycle, accessibility and unsigned gates

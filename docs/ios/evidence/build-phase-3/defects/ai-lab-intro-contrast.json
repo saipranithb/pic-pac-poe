@@ -1,0 +1,145 @@
+{
+  "image": "scroll-safe-area-before.png",
+  "sha256": "4e1584a075273e756f05949d63c43ea6285cd354d7efb658c210b147058ecb21",
+  "dimensions": [
+    1206,
+    2622
+  ],
+  "pngColorSpace": "sRGB chunk, 8-bit RGB",
+  "inputRectPoints": [
+    20,
+    117.7,
+    340.3,
+    64.3
+  ],
+  "sampleRectPixels": [
+    60,
+    353,
+    1081,
+    547
+  ],
+  "backgroundRGB": [
+    37,
+    31,
+    28
+  ],
+  "foregroundInteriorRGB": [
+    221,
+    197,
+    181
+  ],
+  "backgroundPixelCount": 168903,
+  "foregroundInteriorPixelCount": 16606,
+  "contrastRatio": 9.855906830153433,
+  "normalTextMinimum": 4.5,
+  "pass": true,
+  "mostFrequentColors": [
+    {
+      "rgb": [
+        37,
+        31,
+        28
+      ],
+      "count": 168903
+    },
+    {
+      "rgb": [
+        221,
+        197,
+        181
+      ],
+      "count": 16606
+    },
+    {
+      "rgb": [
+        215,
+        192,
+        176
+      ],
+      "count": 517
+    },
+    {
+      "rgb": [
+        169,
+        150,
+        138
+      ],
+      "count": 371
+    },
+    {
+      "rgb": [
+        150,
+        133,
+        122
+      ],
+      "count": 302
+    },
+    {
+      "rgb": [
+        104,
+        92,
+        84
+      ],
+      "count": 287
+    },
+    {
+      "rgb": [
+        38,
+        32,
+        29
+      ],
+      "count": 275
+    },
+    {
+      "rgb": [
+        220,
+        196,
+        180
+      ],
+      "count": 262
+    }
+  ],
+  "method": "Read actual PNG bytes without resizing; unfilter PNG scanlines; WCAG sRGB relative luminance of the opaque text-interior and background pixels. Antialiased edge blends are not treated as the authored foreground color.",
+  "schemaVersion": 1,
+  "purpose": "Independent investigation of native audit contrast finding, not approval of the pre-fix safe-area layout",
+  "sourceContext": {
+    "checkpoint": "1004223b1a39fcb2d0f965b1a530bbc9dfc43424",
+    "cleanSourceAtCapture": false,
+    "confirmedBy": "UI test executor",
+    "workingTreeDelta": [
+      "GameView ProbabilityTray caption 12-point to footnote 13-point",
+      "UITest screenshot attachment helper changed app.screenshot to XCUIScreen.main",
+      "Extra AX5 Settings swipe in UI test"
+    ],
+    "aiLabCode": "Unchanged from checkpoint1004223",
+    "beforeFixes": [
+      "Home/Info/Game scroll .clipped()",
+      "Stationary-content/fresh-process accessibility audit changes"
+    ],
+    "xcresult": "/tmp/picpac-phase3-ui/Logs/Test/Test-PicPacPoe-2026.09.21_09-24-02--0400.xcresult",
+    "log": "/tmp/picpac-phase3-ui-audit2.log",
+    "otherUncommittedEvidenceTooling": [
+      "ios/Scripts/ui_phase3.py evidence exporter repair; not invoked by the focused xcodebuild and not compiled into the app"
+    ]
+  },
+  "capture": {
+    "originalAttachment": "982D4766-2CA1-4D1E-A183-9C7028C421AB.png",
+    "capturedAtUnix": 1789997141.646,
+    "capturedAtUTC": "2026-09-21T13:25:41.646000+00:00",
+    "device": "PicPac Phase3 UI",
+    "deviceUDID": "F36B6568-2C34-4D22-A88D-0AB8C240E6CA",
+    "test": "PicPacPoeUITests/testAutomatedAccessibilityAuditBothThemes()",
+    "noCrop": true,
+    "noResize": true
+  },
+  "lightComparison": {
+    "kind": "source palette calculation only; no light screenshot sampled",
+    "foreground": "#695543",
+    "background": "#FBF1DE",
+    "contrastRatio": 6.285848983045501
+  },
+  "visualInspection": "Original 1206x2622 frame opened at full resolution. Entire three-line intro paragraph visible without clipping or overlay. Header overlaps status area in this pre-fix image; that separate ordinary layout defect is not dismissed by the contrast calculation.",
+  "finding": "Native auditor reports Contrast but supplies no measured ratio. The specified rect contains opaque text-interior/background colors matching the governed palette and measures 9.855906830153433:1. Retain the finding, fix the independent safe-area defect and rerun the native audit; this result does not justify suppressing unrelated audit findings.",
+  "reproduce": "python3 docs/ios/evidence/build-phase-3/defects/measure-ai-lab-intro-contrast.py",
+  "measurementScriptSHA256": "58242ec9dba708fd39a0c2bb846332199f9c8c364fedc8d34ed7797b4ac338fe"
+}

@@ -1,0 +1,146 @@
+{
+  "durationSeconds": 11.866666666666667,
+  "encodedHeight": 2622,
+  "encodedWidth": 1206,
+  "extraction": "AVAssetImageGenerator; preferred orientation applied; zero requested tolerance; no resizing/cropping. actualSeconds records the returned video presentation timestamp, which can precede requestedSeconds during a held frame.",
+  "frames": [
+    {
+      "actualSeconds": 0,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-000.png",
+      "requestedSeconds": 0,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 0.195,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-001.png",
+      "requestedSeconds": 0.2,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 0.325,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-002.png",
+      "requestedSeconds": 0.34,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 0.5116666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-003.png",
+      "requestedSeconds": 0.52,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 0.7066666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-004.png",
+      "requestedSeconds": 0.8,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 0.9983333333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-005.png",
+      "requestedSeconds": 1,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 1.1083333333333334,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-006.png",
+      "requestedSeconds": 1.12,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 1.1916666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-007.png",
+      "requestedSeconds": 1.3,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 1.3116666666666668,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-008.png",
+      "requestedSeconds": 1.4,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 1.595,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-009.png",
+      "requestedSeconds": 1.6,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 1.725,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-010.png",
+      "requestedSeconds": 1.74,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 1.91,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-011.png",
+      "requestedSeconds": 1.92,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 2.1566666666666667,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-012.png",
+      "requestedSeconds": 2.2,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 2.395,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-013.png",
+      "requestedSeconds": 2.4,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 2.5083333333333333,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-014.png",
+      "requestedSeconds": 2.52,
+      "width": 1206
+    },
+    {
+      "actualSeconds": 2.745,
+      "height": 2622,
+      "noCrop": true,
+      "path": "frame-015.png",
+      "requestedSeconds": 2.8,
+      "width": 1206
+    }
+  ],
+  "input": "home-normal.mov",
+  "nominalFrameRate": 89.16277313232422,
+  "preferredTransform": [
+    1,
+    0,
+    0,
+    1,
+    0,
+    0
+  ]
+}

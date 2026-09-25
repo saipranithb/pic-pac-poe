@@ -1,0 +1,29 @@
+Building for debugging...
+[0/3] Write sources
+[1/3] Write swift-version--58304C5D6DBC2206.txt
+[3/5] Emitting module PicPacKitTests
+[4/5] Compiling PicPacKitTests PresentationCoordinatorTests.swift
+[4/6] Write Objects.LinkFileList
+[5/6] Linking PicPacKitPackageTests
+Build complete! (4.32s)
+Test Suite 'Selected tests' started at 2026-09-21 09:11:22.826.
+Test Suite 'PicPacKitPackageTests.xctest' started at 2026-09-21 09:11:22.829.
+Test Suite 'PresentationCoordinatorTests' started at 2026-09-21 09:11:22.829.
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome]' started.
+/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit/Tests/PicPacKitTests/PresentationCoordinatorTests.swift:836: error: -[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome] : XCTAssertEqual failed: ("settings") is not equal to ("home") - goHome
+/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit/Tests/PicPacKitTests/PresentationCoordinatorTests.swift:840: error: -[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome] : XCTAssertEqual failed: ("settings") is not equal to ("home") - The latest destination must also persist: goHome
+/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit/Tests/PicPacKitTests/PresentationCoordinatorTests.swift:836: error: -[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome] : XCTAssertEqual failed: ("settings") is not equal to ("home") - newGameThenHome
+/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit/Tests/PicPacKitTests/PresentationCoordinatorTests.swift:840: error: -[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome] : XCTAssertEqual failed: ("settings") is not equal to ("home") - The latest destination must also persist: newGameThenHome
+/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit/Tests/PicPacKitTests/PresentationCoordinatorTests.swift:836: error: -[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome] : XCTAssertEqual failed: ("settings") is not equal to ("home") - showHome
+/Users/bavabangaru/Developer/pic-pac-poe-ios-native-parity/ios/Packages/PicPacKit/Tests/PicPacKitTests/PresentationCoordinatorTests.swift:840: error: -[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome] : XCTAssertEqual failed: ("settings") is not equal to ("home") - The latest destination must also persist: showHome
+Test Case '-[PicPacKitTests.PresentationCoordinatorTests testSlowNavigationCannotReplaceANewerReturnHome]' failed (0.081 seconds).
+Test Suite 'PresentationCoordinatorTests' failed at 2026-09-21 09:11:22.910.
+	 Executed 1 test, with 6 failures (0 unexpected) in 0.081 (0.081) seconds
+Test Suite 'PicPacKitPackageTests.xctest' failed at 2026-09-21 09:11:22.910.
+	 Executed 1 test, with 6 failures (0 unexpected) in 0.081 (0.081) seconds
+Test Suite 'Selected tests' failed at 2026-09-21 09:11:22.910.
+	 Executed 1 test, with 6 failures (0 unexpected) in 0.081 (0.083) seconds
+◇ Test run started.
+↳ Testing Library Version: 1902
+↳ Target Platform: arm64e-apple-macos14.0
+✔ Test run with 0 tests in 0 suites passed after 0.001 seconds.

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "defect": "Small native probability footer flagged by the expanded accessibility contrast audit",
+  "before": {
+    "path": "probability-footer-before.png",
+    "sha256": "6b99c86bea9fa6823d5bb56360c2ce603e937d24d5bf0ca2333587d137966cfe",
+    "sourceCommit": "1004223b1a39fcb2d0f965b1a530bbc9dfc43424",
+    "originalAttachment": "8E1990FD-D21C-41C6-90DC-971361F947C3.png",
+    "capturedAtUnix": 1789996769.668,
+    "dimensions": [
+      1206,
+      2622
+    ],
+    "noCrop": true,
+    "elementBoundsPoints": {
+      "x": 36.0,
+      "y": 797.7,
+      "width": 213.0,
+      "height": 14.3
+    }
+  },
+  "intentionalChange": "Native footer text increases from caption (12pt default) to footnote (13pt default), preserving the exact secondary color role and all wording.",
+  "specifiedContrast": {
+    "secondaryOnRaised": 6.125356441373294,
+    "secondaryOnSurface": 6.789678812718237
+  },
+  "interpretation": "No clipping or overlay in the actual frame. The audit supplies no ratio. Larger native typography improves readability without changing the approved palette. Final re-audit and full-resolution after image are required; this file is not an acceptance claim."
+}

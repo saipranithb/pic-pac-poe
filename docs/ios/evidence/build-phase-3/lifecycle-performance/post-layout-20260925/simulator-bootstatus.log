@@ -1,0 +1,15 @@
+Monitoring boot status for PicPacPoe Phase3 Performance (97FAA70C-E2D7-4893-9D76-FE172A792433).
+[2026-09-25 10:58:08 +0000] Status=2, isTerminal=NO, Elapsed=00:01.
+	Waiting on Data Migration
+		Reason:(null)
+		Migration Elapsed:00:00 seconds
+
+[2026-09-25 10:58:14 +0000] Status=4, isTerminal=NO, Elapsed=00:07.
+	Waiting on System App
+
+[2026-09-25 10:58:15 +0000] Status=4, isTerminal=NO, Elapsed=00:07.
+	Waiting on System App
+
+[2026-09-25 10:58:17 +0000] Status=4294967295, isTerminal=YES, Elapsed=00:10.
+	Finished
+
