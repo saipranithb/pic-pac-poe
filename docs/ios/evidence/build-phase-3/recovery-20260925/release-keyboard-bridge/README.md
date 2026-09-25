@@ -1,0 +1,7 @@
+# Supplemental Release keyboard follow-up: bridge unavailable
+
+The verified unsigned Release app built from `03d44f794ef9` was installed and launched without arguments on the existing iPhone 17 Pro / iOS 26.5 Performance simulator (`97FAA70C-E2D7-4893-9D76-FE172A792433`). Boot, install and launch returned successfully. The exact app bundle hashes are in `source.json`.
+
+No manual keyboard interaction occurred in this follow-up. The native UI automation bridge did not return from `cua.getApp("com.apple.iphonesimulator")`: the first call was aborted after 846 seconds; after a bridge-session reset, the second call explicitly requested a 15-second timeout but was aborted after 282.3 seconds. These are tool-reported wait durations, not app latency. No further identical call was attempted. The second simulator was shut down successfully with a 60-second command timeout, without resetting or deleting its data. The unrelated Manual simulator’s earlier stuck shutdown is documented in the parent recovery record.
+
+This is preserved environment-failure evidence, not a passing Release keyboard test or a demonstrated product defect. The existing actual interactive Debug recording still proves a complete Full Keyboard Access Classic game, duplicate activation rejection and alternate-starter rematch. The proposed additional Release keyboard placement after rematch remains unexecuted. Native button/row-major semantics and player-driven rematch reachability are covered separately by the accepted UI suite. Physical assistive-technology checks remain release gates.

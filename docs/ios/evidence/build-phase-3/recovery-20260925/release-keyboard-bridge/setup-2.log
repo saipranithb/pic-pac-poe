@@ -1,0 +1,3 @@
+command=['xcrun', 'simctl', 'launch', '97FAA70C-E2D7-4893-9D76-FE172A792433', 'dev.saipranith.picpacpoe']
+exit=0
+dev.saipranith.picpacpoe: 86146

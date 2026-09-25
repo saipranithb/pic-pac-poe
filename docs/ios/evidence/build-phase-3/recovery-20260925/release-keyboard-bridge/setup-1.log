@@ -1,0 +1,2 @@
+command=['xcrun', 'simctl', 'install', '97FAA70C-E2D7-4893-9D76-FE172A792433', '/tmp/picpac-phase3-recovery-build-03d44f794ef9-20260925T084220Z/iphonesimulator/Build/Products/Release-iphonesimulator/PicPacPoe.app']
+exit=0

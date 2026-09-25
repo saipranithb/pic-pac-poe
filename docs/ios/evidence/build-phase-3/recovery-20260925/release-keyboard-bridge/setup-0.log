@@ -1,0 +1,5 @@
+command=['xcrun', 'simctl', 'bootstatus', '97FAA70C-E2D7-4893-9D76-FE172A792433', '-b']
+exit=0
+Monitoring boot status for PicPacPoe Phase3 Performance (97FAA70C-E2D7-4893-9D76-FE172A792433).
+Device already booted, nothing to do.
+

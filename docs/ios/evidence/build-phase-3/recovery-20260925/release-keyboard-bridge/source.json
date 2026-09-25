@@ -1,0 +1,22 @@
+{
+  "sourceCommit": "03d44f794ef98e66ebeb63cd467313ece2331b91",
+  "artifact": "/tmp/picpac-phase3-recovery-build-03d44f794ef9-20260925T084220Z/iphonesimulator/Build/Products/Release-iphonesimulator/PicPacPoe.app",
+  "configuration": "Release",
+  "launchArguments": [],
+  "udid": "97FAA70C-E2D7-4893-9D76-FE172A792433",
+  "bundleFiles": {
+    "AppIcon60x60@2x.png": "8269815fc34bc17b1dd75c254cd8575eb08f0d4715b71623ef996757cdd36c90",
+    "AppIcon76x76@2x~ipad.png": "7b444e033901f6d3a18dc5d041a0aa711fe5b05b4b3de4e05de2d2b08ac1f1b0",
+    "Assets.car": "70a56f33266c816320a0c9ddbabc2eebfdfe0c3b7ee00906b590e4f995c030ef",
+    "Info.plist": "3ca49aa4937e59114c77dedb8fe3f625d36f7a80d7a6ffd33eec593726be86b3",
+    "PicPacKit_PicPacAI.bundle/Info.plist": "eaad37a8ced0ff734e5f44ec6a14297f2ce9bd00b1802b424aeace068fa550b2",
+    "PicPacKit_PicPacAI.bundle/picpac_rl_policy_v1.bin": "9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1",
+    "PicPacPoe": "451c796804b2f6529daed38095dab6ff0037662933ff4452f2cec3cc5e4e287e",
+    "PkgInfo": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+    "fredoka-OFL.txt": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc",
+    "fredoka_medium.ttf": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916",
+    "fredoka_semibold.ttf": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9"
+  },
+  "noCrop": true,
+  "physicalDeviceEvidence": false
+}
