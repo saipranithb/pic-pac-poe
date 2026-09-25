@@ -1,0 +1,56 @@
+stateDiagram-v2
+    direction TB
+    [*] --> OUTSIDE_GAME
+    OUTSIDE_GAME --> PLAYING : start Classic
+    OUTSIDE_GAME --> HANDOFF : start Pic-Pac Local
+    OUTSIDE_GAME --> TURN_START : start Vs Computer or AI Lab
+
+    HANDOFF --> REVEALING : Ready / draw once and remove held piece
+    TURN_START --> REVEALING : current presentation finishes / draw once
+    REVEALING --> PLAYING : reveal finishes / human or local actor
+    REVEALING --> AI_TARGETING : reveal finishes / computer decision already ready
+    REVEALING --> AI_THINKING : reveal finishes / computer decision pending
+    AI_THINKING --> AI_TARGETING : valid computer decision arrives
+    AI_TARGETING --> AI_PLACING : current presentation finishes / commit selected move
+    AI_PLACING --> AI_SETTLING : current presentation finishes
+    AI_SETTLING --> TURN_START : current presentation finishes / nonterminal
+    AI_SETTLING --> TERMINAL : current presentation finishes / terminal
+
+    PLAYING --> PLAYING : legal nonterminal Classic placement
+    PLAYING --> HANDOFF : legal nonterminal Local placement
+    PLAYING --> TURN_START : legal nonterminal human placement vs Computer
+    PLAYING --> TERMINAL : human or Classic placement ends game
+
+    TERMINAL --> PLAYING : Classic rematch / alternate starter
+    TERMINAL --> HANDOFF : Local rematch / alternate starter
+    TERMINAL --> TURN_START : Computer rematch / alternate starter
+
+    HANDOFF --> OUTSIDE_GAME : Home or Back / abandon game
+    TURN_START --> OUTSIDE_GAME : Home or Back / cancel work
+    REVEALING --> OUTSIDE_GAME : Back / cancel work
+    PLAYING --> OUTSIDE_GAME : Home or Back / abandon game
+    AI_THINKING --> OUTSIDE_GAME : Home or Back / cancel work
+    AI_TARGETING --> OUTSIDE_GAME : Home or Back / cancel work
+    AI_PLACING --> OUTSIDE_GAME : Home or Back / abandon committed game
+    AI_SETTLING --> OUTSIDE_GAME : Home or Back / abandon committed game
+    TERMINAL --> OUTSIDE_GAME : Home or Back
+
+    note right of REVEALING
+        Human and computer symbols use the same visible reveal.
+        Computer search starts here, off the main thread.
+        Fast search must not shorten the reveal.
+    end note
+    note right of AI_THINKING
+        No fixed presentation timer.
+        Board remains locked until the decision is ready.
+    end note
+    note right of AI_PLACING
+        Board is already committed, including a terminal move.
+        Display Computer through AI_SETTLING even if
+        domain activePlayer has changed to the human.
+    end note
+    note left of TURN_START
+        Timed callbacks require GAME screen and matching presentationId.
+        Domain commit also requires matching revision and turn token.
+        Reduced Motion changes delays and decoration, not state order.
+    end note

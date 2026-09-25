@@ -1,0 +1,9 @@
+Pic-Pac-Poe 2.0.0
+
+- A tactile board, warm light and dark themes, and refined typography
+- Clearer computer turns, symbol reveals, selected cells, and settled moves
+- Restrained motion with a Reduced Motion option
+- Improved accessible controls, large-text layouts, local handoff, and game restoration
+- Easy, Medium, and Hard opponents, plus experimental AI Lab choices
+
+Still an offline game with no ads or accounts.

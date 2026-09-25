@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "path": "../../app/src/main/res/font/fredoka_medium.ttf",
+      "role": "Fredoka 2.001 Medium 500",
+      "sizeBytes": 45364,
+      "sha256": "024bec999fd21bd237b2866ec5c9189a1522db63d88fb01aabafef8c5b4d6916"
+    },
+    {
+      "path": "../../app/src/main/res/font/fredoka_semibold.ttf",
+      "role": "Fredoka 2.001 SemiBold 600",
+      "sizeBytes": 47108,
+      "sha256": "95839d50cc746b491c4710673be1d2cc8179a132f9600851810863922ddc12f9"
+    },
+    {
+      "path": "../../app/src/main/assets/licenses/fredoka-OFL.txt",
+      "role": "SIL Open Font License 1.1",
+      "sizeBytes": 4378,
+      "sha256": "736f9be89ea0db3a6be0a4a17f41e83e0be50782b25db1f7ae38d6579fae51fc"
+    },
+    {
+      "path": "../../app/src/main/res/raw/picpac_rl_policy_v1.bin",
+      "role": "Offline Q-learning policy v1",
+      "sizeBytes": 891749,
+      "sha256": "9b05cc725ab8b52cecb940b6c823cb66e843acf462511c87d2ab3e1c834152b1"
+    }
+  ]
+}
