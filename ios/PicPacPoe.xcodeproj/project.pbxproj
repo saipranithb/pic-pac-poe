@@ -25,6 +25,7 @@
 		D30000000000000000000003 /* fredoka-OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D40000000000000000000003 /* fredoka-OFL.txt */; };
 		E10000000000000000000001 = {isa = PBXBuildFile; fileRef = E20000000000000000000001; };
 		F10000000000000000000001 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F20000000000000000000001 /* Assets.xcassets */; };
+		F10000000000000000000002 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F20000000000000000000002 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		E20000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPacPoeUITests.swift; sourceTree = "<group>"; };
 		E20000000000000000000002 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PicPacPoeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F20000000000000000000001 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F20000000000000000000002 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				A20000000000000000000001 /* PicPacPoeApp.swift */,
 				A20000000000000000000006 /* Info.plist */,
 				F20000000000000000000001 /* Assets.xcassets */,
+				F20000000000000000000002 /* PrivacyInfo.xcprivacy */,
 				D20000000000000000000001 /* FormTheme.swift */,
 				D20000000000000000000002 /* PhysicalBoard.swift */,
 				D20000000000000000000003 /* HomeView.swift */,
@@ -256,6 +259,7 @@
 				D30000000000000000000002 /* fredoka_semibold.ttf in Resources */,
 				D30000000000000000000003 /* fredoka-OFL.txt in Resources */,
 				F10000000000000000000001 /* Assets.xcassets in Resources */,
+				F10000000000000000000002 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

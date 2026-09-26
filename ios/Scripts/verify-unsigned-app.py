@@ -20,9 +20,10 @@ with (app / 'Info.plist').open('rb') as stream:
 for key, expected in {
     'CFBundleIdentifier': 'dev.saipranith.picpacpoe',
     'CFBundleShortVersionString': '2.0.0',
-    'CFBundleVersion': '1',
+    'CFBundleVersion': '2',
     'MinimumOSVersion': '17.0',
     'UIDeviceFamily': [1, 2],
+    'ITSAppUsesNonExemptEncryption': False,
 }.items():
     if info.get(key) != expected:
         errors.append(f'{key}: expected {expected!r}, got {info.get(key)!r}')
@@ -37,6 +38,14 @@ if not (app / 'Assets.car').is_file():
     errors.append('compiled asset catalog is missing')
 if info.get('UILaunchScreen') != {'UIColorName': 'LaunchBackground'}:
     errors.append('semantic launch background is missing')
+manifest_path = app / 'PrivacyInfo.xcprivacy'
+if not manifest_path.is_file():
+    errors.append('app privacy manifest is missing')
+else:
+    with manifest_path.open('rb') as stream:
+        manifest = plistlib.load(stream)
+    if manifest != {'NSPrivacyTracking': False}:
+        errors.append(f'app privacy manifest differs from audited declaration: {manifest!r}')
 root = pathlib.Path(__file__).resolve().parents[2]
 for name, source in {
     'fredoka_medium.ttf': 'app/src/main/res/font/fredoka_medium.ttf',
