@@ -158,7 +158,7 @@ jobs:
       - name: Compare approved baselines without updating them
         run: >-
           python3 ios/Scripts/snapshot_phase3.py compare
-          --baseline docs/ios/evidence/build-phase-3/baselines
+          --baseline docs/ios/evidence/app-review-build-3/baselines
           --candidate "$RUNNER_TEMP/pic-pac-poe-snapshots"
           --output "$RUNNER_TEMP/snapshot-comparison.json"
       - name: Preserve captures and comparison report

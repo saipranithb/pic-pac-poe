@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "approved": true,
+  "manifestSHA256": "5879cd11d7be042b306a95b577aaa995a8b3b1e7372c8353fbe4a9b9a5a4ce4e",
+  "captureCount": 336,
+  "reviewer": "Codex",
+  "reviewedAt": "2026-09-26T18:06:02Z",
+  "notes": "Build 2.0.0 (3) Settings privacy-link baseline from clean 11b0e25093173575f9d6ddbc1c16d9c9a2fce1cd. Visually reviewed the seven profile contact sheets and representative sheet, and all 28 full-resolution Settings top/bottom frames across seven profiles and both appearances. Full-frame read-only comparison against the previously approved Phase 3 baseline passed all 308 non-Settings frames (minimum 99.79608694% at unchanged 99.5% threshold and 2/255 RGBA tolerance); the 24 failing Settings frames reflect the intentional new privacy link/footer and scroll displacement. Four top Settings frames remain above threshold because the link is below the fold; their bottom frames show it. No masks, inventory changes, threshold changes, or historical baseline replacement. See ../phase3-vs-build3-comparison.json."
+}

@@ -1,0 +1,3039 @@
+{
+  "schemaVersion": 1,
+  "minimumPixelAgreement": 0.995,
+  "perChannelTolerance": 2,
+  "channels": "RGBA",
+  "allPixelsCompared": true,
+  "autoBaselineReplacement": false,
+  "baselineReviewed": false,
+  "purpose": "unreviewed calibration only",
+  "baselineManifestSHA256": "5bad48fd0cda4fbbccf1b25ad1090ee7ad396a25d0ff6ea5f9533c54201e5236",
+  "candidateManifestSHA256": "5879cd11d7be042b306a95b577aaa995a8b3b1e7372c8353fbe4a9b9a5a4ce4e",
+  "pass": false,
+  "results": [
+    {
+      "path": "compact--dark--home.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--classic.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--local-handoff.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--local-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--human-turn-start.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--human-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--human-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--computer-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--computer-thinking.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--computer-targeting.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--computer-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--computer-settled.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--draw-result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--settings.png",
+      "pass": false,
+      "agreement": 0.9879980009995003,
+      "maxChannelDelta": 218,
+      "meanChannelDelta": 0.9962476261869065,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--how-to.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--ai-lab.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--home-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.7440529735132434,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 20.928162668665667,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--how-to-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--dark--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--home.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--classic.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--local-handoff.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--local-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--human-turn-start.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--human-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--human-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--computer-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--computer-thinking.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--computer-targeting.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--computer-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--computer-settled.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--draw-result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--settings.png",
+      "pass": false,
+      "agreement": 0.9880589705147427,
+      "maxChannelDelta": 186,
+      "meanChannelDelta": 0.9195272363818091,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--how-to.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--ai-lab.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--home-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.7444377811094453,
+      "maxChannelDelta": 200,
+      "meanChannelDelta": 16.887179410294852,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--how-to-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact--light--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "regular--dark--home.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--classic.png",
+      "pass": true,
+      "agreement": 0.9979649805890456,
+      "maxChannelDelta": 20,
+      "meanChannelDelta": 0.0227718988328128,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9979649805890456,
+      "maxChannelDelta": 22,
+      "meanChannelDelta": 0.02501492663810366,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--local-reveal.png",
+      "pass": true,
+      "agreement": 0.9979640318620475,
+      "maxChannelDelta": 24,
+      "meanChannelDelta": 0.02993613169848697,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.02011514699576109,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--human-reveal.png",
+      "pass": true,
+      "agreement": 0.9979640318620475,
+      "maxChannelDelta": 24,
+      "meanChannelDelta": 0.02993613169848697,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--human-placement.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.017645610619670526,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--computer-reveal.png",
+      "pass": true,
+      "agreement": 0.9992761213004391,
+      "maxChannelDelta": 3,
+      "meanChannelDelta": 0.0034576355446262206,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--computer-thinking.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.017645610619670526,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.017645610619670526,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--computer-placement.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.02011514699576109,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.02011514699576109,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.02011514699576109,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--draw-result.png",
+      "pass": true,
+      "agreement": 0.9979640318620475,
+      "maxChannelDelta": 27,
+      "meanChannelDelta": 0.03348927242758999,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--settings.png",
+      "pass": false,
+      "agreement": 0.9896781665028531,
+      "maxChannelDelta": 218,
+      "meanChannelDelta": 0.7843149811582818,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--how-to.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.02011514699576109,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9979640318620475,
+      "maxChannelDelta": 24,
+      "meanChannelDelta": 0.027709943797412633,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--home-bottom.png",
+      "pass": true,
+      "agreement": 0.9979690917393708,
+      "maxChannelDelta": 9,
+      "meanChannelDelta": 0.009882731018186463,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.9979649805890456,
+      "maxChannelDelta": 20,
+      "meanChannelDelta": 0.0227718988328128,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.8137329497946322,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 15.337891650316939,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.02011514699576109,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--dark--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.02011514699576109,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--home.png",
+      "pass": true,
+      "agreement": 0.9979627668927167,
+      "maxChannelDelta": 46,
+      "meanChannelDelta": 0.05556741464303198,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--classic.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 81,
+      "meanChannelDelta": 0.09859368615857908,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 115,
+      "meanChannelDelta": 0.14002056207647245,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--local-reveal.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.019488512813506838,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 81,
+      "meanChannelDelta": 0.09859368615857908,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--human-reveal.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.01702403631473955,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--human-placement.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 93,
+      "meanChannelDelta": 0.11266362378294138,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--computer-reveal.png",
+      "pass": true,
+      "agreement": 0.9979659293160438,
+      "maxChannelDelta": 13,
+      "meanChannelDelta": 0.014667161269675016,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--computer-thinking.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 58,
+      "meanChannelDelta": 0.07037214132743351,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 115,
+      "meanChannelDelta": 0.14002056207647245,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--computer-placement.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 80,
+      "meanChannelDelta": 0.09774093870844101,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 93,
+      "meanChannelDelta": 0.11266362378294138,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--result.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.01702403631473955,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--draw-result.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.019488512813506838,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--settings.png",
+      "pass": false,
+      "agreement": 0.9897078932821274,
+      "maxChannelDelta": 186,
+      "meanChannelDelta": 0.7913625996637712,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--how-to.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 104,
+      "meanChannelDelta": 0.12607032217503886,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 127,
+      "meanChannelDelta": 0.1550684000541407,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--home-bottom.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 81,
+      "meanChannelDelta": 0.09859368615857908,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.8139306012525727,
+      "maxChannelDelta": 200,
+      "meanChannelDelta": 12.581778606965175,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 104,
+      "meanChannelDelta": 0.12607032217503886,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular--light--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 104,
+      "meanChannelDelta": 0.12607032217503886,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "ipad--dark--home.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.047306617515904634,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--classic.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.047306617515904634,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9980738549656143,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06052052985710605,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--local-reveal.png",
+      "pass": true,
+      "agreement": 0.9980745981727015,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.06270754057910696,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9980765800582674,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.053019960065005846,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--human-reveal.png",
+      "pass": true,
+      "agreement": 0.9980738549656143,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.0655585448996175,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--human-placement.png",
+      "pass": true,
+      "agreement": 0.9981050696632776,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.05079318776383852,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--computer-reveal.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.07116690944764849,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--computer-thinking.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06431379689636721,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.9980745981727015,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.05683719553282993,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--computer-placement.png",
+      "pass": true,
+      "agreement": 0.9980738549656143,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06052052985710605,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06251542154705987,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.047306617515904634,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 0.9980738549656143,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06059553183899161,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--result.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.0514036704520681,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--draw-result.png",
+      "pass": true,
+      "agreement": 0.998803684325267,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.05408249846403869,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--settings.png",
+      "pass": false,
+      "agreement": 0.9944016687476465,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.35867737628079355,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--how-to.png",
+      "pass": true,
+      "agreement": 0.9980733594942228,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06820046029292269,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06251542154705987,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--home-bottom.png",
+      "pass": true,
+      "agreement": 0.998075093644093,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.05481418584140952,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.9980738549656143,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06059553183899161,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.9067000118913134,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 6.899774560516875,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06623504915076203,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--dark--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06431379689636721,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--home.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--classic.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.155700150623303,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--local-reveal.png",
+      "pass": true,
+      "agreement": 0.9980830211863567,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.032899548130090966,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--human-reveal.png",
+      "pass": true,
+      "agreement": 0.998082773450661,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.03466466496224508,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--human-placement.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--computer-reveal.png",
+      "pass": true,
+      "agreement": 0.9980830211863567,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.032899548130090966,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--computer-thinking.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--computer-placement.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.12448836385437105,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 0.9980723685514399,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.09221013684919832,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 0.9980718730800484,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.10342308797590027,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--result.png",
+      "pass": true,
+      "agreement": 0.9980842598648354,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.027381421309233604,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--draw-result.png",
+      "pass": true,
+      "agreement": 0.9980835166577482,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.031073364448936717,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--settings.png",
+      "pass": false,
+      "agreement": 0.9944177715678697,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.4129143379511267,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--how-to.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.16692505499732446,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--home-bottom.png",
+      "pass": true,
+      "agreement": 0.9980745981727015,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.06047513229086152,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.9980728640228314,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.0768737489347365,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.9067956378698694,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 6.0117631101730185,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.16156838991616623,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad--light--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.16692505499732446,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "compact-xxxl--dark--home.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--classic.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--local-handoff.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--local-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--human-turn-start.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--human-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--human-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--computer-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--computer-thinking.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--computer-targeting.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--computer-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--computer-settled.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--draw-result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--settings.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--how-to.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--ai-lab.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--home-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.6603428285857071,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 33.39154447776112,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--how-to-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--dark--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--home.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--classic.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--local-handoff.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--local-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--human-turn-start.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--human-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--human-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--computer-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--computer-thinking.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--computer-targeting.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--computer-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--computer-settled.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--draw-result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--settings.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--how-to.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--ai-lab.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--home-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.6087726136931534,
+      "maxChannelDelta": 200,
+      "meanChannelDelta": 29.3799047976012,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--how-to-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "compact-xxxl--light--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 750,
+      "height": 1334
+    },
+    {
+      "path": "regular-ax3--dark--home.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--classic.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9979690917393708,
+      "maxChannelDelta": 9,
+      "meanChannelDelta": 0.009882731018186463,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--local-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9979662455583764,
+      "maxChannelDelta": 11,
+      "meanChannelDelta": 0.0130673703691054,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--human-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--human-placement.png",
+      "pass": true,
+      "agreement": 0.9979690917393708,
+      "maxChannelDelta": 9,
+      "meanChannelDelta": 0.009882731018186463,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--computer-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--computer-thinking.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--computer-targeting.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 2,
+      "meanChannelDelta": 0.0024638440141018783,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--computer-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9980336051752425,
+      "maxChannelDelta": 4,
+      "meanChannelDelta": 0.005026829999506662,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--draw-result.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.01874913823964338,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--settings.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.017645610619670526,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--how-to.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.017508045204944006,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9979640318620475,
+      "maxChannelDelta": 24,
+      "meanChannelDelta": 0.027709943797412633,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--home-bottom.png",
+      "pass": true,
+      "agreement": 0.9979665618007092,
+      "maxChannelDelta": 11,
+      "meanChannelDelta": 0.012632932464552398,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.017645610619670526,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.6985644495549206,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 29.41542415054147,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9979732028896959,
+      "maxChannelDelta": 6,
+      "meanChannelDelta": 0.007441735512622496,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--dark--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9979649805890456,
+      "maxChannelDelta": 22,
+      "meanChannelDelta": 0.02501492663810366,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--home.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 58,
+      "meanChannelDelta": 0.07037214132743351,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--classic.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 78,
+      "meanChannelDelta": 0.09529986414229387,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 127,
+      "meanChannelDelta": 0.1550684000541407,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--local-reveal.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.016914616467623742,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--human-reveal.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.01702403631473955,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--human-placement.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 92,
+      "meanChannelDelta": 0.11186115886370335,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--computer-reveal.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.019379804511639617,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--computer-thinking.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 80,
+      "meanChannelDelta": 0.09774093870844101,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.9979627668927167,
+      "maxChannelDelta": 46,
+      "meanChannelDelta": 0.05556741464303198,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--computer-placement.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 80,
+      "meanChannelDelta": 0.09774093870844101,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 81,
+      "meanChannelDelta": 0.09859368615857908,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 58,
+      "meanChannelDelta": 0.07037214132743351,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 81,
+      "meanChannelDelta": 0.09859368615857908,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--result.png",
+      "pass": true,
+      "agreement": 0.9979665618007092,
+      "maxChannelDelta": 11,
+      "meanChannelDelta": 0.01213303239712953,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--draw-result.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.019488512813506838,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--settings.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 80,
+      "meanChannelDelta": 0.09774093870844101,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--how-to.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 81,
+      "meanChannelDelta": 0.09859368615857908,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 139,
+      "meanChannelDelta": 0.16894289991689151,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--home-bottom.png",
+      "pass": true,
+      "agreement": 0.9979633993773821,
+      "maxChannelDelta": 34,
+      "meanChannelDelta": 0.041444348306775305,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 92,
+      "meanChannelDelta": 0.11186115886370335,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.6633002670350258,
+      "maxChannelDelta": 200,
+      "meanChannelDelta": 26.571124402776356,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 80,
+      "meanChannelDelta": 0.09774093870844101,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-ax3--light--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 93,
+      "meanChannelDelta": 0.11266362378294138,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "ipad-ax3--dark--home.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.047306617515904634,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--classic.png",
+      "pass": true,
+      "agreement": 0.998095160235448,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.051092886021761104,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.04921926095487247,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--local-reveal.png",
+      "pass": true,
+      "agreement": 0.9980775710010504,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.05709880442753235,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.04921926095487247,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--human-reveal.png",
+      "pass": true,
+      "agreement": 0.998075093644093,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.05989159085954377,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--human-placement.png",
+      "pass": true,
+      "agreement": 0.9981303387042432,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.050327878193313115,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--computer-reveal.png",
+      "pass": true,
+      "agreement": 0.9980745981727015,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.06270754057910696,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--computer-thinking.png",
+      "pass": true,
+      "agreement": 0.998095160235448,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.051092886021761104,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.9980981330637969,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.0509926769328339,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--computer-placement.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.04921926095487247,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.04921926095487247,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.047306617515904634,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06191992686842262,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--result.png",
+      "pass": true,
+      "agreement": 0.9995560576332323,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.0514036704520681,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--draw-result.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 244,
+      "meanChannelDelta": 0.07100086459757814,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--settings.png",
+      "pass": false,
+      "agreement": 0.9883296668450363,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 1.0330040925936936,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--how-to.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06623504915076203,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9980733594942228,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06820046029292269,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--home-bottom.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06251542154705987,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06431379689636721,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.79265414114989,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 20.32631826357096,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9980738549656143,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06059553183899161,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--dark--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9980736072299186,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 0.06251542154705987,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--home.png",
+      "pass": true,
+      "agreement": 0.9980718730800484,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.10342308797590027,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--classic.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.12393820480805438,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.16692505499732446,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--local-reveal.png",
+      "pass": true,
+      "agreement": 0.998082773450661,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.03466466496224508,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--human-reveal.png",
+      "pass": true,
+      "agreement": 0.998082773450661,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.03466466496224508,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--human-placement.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.12448836385437105,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--computer-reveal.png",
+      "pass": true,
+      "agreement": 0.9980835166577482,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.031073364448936717,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--computer-thinking.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.11395550914640189,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.11395550914640189,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--computer-placement.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 0.9980723685514399,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.09221013684919832,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.12448836385437105,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--result.png",
+      "pass": true,
+      "agreement": 0.9980859940147055,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.025497701012743523,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--draw-result.png",
+      "pass": true,
+      "agreement": 0.9980830211863567,
+      "maxChannelDelta": 100,
+      "meanChannelDelta": 0.032899548130090966,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--settings.png",
+      "pass": false,
+      "agreement": 0.9883579087143508,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 1.0080068176863468,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--how-to.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.16692505499732446,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.12448836385437105,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--home-bottom.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.13509900757080287,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.12393820480805438,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.76979234793983,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 18.118355542838458,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9980713776086568,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.11395550914640189,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "ipad-ax3--light--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9980711298729611,
+      "maxChannelDelta": 251,
+      "meanChannelDelta": 0.16692505499732446,
+      "width": 1668,
+      "height": 2420
+    },
+    {
+      "path": "regular-reduced--dark--home.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--classic.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9979690917393708,
+      "maxChannelDelta": 9,
+      "meanChannelDelta": 0.010041879972120075,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--local-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--human-turn-start.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--human-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--human-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 2,
+      "meanChannelDelta": 0.0024638440141018783,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--computer-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--computer-thinking.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.9980336051752425,
+      "maxChannelDelta": 4,
+      "meanChannelDelta": 0.005026829999506662,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--computer-placement.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 2,
+      "meanChannelDelta": 0.0024638440141018783,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--computer-settled.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--draw-result.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--settings.png",
+      "pass": false,
+      "agreement": 0.9917125534291421,
+      "maxChannelDelta": 218,
+      "meanChannelDelta": 0.7691332145527132,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--how-to.png",
+      "pass": true,
+      "agreement": 0.9979732028896959,
+      "maxChannelDelta": 6,
+      "meanChannelDelta": 0.007441735512622496,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--ai-lab.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--home-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.8137633090585719,
+      "maxChannelDelta": 227,
+      "meanChannelDelta": 15.668815217075062,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--how-to-bottom.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 2,
+      "meanChannelDelta": 0.0026875854644904133,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--dark--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9979732028896959,
+      "maxChannelDelta": 6,
+      "meanChannelDelta": 0.007441735512622496,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--home.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--classic.png",
+      "pass": true,
+      "agreement": 0.9979662455583764,
+      "maxChannelDelta": 11,
+      "meanChannelDelta": 0.013216873931891521,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--local-handoff.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 58,
+      "meanChannelDelta": 0.07037214132743351,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--local-reveal.png",
+      "pass": true,
+      "agreement": 1.0,
+      "maxChannelDelta": 0,
+      "meanChannelDelta": 0.0,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--human-turn-start.png",
+      "pass": true,
+      "agreement": 0.9979633993773821,
+      "maxChannelDelta": 34,
+      "meanChannelDelta": 0.041444348306775305,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--human-reveal.png",
+      "pass": true,
+      "agreement": 0.9979652968313784,
+      "maxChannelDelta": 17,
+      "meanChannelDelta": 0.019488512813506838,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--human-placement.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--computer-reveal.png",
+      "pass": true,
+      "agreement": 0.997965613073711,
+      "maxChannelDelta": 15,
+      "meanChannelDelta": 0.01702403631473955,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--computer-thinking.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--computer-targeting.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 58,
+      "meanChannelDelta": 0.07037214132743351,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--computer-placement.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--computer-settled.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 58,
+      "meanChannelDelta": 0.07037214132743351,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--terminal-settling-win.png",
+      "pass": true,
+      "agreement": 0.9979662455583764,
+      "maxChannelDelta": 11,
+      "meanChannelDelta": 0.013216873931891521,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--terminal-settling-draw.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--result.png",
+      "pass": true,
+      "agreement": 0.998039613779564,
+      "maxChannelDelta": 4,
+      "meanChannelDelta": 0.004935673147104549,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--draw-result.png",
+      "pass": true,
+      "agreement": 0.9979690917393708,
+      "maxChannelDelta": 8,
+      "meanChannelDelta": 0.009591867132681368,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--settings.png",
+      "pass": false,
+      "agreement": 0.9897078932821274,
+      "maxChannelDelta": 186,
+      "meanChannelDelta": 0.7913625996637712,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--how-to.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 104,
+      "meanChannelDelta": 0.12607032217503886,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--ai-lab.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 104,
+      "meanChannelDelta": 0.12607032217503886,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--home-bottom.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 58,
+      "meanChannelDelta": 0.07037214132743351,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--human-placement-bottom.png",
+      "pass": true,
+      "agreement": 0.9979615019233858,
+      "maxChannelDelta": 69,
+      "meanChannelDelta": 0.08458502048617832,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--settings-bottom.png",
+      "pass": false,
+      "agreement": 0.8139299687679072,
+      "maxChannelDelta": 200,
+      "meanChannelDelta": 12.623263908654035,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--how-to-bottom.png",
+      "pass": true,
+      "agreement": 0.9979611856810532,
+      "maxChannelDelta": 80,
+      "meanChannelDelta": 0.09774093870844101,
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "path": "regular-reduced--light--ai-lab-bottom.png",
+      "pass": true,
+      "agreement": 0.9979608694387204,
+      "maxChannelDelta": 115,
+      "meanChannelDelta": 0.14002056207647245,
+      "width": 1206,
+      "height": 2622
+    }
+  ]
+}
