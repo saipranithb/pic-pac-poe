@@ -93,9 +93,13 @@ struct SettingsView: View {
             Divider().overlay(colors.subtle).padding(.top, 28)
             Text("Game data stays on this device. No account, ads, analytics, or networked play.")
                 .font(.subheadline).foregroundStyle(colors.secondary).padding(.top, 20)
-            Link("Privacy policy", destination: URL(string: "https://saipranith.dev/picpacpoe/privacy")!)
-                .font(.subheadline.weight(.semibold)).foregroundStyle(colors.action)
-                .frame(minHeight: 44, alignment: .leading).padding(.top, 8)
+            Link(destination: URL(string: "https://saipranith.dev/picpacpoe/privacy")!) {
+                Text("Privacy policy")
+                    .font(.subheadline.weight(.semibold)).foregroundStyle(colors.action)
+                    .frame(maxWidth: .infinity, minHeight: 44, alignment: .leading)
+                    .contentShape(Rectangle())
+            }
+                .padding(.top, 8)
                 .accessibilityIdentifier("privacy-policy-link")
         }.accessibilityIdentifier("settings-screen")
     }
