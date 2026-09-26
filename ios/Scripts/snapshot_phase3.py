@@ -29,6 +29,8 @@ def source():
  return {'commit':run('git','rev-parse','HEAD'),'branch':run('git','branch','--show-current'), 'status':run('git','status','--porcelain').splitlines(), 'iosSourceSHA256':ios_hash, 'buildInputSHA256':fingerprint, 'externalInputs':{name:sha(ROOT/name) for name in external}}
 
 DEVICE_PIXELS = {'iPhone-SE-3rd-generation':(750,1334), 'iPhone-17-Pro':(1206,2622), 'iPad-Pro-11-inch-M4-8GB':(1668,2420)}
+PRESENTATION_TIMEOUT_SECONDS = 120
+CAPTURE_COMMAND_TIMEOUT_SECONDS = 60
 def selected(value, allowed, label):
  values=value.split(',')
  if not values or len(values)!=len(set(values)) or any(x not in allowed for x in values):
@@ -53,18 +55,27 @@ def capture_presented_frame(udid, output, name, tool, expected_pixels):
  # agreement with a baseline. A stable but incorrect UI still fails compare().
  diagnostics=output/'capture-diagnostics'/pathlib.Path(name).stem
  diagnostics.mkdir(parents=True)
- probes=[];previous=None;accepted=False;failure=None;deadline=time.monotonic()+30
+ # Hosted capture/inspection can take over 25 seconds for one valid frame.
+ # Budget both required observations while keeping a hung command bounded.
+ probes=[];previous=None;accepted=False;failure=None;started=time.monotonic();deadline=started+PRESENTATION_TIMEOUT_SECONDS
+ def timed_run(observation, stage, *args):
+  command_started=time.monotonic();remaining=deadline-command_started
+  if remaining<=0:raise RuntimeError('Presentation deadline exceeded: '+name)
+  timeout=min(CAPTURE_COMMAND_TIMEOUT_SECONDS,remaining)
+  observation[stage+'TimeoutSeconds']=timeout
+  observation[stage+'StartedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat()
+  try:return run(*args,timeout=timeout)
+  except Exception as error:
+   observation[stage+'Error']=type(error).__name__+': '+str(error)
+   raise
+  finally:observation[stage+'Seconds']=time.monotonic()-command_started
  try:
   while time.monotonic()<deadline:
    probe=diagnostics/f'probe-{len(probes)+1:03d}.png'
    observation={'path':str(probe.relative_to(output)),'requestedAt':datetime.datetime.now(datetime.timezone.utc).isoformat()}
    probes.append(observation)
-   remaining=deadline-time.monotonic()
-   if remaining<=0:raise RuntimeError('Presentation deadline exceeded: '+name)
-   run('xcrun','simctl','io',udid,'screenshot','--type=png',probe,timeout=remaining)
-   remaining=deadline-time.monotonic()
-   if remaining<=0:raise RuntimeError('Presentation deadline exceeded: '+name)
-   inspected=json.loads(run(tool,'inspect',probe,timeout=remaining))
+   timed_run(observation,'screenshot','xcrun','simctl','io',udid,'screenshot','--type=png',probe)
+   inspected=json.loads(timed_run(observation,'inspection',tool,'inspect',probe))
    observation.update({'sha256':sha(probe),'observedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),**inspected})
    if time.monotonic()>=deadline:raise RuntimeError('Presentation deadline exceeded: '+name)
    if (inspected['width'],inspected['height'])!=expected_pixels:raise RuntimeError('Unexpected full-frame dimensions: '+name)
@@ -74,7 +85,7 @@ def capture_presented_frame(udid, output, name, tool, expected_pixels):
     return inspected
    previous=digest
    time.sleep(min(0.5,max(0,deadline-time.monotonic())))
-  raise RuntimeError('No stable nonblank opaque presentation within 30 seconds: '+name)
+  raise RuntimeError(f'No stable nonblank opaque presentation within {PRESENTATION_TIMEOUT_SECONDS} seconds: '+name)
  except Exception as error:
   failure=type(error).__name__+': '+str(error)
   raise
@@ -82,7 +93,7 @@ def capture_presented_frame(udid, output, name, tool, expected_pixels):
   for observation in probes:
    path=output/observation['path']
    if path.is_file():observation['sha256']=sha(path)
-  (diagnostics/'probes.json').write_text(json.dumps({'accepted':accepted,'sameLaunch':True,'baselineConsulted':False,'deadlineSeconds':30,'requiredConsecutiveStableFrames':2,'error':failure,'probes':probes},indent=2)+'\n')
+  (diagnostics/'probes.json').write_text(json.dumps({'accepted':accepted,'sameLaunch':True,'baselineConsulted':False,'deadlineSeconds':PRESENTATION_TIMEOUT_SECONDS,'commandTimeoutSeconds':CAPTURE_COMMAND_TIMEOUT_SECONDS,'elapsedSeconds':time.monotonic()-started,'requiredConsecutiveStableFrames':2,'error':failure,'probes':probes},indent=2)+'\n')
 
 def capture(args):
  profiles=selected(args.profiles,PROFILES,'profiles');scenarios=selected(args.scenarios,SCENARIOS,'scenarios')
