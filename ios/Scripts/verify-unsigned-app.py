@@ -20,7 +20,7 @@ with (app / 'Info.plist').open('rb') as stream:
 for key, expected in {
     'CFBundleIdentifier': 'dev.saipranith.picpacpoe',
     'CFBundleShortVersionString': '2.0.0',
-    'CFBundleVersion': '2',
+    'CFBundleVersion': '3',
     'MinimumOSVersion': '17.0',
     'UIDeviceFamily': [1, 2],
     'ITSAppUsesNonExemptEncryption': False,

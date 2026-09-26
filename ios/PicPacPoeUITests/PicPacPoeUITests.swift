@@ -176,6 +176,7 @@ final class PicPacPoeUITests: XCTestCase {
         launch()
         tap("open-settings")
         attachHierarchy("settings-native-controls")
+        XCTAssertTrue(element("privacy-policy-link").exists, "Settings must expose the public privacy policy")
         XCTAssertEqual(app.switches.matching(NSPredicate(format: "identifier BEGINSWITH 'setting-'")).count, 3, "One identified native switch per preference")
         for id in ["setting-sound", "setting-haptics"] {
             XCTAssertEqual(app.switches[id].value as? String, "1")

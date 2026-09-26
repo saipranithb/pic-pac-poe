@@ -91,8 +91,12 @@ struct SettingsView: View {
                 }
             }.padding(.top, 12)
             Divider().overlay(colors.subtle).padding(.top, 28)
-            Text("Everything stays on this device. No account, ads, analytics, or internet access.")
+            Text("Game data stays on this device. No account, ads, analytics, or networked play.")
                 .font(.subheadline).foregroundStyle(colors.secondary).padding(.top, 20)
+            Link("Privacy policy", destination: URL(string: "https://saipranith.dev/picpacpoe/privacy")!)
+                .font(.subheadline.weight(.semibold)).foregroundStyle(colors.action)
+                .frame(minHeight: 44, alignment: .leading).padding(.top, 8)
+                .accessibilityIdentifier("privacy-policy-link")
         }.accessibilityIdentifier("settings-screen")
     }
     private func heading(_ text: String) -> some View { Text(text).font(.system(.body, weight: .semibold)).foregroundStyle(colors.secondary).accessibilityAddTraits(.isHeader) }
