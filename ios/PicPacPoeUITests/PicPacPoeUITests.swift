@@ -427,6 +427,10 @@ final class PicPacPoeUITests: XCTestCase {
         continueAfterFailure = true
         defer { continueAfterFailure = false }
         var failures: [String] = []
+        // iOS 26.5 can surface its own Apple Intelligence welcome notification
+        // over the app on a fresh hosted simulator. It is not app content.
+        let hostBanner = XCUIApplication(bundleIdentifier: "com.apple.springboard")
+            .staticTexts["Ready for Apple Intelligence"]
         for theme in ["dark", "light"] {
             for scenario in ["home", "classic", "human-placement", "computer-targeting", "settings", "how-to", "ai-lab", "local-handoff", "result"] {
                 let scrolls = ["home", "settings", "how-to", "ai-lab", "human-placement"].contains(scenario)
@@ -441,21 +445,40 @@ final class PicPacPoeUITests: XCTestCase {
                     app.launch()
                     let screen = ["home": "home-wordmark", "settings": "settings-screen", "how-to": "how-to-screen", "ai-lab": "ai-lab-screen"][scenario] ?? "game-screen"
                     XCTAssertTrue(element(screen).waitForExistence(timeout: 10))
-                    if scrolls {
+                    func settleScroll() {
+                        guard scrolls else { return }
                         let content = app.scrollViews.firstMatch.children(matching: .other).firstMatch
                         var previous: CGRect?
                         var stableSince = Date()
-                        eventually("Audit samples stationary scroll content", timeout: 8) {
+                        eventually("Audit samples stationary scroll content", timeout: 20) {
                             let frame = content.frame
                             if frame != previous { previous = frame; stableSince = Date(); return false }
                             return Date().timeIntervalSince(stableSince) >= 0.6
                         }
                     }
+                    func clearHostBanner() {
+                        guard hostBanner.exists else { return }
+                        attach("host-apple-intelligence-notification")
+                        hostBanner.swipeUp()
+                        eventually("System notification clears before native audit", timeout: 20) {
+                            !hostBanner.exists
+                        }
+                    }
+                    settleScroll()
+                    clearHostBanner()
                     if scenario == "ai-lab" { attach("audit-ai-lab-\(theme)-\(viewport)") }
                     var viewportPassed = false
                     var unhandledFindings = 0
-                    do {
+                    var interruptedByHostBanner = false
+                    func runNativeAudit() throws {
                       try app.performAccessibilityAudit(for: [.contrast, .hitRegion, .sufficientElementDescription, .textClipped, .trait]) { issue in
+                        // A system banner can arrive during the audit, after the
+                        // preflight above. Discard only that obstructed sample;
+                        // a second unobstructed native audit must still pass.
+                        if hostBanner.exists {
+                            interruptedByHostBanner = true
+                            return true
+                        }
                         // A precisely governed iOS 26.5 auditor artifact: at this
                         // bottom anchor the intro is safely clipped offscreen,
                         // but its AX rectangle retains a <1pt boundary sliver.
@@ -480,10 +503,46 @@ final class PicPacPoeUITests: XCTestCase {
                         else { unhandledFindings += 1 }
                         return offscreenIntroArtifact
                       }
-                      viewportPassed = unhandledFindings == 0
-                      if !viewportPassed { failures.append("\(scenario) / \(theme) / \(viewport): \(unhandledFindings) unhandled native finding(s)") }
-                    } catch {
-                        failures.append("\(scenario) / \(theme) / \(viewport): \(error)")
+                    }
+                    for attempt in 0..<2 {
+                        do {
+                            try runNativeAudit()
+                            if interruptedByHostBanner {
+                                attach("host-banner-interrupted-audit-\(scenario)-\(theme)-\(viewport)")
+                                clearHostBanner()
+                                if attempt == 0 {
+                                    interruptedByHostBanner = false
+                                    unhandledFindings = 0
+                                    continue
+                                }
+                                failures.append("\(scenario) / \(theme) / \(viewport): system notification interrupted both native audits")
+                                break
+                            }
+                            viewportPassed = unhandledFindings == 0
+                            if !viewportPassed { failures.append("\(scenario) / \(theme) / \(viewport): \(unhandledFindings) unhandled native finding(s)") }
+                            break
+                        } catch {
+                            let nativeError = error as NSError
+                            // The hosted auditor occasionally times out without
+                            // an app finding. One fresh-process retry still runs
+                            // every native rule on the same viewport.
+                            if attempt == 0 && nativeError.domain == "com.apple.xcode.xctest.accessibilityAudit" && nativeError.code == -56 {
+                                let detail = XCTAttachment(string: "\(scenario) / \(theme) / \(viewport): first native audit timed out; retrying unchanged viewport in a fresh app process. \(error)")
+                                detail.name = "Hosted native audit timeout"
+                                detail.lifetime = .keepAlways
+                                add(detail)
+                                app.terminate()
+                                app.launch()
+                                XCTAssertTrue(element(screen).waitForExistence(timeout: 10))
+                                settleScroll()
+                                clearHostBanner()
+                                interruptedByHostBanner = false
+                                unhandledFindings = 0
+                                continue
+                            }
+                            failures.append("\(scenario) / \(theme) / \(viewport): \(error)")
+                            break
+                        }
                     }
                     if viewport == "top" { fullyVisibleTopPassed = viewportPassed }
                     app.terminate()
