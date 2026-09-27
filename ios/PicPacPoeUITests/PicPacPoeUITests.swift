@@ -449,11 +449,18 @@ final class PicPacPoeUITests: XCTestCase {
                         guard scrolls else { return }
                         let content = app.scrollViews.firstMatch.children(matching: .other).firstMatch
                         var previous: CGRect?
-                        var stableSince = Date()
-                        eventually("Audit samples stationary scroll content", timeout: 20) {
+                        // AX frame lookups on the hosted simulator can take ten
+                        // seconds and report sub-point SwiftUI rounding jitter.
+                        // Require two geometrically equivalent samples instead
+                        // of an exact CGRect sustained by a fast polling clock.
+                        eventually("Audit samples stationary scroll content", timeout: 35) {
                             let frame = content.frame
-                            if frame != previous { previous = frame; stableSince = Date(); return false }
-                            return Date().timeIntervalSince(stableSince) >= 0.6
+                            defer { previous = frame }
+                            guard let previous else { return false }
+                            return abs(frame.minX - previous.minX) < 0.5
+                                && abs(frame.minY - previous.minY) < 0.5
+                                && abs(frame.width - previous.width) < 0.5
+                                && abs(frame.height - previous.height) < 0.5
                         }
                     }
                     func clearHostBanner() {
