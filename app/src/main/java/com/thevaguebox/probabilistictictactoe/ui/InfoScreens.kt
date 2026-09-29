@@ -37,6 +37,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.heading
@@ -52,6 +53,7 @@ import com.thevaguebox.probabilistictictactoe.ui.components.FormPrimaryButton
 import com.thevaguebox.probabilistictictactoe.ui.components.FormSecondaryButton
 import com.thevaguebox.probabilistictictactoe.ui.components.FormSectionHeading
 import com.thevaguebox.probabilistictictactoe.ui.components.FormSurface
+import com.thevaguebox.probabilistictictactoe.ui.components.FormTextAction
 import com.thevaguebox.probabilistictictactoe.ui.theme.FormTheme
 
 @Composable
@@ -152,6 +154,7 @@ fun SettingsScreen(
     onReducedMotion: (Boolean) -> Unit,
     onTheme: (ThemePreference) -> Unit,
 ) {
+    val uriHandler = LocalUriHandler.current
     InfoPage(title = "Settings", onBack = onBack) {
         FormSectionHeading("Feedback")
         SettingToggle("Sound", "Small tones for draws, moves, and results.", settings.sound, onSound)
@@ -169,6 +172,11 @@ fun SettingsScreen(
             Modifier.padding(top = 20.dp),
             style = MaterialTheme.typography.bodyMedium,
             color = FormTheme.colors.textSecondary,
+        )
+        FormTextAction(
+            "Privacy policy",
+            onClick = { uriHandler.openUri("https://saipranith.dev/picpacpoe/privacy") },
+            modifier = Modifier.fillMaxWidth().padding(top = 8.dp),
         )
     }
 }
