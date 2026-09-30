@@ -1,5 +1,13 @@
 # Pic-Pac-Poe 2.0.0 Play release checklist
 
+## Android identity migration — 30 September 2026
+
+The owner authorized a replacement Android Play entry using `dev.saipranith.picpacpoe`. This supersedes the old-entry-only instructions below. Preserve `versionName 2.0.0` and `versionCode 5` for the first candidate; the new package had no entry in the verified account inventory. Recheck its actual upload history before uploading. The internal Kotlin/resource namespace remains `com.thevaguebox.probabilistictictactoe`; the launcher class is explicit and the instrumentation application ID becomes `dev.saipranith.picpacpoe.test`.
+
+Do not rotate old-app keys or modify iOS. Build with the existing authorized upload key, verify the package/version/signature, and deliberately enroll the new entry in Play App Signing. The old app must remain intact until local release verification, signing, and listing resources are ready. Unpublish the old app before submitting the replacement; delete the old entry only after production availability and ordinary Play installation of the replacement are verified. Signing, Console declarations, submission, and publication remain separate gates; a local build is not evidence that they passed.
+
+The checklist below records the previous old-package release workflow and historical verification. Its old package, maximum-version, upload-key-reset, and existing-entry requirements must not be applied to the replacement entry.
+
 This checklist separates facts verified in the repository from actions that require the Play Console or the owner's private upload key. Existing releases used local Windows signing and manual Play upload. GitHub signing automation is optional future work and does not block 2.0.0. A checked repository item is not evidence that its corresponding Play Console task is complete.
 
 ## Repository-verified release facts

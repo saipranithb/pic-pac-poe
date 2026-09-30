@@ -4,7 +4,8 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
-val releaseApplicationId = "com.thevaguebox.probabilistictictactoe"
+val releaseApplicationId = "dev.saipranith.picpacpoe"
+val releaseNamespace = "com.thevaguebox.probabilistictictactoe"
 val releaseCompileSdk = 36
 val releaseTargetSdk = 36
 val releaseVersionCode = 5
@@ -27,7 +28,7 @@ check(suppliedUploadSigningValues == 0 || suppliedUploadSigningValues == uploadS
 val uploadSigningConfigured = suppliedUploadSigningValues == uploadSigningValues.size
 
 android {
-    namespace = releaseApplicationId
+    namespace = releaseNamespace
     compileSdk = releaseCompileSdk
 
     defaultConfig {
@@ -88,7 +89,7 @@ val verifyReleaseConfiguration by tasks.registering {
     group = "verification"
     description = "Verifies the immutable Play identity and 2.0.0 release coordinates."
     doLast {
-        check(android.namespace == releaseApplicationId)
+        check(android.namespace == releaseNamespace)
         check(android.compileSdk == releaseCompileSdk)
         check(android.defaultConfig.applicationId == releaseApplicationId)
         check(android.defaultConfig.targetSdk == releaseTargetSdk)
