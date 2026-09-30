@@ -13,7 +13,7 @@
         android:theme="@style/Theme.PicPacPoe"
         tools:targetApi="33">
         <activity
-            android:name=".MainActivity"
+            android:name="com.thevaguebox.probabilistictictactoe.MainActivity"
             android:exported="true"
             android:resizeableActivity="true">
             <intent-filter>

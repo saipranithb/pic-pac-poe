@@ -133,7 +133,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          adb -s emulator-5554 shell am instrument -w -r com.thevaguebox.probabilistictictactoe.test/androidx.test.runner.AndroidJUnitRunner | tee "$RUNNER_TEMP/android-ui-tests.log"
+          adb -s emulator-5554 shell am instrument -w -r dev.saipranith.picpacpoe.test/androidx.test.runner.AndroidJUnitRunner | tee "$RUNNER_TEMP/android-ui-tests.log"
           python3 - "$RUNNER_TEMP/android-ui-tests.log" <<'PY'
           import pathlib, re, sys
           text = pathlib.Path(sys.argv[1]).read_text()
